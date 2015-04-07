@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: ADC_1_INT.c
+* File Name: ADC_INT.c
 * Version 2.0
 *
 *  Description:
@@ -15,7 +15,7 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "ADC_1.h"
+#include "ADC.h"
 
 
 /******************************************************************************
@@ -27,11 +27,11 @@
 
 /* `#END`  */
 
-#if(ADC_1_IRQ_REMOVE == 0u)
+#if(ADC_IRQ_REMOVE == 0u)
 
 
     /******************************************************************************
-    * Function Name: ADC_1_ISR
+    * Function Name: ADC_ISR
     *******************************************************************************
     *
     * Summary:
@@ -47,12 +47,12 @@
     *  No.
     *
     ******************************************************************************/
-    CY_ISR( ADC_1_ISR )
+    CY_ISR( ADC_ISR )
     {
         uint32 intr_status;
 
         /* Read interrupt status register */
-        intr_status = ADC_1_SAR_INTR_REG;
+        intr_status = ADC_SAR_INTR_REG;
 
         /************************************************************************
         *  Custom Code
@@ -63,10 +63,10 @@
         /* `#END`  */
 
         /* Clear handled interrupt */
-        ADC_1_SAR_INTR_REG = intr_status;
+        ADC_SAR_INTR_REG = intr_status;
     }
 
-#endif   /* End ADC_1_IRQ_REMOVE */
+#endif   /* End ADC_IRQ_REMOVE */
 
 
 /* [] END OF FILE */

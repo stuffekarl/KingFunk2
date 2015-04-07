@@ -1,0 +1,1073 @@
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"LCD_BarGraph.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	LCD_customFonts
+  18              		.section	.rodata
+  19              		.align	2
+  20              		.type	LCD_customFonts, %object
+  21              		.size	LCD_customFonts, 64
+  22              	LCD_customFonts:
+  23 0000 00       		.byte	0
+  24 0001 00       		.byte	0
+  25 0002 00       		.byte	0
+  26 0003 00       		.byte	0
+  27 0004 00       		.byte	0
+  28 0005 00       		.byte	0
+  29 0006 00       		.byte	0
+  30 0007 00       		.byte	0
+  31 0008 10       		.byte	16
+  32 0009 10       		.byte	16
+  33 000a 10       		.byte	16
+  34 000b 10       		.byte	16
+  35 000c 10       		.byte	16
+  36 000d 10       		.byte	16
+  37 000e 10       		.byte	16
+  38 000f 10       		.byte	16
+  39 0010 18       		.byte	24
+  40 0011 18       		.byte	24
+  41 0012 18       		.byte	24
+  42 0013 18       		.byte	24
+  43 0014 18       		.byte	24
+  44 0015 18       		.byte	24
+  45 0016 18       		.byte	24
+  46 0017 18       		.byte	24
+  47 0018 1C       		.byte	28
+  48 0019 1C       		.byte	28
+  49 001a 1C       		.byte	28
+  50 001b 1C       		.byte	28
+  51 001c 1C       		.byte	28
+  52 001d 1C       		.byte	28
+  53 001e 1C       		.byte	28
+  54 001f 1C       		.byte	28
+  55 0020 1E       		.byte	30
+  56 0021 1E       		.byte	30
+  57 0022 1E       		.byte	30
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 2
+
+
+  58 0023 1E       		.byte	30
+  59 0024 1E       		.byte	30
+  60 0025 1E       		.byte	30
+  61 0026 1E       		.byte	30
+  62 0027 1E       		.byte	30
+  63 0028 1F       		.byte	31
+  64 0029 1F       		.byte	31
+  65 002a 1F       		.byte	31
+  66 002b 1F       		.byte	31
+  67 002c 1F       		.byte	31
+  68 002d 1F       		.byte	31
+  69 002e 1F       		.byte	31
+  70 002f 1F       		.byte	31
+  71 0030 00       		.byte	0
+  72 0031 00       		.byte	0
+  73 0032 00       		.byte	0
+  74 0033 00       		.byte	0
+  75 0034 00       		.byte	0
+  76 0035 00       		.byte	0
+  77 0036 00       		.byte	0
+  78 0037 00       		.byte	0
+  79 0038 00       		.byte	0
+  80 0039 00       		.byte	0
+  81 003a 00       		.byte	0
+  82 003b 00       		.byte	0
+  83 003c 00       		.byte	0
+  84 003d 00       		.byte	0
+  85 003e 00       		.byte	0
+  86 003f 00       		.byte	0
+  87              		.section	.text.LCD_LoadCustomFonts,"ax",%progbits
+  88              		.align	2
+  89              		.global	LCD_LoadCustomFonts
+  90              		.code	16
+  91              		.thumb_func
+  92              		.type	LCD_LoadCustomFonts, %function
+  93              	LCD_LoadCustomFonts:
+  94              	.LFB0:
+  95              		.file 1 ".\\Generated_Source\\PSoC4\\LCD_BarGraph.c"
+   1:.\Generated_Source\PSoC4/LCD_BarGraph.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * File Name: LCD_BarGraph.c
+   3:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * Version 1.0
+   4:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *
+   5:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * Description:
+   6:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  This file provides the custom character data and API for creating and using
+   7:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  bar graphs with the Character LCD component.
+   8:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *
+   9:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * Note:
+  10:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *
+  11:.\Generated_Source\PSoC4/LCD_BarGraph.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+  18:.\Generated_Source\PSoC4/LCD_BarGraph.c **** #include "LCD.h"
+  19:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 3
+
+
+  20:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+  21:.\Generated_Source\PSoC4/LCD_BarGraph.c **** uint8 const CYCODE LCD_customFonts[] = \
+  22:.\Generated_Source\PSoC4/LCD_BarGraph.c **** {
+  23:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Character LCD_CUSTOM_0   */
+  24:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u, \
+  25:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Character LCD_CUSTOM_1   */
+  26:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     0x10u,    0x10u,    0x10u,    0x10u,    0x10u,    0x10u,    0x10u,    0x10u, \
+  27:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Character LCD_CUSTOM_2   */
+  28:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     0x18u,    0x18u,    0x18u,    0x18u,    0x18u,    0x18u,    0x18u,    0x18u, \
+  29:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Character LCD_CUSTOM_3   */
+  30:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     0x1Cu,    0x1Cu,    0x1Cu,    0x1Cu,    0x1Cu,    0x1Cu,    0x1Cu,    0x1Cu, \
+  31:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Character LCD_CUSTOM_4   */
+  32:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     0x1Eu,    0x1Eu,    0x1Eu,    0x1Eu,    0x1Eu,    0x1Eu,    0x1Eu,    0x1Eu, \
+  33:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Character LCD_CUSTOM_5   */
+  34:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     0x1Fu,    0x1Fu,    0x1Fu,    0x1Fu,    0x1Fu,    0x1Fu,    0x1Fu,    0x1Fu, \
+  35:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Character LCD_CUSTOM_6   */
+  36:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u, \
+  37:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Character LCD_CUSTOM_7   */
+  38:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u \
+  39:.\Generated_Source\PSoC4/LCD_BarGraph.c **** };
+  40:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+  41:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+  42:.\Generated_Source\PSoC4/LCD_BarGraph.c **** /*******************************************************************************
+  43:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * Function Name: LCD_LoadCustomFonts
+  44:.\Generated_Source\PSoC4/LCD_BarGraph.c **** ********************************************************************************
+  45:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *
+  46:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * Summary:
+  47:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  Loads 8 custom font characters into the LCD Module for use.  Cannot use
+  48:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  characters from two different font sets at once, but font sets can be
+  49:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  switched out during runtime.
+  50:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *
+  51:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * Parameters:
+  52:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  customData:  pointer to a constant array of 64 bytes representing 8 custom
+  53:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *               font characters.
+  54:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * Return:
+  55:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  None.
+  56:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *
+  57:.\Generated_Source\PSoC4/LCD_BarGraph.c **** * Theory:
+  58:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  Prior to using this function user need to import the pointer to custom
+  59:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  font array to your project by writting the following in the source code file
+  60:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  where custom font will be used:
+  61:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *       extern uint8 const CYCODE LCD_Char_customFonts[];
+  62:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  This function is not automatically called by the Start() routine and must be
+  63:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *  called manually by the user.
+  64:.\Generated_Source\PSoC4/LCD_BarGraph.c **** *******************************************************************************/
+  65:.\Generated_Source\PSoC4/LCD_BarGraph.c **** void LCD_LoadCustomFonts(uint8 const customData[]) 
+  66:.\Generated_Source\PSoC4/LCD_BarGraph.c **** {
+  96              		.loc 1 66 0
+  97              		.cfi_startproc
+  98 0000 80B5     		push	{r7, lr}
+  99              		.cfi_def_cfa_offset 8
+ 100              		.cfi_offset 7, -8
+ 101              		.cfi_offset 14, -4
+ 102 0002 84B0     		sub	sp, sp, #16
+ 103              		.cfi_def_cfa_offset 24
+ 104 0004 00AF     		add	r7, sp, #0
+ 105              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 4
+
+
+ 106 0006 7860     		str	r0, [r7, #4]
+  67:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     uint8 indexU8;
+  68:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+  69:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     LCD_IsReady();
+ 107              		.loc 1 69 0
+ 108 0008 FFF7FEFF 		bl	LCD_IsReady
+  70:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Set starting address in the LCD Module */
+  71:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Optionally: Read the current address to restore at a later time */
+  72:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     LCD_WriteControl(LCD_CGRAM_0);
+ 109              		.loc 1 72 0
+ 110 000c 4020     		mov	r0, #64
+ 111 000e FFF7FEFF 		bl	LCD_WriteControl
+  73:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+  74:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /* Load in the 64 bytes of CustomChar Data */
+  75:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     for(indexU8 = 0u; indexU8 < LCD_CUSTOM_CHAR_SET_LEN; indexU8++)
+ 112              		.loc 1 75 0
+ 113 0012 3B1C     		mov	r3, r7
+ 114 0014 0F33     		add	r3, r3, #15
+ 115 0016 0022     		mov	r2, #0
+ 116 0018 1A70     		strb	r2, [r3]
+ 117 001a 0FE0     		b	.L2
+ 118              	.L3:
+  76:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     {
+  77:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         /* Delay between each write */
+  78:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         LCD_WriteData(customData[indexU8]);
+ 119              		.loc 1 78 0 discriminator 2
+ 120 001c 3B1C     		mov	r3, r7
+ 121 001e 0F33     		add	r3, r3, #15
+ 122 0020 1B78     		ldrb	r3, [r3]
+ 123 0022 7A68     		ldr	r2, [r7, #4]
+ 124 0024 D318     		add	r3, r2, r3
+ 125 0026 1B78     		ldrb	r3, [r3]
+ 126 0028 181C     		mov	r0, r3
+ 127 002a FFF7FEFF 		bl	LCD_WriteData
+  75:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     for(indexU8 = 0u; indexU8 < LCD_CUSTOM_CHAR_SET_LEN; indexU8++)
+ 128              		.loc 1 75 0 discriminator 2
+ 129 002e 3B1C     		mov	r3, r7
+ 130 0030 0F33     		add	r3, r3, #15
+ 131 0032 1A78     		ldrb	r2, [r3]
+ 132 0034 3B1C     		mov	r3, r7
+ 133 0036 0F33     		add	r3, r3, #15
+ 134 0038 0132     		add	r2, r2, #1
+ 135 003a 1A70     		strb	r2, [r3]
+ 136              	.L2:
+  75:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     for(indexU8 = 0u; indexU8 < LCD_CUSTOM_CHAR_SET_LEN; indexU8++)
+ 137              		.loc 1 75 0 is_stmt 0 discriminator 1
+ 138 003c 3B1C     		mov	r3, r7
+ 139 003e 0F33     		add	r3, r3, #15
+ 140 0040 1B78     		ldrb	r3, [r3]
+ 141 0042 3F2B     		cmp	r3, #63
+ 142 0044 EAD9     		bls	.L3
+  79:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     }
+  80:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+  81:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     LCD_IsReady();
+ 143              		.loc 1 81 0 is_stmt 1
+ 144 0046 FFF7FEFF 		bl	LCD_IsReady
+  82:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     LCD_WriteControl(LCD_DDRAM_0);
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 5
+
+
+ 145              		.loc 1 82 0
+ 146 004a 8020     		mov	r0, #128
+ 147 004c FFF7FEFF 		bl	LCD_WriteControl
+  83:.\Generated_Source\PSoC4/LCD_BarGraph.c **** }
+ 148              		.loc 1 83 0
+ 149 0050 BD46     		mov	sp, r7
+ 150 0052 04B0     		add	sp, sp, #16
+ 151              		@ sp needed
+ 152 0054 80BD     		pop	{r7, pc}
+ 153              		.cfi_endproc
+ 154              	.LFE0:
+ 155              		.size	LCD_LoadCustomFonts, .-LCD_LoadCustomFonts
+ 156              		.global	__aeabi_uidiv
+ 157              		.global	__aeabi_uidivmod
+ 158 0056 C046     		.section	.text.LCD_DrawHorizontalBG,"ax",%progbits
+ 159              		.align	2
+ 160              		.global	LCD_DrawHorizontalBG
+ 161              		.code	16
+ 162              		.thumb_func
+ 163              		.type	LCD_DrawHorizontalBG, %function
+ 164              	LCD_DrawHorizontalBG:
+ 165              	.LFB1:
+  84:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+  85:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+  86:.\Generated_Source\PSoC4/LCD_BarGraph.c **** #if (LCD_CUSTOM_CHAR_SET == LCD_HORIZONTAL_BG)
+  87:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+  88:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     /*******************************************************************************
+  89:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     * Function Name: LCD_DrawHorizontalBG
+  90:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     ********************************************************************************
+  91:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *
+  92:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     * Summary:
+  93:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *  Draws the horizontal bargraph.
+  94:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *
+  95:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     * Parameters:
+  96:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *  row:            The row in which the bar graph starts.
+  97:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *  column:         The column in which the bar graph starts.
+  98:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *  maxCharacters:  The max length of the graph in whole characters.
+  99:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *  value:          The current length or height of the graph in pixels.
+ 100:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *
+ 101:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     * Return:
+ 102:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *  void.
+ 103:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *
+ 104:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     *******************************************************************************/
+ 105:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     void LCD_DrawHorizontalBG(uint8 row, uint8 column, uint8 maxCharacters, uint8 value) \
+ 106:.\Generated_Source\PSoC4/LCD_BarGraph.c ****                                                             
+ 107:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     {
+ 166              		.loc 1 107 0
+ 167              		.cfi_startproc
+ 168 0000 90B5     		push	{r4, r7, lr}
+ 169              		.cfi_def_cfa_offset 12
+ 170              		.cfi_offset 4, -12
+ 171              		.cfi_offset 7, -8
+ 172              		.cfi_offset 14, -4
+ 173 0002 85B0     		sub	sp, sp, #20
+ 174              		.cfi_def_cfa_offset 32
+ 175 0004 00AF     		add	r7, sp, #0
+ 176              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 6
+
+
+ 177 0006 041C     		mov	r4, r0
+ 178 0008 081C     		mov	r0, r1
+ 179 000a 111C     		mov	r1, r2
+ 180 000c 1A1C     		mov	r2, r3
+ 181 000e FB1D     		add	r3, r7, #7
+ 182 0010 1C70     		strb	r4, [r3]
+ 183 0012 BB1D     		add	r3, r7, #6
+ 184 0014 1870     		strb	r0, [r3]
+ 185 0016 7B1D     		add	r3, r7, #5
+ 186 0018 1970     		strb	r1, [r3]
+ 187 001a 3B1D     		add	r3, r7, #4
+ 188 001c 1A70     		strb	r2, [r3]
+ 108:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         /* 8-bit Counter */
+ 109:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         uint8 count8;
+ 110:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         uint8 fullChars;
+ 111:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         uint8 remainingPixels;
+ 112:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+ 113:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         /* Number of full characters to draw */
+ 114:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         fullChars = value / LCD_CHARACTER_WIDTH;
+ 189              		.loc 1 114 0
+ 190 001e 3C1C     		mov	r4, r7
+ 191 0020 0E34     		add	r4, r4, #14
+ 192 0022 3B1D     		add	r3, r7, #4
+ 193 0024 1B78     		ldrb	r3, [r3]
+ 194 0026 181C     		mov	r0, r3
+ 195 0028 0521     		mov	r1, #5
+ 196 002a FFF7FEFF 		bl	__aeabi_uidiv
+ 197 002e 031C     		mov	r3, r0
+ 198 0030 2370     		strb	r3, [r4]
+ 115:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+ 116:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         /* Number of remaining pixels to draw */
+ 117:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         remainingPixels = value % LCD_CHARACTER_WIDTH;
+ 199              		.loc 1 117 0
+ 200 0032 3C1C     		mov	r4, r7
+ 201 0034 0D34     		add	r4, r4, #13
+ 202 0036 3B1D     		add	r3, r7, #4
+ 203 0038 1B78     		ldrb	r3, [r3]
+ 204 003a 181C     		mov	r0, r3
+ 205 003c 0521     		mov	r1, #5
+ 206 003e FFF7FEFF 		bl	__aeabi_uidivmod
+ 207 0042 0B1C     		mov	r3, r1
+ 208 0044 2370     		strb	r3, [r4]
+ 118:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+ 119:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         /* Ensure that the maximum character limit is followed. */
+ 120:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         if(fullChars >= maxCharacters)
+ 209              		.loc 1 120 0
+ 210 0046 3A1C     		mov	r2, r7
+ 211 0048 0E32     		add	r2, r2, #14
+ 212 004a 7B1D     		add	r3, r7, #5
+ 213 004c 1278     		ldrb	r2, [r2]
+ 214 004e 1B78     		ldrb	r3, [r3]
+ 215 0050 9A42     		cmp	r2, r3
+ 216 0052 04D3     		bcc	.L5
+ 121:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         {
+ 122:.\Generated_Source\PSoC4/LCD_BarGraph.c ****             fullChars = maxCharacters;
+ 217              		.loc 1 122 0
+ 218 0054 3B1C     		mov	r3, r7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 7
+
+
+ 219 0056 0E33     		add	r3, r3, #14
+ 220 0058 7A1D     		add	r2, r7, #5
+ 221 005a 1278     		ldrb	r2, [r2]
+ 222 005c 1A70     		strb	r2, [r3]
+ 223              	.L5:
+ 123:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         }
+ 124:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+ 125:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         /* Put Cursor at start position */
+ 126:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         LCD_Position(row, column);
+ 224              		.loc 1 126 0
+ 225 005e FB1D     		add	r3, r7, #7
+ 226 0060 1A78     		ldrb	r2, [r3]
+ 227 0062 BB1D     		add	r3, r7, #6
+ 228 0064 1B78     		ldrb	r3, [r3]
+ 229 0066 101C     		mov	r0, r2
+ 230 0068 191C     		mov	r1, r3
+ 231 006a FFF7FEFF 		bl	LCD_Position
+ 127:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+ 128:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         /* Write full characters */
+ 129:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         for(count8 = 0u; count8 < fullChars; count8++)
+ 232              		.loc 1 129 0
+ 233 006e 3B1C     		mov	r3, r7
+ 234 0070 0F33     		add	r3, r3, #15
+ 235 0072 0022     		mov	r2, #0
+ 236 0074 1A70     		strb	r2, [r3]
+ 237 0076 09E0     		b	.L6
+ 238              	.L7:
+ 130:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         {
+ 131:.\Generated_Source\PSoC4/LCD_BarGraph.c ****             LCD_WriteData(LCD_CUSTOM_5);
+ 239              		.loc 1 131 0 discriminator 2
+ 240 0078 0520     		mov	r0, #5
+ 241 007a FFF7FEFF 		bl	LCD_WriteData
+ 129:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         for(count8 = 0u; count8 < fullChars; count8++)
+ 242              		.loc 1 129 0 discriminator 2
+ 243 007e 3B1C     		mov	r3, r7
+ 244 0080 0F33     		add	r3, r3, #15
+ 245 0082 1A78     		ldrb	r2, [r3]
+ 246 0084 3B1C     		mov	r3, r7
+ 247 0086 0F33     		add	r3, r3, #15
+ 248 0088 0132     		add	r2, r2, #1
+ 249 008a 1A70     		strb	r2, [r3]
+ 250              	.L6:
+ 129:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         for(count8 = 0u; count8 < fullChars; count8++)
+ 251              		.loc 1 129 0 is_stmt 0 discriminator 1
+ 252 008c 3A1C     		mov	r2, r7
+ 253 008e 0F32     		add	r2, r2, #15
+ 254 0090 3B1C     		mov	r3, r7
+ 255 0092 0E33     		add	r3, r3, #14
+ 256 0094 1278     		ldrb	r2, [r2]
+ 257 0096 1B78     		ldrb	r3, [r3]
+ 258 0098 9A42     		cmp	r2, r3
+ 259 009a EDD3     		bcc	.L7
+ 132:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         }
+ 133:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+ 134:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         if(fullChars < maxCharacters)
+ 260              		.loc 1 134 0 is_stmt 1
+ 261 009c 3A1C     		mov	r2, r7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 8
+
+
+ 262 009e 0E32     		add	r2, r2, #14
+ 263 00a0 7B1D     		add	r3, r7, #5
+ 264 00a2 1278     		ldrb	r2, [r2]
+ 265 00a4 1B78     		ldrb	r3, [r3]
+ 266 00a6 9A42     		cmp	r2, r3
+ 267 00a8 28D2     		bcs	.L4
+ 135:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         {
+ 136:.\Generated_Source\PSoC4/LCD_BarGraph.c ****             /* Write remaining pixels */
+ 137:.\Generated_Source\PSoC4/LCD_BarGraph.c ****             LCD_WriteData(remainingPixels);
+ 268              		.loc 1 137 0
+ 269 00aa 3B1C     		mov	r3, r7
+ 270 00ac 0D33     		add	r3, r3, #13
+ 271 00ae 1B78     		ldrb	r3, [r3]
+ 272 00b0 181C     		mov	r0, r3
+ 273 00b2 FFF7FEFF 		bl	LCD_WriteData
+ 138:.\Generated_Source\PSoC4/LCD_BarGraph.c **** 
+ 139:.\Generated_Source\PSoC4/LCD_BarGraph.c ****             if(fullChars < (maxCharacters - 1u))
+ 274              		.loc 1 139 0
+ 275 00b6 3B1C     		mov	r3, r7
+ 276 00b8 0E33     		add	r3, r3, #14
+ 277 00ba 1A78     		ldrb	r2, [r3]
+ 278 00bc 7B1D     		add	r3, r7, #5
+ 279 00be 1B78     		ldrb	r3, [r3]
+ 280 00c0 013B     		sub	r3, r3, #1
+ 281 00c2 9A42     		cmp	r2, r3
+ 282 00c4 1AD2     		bcs	.L4
+ 140:.\Generated_Source\PSoC4/LCD_BarGraph.c ****             {
+ 141:.\Generated_Source\PSoC4/LCD_BarGraph.c ****                 /* Fill with whitespace to end of bar graph */
+ 142:.\Generated_Source\PSoC4/LCD_BarGraph.c ****                 for(count8 = 0u; count8 < (maxCharacters - fullChars - 1u); count8++)
+ 283              		.loc 1 142 0
+ 284 00c6 3B1C     		mov	r3, r7
+ 285 00c8 0F33     		add	r3, r3, #15
+ 286 00ca 0022     		mov	r2, #0
+ 287 00cc 1A70     		strb	r2, [r3]
+ 288 00ce 09E0     		b	.L9
+ 289              	.L10:
+ 143:.\Generated_Source\PSoC4/LCD_BarGraph.c ****                 {
+ 144:.\Generated_Source\PSoC4/LCD_BarGraph.c ****                     LCD_WriteData(LCD_CUSTOM_0);
+ 290              		.loc 1 144 0 discriminator 2
+ 291 00d0 0020     		mov	r0, #0
+ 292 00d2 FFF7FEFF 		bl	LCD_WriteData
+ 142:.\Generated_Source\PSoC4/LCD_BarGraph.c ****                 for(count8 = 0u; count8 < (maxCharacters - fullChars - 1u); count8++)
+ 293              		.loc 1 142 0 discriminator 2
+ 294 00d6 3B1C     		mov	r3, r7
+ 295 00d8 0F33     		add	r3, r3, #15
+ 296 00da 1A78     		ldrb	r2, [r3]
+ 297 00dc 3B1C     		mov	r3, r7
+ 298 00de 0F33     		add	r3, r3, #15
+ 299 00e0 0132     		add	r2, r2, #1
+ 300 00e2 1A70     		strb	r2, [r3]
+ 301              	.L9:
+ 142:.\Generated_Source\PSoC4/LCD_BarGraph.c ****                 for(count8 = 0u; count8 < (maxCharacters - fullChars - 1u); count8++)
+ 302              		.loc 1 142 0 is_stmt 0 discriminator 1
+ 303 00e4 3B1C     		mov	r3, r7
+ 304 00e6 0F33     		add	r3, r3, #15
+ 305 00e8 1A78     		ldrb	r2, [r3]
+ 306 00ea 7B1D     		add	r3, r7, #5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 9
+
+
+ 307 00ec 1978     		ldrb	r1, [r3]
+ 308 00ee 3B1C     		mov	r3, r7
+ 309 00f0 0E33     		add	r3, r3, #14
+ 310 00f2 1B78     		ldrb	r3, [r3]
+ 311 00f4 CB1A     		sub	r3, r1, r3
+ 312 00f6 013B     		sub	r3, r3, #1
+ 313 00f8 9A42     		cmp	r2, r3
+ 314 00fa E9D3     		bcc	.L10
+ 315              	.L4:
+ 145:.\Generated_Source\PSoC4/LCD_BarGraph.c ****                 }
+ 146:.\Generated_Source\PSoC4/LCD_BarGraph.c ****             }
+ 147:.\Generated_Source\PSoC4/LCD_BarGraph.c ****         }
+ 148:.\Generated_Source\PSoC4/LCD_BarGraph.c ****     }
+ 316              		.loc 1 148 0 is_stmt 1
+ 317 00fc BD46     		mov	sp, r7
+ 318 00fe 05B0     		add	sp, sp, #20
+ 319              		@ sp needed
+ 320 0100 90BD     		pop	{r4, r7, pc}
+ 321              		.cfi_endproc
+ 322              	.LFE1:
+ 323              		.size	LCD_DrawHorizontalBG, .-LCD_DrawHorizontalBG
+ 324 0102 C046     		.text
+ 325              	.Letext0:
+ 326              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 327              		.section	.debug_info,"",%progbits
+ 328              	.Ldebug_info0:
+ 329 0000 6A010000 		.4byte	0x16a
+ 330 0004 0400     		.2byte	0x4
+ 331 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 332 000a 04       		.byte	0x4
+ 333 000b 01       		.uleb128 0x1
+ 334 000c E3000000 		.4byte	.LASF23
+ 335 0010 01       		.byte	0x1
+ 336 0011 D8010000 		.4byte	.LASF24
+ 337 0015 2D000000 		.4byte	.LASF25
+ 338 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 339 001d 00000000 		.4byte	0
+ 340 0021 00000000 		.4byte	.Ldebug_line0
+ 341 0025 02       		.uleb128 0x2
+ 342 0026 01       		.byte	0x1
+ 343 0027 06       		.byte	0x6
+ 344 0028 C2010000 		.4byte	.LASF0
+ 345 002c 02       		.uleb128 0x2
+ 346 002d 01       		.byte	0x1
+ 347 002e 08       		.byte	0x8
+ 348 002f 73000000 		.4byte	.LASF1
+ 349 0033 02       		.uleb128 0x2
+ 350 0034 02       		.byte	0x2
+ 351 0035 05       		.byte	0x5
+ 352 0036 99010000 		.4byte	.LASF2
+ 353 003a 02       		.uleb128 0x2
+ 354 003b 02       		.byte	0x2
+ 355 003c 07       		.byte	0x7
+ 356 003d A7000000 		.4byte	.LASF3
+ 357 0041 02       		.uleb128 0x2
+ 358 0042 04       		.byte	0x4
+ 359 0043 05       		.byte	0x5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 10
+
+
+ 360 0044 A9010000 		.4byte	.LASF4
+ 361 0048 02       		.uleb128 0x2
+ 362 0049 04       		.byte	0x4
+ 363 004a 07       		.byte	0x7
+ 364 004b 81000000 		.4byte	.LASF5
+ 365 004f 02       		.uleb128 0x2
+ 366 0050 08       		.byte	0x8
+ 367 0051 05       		.byte	0x5
+ 368 0052 78010000 		.4byte	.LASF6
+ 369 0056 02       		.uleb128 0x2
+ 370 0057 08       		.byte	0x8
+ 371 0058 07       		.byte	0x7
+ 372 0059 00020000 		.4byte	.LASF7
+ 373 005d 03       		.uleb128 0x3
+ 374 005e 04       		.byte	0x4
+ 375 005f 05       		.byte	0x5
+ 376 0060 696E7400 		.ascii	"int\000"
+ 377 0064 02       		.uleb128 0x2
+ 378 0065 04       		.byte	0x4
+ 379 0066 07       		.byte	0x7
+ 380 0067 D6000000 		.4byte	.LASF8
+ 381 006b 04       		.uleb128 0x4
+ 382 006c A3010000 		.4byte	.LASF26
+ 383 0070 02       		.byte	0x2
+ 384 0071 A1       		.byte	0xa1
+ 385 0072 2C000000 		.4byte	0x2c
+ 386 0076 02       		.uleb128 0x2
+ 387 0077 04       		.byte	0x4
+ 388 0078 04       		.byte	0x4
+ 389 0079 27000000 		.4byte	.LASF9
+ 390 007d 02       		.uleb128 0x2
+ 391 007e 08       		.byte	0x8
+ 392 007f 04       		.byte	0x4
+ 393 0080 CF000000 		.4byte	.LASF10
+ 394 0084 02       		.uleb128 0x2
+ 395 0085 01       		.byte	0x1
+ 396 0086 08       		.byte	0x8
+ 397 0087 86010000 		.4byte	.LASF11
+ 398 008b 05       		.uleb128 0x5
+ 399 008c 93000000 		.4byte	.LASF12
+ 400 0090 01       		.byte	0x1
+ 401 0091 41       		.byte	0x41
+ 402 0092 00000000 		.4byte	.LFB0
+ 403 0096 56000000 		.4byte	.LFE0-.LFB0
+ 404 009a 01       		.uleb128 0x1
+ 405 009b 9C       		.byte	0x9c
+ 406 009c BD000000 		.4byte	0xbd
+ 407 00a0 06       		.uleb128 0x6
+ 408 00a1 15000000 		.4byte	.LASF14
+ 409 00a5 01       		.byte	0x1
+ 410 00a6 41       		.byte	0x41
+ 411 00a7 BD000000 		.4byte	0xbd
+ 412 00ab 02       		.uleb128 0x2
+ 413 00ac 91       		.byte	0x91
+ 414 00ad 6C       		.sleb128 -20
+ 415 00ae 07       		.uleb128 0x7
+ 416 00af 0D000000 		.4byte	.LASF18
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 11
+
+
+ 417 00b3 01       		.byte	0x1
+ 418 00b4 43       		.byte	0x43
+ 419 00b5 6B000000 		.4byte	0x6b
+ 420 00b9 02       		.uleb128 0x2
+ 421 00ba 91       		.byte	0x91
+ 422 00bb 77       		.sleb128 -9
+ 423 00bc 00       		.byte	0
+ 424 00bd 08       		.uleb128 0x8
+ 425 00be 04       		.byte	0x4
+ 426 00bf C3000000 		.4byte	0xc3
+ 427 00c3 09       		.uleb128 0x9
+ 428 00c4 6B000000 		.4byte	0x6b
+ 429 00c8 05       		.uleb128 0x5
+ 430 00c9 BA000000 		.4byte	.LASF13
+ 431 00cd 01       		.byte	0x1
+ 432 00ce 69       		.byte	0x69
+ 433 00cf 00000000 		.4byte	.LFB1
+ 434 00d3 02010000 		.4byte	.LFE1-.LFB1
+ 435 00d7 01       		.uleb128 0x1
+ 436 00d8 9C       		.byte	0x9c
+ 437 00d9 40010000 		.4byte	0x140
+ 438 00dd 0A       		.uleb128 0xa
+ 439 00de 726F7700 		.ascii	"row\000"
+ 440 00e2 01       		.byte	0x1
+ 441 00e3 69       		.byte	0x69
+ 442 00e4 6B000000 		.4byte	0x6b
+ 443 00e8 02       		.uleb128 0x2
+ 444 00e9 91       		.byte	0x91
+ 445 00ea 67       		.sleb128 -25
+ 446 00eb 06       		.uleb128 0x6
+ 447 00ec 20000000 		.4byte	.LASF15
+ 448 00f0 01       		.byte	0x1
+ 449 00f1 69       		.byte	0x69
+ 450 00f2 6B000000 		.4byte	0x6b
+ 451 00f6 02       		.uleb128 0x2
+ 452 00f7 91       		.byte	0x91
+ 453 00f8 66       		.sleb128 -26
+ 454 00f9 06       		.uleb128 0x6
+ 455 00fa 8B010000 		.4byte	.LASF16
+ 456 00fe 01       		.byte	0x1
+ 457 00ff 69       		.byte	0x69
+ 458 0100 6B000000 		.4byte	0x6b
+ 459 0104 02       		.uleb128 0x2
+ 460 0105 91       		.byte	0x91
+ 461 0106 65       		.sleb128 -27
+ 462 0107 06       		.uleb128 0x6
+ 463 0108 00000000 		.4byte	.LASF17
+ 464 010c 01       		.byte	0x1
+ 465 010d 69       		.byte	0x69
+ 466 010e 6B000000 		.4byte	0x6b
+ 467 0112 02       		.uleb128 0x2
+ 468 0113 91       		.byte	0x91
+ 469 0114 64       		.sleb128 -28
+ 470 0115 07       		.uleb128 0x7
+ 471 0116 06000000 		.4byte	.LASF19
+ 472 011a 01       		.byte	0x1
+ 473 011b 6D       		.byte	0x6d
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 12
+
+
+ 474 011c 6B000000 		.4byte	0x6b
+ 475 0120 02       		.uleb128 0x2
+ 476 0121 91       		.byte	0x91
+ 477 0122 6F       		.sleb128 -17
+ 478 0123 07       		.uleb128 0x7
+ 479 0124 CE010000 		.4byte	.LASF20
+ 480 0128 01       		.byte	0x1
+ 481 0129 6E       		.byte	0x6e
+ 482 012a 6B000000 		.4byte	0x6b
+ 483 012e 02       		.uleb128 0x2
+ 484 012f 91       		.byte	0x91
+ 485 0130 6E       		.sleb128 -18
+ 486 0131 07       		.uleb128 0x7
+ 487 0132 5F010000 		.4byte	.LASF21
+ 488 0136 01       		.byte	0x1
+ 489 0137 6F       		.byte	0x6f
+ 490 0138 6B000000 		.4byte	0x6b
+ 491 013c 02       		.uleb128 0x2
+ 492 013d 91       		.byte	0x91
+ 493 013e 6D       		.sleb128 -19
+ 494 013f 00       		.byte	0
+ 495 0140 0B       		.uleb128 0xb
+ 496 0141 6B000000 		.4byte	0x6b
+ 497 0145 50010000 		.4byte	0x150
+ 498 0149 0C       		.uleb128 0xc
+ 499 014a 50010000 		.4byte	0x150
+ 500 014e 3F       		.byte	0x3f
+ 501 014f 00       		.byte	0
+ 502 0150 02       		.uleb128 0x2
+ 503 0151 04       		.byte	0x4
+ 504 0152 07       		.byte	0x7
+ 505 0153 6F010000 		.4byte	.LASF22
+ 506 0157 0D       		.uleb128 0xd
+ 507 0158 B2010000 		.4byte	.LASF27
+ 508 015c 01       		.byte	0x1
+ 509 015d 15       		.byte	0x15
+ 510 015e 68010000 		.4byte	0x168
+ 511 0162 05       		.uleb128 0x5
+ 512 0163 03       		.byte	0x3
+ 513 0164 00000000 		.4byte	LCD_customFonts
+ 514 0168 09       		.uleb128 0x9
+ 515 0169 40010000 		.4byte	0x140
+ 516 016d 00       		.byte	0
+ 517              		.section	.debug_abbrev,"",%progbits
+ 518              	.Ldebug_abbrev0:
+ 519 0000 01       		.uleb128 0x1
+ 520 0001 11       		.uleb128 0x11
+ 521 0002 01       		.byte	0x1
+ 522 0003 25       		.uleb128 0x25
+ 523 0004 0E       		.uleb128 0xe
+ 524 0005 13       		.uleb128 0x13
+ 525 0006 0B       		.uleb128 0xb
+ 526 0007 03       		.uleb128 0x3
+ 527 0008 0E       		.uleb128 0xe
+ 528 0009 1B       		.uleb128 0x1b
+ 529 000a 0E       		.uleb128 0xe
+ 530 000b 55       		.uleb128 0x55
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 13
+
+
+ 531 000c 17       		.uleb128 0x17
+ 532 000d 11       		.uleb128 0x11
+ 533 000e 01       		.uleb128 0x1
+ 534 000f 10       		.uleb128 0x10
+ 535 0010 17       		.uleb128 0x17
+ 536 0011 00       		.byte	0
+ 537 0012 00       		.byte	0
+ 538 0013 02       		.uleb128 0x2
+ 539 0014 24       		.uleb128 0x24
+ 540 0015 00       		.byte	0
+ 541 0016 0B       		.uleb128 0xb
+ 542 0017 0B       		.uleb128 0xb
+ 543 0018 3E       		.uleb128 0x3e
+ 544 0019 0B       		.uleb128 0xb
+ 545 001a 03       		.uleb128 0x3
+ 546 001b 0E       		.uleb128 0xe
+ 547 001c 00       		.byte	0
+ 548 001d 00       		.byte	0
+ 549 001e 03       		.uleb128 0x3
+ 550 001f 24       		.uleb128 0x24
+ 551 0020 00       		.byte	0
+ 552 0021 0B       		.uleb128 0xb
+ 553 0022 0B       		.uleb128 0xb
+ 554 0023 3E       		.uleb128 0x3e
+ 555 0024 0B       		.uleb128 0xb
+ 556 0025 03       		.uleb128 0x3
+ 557 0026 08       		.uleb128 0x8
+ 558 0027 00       		.byte	0
+ 559 0028 00       		.byte	0
+ 560 0029 04       		.uleb128 0x4
+ 561 002a 16       		.uleb128 0x16
+ 562 002b 00       		.byte	0
+ 563 002c 03       		.uleb128 0x3
+ 564 002d 0E       		.uleb128 0xe
+ 565 002e 3A       		.uleb128 0x3a
+ 566 002f 0B       		.uleb128 0xb
+ 567 0030 3B       		.uleb128 0x3b
+ 568 0031 0B       		.uleb128 0xb
+ 569 0032 49       		.uleb128 0x49
+ 570 0033 13       		.uleb128 0x13
+ 571 0034 00       		.byte	0
+ 572 0035 00       		.byte	0
+ 573 0036 05       		.uleb128 0x5
+ 574 0037 2E       		.uleb128 0x2e
+ 575 0038 01       		.byte	0x1
+ 576 0039 3F       		.uleb128 0x3f
+ 577 003a 19       		.uleb128 0x19
+ 578 003b 03       		.uleb128 0x3
+ 579 003c 0E       		.uleb128 0xe
+ 580 003d 3A       		.uleb128 0x3a
+ 581 003e 0B       		.uleb128 0xb
+ 582 003f 3B       		.uleb128 0x3b
+ 583 0040 0B       		.uleb128 0xb
+ 584 0041 27       		.uleb128 0x27
+ 585 0042 19       		.uleb128 0x19
+ 586 0043 11       		.uleb128 0x11
+ 587 0044 01       		.uleb128 0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 14
+
+
+ 588 0045 12       		.uleb128 0x12
+ 589 0046 06       		.uleb128 0x6
+ 590 0047 40       		.uleb128 0x40
+ 591 0048 18       		.uleb128 0x18
+ 592 0049 9642     		.uleb128 0x2116
+ 593 004b 19       		.uleb128 0x19
+ 594 004c 01       		.uleb128 0x1
+ 595 004d 13       		.uleb128 0x13
+ 596 004e 00       		.byte	0
+ 597 004f 00       		.byte	0
+ 598 0050 06       		.uleb128 0x6
+ 599 0051 05       		.uleb128 0x5
+ 600 0052 00       		.byte	0
+ 601 0053 03       		.uleb128 0x3
+ 602 0054 0E       		.uleb128 0xe
+ 603 0055 3A       		.uleb128 0x3a
+ 604 0056 0B       		.uleb128 0xb
+ 605 0057 3B       		.uleb128 0x3b
+ 606 0058 0B       		.uleb128 0xb
+ 607 0059 49       		.uleb128 0x49
+ 608 005a 13       		.uleb128 0x13
+ 609 005b 02       		.uleb128 0x2
+ 610 005c 18       		.uleb128 0x18
+ 611 005d 00       		.byte	0
+ 612 005e 00       		.byte	0
+ 613 005f 07       		.uleb128 0x7
+ 614 0060 34       		.uleb128 0x34
+ 615 0061 00       		.byte	0
+ 616 0062 03       		.uleb128 0x3
+ 617 0063 0E       		.uleb128 0xe
+ 618 0064 3A       		.uleb128 0x3a
+ 619 0065 0B       		.uleb128 0xb
+ 620 0066 3B       		.uleb128 0x3b
+ 621 0067 0B       		.uleb128 0xb
+ 622 0068 49       		.uleb128 0x49
+ 623 0069 13       		.uleb128 0x13
+ 624 006a 02       		.uleb128 0x2
+ 625 006b 18       		.uleb128 0x18
+ 626 006c 00       		.byte	0
+ 627 006d 00       		.byte	0
+ 628 006e 08       		.uleb128 0x8
+ 629 006f 0F       		.uleb128 0xf
+ 630 0070 00       		.byte	0
+ 631 0071 0B       		.uleb128 0xb
+ 632 0072 0B       		.uleb128 0xb
+ 633 0073 49       		.uleb128 0x49
+ 634 0074 13       		.uleb128 0x13
+ 635 0075 00       		.byte	0
+ 636 0076 00       		.byte	0
+ 637 0077 09       		.uleb128 0x9
+ 638 0078 26       		.uleb128 0x26
+ 639 0079 00       		.byte	0
+ 640 007a 49       		.uleb128 0x49
+ 641 007b 13       		.uleb128 0x13
+ 642 007c 00       		.byte	0
+ 643 007d 00       		.byte	0
+ 644 007e 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 15
+
+
+ 645 007f 05       		.uleb128 0x5
+ 646 0080 00       		.byte	0
+ 647 0081 03       		.uleb128 0x3
+ 648 0082 08       		.uleb128 0x8
+ 649 0083 3A       		.uleb128 0x3a
+ 650 0084 0B       		.uleb128 0xb
+ 651 0085 3B       		.uleb128 0x3b
+ 652 0086 0B       		.uleb128 0xb
+ 653 0087 49       		.uleb128 0x49
+ 654 0088 13       		.uleb128 0x13
+ 655 0089 02       		.uleb128 0x2
+ 656 008a 18       		.uleb128 0x18
+ 657 008b 00       		.byte	0
+ 658 008c 00       		.byte	0
+ 659 008d 0B       		.uleb128 0xb
+ 660 008e 01       		.uleb128 0x1
+ 661 008f 01       		.byte	0x1
+ 662 0090 49       		.uleb128 0x49
+ 663 0091 13       		.uleb128 0x13
+ 664 0092 01       		.uleb128 0x1
+ 665 0093 13       		.uleb128 0x13
+ 666 0094 00       		.byte	0
+ 667 0095 00       		.byte	0
+ 668 0096 0C       		.uleb128 0xc
+ 669 0097 21       		.uleb128 0x21
+ 670 0098 00       		.byte	0
+ 671 0099 49       		.uleb128 0x49
+ 672 009a 13       		.uleb128 0x13
+ 673 009b 2F       		.uleb128 0x2f
+ 674 009c 0B       		.uleb128 0xb
+ 675 009d 00       		.byte	0
+ 676 009e 00       		.byte	0
+ 677 009f 0D       		.uleb128 0xd
+ 678 00a0 34       		.uleb128 0x34
+ 679 00a1 00       		.byte	0
+ 680 00a2 03       		.uleb128 0x3
+ 681 00a3 0E       		.uleb128 0xe
+ 682 00a4 3A       		.uleb128 0x3a
+ 683 00a5 0B       		.uleb128 0xb
+ 684 00a6 3B       		.uleb128 0x3b
+ 685 00a7 0B       		.uleb128 0xb
+ 686 00a8 49       		.uleb128 0x49
+ 687 00a9 13       		.uleb128 0x13
+ 688 00aa 3F       		.uleb128 0x3f
+ 689 00ab 19       		.uleb128 0x19
+ 690 00ac 02       		.uleb128 0x2
+ 691 00ad 18       		.uleb128 0x18
+ 692 00ae 00       		.byte	0
+ 693 00af 00       		.byte	0
+ 694 00b0 00       		.byte	0
+ 695              		.section	.debug_aranges,"",%progbits
+ 696 0000 24000000 		.4byte	0x24
+ 697 0004 0200     		.2byte	0x2
+ 698 0006 00000000 		.4byte	.Ldebug_info0
+ 699 000a 04       		.byte	0x4
+ 700 000b 00       		.byte	0
+ 701 000c 0000     		.2byte	0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 16
+
+
+ 702 000e 0000     		.2byte	0
+ 703 0010 00000000 		.4byte	.LFB0
+ 704 0014 56000000 		.4byte	.LFE0-.LFB0
+ 705 0018 00000000 		.4byte	.LFB1
+ 706 001c 02010000 		.4byte	.LFE1-.LFB1
+ 707 0020 00000000 		.4byte	0
+ 708 0024 00000000 		.4byte	0
+ 709              		.section	.debug_ranges,"",%progbits
+ 710              	.Ldebug_ranges0:
+ 711 0000 00000000 		.4byte	.LFB0
+ 712 0004 56000000 		.4byte	.LFE0
+ 713 0008 00000000 		.4byte	.LFB1
+ 714 000c 02010000 		.4byte	.LFE1
+ 715 0010 00000000 		.4byte	0
+ 716 0014 00000000 		.4byte	0
+ 717              		.section	.debug_line,"",%progbits
+ 718              	.Ldebug_line0:
+ 719 0000 B5000000 		.section	.debug_str,"MS",%progbits,1
+ 719      02004B00 
+ 719      00000201 
+ 719      FB0E0D00 
+ 719      01010101 
+ 720              	.LASF17:
+ 721 0000 76616C75 		.ascii	"value\000"
+ 721      6500
+ 722              	.LASF19:
+ 723 0006 636F756E 		.ascii	"count8\000"
+ 723      743800
+ 724              	.LASF18:
+ 725 000d 696E6465 		.ascii	"indexU8\000"
+ 725      78553800 
+ 726              	.LASF14:
+ 727 0015 63757374 		.ascii	"customData\000"
+ 727      6F6D4461 
+ 727      746100
+ 728              	.LASF15:
+ 729 0020 636F6C75 		.ascii	"column\000"
+ 729      6D6E00
+ 730              	.LASF9:
+ 731 0027 666C6F61 		.ascii	"float\000"
+ 731      7400
+ 732              	.LASF25:
+ 733 002d 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 733      73657273 
+ 733      5C536E75 
+ 733      666B696E 
+ 733      5C446F63 
+ 734 005a 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 734      696D6572 
+ 734      5C435254 
+ 734      5F74696D 
+ 734      65722E63 
+ 735              	.LASF1:
+ 736 0073 756E7369 		.ascii	"unsigned char\000"
+ 736      676E6564 
+ 736      20636861 
+ 736      7200
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 17
+
+
+ 737              	.LASF5:
+ 738 0081 6C6F6E67 		.ascii	"long unsigned int\000"
+ 738      20756E73 
+ 738      69676E65 
+ 738      6420696E 
+ 738      7400
+ 739              	.LASF12:
+ 740 0093 4C43445F 		.ascii	"LCD_LoadCustomFonts\000"
+ 740      4C6F6164 
+ 740      43757374 
+ 740      6F6D466F 
+ 740      6E747300 
+ 741              	.LASF3:
+ 742 00a7 73686F72 		.ascii	"short unsigned int\000"
+ 742      7420756E 
+ 742      7369676E 
+ 742      65642069 
+ 742      6E7400
+ 743              	.LASF13:
+ 744 00ba 4C43445F 		.ascii	"LCD_DrawHorizontalBG\000"
+ 744      44726177 
+ 744      486F7269 
+ 744      7A6F6E74 
+ 744      616C4247 
+ 745              	.LASF10:
+ 746 00cf 646F7562 		.ascii	"double\000"
+ 746      6C6500
+ 747              	.LASF8:
+ 748 00d6 756E7369 		.ascii	"unsigned int\000"
+ 748      676E6564 
+ 748      20696E74 
+ 748      00
+ 749              	.LASF23:
+ 750 00e3 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 750      4320342E 
+ 750      382E3420 
+ 750      32303134 
+ 750      30353236 
+ 751 0116 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 751      20726576 
+ 751      6973696F 
+ 751      6E203231 
+ 751      31333538 
+ 752 0149 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 752      66756E63 
+ 752      74696F6E 
+ 752      2D736563 
+ 752      74696F6E 
+ 753              	.LASF21:
+ 754 015f 72656D61 		.ascii	"remainingPixels\000"
+ 754      696E696E 
+ 754      67506978 
+ 754      656C7300 
+ 755              	.LASF22:
+ 756 016f 73697A65 		.ascii	"sizetype\000"
+ 756      74797065 
+ 756      00
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccr4k6iA.s 			page 18
+
+
+ 757              	.LASF6:
+ 758 0178 6C6F6E67 		.ascii	"long long int\000"
+ 758      206C6F6E 
+ 758      6720696E 
+ 758      7400
+ 759              	.LASF11:
+ 760 0186 63686172 		.ascii	"char\000"
+ 760      00
+ 761              	.LASF16:
+ 762 018b 6D617843 		.ascii	"maxCharacters\000"
+ 762      68617261 
+ 762      63746572 
+ 762      7300
+ 763              	.LASF2:
+ 764 0199 73686F72 		.ascii	"short int\000"
+ 764      7420696E 
+ 764      7400
+ 765              	.LASF26:
+ 766 01a3 75696E74 		.ascii	"uint8\000"
+ 766      3800
+ 767              	.LASF4:
+ 768 01a9 6C6F6E67 		.ascii	"long int\000"
+ 768      20696E74 
+ 768      00
+ 769              	.LASF27:
+ 770 01b2 4C43445F 		.ascii	"LCD_customFonts\000"
+ 770      63757374 
+ 770      6F6D466F 
+ 770      6E747300 
+ 771              	.LASF0:
+ 772 01c2 7369676E 		.ascii	"signed char\000"
+ 772      65642063 
+ 772      68617200 
+ 773              	.LASF20:
+ 774 01ce 66756C6C 		.ascii	"fullChars\000"
+ 774      43686172 
+ 774      7300
+ 775              	.LASF24:
+ 776 01d8 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\LCD_BarGraph.c\000"
+ 776      6E657261 
+ 776      7465645F 
+ 776      536F7572 
+ 776      63655C50 
+ 777              	.LASF7:
+ 778 0200 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 778      206C6F6E 
+ 778      6720756E 
+ 778      7369676E 
+ 778      65642069 
+ 779              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
   55              		.align	2
   56              		.type	lfclkPosedgeWdtCounter0Mode, %object
   57              		.size	lfclkPosedgeWdtCounter0Mode, 4
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 2
 
 
   58              	lfclkPosedgeWdtCounter0Mode:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  108 0021 27       		.byte	39
  109 0022 28       		.byte	40
  110 0023 29       		.byte	41
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 3
 
 
  111 0024 2A       		.byte	42
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
   36:.\Generated_Source\PSoC4/CyLib.c ****     uint32 lfclkPosedgeEnabledWdtCounter  = 0u;
   37:.\Generated_Source\PSoC4/CyLib.c ****     uint32 lfclkPosedgeWdtCounter0Mode    = CY_SYS_WDT_MODE_NONE;
   38:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 4
 
 
   39:.\Generated_Source\PSoC4/CyLib.c ****     static void CySysClkLfclkPosedgeCatch(void);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  134              		.cfi_offset 7, -8
  135              		.cfi_offset 14, -4
  136 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 5
 
 
  137              		.cfi_def_cfa_register 7
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  171 0002 00AF     		add	r7, sp, #0
  172              		.cfi_def_cfa_register 7
  109:.\Generated_Source\PSoC4/CyLib.c ****     CY_SYS_CLK_IMO_CONFIG_REG &= ( uint32 ) ( ~( uint32 )CY_SYS_CLK_IMO_CONFIG_ENABLE);
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 6
 
 
  173              		.loc 1 109 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  207              		.loc 1 129 0
  208 0004 044B     		ldr	r3, .L8
  209 0006 044A     		ldr	r2, .L8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 7
 
 
  210 0008 1268     		ldr	r2, [r2]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  234              		.loc 1 159 0
  235              		.cfi_startproc
  236 0000 90B5     		push	{r4, r7, lr}
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 8
 
 
  237              		.cfi_def_cfa_offset 12
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  272 0038 FB1D     		add	r3, r7, #7
  273 003a 1B78     		ldrb	r3, [r3]
  274 003c 181C     		mov	r0, r3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 9
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 9
 
 
  275 003e FFF7FEFF 		bl	CyExitCriticalSection
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  296              		.loc 1 211 0
  297              		.cfi_startproc
  298 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 10
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 10
 
 
  299              		.cfi_def_cfa_offset 8
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  228:.\Generated_Source\PSoC4/CyLib.c **** * Parameters:
  229:.\Generated_Source\PSoC4/CyLib.c **** *  None
  230:.\Generated_Source\PSoC4/CyLib.c **** *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 11
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 11
 
 
  231:.\Generated_Source\PSoC4/CyLib.c **** * Return:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  285:.\Generated_Source\PSoC4/CyLib.c **** *******************************************************************************/
  286:.\Generated_Source\PSoC4/CyLib.c **** #if (CY_IP_WCO)
  287:.\Generated_Source\PSoC4/CyLib.c ****     void CySysClkSetLfclkSource(uint32 source)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 12
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 12
 
 
  288:.\Generated_Source\PSoC4/CyLib.c ****     {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  342:.\Generated_Source\PSoC4/CyLib.c **** {
  337              		.loc 1 342 0
  338              		.cfi_startproc
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 13
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 13
 
 
  339 0000 90B5     		push	{r4, r7, lr}
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  383              	.L21:
  384 0040 00010B40 		.word	1074462976
  385              		.cfi_endproc
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 14
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 14
 
 
  386              	.LFE5:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  400              		.cfi_offset 4, -12
  401              		.cfi_offset 7, -8
  402              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 15
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 15
 
 
  403 0002 85B0     		sub	sp, sp, #20
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  444 0040 FFFFC7FF 		.word	-3670017
  445              		.cfi_endproc
  446              	.LFE6:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 16
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 16
 
 
  447              		.size	CySysClkWriteSysclkDiv, .-CySysClkWriteSysclkDiv
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  436:.\Generated_Source\PSoC4/CyLib.c ****         uint8  currentImoTrim2Value;
  437:.\Generated_Source\PSoC4/CyLib.c **** 
  438:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 17
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 17
 
 
  439:.\Generated_Source\PSoC4/CyLib.c ****         if ((freq >= CY_SYS_CLK_IMO_MIN_FREQ_MHZ) && (freq <= CY_SYS_CLK_IMO_MAX_FREQ_MHZ))
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  512 004c 3B1C     		mov	r3, r7
  513 004e 0F33     		add	r3, r3, #15
  514 0050 1278     		ldrb	r2, [r2]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 18
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 18
 
 
  515 0052 1A70     		strb	r2, [r3]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  559 009a 1A70     		strb	r2, [r3]
  459:.\Generated_Source\PSoC4/CyLib.c ****                 bgTrim5 = CY_SFLASH_IMO_TMPCO3_REG;
  560              		.loc 1 459 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 19
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 19
 
 
  561 009c 484A     		ldr	r2, .L38+44
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  480:.\Generated_Source\PSoC4/CyLib.c ****             * function and is time-invariant.
  481:.\Generated_Source\PSoC4/CyLib.c ****             ***************************************************************************/
  482:.\Generated_Source\PSoC4/CyLib.c ****             if ((newImoTrim2Value >= CY_SYS_CLK_IMO_BOUNDARY_FREQ_TRIM2) && (freq >= CY_SYS_CLK_IMO
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 20
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 20
 
 
  595              		.loc 1 482 0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  503:.\Generated_Source\PSoC4/CyLib.c ****             * IMO_TRIM2 value as a function of IMO frequency is a strictly increasing
  504:.\Generated_Source\PSoC4/CyLib.c ****             * function and is time-invariant.
  505:.\Generated_Source\PSoC4/CyLib.c ****             ***************************************************************************/
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 21
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 21
 
 
  506:.\Generated_Source\PSoC4/CyLib.c ****             if (newImoTrim2Value < currentImoTrim2Value)
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  671 0152 FFF7FEFF 		bl	CyDelayUs
  518:.\Generated_Source\PSoC4/CyLib.c **** 
  519:.\Generated_Source\PSoC4/CyLib.c ****             if (newImoTrim2Value > currentImoTrim2Value)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 22
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 22
 
 
  672              		.loc 1 519 0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  712 0194 C0F1FF0F 		.word	268431808
  713 0198 C1F1FF0F 		.word	268431809
  714 019c C2F1FF0F 		.word	268431810
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 23
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 23
 
 
  715 01a0 C3F1FF0F 		.word	268431811
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  561:.\Generated_Source\PSoC4/CyLib.c ****     *  If the SYSCLK clock frequency decreases, you can call
  562:.\Generated_Source\PSoC4/CyLib.c ****     *  CySysFlashSetWaitCycles() to improve the CPU performance. See
  563:.\Generated_Source\PSoC4/CyLib.c ****     *  CySysFlashSetWaitCycles() description for more information.
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 24
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 24
 
 
  564:.\Generated_Source\PSoC4/CyLib.c ****     *
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  618:.\Generated_Source\PSoC4/CyLib.c **** 
  619:.\Generated_Source\PSoC4/CyLib.c ****             /* Set IMO to 24 MHz - CLK_IMO_SELECT.FREQ = 0 */
  620:.\Generated_Source\PSoC4/CyLib.c ****             CY_SYS_CLK_IMO_SELECT_REG &= ((uint32) ~CY_SYS_CLK_IMO_SELECT_FREQ_MASK);
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 25
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 25
 
 
  621:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  675:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
  676:.\Generated_Source\PSoC4/CyLib.c ****     *  timeoutUs: Timeout in microseconds. If zero is specified, the function
  677:.\Generated_Source\PSoC4/CyLib.c ****     *             starts the crystal and returns CYRET_SUCCESS. If non-zero
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 26
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 26
 
 
  678:.\Generated_Source\PSoC4/CyLib.c ****     *             value is passed, the CYRET_SUCCESS is returned once crystal
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  732:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
  733:.\Generated_Source\PSoC4/CyLib.c ****     *  None
  734:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 27
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 27
 
 
  735:.\Generated_Source\PSoC4/CyLib.c ****     * Return:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  789:.\Generated_Source\PSoC4/CyLib.c ****     *  If the SYSCLK clock frequency increases during the device operation, call
  790:.\Generated_Source\PSoC4/CyLib.c ****     *  CySysFlashSetWaitCycles() with the appropriate parameter to adjust the number
  791:.\Generated_Source\PSoC4/CyLib.c ****     *  of clock cycles the cache will wait before sampling data comes back from Flash.
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 28
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 28
 
 
  792:.\Generated_Source\PSoC4/CyLib.c ****     *  If the SYSCLK clock frequency decreases, you can call
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  846:.\Generated_Source\PSoC4/CyLib.c ****     * Summary:
  847:.\Generated_Source\PSoC4/CyLib.c ****     *  Disables the 32KHz Crystal Oscillator.
  848:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 29
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 29
 
 
  849:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  903:.\Generated_Source\PSoC4/CyLib.c ****     ********************************************************************************
  904:.\Generated_Source\PSoC4/CyLib.c ****     *
  905:.\Generated_Source\PSoC4/CyLib.c ****     * Summary:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 30
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 30
 
 
  906:.\Generated_Source\PSoC4/CyLib.c ****     *  Sets the power mode for the 32 KHz WCO.
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  960:.\Generated_Source\PSoC4/CyLib.c ****     *
  961:.\Generated_Source\PSoC4/CyLib.c ****     * Side effects:
  962:.\Generated_Source\PSoC4/CyLib.c ****     *  After this function was called, ILO clock can't be disabled until
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 31
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 31
 
 
  963:.\Generated_Source\PSoC4/CyLib.c ****     *  CySysWdtUnlock() is called.
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  783              		.section	.text.CySysWdtLocked,"ax",%progbits
  784              		.align	2
  785              		.code	16
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 32
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 32
 
 
  786              		.thumb_func
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  819              	.L47:
  820 001c 00010B40 		.word	1074462976
  821              		.cfi_endproc
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 33
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 33
 
 
  822              	.LFE9:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  853 0018 0A40     		and	r2, r1
  854 001a 8021     		mov	r1, #128
  855 001c C901     		lsl	r1, r1, #7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 34
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 34
 
 
  856 001e 0A43     		orr	r2, r1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1036:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
 1037:.\Generated_Source\PSoC4/CyLib.c ****     *  counterNum: Valid range [0-2].  Number of the WDT counter.
 1038:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 35
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 35
 
 
 1039:.\Generated_Source\PSoC4/CyLib.c ****     * Return:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  932              		.cfi_endproc
  933              	.LFE11:
  934              		.size	CySysWdtReadEnabledStatus, .-CySysWdtReadEnabledStatus
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 36
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 36
 
 
  935              		.section	.text.CySysWdtWriteMode,"ax",%progbits
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1089:.\Generated_Source\PSoC4/CyLib.c **** 
 1090:.\Generated_Source\PSoC4/CyLib.c ****         CYASSERT(counterNum < CY_SYS_WDT_COUNTERS_MAX);
  955              		.loc 1 1090 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 37
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 37
 
 
  956 000a 7B68     		ldr	r3, [r7, #4]
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1099:.\Generated_Source\PSoC4/CyLib.c ****     }
  1001              		.loc 1 1099 0
  1002 0056 BD46     		mov	sp, r7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 38
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 38
 
 
  1003 0058 04B0     		add	sp, sp, #16
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1037 0010 DA40     		lsr	r2, r2, r3
  1038 0012 0323     		mov	r3, #3
  1039 0014 1340     		and	r3, r2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 39
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 39
 
 
 1120:.\Generated_Source\PSoC4/CyLib.c ****     }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1062              		.cfi_startproc
  1063 0000 80B5     		push	{r7, lr}
  1064              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 40
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 40
 
 
  1065              		.cfi_offset 7, -8
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1110 003e 0121     		mov	r1, #1
  1111 0040 081C     		mov	r0, r1
  1112 0042 9040     		lsl	r0, r0, r2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 41
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 41
 
 
  1113 0044 021C     		mov	r2, r0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1173:.\Generated_Source\PSoC4/CyLib.c ****     *
 1174:.\Generated_Source\PSoC4/CyLib.c ****     * Summary:
 1175:.\Generated_Source\PSoC4/CyLib.c ****     *  Reads the clear on match setting for the specified counter.
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 42
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 42
 
 
 1176:.\Generated_Source\PSoC4/CyLib.c ****     *
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1192 0028 7B68     		ldr	r3, [r7, #4]
  1193 002a DB00     		lsl	r3, r3, #3
  1194 002c 0233     		add	r3, r3, #2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 43
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 43
 
 
 1190:.\Generated_Source\PSoC4/CyLib.c ****         return (uint32)((CY_SYS_WDT_CONFIG_REG >>
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1220:.\Generated_Source\PSoC4/CyLib.c ****     *  contain 'write' in the name (with the exception of CySysWdtWriteMatch()
 1221:.\Generated_Source\PSoC4/CyLib.c ****     *  function) are illegal to call once WDT enabled.
 1222:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 44
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 44
 
 
 1223:.\Generated_Source\PSoC4/CyLib.c ****     *  PSoC 4100 / PSoC 4200:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1242:.\Generated_Source\PSoC4/CyLib.c ****             {
 1243:.\Generated_Source\PSoC4/CyLib.c ****                 /* Wait for the changes to come into effect */
 1244:.\Generated_Source\PSoC4/CyLib.c ****             }
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 45
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 45
 
 
 1245:.\Generated_Source\PSoC4/CyLib.c ****         }
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1291 0062 80BD     		pop	{r7, pc}
  1292              	.L90:
  1293              		.align	2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 46
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 46
 
 
  1294              	.L89:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1324 0012 0A40     		and	r2, r1
  1325 0014 1A60     		str	r2, [r3]
 1287:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 47
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 47
 
 
 1288:.\Generated_Source\PSoC4/CyLib.c ****         if(0u != (counterMask & CY_SYS_WDT_COUNTER0_MASK))
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1305:.\Generated_Source\PSoC4/CyLib.c ****         {
 1306:.\Generated_Source\PSoC4/CyLib.c ****             while (0u != CySysWdtReadEnabledStatus(CY_SYS_WDT_COUNTER2))
  1363              		.loc 1 1306 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 48
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 48
 
 
  1364 004e C046     		mov	r8, r8
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1332:.\Generated_Source\PSoC4/CyLib.c ****     * Return:
 1333:.\Generated_Source\PSoC4/CyLib.c ****     *   None
 1334:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 49
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 49
 
 
 1335:.\Generated_Source\PSoC4/CyLib.c ****     * Side effects:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1423 0026 FB68     		ldr	r3, [r7, #12]
  1424 0028 002B     		cmp	r3, #0
  1425 002a 0DD1     		bne	.L100
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 50
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 50
 
 
 1357:.\Generated_Source\PSoC4/CyLib.c ****         {
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1371:.\Generated_Source\PSoC4/CyLib.c ****     *   Reads the two WDT cascade values returning a mask of the bits set.
 1372:.\Generated_Source\PSoC4/CyLib.c ****     *
 1373:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 51
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 51
 
 
 1374:.\Generated_Source\PSoC4/CyLib.c ****     *   None
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1394:.\Generated_Source\PSoC4/CyLib.c ****     * Summary:
 1395:.\Generated_Source\PSoC4/CyLib.c ****     *  Configures the WDT counter match comparison value.
 1396:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 52
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 52
 
 
 1397:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1416:.\Generated_Source\PSoC4/CyLib.c ****         /* Wait for the previous changes to come into effect */
 1417:.\Generated_Source\PSoC4/CyLib.c ****         CyDelayUs(CY_SYS_WDT_3LFCLK_DELAY_US);
  1535              		.loc 1 1417 0 is_stmt 1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 53
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 53
 
 
  1536 0026 C920     		mov	r0, #201
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1582              		.thumb_func
  1583              		.type	CySysWdtWriteToggleBit, %function
  1584              	CySysWdtWriteToggleBit:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 54
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 54
 
 
  1585              	.LFB21:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1605 0016 1B68     		ldr	r3, [r3]
  1606 0018 FB60     		str	r3, [r7, #12]
 1460:.\Generated_Source\PSoC4/CyLib.c ****             configRegValue &= (uint32)(~((uint32)(CY_SYS_WDT_CONFIG_BITS2_MASK << CY_SYS_WDT_CONFIG
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 55
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 55
 
 
  1607              		.loc 1 1460 0
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1476:.\Generated_Source\PSoC4/CyLib.c ****     *
 1477:.\Generated_Source\PSoC4/CyLib.c ****     * Return:
 1478:.\Generated_Source\PSoC4/CyLib.c ****     *  The bit that is monitored (range of 0 to 31)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 56
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 56
 
 
 1479:.\Generated_Source\PSoC4/CyLib.c ****     *
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1499:.\Generated_Source\PSoC4/CyLib.c ****     *  16-bit match value.
 1500:.\Generated_Source\PSoC4/CyLib.c ****     *
 1501:.\Generated_Source\PSoC4/CyLib.c ****     *******************************************************************************/
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 57
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 57
 
 
 1502:.\Generated_Source\PSoC4/CyLib.c ****     uint32 CySysWdtReadMatch(uint32 counterNum)
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1727 003a 02B0     		add	sp, sp, #8
  1728              		@ sp needed
  1729 003c 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 58
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 58
 
 
  1730              	.L130:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1762 0010 09D0     		beq	.L133
  1763 0012 02D3     		bcc	.L134
  1764 0014 022B     		cmp	r3, #2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 59
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 59
 
 
  1765 0016 0BD0     		beq	.L135
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1552:.\Generated_Source\PSoC4/CyLib.c ****         return (regValue);
  1798              		.loc 1 1552 0
  1799 0040 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 60
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 60
 
 
 1553:.\Generated_Source\PSoC4/CyLib.c ****     }
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1577:.\Generated_Source\PSoC4/CyLib.c ****         return (CY_SYS_WDT_CONTROL_REG & (CY_SYS_WDT_COUNTER0_INT | CY_SYS_WDT_COUNTER1_INT | CY_SY
  1830              		.loc 1 1577 0
  1831 0004 034B     		ldr	r3, .L143
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 61
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 61
 
 
  1832 0006 1A68     		ldr	r2, [r3]
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1608:.\Generated_Source\PSoC4/CyLib.c ****     *******************************************************************************/
 1609:.\Generated_Source\PSoC4/CyLib.c ****     void CySysWdtClearInterrupt(uint32 counterMask)
 1610:.\Generated_Source\PSoC4/CyLib.c ****     {
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 62
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 62
 
 
  1856              		.loc 1 1610 0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1893 0030 1340     		and	r3, r2
  1894 0032 7B60     		str	r3, [r7, #4]
 1628:.\Generated_Source\PSoC4/CyLib.c ****                         CY_SYS_WDT_COUNTER1_INT |
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 63
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 63
 
 
 1629:.\Generated_Source\PSoC4/CyLib.c ****                         CY_SYS_WDT_COUNTER2_INT);
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1936              		.type	CySysWdtResetCounters, %function
  1937              	CySysWdtResetCounters:
  1938              	.LFB27:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 64
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 64
 
 
 1642:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1964              	.L153:
  1965 001e C046     		.align	2
  1966              	.L152:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 65
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 65
 
 
  1967 0020 10020B40 		.word	1074463248
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  1986              		.cfi_def_cfa_offset 16
  1987 0004 00AF     		add	r7, sp, #0
  1988              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 66
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 66
 
 
 1706:.\Generated_Source\PSoC4/CyLib.c ****         uint32 firstCount;
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2025              		.loc 1 1723 0
  2026 0042 144B     		ldr	r3, .L160+4
  2027 0044 0122     		mov	r2, #1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 67
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 67
 
 
  2028 0046 1A60     		str	r2, [r3]
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2069              		@ sp needed
  2070 008e 80BD     		pop	{r7, pc}
  2071              	.L161:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 68
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 68
 
 
  2072              		.align	2
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2098 0008 002B     		cmp	r3, #0
  2099 000a 0ED0     		beq	.L162
 1765:.\Generated_Source\PSoC4/CyLib.c ****         {
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 69
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 69
 
 
 1766:.\Generated_Source\PSoC4/CyLib.c ****             /* Restore counter # 0 configuration and force it's shutdown */
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1781:.\Generated_Source\PSoC4/CyLib.c ****     *
 1782:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
 1783:.\Generated_Source\PSoC4/CyLib.c ****     *  None
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 70
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 70
 
 
 1784:.\Generated_Source\PSoC4/CyLib.c ****     *
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1838:.\Generated_Source\PSoC4/CyLib.c ****         CY_SYS_WDT_DISABLE_KEY_REG = CY_SYS_WDT_KEY;
 1839:.\Generated_Source\PSoC4/CyLib.c ****     }
 1840:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 71
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 71
 
 
 1841:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1895:.\Generated_Source\PSoC4/CyLib.c ****     *
 1896:.\Generated_Source\PSoC4/CyLib.c ****     *******************************************************************************/
 1897:.\Generated_Source\PSoC4/CyLib.c ****     uint32 CySysWdtReadCount(void)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 72
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 72
 
 
 1898:.\Generated_Source\PSoC4/CyLib.c ****     {
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 1952:.\Generated_Source\PSoC4/CyLib.c ****     * Function Name: CySysWdtClearInterrupt
 1953:.\Generated_Source\PSoC4/CyLib.c ****     ********************************************************************************
 1954:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 73
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 73
 
 
 1955:.\Generated_Source\PSoC4/CyLib.c ****     * Summary:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2009:.\Generated_Source\PSoC4/CyLib.c ****     {
 2010:.\Generated_Source\PSoC4/CyLib.c ****         CY_SYS_SRSS_INTR_MASK_REG |= CY_SYS_WDT_LOWER_BIT_MASK;
 2011:.\Generated_Source\PSoC4/CyLib.c ****     }
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 74
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 74
 
 
 2012:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2055:.\Generated_Source\PSoC4/CyLib.c ****         CY_LVD_PWR_VMON_CONFIG_REG = (CY_LVD_PWR_VMON_CONFIG_REG & ~CY_LVD_PWR_VMON_CONFIG_LVD_SEL_
  2150              		.loc 1 2055 0
  2151 0008 0D4B     		ldr	r3, .L167
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 75
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 75
 
 
  2152 000a 0D4A     		ldr	r2, .L167
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2200              	.LFB31:
 2061:.\Generated_Source\PSoC4/CyLib.c **** 
 2062:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 76
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 76
 
 
 2063:.\Generated_Source\PSoC4/CyLib.c ****     /*******************************************************************************
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2236              		.align	2
  2237              		.global	CySysLvdGetInterruptSource
  2238              		.code	16
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 77
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 77
 
 
  2239              		.thumb_func
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2272              		.thumb_func
  2273              		.type	CySysLvdClearInterrupt, %function
  2274              	CySysLvdClearInterrupt:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 78
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 78
 
 
  2275              	.LFB33:
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2125:.\Generated_Source\PSoC4/CyLib.c **** 
 2126:.\Generated_Source\PSoC4/CyLib.c **** 
 2127:.\Generated_Source\PSoC4/CyLib.c **** /*******************************************************************************
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 79
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 79
 
 
 2128:.\Generated_Source\PSoC4/CyLib.c **** * Function Name: CySysGetResetReason
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2156:.\Generated_Source\PSoC4/CyLib.c ****     return (status);
  2333              		.loc 1 2156 0
  2334 0020 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 80
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 80
 
 
 2157:.\Generated_Source\PSoC4/CyLib.c **** }
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2366              		.loc 1 2179 0
  2367 0006 064B     		ldr	r3, .L185
  2368 0008 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 81
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 81
 
 
  2369 000a 7B60     		str	r3, [r7, #4]
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2399              		.cfi_startproc
  2400 0000 80B5     		push	{r7, lr}
  2401              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 82
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 82
 
 
  2402              		.cfi_offset 7, -8
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2227:.\Generated_Source\PSoC4/CyLib.c **** *  The old ISR vector at this location.
 2228:.\Generated_Source\PSoC4/CyLib.c **** *
 2229:.\Generated_Source\PSoC4/CyLib.c **** *******************************************************************************/
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 83
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 83
 
 
 2230:.\Generated_Source\PSoC4/CyLib.c **** cyisraddress CyIntSetSysVector(uint8 number, cyisraddress address)
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2475 003c 1A60     		str	r2, [r3]
 2242:.\Generated_Source\PSoC4/CyLib.c **** 
 2243:.\Generated_Source\PSoC4/CyLib.c ****     return(oldIsr);
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 84
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 84
 
 
  2476              		.loc 1 2243 0
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2505 0006 021C     		mov	r2, r0
  2506 0008 FB1D     		add	r3, r7, #7
  2507 000a 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 85
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 85
 
 
 2269:.\Generated_Source\PSoC4/CyLib.c ****     cyisraddress *ramVectorTable = (cyisraddress *) CY_INT_VECT_TABLE;
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2286:.\Generated_Source\PSoC4/CyLib.c **** *  address: Pointer to an interrupt service routine
 2287:.\Generated_Source\PSoC4/CyLib.c **** *
 2288:.\Generated_Source\PSoC4/CyLib.c **** * Return:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 86
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 86
 
 
 2289:.\Generated_Source\PSoC4/CyLib.c **** *   Previous interrupt vector value.
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2584 0036 1033     		add	r3, r3, #16
  2585 0038 9B00     		lsl	r3, r3, #2
  2586 003a FA68     		ldr	r2, [r7, #12]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 87
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 87
 
 
  2587 003c D318     		add	r3, r2, r3
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2620 0008 FB1D     		add	r3, r7, #7
  2621 000a 1A70     		strb	r2, [r3]
 2325:.\Generated_Source\PSoC4/CyLib.c ****     cyisraddress *ramVectorTable = (cyisraddress *) CY_INT_VECT_TABLE;
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 88
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 88
 
 
  2622              		.loc 1 2325 0
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2342:.\Generated_Source\PSoC4/CyLib.c **** *
 2343:.\Generated_Source\PSoC4/CyLib.c **** * Return:
 2344:.\Generated_Source\PSoC4/CyLib.c **** *  None
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 89
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 89
 
 
 2345:.\Generated_Source\PSoC4/CyLib.c **** *
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2702 003a 7B61     		str	r3, [r7, #20]
 2357:.\Generated_Source\PSoC4/CyLib.c **** 
 2358:.\Generated_Source\PSoC4/CyLib.c ****     interruptState = CyEnterCriticalSection();
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 90
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 90
 
 
  2703              		.loc 1 2358 0
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2750 0090 3B1C     		mov	r3, r7
  2751 0092 1333     		add	r3, r3, #19
  2752 0094 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 91
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 91
 
 
  2753 0096 181C     		mov	r0, r3
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2385:.\Generated_Source\PSoC4/CyLib.c ****     uint8 priority;
 2386:.\Generated_Source\PSoC4/CyLib.c **** 
 2387:.\Generated_Source\PSoC4/CyLib.c ****     CYASSERT(number < CY_NUM_INTERRUPTS);
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 92
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 92
 
 
  2788              		.loc 1 2387 0
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2837              		.align	2
  2838              		.global	CyIntEnable
  2839              		.code	16
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 93
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 93
 
 
  2840              		.thumb_func
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2874 0026 C046     		.align	2
  2875              	.L213:
  2876 0028 00E100E0 		.word	-536813312
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 94
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 94
 
 
  2877              		.cfi_endproc
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2911 001e DAB2     		uxtb	r2, r3
  2912 0020 0123     		mov	r3, #1
  2913 0022 1340     		and	r3, r2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 95
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 95
 
 
  2914 0024 DBB2     		uxtb	r3, r3
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2452:.\Generated_Source\PSoC4/CyLib.c ****     CY_INT_CLEAR_REG = ((uint32) 0x01u << (CY_INT_ENABLE_RANGE_MASK & number));
  2949              		.loc 1 2452 0
  2950 000c 064B     		ldr	r3, .L220
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 96
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 96
 
 
  2951 000e FA1D     		add	r2, r7, #7
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  2987              		.cfi_def_cfa_offset 16
  2988 0004 00AF     		add	r7, sp, #0
  2989              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 97
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 97
 
 
  2990 0006 021C     		mov	r2, r0
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3024              		.loc 1 2490 0
  3025              		.cfi_startproc
  3026 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 98
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 98
 
 
  3027              		.cfi_def_cfa_offset 8
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2504:.\Generated_Source\PSoC4/CyLib.c **** *
 2505:.\Generated_Source\PSoC4/CyLib.c **** * Return:
 2506:.\Generated_Source\PSoC4/CyLib.c **** *  None
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 99
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 99
 
 
 2507:.\Generated_Source\PSoC4/CyLib.c **** *
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2527:.\Generated_Source\PSoC4/CyLib.c **** * Function Name: CySoftwareReset
 2528:.\Generated_Source\PSoC4/CyLib.c **** ********************************************************************************
 2529:.\Generated_Source\PSoC4/CyLib.c **** *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 100
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 100
 
 
 2530:.\Generated_Source\PSoC4/CyLib.c **** * Summary:
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3136              		.code	16
  3137              		.thumb_func
  3138              		.type	CyDelay, %function
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 101
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 101
 
 
  3139              	CyDelay:
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3167 001c 7A68     		ldr	r2, [r7, #4]
  3168 001e 8023     		mov	r3, #128
  3169 0020 1B02     		lsl	r3, r3, #8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 102
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 102
 
 
  3170 0022 9A42     		cmp	r2, r3
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3203 0000 80B5     		push	{r7, lr}
  3204              		.cfi_def_cfa_offset 8
  3205              		.cfi_offset 7, -8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 103
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 103
 
 
  3206              		.cfi_offset 14, -4
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2612:.\Generated_Source\PSoC4/CyLib.c **** void CyDelayFreq(uint32 freq)
 2613:.\Generated_Source\PSoC4/CyLib.c **** {
  3243              		.loc 1 2613 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 104
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 104
 
 
  3244              		.cfi_startproc
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3287 003e FA23     		mov	r3, #250
  3288 0040 9900     		lsl	r1, r3, #2
  3289 0042 FFF7FEFF 		bl	__aeabi_uidiv
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 105
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 105
 
 
  3290 0046 031C     		mov	r3, r0
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2642:.\Generated_Source\PSoC4/CyLib.c **** *
 2643:.\Generated_Source\PSoC4/CyLib.c **** * Side Effects:
 2644:.\Generated_Source\PSoC4/CyLib.c **** *  Clears SysTick count flag if it was set.
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 106
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 106
 
 
 2645:.\Generated_Source\PSoC4/CyLib.c **** *
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2658:.\Generated_Source\PSoC4/CyLib.c **** 
 2659:.\Generated_Source\PSoC4/CyLib.c **** /*******************************************************************************
 2660:.\Generated_Source\PSoC4/CyLib.c **** * Function Name: CySysTickInit
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 107
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 107
 
 
 2661:.\Generated_Source\PSoC4/CyLib.c **** ********************************************************************************
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2685:.\Generated_Source\PSoC4/CyLib.c ****     for (i = 0u; i<CY_SYS_SYST_NUM_OF_CALLBACKS; i++)
  3394              		.loc 1 2685 0 is_stmt 0 discriminator 1
  3395 001c 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 108
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 108
 
 
  3396 001e 042B     		cmp	r3, #4
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3438              	CySysTickEnable:
  3439              	.LFB55:
 2700:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 109
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 109
 
 
 2701:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3471              		.code	16
  3472              		.thumb_func
  3473              		.type	CySysTickStop, %function
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 110
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 110
 
 
  3474              	CySysTickStop:
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3505              		.code	16
  3506              		.thumb_func
  3507              		.type	CySysTickEnableInterrupt, %function
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 111
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 111
 
 
  3508              	CySysTickEnableInterrupt:
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3539              		.code	16
  3540              		.thumb_func
  3541              		.type	CySysTickDisableInterrupt, %function
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 112
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 112
 
 
  3542              	CySysTickDisableInterrupt:
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3573              		.code	16
  3574              		.thumb_func
  3575              		.type	CySysTickSetReload, %function
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 113
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 113
 
 
  3576              	CySysTickSetReload:
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3608              		.align	2
  3609              		.global	CySysTickGetReload
  3610              		.code	16
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 114
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 114
 
 
  3611              		.thumb_func
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3645              		.type	CySysTickGetValue, %function
  3646              	CySysTickGetValue:
  3647              	.LFB61:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 115
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 115
 
 
 2835:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3682              	.LFB62:
 2855:.\Generated_Source\PSoC4/CyLib.c **** 
 2856:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 116
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 116
 
 
 2857:.\Generated_Source\PSoC4/CyLib.c **** #if(CY_PSOC4_4100BL || CY_PSOC4_4200BL || CY_PSOC5)
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2911:.\Generated_Source\PSoC4/CyLib.c **** * Side Effects:
 2912:.\Generated_Source\PSoC4/CyLib.c **** *  Clears SysTick count flag if it was set
 2913:.\Generated_Source\PSoC4/CyLib.c **** *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 117
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 117
 
 
 2914:.\Generated_Source\PSoC4/CyLib.c **** *******************************************************************************/
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2934:.\Generated_Source\PSoC4/CyLib.c **** *******************************************************************************/
 2935:.\Generated_Source\PSoC4/CyLib.c **** void CySysTickClear(void)
 2936:.\Generated_Source\PSoC4/CyLib.c **** {
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 118
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 118
 
 
  3717              		.loc 1 2936 0
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2960:.\Generated_Source\PSoC4/CyLib.c **** {
  3748              		.loc 1 2960 0
  3749              		.cfi_startproc
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 119
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 119
 
 
  3750 0000 80B5     		push	{r7, lr}
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2970:.\Generated_Source\PSoC4/CyLib.c **** * Function Name: CySysTickGetCallback
 2971:.\Generated_Source\PSoC4/CyLib.c **** ********************************************************************************
 2972:.\Generated_Source\PSoC4/CyLib.c **** *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 120
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 120
 
 
 2973:.\Generated_Source\PSoC4/CyLib.c **** * Summary:
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
 2991:.\Generated_Source\PSoC4/CyLib.c **** ********************************************************************************
 2992:.\Generated_Source\PSoC4/CyLib.c **** *
 2993:.\Generated_Source\PSoC4/CyLib.c **** * Summary:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 121
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 121
 
 
 2994:.\Generated_Source\PSoC4/CyLib.c **** *  System Tick timer interrupt routine
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3864              	.L295:
 3010:.\Generated_Source\PSoC4/CyLib.c ****         for (i=0u; i < CY_SYS_SYST_NUM_OF_CALLBACKS; i++)
  3865              		.loc 1 3010 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 122
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 122
 
 
  3866 002c 7B68     		ldr	r3, [r7, #4]
@@ -7298,48 +7298,48 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3895 0006 00000000 		.4byte	.Ldebug_abbrev0
  3896 000a 04       		.byte	0x4
  3897 000b 01       		.uleb128 0x1
- 3898 000c 32050000 		.4byte	.LASF133
+ 3898 000c 12050000 		.4byte	.LASF133
  3899 0010 01       		.byte	0x1
- 3900 0011 E4030000 		.4byte	.LASF134
- 3901 0015 84000000 		.4byte	.LASF135
+ 3900 0011 C4030000 		.4byte	.LASF134
+ 3901 0015 AF050000 		.4byte	.LASF135
  3902 0019 00000000 		.4byte	.Ldebug_ranges0+0
  3903 001d 00000000 		.4byte	0
  3904 0021 00000000 		.4byte	.Ldebug_line0
  3905 0025 02       		.uleb128 0x2
  3906 0026 01       		.byte	0x1
  3907 0027 06       		.byte	0x6
- 3908 0028 5F010000 		.4byte	.LASF0
+ 3908 0028 32010000 		.4byte	.LASF0
  3909 002c 02       		.uleb128 0x2
  3910 002d 01       		.byte	0x1
  3911 002e 08       		.byte	0x8
- 3912 002f 17060000 		.4byte	.LASF1
+ 3912 002f 30060000 		.4byte	.LASF1
  3913 0033 02       		.uleb128 0x2
  3914 0034 02       		.byte	0x2
  3915 0035 05       		.byte	0x5
- 3916 0036 43060000 		.4byte	.LASF2
+ 3916 0036 5C060000 		.4byte	.LASF2
  3917 003a 02       		.uleb128 0x2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 123
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 123
 
 
  3918 003b 02       		.byte	0x2
  3919 003c 07       		.byte	0x7
- 3920 003d C2030000 		.4byte	.LASF3
+ 3920 003d A2030000 		.4byte	.LASF3
  3921 0041 02       		.uleb128 0x2
  3922 0042 04       		.byte	0x4
  3923 0043 05       		.byte	0x5
- 3924 0044 D2010000 		.4byte	.LASF4
+ 3924 0044 A5010000 		.4byte	.LASF4
  3925 0048 02       		.uleb128 0x2
  3926 0049 04       		.byte	0x4
  3927 004a 07       		.byte	0x7
- 3928 004b 37030000 		.4byte	.LASF5
+ 3928 004b 0A030000 		.4byte	.LASF5
  3929 004f 02       		.uleb128 0x2
  3930 0050 08       		.byte	0x8
  3931 0051 05       		.byte	0x5
- 3932 0052 51010000 		.4byte	.LASF6
+ 3932 0052 24010000 		.4byte	.LASF6
  3933 0056 02       		.uleb128 0x2
  3934 0057 08       		.byte	0x8
  3935 0058 07       		.byte	0x7
- 3936 0059 E5000000 		.4byte	.LASF7
+ 3936 0059 B8000000 		.4byte	.LASF7
  3937 005d 03       		.uleb128 0x3
  3938 005e 04       		.byte	0x4
  3939 005f 05       		.byte	0x5
@@ -7347,9 +7347,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3941 0064 02       		.uleb128 0x2
  3942 0065 04       		.byte	0x4
  3943 0066 07       		.byte	0x7
- 3944 0067 10030000 		.4byte	.LASF8
+ 3944 0067 E3020000 		.4byte	.LASF8
  3945 006b 04       		.uleb128 0x4
- 3946 006c FD010000 		.4byte	.LASF9
+ 3946 006c D0010000 		.4byte	.LASF9
  3947 0070 02       		.byte	0x2
  3948 0071 A1       		.byte	0xa1
  3949 0072 2C000000 		.4byte	0x2c
@@ -7359,26 +7359,26 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3953 007c A2       		.byte	0xa2
  3954 007d 3A000000 		.4byte	0x3a
  3955 0081 04       		.uleb128 0x4
- 3956 0082 6F020000 		.4byte	.LASF11
+ 3956 0082 42020000 		.4byte	.LASF11
  3957 0086 02       		.byte	0x2
  3958 0087 A3       		.byte	0xa3
  3959 0088 48000000 		.4byte	0x48
  3960 008c 02       		.uleb128 0x2
  3961 008d 04       		.byte	0x4
  3962 008e 04       		.byte	0x4
- 3963 008f 2C050000 		.4byte	.LASF12
+ 3963 008f 0C050000 		.4byte	.LASF12
  3964 0093 02       		.uleb128 0x2
  3965 0094 08       		.byte	0x8
  3966 0095 04       		.byte	0x4
- 3967 0096 19020000 		.4byte	.LASF13
+ 3967 0096 EC010000 		.4byte	.LASF13
  3968 009a 02       		.uleb128 0x2
  3969 009b 01       		.byte	0x1
  3970 009c 08       		.byte	0x8
- 3971 009d EF060000 		.4byte	.LASF14
+ 3971 009d 08070000 		.4byte	.LASF14
  3972 00a1 05       		.uleb128 0x5
- 3973 00a2 01060000 		.4byte	.LASF15
+ 3973 00a2 1A060000 		.4byte	.LASF15
  3974 00a6 02       		.byte	0x2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 124
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 124
 
 
  3975 00a7 4B01     		.2byte	0x14b
@@ -7386,14 +7386,14 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3977 00ad 06       		.uleb128 0x6
  3978 00ae 6B000000 		.4byte	0x6b
  3979 00b2 05       		.uleb128 0x5
- 3980 00b3 3D040000 		.4byte	.LASF16
+ 3980 00b3 1D040000 		.4byte	.LASF16
  3981 00b7 02       		.byte	0x2
  3982 00b8 4D01     		.2byte	0x14d
  3983 00ba BE000000 		.4byte	0xbe
  3984 00be 06       		.uleb128 0x6
  3985 00bf 81000000 		.4byte	0x81
  3986 00c3 05       		.uleb128 0x5
- 3987 00c4 02070000 		.4byte	.LASF17
+ 3987 00c4 1B070000 		.4byte	.LASF17
  3988 00c8 02       		.byte	0x2
  3989 00c9 5D01     		.2byte	0x15d
  3990 00cb CF000000 		.4byte	0xcf
@@ -7404,14 +7404,14 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  3995 00d6 02       		.uleb128 0x2
  3996 00d7 04       		.byte	0x4
  3997 00d8 07       		.byte	0x7
- 3998 00d9 85040000 		.4byte	.LASF18
+ 3998 00d9 65040000 		.4byte	.LASF18
  3999 00dd 04       		.uleb128 0x4
- 4000 00de AE050000 		.4byte	.LASF19
+ 4000 00de 8E050000 		.4byte	.LASF19
  4001 00e2 03       		.byte	0x3
  4002 00e3 8B       		.byte	0x8b
  4003 00e4 CF000000 		.4byte	0xcf
  4004 00e8 09       		.uleb128 0x9
- 4005 00e9 38080000 		.4byte	.LASF20
+ 4005 00e9 3C080000 		.4byte	.LASF20
  4006 00ed 01       		.byte	0x1
  4007 00ee 57       		.byte	0x57
  4008 00ef 00000000 		.4byte	.LFB0
@@ -7419,7 +7419,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4010 00f7 01       		.uleb128 0x1
  4011 00f8 9C       		.byte	0x9c
  4012 00f9 09       		.uleb128 0x9
- 4013 00fa 64030000 		.4byte	.LASF21
+ 4013 00fa 37030000 		.4byte	.LASF21
  4014 00fe 01       		.byte	0x1
  4015 00ff 6B       		.byte	0x6b
  4016 0100 00000000 		.4byte	.LFB1
@@ -7427,7 +7427,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4018 0108 01       		.uleb128 0x1
  4019 0109 9C       		.byte	0x9c
  4020 010a 09       		.uleb128 0x9
- 4021 010b 05040000 		.4byte	.LASF22
+ 4021 010b E5030000 		.4byte	.LASF22
  4022 010f 01       		.byte	0x1
  4023 0110 7F       		.byte	0x7f
  4024 0111 00000000 		.4byte	.LFB2
@@ -7435,10 +7435,10 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4026 0119 01       		.uleb128 0x1
  4027 011a 9C       		.byte	0x9c
  4028 011b 0A       		.uleb128 0xa
- 4029 011c 20020000 		.4byte	.LASF23
+ 4029 011c F3010000 		.4byte	.LASF23
  4030 0120 01       		.byte	0x1
  4031 0121 9E       		.byte	0x9e
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 125
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 125
 
 
  4032 0122 00000000 		.4byte	.LFB3
@@ -7447,7 +7447,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4035 012b 9C       		.byte	0x9c
  4036 012c 3F010000 		.4byte	0x13f
  4037 0130 0B       		.uleb128 0xb
- 4038 0131 8E010000 		.4byte	.LASF25
+ 4038 0131 61010000 		.4byte	.LASF25
  4039 0135 01       		.byte	0x1
  4040 0136 A1       		.byte	0xa1
  4041 0137 6B000000 		.4byte	0x6b
@@ -7456,7 +7456,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4044 013d 6F       		.sleb128 -17
  4045 013e 00       		.byte	0
  4046 013f 0C       		.uleb128 0xc
- 4047 0140 AB060000 		.4byte	.LASF36
+ 4047 0140 C4060000 		.4byte	.LASF36
  4048 0144 01       		.byte	0x1
  4049 0145 D2       		.byte	0xd2
  4050 0146 81000000 		.4byte	0x81
@@ -7474,7 +7474,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4062 0165 9C       		.byte	0x9c
  4063 0166 89010000 		.4byte	0x189
  4064 016a 0E       		.uleb128 0xe
- 4065 016b A1060000 		.4byte	.LASF27
+ 4065 016b BA060000 		.4byte	.LASF27
  4066 016f 01       		.byte	0x1
  4067 0170 5501     		.2byte	0x155
  4068 0172 81000000 		.4byte	0x81
@@ -7482,7 +7482,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4070 0177 91       		.byte	0x91
  4071 0178 64       		.sleb128 -28
  4072 0179 0F       		.uleb128 0xf
- 4073 017a 8E010000 		.4byte	.LASF25
+ 4073 017a 61010000 		.4byte	.LASF25
  4074 017e 01       		.byte	0x1
  4075 017f 5701     		.2byte	0x157
  4076 0181 6B000000 		.4byte	0x6b
@@ -7491,19 +7491,19 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4079 0187 6F       		.sleb128 -17
  4080 0188 00       		.byte	0
  4081 0189 0D       		.uleb128 0xd
- 4082 018a 2C070000 		.4byte	.LASF26
+ 4082 018a 45070000 		.4byte	.LASF26
  4083 018e 01       		.byte	0x1
  4084 018f 8601     		.2byte	0x186
  4085 0191 00000000 		.4byte	.LFB6
  4086 0195 44000000 		.4byte	.LFE6-.LFB6
  4087 0199 01       		.uleb128 0x1
  4088 019a 9C       		.byte	0x9c
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 126
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 126
 
 
  4089 019b BE010000 		.4byte	0x1be
  4090 019f 0E       		.uleb128 0xe
- 4091 01a0 27080000 		.4byte	.LASF28
+ 4091 01a0 2B080000 		.4byte	.LASF28
  4092 01a4 01       		.byte	0x1
  4093 01a5 8601     		.2byte	0x186
  4094 01a7 81000000 		.4byte	0x81
@@ -7511,7 +7511,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4096 01ac 91       		.byte	0x91
  4097 01ad 64       		.sleb128 -28
  4098 01ae 0F       		.uleb128 0xf
- 4099 01af 8E010000 		.4byte	.LASF25
+ 4099 01af 61010000 		.4byte	.LASF25
  4100 01b3 01       		.byte	0x1
  4101 01b4 8801     		.2byte	0x188
  4102 01b6 6B000000 		.4byte	0x6b
@@ -7520,7 +7520,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4105 01bc 6F       		.sleb128 -17
  4106 01bd 00       		.byte	0
  4107 01be 0D       		.uleb128 0xd
- 4108 01bf 16040000 		.4byte	.LASF29
+ 4108 01bf F6030000 		.4byte	.LASF29
  4109 01c3 01       		.byte	0x1
  4110 01c4 AE01     		.2byte	0x1ae
  4111 01c6 00000000 		.4byte	.LFB7
@@ -7529,7 +7529,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4114 01cf 9C       		.byte	0x9c
  4115 01d0 2F020000 		.4byte	0x22f
  4116 01d4 0E       		.uleb128 0xe
- 4117 01d5 6B010000 		.4byte	.LASF30
+ 4117 01d5 3E010000 		.4byte	.LASF30
  4118 01d9 01       		.byte	0x1
  4119 01da AE01     		.2byte	0x1ae
  4120 01dc 81000000 		.4byte	0x81
@@ -7545,7 +7545,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4130 01f0 91       		.byte	0x91
  4131 01f1 6F       		.sleb128 -17
  4132 01f2 0F       		.uleb128 0xf
- 4133 01f3 A8040000 		.4byte	.LASF32
+ 4133 01f3 88040000 		.4byte	.LASF32
  4134 01f7 01       		.byte	0x1
  4135 01f8 B101     		.2byte	0x1b1
  4136 01fa 6B000000 		.4byte	0x6b
@@ -7553,18 +7553,18 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4138 01ff 91       		.byte	0x91
  4139 0200 6E       		.sleb128 -18
  4140 0201 0F       		.uleb128 0xf
- 4141 0202 8E010000 		.4byte	.LASF25
+ 4141 0202 61010000 		.4byte	.LASF25
  4142 0206 01       		.byte	0x1
  4143 0207 B201     		.2byte	0x1b2
  4144 0209 6B000000 		.4byte	0x6b
  4145 020d 02       		.uleb128 0x2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 127
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 127
 
 
  4146 020e 91       		.byte	0x91
  4147 020f 6B       		.sleb128 -21
  4148 0210 0F       		.uleb128 0xf
- 4149 0211 63080000 		.4byte	.LASF33
+ 4149 0211 67080000 		.4byte	.LASF33
  4150 0215 01       		.byte	0x1
  4151 0216 B301     		.2byte	0x1b3
  4152 0218 6B000000 		.4byte	0x6b
@@ -7572,7 +7572,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4154 021d 91       		.byte	0x91
  4155 021e 6C       		.sleb128 -20
  4156 021f 0F       		.uleb128 0xf
- 4157 0220 B9070000 		.4byte	.LASF34
+ 4157 0220 84000000 		.4byte	.LASF34
  4158 0224 01       		.byte	0x1
  4159 0225 B401     		.2byte	0x1b4
  4160 0227 6B000000 		.4byte	0x6b
@@ -7581,7 +7581,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4163 022d 6D       		.sleb128 -19
  4164 022e 00       		.byte	0
  4165 022f 0D       		.uleb128 0xd
- 4166 0230 1F070000 		.4byte	.LASF35
+ 4166 0230 38070000 		.4byte	.LASF35
  4167 0234 01       		.byte	0x1
  4168 0235 C603     		.2byte	0x3c6
  4169 0237 00000000 		.4byte	.LFB8
@@ -7590,7 +7590,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4172 0240 9C       		.byte	0x9c
  4173 0241 55020000 		.4byte	0x255
  4174 0245 0F       		.uleb128 0xf
- 4175 0246 8E010000 		.4byte	.LASF25
+ 4175 0246 61010000 		.4byte	.LASF25
  4176 024a 01       		.byte	0x1
  4177 024b C803     		.2byte	0x3c8
  4178 024d 6B000000 		.4byte	0x6b
@@ -7599,7 +7599,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4181 0253 6F       		.sleb128 -17
  4182 0254 00       		.byte	0
  4183 0255 10       		.uleb128 0x10
- 4184 0256 F2050000 		.4byte	.LASF37
+ 4184 0256 0B060000 		.4byte	.LASF37
  4185 025a 01       		.byte	0x1
  4186 025b E003     		.2byte	0x3e0
  4187 025d 81000000 		.4byte	0x81
@@ -7617,8 +7617,8 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4199 027c 9C       		.byte	0x9c
  4200 027d 91020000 		.4byte	0x291
  4201 0281 0F       		.uleb128 0xf
- 4202 0282 8E010000 		.4byte	.LASF25
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 128
+ 4202 0282 61010000 		.4byte	.LASF25
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 128
 
 
  4203 0286 01       		.byte	0x1
@@ -7629,7 +7629,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4208 028f 6F       		.sleb128 -17
  4209 0290 00       		.byte	0
  4210 0291 11       		.uleb128 0x11
- 4211 0292 49080000 		.4byte	.LASF43
+ 4211 0292 4D080000 		.4byte	.LASF43
  4212 0296 01       		.byte	0x1
  4213 0297 1A04     		.2byte	0x41a
  4214 0299 81000000 		.4byte	0x81
@@ -7665,7 +7665,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4244 02de 91       		.byte	0x91
  4245 02df 6C       		.sleb128 -20
  4246 02e0 0E       		.uleb128 0xe
- 4247 02e1 FD060000 		.4byte	.LASF41
+ 4247 02e1 16070000 		.4byte	.LASF41
  4248 02e5 01       		.byte	0x1
  4249 02e6 3E04     		.2byte	0x43e
  4250 02e8 81000000 		.4byte	0x81
@@ -7673,19 +7673,19 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4252 02ed 91       		.byte	0x91
  4253 02ee 68       		.sleb128 -24
  4254 02ef 0F       		.uleb128 0xf
- 4255 02f0 AA070000 		.4byte	.LASF42
+ 4255 02f0 C3070000 		.4byte	.LASF42
  4256 02f4 01       		.byte	0x1
  4257 02f5 4004     		.2byte	0x440
  4258 02f7 81000000 		.4byte	0x81
  4259 02fb 02       		.uleb128 0x2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 129
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 129
 
 
  4260 02fc 91       		.byte	0x91
  4261 02fd 74       		.sleb128 -12
  4262 02fe 00       		.byte	0
  4263 02ff 12       		.uleb128 0x12
- 4264 0300 8B020000 		.4byte	.LASF44
+ 4264 0300 5E020000 		.4byte	.LASF44
  4265 0304 01       		.byte	0x1
  4266 0305 5D04     		.2byte	0x45d
  4267 0307 81000000 		.4byte	0x81
@@ -7704,7 +7704,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4280 0327 74       		.sleb128 -12
  4281 0328 00       		.byte	0
  4282 0329 0D       		.uleb128 0xd
- 4283 032a 43040000 		.4byte	.LASF45
+ 4283 032a 23040000 		.4byte	.LASF45
  4284 032e 01       		.byte	0x1
  4285 032f 7E04     		.2byte	0x47e
  4286 0331 00000000 		.4byte	.LFB14
@@ -7721,7 +7721,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4297 034c 91       		.byte	0x91
  4298 034d 6C       		.sleb128 -20
  4299 034e 0E       		.uleb128 0xe
- 4300 034f 12020000 		.4byte	.LASF46
+ 4300 034f E5010000 		.4byte	.LASF46
  4301 0353 01       		.byte	0x1
  4302 0354 7E04     		.2byte	0x47e
  4303 0356 81000000 		.4byte	0x81
@@ -7729,7 +7729,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4305 035b 91       		.byte	0x91
  4306 035c 68       		.sleb128 -24
  4307 035d 0F       		.uleb128 0xf
- 4308 035e AA070000 		.4byte	.LASF42
+ 4308 035e C3070000 		.4byte	.LASF42
  4309 0362 01       		.byte	0x1
  4310 0363 8004     		.2byte	0x480
  4311 0365 81000000 		.4byte	0x81
@@ -7738,10 +7738,10 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4314 036b 74       		.sleb128 -12
  4315 036c 00       		.byte	0
  4316 036d 11       		.uleb128 0x11
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 130
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 130
 
 
- 4317 036e 6C040000 		.4byte	.LASF47
+ 4317 036e 4C040000 		.4byte	.LASF47
  4318 0372 01       		.byte	0x1
  4319 0373 A104     		.2byte	0x4a1
  4320 0375 81000000 		.4byte	0x81
@@ -7760,7 +7760,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4333 0395 74       		.sleb128 -12
  4334 0396 00       		.byte	0
  4335 0397 0D       		.uleb128 0xd
- 4336 0398 DF020000 		.4byte	.LASF48
+ 4336 0398 B2020000 		.4byte	.LASF48
  4337 039c 01       		.byte	0x1
  4338 039d CF04     		.2byte	0x4cf
  4339 039f 00000000 		.4byte	.LFB16
@@ -7769,7 +7769,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4342 03a8 9C       		.byte	0x9c
  4343 03a9 BD030000 		.4byte	0x3bd
  4344 03ad 0E       		.uleb128 0xe
- 4345 03ae EE020000 		.4byte	.LASF49
+ 4345 03ae C1020000 		.4byte	.LASF49
  4346 03b2 01       		.byte	0x1
  4347 03b3 CF04     		.2byte	0x4cf
  4348 03b5 81000000 		.4byte	0x81
@@ -7778,7 +7778,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4351 03bb 74       		.sleb128 -12
  4352 03bc 00       		.byte	0
  4353 03bd 0D       		.uleb128 0xd
- 4354 03be 61060000 		.4byte	.LASF50
+ 4354 03be 7A060000 		.4byte	.LASF50
  4355 03c2 01       		.byte	0x1
  4356 03c3 0405     		.2byte	0x504
  4357 03c5 00000000 		.4byte	.LFB17
@@ -7787,7 +7787,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4360 03ce 9C       		.byte	0x9c
  4361 03cf E3030000 		.4byte	0x3e3
  4362 03d3 0E       		.uleb128 0xe
- 4363 03d4 EE020000 		.4byte	.LASF49
+ 4363 03d4 C1020000 		.4byte	.LASF49
  4364 03d8 01       		.byte	0x1
  4365 03d9 0405     		.2byte	0x504
  4366 03db 81000000 		.4byte	0x81
@@ -7796,9 +7796,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4369 03e1 74       		.sleb128 -12
  4370 03e2 00       		.byte	0
  4371 03e3 0D       		.uleb128 0xd
- 4372 03e4 30020000 		.4byte	.LASF51
+ 4372 03e4 03020000 		.4byte	.LASF51
  4373 03e8 01       		.byte	0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 131
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 131
 
 
  4374 03e9 4305     		.2byte	0x543
@@ -7808,7 +7808,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4378 03f4 9C       		.byte	0x9c
  4379 03f5 27040000 		.4byte	0x427
  4380 03f9 0E       		.uleb128 0xe
- 4381 03fa 1B080000 		.4byte	.LASF52
+ 4381 03fa 1F080000 		.4byte	.LASF52
  4382 03fe 01       		.byte	0x1
  4383 03ff 4305     		.2byte	0x543
  4384 0401 81000000 		.4byte	0x81
@@ -7816,7 +7816,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4386 0406 91       		.byte	0x91
  4387 0407 64       		.sleb128 -28
  4388 0408 0F       		.uleb128 0xf
- 4389 0409 AA070000 		.4byte	.LASF42
+ 4389 0409 C3070000 		.4byte	.LASF42
  4390 040d 01       		.byte	0x1
  4391 040e 4505     		.2byte	0x545
  4392 0410 81000000 		.4byte	0x81
@@ -7824,7 +7824,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4394 0415 91       		.byte	0x91
  4395 0416 68       		.sleb128 -24
  4396 0417 0F       		.uleb128 0xf
- 4397 0418 BC020000 		.4byte	.LASF53
+ 4397 0418 8F020000 		.4byte	.LASF53
  4398 041c 01       		.byte	0x1
  4399 041d 4605     		.2byte	0x546
  4400 041f 81000000 		.4byte	0x81
@@ -7833,7 +7833,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4403 0425 6C       		.sleb128 -20
  4404 0426 00       		.byte	0
  4405 0427 13       		.uleb128 0x13
- 4406 0428 4D060000 		.4byte	.LASF59
+ 4406 0428 66060000 		.4byte	.LASF59
  4407 042c 01       		.byte	0x1
  4408 042d 6805     		.2byte	0x568
  4409 042f 81000000 		.4byte	0x81
@@ -7842,7 +7842,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4412 043b 01       		.uleb128 0x1
  4413 043c 9C       		.byte	0x9c
  4414 043d 0D       		.uleb128 0xd
- 4415 043e BA010000 		.4byte	.LASF54
+ 4415 043e 8D010000 		.4byte	.LASF54
  4416 0442 01       		.byte	0x1
  4417 0443 8105     		.2byte	0x581
  4418 0445 00000000 		.4byte	.LFB20
@@ -7858,11 +7858,11 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4428 045f 02       		.uleb128 0x2
  4429 0460 91       		.byte	0x91
  4430 0461 6C       		.sleb128 -20
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 132
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 132
 
 
  4431 0462 0E       		.uleb128 0xe
- 4432 0463 B7040000 		.4byte	.LASF55
+ 4432 0463 97040000 		.4byte	.LASF55
  4433 0467 01       		.byte	0x1
  4434 0468 8105     		.2byte	0x581
  4435 046a 81000000 		.4byte	0x81
@@ -7870,7 +7870,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4437 046f 91       		.byte	0x91
  4438 0470 68       		.sleb128 -24
  4439 0471 0F       		.uleb128 0xf
- 4440 0472 82020000 		.4byte	.LASF56
+ 4440 0472 55020000 		.4byte	.LASF56
  4441 0476 01       		.byte	0x1
  4442 0477 8305     		.2byte	0x583
  4443 0479 81000000 		.4byte	0x81
@@ -7879,7 +7879,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4446 047f 74       		.sleb128 -12
  4447 0480 00       		.byte	0
  4448 0481 0D       		.uleb128 0xd
- 4449 0482 AE080000 		.4byte	.LASF57
+ 4449 0482 B2080000 		.4byte	.LASF57
  4450 0486 01       		.byte	0x1
  4451 0487 AD05     		.2byte	0x5ad
  4452 0489 00000000 		.4byte	.LFB21
@@ -7888,7 +7888,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4455 0492 9C       		.byte	0x9c
  4456 0493 B6040000 		.4byte	0x4b6
  4457 0497 0E       		.uleb128 0xe
- 4458 0498 CD010000 		.4byte	.LASF58
+ 4458 0498 A0010000 		.4byte	.LASF58
  4459 049c 01       		.byte	0x1
  4460 049d AD05     		.2byte	0x5ad
  4461 049f 81000000 		.4byte	0x81
@@ -7896,7 +7896,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4463 04a4 91       		.byte	0x91
  4464 04a5 6C       		.sleb128 -20
  4465 04a6 0F       		.uleb128 0xf
- 4466 04a7 AA070000 		.4byte	.LASF42
+ 4466 04a7 C3070000 		.4byte	.LASF42
  4467 04ab 01       		.byte	0x1
  4468 04ac AF05     		.2byte	0x5af
  4469 04ae 81000000 		.4byte	0x81
@@ -7905,7 +7905,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4472 04b4 74       		.sleb128 -12
  4473 04b5 00       		.byte	0
  4474 04b6 13       		.uleb128 0x13
- 4475 04b7 DC050000 		.4byte	.LASF60
+ 4475 04b7 F5050000 		.4byte	.LASF60
  4476 04bb 01       		.byte	0x1
  4477 04bc C905     		.2byte	0x5c9
  4478 04be 81000000 		.4byte	0x81
@@ -7914,11 +7914,11 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4481 04ca 01       		.uleb128 0x1
  4482 04cb 9C       		.byte	0x9c
  4483 04cc 11       		.uleb128 0x11
- 4484 04cd 8F060000 		.4byte	.LASF61
+ 4484 04cd A8060000 		.4byte	.LASF61
  4485 04d1 01       		.byte	0x1
  4486 04d2 DE05     		.2byte	0x5de
  4487 04d4 81000000 		.4byte	0x81
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 133
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 133
 
 
  4488 04d8 00000000 		.4byte	.LFB23
@@ -7936,7 +7936,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4500 04f4 74       		.sleb128 -12
  4501 04f5 00       		.byte	0
  4502 04f6 11       		.uleb128 0x11
- 4503 04f7 70010000 		.4byte	.LASF62
+ 4503 04f7 43010000 		.4byte	.LASF62
  4504 04fb 01       		.byte	0x1
  4505 04fc F605     		.2byte	0x5f6
  4506 04fe 81000000 		.4byte	0x81
@@ -7954,7 +7954,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4518 051d 91       		.byte	0x91
  4519 051e 6C       		.sleb128 -20
  4520 051f 0F       		.uleb128 0xf
- 4521 0520 82020000 		.4byte	.LASF56
+ 4521 0520 55020000 		.4byte	.LASF56
  4522 0524 01       		.byte	0x1
  4523 0525 F805     		.2byte	0x5f8
  4524 0527 81000000 		.4byte	0x81
@@ -7963,7 +7963,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4527 052d 74       		.sleb128 -12
  4528 052e 00       		.byte	0
  4529 052f 13       		.uleb128 0x13
- 4530 0530 BE060000 		.4byte	.LASF63
+ 4530 0530 D7060000 		.4byte	.LASF63
  4531 0534 01       		.byte	0x1
  4532 0535 2706     		.2byte	0x627
  4533 0537 81000000 		.4byte	0x81
@@ -7972,19 +7972,19 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4536 0543 01       		.uleb128 0x1
  4537 0544 9C       		.byte	0x9c
  4538 0545 0D       		.uleb128 0xd
- 4539 0546 15050000 		.4byte	.LASF64
+ 4539 0546 F5040000 		.4byte	.LASF64
  4540 054a 01       		.byte	0x1
  4541 054b 4906     		.2byte	0x649
  4542 054d 00000000 		.4byte	.LFB26
  4543 0551 6C000000 		.4byte	.LFE26-.LFB26
  4544 0555 01       		.uleb128 0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 134
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 134
 
 
  4545 0556 9C       		.byte	0x9c
  4546 0557 89050000 		.4byte	0x589
  4547 055b 0E       		.uleb128 0xe
- 4548 055c EE020000 		.4byte	.LASF49
+ 4548 055c C1020000 		.4byte	.LASF49
  4549 0560 01       		.byte	0x1
  4550 0561 4906     		.2byte	0x649
  4551 0563 81000000 		.4byte	0x81
@@ -7992,7 +7992,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4553 0568 91       		.byte	0x91
  4554 0569 64       		.sleb128 -28
  4555 056a 0F       		.uleb128 0xf
- 4556 056b 8E010000 		.4byte	.LASF25
+ 4556 056b 61010000 		.4byte	.LASF25
  4557 056f 01       		.byte	0x1
  4558 0570 4B06     		.2byte	0x64b
  4559 0572 6B000000 		.4byte	0x6b
@@ -8000,7 +8000,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4561 0577 91       		.byte	0x91
  4562 0578 6B       		.sleb128 -21
  4563 0579 0F       		.uleb128 0xf
- 4564 057a DD070000 		.4byte	.LASF65
+ 4564 057a E1070000 		.4byte	.LASF65
  4565 057e 01       		.byte	0x1
  4566 057f 4C06     		.2byte	0x64c
  4567 0581 81000000 		.4byte	0x81
@@ -8009,7 +8009,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4570 0587 6C       		.sleb128 -20
  4571 0588 00       		.byte	0
  4572 0589 14       		.uleb128 0x14
- 4573 058a EE040000 		.4byte	.LASF66
+ 4573 058a CE040000 		.4byte	.LASF66
  4574 058e 01       		.byte	0x1
  4575 058f 8106     		.2byte	0x681
  4576 0591 00000000 		.4byte	.LFB27
@@ -8018,7 +8018,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4579 059a 9C       		.byte	0x9c
  4580 059b AF050000 		.4byte	0x5af
  4581 059f 0E       		.uleb128 0xe
- 4582 05a0 4B020000 		.4byte	.LASF67
+ 4582 05a0 1E020000 		.4byte	.LASF67
  4583 05a4 01       		.byte	0x1
  4584 05a5 8106     		.2byte	0x681
  4585 05a7 81000000 		.4byte	0x81
@@ -8036,9 +8036,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4597 05c0 9C       		.byte	0x9c
  4598 05c1 D5050000 		.4byte	0x5d5
  4599 05c5 0F       		.uleb128 0xf
- 4600 05c6 1D030000 		.4byte	.LASF68
+ 4600 05c6 F0020000 		.4byte	.LASF68
  4601 05ca 01       		.byte	0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 135
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 135
 
 
  4602 05cb AA06     		.2byte	0x6aa
@@ -8048,7 +8048,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4606 05d3 74       		.sleb128 -12
  4607 05d4 00       		.byte	0
  4608 05d5 16       		.uleb128 0x16
- 4609 05d6 74030000 		.4byte	.LASF136
+ 4609 05d6 54030000 		.4byte	.LASF136
  4610 05da 01       		.byte	0x1
  4611 05db E206     		.2byte	0x6e2
  4612 05dd 00000000 		.4byte	.LFB29
@@ -8056,7 +8056,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4614 05e5 01       		.uleb128 0x1
  4615 05e6 9C       		.byte	0x9c
  4616 05e7 14       		.uleb128 0x14
- 4617 05e8 9C020000 		.4byte	.LASF69
+ 4617 05e8 6F020000 		.4byte	.LASF69
  4618 05ec 01       		.byte	0x1
  4619 05ed 0408     		.2byte	0x804
  4620 05ef 00000000 		.4byte	.LFB30
@@ -8065,7 +8065,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4623 05f8 9C       		.byte	0x9c
  4624 05f9 0D060000 		.4byte	0x60d
  4625 05fd 0E       		.uleb128 0xe
- 4626 05fe 06060000 		.4byte	.LASF70
+ 4626 05fe 1F060000 		.4byte	.LASF70
  4627 0602 01       		.byte	0x1
  4628 0603 0408     		.2byte	0x804
  4629 0605 81000000 		.4byte	0x81
@@ -8074,7 +8074,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4632 060b 74       		.sleb128 -12
  4633 060c 00       		.byte	0
  4634 060d 17       		.uleb128 0x17
- 4635 060e 9A070000 		.4byte	.LASF71
+ 4635 060e B3070000 		.4byte	.LASF71
  4636 0612 01       		.byte	0x1
  4637 0613 1D08     		.2byte	0x81d
  4638 0615 00000000 		.4byte	.LFB31
@@ -8082,7 +8082,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4640 061d 01       		.uleb128 0x1
  4641 061e 9C       		.byte	0x9c
  4642 061f 13       		.uleb128 0x13
- 4643 0620 49030000 		.4byte	.LASF72
+ 4643 0620 1C030000 		.4byte	.LASF72
  4644 0624 01       		.byte	0x1
  4645 0625 3308     		.2byte	0x833
  4646 0627 81000000 		.4byte	0x81
@@ -8091,18 +8091,18 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4649 0633 01       		.uleb128 0x1
  4650 0634 9C       		.byte	0x9c
  4651 0635 17       		.uleb128 0x17
- 4652 0636 58020000 		.4byte	.LASF73
+ 4652 0636 2B020000 		.4byte	.LASF73
  4653 063a 01       		.byte	0x1
  4654 063b 4708     		.2byte	0x847
  4655 063d 00000000 		.4byte	.LFB33
  4656 0641 14000000 		.4byte	.LFE33-.LFB33
  4657 0645 01       		.uleb128 0x1
  4658 0646 9C       		.byte	0x9c
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 136
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 136
 
 
  4659 0647 12       		.uleb128 0x12
- 4660 0648 AE030000 		.4byte	.LASF74
+ 4660 0648 8E030000 		.4byte	.LASF74
  4661 064c 01       		.byte	0x1
  4662 064d 6308     		.2byte	0x863
  4663 064f 81000000 		.4byte	0x81
@@ -8112,7 +8112,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4667 065c 9C       		.byte	0x9c
  4668 065d 80060000 		.4byte	0x680
  4669 0661 0E       		.uleb128 0xe
- 4670 0662 D9060000 		.4byte	.LASF75
+ 4670 0662 F2060000 		.4byte	.LASF75
  4671 0666 01       		.byte	0x1
  4672 0667 6308     		.2byte	0x863
  4673 0669 81000000 		.4byte	0x81
@@ -8120,7 +8120,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4675 066e 91       		.byte	0x91
  4676 066f 6C       		.sleb128 -20
  4677 0670 0F       		.uleb128 0xf
- 4678 0671 EA070000 		.4byte	.LASF76
+ 4678 0671 EE070000 		.4byte	.LASF76
  4679 0675 01       		.byte	0x1
  4680 0676 6508     		.2byte	0x865
  4681 0678 81000000 		.4byte	0x81
@@ -8129,7 +8129,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4684 067e 74       		.sleb128 -12
  4685 067f 00       		.byte	0
  4686 0680 12       		.uleb128 0x12
- 4687 0681 A0030000 		.4byte	.LASF77
+ 4687 0681 80030000 		.4byte	.LASF77
  4688 0685 01       		.byte	0x1
  4689 0686 7E08     		.2byte	0x87e
  4690 0688 81000000 		.4byte	0x81
@@ -8148,7 +8148,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4703 06a8 74       		.sleb128 -12
  4704 06a9 00       		.byte	0
  4705 06aa 14       		.uleb128 0x14
- 4706 06ab 0D010000 		.4byte	.LASF79
+ 4706 06ab E0000000 		.4byte	.LASF79
  4707 06af 01       		.byte	0x1
  4708 06b0 9A08     		.2byte	0x89a
  4709 06b2 00000000 		.4byte	.LFB36
@@ -8157,8 +8157,8 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4712 06bb 9C       		.byte	0x9c
  4713 06bc D0060000 		.4byte	0x6d0
  4714 06c0 0E       		.uleb128 0xe
- 4715 06c1 7D020000 		.4byte	.LASF80
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 137
+ 4715 06c1 50020000 		.4byte	.LASF80
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 137
 
 
  4716 06c5 01       		.byte	0x1
@@ -8169,7 +8169,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4721 06ce 74       		.sleb128 -12
  4722 06cf 00       		.byte	0
  4723 06d0 11       		.uleb128 0x11
- 4724 06d1 2B040000 		.4byte	.LASF81
+ 4724 06d1 0B040000 		.4byte	.LASF81
  4725 06d5 01       		.byte	0x1
  4726 06d6 B608     		.2byte	0x8b6
  4727 06d8 C3000000 		.4byte	0xc3
@@ -8179,7 +8179,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4731 06e5 9C       		.byte	0x9c
  4732 06e6 27070000 		.4byte	0x727
  4733 06ea 0E       		.uleb128 0xe
- 4734 06eb 76020000 		.4byte	.LASF82
+ 4734 06eb 49020000 		.4byte	.LASF82
  4735 06ef 01       		.byte	0x1
  4736 06f0 B608     		.2byte	0x8b6
  4737 06f2 6B000000 		.4byte	0x6b
@@ -8187,7 +8187,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4739 06f7 91       		.byte	0x91
  4740 06f8 6F       		.sleb128 -17
  4741 06f9 0E       		.uleb128 0xe
- 4742 06fa A0040000 		.4byte	.LASF83
+ 4742 06fa 80040000 		.4byte	.LASF83
  4743 06fe 01       		.byte	0x1
  4744 06ff B608     		.2byte	0x8b6
  4745 0701 C3000000 		.4byte	0xc3
@@ -8203,7 +8203,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4755 0715 91       		.byte	0x91
  4756 0716 70       		.sleb128 -16
  4757 0717 0F       		.uleb128 0xf
- 4758 0718 E0060000 		.4byte	.LASF85
+ 4758 0718 F9060000 		.4byte	.LASF85
  4759 071c 01       		.byte	0x1
  4760 071d B908     		.2byte	0x8b9
  4761 071f 27070000 		.4byte	0x727
@@ -8215,10 +8215,10 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4767 0728 04       		.byte	0x4
  4768 0729 C3000000 		.4byte	0xc3
  4769 072d 11       		.uleb128 0x11
- 4770 072e 7D060000 		.4byte	.LASF86
+ 4770 072e 96060000 		.4byte	.LASF86
  4771 0732 01       		.byte	0x1
  4772 0733 DB08     		.2byte	0x8db
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 138
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 138
 
 
  4773 0735 C3000000 		.4byte	0xc3
@@ -8228,7 +8228,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4777 0742 9C       		.byte	0x9c
  4778 0743 66070000 		.4byte	0x766
  4779 0747 0E       		.uleb128 0xe
- 4780 0748 76020000 		.4byte	.LASF82
+ 4780 0748 49020000 		.4byte	.LASF82
  4781 074c 01       		.byte	0x1
  4782 074d DB08     		.2byte	0x8db
  4783 074f 6B000000 		.4byte	0x6b
@@ -8236,7 +8236,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4785 0754 91       		.byte	0x91
  4786 0755 6F       		.sleb128 -17
  4787 0756 0F       		.uleb128 0xf
- 4788 0757 E0060000 		.4byte	.LASF85
+ 4788 0757 F9060000 		.4byte	.LASF85
  4789 075b 01       		.byte	0x1
  4790 075c DD08     		.2byte	0x8dd
  4791 075e 27070000 		.4byte	0x727
@@ -8245,7 +8245,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4794 0764 74       		.sleb128 -12
  4795 0765 00       		.byte	0
  4796 0766 11       		.uleb128 0x11
- 4797 0767 D5030000 		.4byte	.LASF87
+ 4797 0767 B5030000 		.4byte	.LASF87
  4798 076b 01       		.byte	0x1
  4799 076c F408     		.2byte	0x8f4
  4800 076e C3000000 		.4byte	0xc3
@@ -8255,7 +8255,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4804 077b 9C       		.byte	0x9c
  4805 077c BD070000 		.4byte	0x7bd
  4806 0780 0E       		.uleb128 0xe
- 4807 0781 76020000 		.4byte	.LASF82
+ 4807 0781 49020000 		.4byte	.LASF82
  4808 0785 01       		.byte	0x1
  4809 0786 F408     		.2byte	0x8f4
  4810 0788 6B000000 		.4byte	0x6b
@@ -8263,7 +8263,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4812 078d 91       		.byte	0x91
  4813 078e 6F       		.sleb128 -17
  4814 078f 0E       		.uleb128 0xe
- 4815 0790 A0040000 		.4byte	.LASF83
+ 4815 0790 80040000 		.4byte	.LASF83
  4816 0794 01       		.byte	0x1
  4817 0795 F408     		.2byte	0x8f4
  4818 0797 C3000000 		.4byte	0xc3
@@ -8278,11 +8278,11 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4827 07aa 02       		.uleb128 0x2
  4828 07ab 91       		.byte	0x91
  4829 07ac 70       		.sleb128 -16
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 139
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 139
 
 
  4830 07ad 0F       		.uleb128 0xf
- 4831 07ae E0060000 		.4byte	.LASF85
+ 4831 07ae F9060000 		.4byte	.LASF85
  4832 07b2 01       		.byte	0x1
  4833 07b3 F708     		.2byte	0x8f7
  4834 07b5 27070000 		.4byte	0x727
@@ -8291,7 +8291,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4837 07bb 74       		.sleb128 -12
  4838 07bc 00       		.byte	0
  4839 07bd 11       		.uleb128 0x11
- 4840 07be C0050000 		.4byte	.LASF88
+ 4840 07be A0050000 		.4byte	.LASF88
  4841 07c2 01       		.byte	0x1
  4842 07c3 1309     		.2byte	0x913
  4843 07c5 C3000000 		.4byte	0xc3
@@ -8301,7 +8301,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4847 07d2 9C       		.byte	0x9c
  4848 07d3 F6070000 		.4byte	0x7f6
  4849 07d7 0E       		.uleb128 0xe
- 4850 07d8 76020000 		.4byte	.LASF82
+ 4850 07d8 49020000 		.4byte	.LASF82
  4851 07dc 01       		.byte	0x1
  4852 07dd 1309     		.2byte	0x913
  4853 07df 6B000000 		.4byte	0x6b
@@ -8309,7 +8309,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4855 07e4 91       		.byte	0x91
  4856 07e5 6F       		.sleb128 -17
  4857 07e6 0F       		.uleb128 0xf
- 4858 07e7 E0060000 		.4byte	.LASF85
+ 4858 07e7 F9060000 		.4byte	.LASF85
  4859 07eb 01       		.byte	0x1
  4860 07ec 1509     		.2byte	0x915
  4861 07ee 27070000 		.4byte	0x727
@@ -8318,7 +8318,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4864 07f4 74       		.sleb128 -12
  4865 07f5 00       		.byte	0
  4866 07f6 0D       		.uleb128 0xd
- 4867 07f7 04050000 		.4byte	.LASF89
+ 4867 07f7 E4040000 		.4byte	.LASF89
  4868 07fb 01       		.byte	0x1
  4869 07fc 2B09     		.2byte	0x92b
  4870 07fe 00000000 		.4byte	.LFB41
@@ -8327,7 +8327,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4873 0807 9C       		.byte	0x9c
  4874 0808 58080000 		.4byte	0x858
  4875 080c 0E       		.uleb128 0xe
- 4876 080d 76020000 		.4byte	.LASF82
+ 4876 080d 49020000 		.4byte	.LASF82
  4877 0811 01       		.byte	0x1
  4878 0812 2B09     		.2byte	0x92b
  4879 0814 6B000000 		.4byte	0x6b
@@ -8335,10 +8335,10 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4881 0819 91       		.byte	0x91
  4882 081a 5F       		.sleb128 -33
  4883 081b 0E       		.uleb128 0xe
- 4884 081c F4060000 		.4byte	.LASF90
+ 4884 081c 0D070000 		.4byte	.LASF90
  4885 0820 01       		.byte	0x1
  4886 0821 2B09     		.2byte	0x92b
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 140
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 140
 
 
  4887 0823 6B000000 		.4byte	0x6b
@@ -8346,7 +8346,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4889 0828 91       		.byte	0x91
  4890 0829 5E       		.sleb128 -34
  4891 082a 0F       		.uleb128 0xf
- 4892 082b 8E010000 		.4byte	.LASF25
+ 4892 082b 61010000 		.4byte	.LASF25
  4893 082f 01       		.byte	0x1
  4894 0830 2D09     		.2byte	0x92d
  4895 0832 6B000000 		.4byte	0x6b
@@ -8354,7 +8354,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4897 0837 91       		.byte	0x91
  4898 0838 6B       		.sleb128 -21
  4899 0839 0F       		.uleb128 0xf
- 4900 083a 45020000 		.4byte	.LASF91
+ 4900 083a 18020000 		.4byte	.LASF91
  4901 083e 01       		.byte	0x1
  4902 083f 2E09     		.2byte	0x92e
  4903 0841 81000000 		.4byte	0x81
@@ -8371,7 +8371,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4914 0856 64       		.sleb128 -28
  4915 0857 00       		.byte	0
  4916 0858 11       		.uleb128 0x11
- 4917 0859 AB020000 		.4byte	.LASF93
+ 4917 0859 7E020000 		.4byte	.LASF93
  4918 085d 01       		.byte	0x1
  4919 085e 4F09     		.2byte	0x94f
  4920 0860 6B000000 		.4byte	0x6b
@@ -8381,7 +8381,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4924 086d 9C       		.byte	0x9c
  4925 086e 91080000 		.4byte	0x891
  4926 0872 0E       		.uleb128 0xe
- 4927 0873 76020000 		.4byte	.LASF82
+ 4927 0873 49020000 		.4byte	.LASF82
  4928 0877 01       		.byte	0x1
  4929 0878 4F09     		.2byte	0x94f
  4930 087a 6B000000 		.4byte	0x6b
@@ -8389,7 +8389,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4932 087f 91       		.byte	0x91
  4933 0880 6F       		.sleb128 -17
  4934 0881 0F       		.uleb128 0xf
- 4935 0882 F4060000 		.4byte	.LASF90
+ 4935 0882 0D070000 		.4byte	.LASF90
  4936 0886 01       		.byte	0x1
  4937 0887 5109     		.2byte	0x951
  4938 0889 6B000000 		.4byte	0x6b
@@ -8398,10 +8398,10 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4941 088f 77       		.sleb128 -9
  4942 0890 00       		.byte	0
  4943 0891 14       		.uleb128 0x14
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 141
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 141
 
 
- 4944 0892 71060000 		.4byte	.LASF94
+ 4944 0892 8A060000 		.4byte	.LASF94
  4945 0896 01       		.byte	0x1
  4946 0897 6909     		.2byte	0x969
  4947 0899 00000000 		.4byte	.LFB43
@@ -8410,7 +8410,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4950 08a2 9C       		.byte	0x9c
  4951 08a3 B7080000 		.4byte	0x8b7
  4952 08a7 0E       		.uleb128 0xe
- 4953 08a8 76020000 		.4byte	.LASF82
+ 4953 08a8 49020000 		.4byte	.LASF82
  4954 08ac 01       		.byte	0x1
  4955 08ad 6909     		.2byte	0x969
  4956 08af 6B000000 		.4byte	0x6b
@@ -8419,7 +8419,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4959 08b5 77       		.sleb128 -9
  4960 08b6 00       		.byte	0
  4961 08b7 12       		.uleb128 0x12
- 4962 08b8 43010000 		.4byte	.LASF95
+ 4962 08b8 16010000 		.4byte	.LASF95
  4963 08bc 01       		.byte	0x1
  4964 08bd 7D09     		.2byte	0x97d
  4965 08bf 6B000000 		.4byte	0x6b
@@ -8429,7 +8429,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4969 08cc 9C       		.byte	0x9c
  4970 08cd E1080000 		.4byte	0x8e1
  4971 08d1 0E       		.uleb128 0xe
- 4972 08d2 76020000 		.4byte	.LASF82
+ 4972 08d2 49020000 		.4byte	.LASF82
  4973 08d6 01       		.byte	0x1
  4974 08d7 7D09     		.2byte	0x97d
  4975 08d9 6B000000 		.4byte	0x6b
@@ -8438,7 +8438,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4978 08df 77       		.sleb128 -9
  4979 08e0 00       		.byte	0
  4980 08e1 14       		.uleb128 0x14
- 4981 08e2 DB010000 		.4byte	.LASF96
+ 4981 08e2 AE010000 		.4byte	.LASF96
  4982 08e6 01       		.byte	0x1
  4983 08e7 9209     		.2byte	0x992
  4984 08e9 00000000 		.4byte	.LFB45
@@ -8447,7 +8447,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4987 08f2 9C       		.byte	0x9c
  4988 08f3 07090000 		.4byte	0x907
  4989 08f7 0E       		.uleb128 0xe
- 4990 08f8 76020000 		.4byte	.LASF82
+ 4990 08f8 49020000 		.4byte	.LASF82
  4991 08fc 01       		.byte	0x1
  4992 08fd 9209     		.2byte	0x992
  4993 08ff 6B000000 		.4byte	0x6b
@@ -8456,9 +8456,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  4996 0905 77       		.sleb128 -9
  4997 0906 00       		.byte	0
  4998 0907 14       		.uleb128 0x14
- 4999 0908 90030000 		.4byte	.LASF97
+ 4999 0908 70030000 		.4byte	.LASF97
  5000 090c 01       		.byte	0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 142
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 142
 
 
  5001 090d A509     		.2byte	0x9a5
@@ -8468,7 +8468,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5005 0918 9C       		.byte	0x9c
  5006 0919 2D090000 		.4byte	0x92d
  5007 091d 0E       		.uleb128 0xe
- 5008 091e 76020000 		.4byte	.LASF82
+ 5008 091e 49020000 		.4byte	.LASF82
  5009 0922 01       		.byte	0x1
  5010 0923 A509     		.2byte	0x9a5
  5011 0925 6B000000 		.4byte	0x6b
@@ -8477,7 +8477,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5014 092b 77       		.sleb128 -9
  5015 092c 00       		.byte	0
  5016 092d 14       		.uleb128 0x14
- 5017 092e 8E040000 		.4byte	.LASF98
+ 5017 092e 6E040000 		.4byte	.LASF98
  5018 0932 01       		.byte	0x1
  5019 0933 B909     		.2byte	0x9b9
  5020 0935 00000000 		.4byte	.LFB47
@@ -8486,7 +8486,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5023 093e 9C       		.byte	0x9c
  5024 093f 53090000 		.4byte	0x953
  5025 0943 0E       		.uleb128 0xe
- 5026 0944 76020000 		.4byte	.LASF82
+ 5026 0944 49020000 		.4byte	.LASF82
  5027 0948 01       		.byte	0x1
  5028 0949 B909     		.2byte	0x9b9
  5029 094b 6B000000 		.4byte	0x6b
@@ -8495,7 +8495,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5032 0951 77       		.sleb128 -9
  5033 0952 00       		.byte	0
  5034 0953 14       		.uleb128 0x14
- 5035 0954 10060000 		.4byte	.LASF99
+ 5035 0954 29060000 		.4byte	.LASF99
  5036 0958 01       		.byte	0x1
  5037 0959 CD09     		.2byte	0x9cd
  5038 095b 00000000 		.4byte	.LFB48
@@ -8504,7 +8504,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5041 0964 9C       		.byte	0x9c
  5042 0965 79090000 		.4byte	0x979
  5043 0969 0E       		.uleb128 0xe
- 5044 096a D9060000 		.4byte	.LASF75
+ 5044 096a F2060000 		.4byte	.LASF75
  5045 096e 01       		.byte	0x1
  5046 096f CD09     		.2byte	0x9cd
  5047 0971 6B000000 		.4byte	0x6b
@@ -8513,18 +8513,18 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5050 0977 77       		.sleb128 -9
  5051 0978 00       		.byte	0
  5052 0979 17       		.uleb128 0x17
- 5053 097a 1A010000 		.4byte	.LASF100
+ 5053 097a ED000000 		.4byte	.LASF100
  5054 097e 01       		.byte	0x1
  5055 097f EC09     		.2byte	0x9ec
  5056 0981 00000000 		.4byte	.LFB49
  5057 0985 20000000 		.4byte	.LFE49-.LFB49
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 143
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 143
 
 
  5058 0989 01       		.uleb128 0x1
  5059 098a 9C       		.byte	0x9c
  5060 098b 0D       		.uleb128 0xd
- 5061 098c 6B070000 		.4byte	.LASF101
+ 5061 098c 84070000 		.4byte	.LASF101
  5062 0990 01       		.byte	0x1
  5063 0991 050A     		.2byte	0xa05
  5064 0993 00000000 		.4byte	.LFB50
@@ -8533,7 +8533,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5067 099c 9C       		.byte	0x9c
  5068 099d B1090000 		.4byte	0x9b1
  5069 09a1 0E       		.uleb128 0xe
- 5070 09a2 CF050000 		.4byte	.LASF102
+ 5070 09a2 47030000 		.4byte	.LASF102
  5071 09a6 01       		.byte	0x1
  5072 09a7 050A     		.2byte	0xa05
  5073 09a9 81000000 		.4byte	0x81
@@ -8542,7 +8542,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5076 09af 74       		.sleb128 -12
  5077 09b0 00       		.byte	0
  5078 09b1 0D       		.uleb128 0xd
- 5079 09b2 9D010000 		.4byte	.LASF103
+ 5079 09b2 70010000 		.4byte	.LASF103
  5080 09b6 01       		.byte	0x1
  5081 09b7 210A     		.2byte	0xa21
  5082 09b9 00000000 		.4byte	.LFB51
@@ -8551,7 +8551,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5085 09c2 9C       		.byte	0x9c
  5086 09c3 D7090000 		.4byte	0x9d7
  5087 09c7 0E       		.uleb128 0xe
- 5088 09c8 74080000 		.4byte	.LASF104
+ 5088 09c8 78080000 		.4byte	.LASF104
  5089 09cc 01       		.byte	0x1
  5090 09cd 210A     		.2byte	0xa21
  5091 09cf 76000000 		.4byte	0x76
@@ -8560,7 +8560,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5094 09d5 76       		.sleb128 -10
  5095 09d6 00       		.byte	0
  5096 09d7 0D       		.uleb128 0xd
- 5097 09d8 82010000 		.4byte	.LASF105
+ 5097 09d8 55010000 		.4byte	.LASF105
  5098 09dc 01       		.byte	0x1
  5099 09dd 340A     		.2byte	0xa34
  5100 09df 00000000 		.4byte	.LFB52
@@ -8569,7 +8569,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5103 09e8 9C       		.byte	0x9c
  5104 09e9 FD090000 		.4byte	0x9fd
  5105 09ed 0E       		.uleb128 0xe
- 5106 09ee 6B010000 		.4byte	.LASF30
+ 5106 09ee 3E010000 		.4byte	.LASF30
  5107 09f2 01       		.byte	0x1
  5108 09f3 340A     		.2byte	0xa34
  5109 09f5 81000000 		.4byte	0x81
@@ -8578,10 +8578,10 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5112 09fb 74       		.sleb128 -12
  5113 09fc 00       		.byte	0
  5114 09fd 18       		.uleb128 0x18
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 144
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 144
 
 
- 5115 09fe 5D040000 		.4byte	.LASF106
+ 5115 09fe 3D040000 		.4byte	.LASF106
  5116 0a02 01       		.byte	0x1
  5117 0a03 570A     		.2byte	0xa57
  5118 0a05 00000000 		.4byte	.LFB53
@@ -8589,7 +8589,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5120 0a0d 01       		.uleb128 0x1
  5121 0a0e 9C       		.byte	0x9c
  5122 0a0f 0D       		.uleb128 0xd
- 5123 0a10 D1020000 		.4byte	.LASF107
+ 5123 0a10 A4020000 		.4byte	.LASF107
  5124 0a14 01       		.byte	0x1
  5125 0a15 790A     		.2byte	0xa79
  5126 0a17 00000000 		.4byte	.LFB54
@@ -8607,7 +8607,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5138 0a31 74       		.sleb128 -12
  5139 0a32 00       		.byte	0
  5140 0a33 18       		.uleb128 0x18
- 5141 0a34 0F070000 		.4byte	.LASF108
+ 5141 0a34 28070000 		.4byte	.LASF108
  5142 0a38 01       		.byte	0x1
  5143 0a39 9F0A     		.2byte	0xa9f
  5144 0a3b 00000000 		.4byte	.LFB55
@@ -8615,7 +8615,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5146 0a43 01       		.uleb128 0x1
  5147 0a44 9C       		.byte	0x9c
  5148 0a45 17       		.uleb128 0x17
- 5149 0a46 0D080000 		.4byte	.LASF109
+ 5149 0a46 11080000 		.4byte	.LASF109
  5150 0a4a 01       		.byte	0x1
  5151 0a4b B70A     		.2byte	0xab7
  5152 0a4d 00000000 		.4byte	.LFB56
@@ -8623,7 +8623,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5154 0a55 01       		.uleb128 0x1
  5155 0a56 9C       		.byte	0x9c
  5156 0a57 17       		.uleb128 0x17
- 5157 0a58 2A010000 		.4byte	.LASF110
+ 5157 0a58 FD000000 		.4byte	.LASF110
  5158 0a5c 01       		.byte	0x1
  5159 0a5d CE0A     		.2byte	0xace
  5160 0a5f 00000000 		.4byte	.LFB57
@@ -8631,18 +8631,18 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5162 0a67 01       		.uleb128 0x1
  5163 0a68 9C       		.byte	0x9c
  5164 0a69 17       		.uleb128 0x17
- 5165 0a6a 73070000 		.4byte	.LASF111
+ 5165 0a6a 8C070000 		.4byte	.LASF111
  5166 0a6e 01       		.byte	0x1
  5167 0a6f E50A     		.2byte	0xae5
  5168 0a71 00000000 		.4byte	.LFB58
  5169 0a75 18000000 		.4byte	.LFE58-.LFB58
  5170 0a79 01       		.uleb128 0x1
  5171 0a7a 9C       		.byte	0x9c
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 145
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 145
 
 
  5172 0a7b 14       		.uleb128 0x14
- 5173 0a7c 81080000 		.4byte	.LASF112
+ 5173 0a7c 85080000 		.4byte	.LASF112
  5174 0a80 01       		.byte	0x1
  5175 0a81 FB0A     		.2byte	0xafb
  5176 0a83 00000000 		.4byte	.LFB59
@@ -8660,7 +8660,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5188 0a9f 74       		.sleb128 -12
  5189 0aa0 00       		.byte	0
  5190 0aa1 13       		.uleb128 0x13
- 5191 0aa2 A7010000 		.4byte	.LASF113
+ 5191 0aa2 7A010000 		.4byte	.LASF113
  5192 0aa6 01       		.byte	0x1
  5193 0aa7 0F0B     		.2byte	0xb0f
  5194 0aa9 81000000 		.4byte	0x81
@@ -8669,7 +8669,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5197 0ab5 01       		.uleb128 0x1
  5198 0ab6 9C       		.byte	0x9c
  5199 0ab7 13       		.uleb128 0x13
- 5200 0ab8 CE040000 		.4byte	.LASF114
+ 5200 0ab8 AE040000 		.4byte	.LASF114
  5201 0abc 01       		.byte	0x1
  5202 0abd 230B     		.2byte	0xb23
  5203 0abf 81000000 		.4byte	0x81
@@ -8678,7 +8678,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5206 0acb 01       		.uleb128 0x1
  5207 0acc 9C       		.byte	0x9c
  5208 0acd 13       		.uleb128 0x13
- 5209 0ace FA020000 		.4byte	.LASF115
+ 5209 0ace CD020000 		.4byte	.LASF115
  5210 0ad2 01       		.byte	0x1
  5211 0ad3 630B     		.2byte	0xb63
  5212 0ad5 81000000 		.4byte	0x81
@@ -8687,7 +8687,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5215 0ae1 01       		.uleb128 0x1
  5216 0ae2 9C       		.byte	0x9c
  5217 0ae3 17       		.uleb128 0x17
- 5218 0ae4 28030000 		.4byte	.LASF116
+ 5218 0ae4 FB020000 		.4byte	.LASF116
  5219 0ae8 01       		.byte	0x1
  5220 0ae9 770B     		.2byte	0xb77
  5221 0aeb 00000000 		.4byte	.LFB63
@@ -8695,10 +8695,10 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5223 0af3 01       		.uleb128 0x1
  5224 0af4 9C       		.byte	0x9c
  5225 0af5 12       		.uleb128 0x12
- 5226 0af6 43070000 		.4byte	.LASF117
+ 5226 0af6 5C070000 		.4byte	.LASF117
  5227 0afa 01       		.byte	0x1
  5228 0afb 8F0B     		.2byte	0xb8f
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 146
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 146
 
 
  5229 0afd DD000000 		.4byte	0xdd
@@ -8708,7 +8708,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5233 0b0a 9C       		.byte	0x9c
  5234 0b0b 3D0B0000 		.4byte	0xb3d
  5235 0b0f 0E       		.uleb128 0xe
- 5236 0b10 76020000 		.4byte	.LASF82
+ 5236 0b10 49020000 		.4byte	.LASF82
  5237 0b14 01       		.byte	0x1
  5238 0b15 8F0B     		.2byte	0xb8f
  5239 0b17 81000000 		.4byte	0x81
@@ -8716,7 +8716,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5241 0b1c 91       		.byte	0x91
  5242 0b1d 6C       		.sleb128 -20
  5243 0b1e 0E       		.uleb128 0xe
- 5244 0b1f 2F080000 		.4byte	.LASF118
+ 5244 0b1f 33080000 		.4byte	.LASF118
  5245 0b23 01       		.byte	0x1
  5246 0b24 8F0B     		.2byte	0xb8f
  5247 0b26 DD000000 		.4byte	0xdd
@@ -8724,7 +8724,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5249 0b2b 91       		.byte	0x91
  5250 0b2c 68       		.sleb128 -24
  5251 0b2d 0F       		.uleb128 0xf
- 5252 0b2e B0040000 		.4byte	.LASF119
+ 5252 0b2e 90040000 		.4byte	.LASF119
  5253 0b32 01       		.byte	0x1
  5254 0b33 910B     		.2byte	0xb91
  5255 0b35 DD000000 		.4byte	0xdd
@@ -8733,7 +8733,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5258 0b3b 74       		.sleb128 -12
  5259 0b3c 00       		.byte	0
  5260 0b3d 12       		.uleb128 0x12
- 5261 0b3e E8010000 		.4byte	.LASF120
+ 5261 0b3e BB010000 		.4byte	.LASF120
  5262 0b42 01       		.byte	0x1
  5263 0b43 A70B     		.2byte	0xba7
  5264 0b45 DD000000 		.4byte	0xdd
@@ -8743,7 +8743,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5268 0b52 9C       		.byte	0x9c
  5269 0b53 670B0000 		.4byte	0xb67
  5270 0b57 0E       		.uleb128 0xe
- 5271 0b58 76020000 		.4byte	.LASF82
+ 5271 0b58 49020000 		.4byte	.LASF82
  5272 0b5c 01       		.byte	0x1
  5273 0b5d A70B     		.2byte	0xba7
  5274 0b5f 81000000 		.4byte	0x81
@@ -8752,13 +8752,13 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5277 0b65 74       		.sleb128 -12
  5278 0b66 00       		.byte	0
  5279 0b67 15       		.uleb128 0x15
- 5280 0b68 94080000 		.4byte	.LASF122
+ 5280 0b68 98080000 		.4byte	.LASF122
  5281 0b6c 01       		.byte	0x1
  5282 0b6d BB0B     		.2byte	0xbbb
  5283 0b6f 00000000 		.4byte	.LFB66
  5284 0b73 44000000 		.4byte	.LFE66-.LFB66
  5285 0b77 01       		.uleb128 0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 147
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 147
 
 
  5286 0b78 9C       		.byte	0x9c
@@ -8780,7 +8780,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5302 0b99 04       		.byte	0x4
  5303 0b9a 00       		.byte	0
  5304 0b9b 0B       		.uleb128 0xb
- 5305 0b9c 58070000 		.4byte	.LASF123
+ 5305 0b9c 71070000 		.4byte	.LASF123
  5306 0ba0 01       		.byte	0x1
  5307 0ba1 32       		.byte	0x32
  5308 0ba2 8B0B0000 		.4byte	0xb8b
@@ -8788,7 +8788,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5310 0ba7 03       		.byte	0x3
  5311 0ba8 0C000000 		.4byte	CySysTickCallbacks
  5312 0bac 1C       		.uleb128 0x1c
- 5313 0bad FC000000 		.4byte	.LASF124
+ 5313 0bad CF000000 		.4byte	.LASF124
  5314 0bb1 01       		.byte	0x1
  5315 0bb2 34       		.byte	0x34
  5316 0bb3 81000000 		.4byte	0x81
@@ -8796,7 +8796,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5318 0bb8 03       		.byte	0x3
  5319 0bb9 00000000 		.4byte	CySysTickInitVar
  5320 0bbd 1C       		.uleb128 0x1c
- 5321 0bbe E0040000 		.4byte	.LASF125
+ 5321 0bbe C0040000 		.4byte	.LASF125
  5322 0bc2 01       		.byte	0x1
  5323 0bc3 17       		.byte	0x17
  5324 0bc4 81000000 		.4byte	0x81
@@ -8804,7 +8804,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5326 0bc9 03       		.byte	0x3
  5327 0bca 00000000 		.4byte	cydelayFreqHz
  5328 0bce 1C       		.uleb128 0x1c
- 5329 0bcf 03020000 		.4byte	.LASF126
+ 5329 0bcf D6010000 		.4byte	.LASF126
  5330 0bd3 01       		.byte	0x1
  5331 0bd4 18       		.byte	0x18
  5332 0bd5 81000000 		.4byte	0x81
@@ -8812,18 +8812,18 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5334 0bda 03       		.byte	0x3
  5335 0bdb 00000000 		.4byte	cydelayFreqKhz
  5336 0bdf 1C       		.uleb128 0x1c
- 5337 0be0 CE070000 		.4byte	.LASF127
+ 5337 0be0 D2070000 		.4byte	.LASF127
  5338 0be4 01       		.byte	0x1
  5339 0be5 19       		.byte	0x19
  5340 0be6 6B000000 		.4byte	0x6b
  5341 0bea 05       		.uleb128 0x5
  5342 0beb 03       		.byte	0x3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 148
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 148
 
 
  5343 0bec 00000000 		.4byte	cydelayFreqMhz
  5344 0bf0 1C       		.uleb128 0x1c
- 5345 0bf1 8D070000 		.4byte	.LASF128
+ 5345 0bf1 A6070000 		.4byte	.LASF128
  5346 0bf5 01       		.byte	0x1
  5347 0bf6 1A       		.byte	0x1a
  5348 0bf7 81000000 		.4byte	0x81
@@ -8831,7 +8831,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5350 0bfc 03       		.byte	0x3
  5351 0bfd 00000000 		.4byte	cydelay32kMs
  5352 0c01 1C       		.uleb128 0x1c
- 5353 0c02 C6000000 		.4byte	.LASF129
+ 5353 0c02 99000000 		.4byte	.LASF129
  5354 0c06 01       		.byte	0x1
  5355 0c07 23       		.byte	0x23
  5356 0c08 81000000 		.4byte	0x81
@@ -8839,7 +8839,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5358 0c0d 03       		.byte	0x3
  5359 0c0e 00000000 		.4byte	lfclkPosedgeWdtCounter0Enabled
  5360 0c12 1C       		.uleb128 0x1c
- 5361 0c13 25060000 		.4byte	.LASF130
+ 5361 0c13 3E060000 		.4byte	.LASF130
  5362 0c17 01       		.byte	0x1
  5363 0c18 24       		.byte	0x24
  5364 0c19 81000000 		.4byte	0x81
@@ -8847,7 +8847,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5366 0c1e 03       		.byte	0x3
  5367 0c1f 00000000 		.4byte	lfclkPosedgeEnabledWdtCounter
  5368 0c23 1C       		.uleb128 0x1c
- 5369 0c24 F1070000 		.4byte	.LASF131
+ 5369 0c24 F5070000 		.4byte	.LASF131
  5370 0c28 01       		.byte	0x1
  5371 0c29 25       		.byte	0x25
  5372 0c2a 81000000 		.4byte	0x81
@@ -8862,7 +8862,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5381 0c42 2D       		.byte	0x2d
  5382 0c43 00       		.byte	0
  5383 0c44 1C       		.uleb128 0x1c
- 5384 0c45 BD040000 		.4byte	.LASF132
+ 5384 0c45 9D040000 		.4byte	.LASF132
  5385 0c49 01       		.byte	0x1
  5386 0c4a 39       		.byte	0x39
  5387 0c4b 550C0000 		.4byte	0xc55
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5397 0001 11       		.uleb128 0x11
  5398 0002 01       		.byte	0x1
  5399 0003 25       		.uleb128 0x25
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 149
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 149
 
 
  5400 0004 0E       		.uleb128 0xe
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5454 003a 0E       		.uleb128 0xe
  5455 003b 3A       		.uleb128 0x3a
  5456 003c 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 150
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 150
 
 
  5457 003d 3B       		.uleb128 0x3b
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5511 0074 01       		.byte	0x1
  5512 0075 3F       		.uleb128 0x3f
  5513 0076 19       		.uleb128 0x19
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 151
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 151
 
 
  5514 0077 03       		.uleb128 0x3
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5568 00ae 9742     		.uleb128 0x2117
  5569 00b0 19       		.uleb128 0x19
  5570 00b1 00       		.byte	0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 152
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 152
 
 
  5571 00b2 00       		.byte	0
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5625 00e9 00       		.byte	0
  5626 00ea 00       		.byte	0
  5627 00eb 10       		.uleb128 0x10
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 153
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 153
 
 
  5628 00ec 2E       		.uleb128 0x2e
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5682 0124 03       		.uleb128 0x3
  5683 0125 0E       		.uleb128 0xe
  5684 0126 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 154
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 154
 
 
  5685 0127 0B       		.uleb128 0xb
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5739 015f 05       		.uleb128 0x5
  5740 0160 27       		.uleb128 0x27
  5741 0161 19       		.uleb128 0x19
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 155
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 155
 
 
  5742 0162 11       		.uleb128 0x11
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5796 019b 00       		.byte	0
  5797 019c 00       		.byte	0
  5798 019d 17       		.uleb128 0x17
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 156
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 156
 
 
  5799 019e 2E       		.uleb128 0x2e
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5853 01d6 49       		.uleb128 0x49
  5854 01d7 13       		.uleb128 0x13
  5855 01d8 02       		.uleb128 0x2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 157
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 157
 
 
  5856 01d9 18       		.uleb128 0x18
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5910 0010 00000000 		.4byte	.LFB0
  5911 0014 1C000000 		.4byte	.LFE0-.LFB0
  5912 0018 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 158
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 158
 
 
  5913 001c 18000000 		.4byte	.LFE1-.LFB1
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  5967 00f4 9C000000 		.4byte	.LFE28-.LFB28
  5968 00f8 00000000 		.4byte	.LFB29
  5969 00fc 3C000000 		.4byte	.LFE29-.LFB29
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 159
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 159
 
 
  5970 0100 00000000 		.4byte	.LFB30
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  6024 01d8 00000000 		.4byte	.LFB57
  6025 01dc 18000000 		.4byte	.LFE57-.LFB57
  6026 01e0 00000000 		.4byte	.LFB58
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 160
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 160
 
 
  6027 01e4 18000000 		.4byte	.LFE58-.LFB58
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  6081 0084 68000000 		.4byte	.LFE16
  6082 0088 00000000 		.4byte	.LFB17
  6083 008c 68000000 		.4byte	.LFE17
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 161
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 161
 
 
  6084 0090 00000000 		.4byte	.LFB18
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  6138 0168 00000000 		.4byte	.LFB45
  6139 016c 2C000000 		.4byte	.LFE45
  6140 0170 00000000 		.4byte	.LFB46
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 162
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 162
 
 
  6141 0174 2C000000 		.4byte	.LFE46
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  6188      654D6F64 
  6188      6500
  6189              	.LASF31:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 163
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 163
 
 
  6190 0012 62675472 		.ascii	"bgTrim4\000"
@@ -9757,677 +9757,677 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 1
  6206      4C66636C 
  6206      6B506F73 
  6206      65646765 
- 6207              	.LASF135:
- 6208 0084 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\PSoC Creator\\CRT_ti"
- 6208      73657273 
- 6208      5C536E75 
- 6208      666B696E 
- 6208      5C446F63 
- 6209 00b2 6D65725C 		.ascii	"mer\\CRT_timer.cydsn\000"
- 6209      4352545F 
- 6209      74696D65 
- 6209      722E6379 
- 6209      64736E00 
- 6210              	.LASF129:
- 6211 00c6 6C66636C 		.ascii	"lfclkPosedgeWdtCounter0Enabled\000"
- 6211      6B506F73 
- 6211      65646765 
- 6211      57647443 
- 6211      6F756E74 
- 6212              	.LASF7:
- 6213 00e5 6C6F6E67 		.ascii	"long long unsigned int\000"
- 6213      206C6F6E 
- 6213      6720756E 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 164
+ 6207              	.LASF34:
+ 6208 0084 63757272 		.ascii	"currentImoTrim2Value\000"
+ 6208      656E7449 
+ 6208      6D6F5472 
+ 6208      696D3256 
+ 6208      616C7565 
+ 6209              	.LASF129:
+ 6210 0099 6C66636C 		.ascii	"lfclkPosedgeWdtCounter0Enabled\000"
+ 6210      6B506F73 
+ 6210      65646765 
+ 6210      57647443 
+ 6210      6F756E74 
+ 6211              	.LASF7:
+ 6212 00b8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 6212      206C6F6E 
+ 6212      6720756E 
+ 6212      7369676E 
+ 6212      65642069 
+ 6213              	.LASF124:
+ 6214 00cf 43795379 		.ascii	"CySysTickInitVar\000"
+ 6214      73546963 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 164
 
 
- 6213      7369676E 
- 6213      65642069 
- 6214              	.LASF124:
- 6215 00fc 43795379 		.ascii	"CySysTickInitVar\000"
- 6215      73546963 
- 6215      6B496E69 
- 6215      74566172 
- 6215      00
- 6216              	.LASF79:
- 6217 010d 4379456E 		.ascii	"CyEnableInts\000"
- 6217      61626C65 
- 6217      496E7473 
- 6217      00
- 6218              	.LASF100:
- 6219 011a 4379536F 		.ascii	"CySoftwareReset\000"
- 6219      66747761 
- 6219      72655265 
- 6219      73657400 
- 6220              	.LASF110:
- 6221 012a 43795379 		.ascii	"CySysTickEnableInterrupt\000"
- 6221      73546963 
- 6221      6B456E61 
- 6221      626C6549 
- 6221      6E746572 
- 6222              	.LASF95:
- 6223 0143 4379496E 		.ascii	"CyIntGetState\000"
- 6223      74476574 
- 6223      53746174 
- 6223      6500
- 6224              	.LASF6:
- 6225 0151 6C6F6E67 		.ascii	"long long int\000"
- 6225      206C6F6E 
- 6225      6720696E 
- 6225      7400
- 6226              	.LASF0:
- 6227 015f 7369676E 		.ascii	"signed char\000"
- 6227      65642063 
- 6227      68617200 
- 6228              	.LASF30:
- 6229 016b 66726571 		.ascii	"freq\000"
- 6229      00
- 6230              	.LASF62:
- 6231 0170 43795379 		.ascii	"CySysWdtReadCount\000"
- 6231      73576474 
- 6231      52656164 
- 6231      436F756E 
- 6231      7400
- 6232              	.LASF105:
- 6233 0182 43794465 		.ascii	"CyDelayFreq\000"
- 6233      6C617946 
- 6233      72657100 
- 6234              	.LASF25:
- 6235 018e 696E7465 		.ascii	"interruptState\000"
- 6235      72727570 
- 6235      74537461 
- 6235      746500
- 6236              	.LASF103:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 165
+ 6214      6B496E69 
+ 6214      74566172 
+ 6214      00
+ 6215              	.LASF79:
+ 6216 00e0 4379456E 		.ascii	"CyEnableInts\000"
+ 6216      61626C65 
+ 6216      496E7473 
+ 6216      00
+ 6217              	.LASF100:
+ 6218 00ed 4379536F 		.ascii	"CySoftwareReset\000"
+ 6218      66747761 
+ 6218      72655265 
+ 6218      73657400 
+ 6219              	.LASF110:
+ 6220 00fd 43795379 		.ascii	"CySysTickEnableInterrupt\000"
+ 6220      73546963 
+ 6220      6B456E61 
+ 6220      626C6549 
+ 6220      6E746572 
+ 6221              	.LASF95:
+ 6222 0116 4379496E 		.ascii	"CyIntGetState\000"
+ 6222      74476574 
+ 6222      53746174 
+ 6222      6500
+ 6223              	.LASF6:
+ 6224 0124 6C6F6E67 		.ascii	"long long int\000"
+ 6224      206C6F6E 
+ 6224      6720696E 
+ 6224      7400
+ 6225              	.LASF0:
+ 6226 0132 7369676E 		.ascii	"signed char\000"
+ 6226      65642063 
+ 6226      68617200 
+ 6227              	.LASF30:
+ 6228 013e 66726571 		.ascii	"freq\000"
+ 6228      00
+ 6229              	.LASF62:
+ 6230 0143 43795379 		.ascii	"CySysWdtReadCount\000"
+ 6230      73576474 
+ 6230      52656164 
+ 6230      436F756E 
+ 6230      7400
+ 6231              	.LASF105:
+ 6232 0155 43794465 		.ascii	"CyDelayFreq\000"
+ 6232      6C617946 
+ 6232      72657100 
+ 6233              	.LASF25:
+ 6234 0161 696E7465 		.ascii	"interruptState\000"
+ 6234      72727570 
+ 6234      74537461 
+ 6234      746500
+ 6235              	.LASF103:
+ 6236 0170 43794465 		.ascii	"CyDelayUs\000"
+ 6236      6C617955 
+ 6236      7300
+ 6237              	.LASF113:
+ 6238 017a 43795379 		.ascii	"CySysTickGetReload\000"
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 165
 
 
- 6237 019d 43794465 		.ascii	"CyDelayUs\000"
- 6237      6C617955 
- 6237      7300
- 6238              	.LASF113:
- 6239 01a7 43795379 		.ascii	"CySysTickGetReload\000"
- 6239      73546963 
- 6239      6B476574 
- 6239      52656C6F 
- 6239      616400
- 6240              	.LASF54:
- 6241 01ba 43795379 		.ascii	"CySysWdtWriteMatch\000"
- 6241      73576474 
- 6241      57726974 
- 6241      654D6174 
- 6241      636800
- 6242              	.LASF58:
- 6243 01cd 62697473 		.ascii	"bits\000"
- 6243      00
- 6244              	.LASF4:
- 6245 01d2 6C6F6E67 		.ascii	"long int\000"
- 6245      20696E74 
- 6245      00
- 6246              	.LASF96:
- 6247 01db 4379496E 		.ascii	"CyIntDisable\000"
- 6247      74446973 
- 6247      61626C65 
- 6247      00
- 6248              	.LASF120:
- 6249 01e8 43795379 		.ascii	"CySysTickGetCallback\000"
- 6249      73546963 
- 6249      6B476574 
- 6249      43616C6C 
- 6249      6261636B 
- 6250              	.LASF9:
- 6251 01fd 75696E74 		.ascii	"uint8\000"
- 6251      3800
- 6252              	.LASF126:
- 6253 0203 63796465 		.ascii	"cydelayFreqKhz\000"
- 6253      6C617946 
- 6253      7265714B 
- 6253      687A00
- 6254              	.LASF46:
- 6255 0212 656E6162 		.ascii	"enable\000"
- 6255      6C6500
- 6256              	.LASF13:
- 6257 0219 646F7562 		.ascii	"double\000"
- 6257      6C6500
- 6258              	.LASF23:
- 6259 0220 43795379 		.ascii	"CySysClkIloStop\000"
- 6259      73436C6B 
- 6259      496C6F53 
- 6259      746F7000 
- 6260              	.LASF51:
- 6261 0230 43795379 		.ascii	"CySysWdtWriteCascade\000"
- 6261      73576474 
- 6261      57726974 
- 6261      65436173 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 166
+ 6238      73546963 
+ 6238      6B476574 
+ 6238      52656C6F 
+ 6238      616400
+ 6239              	.LASF54:
+ 6240 018d 43795379 		.ascii	"CySysWdtWriteMatch\000"
+ 6240      73576474 
+ 6240      57726974 
+ 6240      654D6174 
+ 6240      636800
+ 6241              	.LASF58:
+ 6242 01a0 62697473 		.ascii	"bits\000"
+ 6242      00
+ 6243              	.LASF4:
+ 6244 01a5 6C6F6E67 		.ascii	"long int\000"
+ 6244      20696E74 
+ 6244      00
+ 6245              	.LASF96:
+ 6246 01ae 4379496E 		.ascii	"CyIntDisable\000"
+ 6246      74446973 
+ 6246      61626C65 
+ 6246      00
+ 6247              	.LASF120:
+ 6248 01bb 43795379 		.ascii	"CySysTickGetCallback\000"
+ 6248      73546963 
+ 6248      6B476574 
+ 6248      43616C6C 
+ 6248      6261636B 
+ 6249              	.LASF9:
+ 6250 01d0 75696E74 		.ascii	"uint8\000"
+ 6250      3800
+ 6251              	.LASF126:
+ 6252 01d6 63796465 		.ascii	"cydelayFreqKhz\000"
+ 6252      6C617946 
+ 6252      7265714B 
+ 6252      687A00
+ 6253              	.LASF46:
+ 6254 01e5 656E6162 		.ascii	"enable\000"
+ 6254      6C6500
+ 6255              	.LASF13:
+ 6256 01ec 646F7562 		.ascii	"double\000"
+ 6256      6C6500
+ 6257              	.LASF23:
+ 6258 01f3 43795379 		.ascii	"CySysClkIloStop\000"
+ 6258      73436C6B 
+ 6258      496C6F53 
+ 6258      746F7000 
+ 6259              	.LASF51:
+ 6260 0203 43795379 		.ascii	"CySysWdtWriteCascade\000"
+ 6260      73576474 
+ 6260      57726974 
+ 6260      65436173 
+ 6260      63616465 
+ 6261              	.LASF91:
+ 6262 0218 73686966 		.ascii	"shift\000"
+ 6262      7400
+ 6263              	.LASF67:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 166
 
 
- 6261      63616465 
- 6262              	.LASF91:
- 6263 0245 73686966 		.ascii	"shift\000"
- 6263      7400
- 6264              	.LASF67:
- 6265 024b 636F756E 		.ascii	"countersMask\000"
- 6265      74657273 
- 6265      4D61736B 
- 6265      00
- 6266              	.LASF73:
- 6267 0258 43795379 		.ascii	"CySysLvdClearInterrupt\000"
- 6267      734C7664 
- 6267      436C6561 
- 6267      72496E74 
- 6267      65727275 
- 6268              	.LASF11:
- 6269 026f 75696E74 		.ascii	"uint32\000"
- 6269      333200
- 6270              	.LASF82:
- 6271 0276 6E756D62 		.ascii	"number\000"
- 6271      657200
- 6272              	.LASF80:
- 6273 027d 6D61736B 		.ascii	"mask\000"
- 6273      00
- 6274              	.LASF56:
- 6275 0282 72656756 		.ascii	"regValue\000"
- 6275      616C7565 
- 6275      00
- 6276              	.LASF44:
- 6277 028b 43795379 		.ascii	"CySysWdtReadMode\000"
- 6277      73576474 
- 6277      52656164 
- 6277      4D6F6465 
- 6277      00
- 6278              	.LASF69:
- 6279 029c 43795379 		.ascii	"CySysLvdEnable\000"
- 6279      734C7664 
- 6279      456E6162 
- 6279      6C6500
- 6280              	.LASF93:
- 6281 02ab 4379496E 		.ascii	"CyIntGetPriority\000"
- 6281      74476574 
- 6281      5072696F 
- 6281      72697479 
- 6281      00
- 6282              	.LASF53:
- 6283 02bc 636F756E 		.ascii	"countersEnableStatus\000"
- 6283      74657273 
- 6283      456E6162 
- 6283      6C655374 
- 6283      61747573 
- 6284              	.LASF107:
- 6285 02d1 43795379 		.ascii	"CySysTickInit\000"
- 6285      73546963 
- 6285      6B496E69 
- 6285      7400
- 6286              	.LASF48:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 167
+ 6264 021e 636F756E 		.ascii	"countersMask\000"
+ 6264      74657273 
+ 6264      4D61736B 
+ 6264      00
+ 6265              	.LASF73:
+ 6266 022b 43795379 		.ascii	"CySysLvdClearInterrupt\000"
+ 6266      734C7664 
+ 6266      436C6561 
+ 6266      72496E74 
+ 6266      65727275 
+ 6267              	.LASF11:
+ 6268 0242 75696E74 		.ascii	"uint32\000"
+ 6268      333200
+ 6269              	.LASF82:
+ 6270 0249 6E756D62 		.ascii	"number\000"
+ 6270      657200
+ 6271              	.LASF80:
+ 6272 0250 6D61736B 		.ascii	"mask\000"
+ 6272      00
+ 6273              	.LASF56:
+ 6274 0255 72656756 		.ascii	"regValue\000"
+ 6274      616C7565 
+ 6274      00
+ 6275              	.LASF44:
+ 6276 025e 43795379 		.ascii	"CySysWdtReadMode\000"
+ 6276      73576474 
+ 6276      52656164 
+ 6276      4D6F6465 
+ 6276      00
+ 6277              	.LASF69:
+ 6278 026f 43795379 		.ascii	"CySysLvdEnable\000"
+ 6278      734C7664 
+ 6278      456E6162 
+ 6278      6C6500
+ 6279              	.LASF93:
+ 6280 027e 4379496E 		.ascii	"CyIntGetPriority\000"
+ 6280      74476574 
+ 6280      5072696F 
+ 6280      72697479 
+ 6280      00
+ 6281              	.LASF53:
+ 6282 028f 636F756E 		.ascii	"countersEnableStatus\000"
+ 6282      74657273 
+ 6282      456E6162 
+ 6282      6C655374 
+ 6282      61747573 
+ 6283              	.LASF107:
+ 6284 02a4 43795379 		.ascii	"CySysTickInit\000"
+ 6284      73546963 
+ 6284      6B496E69 
+ 6284      7400
+ 6285              	.LASF48:
+ 6286 02b2 43795379 		.ascii	"CySysWdtEnable\000"
+ 6286      73576474 
+ 6286      456E6162 
+ 6286      6C6500
+ 6287              	.LASF49:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 167
 
 
- 6287 02df 43795379 		.ascii	"CySysWdtEnable\000"
- 6287      73576474 
- 6287      456E6162 
- 6287      6C6500
- 6288              	.LASF49:
- 6289 02ee 636F756E 		.ascii	"counterMask\000"
- 6289      7465724D 
- 6289      61736B00 
- 6290              	.LASF115:
- 6291 02fa 43795379 		.ascii	"CySysTickGetCountFlag\000"
- 6291      73546963 
- 6291      6B476574 
- 6291      436F756E 
- 6291      74466C61 
- 6292              	.LASF8:
- 6293 0310 756E7369 		.ascii	"unsigned int\000"
- 6293      676E6564 
- 6293      20696E74 
- 6293      00
- 6294              	.LASF68:
- 6295 031d 66697273 		.ascii	"firstCount\000"
- 6295      74436F75 
- 6295      6E7400
- 6296              	.LASF116:
- 6297 0328 43795379 		.ascii	"CySysTickClear\000"
- 6297      73546963 
- 6297      6B436C65 
- 6297      617200
- 6298              	.LASF5:
- 6299 0337 6C6F6E67 		.ascii	"long unsigned int\000"
- 6299      20756E73 
- 6299      69676E65 
- 6299      6420696E 
- 6299      7400
- 6300              	.LASF72:
- 6301 0349 43795379 		.ascii	"CySysLvdGetInterruptSource\000"
- 6301      734C7664 
- 6301      47657449 
- 6301      6E746572 
- 6301      72757074 
- 6302              	.LASF21:
- 6303 0364 43795379 		.ascii	"CySysClkImoStop\000"
- 6303      73436C6B 
- 6303      496D6F53 
- 6303      746F7000 
- 6304              	.LASF136:
- 6305 0374 43795379 		.ascii	"CySysClkLfclkPosedgeRestore\000"
- 6305      73436C6B 
- 6305      4C66636C 
- 6305      6B506F73 
- 6305      65646765 
- 6306              	.LASF97:
- 6307 0390 4379496E 		.ascii	"CyIntSetPending\000"
- 6307      74536574 
- 6307      50656E64 
- 6307      696E6700 
- 6308              	.LASF77:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 168
+ 6288 02c1 636F756E 		.ascii	"counterMask\000"
+ 6288      7465724D 
+ 6288      61736B00 
+ 6289              	.LASF115:
+ 6290 02cd 43795379 		.ascii	"CySysTickGetCountFlag\000"
+ 6290      73546963 
+ 6290      6B476574 
+ 6290      436F756E 
+ 6290      74466C61 
+ 6291              	.LASF8:
+ 6292 02e3 756E7369 		.ascii	"unsigned int\000"
+ 6292      676E6564 
+ 6292      20696E74 
+ 6292      00
+ 6293              	.LASF68:
+ 6294 02f0 66697273 		.ascii	"firstCount\000"
+ 6294      74436F75 
+ 6294      6E7400
+ 6295              	.LASF116:
+ 6296 02fb 43795379 		.ascii	"CySysTickClear\000"
+ 6296      73546963 
+ 6296      6B436C65 
+ 6296      617200
+ 6297              	.LASF5:
+ 6298 030a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 6298      20756E73 
+ 6298      69676E65 
+ 6298      6420696E 
+ 6298      7400
+ 6299              	.LASF72:
+ 6300 031c 43795379 		.ascii	"CySysLvdGetInterruptSource\000"
+ 6300      734C7664 
+ 6300      47657449 
+ 6300      6E746572 
+ 6300      72757074 
+ 6301              	.LASF21:
+ 6302 0337 43795379 		.ascii	"CySysClkImoStop\000"
+ 6302      73436C6B 
+ 6302      496D6F53 
+ 6302      746F7000 
+ 6303              	.LASF102:
+ 6304 0347 6D696C6C 		.ascii	"milliseconds\000"
+ 6304      69736563 
+ 6304      6F6E6473 
+ 6304      00
+ 6305              	.LASF136:
+ 6306 0354 43795379 		.ascii	"CySysClkLfclkPosedgeRestore\000"
+ 6306      73436C6B 
+ 6306      4C66636C 
+ 6306      6B506F73 
+ 6306      65646765 
+ 6307              	.LASF97:
+ 6308 0370 4379496E 		.ascii	"CyIntSetPending\000"
+ 6308      74536574 
+ 6308      50656E64 
+ 6308      696E6700 
+ 6309              	.LASF77:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 168
 
 
- 6309 03a0 43794469 		.ascii	"CyDisableInts\000"
- 6309      7361626C 
- 6309      65496E74 
- 6309      7300
- 6310              	.LASF74:
- 6311 03ae 43795379 		.ascii	"CySysGetResetReason\000"
- 6311      73476574 
- 6311      52657365 
- 6311      74526561 
- 6311      736F6E00 
- 6312              	.LASF3:
- 6313 03c2 73686F72 		.ascii	"short unsigned int\000"
- 6313      7420756E 
- 6313      7369676E 
- 6313      65642069 
- 6313      6E7400
- 6314              	.LASF87:
- 6315 03d5 4379496E 		.ascii	"CyIntSetVector\000"
- 6315      74536574 
- 6315      56656374 
- 6315      6F7200
- 6316              	.LASF134:
- 6317 03e4 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\CyLib.c\000"
- 6317      6E657261 
- 6317      7465645F 
- 6317      536F7572 
- 6317      63655C50 
- 6318              	.LASF22:
- 6319 0405 43795379 		.ascii	"CySysClkIloStart\000"
- 6319      73436C6B 
- 6319      496C6F53 
- 6319      74617274 
- 6319      00
- 6320              	.LASF29:
- 6321 0416 43795379 		.ascii	"CySysClkWriteImoFreq\000"
- 6321      73436C6B 
- 6321      57726974 
- 6321      65496D6F 
- 6321      46726571 
- 6322              	.LASF81:
- 6323 042b 4379496E 		.ascii	"CyIntSetSysVector\000"
- 6323      74536574 
- 6323      53797356 
- 6323      6563746F 
- 6323      7200
- 6324              	.LASF16:
- 6325 043d 72656733 		.ascii	"reg32\000"
- 6325      3200
- 6326              	.LASF45:
- 6327 0443 43795379 		.ascii	"CySysWdtWriteClearOnMatch\000"
- 6327      73576474 
- 6327      57726974 
- 6327      65436C65 
- 6327      61724F6E 
- 6328              	.LASF106:
- 6329 045d 43795379 		.ascii	"CySysTickStart\000"
- 6329      73546963 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 169
+ 6310 0380 43794469 		.ascii	"CyDisableInts\000"
+ 6310      7361626C 
+ 6310      65496E74 
+ 6310      7300
+ 6311              	.LASF74:
+ 6312 038e 43795379 		.ascii	"CySysGetResetReason\000"
+ 6312      73476574 
+ 6312      52657365 
+ 6312      74526561 
+ 6312      736F6E00 
+ 6313              	.LASF3:
+ 6314 03a2 73686F72 		.ascii	"short unsigned int\000"
+ 6314      7420756E 
+ 6314      7369676E 
+ 6314      65642069 
+ 6314      6E7400
+ 6315              	.LASF87:
+ 6316 03b5 4379496E 		.ascii	"CyIntSetVector\000"
+ 6316      74536574 
+ 6316      56656374 
+ 6316      6F7200
+ 6317              	.LASF134:
+ 6318 03c4 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\CyLib.c\000"
+ 6318      6E657261 
+ 6318      7465645F 
+ 6318      536F7572 
+ 6318      63655C50 
+ 6319              	.LASF22:
+ 6320 03e5 43795379 		.ascii	"CySysClkIloStart\000"
+ 6320      73436C6B 
+ 6320      496C6F53 
+ 6320      74617274 
+ 6320      00
+ 6321              	.LASF29:
+ 6322 03f6 43795379 		.ascii	"CySysClkWriteImoFreq\000"
+ 6322      73436C6B 
+ 6322      57726974 
+ 6322      65496D6F 
+ 6322      46726571 
+ 6323              	.LASF81:
+ 6324 040b 4379496E 		.ascii	"CyIntSetSysVector\000"
+ 6324      74536574 
+ 6324      53797356 
+ 6324      6563746F 
+ 6324      7200
+ 6325              	.LASF16:
+ 6326 041d 72656733 		.ascii	"reg32\000"
+ 6326      3200
+ 6327              	.LASF45:
+ 6328 0423 43795379 		.ascii	"CySysWdtWriteClearOnMatch\000"
+ 6328      73576474 
+ 6328      57726974 
+ 6328      65436C65 
+ 6328      61724F6E 
+ 6329              	.LASF106:
+ 6330 043d 43795379 		.ascii	"CySysTickStart\000"
+ 6330      73546963 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 169
 
 
- 6329      6B537461 
- 6329      727400
- 6330              	.LASF47:
- 6331 046c 43795379 		.ascii	"CySysWdtReadClearOnMatch\000"
- 6331      73576474 
- 6331      52656164 
- 6331      436C6561 
- 6331      724F6E4D 
- 6332              	.LASF18:
- 6333 0485 73697A65 		.ascii	"sizetype\000"
- 6333      74797065 
- 6333      00
- 6334              	.LASF98:
- 6335 048e 4379496E 		.ascii	"CyIntClearPending\000"
- 6335      74436C65 
- 6335      61725065 
- 6335      6E64696E 
- 6335      6700
- 6336              	.LASF83:
- 6337 04a0 61646472 		.ascii	"address\000"
- 6337      65737300 
- 6338              	.LASF32:
- 6339 04a8 62675472 		.ascii	"bgTrim5\000"
- 6339      696D3500 
- 6340              	.LASF119:
- 6341 04b0 72657456 		.ascii	"retVal\000"
- 6341      616C00
- 6342              	.LASF55:
- 6343 04b7 6D617463 		.ascii	"match\000"
- 6343      6800
- 6344              	.LASF132:
- 6345 04bd 6379496D 		.ascii	"cyImoFreqMhz2Reg\000"
- 6345      6F467265 
- 6345      714D687A 
- 6345      32526567 
- 6345      00
- 6346              	.LASF114:
- 6347 04ce 43795379 		.ascii	"CySysTickGetValue\000"
- 6347      73546963 
- 6347      6B476574 
- 6347      56616C75 
- 6347      6500
- 6348              	.LASF125:
- 6349 04e0 63796465 		.ascii	"cydelayFreqHz\000"
- 6349      6C617946 
- 6349      72657148 
- 6349      7A00
- 6350              	.LASF66:
- 6351 04ee 43795379 		.ascii	"CySysWdtResetCounters\000"
- 6351      73576474 
- 6351      52657365 
- 6351      74436F75 
- 6351      6E746572 
- 6352              	.LASF89:
- 6353 0504 4379496E 		.ascii	"CyIntSetPriority\000"
- 6353      74536574 
- 6353      5072696F 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 170
+ 6330      6B537461 
+ 6330      727400
+ 6331              	.LASF47:
+ 6332 044c 43795379 		.ascii	"CySysWdtReadClearOnMatch\000"
+ 6332      73576474 
+ 6332      52656164 
+ 6332      436C6561 
+ 6332      724F6E4D 
+ 6333              	.LASF18:
+ 6334 0465 73697A65 		.ascii	"sizetype\000"
+ 6334      74797065 
+ 6334      00
+ 6335              	.LASF98:
+ 6336 046e 4379496E 		.ascii	"CyIntClearPending\000"
+ 6336      74436C65 
+ 6336      61725065 
+ 6336      6E64696E 
+ 6336      6700
+ 6337              	.LASF83:
+ 6338 0480 61646472 		.ascii	"address\000"
+ 6338      65737300 
+ 6339              	.LASF32:
+ 6340 0488 62675472 		.ascii	"bgTrim5\000"
+ 6340      696D3500 
+ 6341              	.LASF119:
+ 6342 0490 72657456 		.ascii	"retVal\000"
+ 6342      616C00
+ 6343              	.LASF55:
+ 6344 0497 6D617463 		.ascii	"match\000"
+ 6344      6800
+ 6345              	.LASF132:
+ 6346 049d 6379496D 		.ascii	"cyImoFreqMhz2Reg\000"
+ 6346      6F467265 
+ 6346      714D687A 
+ 6346      32526567 
+ 6346      00
+ 6347              	.LASF114:
+ 6348 04ae 43795379 		.ascii	"CySysTickGetValue\000"
+ 6348      73546963 
+ 6348      6B476574 
+ 6348      56616C75 
+ 6348      6500
+ 6349              	.LASF125:
+ 6350 04c0 63796465 		.ascii	"cydelayFreqHz\000"
+ 6350      6C617946 
+ 6350      72657148 
+ 6350      7A00
+ 6351              	.LASF66:
+ 6352 04ce 43795379 		.ascii	"CySysWdtResetCounters\000"
+ 6352      73576474 
+ 6352      52657365 
+ 6352      74436F75 
+ 6352      6E746572 
+ 6353              	.LASF89:
+ 6354 04e4 4379496E 		.ascii	"CyIntSetPriority\000"
+ 6354      74536574 
+ 6354      5072696F 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 170
 
 
- 6353      72697479 
- 6353      00
- 6354              	.LASF64:
- 6355 0515 43795379 		.ascii	"CySysWdtClearInterrupt\000"
- 6355      73576474 
- 6355      436C6561 
- 6355      72496E74 
- 6355      65727275 
- 6356              	.LASF12:
- 6357 052c 666C6F61 		.ascii	"float\000"
- 6357      7400
- 6358              	.LASF133:
- 6359 0532 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 6359      4320342E 
- 6359      382E3420 
- 6359      32303134 
- 6359      30353236 
- 6360 0565 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 6360      20726576 
- 6360      6973696F 
- 6360      6E203231 
- 6360      31333538 
- 6361 0598 30202D66 		.ascii	"0 -ffunction-sections\000"
- 6361      66756E63 
- 6361      74696F6E 
- 6361      2D736563 
- 6361      74696F6E 
- 6362              	.LASF19:
- 6363 05ae 63795379 		.ascii	"cySysTickCallback\000"
- 6363      73546963 
- 6363      6B43616C 
- 6363      6C626163 
- 6363      6B00
- 6364              	.LASF88:
- 6365 05c0 4379496E 		.ascii	"CyIntGetVector\000"
- 6365      74476574 
- 6365      56656374 
- 6365      6F7200
- 6366              	.LASF102:
- 6367 05cf 6D696C6C 		.ascii	"milliseconds\000"
- 6367      69736563 
- 6367      6F6E6473 
- 6367      00
- 6368              	.LASF60:
- 6369 05dc 43795379 		.ascii	"CySysWdtReadToggleBit\000"
- 6369      73576474 
- 6369      52656164 
- 6369      546F6767 
- 6369      6C654269 
- 6370              	.LASF37:
- 6371 05f2 43795379 		.ascii	"CySysWdtLocked\000"
+ 6354      72697479 
+ 6354      00
+ 6355              	.LASF64:
+ 6356 04f5 43795379 		.ascii	"CySysWdtClearInterrupt\000"
+ 6356      73576474 
+ 6356      436C6561 
+ 6356      72496E74 
+ 6356      65727275 
+ 6357              	.LASF12:
+ 6358 050c 666C6F61 		.ascii	"float\000"
+ 6358      7400
+ 6359              	.LASF133:
+ 6360 0512 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 6360      4320342E 
+ 6360      382E3420 
+ 6360      32303134 
+ 6360      30353236 
+ 6361 0545 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 6361      20726576 
+ 6361      6973696F 
+ 6361      6E203231 
+ 6361      31333538 
+ 6362 0578 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 6362      66756E63 
+ 6362      74696F6E 
+ 6362      2D736563 
+ 6362      74696F6E 
+ 6363              	.LASF19:
+ 6364 058e 63795379 		.ascii	"cySysTickCallback\000"
+ 6364      73546963 
+ 6364      6B43616C 
+ 6364      6C626163 
+ 6364      6B00
+ 6365              	.LASF88:
+ 6366 05a0 4379496E 		.ascii	"CyIntGetVector\000"
+ 6366      74476574 
+ 6366      56656374 
+ 6366      6F7200
+ 6367              	.LASF135:
+ 6368 05af 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 6368      73657273 
+ 6368      5C536E75 
+ 6368      666B696E 
+ 6368      5C446F63 
+ 6369 05dc 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 6369      696D6572 
+ 6369      5C435254 
+ 6369      5F74696D 
+ 6369      65722E63 
+ 6370              	.LASF60:
+ 6371 05f5 43795379 		.ascii	"CySysWdtReadToggleBit\000"
  6371      73576474 
- 6371      4C6F636B 
- 6371      656400
- 6372              	.LASF15:
- 6373 0601 72656738 		.ascii	"reg8\000"
- 6373      00
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 171
+ 6371      52656164 
+ 6371      546F6767 
+ 6371      6C654269 
+ 6372              	.LASF37:
+ 6373 060b 43795379 		.ascii	"CySysWdtLocked\000"
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 171
 
 
- 6374              	.LASF70:
- 6375 0606 74687265 		.ascii	"threshold\000"
- 6375      73686F6C 
- 6375      6400
- 6376              	.LASF99:
- 6377 0610 43794861 		.ascii	"CyHalt\000"
- 6377      6C7400
- 6378              	.LASF1:
- 6379 0617 756E7369 		.ascii	"unsigned char\000"
- 6379      676E6564 
- 6379      20636861 
- 6379      7200
- 6380              	.LASF130:
- 6381 0625 6C66636C 		.ascii	"lfclkPosedgeEnabledWdtCounter\000"
- 6381      6B506F73 
- 6381      65646765 
- 6381      456E6162 
- 6381      6C656457 
- 6382              	.LASF2:
- 6383 0643 73686F72 		.ascii	"short int\000"
- 6383      7420696E 
- 6383      7400
- 6384              	.LASF59:
- 6385 064d 43795379 		.ascii	"CySysWdtReadCascade\000"
- 6385      73576474 
- 6385      52656164 
- 6385      43617363 
- 6385      61646500 
- 6386              	.LASF50:
- 6387 0661 43795379 		.ascii	"CySysWdtDisable\000"
+ 6373      73576474 
+ 6373      4C6F636B 
+ 6373      656400
+ 6374              	.LASF15:
+ 6375 061a 72656738 		.ascii	"reg8\000"
+ 6375      00
+ 6376              	.LASF70:
+ 6377 061f 74687265 		.ascii	"threshold\000"
+ 6377      73686F6C 
+ 6377      6400
+ 6378              	.LASF99:
+ 6379 0629 43794861 		.ascii	"CyHalt\000"
+ 6379      6C7400
+ 6380              	.LASF1:
+ 6381 0630 756E7369 		.ascii	"unsigned char\000"
+ 6381      676E6564 
+ 6381      20636861 
+ 6381      7200
+ 6382              	.LASF130:
+ 6383 063e 6C66636C 		.ascii	"lfclkPosedgeEnabledWdtCounter\000"
+ 6383      6B506F73 
+ 6383      65646765 
+ 6383      456E6162 
+ 6383      6C656457 
+ 6384              	.LASF2:
+ 6385 065c 73686F72 		.ascii	"short int\000"
+ 6385      7420696E 
+ 6385      7400
+ 6386              	.LASF59:
+ 6387 0666 43795379 		.ascii	"CySysWdtReadCascade\000"
  6387      73576474 
- 6387      44697361 
- 6387      626C6500 
- 6388              	.LASF94:
- 6389 0671 4379496E 		.ascii	"CyIntEnable\000"
- 6389      74456E61 
+ 6387      52656164 
+ 6387      43617363 
+ 6387      61646500 
+ 6388              	.LASF50:
+ 6389 067a 43795379 		.ascii	"CySysWdtDisable\000"
+ 6389      73576474 
+ 6389      44697361 
  6389      626C6500 
- 6390              	.LASF86:
- 6391 067d 4379496E 		.ascii	"CyIntGetSysVector\000"
- 6391      74476574 
- 6391      53797356 
- 6391      6563746F 
- 6391      7200
- 6392              	.LASF61:
- 6393 068f 43795379 		.ascii	"CySysWdtReadMatch\000"
- 6393      73576474 
- 6393      52656164 
- 6393      4D617463 
- 6393      6800
- 6394              	.LASF27:
- 6395 06a1 636C6B53 		.ascii	"clkSelect\000"
- 6395      656C6563 
- 6395      7400
- 6396              	.LASF36:
- 6397 06ab 43795379 		.ascii	"CySysClkIloEnabled\000"
- 6397      73436C6B 
- 6397      496C6F45 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 172
+ 6390              	.LASF94:
+ 6391 068a 4379496E 		.ascii	"CyIntEnable\000"
+ 6391      74456E61 
+ 6391      626C6500 
+ 6392              	.LASF86:
+ 6393 0696 4379496E 		.ascii	"CyIntGetSysVector\000"
+ 6393      74476574 
+ 6393      53797356 
+ 6393      6563746F 
+ 6393      7200
+ 6394              	.LASF61:
+ 6395 06a8 43795379 		.ascii	"CySysWdtReadMatch\000"
+ 6395      73576474 
+ 6395      52656164 
+ 6395      4D617463 
+ 6395      6800
+ 6396              	.LASF27:
+ 6397 06ba 636C6B53 		.ascii	"clkSelect\000"
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 172
 
 
- 6397      6E61626C 
- 6397      656400
- 6398              	.LASF63:
- 6399 06be 43795379 		.ascii	"CySysWdtGetInterruptSource\000"
- 6399      73576474 
- 6399      47657449 
- 6399      6E746572 
- 6399      72757074 
- 6400              	.LASF75:
- 6401 06d9 72656173 		.ascii	"reason\000"
- 6401      6F6E00
- 6402              	.LASF85:
- 6403 06e0 72616D56 		.ascii	"ramVectorTable\000"
- 6403      6563746F 
- 6403      72546162 
- 6403      6C6500
- 6404              	.LASF14:
- 6405 06ef 63686172 		.ascii	"char\000"
- 6405      00
- 6406              	.LASF90:
- 6407 06f4 7072696F 		.ascii	"priority\000"
- 6407      72697479 
+ 6397      656C6563 
+ 6397      7400
+ 6398              	.LASF36:
+ 6399 06c4 43795379 		.ascii	"CySysClkIloEnabled\000"
+ 6399      73436C6B 
+ 6399      496C6F45 
+ 6399      6E61626C 
+ 6399      656400
+ 6400              	.LASF63:
+ 6401 06d7 43795379 		.ascii	"CySysWdtGetInterruptSource\000"
+ 6401      73576474 
+ 6401      47657449 
+ 6401      6E746572 
+ 6401      72757074 
+ 6402              	.LASF75:
+ 6403 06f2 72656173 		.ascii	"reason\000"
+ 6403      6F6E00
+ 6404              	.LASF85:
+ 6405 06f9 72616D56 		.ascii	"ramVectorTable\000"
+ 6405      6563746F 
+ 6405      72546162 
+ 6405      6C6500
+ 6406              	.LASF14:
+ 6407 0708 63686172 		.ascii	"char\000"
  6407      00
- 6408              	.LASF41:
- 6409 06fd 6D6F6465 		.ascii	"mode\000"
+ 6408              	.LASF90:
+ 6409 070d 7072696F 		.ascii	"priority\000"
+ 6409      72697479 
  6409      00
- 6410              	.LASF17:
- 6411 0702 63796973 		.ascii	"cyisraddress\000"
- 6411      72616464 
- 6411      72657373 
+ 6410              	.LASF41:
+ 6411 0716 6D6F6465 		.ascii	"mode\000"
  6411      00
- 6412              	.LASF108:
- 6413 070f 43795379 		.ascii	"CySysTickEnable\000"
- 6413      73546963 
- 6413      6B456E61 
- 6413      626C6500 
- 6414              	.LASF35:
- 6415 071f 43795379 		.ascii	"CySysWdtLock\000"
- 6415      73576474 
- 6415      4C6F636B 
- 6415      00
- 6416              	.LASF26:
- 6417 072c 43795379 		.ascii	"CySysClkWriteSysclkDiv\000"
- 6417      73436C6B 
- 6417      57726974 
- 6417      65537973 
- 6417      636C6B44 
- 6418              	.LASF117:
- 6419 0743 43795379 		.ascii	"CySysTickSetCallback\000"
- 6419      73546963 
- 6419      6B536574 
- 6419      43616C6C 
- 6419      6261636B 
- 6420              	.LASF123:
- 6421 0758 43795379 		.ascii	"CySysTickCallbacks\000"
+ 6412              	.LASF17:
+ 6413 071b 63796973 		.ascii	"cyisraddress\000"
+ 6413      72616464 
+ 6413      72657373 
+ 6413      00
+ 6414              	.LASF108:
+ 6415 0728 43795379 		.ascii	"CySysTickEnable\000"
+ 6415      73546963 
+ 6415      6B456E61 
+ 6415      626C6500 
+ 6416              	.LASF35:
+ 6417 0738 43795379 		.ascii	"CySysWdtLock\000"
+ 6417      73576474 
+ 6417      4C6F636B 
+ 6417      00
+ 6418              	.LASF26:
+ 6419 0745 43795379 		.ascii	"CySysClkWriteSysclkDiv\000"
+ 6419      73436C6B 
+ 6419      57726974 
+ 6419      65537973 
+ 6419      636C6B44 
+ 6420              	.LASF117:
+ 6421 075c 43795379 		.ascii	"CySysTickSetCallback\000"
  6421      73546963 
- 6421      6B43616C 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 173
+ 6421      6B536574 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 173
 
 
- 6421      6C626163 
- 6421      6B7300
- 6422              	.LASF101:
- 6423 076b 43794465 		.ascii	"CyDelay\000"
- 6423      6C617900 
- 6424              	.LASF111:
- 6425 0773 43795379 		.ascii	"CySysTickDisableInterrupt\000"
- 6425      73546963 
- 6425      6B446973 
- 6425      61626C65 
- 6425      496E7465 
- 6426              	.LASF128:
- 6427 078d 63796465 		.ascii	"cydelay32kMs\000"
- 6427      6C617933 
- 6427      326B4D73 
- 6427      00
- 6428              	.LASF71:
- 6429 079a 43795379 		.ascii	"CySysLvdDisable\000"
- 6429      734C7664 
- 6429      44697361 
- 6429      626C6500 
- 6430              	.LASF42:
- 6431 07aa 636F6E66 		.ascii	"configRegValue\000"
- 6431      69675265 
- 6431      6756616C 
- 6431      756500
- 6432              	.LASF34:
- 6433 07b9 63757272 		.ascii	"currentImoTrim2Value\000"
- 6433      656E7449 
- 6433      6D6F5472 
- 6433      696D3256 
- 6433      616C7565 
+ 6421      43616C6C 
+ 6421      6261636B 
+ 6422              	.LASF123:
+ 6423 0771 43795379 		.ascii	"CySysTickCallbacks\000"
+ 6423      73546963 
+ 6423      6B43616C 
+ 6423      6C626163 
+ 6423      6B7300
+ 6424              	.LASF101:
+ 6425 0784 43794465 		.ascii	"CyDelay\000"
+ 6425      6C617900 
+ 6426              	.LASF111:
+ 6427 078c 43795379 		.ascii	"CySysTickDisableInterrupt\000"
+ 6427      73546963 
+ 6427      6B446973 
+ 6427      61626C65 
+ 6427      496E7465 
+ 6428              	.LASF128:
+ 6429 07a6 63796465 		.ascii	"cydelay32kMs\000"
+ 6429      6C617933 
+ 6429      326B4D73 
+ 6429      00
+ 6430              	.LASF71:
+ 6431 07b3 43795379 		.ascii	"CySysLvdDisable\000"
+ 6431      734C7664 
+ 6431      44697361 
+ 6431      626C6500 
+ 6432              	.LASF42:
+ 6433 07c3 636F6E66 		.ascii	"configRegValue\000"
+ 6433      69675265 
+ 6433      6756616C 
+ 6433      756500
  6434              	.LASF127:
- 6435 07ce 63796465 		.ascii	"cydelayFreqMhz\000"
+ 6435 07d2 63796465 		.ascii	"cydelayFreqMhz\000"
  6435      6C617946 
  6435      7265714D 
  6435      687A00
  6436              	.LASF65:
- 6437 07dd 7764744C 		.ascii	"wdtLockState\000"
+ 6437 07e1 7764744C 		.ascii	"wdtLockState\000"
  6437      6F636B53 
  6437      74617465 
  6437      00
  6438              	.LASF76:
- 6439 07ea 73746174 		.ascii	"status\000"
+ 6439 07ee 73746174 		.ascii	"status\000"
  6439      757300
  6440              	.LASF131:
- 6441 07f1 6C66636C 		.ascii	"lfclkPosedgeWdtCounter0Mode\000"
+ 6441 07f5 6C66636C 		.ascii	"lfclkPosedgeWdtCounter0Mode\000"
  6441      6B506F73 
  6441      65646765 
  6441      57647443 
  6441      6F756E74 
  6442              	.LASF109:
- 6443 080d 43795379 		.ascii	"CySysTickStop\000"
+ 6443 0811 43795379 		.ascii	"CySysTickStop\000"
  6443      73546963 
  6443      6B53746F 
  6443      7000
  6444              	.LASF52:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccWJKBCb.s 			page 174
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8A1VIf.s 			page 174
 
 
- 6445 081b 63617363 		.ascii	"cascadeMask\000"
+ 6445 081f 63617363 		.ascii	"cascadeMask\000"
  6445      6164654D 
  6445      61736B00 
  6446              	.LASF28:
- 6447 0827 64697669 		.ascii	"divider\000"
+ 6447 082b 64697669 		.ascii	"divider\000"
  6447      64657200 
  6448              	.LASF118:
- 6449 082f 66756E63 		.ascii	"function\000"
+ 6449 0833 66756E63 		.ascii	"function\000"
  6449      74696F6E 
  6449      00
  6450              	.LASF20:
- 6451 0838 43795379 		.ascii	"CySysClkImoStart\000"
+ 6451 083c 43795379 		.ascii	"CySysClkImoStart\000"
  6451      73436C6B 
  6451      496D6F53 
  6451      74617274 
  6451      00
  6452              	.LASF43:
- 6453 0849 43795379 		.ascii	"CySysWdtReadEnabledStatus\000"
+ 6453 084d 43795379 		.ascii	"CySysWdtReadEnabledStatus\000"
  6453      73576474 
  6453      52656164 
  6453      456E6162 
  6453      6C656453 
  6454              	.LASF33:
- 6455 0863 6E657749 		.ascii	"newImoTrim2Value\000"
+ 6455 0867 6E657749 		.ascii	"newImoTrim2Value\000"
  6455      6D6F5472 
  6455      696D3256 
  6455      616C7565 
  6455      00
  6456              	.LASF104:
- 6457 0874 6D696372 		.ascii	"microseconds\000"
+ 6457 0878 6D696372 		.ascii	"microseconds\000"
  6457      6F736563 
  6457      6F6E6473 
  6457      00
  6458              	.LASF112:
- 6459 0881 43795379 		.ascii	"CySysTickSetReload\000"
+ 6459 0885 43795379 		.ascii	"CySysTickSetReload\000"
  6459      73546963 
  6459      6B536574 
  6459      52656C6F 
  6459      616400
  6460              	.LASF122:
- 6461 0894 43795379 		.ascii	"CySysTickServiceCallbacks\000"
+ 6461 0898 43795379 		.ascii	"CySysTickServiceCallbacks\000"
  6461      73546963 
  6461      6B536572 
  6461      76696365 
  6461      43616C6C 
  6462              	.LASF57:
- 6463 08ae 43795379 		.ascii	"CySysWdtWriteToggleBit\000"
+ 6463 08b2 43795379 		.ascii	"CySysWdtWriteToggleBit\000"
  6463      73576474 
  6463      57726974 
  6463      65546F67 

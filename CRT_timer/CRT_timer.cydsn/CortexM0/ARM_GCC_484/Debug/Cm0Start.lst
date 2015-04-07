@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
   24:.\Generated_Source\PSoC4/Cm0Start.c **** 
   25:.\Generated_Source\PSoC4/Cm0Start.c **** /* CPUSS Configuration register */
   26:.\Generated_Source\PSoC4/Cm0Start.c **** #define CY_CPUSS_CONFIG_REG         (*(reg32 *) CYREG_CPUSS_CONFIG)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 2
 
 
   27:.\Generated_Source\PSoC4/Cm0Start.c **** #define CY_CPUSS_CONFIG_PTR         ( (reg32 *) CYREG_CPUSS_CONFIG)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
   81:.\Generated_Source\PSoC4/Cm0Start.c **** 
   82:.\Generated_Source\PSoC4/Cm0Start.c **** #endif  /* (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_STANDARD) */
   83:.\Generated_Source\PSoC4/Cm0Start.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 3
 
 
   84:.\Generated_Source\PSoC4/Cm0Start.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  115:.\Generated_Source\PSoC4/Cm0Start.c **** 
  116:.\Generated_Source\PSoC4/Cm0Start.c **** #if defined(__ARMCC_VERSION)
  117:.\Generated_Source\PSoC4/Cm0Start.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 4
 
 
  118:.\Generated_Source\PSoC4/Cm0Start.c **** /* Local function for device reset. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  172:.\Generated_Source\PSoC4/Cm0Start.c **** *
  173:.\Generated_Source\PSoC4/Cm0Start.c **** * Summary:
  174:.\Generated_Source\PSoC4/Cm0Start.c **** *  This function is called immediately before the users main
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 5
 
 
  175:.\Generated_Source\PSoC4/Cm0Start.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  229:.\Generated_Source\PSoC4/Cm0Start.c **** * Function Name: _exit
  230:.\Generated_Source\PSoC4/Cm0Start.c **** ********************************************************************************
  231:.\Generated_Source\PSoC4/Cm0Start.c **** *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 6
 
 
  232:.\Generated_Source\PSoC4/Cm0Start.c **** * Summary:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
   86              		.cfi_endproc
   87              	.LFE1:
   88              		.size	_exit, .-_exit
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 7
 
 
   89              		.section	.text._sbrk,"ax",%progbits
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  111 000c 7B68     		ldr	r3, [r7, #4]
  112 000e D318     		add	r3, r2, r3
  113 0010 1A1C     		mov	r2, r3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 8
 
 
  114 0012 0E4B     		ldr	r3, .L11+4
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  156              		.size	_sbrk, .-_sbrk
  157              		.section	.text.Start_c,"ax",%progbits
  158              		.align	2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 9
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 9
 
 
  159              		.global	Start_c
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  325:.\Generated_Source\PSoC4/Cm0Start.c ****     {
  326:.\Generated_Source\PSoC4/Cm0Start.c ****         uint32 *src = (uint32 *)rptr->init;
  187              		.loc 1 326 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 10
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 10
 
 
  188 0014 3B69     		ldr	r3, [r7, #16]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  229 0050 DB68     		ldr	r3, [r3, #12]
  230 0052 3B60     		str	r3, [r7]
  338:.\Generated_Source\PSoC4/Cm0Start.c ****         for (count = 0u; count != limit; count += sizeof (uint32))
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 11
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 11
 
 
  231              		.loc 1 338 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  270              		.loc 1 349 0
  271 008a FFF7FEFF 		bl	main
  272              	.L20:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 12
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 12
 
 
  350:.\Generated_Source\PSoC4/Cm0Start.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  378:.\Generated_Source\PSoC4/Cm0Start.c ****         * So, the stack pointer needs to be reset to be sure that
  379:.\Generated_Source\PSoC4/Cm0Start.c ****         * there is no garbage in the stack.
  380:.\Generated_Source\PSoC4/Cm0Start.c ****         */
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 13
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 13
 
 
  381:.\Generated_Source\PSoC4/Cm0Start.c ****         __asm volatile ("MSR msp, %0\n" : : "r" ((uint32)&__cy_stack) : "sp");
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  401:.\Generated_Source\PSoC4/Cm0Start.c **** * Summary:
  402:.\Generated_Source\PSoC4/Cm0Start.c **** *  This function performs early initializations for the IAR Embedded
  403:.\Generated_Source\PSoC4/Cm0Start.c **** *  Workbench IDE. It is executed in the context of reset interrupt handler
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 14
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 14
 
 
  404:.\Generated_Source\PSoC4/Cm0Start.c **** *  before the data sections are initialized.
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  458:.\Generated_Source\PSoC4/Cm0Start.c **** #if defined (__ICCARM__)
  459:.\Generated_Source\PSoC4/Cm0Start.c ****     #pragma location=".romvectors"
  460:.\Generated_Source\PSoC4/Cm0Start.c ****     const intvec_elem __vector_table[CY_NUM_ROM_VECTORS] =
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 15
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 15
 
 
  461:.\Generated_Source\PSoC4/Cm0Start.c **** #else
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  505:.\Generated_Source\PSoC4/Cm0Start.c ****         * accessing RomVectors or calling functions that may be placed in
  506:.\Generated_Source\PSoC4/Cm0Start.c ****         * .psocinit (cyfitter_cfg and ClockSetup). Note The CY_CPUSS_CONFIG_REG
  507:.\Generated_Source\PSoC4/Cm0Start.c ****         * register is retention for the specified device family.
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 16
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 16
 
 
  508:.\Generated_Source\PSoC4/Cm0Start.c ****         ***********************************************************************/
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  373 0032 FFF7FEFF 		bl	cyfitter_cfg
  525:.\Generated_Source\PSoC4/Cm0Start.c **** 
  526:.\Generated_Source\PSoC4/Cm0Start.c ****     #if !defined (__ICCARM__)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 17
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 17
 
 
  527:.\Generated_Source\PSoC4/Cm0Start.c ****         /* Actually, no need to clean this variable, just to make compiler happy. */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  411              		.weak	__cy_region_num
  412              		.text
  413              	.Letext0:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 18
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 18
 
 
  414              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
@@ -1030,17 +1030,17 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  420 0006 00000000 		.4byte	.Ldebug_abbrev0
  421 000a 04       		.byte	0x4
  422 000b 01       		.uleb128 0x1
- 423 000c 81010000 		.4byte	.LASF41
+ 423 000c 3F010000 		.4byte	.LASF41
  424 0010 01       		.byte	0x1
- 425 0011 41020000 		.4byte	.LASF42
- 426 0015 CF000000 		.4byte	.LASF43
+ 425 0011 45020000 		.4byte	.LASF42
+ 426 0015 EC010000 		.4byte	.LASF43
  427 0019 00000000 		.4byte	.Ldebug_ranges0+0
  428 001d 00000000 		.4byte	0
  429 0021 00000000 		.4byte	.Ldebug_line0
  430 0025 02       		.uleb128 0x2
  431 0026 01       		.byte	0x1
  432 0027 06       		.byte	0x6
- 433 0028 78020000 		.4byte	.LASF0
+ 433 0028 7C020000 		.4byte	.LASF0
  434 002c 02       		.uleb128 0x2
  435 002d 01       		.byte	0x1
  436 002e 08       		.byte	0x8
@@ -1048,7 +1048,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  438 0033 02       		.uleb128 0x2
  439 0034 02       		.byte	0x2
  440 0035 05       		.byte	0x5
- 441 0036 65020000 		.4byte	.LASF2
+ 441 0036 69020000 		.4byte	.LASF2
  442 003a 02       		.uleb128 0x2
  443 003b 02       		.byte	0x2
  444 003c 07       		.byte	0x7
@@ -1056,7 +1056,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  446 0041 02       		.uleb128 0x2
  447 0042 04       		.byte	0x4
  448 0043 05       		.byte	0x5
- 449 0044 6F020000 		.4byte	.LASF4
+ 449 0044 73020000 		.4byte	.LASF4
  450 0048 02       		.uleb128 0x2
  451 0049 04       		.byte	0x4
  452 004a 07       		.byte	0x7
@@ -1064,11 +1064,11 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  454 004f 02       		.uleb128 0x2
  455 0050 08       		.byte	0x8
  456 0051 05       		.byte	0x5
- 457 0052 2E020000 		.4byte	.LASF6
+ 457 0052 32020000 		.4byte	.LASF6
  458 0056 02       		.uleb128 0x2
  459 0057 08       		.byte	0x8
  460 0058 07       		.byte	0x7
- 461 0059 64010000 		.4byte	.LASF7
+ 461 0059 22010000 		.4byte	.LASF7
  462 005d 03       		.uleb128 0x3
  463 005e 04       		.byte	0x4
  464 005f 05       		.byte	0x5
@@ -1076,12 +1076,12 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  466 0064 02       		.uleb128 0x2
  467 0065 04       		.byte	0x4
  468 0066 07       		.byte	0x7
- 469 0067 57010000 		.4byte	.LASF8
+ 469 0067 15010000 		.4byte	.LASF8
  470 006b 04       		.uleb128 0x4
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 19
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 19
 
 
- 471 006c 46010000 		.4byte	.LASF12
+ 471 006c 04010000 		.4byte	.LASF12
  472 0070 02       		.byte	0x2
  473 0071 A3       		.byte	0xa3
  474 0072 48000000 		.4byte	0x48
@@ -1092,11 +1092,11 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  479 007d 02       		.uleb128 0x2
  480 007e 08       		.byte	0x8
  481 007f 04       		.byte	0x4
- 482 0080 2F010000 		.4byte	.LASF10
+ 482 0080 ED000000 		.4byte	.LASF10
  483 0084 02       		.uleb128 0x2
  484 0085 01       		.byte	0x1
  485 0086 08       		.byte	0x8
- 486 0087 3C020000 		.4byte	.LASF11
+ 486 0087 40020000 		.4byte	.LASF11
  487 008b 05       		.uleb128 0x5
  488 008c 00000000 		.4byte	.LASF13
  489 0090 02       		.byte	0x2
@@ -1105,7 +1105,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  492 0097 06       		.uleb128 0x6
  493 0098 6B000000 		.4byte	0x6b
  494 009c 05       		.uleb128 0x5
- 495 009d FD010000 		.4byte	.LASF14
+ 495 009d BB010000 		.4byte	.LASF14
  496 00a1 02       		.byte	0x2
  497 00a2 5D01     		.2byte	0x15d
  498 00a4 A8000000 		.4byte	0xa8
@@ -1121,24 +1121,24 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  508 00ba 02       		.uleb128 0x2
  509 00bb 04       		.byte	0x4
  510 00bc 07       		.byte	0x7
- 511 00bd 25020000 		.4byte	.LASF16
+ 511 00bd E3010000 		.4byte	.LASF16
  512 00c1 09       		.uleb128 0x9
  513 00c2 04       		.byte	0x4
  514 00c3 0A       		.uleb128 0xa
  515 00c4 84000000 		.4byte	0x84
  516 00c8 04       		.uleb128 0x4
- 517 00c9 14020000 		.4byte	.LASF17
+ 517 00c9 D2010000 		.4byte	.LASF17
  518 00cd 01       		.byte	0x1
  519 00ce D0       		.byte	0xd0
  520 00cf 2C000000 		.4byte	0x2c
  521 00d3 0B       		.uleb128 0xb
- 522 00d4 A0020000 		.4byte	.LASF44
+ 522 00d4 A4020000 		.4byte	.LASF44
  523 00d8 10       		.byte	0x10
  524 00d9 01       		.byte	0x1
  525 00da D2       		.byte	0xd2
  526 00db 10010000 		.4byte	0x110
  527 00df 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 20
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 20
 
 
  528 00e0 44000000 		.4byte	.LASF18
@@ -1153,7 +1153,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  537 00f2 10010000 		.4byte	0x110
  538 00f6 04       		.byte	0x4
  539 00f7 0C       		.uleb128 0xc
- 540 00f8 0A020000 		.4byte	.LASF20
+ 540 00f8 C8010000 		.4byte	.LASF20
  541 00fc 01       		.byte	0x1
  542 00fd D6       		.byte	0xd6
  543 00fe AF000000 		.4byte	0xaf
@@ -1169,7 +1169,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  553 0111 04       		.byte	0x4
  554 0112 C8000000 		.4byte	0xc8
  555 0116 0D       		.uleb128 0xd
- 556 0117 17010000 		.4byte	.LASF32
+ 556 0117 D5000000 		.4byte	.LASF32
  557 011b 01       		.byte	0x1
  558 011c 68       		.byte	0x68
  559 011d 00000000 		.4byte	.LFB0
@@ -1177,7 +1177,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  561 0125 01       		.uleb128 0x1
  562 0126 9C       		.byte	0x9c
  563 0127 0E       		.uleb128 0xe
- 564 0128 11010000 		.4byte	.LASF26
+ 564 0128 CF000000 		.4byte	.LASF26
  565 012c 01       		.byte	0x1
  566 012d F5       		.byte	0xf5
  567 012e 00000000 		.4byte	.LFB1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  582 014d 01       		.byte	0x1
  583 014e F8       		.byte	0xf8
  584 014f 5D000000 		.4byte	0x5d
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 21
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 21
 
 
  585 0153 02       		.uleb128 0x2
@@ -1206,7 +1206,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  587 0155 74       		.sleb128 -12
  588 0156 00       		.byte	0
  589 0157 11       		.uleb128 0x11
- 590 0158 29010000 		.4byte	.LASF45
+ 590 0158 E7000000 		.4byte	.LASF45
  591 015c 01       		.byte	0x1
  592 015d 1601     		.2byte	0x116
  593 015f C1000000 		.4byte	0xc1
@@ -1216,7 +1216,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  597 016c 9C       		.byte	0x9c
  598 016d AE010000 		.4byte	0x1ae
  599 0171 12       		.uleb128 0x12
- 600 0172 99020000 		.4byte	.LASF23
+ 600 0172 9D020000 		.4byte	.LASF23
  601 0176 01       		.byte	0x1
  602 0177 1601     		.2byte	0x116
  603 0179 5D000000 		.4byte	0x5d
@@ -1255,10 +1255,10 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  636 01bf 9C       		.byte	0x9c
  637 01c0 29020000 		.4byte	0x229
  638 01c4 14       		.uleb128 0x14
- 639 01c5 91020000 		.4byte	.LASF28
+ 639 01c5 95020000 		.4byte	.LASF28
  640 01c9 01       		.byte	0x1
  641 01ca 4001     		.2byte	0x140
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 22
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 22
 
 
  642 01cc 64000000 		.4byte	0x64
@@ -1293,7 +1293,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  671 0207 91       		.byte	0x91
  672 0208 68       		.sleb128 -24
  673 0209 14       		.uleb128 0x14
- 674 020a 7B010000 		.4byte	.LASF30
+ 674 020a 39010000 		.4byte	.LASF30
  675 020e 01       		.byte	0x1
  676 020f 4801     		.2byte	0x148
  677 0211 64000000 		.4byte	0x64
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  696 0234 07       		.uleb128 0x7
  697 0235 04       		.byte	0x4
  698 0236 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 23
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 23
 
 
  699 023a 18       		.uleb128 0x18
@@ -1330,7 +1330,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  705 024a 01       		.uleb128 0x1
  706 024b 9C       		.byte	0x9c
  707 024c 15       		.uleb128 0x15
- 708 024d 36010000 		.4byte	.LASF34
+ 708 024d F4000000 		.4byte	.LASF34
  709 0251 01       		.byte	0x1
  710 0252 F201     		.2byte	0x1f2
  711 0254 00000000 		.4byte	.LFB5
@@ -1339,7 +1339,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  714 025d 9C       		.byte	0x9c
  715 025e 72020000 		.4byte	0x272
  716 0262 14       		.uleb128 0x14
- 717 0263 4D010000 		.4byte	.LASF35
+ 717 0263 0B010000 		.4byte	.LASF35
  718 0267 01       		.byte	0x1
  719 0268 F401     		.2byte	0x1f4
  720 026a 6B000000 		.4byte	0x6b
@@ -1366,7 +1366,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  741 0298 1B       		.uleb128 0x1b
  742 0299 00       		.byte	0
  743 029a 1C       		.uleb128 0x1c
- 744 029b 84020000 		.4byte	.LASF37
+ 744 029b 88020000 		.4byte	.LASF37
  745 029f 01       		.byte	0x1
  746 02a0 DA       		.byte	0xda
  747 02a1 A5020000 		.4byte	0x2a5
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  753 02b0 DB       		.byte	0xdb
  754 02b1 C3000000 		.4byte	0xc3
  755 02b5 1A       		.uleb128 0x1a
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 24
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 24
 
 
  756 02b6 9C000000 		.4byte	0x9c
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  810 0014 24       		.uleb128 0x24
  811 0015 00       		.byte	0
  812 0016 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 25
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 25
 
 
  813 0017 0B       		.uleb128 0xb
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  867 004d 0B       		.uleb128 0xb
  868 004e 0B       		.uleb128 0xb
  869 004f 49       		.uleb128 0x49
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 26
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 26
 
 
  870 0050 13       		.uleb128 0x13
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  924 0086 0D       		.uleb128 0xd
  925 0087 2E       		.uleb128 0x2e
  926 0088 00       		.byte	0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 27
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 27
 
 
  927 0089 3F       		.uleb128 0x3f
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  981 00c1 49       		.uleb128 0x49
  982 00c2 13       		.uleb128 0x13
  983 00c3 02       		.uleb128 0x2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 28
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 28
 
 
  984 00c4 18       		.uleb128 0x18
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  1038 00fb 49       		.uleb128 0x49
  1039 00fc 13       		.uleb128 0x13
  1040 00fd 02       		.uleb128 0x2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 29
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 29
 
 
  1041 00fe 18       		.uleb128 0x18
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  1095 0134 9642     		.uleb128 0x2116
  1096 0136 19       		.uleb128 0x19
  1097 0137 01       		.uleb128 0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 30
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 30
 
 
  1098 0138 13       		.uleb128 0x13
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  1152 016f 0E       		.uleb128 0xe
  1153 0170 3A       		.uleb128 0x3a
  1154 0171 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 31
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 31
 
 
  1155 0172 3B       		.uleb128 0x3b
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  1209 01a8 0B       		.uleb128 0xb
  1210 01a9 3B       		.uleb128 0x3b
  1211 01aa 05       		.uleb128 0x5
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 32
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 32
 
 
  1212 01ab 49       		.uleb128 0x49
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  1262              	.LASF13:
  1263 0000 72656733 		.ascii	"reg32\000"
  1263      3200
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 33
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 33
 
 
  1264              	.LASF15:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  1293      727300
  1294              	.LASF5:
  1295 008f 6C6F6E67 		.ascii	"long unsigned int\000"
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 34
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 34
 
 
  1295      20756E73 
@@ -2000,138 +2000,138 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 1
  1300              	.LASF33:
  1301 00c9 52657365 		.ascii	"Reset\000"
  1301      7400
- 1302              	.LASF43:
- 1303 00cf 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\PSoC Creator\\CRT_ti"
- 1303      73657273 
- 1303      5C536E75 
- 1303      666B696E 
- 1303      5C446F63 
- 1304 00fd 6D65725C 		.ascii	"mer\\CRT_timer.cydsn\000"
- 1304      4352545F 
- 1304      74696D65 
- 1304      722E6379 
- 1304      64736E00 
- 1305              	.LASF26:
- 1306 0111 5F657869 		.ascii	"_exit\000"
- 1306      7400
- 1307              	.LASF32:
- 1308 0117 496E7444 		.ascii	"IntDefaultHandler\000"
- 1308      65666175 
- 1308      6C744861 
- 1308      6E646C65 
- 1308      7200
- 1309              	.LASF45:
- 1310 0129 5F736272 		.ascii	"_sbrk\000"
- 1310      6B00
- 1311              	.LASF10:
- 1312 012f 646F7562 		.ascii	"double\000"
- 1312      6C6500
- 1313              	.LASF34:
- 1314 0136 696E6974 		.ascii	"initialize_psoc\000"
- 1314      69616C69 
- 1314      7A655F70 
- 1314      736F6300 
- 1315              	.LASF12:
- 1316 0146 75696E74 		.ascii	"uint32\000"
- 1316      333200
- 1317              	.LASF35:
- 1318 014d 696E6465 		.ascii	"indexInit\000"
- 1318      78496E69 
- 1318      7400
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 35
+ 1302              	.LASF26:
+ 1303 00cf 5F657869 		.ascii	"_exit\000"
+ 1303      7400
+ 1304              	.LASF32:
+ 1305 00d5 496E7444 		.ascii	"IntDefaultHandler\000"
+ 1305      65666175 
+ 1305      6C744861 
+ 1305      6E646C65 
+ 1305      7200
+ 1306              	.LASF45:
+ 1307 00e7 5F736272 		.ascii	"_sbrk\000"
+ 1307      6B00
+ 1308              	.LASF10:
+ 1309 00ed 646F7562 		.ascii	"double\000"
+ 1309      6C6500
+ 1310              	.LASF34:
+ 1311 00f4 696E6974 		.ascii	"initialize_psoc\000"
+ 1311      69616C69 
+ 1311      7A655F70 
+ 1311      736F6300 
+ 1312              	.LASF12:
+ 1313 0104 75696E74 		.ascii	"uint32\000"
+ 1313      333200
+ 1314              	.LASF35:
+ 1315 010b 696E6465 		.ascii	"indexInit\000"
+ 1315      78496E69 
+ 1315      7400
+ 1316              	.LASF8:
+ 1317 0115 756E7369 		.ascii	"unsigned int\000"
+ 1317      676E6564 
+ 1317      20696E74 
+ 1317      00
+ 1318              	.LASF7:
+ 1319 0122 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1319      206C6F6E 
+ 1319      6720756E 
+ 1319      7369676E 
+ 1319      65642069 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 35
 
 
- 1319              	.LASF8:
- 1320 0157 756E7369 		.ascii	"unsigned int\000"
- 1320      676E6564 
- 1320      20696E74 
- 1320      00
- 1321              	.LASF7:
- 1322 0164 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1322      206C6F6E 
- 1322      6720756E 
- 1322      7369676E 
- 1322      65642069 
- 1323              	.LASF30:
- 1324 017b 6C696D69 		.ascii	"limit\000"
- 1324      7400
- 1325              	.LASF41:
- 1326 0181 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 1326      4320342E 
- 1326      382E3420 
- 1326      32303134 
- 1326      30353236 
- 1327 01b4 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 1327      20726576 
- 1327      6973696F 
- 1327      6E203231 
- 1327      31333538 
- 1328 01e7 30202D66 		.ascii	"0 -ffunction-sections\000"
- 1328      66756E63 
- 1328      74696F6E 
- 1328      2D736563 
- 1328      74696F6E 
- 1329              	.LASF14:
- 1330 01fd 63796973 		.ascii	"cyisraddress\000"
- 1330      72616464 
- 1330      72657373 
- 1330      00
- 1331              	.LASF20:
- 1332 020a 696E6974 		.ascii	"init_size\000"
- 1332      5F73697A 
- 1332      6500
- 1333              	.LASF17:
- 1334 0214 5F5F6379 		.ascii	"__cy_byte_align8\000"
- 1334      5F627974 
- 1334      655F616C 
- 1334      69676E38 
- 1334      00
- 1335              	.LASF16:
- 1336 0225 73697A65 		.ascii	"sizetype\000"
- 1336      74797065 
- 1336      00
+ 1320              	.LASF30:
+ 1321 0139 6C696D69 		.ascii	"limit\000"
+ 1321      7400
+ 1322              	.LASF41:
+ 1323 013f 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1323      4320342E 
+ 1323      382E3420 
+ 1323      32303134 
+ 1323      30353236 
+ 1324 0172 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 1324      20726576 
+ 1324      6973696F 
+ 1324      6E203231 
+ 1324      31333538 
+ 1325 01a5 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 1325      66756E63 
+ 1325      74696F6E 
+ 1325      2D736563 
+ 1325      74696F6E 
+ 1326              	.LASF14:
+ 1327 01bb 63796973 		.ascii	"cyisraddress\000"
+ 1327      72616464 
+ 1327      72657373 
+ 1327      00
+ 1328              	.LASF20:
+ 1329 01c8 696E6974 		.ascii	"init_size\000"
+ 1329      5F73697A 
+ 1329      6500
+ 1330              	.LASF17:
+ 1331 01d2 5F5F6379 		.ascii	"__cy_byte_align8\000"
+ 1331      5F627974 
+ 1331      655F616C 
+ 1331      69676E38 
+ 1331      00
+ 1332              	.LASF16:
+ 1333 01e3 73697A65 		.ascii	"sizetype\000"
+ 1333      74797065 
+ 1333      00
+ 1334              	.LASF43:
+ 1335 01ec 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 1335      73657273 
+ 1335      5C536E75 
+ 1335      666B696E 
+ 1335      5C446F63 
+ 1336 0219 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 1336      696D6572 
+ 1336      5C435254 
+ 1336      5F74696D 
+ 1336      65722E63 
  1337              	.LASF6:
- 1338 022e 6C6F6E67 		.ascii	"long long int\000"
+ 1338 0232 6C6F6E67 		.ascii	"long long int\000"
  1338      206C6F6E 
  1338      6720696E 
  1338      7400
  1339              	.LASF11:
- 1340 023c 63686172 		.ascii	"char\000"
+ 1340 0240 63686172 		.ascii	"char\000"
  1340      00
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc89p1CV.s 			page 36
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjZgpoa.s 			page 36
 
 
  1341              	.LASF42:
- 1342 0241 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Cm0Start.c\000"
+ 1342 0245 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Cm0Start.c\000"
  1342      6E657261 
  1342      7465645F 
  1342      536F7572 
  1342      63655C50 
  1343              	.LASF2:
- 1344 0265 73686F72 		.ascii	"short int\000"
+ 1344 0269 73686F72 		.ascii	"short int\000"
  1344      7420696E 
  1344      7400
  1345              	.LASF4:
- 1346 026f 6C6F6E67 		.ascii	"long int\000"
+ 1346 0273 6C6F6E67 		.ascii	"long int\000"
  1346      20696E74 
  1346      00
  1347              	.LASF0:
- 1348 0278 7369676E 		.ascii	"signed char\000"
+ 1348 027c 7369676E 		.ascii	"signed char\000"
  1348      65642063 
  1348      68617200 
  1349              	.LASF37:
- 1350 0284 5F5F6379 		.ascii	"__cy_regions\000"
+ 1350 0288 5F5F6379 		.ascii	"__cy_regions\000"
  1350      5F726567 
  1350      696F6E73 
  1350      00
  1351              	.LASF28:
- 1352 0291 72656769 		.ascii	"regions\000"
+ 1352 0295 72656769 		.ascii	"regions\000"
  1352      6F6E7300 
  1353              	.LASF23:
- 1354 0299 6E627974 		.ascii	"nbytes\000"
+ 1354 029d 6E627974 		.ascii	"nbytes\000"
  1354      657300
  1355              	.LASF44:
- 1356 02a0 5F5F6379 		.ascii	"__cy_region\000"
+ 1356 02a4 5F5F6379 		.ascii	"__cy_region\000"
  1356      5F726567 
  1356      696F6E00 
  1357              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
