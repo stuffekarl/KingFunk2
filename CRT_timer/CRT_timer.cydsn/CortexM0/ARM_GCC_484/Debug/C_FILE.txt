@@ -1,0 +1,1 @@
+'C:\Users\Snufkin\Documents\PSoC Creator\CRT_timer\CRT_timer.cydsn\main.c' -o .o -T C_FILE -I 'C:\Users\Snufkin\Documents\PSoC Creator\CRT_timer\CRT_timer.cydsn' -I 'C:\Users\Snufkin\Documents\PSoC Creator\CRT_timer\CRT_timer.cydsn\Generated_Source\PSoC4' -f 'C:\Users\Snufkin\Documents\PSoC Creator\CRT_timer\CRT_timer.cydsn\CortexM0\ARM_GCC_484\Debug\.deps\C_FILE.d'
