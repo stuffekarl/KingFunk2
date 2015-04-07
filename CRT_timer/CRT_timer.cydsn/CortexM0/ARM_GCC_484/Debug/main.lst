@@ -1,0 +1,1387 @@
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.comm	running,1,1
+  18              		.comm	V_start,2,2
+  19              		.comm	V_new,2,2
+  20              		.comm	time,4,4
+  21              		.section	.rodata
+  22              		.align	2
+  23              	.LC2:
+  24 0000 53746172 		.ascii	"Starting new measurement, current voltage: %d mV\012"
+  24      74696E67 
+  24      206E6577 
+  24      206D6561 
+  24      73757265 
+  25 0031 0D00     		.ascii	"\015\000"
+  26              		.section	.text.sw_int_ISR,"ax",%progbits
+  27              		.align	2
+  28              		.global	sw_int_ISR
+  29              		.code	16
+  30              		.thumb_func
+  31              		.type	sw_int_ISR, %function
+  32              	sw_int_ISR:
+  33              	.LFB33:
+  34              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright Kristian Thomsen, 2015
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * ========================================
+   8:.\main.c      **** */
+   9:.\main.c      **** #include <project.h>
+  10:.\main.c      **** #include <stdio.h>
+  11:.\main.c      **** 
+  12:.\main.c      **** #define CONVERT_TO_ASCII (0x30u)
+  13:.\main.c      **** #define TIMER_MAX 4294967296
+  14:.\main.c      **** 
+  15:.\main.c      **** uint8 running; //flag - false = 0, true != 0
+  16:.\main.c      **** uint16 V_start;
+  17:.\main.c      **** uint16 V_new;
+  18:.\main.c      **** uint32 time;
+  19:.\main.c      **** 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 2
+
+
+  20:.\main.c      **** //Prototypes
+  21:.\main.c      **** CY_ISR_PROTO(sw_int_ISR);
+  22:.\main.c      **** void puts_measurement(uint32 time);
+  23:.\main.c      **** 
+  24:.\main.c      **** CY_ISR(sw_int_ISR){
+  35              		.loc 1 24 0
+  36              		.cfi_startproc
+  37 0000 80B5     		push	{r7, lr}
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 7, -8
+  40              		.cfi_offset 14, -4
+  41 0002 90B0     		sub	sp, sp, #64
+  42              		.cfi_def_cfa_offset 72
+  43 0004 00AF     		add	r7, sp, #0
+  44              		.cfi_def_cfa_register 7
+  25:.\main.c      ****     char temp[60];
+  26:.\main.c      ****     running = 1;
+  45              		.loc 1 26 0
+  46 0006 144B     		ldr	r3, .L2
+  47 0008 0122     		mov	r2, #1
+  48 000a 1A70     		strb	r2, [r3]
+  27:.\main.c      ****     V_start = ADC_1_GetResult16(0);
+  49              		.loc 1 27 0
+  50 000c 0020     		mov	r0, #0
+  51 000e FFF7FEFF 		bl	ADC_1_GetResult16
+  52 0012 031C     		mov	r3, r0
+  53 0014 9AB2     		uxth	r2, r3
+  54 0016 114B     		ldr	r3, .L2+4
+  55 0018 1A80     		strh	r2, [r3]
+  28:.\main.c      ****     sprintf(temp, "Starting new measurement, current voltage: %d mV\n\r", ADC_1_CountsTo_mVolts(0, 
+  56              		.loc 1 28 0
+  57 001a 104B     		ldr	r3, .L2+4
+  58 001c 1B88     		ldrh	r3, [r3]
+  59 001e 9BB2     		uxth	r3, r3
+  60 0020 1BB2     		sxth	r3, r3
+  61 0022 0020     		mov	r0, #0
+  62 0024 191C     		mov	r1, r3
+  63 0026 FFF7FEFF 		bl	ADC_1_CountsTo_mVolts
+  64 002a 031C     		mov	r3, r0
+  65 002c 391D     		add	r1, r7, #4
+  66 002e 0C4A     		ldr	r2, .L2+8
+  67 0030 081C     		mov	r0, r1
+  68 0032 111C     		mov	r1, r2
+  69 0034 1A1C     		mov	r2, r3
+  70 0036 FFF7FEFF 		bl	sprintf
+  29:.\main.c      ****     UART_1_UartPutString(temp);
+  71              		.loc 1 29 0
+  72 003a 3B1D     		add	r3, r7, #4
+  73 003c 181C     		mov	r0, r3
+  74 003e FFF7FEFF 		bl	UART_1_UartPutString
+  30:.\main.c      ****     Timer_1_WriteCounter(0);
+  75              		.loc 1 30 0
+  76 0042 0020     		mov	r0, #0
+  77 0044 FFF7FEFF 		bl	Timer_1_WriteCounter
+  31:.\main.c      ****     Timer_1_Start();
+  78              		.loc 1 31 0
+  79 0048 FFF7FEFF 		bl	Timer_1_Start
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 3
+
+
+  32:.\main.c      ****     A_press_Write(1);
+  80              		.loc 1 32 0
+  81 004c 0120     		mov	r0, #1
+  82 004e FFF7FEFF 		bl	A_press_Write
+  33:.\main.c      **** }
+  83              		.loc 1 33 0
+  84 0052 BD46     		mov	sp, r7
+  85 0054 10B0     		add	sp, sp, #64
+  86              		@ sp needed
+  87 0056 80BD     		pop	{r7, pc}
+  88              	.L3:
+  89              		.align	2
+  90              	.L2:
+  91 0058 00000000 		.word	running
+  92 005c 00000000 		.word	V_start
+  93 0060 00000000 		.word	.LC2
+  94              		.cfi_endproc
+  95              	.LFE33:
+  96              		.size	sw_int_ISR, .-sw_int_ISR
+  97              		.section	.rodata
+  98 0033 00       		.align	2
+  99              	.LC5:
+ 100 0034 4352545F 		.ascii	"CRT_timer initialized..\012\015\000"
+ 100      74696D65 
+ 100      7220696E 
+ 100      69746961 
+ 100      6C697A65 
+ 101              		.section	.text.main,"ax",%progbits
+ 102              		.align	2
+ 103              		.global	main
+ 104              		.code	16
+ 105              		.thumb_func
+ 106              		.type	main, %function
+ 107              	main:
+ 108              	.LFB34:
+  34:.\main.c      **** 
+  35:.\main.c      **** int main(){
+ 109              		.loc 1 35 0
+ 110              		.cfi_startproc
+ 111 0000 80B5     		push	{r7, lr}
+ 112              		.cfi_def_cfa_offset 8
+ 113              		.cfi_offset 7, -8
+ 114              		.cfi_offset 14, -4
+ 115 0002 00AF     		add	r7, sp, #0
+ 116              		.cfi_def_cfa_register 7
+  36:.\main.c      ****     Timer_1_Start();
+ 117              		.loc 1 36 0
+ 118 0004 FFF7FEFF 		bl	Timer_1_Start
+  37:.\main.c      ****     ADC_1_Start();
+ 119              		.loc 1 37 0
+ 120 0008 FFF7FEFF 		bl	ADC_1_Start
+  38:.\main.c      ****     UART_1_Start();
+ 121              		.loc 1 38 0
+ 122 000c FFF7FEFF 		bl	UART_1_Start
+  39:.\main.c      ****     sw_int_StartEx(sw_int_ISR);
+ 123              		.loc 1 39 0
+ 124 0010 194B     		ldr	r3, .L7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 4
+
+
+ 125 0012 181C     		mov	r0, r3
+ 126 0014 FFF7FEFF 		bl	sw_int_StartEx
+  40:.\main.c      ****     A_press_Write(0);
+ 127              		.loc 1 40 0
+ 128 0018 0020     		mov	r0, #0
+ 129 001a FFF7FEFF 		bl	A_press_Write
+  41:.\main.c      ****     ADC_1_StartConvert();
+ 130              		.loc 1 41 0
+ 131 001e FFF7FEFF 		bl	ADC_1_StartConvert
+  42:.\main.c      **** 
+  43:.\main.c      ****     UART_1_UartPutString("CRT_timer initialized..\n\r");
+ 132              		.loc 1 43 0
+ 133 0022 164B     		ldr	r3, .L7+4
+ 134 0024 181C     		mov	r0, r3
+ 135 0026 FFF7FEFF 		bl	UART_1_UartPutString
+  44:.\main.c      ****     CyGlobalIntEnable;
+ 136              		.loc 1 44 0
+ 137              	@ 44 ".\main.c" 1
+ 138 002a 62B6     		CPSIE   i
+ 139              	@ 0 "" 2
+ 140              		.code	16
+ 141              	.L6:
+  45:.\main.c      ****     
+  46:.\main.c      ****     while(1){
+  47:.\main.c      ****         if (running){
+ 142              		.loc 1 47 0
+ 143 002c 144B     		ldr	r3, .L7+8
+ 144 002e 1B78     		ldrb	r3, [r3]
+ 145 0030 002B     		cmp	r3, #0
+ 146 0032 20D0     		beq	.L5
+  48:.\main.c      ****             V_new = ADC_1_GetResult16(0);
+ 147              		.loc 1 48 0
+ 148 0034 0020     		mov	r0, #0
+ 149 0036 FFF7FEFF 		bl	ADC_1_GetResult16
+ 150 003a 031C     		mov	r3, r0
+ 151 003c 9AB2     		uxth	r2, r3
+ 152 003e 114B     		ldr	r3, .L7+12
+ 153 0040 1A80     		strh	r2, [r3]
+  49:.\main.c      ****              if(V_new > 1024){
+ 154              		.loc 1 49 0
+ 155 0042 104B     		ldr	r3, .L7+12
+ 156 0044 1A88     		ldrh	r2, [r3]
+ 157 0046 8023     		mov	r3, #128
+ 158 0048 DB00     		lsl	r3, r3, #3
+ 159 004a 9A42     		cmp	r2, r3
+ 160 004c 13D9     		bls	.L5
+  50:.\main.c      ****                 time = TIMER_MAX - Timer_1_ReadCounter();
+ 161              		.loc 1 50 0
+ 162 004e FFF7FEFF 		bl	Timer_1_ReadCounter
+ 163 0052 031C     		mov	r3, r0
+ 164 0054 5A42     		neg	r2, r3
+ 165 0056 0C4B     		ldr	r3, .L7+16
+ 166 0058 1A60     		str	r2, [r3]
+  51:.\main.c      ****                 Timer_1_Stop();
+ 167              		.loc 1 51 0
+ 168 005a FFF7FEFF 		bl	Timer_1_Stop
+  52:.\main.c      ****                 running = 0;
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 5
+
+
+ 169              		.loc 1 52 0
+ 170 005e 084B     		ldr	r3, .L7+8
+ 171 0060 0022     		mov	r2, #0
+ 172 0062 1A70     		strb	r2, [r3]
+  53:.\main.c      ****                 A_press_Write(0);
+ 173              		.loc 1 53 0
+ 174 0064 0020     		mov	r0, #0
+ 175 0066 FFF7FEFF 		bl	A_press_Write
+  54:.\main.c      ****                 puts_measurement(time);
+ 176              		.loc 1 54 0
+ 177 006a 074B     		ldr	r3, .L7+16
+ 178 006c 1B68     		ldr	r3, [r3]
+ 179 006e 181C     		mov	r0, r3
+ 180 0070 FFF7FEFF 		bl	puts_measurement
+  55:.\main.c      ****             }
+  56:.\main.c      ****         }
+  57:.\main.c      ****     }
+ 181              		.loc 1 57 0
+ 182 0074 DAE7     		b	.L6
+ 183              	.L5:
+ 184 0076 D9E7     		b	.L6
+ 185              	.L8:
+ 186              		.align	2
+ 187              	.L7:
+ 188 0078 00000000 		.word	sw_int_ISR
+ 189 007c 34000000 		.word	.LC5
+ 190 0080 00000000 		.word	running
+ 191 0084 00000000 		.word	V_new
+ 192 0088 00000000 		.word	time
+ 193              		.cfi_endproc
+ 194              	.LFE34:
+ 195              		.size	main, .-main
+ 196              		.global	__aeabi_uldivmod
+ 197              		.section	.rodata
+ 198 004e 0000     		.align	2
+ 199              	.LC10:
+ 200 0050 54696D65 		.ascii	"Timer stopped, measured time was: \000"
+ 200      72207374 
+ 200      6F707065 
+ 200      642C206D 
+ 200      65617375 
+ 201              		.global	__aeabi_uidiv
+ 202              		.global	__aeabi_uidivmod
+ 203 0073 00       		.align	2
+ 204              	.LC12:
+ 205 0074 20636F75 		.ascii	" counts or \000"
+ 205      6E747320 
+ 205      6F722000 
+ 206              		.align	2
+ 207              	.LC14:
+ 208 0080 2075732E 		.ascii	" us.\012\015\000"
+ 208      0A0D00
+ 209 0087 00       		.section	.text.puts_measurement,"ax",%progbits
+ 210              		.align	2
+ 211              		.global	puts_measurement
+ 212              		.code	16
+ 213              		.thumb_func
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 6
+
+
+ 214              		.type	puts_measurement, %function
+ 215              	puts_measurement:
+ 216              	.LFB35:
+  58:.\main.c      **** }
+  59:.\main.c      **** 
+  60:.\main.c      **** void puts_measurement(uint32 time){
+ 217              		.loc 1 60 0
+ 218              		.cfi_startproc
+ 219 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 220              		.cfi_def_cfa_offset 20
+ 221              		.cfi_offset 4, -20
+ 222              		.cfi_offset 5, -16
+ 223              		.cfi_offset 6, -12
+ 224              		.cfi_offset 7, -8
+ 225              		.cfi_offset 14, -4
+ 226 0002 87B0     		sub	sp, sp, #28
+ 227              		.cfi_def_cfa_offset 48
+ 228 0004 00AF     		add	r7, sp, #0
+ 229              		.cfi_def_cfa_register 7
+ 230 0006 F860     		str	r0, [r7, #12]
+  61:.\main.c      ****     uint64 time_us = ((uint64)time * 125) / 3000;
+ 231              		.loc 1 61 0
+ 232 0008 FB68     		ldr	r3, [r7, #12]
+ 233 000a 191C     		mov	r1, r3
+ 234 000c 0023     		mov	r3, #0
+ 235 000e 1A1C     		mov	r2, r3
+ 236 0010 0B1C     		mov	r3, r1
+ 237 0012 141C     		mov	r4, r2
+ 238 0014 D80E     		lsr	r0, r3, #27
+ 239 0016 6501     		lsl	r5, r4, #5
+ 240 0018 7D60     		str	r5, [r7, #4]
+ 241 001a 7D68     		ldr	r5, [r7, #4]
+ 242 001c 0543     		orr	r5, r0
+ 243 001e 7D60     		str	r5, [r7, #4]
+ 244 0020 5801     		lsl	r0, r3, #5
+ 245 0022 3860     		str	r0, [r7]
+ 246 0024 3B68     		ldr	r3, [r7]
+ 247 0026 7C68     		ldr	r4, [r7, #4]
+ 248 0028 5B1A     		sub	r3, r3, r1
+ 249 002a 9441     		sbc	r4, r4, r2
+ 250 002c 980F     		lsr	r0, r3, #30
+ 251 002e A600     		lsl	r6, r4, #2
+ 252 0030 0643     		orr	r6, r0
+ 253 0032 9D00     		lsl	r5, r3, #2
+ 254 0034 2B1C     		mov	r3, r5
+ 255 0036 341C     		mov	r4, r6
+ 256 0038 5B18     		add	r3, r3, r1
+ 257 003a 5441     		adc	r4, r4, r2
+ 258 003c 181C     		mov	r0, r3
+ 259 003e 211C     		mov	r1, r4
+ 260 0040 CA4B     		ldr	r3, .L10+4
+ 261 0042 C94A     		ldr	r2, .L10
+ 262 0044 FFF7FEFF 		bl	__aeabi_uldivmod
+ 263 0048 031C     		mov	r3, r0
+ 264 004a 0C1C     		mov	r4, r1
+ 265 004c 3B61     		str	r3, [r7, #16]
+ 266 004e 7C61     		str	r4, [r7, #20]
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 7
+
+
+  62:.\main.c      ****     UART_1_UartPutString("Timer stopped, measured time was: ");
+ 267              		.loc 1 62 0
+ 268 0050 D34B     		ldr	r3, .L10+56
+ 269 0052 181C     		mov	r0, r3
+ 270 0054 FFF7FEFF 		bl	UART_1_UartPutString
+  63:.\main.c      ****     UART_1_UartPutChar(time/1000000000u + CONVERT_TO_ASCII);
+ 271              		.loc 1 63 0
+ 272 0058 FB68     		ldr	r3, [r7, #12]
+ 273 005a 181C     		mov	r0, r3
+ 274 005c D149     		ldr	r1, .L10+60
+ 275 005e FFF7FEFF 		bl	__aeabi_uidiv
+ 276 0062 031C     		mov	r3, r0
+ 277 0064 3033     		add	r3, r3, #48
+ 278 0066 181C     		mov	r0, r3
+ 279 0068 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  64:.\main.c      ****     time %= 1000000000;
+ 280              		.loc 1 64 0
+ 281 006c FB68     		ldr	r3, [r7, #12]
+ 282 006e 181C     		mov	r0, r3
+ 283 0070 CC49     		ldr	r1, .L10+60
+ 284 0072 FFF7FEFF 		bl	__aeabi_uidivmod
+ 285 0076 0B1C     		mov	r3, r1
+ 286 0078 FB60     		str	r3, [r7, #12]
+  65:.\main.c      ****     UART_1_UartPutChar(time/100000000u + CONVERT_TO_ASCII);
+ 287              		.loc 1 65 0
+ 288 007a FB68     		ldr	r3, [r7, #12]
+ 289 007c 181C     		mov	r0, r3
+ 290 007e CA49     		ldr	r1, .L10+64
+ 291 0080 FFF7FEFF 		bl	__aeabi_uidiv
+ 292 0084 031C     		mov	r3, r0
+ 293 0086 3033     		add	r3, r3, #48
+ 294 0088 181C     		mov	r0, r3
+ 295 008a FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  66:.\main.c      ****     time %= 100000000;
+ 296              		.loc 1 66 0
+ 297 008e FB68     		ldr	r3, [r7, #12]
+ 298 0090 181C     		mov	r0, r3
+ 299 0092 C549     		ldr	r1, .L10+64
+ 300 0094 FFF7FEFF 		bl	__aeabi_uidivmod
+ 301 0098 0B1C     		mov	r3, r1
+ 302 009a FB60     		str	r3, [r7, #12]
+  67:.\main.c      ****     UART_1_UartPutChar(time/10000000u + CONVERT_TO_ASCII);
+ 303              		.loc 1 67 0
+ 304 009c FB68     		ldr	r3, [r7, #12]
+ 305 009e 181C     		mov	r0, r3
+ 306 00a0 C249     		ldr	r1, .L10+68
+ 307 00a2 FFF7FEFF 		bl	__aeabi_uidiv
+ 308 00a6 031C     		mov	r3, r0
+ 309 00a8 3033     		add	r3, r3, #48
+ 310 00aa 181C     		mov	r0, r3
+ 311 00ac FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  68:.\main.c      ****     time %= 10000000;
+ 312              		.loc 1 68 0
+ 313 00b0 FB68     		ldr	r3, [r7, #12]
+ 314 00b2 181C     		mov	r0, r3
+ 315 00b4 BD49     		ldr	r1, .L10+68
+ 316 00b6 FFF7FEFF 		bl	__aeabi_uidivmod
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 8
+
+
+ 317 00ba 0B1C     		mov	r3, r1
+ 318 00bc FB60     		str	r3, [r7, #12]
+  69:.\main.c      ****     UART_1_UartPutChar(time/1000000u + CONVERT_TO_ASCII);
+ 319              		.loc 1 69 0
+ 320 00be FB68     		ldr	r3, [r7, #12]
+ 321 00c0 181C     		mov	r0, r3
+ 322 00c2 BB49     		ldr	r1, .L10+72
+ 323 00c4 FFF7FEFF 		bl	__aeabi_uidiv
+ 324 00c8 031C     		mov	r3, r0
+ 325 00ca 3033     		add	r3, r3, #48
+ 326 00cc 181C     		mov	r0, r3
+ 327 00ce FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  70:.\main.c      ****     time %= 1000000;
+ 328              		.loc 1 70 0
+ 329 00d2 FB68     		ldr	r3, [r7, #12]
+ 330 00d4 181C     		mov	r0, r3
+ 331 00d6 B649     		ldr	r1, .L10+72
+ 332 00d8 FFF7FEFF 		bl	__aeabi_uidivmod
+ 333 00dc 0B1C     		mov	r3, r1
+ 334 00de FB60     		str	r3, [r7, #12]
+  71:.\main.c      ****     UART_1_UartPutChar(time/100000u + CONVERT_TO_ASCII);
+ 335              		.loc 1 71 0
+ 336 00e0 FB68     		ldr	r3, [r7, #12]
+ 337 00e2 181C     		mov	r0, r3
+ 338 00e4 B349     		ldr	r1, .L10+76
+ 339 00e6 FFF7FEFF 		bl	__aeabi_uidiv
+ 340 00ea 031C     		mov	r3, r0
+ 341 00ec 3033     		add	r3, r3, #48
+ 342 00ee 181C     		mov	r0, r3
+ 343 00f0 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  72:.\main.c      ****     time %= 100000;
+ 344              		.loc 1 72 0
+ 345 00f4 FB68     		ldr	r3, [r7, #12]
+ 346 00f6 181C     		mov	r0, r3
+ 347 00f8 AE49     		ldr	r1, .L10+76
+ 348 00fa FFF7FEFF 		bl	__aeabi_uidivmod
+ 349 00fe 0B1C     		mov	r3, r1
+ 350 0100 FB60     		str	r3, [r7, #12]
+  73:.\main.c      ****     UART_1_UartPutChar(time/10000u + CONVERT_TO_ASCII);
+ 351              		.loc 1 73 0
+ 352 0102 FB68     		ldr	r3, [r7, #12]
+ 353 0104 181C     		mov	r0, r3
+ 354 0106 AC49     		ldr	r1, .L10+80
+ 355 0108 FFF7FEFF 		bl	__aeabi_uidiv
+ 356 010c 031C     		mov	r3, r0
+ 357 010e 3033     		add	r3, r3, #48
+ 358 0110 181C     		mov	r0, r3
+ 359 0112 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  74:.\main.c      ****     time %= 10000;
+ 360              		.loc 1 74 0
+ 361 0116 FB68     		ldr	r3, [r7, #12]
+ 362 0118 181C     		mov	r0, r3
+ 363 011a A749     		ldr	r1, .L10+80
+ 364 011c FFF7FEFF 		bl	__aeabi_uidivmod
+ 365 0120 0B1C     		mov	r3, r1
+ 366 0122 FB60     		str	r3, [r7, #12]
+  75:.\main.c      ****     UART_1_UartPutChar(time/1000u + CONVERT_TO_ASCII);
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 9
+
+
+ 367              		.loc 1 75 0
+ 368 0124 FB68     		ldr	r3, [r7, #12]
+ 369 0126 181C     		mov	r0, r3
+ 370 0128 FA23     		mov	r3, #250
+ 371 012a 9900     		lsl	r1, r3, #2
+ 372 012c FFF7FEFF 		bl	__aeabi_uidiv
+ 373 0130 031C     		mov	r3, r0
+ 374 0132 3033     		add	r3, r3, #48
+ 375 0134 181C     		mov	r0, r3
+ 376 0136 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  76:.\main.c      ****     time %= 1000;
+ 377              		.loc 1 76 0
+ 378 013a FB68     		ldr	r3, [r7, #12]
+ 379 013c 181C     		mov	r0, r3
+ 380 013e FA23     		mov	r3, #250
+ 381 0140 9900     		lsl	r1, r3, #2
+ 382 0142 FFF7FEFF 		bl	__aeabi_uidivmod
+ 383 0146 0B1C     		mov	r3, r1
+ 384 0148 FB60     		str	r3, [r7, #12]
+  77:.\main.c      ****     UART_1_UartPutChar(time/100u + CONVERT_TO_ASCII);
+ 385              		.loc 1 77 0
+ 386 014a FB68     		ldr	r3, [r7, #12]
+ 387 014c 181C     		mov	r0, r3
+ 388 014e 6421     		mov	r1, #100
+ 389 0150 FFF7FEFF 		bl	__aeabi_uidiv
+ 390 0154 031C     		mov	r3, r0
+ 391 0156 3033     		add	r3, r3, #48
+ 392 0158 181C     		mov	r0, r3
+ 393 015a FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  78:.\main.c      ****     time %= 100;
+ 394              		.loc 1 78 0
+ 395 015e FB68     		ldr	r3, [r7, #12]
+ 396 0160 181C     		mov	r0, r3
+ 397 0162 6421     		mov	r1, #100
+ 398 0164 FFF7FEFF 		bl	__aeabi_uidivmod
+ 399 0168 0B1C     		mov	r3, r1
+ 400 016a FB60     		str	r3, [r7, #12]
+  79:.\main.c      ****     UART_1_UartPutChar(time/10u + CONVERT_TO_ASCII);
+ 401              		.loc 1 79 0
+ 402 016c FB68     		ldr	r3, [r7, #12]
+ 403 016e 181C     		mov	r0, r3
+ 404 0170 0A21     		mov	r1, #10
+ 405 0172 FFF7FEFF 		bl	__aeabi_uidiv
+ 406 0176 031C     		mov	r3, r0
+ 407 0178 3033     		add	r3, r3, #48
+ 408 017a 181C     		mov	r0, r3
+ 409 017c FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  80:.\main.c      ****     time %= 10;
+ 410              		.loc 1 80 0
+ 411 0180 FB68     		ldr	r3, [r7, #12]
+ 412 0182 181C     		mov	r0, r3
+ 413 0184 0A21     		mov	r1, #10
+ 414 0186 FFF7FEFF 		bl	__aeabi_uidivmod
+ 415 018a 0B1C     		mov	r3, r1
+ 416 018c FB60     		str	r3, [r7, #12]
+  81:.\main.c      ****     UART_1_UartPutChar(time + CONVERT_TO_ASCII);
+ 417              		.loc 1 81 0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 10
+
+
+ 418 018e FB68     		ldr	r3, [r7, #12]
+ 419 0190 3033     		add	r3, r3, #48
+ 420 0192 181C     		mov	r0, r3
+ 421 0194 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  82:.\main.c      ****     UART_1_UartPutString(" counts or ");
+ 422              		.loc 1 82 0
+ 423 0198 884B     		ldr	r3, .L10+84
+ 424 019a 181C     		mov	r0, r3
+ 425 019c FFF7FEFF 		bl	UART_1_UartPutString
+  83:.\main.c      ****     UART_1_UartPutChar(time_us/100000000u + CONVERT_TO_ASCII);
+ 426              		.loc 1 83 0
+ 427 01a0 3B69     		ldr	r3, [r7, #16]
+ 428 01a2 7C69     		ldr	r4, [r7, #20]
+ 429 01a4 181C     		mov	r0, r3
+ 430 01a6 211C     		mov	r1, r4
+ 431 01a8 714A     		ldr	r2, .L10+8
+ 432 01aa 724B     		ldr	r3, .L10+12
+ 433 01ac FFF7FEFF 		bl	__aeabi_uldivmod
+ 434 01b0 031C     		mov	r3, r0
+ 435 01b2 0C1C     		mov	r4, r1
+ 436 01b4 3033     		add	r3, r3, #48
+ 437 01b6 181C     		mov	r0, r3
+ 438 01b8 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  84:.\main.c      ****     time_us %= 100000000;
+ 439              		.loc 1 84 0
+ 440 01bc 3B69     		ldr	r3, [r7, #16]
+ 441 01be 7C69     		ldr	r4, [r7, #20]
+ 442 01c0 181C     		mov	r0, r3
+ 443 01c2 211C     		mov	r1, r4
+ 444 01c4 6A4A     		ldr	r2, .L10+8
+ 445 01c6 6B4B     		ldr	r3, .L10+12
+ 446 01c8 FFF7FEFF 		bl	__aeabi_uldivmod
+ 447 01cc 1C1C     		mov	r4, r3
+ 448 01ce 131C     		mov	r3, r2
+ 449 01d0 3B61     		str	r3, [r7, #16]
+ 450 01d2 7C61     		str	r4, [r7, #20]
+  85:.\main.c      ****     UART_1_UartPutChar(time_us/10000000u + CONVERT_TO_ASCII);
+ 451              		.loc 1 85 0
+ 452 01d4 3B69     		ldr	r3, [r7, #16]
+ 453 01d6 7C69     		ldr	r4, [r7, #20]
+ 454 01d8 181C     		mov	r0, r3
+ 455 01da 211C     		mov	r1, r4
+ 456 01dc 664A     		ldr	r2, .L10+16
+ 457 01de 674B     		ldr	r3, .L10+20
+ 458 01e0 FFF7FEFF 		bl	__aeabi_uldivmod
+ 459 01e4 031C     		mov	r3, r0
+ 460 01e6 0C1C     		mov	r4, r1
+ 461 01e8 3033     		add	r3, r3, #48
+ 462 01ea 181C     		mov	r0, r3
+ 463 01ec FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  86:.\main.c      ****     time_us %= 10000000;
+ 464              		.loc 1 86 0
+ 465 01f0 3B69     		ldr	r3, [r7, #16]
+ 466 01f2 7C69     		ldr	r4, [r7, #20]
+ 467 01f4 181C     		mov	r0, r3
+ 468 01f6 211C     		mov	r1, r4
+ 469 01f8 5F4A     		ldr	r2, .L10+16
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 11
+
+
+ 470 01fa 604B     		ldr	r3, .L10+20
+ 471 01fc FFF7FEFF 		bl	__aeabi_uldivmod
+ 472 0200 1C1C     		mov	r4, r3
+ 473 0202 131C     		mov	r3, r2
+ 474 0204 3B61     		str	r3, [r7, #16]
+ 475 0206 7C61     		str	r4, [r7, #20]
+  87:.\main.c      ****     UART_1_UartPutChar(time_us/1000000u + CONVERT_TO_ASCII);
+ 476              		.loc 1 87 0
+ 477 0208 3B69     		ldr	r3, [r7, #16]
+ 478 020a 7C69     		ldr	r4, [r7, #20]
+ 479 020c 181C     		mov	r0, r3
+ 480 020e 211C     		mov	r1, r4
+ 481 0210 5B4A     		ldr	r2, .L10+24
+ 482 0212 5C4B     		ldr	r3, .L10+28
+ 483 0214 FFF7FEFF 		bl	__aeabi_uldivmod
+ 484 0218 031C     		mov	r3, r0
+ 485 021a 0C1C     		mov	r4, r1
+ 486 021c 3033     		add	r3, r3, #48
+ 487 021e 181C     		mov	r0, r3
+ 488 0220 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  88:.\main.c      ****     time_us %= 1000000;
+ 489              		.loc 1 88 0
+ 490 0224 3B69     		ldr	r3, [r7, #16]
+ 491 0226 7C69     		ldr	r4, [r7, #20]
+ 492 0228 181C     		mov	r0, r3
+ 493 022a 211C     		mov	r1, r4
+ 494 022c 544A     		ldr	r2, .L10+24
+ 495 022e 554B     		ldr	r3, .L10+28
+ 496 0230 FFF7FEFF 		bl	__aeabi_uldivmod
+ 497 0234 1C1C     		mov	r4, r3
+ 498 0236 131C     		mov	r3, r2
+ 499 0238 3B61     		str	r3, [r7, #16]
+ 500 023a 7C61     		str	r4, [r7, #20]
+  89:.\main.c      ****     UART_1_UartPutChar(',');
+ 501              		.loc 1 89 0
+ 502 023c 2C20     		mov	r0, #44
+ 503 023e FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  90:.\main.c      ****     UART_1_UartPutChar(time_us/100000u + CONVERT_TO_ASCII);
+ 504              		.loc 1 90 0
+ 505 0242 3B69     		ldr	r3, [r7, #16]
+ 506 0244 7C69     		ldr	r4, [r7, #20]
+ 507 0246 181C     		mov	r0, r3
+ 508 0248 211C     		mov	r1, r4
+ 509 024a 4F4A     		ldr	r2, .L10+32
+ 510 024c 4F4B     		ldr	r3, .L10+36
+ 511 024e FFF7FEFF 		bl	__aeabi_uldivmod
+ 512 0252 031C     		mov	r3, r0
+ 513 0254 0C1C     		mov	r4, r1
+ 514 0256 3033     		add	r3, r3, #48
+ 515 0258 181C     		mov	r0, r3
+ 516 025a FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  91:.\main.c      ****     time_us %= 100000;
+ 517              		.loc 1 91 0
+ 518 025e 3B69     		ldr	r3, [r7, #16]
+ 519 0260 7C69     		ldr	r4, [r7, #20]
+ 520 0262 181C     		mov	r0, r3
+ 521 0264 211C     		mov	r1, r4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 12
+
+
+ 522 0266 484A     		ldr	r2, .L10+32
+ 523 0268 484B     		ldr	r3, .L10+36
+ 524 026a FFF7FEFF 		bl	__aeabi_uldivmod
+ 525 026e 1C1C     		mov	r4, r3
+ 526 0270 131C     		mov	r3, r2
+ 527 0272 3B61     		str	r3, [r7, #16]
+ 528 0274 7C61     		str	r4, [r7, #20]
+  92:.\main.c      ****     UART_1_UartPutChar(time_us/10000u + CONVERT_TO_ASCII);
+ 529              		.loc 1 92 0
+ 530 0276 3B69     		ldr	r3, [r7, #16]
+ 531 0278 7C69     		ldr	r4, [r7, #20]
+ 532 027a 181C     		mov	r0, r3
+ 533 027c 211C     		mov	r1, r4
+ 534 027e 444A     		ldr	r2, .L10+40
+ 535 0280 444B     		ldr	r3, .L10+44
+ 536 0282 FFF7FEFF 		bl	__aeabi_uldivmod
+ 537 0286 031C     		mov	r3, r0
+ 538 0288 0C1C     		mov	r4, r1
+ 539 028a 3033     		add	r3, r3, #48
+ 540 028c 181C     		mov	r0, r3
+ 541 028e FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  93:.\main.c      ****     time_us %= 10000;
+ 542              		.loc 1 93 0
+ 543 0292 3B69     		ldr	r3, [r7, #16]
+ 544 0294 7C69     		ldr	r4, [r7, #20]
+ 545 0296 181C     		mov	r0, r3
+ 546 0298 211C     		mov	r1, r4
+ 547 029a 3D4A     		ldr	r2, .L10+40
+ 548 029c 3D4B     		ldr	r3, .L10+44
+ 549 029e FFF7FEFF 		bl	__aeabi_uldivmod
+ 550 02a2 1C1C     		mov	r4, r3
+ 551 02a4 131C     		mov	r3, r2
+ 552 02a6 3B61     		str	r3, [r7, #16]
+ 553 02a8 7C61     		str	r4, [r7, #20]
+  94:.\main.c      ****     UART_1_UartPutChar(time_us/1000u + CONVERT_TO_ASCII);
+ 554              		.loc 1 94 0
+ 555 02aa 3B69     		ldr	r3, [r7, #16]
+ 556 02ac 7C69     		ldr	r4, [r7, #20]
+ 557 02ae 181C     		mov	r0, r3
+ 558 02b0 211C     		mov	r1, r4
+ 559 02b2 394A     		ldr	r2, .L10+48
+ 560 02b4 394B     		ldr	r3, .L10+52
+ 561 02b6 FFF7FEFF 		bl	__aeabi_uldivmod
+ 562 02ba 031C     		mov	r3, r0
+ 563 02bc 0C1C     		mov	r4, r1
+ 564 02be 3033     		add	r3, r3, #48
+ 565 02c0 181C     		mov	r0, r3
+ 566 02c2 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  95:.\main.c      ****     time_us %= 1000;
+ 567              		.loc 1 95 0
+ 568 02c6 3B69     		ldr	r3, [r7, #16]
+ 569 02c8 7C69     		ldr	r4, [r7, #20]
+ 570 02ca 181C     		mov	r0, r3
+ 571 02cc 211C     		mov	r1, r4
+ 572 02ce 324A     		ldr	r2, .L10+48
+ 573 02d0 324B     		ldr	r3, .L10+52
+ 574 02d2 FFF7FEFF 		bl	__aeabi_uldivmod
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 13
+
+
+ 575 02d6 1C1C     		mov	r4, r3
+ 576 02d8 131C     		mov	r3, r2
+ 577 02da 3B61     		str	r3, [r7, #16]
+ 578 02dc 7C61     		str	r4, [r7, #20]
+  96:.\main.c      ****     UART_1_UartPutChar(',');
+ 579              		.loc 1 96 0
+ 580 02de 2C20     		mov	r0, #44
+ 581 02e0 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  97:.\main.c      ****     UART_1_UartPutChar(time_us/100u + CONVERT_TO_ASCII);
+ 582              		.loc 1 97 0
+ 583 02e4 3B69     		ldr	r3, [r7, #16]
+ 584 02e6 7C69     		ldr	r4, [r7, #20]
+ 585 02e8 181C     		mov	r0, r3
+ 586 02ea 211C     		mov	r1, r4
+ 587 02ec 6422     		mov	r2, #100
+ 588 02ee 0023     		mov	r3, #0
+ 589 02f0 FFF7FEFF 		bl	__aeabi_uldivmod
+ 590 02f4 031C     		mov	r3, r0
+ 591 02f6 0C1C     		mov	r4, r1
+ 592 02f8 3033     		add	r3, r3, #48
+ 593 02fa 181C     		mov	r0, r3
+ 594 02fc FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+  98:.\main.c      ****     time_us %= 100;
+ 595              		.loc 1 98 0
+ 596 0300 3B69     		ldr	r3, [r7, #16]
+ 597 0302 7C69     		ldr	r4, [r7, #20]
+ 598 0304 181C     		mov	r0, r3
+ 599 0306 211C     		mov	r1, r4
+ 600 0308 6422     		mov	r2, #100
+ 601 030a 0023     		mov	r3, #0
+ 602 030c FFF7FEFF 		bl	__aeabi_uldivmod
+ 603 0310 1C1C     		mov	r4, r3
+ 604 0312 131C     		mov	r3, r2
+ 605 0314 3B61     		str	r3, [r7, #16]
+ 606 0316 7C61     		str	r4, [r7, #20]
+  99:.\main.c      ****     UART_1_UartPutChar(time_us/10u + CONVERT_TO_ASCII);
+ 607              		.loc 1 99 0
+ 608 0318 3B69     		ldr	r3, [r7, #16]
+ 609 031a 7C69     		ldr	r4, [r7, #20]
+ 610 031c 181C     		mov	r0, r3
+ 611 031e 211C     		mov	r1, r4
+ 612 0320 0A22     		mov	r2, #10
+ 613 0322 0023     		mov	r3, #0
+ 614 0324 FFF7FEFF 		bl	__aeabi_uldivmod
+ 615 0328 031C     		mov	r3, r0
+ 616 032a 0C1C     		mov	r4, r1
+ 617 032c 3033     		add	r3, r3, #48
+ 618 032e 181C     		mov	r0, r3
+ 619 0330 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 100:.\main.c      ****     time_us %= 10;
+ 620              		.loc 1 100 0
+ 621 0334 3B69     		ldr	r3, [r7, #16]
+ 622 0336 7C69     		ldr	r4, [r7, #20]
+ 623 0338 181C     		mov	r0, r3
+ 624 033a 211C     		mov	r1, r4
+ 625 033c 0A22     		mov	r2, #10
+ 626 033e 0023     		mov	r3, #0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 14
+
+
+ 627 0340 FFF7FEFF 		bl	__aeabi_uldivmod
+ 628 0344 1C1C     		mov	r4, r3
+ 629 0346 131C     		mov	r3, r2
+ 630 0348 3B61     		str	r3, [r7, #16]
+ 631 034a 7C61     		str	r4, [r7, #20]
+ 101:.\main.c      ****     UART_1_UartPutChar(time_us + CONVERT_TO_ASCII);
+ 632              		.loc 1 101 0
+ 633 034c 3B69     		ldr	r3, [r7, #16]
+ 634 034e 3033     		add	r3, r3, #48
+ 635 0350 181C     		mov	r0, r3
+ 636 0352 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 102:.\main.c      ****     UART_1_UartPutString(" us.\n\r");
+ 637              		.loc 1 102 0
+ 638 0356 1A4B     		ldr	r3, .L10+88
+ 639 0358 181C     		mov	r0, r3
+ 640 035a FFF7FEFF 		bl	UART_1_UartPutString
+ 103:.\main.c      ****     
+ 104:.\main.c      **** }...
+ 641              		.loc 1 104 0
+ 642 035e BD46     		mov	sp, r7
+ 643 0360 07B0     		add	sp, sp, #28
+ 644              		@ sp needed
+ 645 0362 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 646              	.L11:
+ 647 0364 C046C046 		.align	3
+ 648              	.L10:
+ 649 0368 B80B0000 		.word	3000
+ 650 036c 00000000 		.word	0
+ 651 0370 00E1F505 		.word	100000000
+ 652 0374 00000000 		.word	0
+ 653 0378 80969800 		.word	10000000
+ 654 037c 00000000 		.word	0
+ 655 0380 40420F00 		.word	1000000
+ 656 0384 00000000 		.word	0
+ 657 0388 A0860100 		.word	100000
+ 658 038c 00000000 		.word	0
+ 659 0390 10270000 		.word	10000
+ 660 0394 00000000 		.word	0
+ 661 0398 E8030000 		.word	1000
+ 662 039c 00000000 		.word	0
+ 663 03a0 50000000 		.word	.LC10
+ 664 03a4 00CA9A3B 		.word	1000000000
+ 665 03a8 00E1F505 		.word	100000000
+ 666 03ac 80969800 		.word	10000000
+ 667 03b0 40420F00 		.word	1000000
+ 668 03b4 A0860100 		.word	100000
+ 669 03b8 10270000 		.word	10000
+ 670 03bc 74000000 		.word	.LC12
+ 671 03c0 80000000 		.word	.LC14
+ 672              		.cfi_endproc
+ 673              	.LFE35:
+ 674              		.size	puts_measurement, .-puts_measurement
+ 675 03c4 C046C046 		.text
+ 676              	.Letext0:
+ 677              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
+ 678              		.section	.debug_info,"",%progbits
+ 679              	.Ldebug_info0:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 15
+
+
+ 680 0000 70010000 		.4byte	0x170
+ 681 0004 0400     		.2byte	0x4
+ 682 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 683 000a 04       		.byte	0x4
+ 684 000b 01       		.uleb128 0x1
+ 685 000c 8E000000 		.4byte	.LASF25
+ 686 0010 01       		.byte	0x1
+ 687 0011 B1010000 		.4byte	.LASF26
+ 688 0015 6F010000 		.4byte	.LASF27
+ 689 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 690 001d 00000000 		.4byte	0
+ 691 0021 00000000 		.4byte	.Ldebug_line0
+ 692 0025 02       		.uleb128 0x2
+ 693 0026 01       		.byte	0x1
+ 694 0027 06       		.byte	0x6
+ 695 0028 58010000 		.4byte	.LASF0
+ 696 002c 02       		.uleb128 0x2
+ 697 002d 01       		.byte	0x1
+ 698 002e 08       		.byte	0x8
+ 699 002f 0A010000 		.4byte	.LASF1
+ 700 0033 02       		.uleb128 0x2
+ 701 0034 02       		.byte	0x2
+ 702 0035 05       		.byte	0x5
+ 703 0036 26010000 		.4byte	.LASF2
+ 704 003a 02       		.uleb128 0x2
+ 705 003b 02       		.byte	0x2
+ 706 003c 07       		.byte	0x7
+ 707 003d 45010000 		.4byte	.LASF3
+ 708 0041 02       		.uleb128 0x2
+ 709 0042 04       		.byte	0x4
+ 710 0043 05       		.byte	0x5
+ 711 0044 1D010000 		.4byte	.LASF4
+ 712 0048 02       		.uleb128 0x2
+ 713 0049 04       		.byte	0x4
+ 714 004a 07       		.byte	0x7
+ 715 004b 4E000000 		.4byte	.LASF5
+ 716 004f 02       		.uleb128 0x2
+ 717 0050 08       		.byte	0x8
+ 718 0051 05       		.byte	0x5
+ 719 0052 00000000 		.4byte	.LASF6
+ 720 0056 02       		.uleb128 0x2
+ 721 0057 08       		.byte	0x8
+ 722 0058 07       		.byte	0x7
+ 723 0059 60000000 		.4byte	.LASF7
+ 724 005d 03       		.uleb128 0x3
+ 725 005e 04       		.byte	0x4
+ 726 005f 05       		.byte	0x5
+ 727 0060 696E7400 		.ascii	"int\000"
+ 728 0064 02       		.uleb128 0x2
+ 729 0065 04       		.byte	0x4
+ 730 0066 07       		.byte	0x7
+ 731 0067 16000000 		.4byte	.LASF8
+ 732 006b 04       		.uleb128 0x4
+ 733 006c 48000000 		.4byte	.LASF9
+ 734 0070 02       		.byte	0x2
+ 735 0071 A1       		.byte	0xa1
+ 736 0072 2C000000 		.4byte	0x2c
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 16
+
+
+ 737 0076 04       		.uleb128 0x4
+ 738 0077 BA010000 		.4byte	.LASF10
+ 739 007b 02       		.byte	0x2
+ 740 007c A2       		.byte	0xa2
+ 741 007d 3A000000 		.4byte	0x3a
+ 742 0081 04       		.uleb128 0x4
+ 743 0082 2B000000 		.4byte	.LASF11
+ 744 0086 02       		.byte	0x2
+ 745 0087 A3       		.byte	0xa3
+ 746 0088 48000000 		.4byte	0x48
+ 747 008c 02       		.uleb128 0x2
+ 748 008d 04       		.byte	0x4
+ 749 008e 04       		.byte	0x4
+ 750 008f 69010000 		.4byte	.LASF12
+ 751 0093 02       		.uleb128 0x2
+ 752 0094 08       		.byte	0x8
+ 753 0095 04       		.byte	0x4
+ 754 0096 36010000 		.4byte	.LASF13
+ 755 009a 04       		.uleb128 0x4
+ 756 009b 7C000000 		.4byte	.LASF14
+ 757 009f 02       		.byte	0x2
+ 758 00a0 AD       		.byte	0xad
+ 759 00a1 56000000 		.4byte	0x56
+ 760 00a5 02       		.uleb128 0x2
+ 761 00a6 01       		.byte	0x1
+ 762 00a7 08       		.byte	0x8
+ 763 00a8 18010000 		.4byte	.LASF15
+ 764 00ac 02       		.uleb128 0x2
+ 765 00ad 04       		.byte	0x4
+ 766 00ae 07       		.byte	0x7
+ 767 00af C1010000 		.4byte	.LASF16
+ 768 00b3 05       		.uleb128 0x5
+ 769 00b4 83000000 		.4byte	.LASF17
+ 770 00b8 01       		.byte	0x1
+ 771 00b9 18       		.byte	0x18
+ 772 00ba 00000000 		.4byte	.LFB33
+ 773 00be 64000000 		.4byte	.LFE33-.LFB33
+ 774 00c2 01       		.uleb128 0x1
+ 775 00c3 9C       		.byte	0x9c
+ 776 00c4 D8000000 		.4byte	0xd8
+ 777 00c8 06       		.uleb128 0x6
+ 778 00c9 32000000 		.4byte	.LASF19
+ 779 00cd 01       		.byte	0x1
+ 780 00ce 19       		.byte	0x19
+ 781 00cf D8000000 		.4byte	0xd8
+ 782 00d3 03       		.uleb128 0x3
+ 783 00d4 91       		.byte	0x91
+ 784 00d5 BC7F     		.sleb128 -68
+ 785 00d7 00       		.byte	0
+ 786 00d8 07       		.uleb128 0x7
+ 787 00d9 A5000000 		.4byte	0xa5
+ 788 00dd E8000000 		.4byte	0xe8
+ 789 00e1 08       		.uleb128 0x8
+ 790 00e2 AC000000 		.4byte	0xac
+ 791 00e6 3B       		.byte	0x3b
+ 792 00e7 00       		.byte	0
+ 793 00e8 09       		.uleb128 0x9
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 17
+
+
+ 794 00e9 64010000 		.4byte	.LASF28
+ 795 00ed 01       		.byte	0x1
+ 796 00ee 23       		.byte	0x23
+ 797 00ef 5D000000 		.4byte	0x5d
+ 798 00f3 00000000 		.4byte	.LFB34
+ 799 00f7 8C000000 		.4byte	.LFE34-.LFB34
+ 800 00fb 01       		.uleb128 0x1
+ 801 00fc 9C       		.byte	0x9c
+ 802 00fd 05       		.uleb128 0x5
+ 803 00fe 37000000 		.4byte	.LASF18
+ 804 0102 01       		.byte	0x1
+ 805 0103 3C       		.byte	0x3c
+ 806 0104 00000000 		.4byte	.LFB35
+ 807 0108 C4030000 		.4byte	.LFE35-.LFB35
+ 808 010c 01       		.uleb128 0x1
+ 809 010d 9C       		.byte	0x9c
+ 810 010e 2F010000 		.4byte	0x12f
+ 811 0112 0A       		.uleb128 0xa
+ 812 0113 77000000 		.4byte	.LASF24
+ 813 0117 01       		.byte	0x1
+ 814 0118 3C       		.byte	0x3c
+ 815 0119 81000000 		.4byte	0x81
+ 816 011d 02       		.uleb128 0x2
+ 817 011e 91       		.byte	0x91
+ 818 011f 5C       		.sleb128 -36
+ 819 0120 06       		.uleb128 0x6
+ 820 0121 0E000000 		.4byte	.LASF20
+ 821 0125 01       		.byte	0x1
+ 822 0126 3D       		.byte	0x3d
+ 823 0127 9A000000 		.4byte	0x9a
+ 824 012b 02       		.uleb128 0x2
+ 825 012c 91       		.byte	0x91
+ 826 012d 60       		.sleb128 -32
+ 827 012e 00       		.byte	0
+ 828 012f 0B       		.uleb128 0xb
+ 829 0130 3D010000 		.4byte	.LASF21
+ 830 0134 01       		.byte	0x1
+ 831 0135 0F       		.byte	0xf
+ 832 0136 6B000000 		.4byte	0x6b
+ 833 013a 05       		.uleb128 0x5
+ 834 013b 03       		.byte	0x3
+ 835 013c 00000000 		.4byte	running
+ 836 0140 0B       		.uleb128 0xb
+ 837 0141 23000000 		.4byte	.LASF22
+ 838 0145 01       		.byte	0x1
+ 839 0146 10       		.byte	0x10
+ 840 0147 76000000 		.4byte	0x76
+ 841 014b 05       		.uleb128 0x5
+ 842 014c 03       		.byte	0x3
+ 843 014d 00000000 		.4byte	V_start
+ 844 0151 0B       		.uleb128 0xb
+ 845 0152 30010000 		.4byte	.LASF23
+ 846 0156 01       		.byte	0x1
+ 847 0157 11       		.byte	0x11
+ 848 0158 76000000 		.4byte	0x76
+ 849 015c 05       		.uleb128 0x5
+ 850 015d 03       		.byte	0x3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 18
+
+
+ 851 015e 00000000 		.4byte	V_new
+ 852 0162 0B       		.uleb128 0xb
+ 853 0163 77000000 		.4byte	.LASF24
+ 854 0167 01       		.byte	0x1
+ 855 0168 12       		.byte	0x12
+ 856 0169 81000000 		.4byte	0x81
+ 857 016d 05       		.uleb128 0x5
+ 858 016e 03       		.byte	0x3
+ 859 016f 00000000 		.4byte	time
+ 860 0173 00       		.byte	0
+ 861              		.section	.debug_abbrev,"",%progbits
+ 862              	.Ldebug_abbrev0:
+ 863 0000 01       		.uleb128 0x1
+ 864 0001 11       		.uleb128 0x11
+ 865 0002 01       		.byte	0x1
+ 866 0003 25       		.uleb128 0x25
+ 867 0004 0E       		.uleb128 0xe
+ 868 0005 13       		.uleb128 0x13
+ 869 0006 0B       		.uleb128 0xb
+ 870 0007 03       		.uleb128 0x3
+ 871 0008 0E       		.uleb128 0xe
+ 872 0009 1B       		.uleb128 0x1b
+ 873 000a 0E       		.uleb128 0xe
+ 874 000b 55       		.uleb128 0x55
+ 875 000c 17       		.uleb128 0x17
+ 876 000d 11       		.uleb128 0x11
+ 877 000e 01       		.uleb128 0x1
+ 878 000f 10       		.uleb128 0x10
+ 879 0010 17       		.uleb128 0x17
+ 880 0011 00       		.byte	0
+ 881 0012 00       		.byte	0
+ 882 0013 02       		.uleb128 0x2
+ 883 0014 24       		.uleb128 0x24
+ 884 0015 00       		.byte	0
+ 885 0016 0B       		.uleb128 0xb
+ 886 0017 0B       		.uleb128 0xb
+ 887 0018 3E       		.uleb128 0x3e
+ 888 0019 0B       		.uleb128 0xb
+ 889 001a 03       		.uleb128 0x3
+ 890 001b 0E       		.uleb128 0xe
+ 891 001c 00       		.byte	0
+ 892 001d 00       		.byte	0
+ 893 001e 03       		.uleb128 0x3
+ 894 001f 24       		.uleb128 0x24
+ 895 0020 00       		.byte	0
+ 896 0021 0B       		.uleb128 0xb
+ 897 0022 0B       		.uleb128 0xb
+ 898 0023 3E       		.uleb128 0x3e
+ 899 0024 0B       		.uleb128 0xb
+ 900 0025 03       		.uleb128 0x3
+ 901 0026 08       		.uleb128 0x8
+ 902 0027 00       		.byte	0
+ 903 0028 00       		.byte	0
+ 904 0029 04       		.uleb128 0x4
+ 905 002a 16       		.uleb128 0x16
+ 906 002b 00       		.byte	0
+ 907 002c 03       		.uleb128 0x3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 19
+
+
+ 908 002d 0E       		.uleb128 0xe
+ 909 002e 3A       		.uleb128 0x3a
+ 910 002f 0B       		.uleb128 0xb
+ 911 0030 3B       		.uleb128 0x3b
+ 912 0031 0B       		.uleb128 0xb
+ 913 0032 49       		.uleb128 0x49
+ 914 0033 13       		.uleb128 0x13
+ 915 0034 00       		.byte	0
+ 916 0035 00       		.byte	0
+ 917 0036 05       		.uleb128 0x5
+ 918 0037 2E       		.uleb128 0x2e
+ 919 0038 01       		.byte	0x1
+ 920 0039 3F       		.uleb128 0x3f
+ 921 003a 19       		.uleb128 0x19
+ 922 003b 03       		.uleb128 0x3
+ 923 003c 0E       		.uleb128 0xe
+ 924 003d 3A       		.uleb128 0x3a
+ 925 003e 0B       		.uleb128 0xb
+ 926 003f 3B       		.uleb128 0x3b
+ 927 0040 0B       		.uleb128 0xb
+ 928 0041 27       		.uleb128 0x27
+ 929 0042 19       		.uleb128 0x19
+ 930 0043 11       		.uleb128 0x11
+ 931 0044 01       		.uleb128 0x1
+ 932 0045 12       		.uleb128 0x12
+ 933 0046 06       		.uleb128 0x6
+ 934 0047 40       		.uleb128 0x40
+ 935 0048 18       		.uleb128 0x18
+ 936 0049 9642     		.uleb128 0x2116
+ 937 004b 19       		.uleb128 0x19
+ 938 004c 01       		.uleb128 0x1
+ 939 004d 13       		.uleb128 0x13
+ 940 004e 00       		.byte	0
+ 941 004f 00       		.byte	0
+ 942 0050 06       		.uleb128 0x6
+ 943 0051 34       		.uleb128 0x34
+ 944 0052 00       		.byte	0
+ 945 0053 03       		.uleb128 0x3
+ 946 0054 0E       		.uleb128 0xe
+ 947 0055 3A       		.uleb128 0x3a
+ 948 0056 0B       		.uleb128 0xb
+ 949 0057 3B       		.uleb128 0x3b
+ 950 0058 0B       		.uleb128 0xb
+ 951 0059 49       		.uleb128 0x49
+ 952 005a 13       		.uleb128 0x13
+ 953 005b 02       		.uleb128 0x2
+ 954 005c 18       		.uleb128 0x18
+ 955 005d 00       		.byte	0
+ 956 005e 00       		.byte	0
+ 957 005f 07       		.uleb128 0x7
+ 958 0060 01       		.uleb128 0x1
+ 959 0061 01       		.byte	0x1
+ 960 0062 49       		.uleb128 0x49
+ 961 0063 13       		.uleb128 0x13
+ 962 0064 01       		.uleb128 0x1
+ 963 0065 13       		.uleb128 0x13
+ 964 0066 00       		.byte	0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 20
+
+
+ 965 0067 00       		.byte	0
+ 966 0068 08       		.uleb128 0x8
+ 967 0069 21       		.uleb128 0x21
+ 968 006a 00       		.byte	0
+ 969 006b 49       		.uleb128 0x49
+ 970 006c 13       		.uleb128 0x13
+ 971 006d 2F       		.uleb128 0x2f
+ 972 006e 0B       		.uleb128 0xb
+ 973 006f 00       		.byte	0
+ 974 0070 00       		.byte	0
+ 975 0071 09       		.uleb128 0x9
+ 976 0072 2E       		.uleb128 0x2e
+ 977 0073 00       		.byte	0
+ 978 0074 3F       		.uleb128 0x3f
+ 979 0075 19       		.uleb128 0x19
+ 980 0076 03       		.uleb128 0x3
+ 981 0077 0E       		.uleb128 0xe
+ 982 0078 3A       		.uleb128 0x3a
+ 983 0079 0B       		.uleb128 0xb
+ 984 007a 3B       		.uleb128 0x3b
+ 985 007b 0B       		.uleb128 0xb
+ 986 007c 49       		.uleb128 0x49
+ 987 007d 13       		.uleb128 0x13
+ 988 007e 11       		.uleb128 0x11
+ 989 007f 01       		.uleb128 0x1
+ 990 0080 12       		.uleb128 0x12
+ 991 0081 06       		.uleb128 0x6
+ 992 0082 40       		.uleb128 0x40
+ 993 0083 18       		.uleb128 0x18
+ 994 0084 9642     		.uleb128 0x2116
+ 995 0086 19       		.uleb128 0x19
+ 996 0087 00       		.byte	0
+ 997 0088 00       		.byte	0
+ 998 0089 0A       		.uleb128 0xa
+ 999 008a 05       		.uleb128 0x5
+ 1000 008b 00       		.byte	0
+ 1001 008c 03       		.uleb128 0x3
+ 1002 008d 0E       		.uleb128 0xe
+ 1003 008e 3A       		.uleb128 0x3a
+ 1004 008f 0B       		.uleb128 0xb
+ 1005 0090 3B       		.uleb128 0x3b
+ 1006 0091 0B       		.uleb128 0xb
+ 1007 0092 49       		.uleb128 0x49
+ 1008 0093 13       		.uleb128 0x13
+ 1009 0094 02       		.uleb128 0x2
+ 1010 0095 18       		.uleb128 0x18
+ 1011 0096 00       		.byte	0
+ 1012 0097 00       		.byte	0
+ 1013 0098 0B       		.uleb128 0xb
+ 1014 0099 34       		.uleb128 0x34
+ 1015 009a 00       		.byte	0
+ 1016 009b 03       		.uleb128 0x3
+ 1017 009c 0E       		.uleb128 0xe
+ 1018 009d 3A       		.uleb128 0x3a
+ 1019 009e 0B       		.uleb128 0xb
+ 1020 009f 3B       		.uleb128 0x3b
+ 1021 00a0 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 21
+
+
+ 1022 00a1 49       		.uleb128 0x49
+ 1023 00a2 13       		.uleb128 0x13
+ 1024 00a3 3F       		.uleb128 0x3f
+ 1025 00a4 19       		.uleb128 0x19
+ 1026 00a5 02       		.uleb128 0x2
+ 1027 00a6 18       		.uleb128 0x18
+ 1028 00a7 00       		.byte	0
+ 1029 00a8 00       		.byte	0
+ 1030 00a9 00       		.byte	0
+ 1031              		.section	.debug_aranges,"",%progbits
+ 1032 0000 2C000000 		.4byte	0x2c
+ 1033 0004 0200     		.2byte	0x2
+ 1034 0006 00000000 		.4byte	.Ldebug_info0
+ 1035 000a 04       		.byte	0x4
+ 1036 000b 00       		.byte	0
+ 1037 000c 0000     		.2byte	0
+ 1038 000e 0000     		.2byte	0
+ 1039 0010 00000000 		.4byte	.LFB33
+ 1040 0014 64000000 		.4byte	.LFE33-.LFB33
+ 1041 0018 00000000 		.4byte	.LFB34
+ 1042 001c 8C000000 		.4byte	.LFE34-.LFB34
+ 1043 0020 00000000 		.4byte	.LFB35
+ 1044 0024 C4030000 		.4byte	.LFE35-.LFB35
+ 1045 0028 00000000 		.4byte	0
+ 1046 002c 00000000 		.4byte	0
+ 1047              		.section	.debug_ranges,"",%progbits
+ 1048              	.Ldebug_ranges0:
+ 1049 0000 00000000 		.4byte	.LFB33
+ 1050 0004 64000000 		.4byte	.LFE33
+ 1051 0008 00000000 		.4byte	.LFB34
+ 1052 000c 8C000000 		.4byte	.LFE34
+ 1053 0010 00000000 		.4byte	.LFB35
+ 1054 0014 C4030000 		.4byte	.LFE35
+ 1055 0018 00000000 		.4byte	0
+ 1056 001c 00000000 		.4byte	0
+ 1057              		.section	.debug_line,"",%progbits
+ 1058              	.Ldebug_line0:
+ 1059 0000 BE000000 		.section	.debug_str,"MS",%progbits,1
+ 1059      02004500 
+ 1059      00000201 
+ 1059      FB0E0D00 
+ 1059      01010101 
+ 1060              	.LASF6:
+ 1061 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1061      206C6F6E 
+ 1061      6720696E 
+ 1061      7400
+ 1062              	.LASF20:
+ 1063 000e 74696D65 		.ascii	"time_us\000"
+ 1063      5F757300 
+ 1064              	.LASF8:
+ 1065 0016 756E7369 		.ascii	"unsigned int\000"
+ 1065      676E6564 
+ 1065      20696E74 
+ 1065      00
+ 1066              	.LASF22:
+ 1067 0023 565F7374 		.ascii	"V_start\000"
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 22
+
+
+ 1067      61727400 
+ 1068              	.LASF11:
+ 1069 002b 75696E74 		.ascii	"uint32\000"
+ 1069      333200
+ 1070              	.LASF19:
+ 1071 0032 74656D70 		.ascii	"temp\000"
+ 1071      00
+ 1072              	.LASF18:
+ 1073 0037 70757473 		.ascii	"puts_measurement\000"
+ 1073      5F6D6561 
+ 1073      73757265 
+ 1073      6D656E74 
+ 1073      00
+ 1074              	.LASF9:
+ 1075 0048 75696E74 		.ascii	"uint8\000"
+ 1075      3800
+ 1076              	.LASF5:
+ 1077 004e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1077      20756E73 
+ 1077      69676E65 
+ 1077      6420696E 
+ 1077      7400
+ 1078              	.LASF7:
+ 1079 0060 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1079      206C6F6E 
+ 1079      6720756E 
+ 1079      7369676E 
+ 1079      65642069 
+ 1080              	.LASF24:
+ 1081 0077 74696D65 		.ascii	"time\000"
+ 1081      00
+ 1082              	.LASF14:
+ 1083 007c 75696E74 		.ascii	"uint64\000"
+ 1083      363400
+ 1084              	.LASF17:
+ 1085 0083 73775F69 		.ascii	"sw_int_ISR\000"
+ 1085      6E745F49 
+ 1085      535200
+ 1086              	.LASF25:
+ 1087 008e 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1087      4320342E 
+ 1087      382E3420 
+ 1087      32303134 
+ 1087      30353236 
+ 1088 00c1 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 1088      20726576 
+ 1088      6973696F 
+ 1088      6E203231 
+ 1088      31333538 
+ 1089 00f4 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 1089      66756E63 
+ 1089      74696F6E 
+ 1089      2D736563 
+ 1089      74696F6E 
+ 1090              	.LASF1:
+ 1091 010a 756E7369 		.ascii	"unsigned char\000"
+ 1091      676E6564 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 23
+
+
+ 1091      20636861 
+ 1091      7200
+ 1092              	.LASF15:
+ 1093 0118 63686172 		.ascii	"char\000"
+ 1093      00
+ 1094              	.LASF4:
+ 1095 011d 6C6F6E67 		.ascii	"long int\000"
+ 1095      20696E74 
+ 1095      00
+ 1096              	.LASF2:
+ 1097 0126 73686F72 		.ascii	"short int\000"
+ 1097      7420696E 
+ 1097      7400
+ 1098              	.LASF23:
+ 1099 0130 565F6E65 		.ascii	"V_new\000"
+ 1099      7700
+ 1100              	.LASF13:
+ 1101 0136 646F7562 		.ascii	"double\000"
+ 1101      6C6500
+ 1102              	.LASF21:
+ 1103 013d 72756E6E 		.ascii	"running\000"
+ 1103      696E6700 
+ 1104              	.LASF3:
+ 1105 0145 73686F72 		.ascii	"short unsigned int\000"
+ 1105      7420756E 
+ 1105      7369676E 
+ 1105      65642069 
+ 1105      6E7400
+ 1106              	.LASF0:
+ 1107 0158 7369676E 		.ascii	"signed char\000"
+ 1107      65642063 
+ 1107      68617200 
+ 1108              	.LASF28:
+ 1109 0164 6D61696E 		.ascii	"main\000"
+ 1109      00
+ 1110              	.LASF12:
+ 1111 0169 666C6F61 		.ascii	"float\000"
+ 1111      7400
+ 1112              	.LASF27:
+ 1113 016f 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\PSoC Creator\\CRT_ti"
+ 1113      73657273 
+ 1113      5C536E75 
+ 1113      666B696E 
+ 1113      5C446F63 
+ 1114 019d 6D65725C 		.ascii	"mer\\CRT_timer.cydsn\000"
+ 1114      4352545F 
+ 1114      74696D65 
+ 1114      722E6379 
+ 1114      64736E00 
+ 1115              	.LASF26:
+ 1116 01b1 2E5C6D61 		.ascii	".\\main.c\000"
+ 1116      696E2E63 
+ 1116      00
+ 1117              	.LASF10:
+ 1118 01ba 75696E74 		.ascii	"uint16\000"
+ 1118      313600
+ 1119              	.LASF16:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccY7wxqT.s 			page 24
+
+
+ 1120 01c1 73697A65 		.ascii	"sizetype\000"
+ 1120      74797065 
+ 1120      00
+ 1121              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
