@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: ADC_1_PM.c
+* File Name: ADC_PM.c
 * Version 2.0
 *
 * Description:
@@ -14,21 +14,21 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "ADC_1.h"
+#include "ADC.h"
 
 
 /***************************************
 * Local data allocation
 ***************************************/
 
-static ADC_1_BACKUP_STRUCT  ADC_1_backup =
+static ADC_BACKUP_STRUCT  ADC_backup =
 {
-    ADC_1_DISABLED
+    ADC_DISABLED
 };
 
 
 /*******************************************************************************
-* Function Name: ADC_1_SaveConfig
+* Function Name: ADC_SaveConfig
 ********************************************************************************
 *
 * Summary:
@@ -41,14 +41,14 @@ static ADC_1_BACKUP_STRUCT  ADC_1_backup =
 *  None.
 *
 *******************************************************************************/
-void ADC_1_SaveConfig(void)
+void ADC_SaveConfig(void)
 {
     /* All configuration registers are marked as [reset_all_retention] */
 }
 
 
 /*******************************************************************************
-* Function Name: ADC_1_RestoreConfig
+* Function Name: ADC_RestoreConfig
 ********************************************************************************
 *
 * Summary:
@@ -61,14 +61,14 @@ void ADC_1_SaveConfig(void)
 *  None.
 *
 *******************************************************************************/
-void ADC_1_RestoreConfig(void)
+void ADC_RestoreConfig(void)
 {
     /* All congiguration registers are marked as [reset_all_retention] */
 }
 
 
 /*******************************************************************************
-* Function Name: ADC_1_Sleep
+* Function Name: ADC_Sleep
 ********************************************************************************
 *
 * Summary:
@@ -82,37 +82,37 @@ void ADC_1_RestoreConfig(void)
 *  None.
 *
 * Global Variables:
-*  ADC_1_backup - modified.
+*  ADC_backup - modified.
 *
 *******************************************************************************/
-void ADC_1_Sleep(void)
+void ADC_Sleep(void)
 {
     /* During deepsleep/ hibernate mode keep SARMUX active, i.e. do not open
     *   all switches (disconnect), to be used for ADFT
     */
-    ADC_1_SAR_DFT_CTRL_REG |= ADC_1_ADFT_OVERRIDE;
-    if((ADC_1_SAR_CTRL_REG  & ADC_1_ENABLE) != 0u)
+    ADC_SAR_DFT_CTRL_REG |= ADC_ADFT_OVERRIDE;
+    if((ADC_SAR_CTRL_REG  & ADC_ENABLE) != 0u)
     {
-        if((ADC_1_SAR_SAMPLE_CTRL_REG & ADC_1_CONTINUOUS_EN) != 0u)
+        if((ADC_SAR_SAMPLE_CTRL_REG & ADC_CONTINUOUS_EN) != 0u)
         {
-            ADC_1_backup.enableState = ADC_1_ENABLED | ADC_1_STARTED;
+            ADC_backup.enableState = ADC_ENABLED | ADC_STARTED;
         }
         else
         {
-            ADC_1_backup.enableState = ADC_1_ENABLED;
+            ADC_backup.enableState = ADC_ENABLED;
         }
-        ADC_1_StopConvert();
-        ADC_1_Stop();
+        ADC_StopConvert();
+        ADC_Stop();
     }
     else
     {
-        ADC_1_backup.enableState = ADC_1_DISABLED;
+        ADC_backup.enableState = ADC_DISABLED;
     }
 }
 
 
 /*******************************************************************************
-* Function Name: ADC_1_Wakeup
+* Function Name: ADC_Wakeup
 ********************************************************************************
 *
 * Summary:
@@ -126,18 +126,18 @@ void ADC_1_Sleep(void)
 *  None.
 *
 * Global Variables:
-*  ADC_1_backup - used.
+*  ADC_backup - used.
 *
 *******************************************************************************/
-void ADC_1_Wakeup(void)
+void ADC_Wakeup(void)
 {
-    ADC_1_SAR_DFT_CTRL_REG &= (uint32)~ADC_1_ADFT_OVERRIDE;
-    if(ADC_1_backup.enableState != ADC_1_DISABLED)
+    ADC_SAR_DFT_CTRL_REG &= (uint32)~ADC_ADFT_OVERRIDE;
+    if(ADC_backup.enableState != ADC_DISABLED)
     {
-        ADC_1_Enable();
-        if((ADC_1_backup.enableState & ADC_1_STARTED) != 0u)
+        ADC_Enable();
+        if((ADC_backup.enableState & ADC_STARTED) != 0u)
         {
-            ADC_1_StartConvert();
+            ADC_StartConvert();
         }
     }
 }

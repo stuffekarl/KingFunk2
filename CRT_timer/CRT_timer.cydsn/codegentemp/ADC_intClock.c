@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: ADC_1_intClock.c
+* File Name: ADC_intClock.c
 * Version 2.20
 *
 *  Description:
@@ -17,12 +17,12 @@
 *******************************************************************************/
 
 #include <cydevice_trm.h>
-#include "ADC_1_intClock.h"
+#include "ADC_intClock.h"
 
 #if defined CYREG_PERI_DIV_CMD
 
 /*******************************************************************************
-* Function Name: ADC_1_intClock_StartEx
+* Function Name: ADC_intClock_StartEx
 ********************************************************************************
 *
 * Summary:
@@ -36,24 +36,24 @@
 *  None
 *
 *******************************************************************************/
-void ADC_1_intClock_StartEx(uint32 alignClkDiv)
+void ADC_intClock_StartEx(uint32 alignClkDiv)
 {
     /* Make sure any previous start command has finished. */
-    while((ADC_1_intClock_CMD_REG & ADC_1_intClock_CMD_ENABLE_MASK) != 0u)
+    while((ADC_intClock_CMD_REG & ADC_intClock_CMD_ENABLE_MASK) != 0u)
     {
     }
     
     /* Specify the target divider and it's alignment divider, and enable. */
-    ADC_1_intClock_CMD_REG =
-        ((uint32)ADC_1_intClock__DIV_ID << ADC_1_intClock_CMD_DIV_SHIFT)|
-        (alignClkDiv << ADC_1_intClock_CMD_PA_DIV_SHIFT) |
-        (uint32)ADC_1_intClock_CMD_ENABLE_MASK;
+    ADC_intClock_CMD_REG =
+        ((uint32)ADC_intClock__DIV_ID << ADC_intClock_CMD_DIV_SHIFT)|
+        (alignClkDiv << ADC_intClock_CMD_PA_DIV_SHIFT) |
+        (uint32)ADC_intClock_CMD_ENABLE_MASK;
 }
 
 #else
 
 /*******************************************************************************
-* Function Name: ADC_1_intClock_Start
+* Function Name: ADC_intClock_Start
 ********************************************************************************
 *
 * Summary:
@@ -67,17 +67,17 @@ void ADC_1_intClock_StartEx(uint32 alignClkDiv)
 *
 *******************************************************************************/
 
-void ADC_1_intClock_Start(void)
+void ADC_intClock_Start(void)
 {
     /* Set the bit to enable the clock. */
-    ADC_1_intClock_ENABLE_REG |= ADC_1_intClock__ENABLE_MASK;
+    ADC_intClock_ENABLE_REG |= ADC_intClock__ENABLE_MASK;
 }
 
 #endif /* CYREG_PERI_DIV_CMD */
 
 
 /*******************************************************************************
-* Function Name: ADC_1_intClock_Stop
+* Function Name: ADC_intClock_Stop
 ********************************************************************************
 *
 * Summary:
@@ -92,31 +92,31 @@ void ADC_1_intClock_Start(void)
 *  None
 *
 *******************************************************************************/
-void ADC_1_intClock_Stop(void)
+void ADC_intClock_Stop(void)
 {
 #if defined CYREG_PERI_DIV_CMD
 
     /* Make sure any previous start command has finished. */
-    while((ADC_1_intClock_CMD_REG & ADC_1_intClock_CMD_ENABLE_MASK) != 0u)
+    while((ADC_intClock_CMD_REG & ADC_intClock_CMD_ENABLE_MASK) != 0u)
     {
     }
     
     /* Specify the target divider and it's alignment divider, and disable. */
-    ADC_1_intClock_CMD_REG =
-        ((uint32)ADC_1_intClock__DIV_ID << ADC_1_intClock_CMD_DIV_SHIFT)|
-        ((uint32)ADC_1_intClock_CMD_DISABLE_MASK);
+    ADC_intClock_CMD_REG =
+        ((uint32)ADC_intClock__DIV_ID << ADC_intClock_CMD_DIV_SHIFT)|
+        ((uint32)ADC_intClock_CMD_DISABLE_MASK);
 
 #else
 
     /* Clear the bit to disable the clock. */
-    ADC_1_intClock_ENABLE_REG &= (uint32)(~ADC_1_intClock__ENABLE_MASK);
+    ADC_intClock_ENABLE_REG &= (uint32)(~ADC_intClock__ENABLE_MASK);
     
 #endif /* CYREG_PERI_DIV_CMD */
 }
 
 
 /*******************************************************************************
-* Function Name: ADC_1_intClock_SetFractionalDividerRegister
+* Function Name: ADC_intClock_SetFractionalDividerRegister
 ********************************************************************************
 *
 * Summary:
@@ -131,35 +131,35 @@ void ADC_1_intClock_Stop(void)
 *  None
 *
 *******************************************************************************/
-void ADC_1_intClock_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFractional)
+void ADC_intClock_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFractional)
 {
     uint32 maskVal;
     uint32 regVal;
     
-#if defined (ADC_1_intClock__FRAC_MASK) || defined (CYREG_PERI_DIV_CMD)
+#if defined (ADC_intClock__FRAC_MASK) || defined (CYREG_PERI_DIV_CMD)
     
 	/* get all but divider bits */
-    maskVal = ADC_1_intClock_DIV_REG & 
-                    (uint32)(~(uint32)(ADC_1_intClock_DIV_INT_MASK | ADC_1_intClock_DIV_FRAC_MASK)); 
+    maskVal = ADC_intClock_DIV_REG & 
+                    (uint32)(~(uint32)(ADC_intClock_DIV_INT_MASK | ADC_intClock_DIV_FRAC_MASK)); 
 	/* combine mask and new divider vals into 32-bit value */
     regVal = maskVal |
-        ((uint32)((uint32)clkDivider <<  ADC_1_intClock_DIV_INT_SHIFT) & ADC_1_intClock_DIV_INT_MASK) |
-        ((uint32)((uint32)clkFractional << ADC_1_intClock_DIV_FRAC_SHIFT) & ADC_1_intClock_DIV_FRAC_MASK);
+        ((uint32)((uint32)clkDivider <<  ADC_intClock_DIV_INT_SHIFT) & ADC_intClock_DIV_INT_MASK) |
+        ((uint32)((uint32)clkFractional << ADC_intClock_DIV_FRAC_SHIFT) & ADC_intClock_DIV_FRAC_MASK);
     
 #else
     /* get all but integer divider bits */
-    maskVal = ADC_1_intClock_DIV_REG & (uint32)(~(uint32)ADC_1_intClock__DIVIDER_MASK);
+    maskVal = ADC_intClock_DIV_REG & (uint32)(~(uint32)ADC_intClock__DIVIDER_MASK);
     /* combine mask and new divider val into 32-bit value */
     regVal = clkDivider | maskVal;
     
-#endif /* ADC_1_intClock__FRAC_MASK || CYREG_PERI_DIV_CMD */
+#endif /* ADC_intClock__FRAC_MASK || CYREG_PERI_DIV_CMD */
 
-    ADC_1_intClock_DIV_REG = regVal;
+    ADC_intClock_DIV_REG = regVal;
 }
 
 
 /*******************************************************************************
-* Function Name: ADC_1_intClock_GetDividerRegister
+* Function Name: ADC_intClock_GetDividerRegister
 ********************************************************************************
 *
 * Summary:
@@ -173,15 +173,15 @@ void ADC_1_intClock_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFra
 *  divide by 2, the return value will be 1.
 *
 *******************************************************************************/
-uint16 ADC_1_intClock_GetDividerRegister(void)
+uint16 ADC_intClock_GetDividerRegister(void)
 {
-    return (uint16)((ADC_1_intClock_DIV_REG & ADC_1_intClock_DIV_INT_MASK)
-        >> ADC_1_intClock_DIV_INT_SHIFT);
+    return (uint16)((ADC_intClock_DIV_REG & ADC_intClock_DIV_INT_MASK)
+        >> ADC_intClock_DIV_INT_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: ADC_1_intClock_GetFractionalDividerRegister
+* Function Name: ADC_intClock_GetFractionalDividerRegister
 ********************************************************************************
 *
 * Summary:
@@ -195,15 +195,15 @@ uint16 ADC_1_intClock_GetDividerRegister(void)
 *  0 if the fractional divider is not in use.
 *
 *******************************************************************************/
-uint8 ADC_1_intClock_GetFractionalDividerRegister(void)
+uint8 ADC_intClock_GetFractionalDividerRegister(void)
 {
-#if defined (ADC_1_intClock__FRAC_MASK)
+#if defined (ADC_intClock__FRAC_MASK)
     /* return fractional divider bits */
-    return (uint8)((ADC_1_intClock_DIV_REG & ADC_1_intClock_DIV_FRAC_MASK)
-        >> ADC_1_intClock_DIV_FRAC_SHIFT);
+    return (uint8)((ADC_intClock_DIV_REG & ADC_intClock_DIV_FRAC_MASK)
+        >> ADC_intClock_DIV_FRAC_SHIFT);
 #else
     return 0u;
-#endif /* ADC_1_intClock__FRAC_MASK */
+#endif /* ADC_intClock__FRAC_MASK */
 }
 
 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
   24:.\Generated_Source\PSoC4/Timer_1.c **** #include "Timer_1.h"
   25:.\Generated_Source\PSoC4/Timer_1.c **** 
   26:.\Generated_Source\PSoC4/Timer_1.c **** uint8 Timer_1_initVar = 0u;
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 2
 
 
   27:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
   70:.\Generated_Source\PSoC4/Timer_1.c ****             #if (CY_PSOC5A)
   71:.\Generated_Source\PSoC4/Timer_1.c ****                 /* Set last 2 bits of control2 register if one shot(halt on
   72:.\Generated_Source\PSoC4/Timer_1.c ****                 interrupt) is enabled*/
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 3
 
 
   73:.\Generated_Source\PSoC4/Timer_1.c ****                 Timer_1_CONTROL2 |= 0x03u;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
   50 0012 5B42     		neg	r3, r3
   51 0014 181C     		mov	r0, r3
   52 0016 FFF7FEFF 		bl	Timer_1_WriteCounter
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 4
 
 
  120:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  155:.\Generated_Source\PSoC4/Timer_1.c ****         #if (Timer_1_InterruptOnCaptureCount && !Timer_1_UDB_CONTROL_REG_REMOVED)
  156:.\Generated_Source\PSoC4/Timer_1.c ****             Timer_1_SetInterruptCount(Timer_1_INIT_INT_CAPTURE_COUNT);
  157:.\Generated_Source\PSoC4/Timer_1.c ****         #endif /* Set interrupt count in UDB implementation if interrupt count feature is checked.*
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 5
 
 
  158:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  102              		.cfi_offset 14, -4
  103 0002 00AF     		add	r7, sp, #0
  104              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 6
 
 
  182:.\Generated_Source\PSoC4/Timer_1.c ****     /* Globally Enable the Fixed Function Block chosen */
@@ -329,7 +329,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  119              	.L6:
  120 001a C046     		.align	2
  121              	.L5:
- 122 001c 70000F40 		.word	1074724976
+ 122 001c 71000F40 		.word	1074724977
  123              		.cfi_endproc
  124              	.LFE1:
  125              		.size	Timer_1_Enable, .-Timer_1_Enable
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  207:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
  208:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  209:.\Generated_Source\PSoC4/Timer_1.c **** *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 7
 
 
  210:.\Generated_Source\PSoC4/Timer_1.c **** * Global variables:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  171              		.thumb_func
  172              		.type	Timer_1_Stop, %function
  173              	Timer_1_Stop:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 8
 
 
  174              	.LFB3:
@@ -478,11 +478,11 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  195 0016 80BD     		pop	{r7, pc}
  196              	.L13:
  197              		.align	2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 9
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 9
 
 
  198              	.L12:
- 199 0018 70000F40 		.word	1074724976
+ 199 0018 71000F40 		.word	1074724977
  200              		.cfi_endproc
  201              	.LFE3:
  202              		.size	Timer_1_Stop, .-Timer_1_Stop
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  229              		.loc 1 282 0
  230 0014 BD46     		mov	sp, r7
  231 0016 02B0     		add	sp, sp, #8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 10
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 10
 
 
  232              		@ sp needed
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  309:.\Generated_Source\PSoC4/Timer_1.c ****     #endif/* (Timer_1_UsingFixedFunction) */
  310:.\Generated_Source\PSoC4/Timer_1.c ****     /* Capture Data is now in the FIFO */
  311:.\Generated_Source\PSoC4/Timer_1.c **** }
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 11
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 11
 
 
  260              		.loc 1 311 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  290 0008 DBB2     		uxtb	r3, r3
  336:.\Generated_Source\PSoC4/Timer_1.c **** }
  291              		.loc 1 336 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 12
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 12
 
 
  292 000a 181C     		mov	r0, r3
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  360:.\Generated_Source\PSoC4/Timer_1.c ****     #else
  361:.\Generated_Source\PSoC4/Timer_1.c ****         return (0);
  362:.\Generated_Source\PSoC4/Timer_1.c ****     #endif /* (!Timer_1_UDB_CONTROL_REG_REMOVED) */
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 13
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 13
 
 
  363:.\Generated_Source\PSoC4/Timer_1.c **** }
@@ -730,7 +730,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  328              	.L27:
  329              		.align	2
  330              	.L26:
- 331 0010 70000F40 		.word	1074724976
+ 331 0010 71000F40 		.word	1074724977
  332              		.cfi_endproc
  333              	.LFE7:
  334              		.size	Timer_1_ReadControlRegister, .-Timer_1_ReadControlRegister
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  357 000c 034B     		ldr	r3, .L29
  358 000e FA1D     		add	r2, r7, #7
  359 0010 1278     		ldrb	r2, [r2]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 14
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 14
 
 
  360 0012 1A70     		strb	r2, [r3]
@@ -794,7 +794,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  366              	.L30:
  367 001a C046     		.align	2
  368              	.L29:
- 369 001c 70000F40 		.word	1074724976
+ 369 001c 71000F40 		.word	1074724977
  370              		.cfi_endproc
  371              	.LFE8:
  372              		.size	Timer_1_WriteControlRegister, .-Timer_1_WriteControlRegister
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  408:.\Generated_Source\PSoC4/Timer_1.c ****        return ((uint32)CY_GET_REG16(Timer_1_PERIOD_LSB_PTR));
  409:.\Generated_Source\PSoC4/Timer_1.c ****    #else
  410:.\Generated_Source\PSoC4/Timer_1.c ****        return (CY_GET_REG32(Timer_1_PERIOD_LSB_PTR));
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 15
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 15
 
 
  389              		.loc 1 410 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  421              		.cfi_def_cfa_register 7
  422 0006 7860     		str	r0, [r7, #4]
  433:.\Generated_Source\PSoC4/Timer_1.c ****     #if(Timer_1_UsingFixedFunction)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 16
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 16
 
 
  434:.\Generated_Source\PSoC4/Timer_1.c ****         uint16 period_temp = (uint16)period;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  453 0002 00AF     		add	r7, sp, #0
  454              		.cfi_def_cfa_register 7
  458:.\Generated_Source\PSoC4/Timer_1.c ****    #if(Timer_1_UsingFixedFunction)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 17
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 17
 
 
  459:.\Generated_Source\PSoC4/Timer_1.c ****        return ((uint32)CY_GET_REG16(Timer_1_CAPTURE_LSB_PTR));
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  486 0004 00AF     		add	r7, sp, #0
  487              		.cfi_def_cfa_register 7
  488 0006 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 18
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 18
 
 
  482:.\Generated_Source\PSoC4/Timer_1.c ****    #if(Timer_1_UsingFixedFunction)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  515 0000 80B5     		push	{r7, lr}
  516              		.cfi_def_cfa_offset 8
  517              		.cfi_offset 7, -8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 19
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 19
 
 
  518              		.cfi_offset 14, -4
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  534:.\Generated_Source\PSoC4/Timer_1.c ****  ******************************************************************************/
  535:.\Generated_Source\PSoC4/Timer_1.c **** 
  536:.\Generated_Source\PSoC4/Timer_1.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 20
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 20
 
 
  537:.\Generated_Source\PSoC4/Timer_1.c **** #if (Timer_1_SoftwareCaptureMode)
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  591:.\Generated_Source\PSoC4/Timer_1.c **** *  This function sets the trigger input mode
  592:.\Generated_Source\PSoC4/Timer_1.c **** *
  593:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 21
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 21
 
 
  594:.\Generated_Source\PSoC4/Timer_1.c **** *  triggerMode: Pass one of the pre-defined Trigger Modes (except Software)
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  648:.\Generated_Source\PSoC4/Timer_1.c **** ********************************************************************************
  649:.\Generated_Source\PSoC4/Timer_1.c **** *
  650:.\Generated_Source\PSoC4/Timer_1.c **** * Summary:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 22
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 22
 
 
  651:.\Generated_Source\PSoC4/Timer_1.c **** *  Clears the control bit enabling Hardware Trigger mode
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  705:.\Generated_Source\PSoC4/Timer_1.c **** 
  706:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
  707:.\Generated_Source\PSoC4/Timer_1.c **** * Function Name: Timer_1_SetCaptureCount
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 23
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 23
 
 
  708:.\Generated_Source\PSoC4/Timer_1.c **** ********************************************************************************
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  762:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  763:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_ClearFIFO(void) 
  764:.\Generated_Source\PSoC4/Timer_1.c **** {
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 24
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 24
 
 
  548              		.loc 1 764 0
@@ -1427,26 +1427,26 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  585 000b 01       		.uleb128 0x1
  586 000c 5F000000 		.4byte	.LASF36
  587 0010 01       		.byte	0x1
- 588 0011 79020000 		.4byte	.LASF37
- 589 0015 21010000 		.4byte	.LASF38
+ 588 0011 7D020000 		.4byte	.LASF37
+ 589 0015 DB000000 		.4byte	.LASF38
  590 0019 00000000 		.4byte	.Ldebug_ranges0+0
  591 001d 00000000 		.4byte	0
  592 0021 00000000 		.4byte	.Ldebug_line0
  593 0025 02       		.uleb128 0x2
  594 0026 01       		.byte	0x1
  595 0027 06       		.byte	0x6
- 596 0028 FD020000 		.4byte	.LASF0
+ 596 0028 01030000 		.4byte	.LASF0
  597 002c 02       		.uleb128 0x2
  598 002d 01       		.byte	0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 25
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 25
 
 
  599 002e 08       		.byte	0x8
- 600 002f DB000000 		.4byte	.LASF1
+ 600 002f 21010000 		.4byte	.LASF1
  601 0033 02       		.uleb128 0x2
  602 0034 02       		.byte	0x2
  603 0035 05       		.byte	0x5
- 604 0036 CA020000 		.4byte	.LASF2
+ 604 0036 CE020000 		.4byte	.LASF2
  605 003a 02       		.uleb128 0x2
  606 003b 02       		.byte	0x2
  607 003c 07       		.byte	0x7
@@ -1454,19 +1454,19 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  609 0041 02       		.uleb128 0x2
  610 0042 04       		.byte	0x4
  611 0043 05       		.byte	0x5
- 612 0044 EF020000 		.4byte	.LASF4
+ 612 0044 F3020000 		.4byte	.LASF4
  613 0048 02       		.uleb128 0x2
  614 0049 04       		.byte	0x4
  615 004a 07       		.byte	0x7
- 616 004b 01010000 		.4byte	.LASF5
+ 616 004b 47010000 		.4byte	.LASF5
  617 004f 02       		.uleb128 0x2
  618 0050 08       		.byte	0x8
  619 0051 05       		.byte	0x5
- 620 0052 5D020000 		.4byte	.LASF6
+ 620 0052 61020000 		.4byte	.LASF6
  621 0056 02       		.uleb128 0x2
  622 0057 08       		.byte	0x8
  623 0058 07       		.byte	0x7
- 624 0059 FD010000 		.4byte	.LASF7
+ 624 0059 01020000 		.4byte	.LASF7
  625 005d 03       		.uleb128 0x3
  626 005e 04       		.byte	0x4
  627 005f 05       		.byte	0x5
@@ -1476,12 +1476,12 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  631 0066 07       		.byte	0x7
  632 0067 4C000000 		.4byte	.LASF8
  633 006b 04       		.uleb128 0x4
- 634 006c 13010000 		.4byte	.LASF9
+ 634 006c 59010000 		.4byte	.LASF9
  635 0070 02       		.byte	0x2
  636 0071 A1       		.byte	0xa1
  637 0072 2C000000 		.4byte	0x2c
  638 0076 04       		.uleb128 0x4
- 639 0077 BF010000 		.4byte	.LASF10
+ 639 0077 C3010000 		.4byte	.LASF10
  640 007b 02       		.byte	0x2
  641 007c A3       		.byte	0xa3
  642 007d 48000000 		.4byte	0x48
@@ -1492,16 +1492,16 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  647 0088 02       		.uleb128 0x2
  648 0089 08       		.byte	0x8
  649 008a 04       		.byte	0x4
- 650 008b 72010000 		.4byte	.LASF12
+ 650 008b 76010000 		.4byte	.LASF12
  651 008f 02       		.uleb128 0x2
  652 0090 01       		.byte	0x1
  653 0091 08       		.byte	0x8
- 654 0092 F8020000 		.4byte	.LASF13
+ 654 0092 FC020000 		.4byte	.LASF13
  655 0096 05       		.uleb128 0x5
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 26
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 26
 
 
- 656 0097 E9000000 		.4byte	.LASF14
+ 656 0097 2F010000 		.4byte	.LASF14
  657 009b 02       		.byte	0x2
  658 009c 4B01     		.2byte	0x14b
  659 009e A2000000 		.4byte	0xa2
@@ -1517,9 +1517,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  669 00b8 02       		.uleb128 0x2
  670 00b9 04       		.byte	0x4
  671 00ba 07       		.byte	0x7
- 672 00bb 54020000 		.4byte	.LASF16
+ 672 00bb 58020000 		.4byte	.LASF16
  673 00bf 07       		.uleb128 0x7
- 674 00c0 F0010000 		.4byte	.LASF20
+ 674 00c0 F4010000 		.4byte	.LASF20
  675 00c4 01       		.byte	0x1
  676 00c5 2B       		.byte	0x2b
  677 00c6 00000000 		.4byte	.LFB0
@@ -1528,7 +1528,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  680 00cf 9C       		.byte	0x9c
  681 00d0 E3000000 		.4byte	0xe3
  682 00d4 08       		.uleb128 0x8
- 683 00d5 3D020000 		.4byte	.LASF39
+ 683 00d5 41020000 		.4byte	.LASF39
  684 00d9 01       		.byte	0x1
  685 00da 2F       		.byte	0x2f
  686 00db 6B000000 		.4byte	0x6b
@@ -1537,7 +1537,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  689 00e1 6F       		.sleb128 -17
  690 00e2 00       		.byte	0
  691 00e3 09       		.uleb128 0x9
- 692 00e4 63010000 		.4byte	.LASF17
+ 692 00e4 67010000 		.4byte	.LASF17
  693 00e8 01       		.byte	0x1
  694 00e9 B4       		.byte	0xb4
  695 00ea 00000000 		.4byte	.LFB1
@@ -1545,7 +1545,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  697 00f2 01       		.uleb128 0x1
  698 00f3 9C       		.byte	0x9c
  699 00f4 0A       		.uleb128 0xa
- 700 00f5 E2010000 		.4byte	.LASF18
+ 700 00f5 E6010000 		.4byte	.LASF18
  701 00f9 01       		.byte	0x1
  702 00fa D7       		.byte	0xd7
  703 00fb 00000000 		.4byte	.LFB2
@@ -1553,18 +1553,18 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  705 0103 01       		.uleb128 0x1
  706 0104 9C       		.byte	0x9c
  707 0105 09       		.uleb128 0x9
- 708 0106 09030000 		.4byte	.LASF19
+ 708 0106 0D030000 		.4byte	.LASF19
  709 010a 01       		.byte	0x1
  710 010b F7       		.byte	0xf7
  711 010c 00000000 		.4byte	.LFB3
  712 0110 1C000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 27
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 27
 
 
  713 0114 01       		.uleb128 0x1
  714 0115 9C       		.byte	0x9c
  715 0116 0B       		.uleb128 0xb
- 716 0117 79010000 		.4byte	.LASF21
+ 716 0117 7D010000 		.4byte	.LASF21
  717 011b 01       		.byte	0x1
  718 011c 1701     		.2byte	0x117
  719 011e 00000000 		.4byte	.LFB4
@@ -1573,7 +1573,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  722 0127 9C       		.byte	0x9c
  723 0128 3C010000 		.4byte	0x13c
  724 012c 0C       		.uleb128 0xc
- 725 012d 6B020000 		.4byte	.LASF26
+ 725 012d 6F020000 		.4byte	.LASF26
  726 0131 01       		.byte	0x1
  727 0132 1701     		.2byte	0x117
  728 0134 6B000000 		.4byte	0x6b
@@ -1590,7 +1590,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  739 014c 01       		.uleb128 0x1
  740 014d 9C       		.byte	0x9c
  741 014e 0E       		.uleb128 0xe
- 742 014f D4020000 		.4byte	.LASF23
+ 742 014f D8020000 		.4byte	.LASF23
  743 0153 01       		.byte	0x1
  744 0154 4D01     		.2byte	0x14d
  745 0156 6B000000 		.4byte	0x6b
@@ -1599,7 +1599,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  748 0162 01       		.uleb128 0x1
  749 0163 9C       		.byte	0x9c
  750 0164 0E       		.uleb128 0xe
- 751 0165 C6010000 		.4byte	.LASF24
+ 751 0165 CA010000 		.4byte	.LASF24
  752 0169 01       		.byte	0x1
  753 016a 6401     		.2byte	0x164
  754 016c 6B000000 		.4byte	0x6b
@@ -1608,7 +1608,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  757 0178 01       		.uleb128 0x1
  758 0179 9C       		.byte	0x9c
  759 017a 0B       		.uleb128 0xb
- 760 017b A2010000 		.4byte	.LASF25
+ 760 017b A6010000 		.4byte	.LASF25
  761 017f 01       		.byte	0x1
  762 0180 7B01     		.2byte	0x17b
  763 0182 00000000 		.4byte	.LFB8
@@ -1617,8 +1617,8 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  766 018b 9C       		.byte	0x9c
  767 018c A0010000 		.4byte	0x1a0
  768 0190 0C       		.uleb128 0xc
- 769 0191 19010000 		.4byte	.LASF27
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 28
+ 769 0191 5F010000 		.4byte	.LASF27
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 28
 
 
  770 0195 01       		.byte	0x1
@@ -1629,7 +1629,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  775 019e 77       		.sleb128 -9
  776 019f 00       		.byte	0
  777 01a0 0E       		.uleb128 0xe
- 778 01a1 EE000000 		.4byte	.LASF28
+ 778 01a1 34010000 		.4byte	.LASF28
  779 01a5 01       		.byte	0x1
  780 01a6 9501     		.2byte	0x195
  781 01a8 76000000 		.4byte	0x76
@@ -1656,7 +1656,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  802 01da 74       		.sleb128 -12
  803 01db 00       		.byte	0
  804 01dc 0E       		.uleb128 0xe
- 805 01dd 29020000 		.4byte	.LASF31
+ 805 01dd 2D020000 		.4byte	.LASF31
  806 01e1 01       		.byte	0x1
  807 01e2 C801     		.2byte	0x1c8
  808 01e4 76000000 		.4byte	0x76
@@ -1665,7 +1665,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  811 01f0 01       		.uleb128 0x1
  812 01f1 9C       		.byte	0x9c
  813 01f2 0B       		.uleb128 0xb
- 814 01f3 14020000 		.4byte	.LASF32
+ 814 01f3 18020000 		.4byte	.LASF32
  815 01f7 01       		.byte	0x1
  816 01f8 E001     		.2byte	0x1e0
  817 01fa 00000000 		.4byte	.LFB12
@@ -1674,11 +1674,11 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  820 0203 9C       		.byte	0x9c
  821 0204 18020000 		.4byte	0x218
  822 0208 0C       		.uleb128 0xc
- 823 0209 B0020000 		.4byte	.LASF33
+ 823 0209 B4020000 		.4byte	.LASF33
  824 020d 01       		.byte	0x1
  825 020e E001     		.2byte	0x1e0
  826 0210 76000000 		.4byte	0x76
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 29
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 29
 
 
  827 0214 02       		.uleb128 0x2
@@ -1686,7 +1686,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  829 0216 74       		.sleb128 -12
  830 0217 00       		.byte	0
  831 0218 0E       		.uleb128 0xe
- 832 0219 9C020000 		.4byte	.LASF34
+ 832 0219 A0020000 		.4byte	.LASF34
  833 021d 01       		.byte	0x1
  834 021e FC01     		.2byte	0x1fc
  835 0220 76000000 		.4byte	0x76
@@ -1695,7 +1695,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  838 022c 01       		.uleb128 0x1
  839 022d 9C       		.byte	0x9c
  840 022e 0F       		.uleb128 0xf
- 841 022f B8020000 		.4byte	.LASF35
+ 841 022f BC020000 		.4byte	.LASF35
  842 0233 01       		.byte	0x1
  843 0234 FB02     		.2byte	0x2fb
  844 0236 00000000 		.4byte	.LFB14
@@ -1703,7 +1703,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  846 023e 01       		.uleb128 0x1
  847 023f 9C       		.byte	0x9c
  848 0240 10       		.uleb128 0x10
- 849 0241 92010000 		.4byte	.LASF40
+ 849 0241 96010000 		.4byte	.LASF40
  850 0245 01       		.byte	0x1
  851 0246 1A       		.byte	0x1a
  852 0247 6B000000 		.4byte	0x6b
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  881 0016 0B       		.uleb128 0xb
  882 0017 0B       		.uleb128 0xb
  883 0018 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 30
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 30
 
 
  884 0019 0B       		.uleb128 0xb
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  938 004f 03       		.uleb128 0x3
  939 0050 0E       		.uleb128 0xe
  940 0051 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 31
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 31
 
 
  941 0052 0B       		.uleb128 0xb
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  995 008a 00       		.byte	0
  996 008b 0A       		.uleb128 0xa
  997 008c 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 32
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 32
 
 
  998 008d 00       		.byte	0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  1052 00c5 05       		.uleb128 0x5
  1053 00c6 49       		.uleb128 0x49
  1054 00c7 13       		.uleb128 0x13
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 33
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 33
 
 
  1055 00c8 02       		.uleb128 0x2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  1109 0100 00       		.byte	0
  1110 0101 3F       		.uleb128 0x3f
  1111 0102 19       		.uleb128 0x19
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 34
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 34
 
 
  1112 0103 03       		.uleb128 0x3
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  1166 0038 00000000 		.4byte	.LFB5
  1167 003c 10000000 		.4byte	.LFE5-.LFB5
  1168 0040 00000000 		.4byte	.LFB6
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 35
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 35
 
 
  1169 0044 14000000 		.4byte	.LFE6-.LFB6
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  1223              	.Ldebug_line0:
  1224 0000 72010000 		.section	.debug_str,"MS",%progbits,1
  1224      02004600 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 36
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 36
 
 
  1224      00000201 
@@ -2152,178 +2152,178 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 1
  1242      74696F6E 
  1242      2D736563 
  1242      74696F6E 
- 1243              	.LASF1:
- 1244 00db 756E7369 		.ascii	"unsigned char\000"
- 1244      676E6564 
- 1244      20636861 
- 1244      7200
- 1245              	.LASF14:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 37
+ 1243              	.LASF38:
+ 1244 00db 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 1244      73657273 
+ 1244      5C536E75 
+ 1244      666B696E 
+ 1244      5C446F63 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 37
 
 
- 1246 00e9 72656738 		.ascii	"reg8\000"
- 1246      00
- 1247              	.LASF28:
- 1248 00ee 54696D65 		.ascii	"Timer_1_ReadPeriod\000"
- 1248      725F315F 
- 1248      52656164 
- 1248      50657269 
- 1248      6F6400
- 1249              	.LASF5:
- 1250 0101 6C6F6E67 		.ascii	"long unsigned int\000"
- 1250      20756E73 
- 1250      69676E65 
- 1250      6420696E 
- 1250      7400
- 1251              	.LASF9:
- 1252 0113 75696E74 		.ascii	"uint8\000"
- 1252      3800
- 1253              	.LASF27:
- 1254 0119 636F6E74 		.ascii	"control\000"
- 1254      726F6C00 
- 1255              	.LASF38:
- 1256 0121 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\PSoC Creator\\CRT_ti"
- 1256      73657273 
- 1256      5C536E75 
- 1256      666B696E 
- 1256      5C446F63 
- 1257 014f 6D65725C 		.ascii	"mer\\CRT_timer.cydsn\000"
- 1257      4352545F 
- 1257      74696D65 
- 1257      722E6379 
- 1257      64736E00 
+ 1245 0108 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 1245      696D6572 
+ 1245      5C435254 
+ 1245      5F74696D 
+ 1245      65722E63 
+ 1246              	.LASF1:
+ 1247 0121 756E7369 		.ascii	"unsigned char\000"
+ 1247      676E6564 
+ 1247      20636861 
+ 1247      7200
+ 1248              	.LASF14:
+ 1249 012f 72656738 		.ascii	"reg8\000"
+ 1249      00
+ 1250              	.LASF28:
+ 1251 0134 54696D65 		.ascii	"Timer_1_ReadPeriod\000"
+ 1251      725F315F 
+ 1251      52656164 
+ 1251      50657269 
+ 1251      6F6400
+ 1252              	.LASF5:
+ 1253 0147 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1253      20756E73 
+ 1253      69676E65 
+ 1253      6420696E 
+ 1253      7400
+ 1254              	.LASF9:
+ 1255 0159 75696E74 		.ascii	"uint8\000"
+ 1255      3800
+ 1256              	.LASF27:
+ 1257 015f 636F6E74 		.ascii	"control\000"
+ 1257      726F6C00 
  1258              	.LASF17:
- 1259 0163 54696D65 		.ascii	"Timer_1_Enable\000"
+ 1259 0167 54696D65 		.ascii	"Timer_1_Enable\000"
  1259      725F315F 
  1259      456E6162 
  1259      6C6500
  1260              	.LASF12:
- 1261 0172 646F7562 		.ascii	"double\000"
+ 1261 0176 646F7562 		.ascii	"double\000"
  1261      6C6500
  1262              	.LASF21:
- 1263 0179 54696D65 		.ascii	"Timer_1_SetInterruptMode\000"
+ 1263 017d 54696D65 		.ascii	"Timer_1_SetInterruptMode\000"
  1263      725F315F 
  1263      53657449 
  1263      6E746572 
  1263      72757074 
  1264              	.LASF40:
- 1265 0192 54696D65 		.ascii	"Timer_1_initVar\000"
+ 1265 0196 54696D65 		.ascii	"Timer_1_initVar\000"
  1265      725F315F 
  1265      696E6974 
  1265      56617200 
  1266              	.LASF25:
- 1267 01a2 54696D65 		.ascii	"Timer_1_WriteControlRegister\000"
+ 1267 01a6 54696D65 		.ascii	"Timer_1_WriteControlRegister\000"
  1267      725F315F 
  1267      57726974 
  1267      65436F6E 
  1267      74726F6C 
  1268              	.LASF10:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 38
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 38
 
 
- 1269 01bf 75696E74 		.ascii	"uint32\000"
+ 1269 01c3 75696E74 		.ascii	"uint32\000"
  1269      333200
  1270              	.LASF24:
- 1271 01c6 54696D65 		.ascii	"Timer_1_ReadControlRegister\000"
+ 1271 01ca 54696D65 		.ascii	"Timer_1_ReadControlRegister\000"
  1271      725F315F 
  1271      52656164 
  1271      436F6E74 
  1271      726F6C52 
  1272              	.LASF18:
- 1273 01e2 54696D65 		.ascii	"Timer_1_Start\000"
+ 1273 01e6 54696D65 		.ascii	"Timer_1_Start\000"
  1273      725F315F 
  1273      53746172 
  1273      7400
  1274              	.LASF20:
- 1275 01f0 54696D65 		.ascii	"Timer_1_Init\000"
+ 1275 01f4 54696D65 		.ascii	"Timer_1_Init\000"
  1275      725F315F 
  1275      496E6974 
  1275      00
  1276              	.LASF7:
- 1277 01fd 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1277 0201 6C6F6E67 		.ascii	"long long unsigned int\000"
  1277      206C6F6E 
  1277      6720756E 
  1277      7369676E 
  1277      65642069 
  1278              	.LASF32:
- 1279 0214 54696D65 		.ascii	"Timer_1_WriteCounter\000"
+ 1279 0218 54696D65 		.ascii	"Timer_1_WriteCounter\000"
  1279      725F315F 
  1279      57726974 
  1279      65436F75 
  1279      6E746572 
  1280              	.LASF31:
- 1281 0229 54696D65 		.ascii	"Timer_1_ReadCapture\000"
+ 1281 022d 54696D65 		.ascii	"Timer_1_ReadCapture\000"
  1281      725F315F 
  1281      52656164 
  1281      43617074 
  1281      75726500 
  1282              	.LASF39:
- 1283 023d 54696D65 		.ascii	"Timer_1_interruptState\000"
+ 1283 0241 54696D65 		.ascii	"Timer_1_interruptState\000"
  1283      725F315F 
  1283      696E7465 
  1283      72727570 
  1283      74537461 
  1284              	.LASF16:
- 1285 0254 73697A65 		.ascii	"sizetype\000"
+ 1285 0258 73697A65 		.ascii	"sizetype\000"
  1285      74797065 
  1285      00
  1286              	.LASF6:
- 1287 025d 6C6F6E67 		.ascii	"long long int\000"
+ 1287 0261 6C6F6E67 		.ascii	"long long int\000"
  1287      206C6F6E 
  1287      6720696E 
  1287      7400
  1288              	.LASF26:
- 1289 026b 696E7465 		.ascii	"interruptMode\000"
+ 1289 026f 696E7465 		.ascii	"interruptMode\000"
  1289      72727570 
  1289      744D6F64 
  1289      6500
  1290              	.LASF37:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccuD6Lsm.s 			page 39
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjDmKkA.s 			page 39
 
 
- 1291 0279 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Timer_1.c\000"
+ 1291 027d 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Timer_1.c\000"
  1291      6E657261 
  1291      7465645F 
  1291      536F7572 
  1291      63655C50 
  1292              	.LASF34:
- 1293 029c 54696D65 		.ascii	"Timer_1_ReadCounter\000"
+ 1293 02a0 54696D65 		.ascii	"Timer_1_ReadCounter\000"
  1293      725F315F 
  1293      52656164 
  1293      436F756E 
  1293      74657200 
  1294              	.LASF33:
- 1295 02b0 636F756E 		.ascii	"counter\000"
+ 1295 02b4 636F756E 		.ascii	"counter\000"
  1295      74657200 
  1296              	.LASF35:
- 1297 02b8 54696D65 		.ascii	"Timer_1_ClearFIFO\000"
+ 1297 02bc 54696D65 		.ascii	"Timer_1_ClearFIFO\000"
  1297      725F315F 
  1297      436C6561 
  1297      72464946 
  1297      4F00
  1298              	.LASF2:
- 1299 02ca 73686F72 		.ascii	"short int\000"
+ 1299 02ce 73686F72 		.ascii	"short int\000"
  1299      7420696E 
  1299      7400
  1300              	.LASF23:
- 1301 02d4 54696D65 		.ascii	"Timer_1_ReadStatusRegister\000"
+ 1301 02d8 54696D65 		.ascii	"Timer_1_ReadStatusRegister\000"
  1301      725F315F 
  1301      52656164 
  1301      53746174 
  1301      75735265 
  1302              	.LASF4:
- 1303 02ef 6C6F6E67 		.ascii	"long int\000"
+ 1303 02f3 6C6F6E67 		.ascii	"long int\000"
  1303      20696E74 
  1303      00
  1304              	.LASF13:
- 1305 02f8 63686172 		.ascii	"char\000"
+ 1305 02fc 63686172 		.ascii	"char\000"
  1305      00
  1306              	.LASF0:
- 1307 02fd 7369676E 		.ascii	"signed char\000"
+ 1307 0301 7369676E 		.ascii	"signed char\000"
  1307      65642063 
  1307      68617200 
  1308              	.LASF19:
- 1309 0309 54696D65 		.ascii	"Timer_1_Stop\000"
+ 1309 030d 54696D65 		.ascii	"Timer_1_Stop\000"
  1309      725F315F 
  1309      53746F70 
  1309      00

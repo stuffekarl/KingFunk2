@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
   30:.\Generated_Source\PSoC4/UART_1_UART.c ****         UART_1_UART_SUB_MODE,
   31:.\Generated_Source\PSoC4/UART_1_UART.c ****         UART_1_UART_DIRECTION,
   32:.\Generated_Source\PSoC4/UART_1_UART.c ****         UART_1_UART_DATA_BITS_NUM,
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/UART_1_UART.c ****         UART_1_UART_PARITY_TYPE,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
   87:.\Generated_Source\PSoC4/UART_1_UART.c ****         }
   88:.\Generated_Source\PSoC4/UART_1_UART.c ****         else
   89:.\Generated_Source\PSoC4/UART_1_UART.c ****         {
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 3
 
 
   90:.\Generated_Source\PSoC4/UART_1_UART.c ****             /* Get direction to configure UART pins: TX, RX or TX+RX */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  144:.\Generated_Source\PSoC4/UART_1_UART.c **** 
  145:.\Generated_Source\PSoC4/UART_1_UART.c ****             if(UART_1_UART_PARITY_NONE != config->parity)
  146:.\Generated_Source\PSoC4/UART_1_UART.c ****             {
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 4
 
 
  147:.\Generated_Source\PSoC4/UART_1_UART.c ****                UART_1_UART_RX_CTRL_REG |= UART_1_GET_UART_RX_CTRL_PARITY(config->parity) |
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  201:.\Generated_Source\PSoC4/UART_1_UART.c ****             UART_1_INTR_TX_MASK_REG     = config->txInterruptMask;
  202:.\Generated_Source\PSoC4/UART_1_UART.c **** 
  203:.\Generated_Source\PSoC4/UART_1_UART.c ****             /* Clear RX buffer indexes */
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 5
 
 
  204:.\Generated_Source\PSoC4/UART_1_UART.c ****             UART_1_rxBufferHead     = 0u;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
   44 0012 0122     		mov	r2, #1
   45 0014 1A60     		str	r2, [r3]
  240:.\Generated_Source\PSoC4/UART_1_UART.c ****         UART_1_RX_CTRL_REG      = UART_1_UART_DEFAULT_RX_CTRL;
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 6
 
 
   46              		.loc 1 240 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
   72 003c 0022     		mov	r2, #0
   73 003e 1A60     		str	r2, [r3]
  269:.\Generated_Source\PSoC4/UART_1_UART.c ****         UART_1_INTR_SPI_EC_MASK_REG = UART_1_UART_DEFAULT_INTR_SPI_EC_MASK;
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 7
 
 
   74              		.loc 1 269 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  112 0090 880E0740 		.word	1074204296
  113 0094 C80E0740 		.word	1074204360
  114 0098 480F0740 		.word	1074204488
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 8
 
 
  115 009c 080F0740 		.word	1074204424
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  144              		.loc 1 310 0
  145 000e FB68     		ldr	r3, [r7, #12]
  146 0010 FF22     		mov	r2, #255
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 9
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 9
 
 
  147 0012 9343     		bic	r3, r2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  332:.\Generated_Source\PSoC4/UART_1_UART.c **** *******************************************************************************/
  333:.\Generated_Source\PSoC4/UART_1_UART.c **** void UART_1_UartSetRxAddressMask(uint32 addressMask)
  334:.\Generated_Source\PSoC4/UART_1_UART.c **** {
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 10
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 10
 
 
  180              		.loc 1 334 0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  225              		.global	UART_1_UartPutString
  226              		.code	16
  227              		.thumb_func
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 11
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 11
 
 
  228              		.type	UART_1_UartPutString, %function
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  395:.\Generated_Source\PSoC4/UART_1_UART.c ****     }
  396:.\Generated_Source\PSoC4/UART_1_UART.c **** 
  397:.\Generated_Source\PSoC4/UART_1_UART.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 12
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 12
 
 
  398:.\Generated_Source\PSoC4/UART_1_UART.c ****     /*******************************************************************************
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  452:.\Generated_Source\PSoC4/UART_1_UART.c ****             * The RX_NOT_EMPTY interrupt is cleared by the interrupt routine
  453:.\Generated_Source\PSoC4/UART_1_UART.c ****             * in case the byte was received and read by code above.
  454:.\Generated_Source\PSoC4/UART_1_UART.c ****             */
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 13
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 13
 
 
  455:.\Generated_Source\PSoC4/UART_1_UART.c ****             UART_1_SpiUartEnableIntRx(intSourceMask);
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  509:.\Generated_Source\PSoC4/UART_1_UART.c ****         *
  510:.\Generated_Source\PSoC4/UART_1_UART.c ****         * Parameters:
  511:.\Generated_Source\PSoC4/UART_1_UART.c ****         *  level: Level in the RX FIFO for RTS signal activation.
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 14
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 14
 
 
  512:.\Generated_Source\PSoC4/UART_1_UART.c ****         *         The range of valid level values is between 0 and RX FIFO depth - 1.
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  241 0006 7860     		str	r0, [r7, #4]
  556:.\Generated_Source\PSoC4/UART_1_UART.c ****         uint32 bufIndex;
  557:.\Generated_Source\PSoC4/UART_1_UART.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 15
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 15
 
 
  558:.\Generated_Source\PSoC4/UART_1_UART.c ****         bufIndex = 0u;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  570:.\Generated_Source\PSoC4/UART_1_UART.c ****     * Function Name: UART_1_UartPutCRLF
  571:.\Generated_Source\PSoC4/UART_1_UART.c ****     ********************************************************************************
  572:.\Generated_Source\PSoC4/UART_1_UART.c ****     *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 16
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 16
 
 
  573:.\Generated_Source\PSoC4/UART_1_UART.c ****     * Summary:
@@ -958,41 +958,41 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  318 0004 0400     		.2byte	0x4
  319 0006 00000000 		.4byte	.Ldebug_abbrev0
  320 000a 04       		.byte	0x4
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 17
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 17
 
 
  321 000b 01       		.uleb128 0x1
  322 000c 49000000 		.4byte	.LASF25
  323 0010 01       		.byte	0x1
- 324 0011 72010000 		.4byte	.LASF26
- 325 0015 FE000000 		.4byte	.LASF27
+ 324 0011 76010000 		.4byte	.LASF26
+ 325 0015 C5000000 		.4byte	.LASF27
  326 0019 00000000 		.4byte	.Ldebug_ranges0+0
  327 001d 00000000 		.4byte	0
  328 0021 00000000 		.4byte	.Ldebug_line0
  329 0025 02       		.uleb128 0x2
  330 0026 01       		.byte	0x1
  331 0027 06       		.byte	0x6
- 332 0028 2F020000 		.4byte	.LASF0
+ 332 0028 33020000 		.4byte	.LASF0
  333 002c 02       		.uleb128 0x2
  334 002d 01       		.byte	0x1
  335 002e 08       		.byte	0x8
- 336 002f C5000000 		.4byte	.LASF1
+ 336 002f 0B010000 		.4byte	.LASF1
  337 0033 02       		.uleb128 0x2
  338 0034 02       		.byte	0x2
  339 0035 05       		.byte	0x5
- 340 0036 03020000 		.4byte	.LASF2
+ 340 0036 07020000 		.4byte	.LASF2
  341 003a 02       		.uleb128 0x2
  342 003b 02       		.byte	0x2
  343 003c 07       		.byte	0x7
- 344 003d EB000000 		.4byte	.LASF3
+ 344 003d 31010000 		.4byte	.LASF3
  345 0041 02       		.uleb128 0x2
  346 0042 04       		.byte	0x4
  347 0043 05       		.byte	0x5
- 348 0044 1D020000 		.4byte	.LASF4
+ 348 0044 21020000 		.4byte	.LASF4
  349 0048 02       		.uleb128 0x2
  350 0049 04       		.byte	0x4
  351 004a 07       		.byte	0x7
- 352 004b D9000000 		.4byte	.LASF5
+ 352 004b 1F010000 		.4byte	.LASF5
  353 004f 02       		.uleb128 0x2
  354 0050 08       		.byte	0x8
  355 0051 05       		.byte	0x5
@@ -1000,7 +1000,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  357 0056 02       		.uleb128 0x2
  358 0057 08       		.byte	0x8
  359 0058 07       		.byte	0x7
- 360 0059 AE010000 		.4byte	.LASF7
+ 360 0059 B2010000 		.4byte	.LASF7
  361 005d 03       		.uleb128 0x3
  362 005e 04       		.byte	0x4
  363 005f 05       		.byte	0x5
@@ -1008,9 +1008,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  365 0064 02       		.uleb128 0x2
  366 0065 04       		.byte	0x4
  367 0066 07       		.byte	0x7
- 368 0067 99010000 		.4byte	.LASF8
+ 368 0067 9D010000 		.4byte	.LASF8
  369 006b 04       		.uleb128 0x4
- 370 006c 6B010000 		.4byte	.LASF11
+ 370 006c 6F010000 		.4byte	.LASF11
  371 0070 02       		.byte	0x2
  372 0071 A3       		.byte	0xa3
  373 0072 48000000 		.4byte	0x48
@@ -1018,22 +1018,22 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  375 0077 04       		.byte	0x4
  376 0078 04       		.byte	0x4
  377 0079 43000000 		.4byte	.LASF9
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 18
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 18
 
 
  378 007d 02       		.uleb128 0x2
  379 007e 08       		.byte	0x8
  380 007f 04       		.byte	0x4
- 381 0080 4C010000 		.4byte	.LASF10
+ 381 0080 50010000 		.4byte	.LASF10
  382 0084 04       		.uleb128 0x4
- 383 0085 D3000000 		.4byte	.LASF12
+ 383 0085 19010000 		.4byte	.LASF12
  384 0089 02       		.byte	0x2
  385 008a B2       		.byte	0xb2
  386 008b 8F000000 		.4byte	0x8f
  387 008f 02       		.uleb128 0x2
  388 0090 01       		.byte	0x1
  389 0091 08       		.byte	0x8
- 390 0092 FE010000 		.4byte	.LASF13
+ 390 0092 02020000 		.4byte	.LASF13
  391 0096 05       		.uleb128 0x5
  392 0097 0E000000 		.4byte	.LASF14
  393 009b 02       		.byte	0x2
@@ -1044,9 +1044,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  398 00a7 02       		.uleb128 0x2
  399 00a8 04       		.byte	0x4
  400 00a9 07       		.byte	0x7
- 401 00aa EA010000 		.4byte	.LASF15
+ 401 00aa EE010000 		.4byte	.LASF15
  402 00ae 07       		.uleb128 0x7
- 403 00af 0D020000 		.4byte	.LASF28
+ 403 00af 11020000 		.4byte	.LASF28
  404 00b3 01       		.byte	0x1
  405 00b4 E6       		.byte	0xe6
  406 00b5 00000000 		.4byte	.LFB0
@@ -1054,7 +1054,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  408 00bd 01       		.uleb128 0x1
  409 00be 9C       		.byte	0x9c
  410 00bf 08       		.uleb128 0x8
- 411 00c0 53010000 		.4byte	.LASF16
+ 411 00c0 57010000 		.4byte	.LASF16
  412 00c4 01       		.byte	0x1
  413 00c5 3001     		.2byte	0x130
  414 00c7 00000000 		.4byte	.LFB1
@@ -1063,7 +1063,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  417 00d0 9C       		.byte	0x9c
  418 00d1 F4000000 		.4byte	0xf4
  419 00d5 09       		.uleb128 0x9
- 420 00d6 A6010000 		.4byte	.LASF18
+ 420 00d6 AA010000 		.4byte	.LASF18
  421 00da 01       		.byte	0x1
  422 00db 3001     		.2byte	0x130
  423 00dd 6B000000 		.4byte	0x6b
@@ -1071,19 +1071,19 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  425 00e2 91       		.byte	0x91
  426 00e3 6C       		.sleb128 -20
  427 00e4 0A       		.uleb128 0xa
- 428 00e5 26020000 		.4byte	.LASF20
+ 428 00e5 2A020000 		.4byte	.LASF20
  429 00e9 01       		.byte	0x1
  430 00ea 3201     		.2byte	0x132
  431 00ec 6B000000 		.4byte	0x6b
  432 00f0 02       		.uleb128 0x2
  433 00f1 91       		.byte	0x91
  434 00f2 74       		.sleb128 -12
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 19
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 19
 
 
  435 00f3 00       		.byte	0
  436 00f4 08       		.uleb128 0x8
- 437 00f5 CE010000 		.4byte	.LASF17
+ 437 00f5 D2010000 		.4byte	.LASF17
  438 00f9 01       		.byte	0x1
  439 00fa 4D01     		.2byte	0x14d
  440 00fc 00000000 		.4byte	.LFB2
@@ -1092,7 +1092,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  443 0105 9C       		.byte	0x9c
  444 0106 29010000 		.4byte	0x129
  445 010a 09       		.uleb128 0x9
- 446 010b 40010000 		.4byte	.LASF19
+ 446 010b 44010000 		.4byte	.LASF19
  447 010f 01       		.byte	0x1
  448 0110 4D01     		.2byte	0x14d
  449 0112 6B000000 		.4byte	0x6b
@@ -1100,7 +1100,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  451 0117 91       		.byte	0x91
  452 0118 6C       		.sleb128 -20
  453 0119 0A       		.uleb128 0xa
- 454 011a 26020000 		.4byte	.LASF20
+ 454 011a 2A020000 		.4byte	.LASF20
  455 011e 01       		.byte	0x1
  456 011f 4F01     		.2byte	0x14f
  457 0121 6B000000 		.4byte	0x6b
@@ -1126,7 +1126,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  477 014c 91       		.byte	0x91
  478 014d 6C       		.sleb128 -20
  479 014e 0A       		.uleb128 0xa
- 480 014f C5010000 		.4byte	.LASF23
+ 480 014f C9010000 		.4byte	.LASF23
  481 0153 01       		.byte	0x1
  482 0154 2C02     		.2byte	0x22c
  483 0156 6B000000 		.4byte	0x6b
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  489 015f 04       		.byte	0x4
  490 0160 64010000 		.4byte	0x164
  491 0164 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 20
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 20
 
 
  492 0165 84000000 		.4byte	0x84
@@ -1151,7 +1151,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  499 0179 01       		.uleb128 0x1
  500 017a 9C       		.byte	0x9c
  501 017b 09       		.uleb128 0x9
- 502 017c F3010000 		.4byte	.LASF24
+ 502 017c F7010000 		.4byte	.LASF24
  503 0180 01       		.byte	0x1
  504 0181 4A02     		.2byte	0x24a
  505 0183 6B000000 		.4byte	0x6b
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  546 0021 0B       		.uleb128 0xb
  547 0022 0B       		.uleb128 0xb
  548 0023 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 21
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 21
 
 
  549 0024 0B       		.uleb128 0xb
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  603 005a 06       		.uleb128 0x6
  604 005b 40       		.uleb128 0x40
  605 005c 18       		.uleb128 0x18
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 22
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 22
 
 
  606 005d 9742     		.uleb128 0x2117
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  660 0095 13       		.uleb128 0x13
  661 0096 02       		.uleb128 0x2
  662 0097 18       		.uleb128 0x18
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 23
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 23
 
 
  663 0098 00       		.byte	0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  717 00cf 27       		.uleb128 0x27
  718 00d0 19       		.uleb128 0x19
  719 00d1 11       		.uleb128 0x11
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 24
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 24
 
 
  720 00d2 01       		.uleb128 0x1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  768      6720696E 
  768      7400
  769              	.LASF14:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 25
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 25
 
 
  770 000e 72656733 		.ascii	"reg32\000"
@@ -1477,119 +1477,119 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 1
  782      74696F6E 
  782      2D736563 
  782      74696F6E 
- 783              	.LASF1:
- 784 00c5 756E7369 		.ascii	"unsigned char\000"
- 784      676E6564 
- 784      20636861 
- 784      7200
- 785              	.LASF12:
- 786 00d3 63686172 		.ascii	"char8\000"
- 786      3800
- 787              	.LASF5:
- 788 00d9 6C6F6E67 		.ascii	"long unsigned int\000"
- 788      20756E73 
- 788      69676E65 
- 788      6420696E 
- 788      7400
- 789              	.LASF3:
- 790 00eb 73686F72 		.ascii	"short unsigned int\000"
- 790      7420756E 
- 790      7369676E 
- 790      65642069 
- 790      6E7400
- 791              	.LASF27:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 26
+ 783              	.LASF27:
+ 784 00c5 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 784      73657273 
+ 784      5C536E75 
+ 784      666B696E 
+ 784      5C446F63 
+ 785 00f2 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 785      696D6572 
+ 785      5C435254 
+ 785      5F74696D 
+ 785      65722E63 
+ 786              	.LASF1:
+ 787 010b 756E7369 		.ascii	"unsigned char\000"
+ 787      676E6564 
+ 787      20636861 
+ 787      7200
+ 788              	.LASF12:
+ 789 0119 63686172 		.ascii	"char8\000"
+ 789      3800
+ 790              	.LASF5:
+ 791 011f 6C6F6E67 		.ascii	"long unsigned int\000"
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 26
 
 
- 792 00fe 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\PSoC Creator\\CRT_ti"
- 792      73657273 
- 792      5C536E75 
- 792      666B696E 
- 792      5C446F63 
- 793 012c 6D65725C 		.ascii	"mer\\CRT_timer.cydsn\000"
- 793      4352545F 
- 793      74696D65 
- 793      722E6379 
- 793      64736E00 
+ 791      20756E73 
+ 791      69676E65 
+ 791      6420696E 
+ 791      7400
+ 792              	.LASF3:
+ 793 0131 73686F72 		.ascii	"short unsigned int\000"
+ 793      7420756E 
+ 793      7369676E 
+ 793      65642069 
+ 793      6E7400
  794              	.LASF19:
- 795 0140 61646472 		.ascii	"addressMask\000"
+ 795 0144 61646472 		.ascii	"addressMask\000"
  795      6573734D 
  795      61736B00 
  796              	.LASF10:
- 797 014c 646F7562 		.ascii	"double\000"
+ 797 0150 646F7562 		.ascii	"double\000"
  797      6C6500
  798              	.LASF16:
- 799 0153 55415254 		.ascii	"UART_1_UartSetRxAddress\000"
+ 799 0157 55415254 		.ascii	"UART_1_UartSetRxAddress\000"
  799      5F315F55 
  799      61727453 
  799      65745278 
  799      41646472 
  800              	.LASF11:
- 801 016b 75696E74 		.ascii	"uint32\000"
+ 801 016f 75696E74 		.ascii	"uint32\000"
  801      333200
  802              	.LASF26:
- 803 0172 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\UART_1_UART.c\000"
+ 803 0176 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\UART_1_UART.c\000"
  803      6E657261 
  803      7465645F 
  803      536F7572 
  803      63655C50 
  804              	.LASF8:
- 805 0199 756E7369 		.ascii	"unsigned int\000"
+ 805 019d 756E7369 		.ascii	"unsigned int\000"
  805      676E6564 
  805      20696E74 
  805      00
  806              	.LASF18:
- 807 01a6 61646472 		.ascii	"address\000"
+ 807 01aa 61646472 		.ascii	"address\000"
  807      65737300 
  808              	.LASF7:
- 809 01ae 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 809 01b2 6C6F6E67 		.ascii	"long long unsigned int\000"
  809      206C6F6E 
  809      6720756E 
  809      7369676E 
  809      65642069 
  810              	.LASF23:
- 811 01c5 62756649 		.ascii	"bufIndex\000"
+ 811 01c9 62756649 		.ascii	"bufIndex\000"
  811      6E646578 
  811      00
  812              	.LASF17:
- 813 01ce 55415254 		.ascii	"UART_1_UartSetRxAddressMask\000"
+ 813 01d2 55415254 		.ascii	"UART_1_UartSetRxAddressMask\000"
  813      5F315F55 
  813      61727453 
  813      65745278 
  813      41646472 
  814              	.LASF15:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccjlLz1j.s 			page 27
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccsrKCO7.s 			page 27
 
 
- 815 01ea 73697A65 		.ascii	"sizetype\000"
+ 815 01ee 73697A65 		.ascii	"sizetype\000"
  815      74797065 
  815      00
  816              	.LASF24:
- 817 01f3 74784461 		.ascii	"txDataByte\000"
+ 817 01f7 74784461 		.ascii	"txDataByte\000"
  817      74614279 
  817      746500
  818              	.LASF13:
- 819 01fe 63686172 		.ascii	"char\000"
+ 819 0202 63686172 		.ascii	"char\000"
  819      00
  820              	.LASF2:
- 821 0203 73686F72 		.ascii	"short int\000"
+ 821 0207 73686F72 		.ascii	"short int\000"
  821      7420696E 
  821      7400
  822              	.LASF28:
- 823 020d 55415254 		.ascii	"UART_1_UartInit\000"
+ 823 0211 55415254 		.ascii	"UART_1_UartInit\000"
  823      5F315F55 
  823      61727449 
  823      6E697400 
  824              	.LASF4:
- 825 021d 6C6F6E67 		.ascii	"long int\000"
+ 825 0221 6C6F6E67 		.ascii	"long int\000"
  825      20696E74 
  825      00
  826              	.LASF20:
- 827 0226 6D617463 		.ascii	"matchReg\000"
+ 827 022a 6D617463 		.ascii	"matchReg\000"
  827      68526567 
  827      00
  828              	.LASF0:
- 829 022f 7369676E 		.ascii	"signed char\000"
+ 829 0233 7369676E 		.ascii	"signed char\000"
  829      65642063 
  829      68617200 
  830              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
