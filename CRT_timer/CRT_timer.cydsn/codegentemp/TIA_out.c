@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: V_in.c  
+* File Name: TIA_out.c  
 * Version 2.10
 *
 * Description:
@@ -15,18 +15,18 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "V_in.h"
+#include "TIA_out.h"
 
 #define SetP4PinDriveMode(shift, mode)  \
     do { \
-        V_in_PC =   (V_in_PC & \
-                                (uint32)(~(uint32)(V_in_DRIVE_MODE_IND_MASK << (V_in_DRIVE_MODE_BITS * (shift))))) | \
-                                (uint32)((uint32)(mode) << (V_in_DRIVE_MODE_BITS * (shift))); \
+        TIA_out_PC =   (TIA_out_PC & \
+                                (uint32)(~(uint32)(TIA_out_DRIVE_MODE_IND_MASK << (TIA_out_DRIVE_MODE_BITS * (shift))))) | \
+                                (uint32)((uint32)(mode) << (TIA_out_DRIVE_MODE_BITS * (shift))); \
     } while (0)
 
 
 /*******************************************************************************
-* Function Name: V_in_Write
+* Function Name: TIA_out_Write
 ********************************************************************************
 *
 * Summary:
@@ -39,16 +39,16 @@
 *  None 
 *  
 *******************************************************************************/
-void V_in_Write(uint8 value) 
+void TIA_out_Write(uint8 value) 
 {
-    uint8 drVal = (uint8)(V_in_DR & (uint8)(~V_in_MASK));
-    drVal = (drVal | ((uint8)(value << V_in_SHIFT) & V_in_MASK));
-    V_in_DR = (uint32)drVal;
+    uint8 drVal = (uint8)(TIA_out_DR & (uint8)(~TIA_out_MASK));
+    drVal = (drVal | ((uint8)(value << TIA_out_SHIFT) & TIA_out_MASK));
+    TIA_out_DR = (uint32)drVal;
 }
 
 
 /*******************************************************************************
-* Function Name: V_in_SetDriveMode
+* Function Name: TIA_out_SetDriveMode
 ********************************************************************************
 *
 * Summary:
@@ -57,27 +57,27 @@ void V_in_Write(uint8 value)
 * Parameters:  
 *  mode:  Change the pins to one of the following drive modes.
 *
-*  V_in_DM_STRONG     Strong Drive 
-*  V_in_DM_OD_HI      Open Drain, Drives High 
-*  V_in_DM_OD_LO      Open Drain, Drives Low 
-*  V_in_DM_RES_UP     Resistive Pull Up 
-*  V_in_DM_RES_DWN    Resistive Pull Down 
-*  V_in_DM_RES_UPDWN  Resistive Pull Up/Down 
-*  V_in_DM_DIG_HIZ    High Impedance Digital 
-*  V_in_DM_ALG_HIZ    High Impedance Analog 
+*  TIA_out_DM_STRONG     Strong Drive 
+*  TIA_out_DM_OD_HI      Open Drain, Drives High 
+*  TIA_out_DM_OD_LO      Open Drain, Drives Low 
+*  TIA_out_DM_RES_UP     Resistive Pull Up 
+*  TIA_out_DM_RES_DWN    Resistive Pull Down 
+*  TIA_out_DM_RES_UPDWN  Resistive Pull Up/Down 
+*  TIA_out_DM_DIG_HIZ    High Impedance Digital 
+*  TIA_out_DM_ALG_HIZ    High Impedance Analog 
 *
 * Return: 
 *  None
 *
 *******************************************************************************/
-void V_in_SetDriveMode(uint8 mode) 
+void TIA_out_SetDriveMode(uint8 mode) 
 {
-	SetP4PinDriveMode(V_in__0__SHIFT, mode);
+	SetP4PinDriveMode(TIA_out__0__SHIFT, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: V_in_Read
+* Function Name: TIA_out_Read
 ********************************************************************************
 *
 * Summary:
@@ -91,17 +91,17 @@ void V_in_SetDriveMode(uint8 mode)
 *  Returns the current value of the Digital Port as a right justified number
 *  
 * Note:
-*  Macro V_in_ReadPS calls this function. 
+*  Macro TIA_out_ReadPS calls this function. 
 *  
 *******************************************************************************/
-uint8 V_in_Read(void) 
+uint8 TIA_out_Read(void) 
 {
-    return (uint8)((V_in_PS & V_in_MASK) >> V_in_SHIFT);
+    return (uint8)((TIA_out_PS & TIA_out_MASK) >> TIA_out_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: V_in_ReadDataReg
+* Function Name: TIA_out_ReadDataReg
 ********************************************************************************
 *
 * Summary:
@@ -114,17 +114,17 @@ uint8 V_in_Read(void)
 *  Returns the current value assigned to the Digital Port's data output register
 *  
 *******************************************************************************/
-uint8 V_in_ReadDataReg(void) 
+uint8 TIA_out_ReadDataReg(void) 
 {
-    return (uint8)((V_in_DR & V_in_MASK) >> V_in_SHIFT);
+    return (uint8)((TIA_out_DR & TIA_out_MASK) >> TIA_out_SHIFT);
 }
 
 
 /* If Interrupts Are Enabled for this Pins component */ 
-#if defined(V_in_INTSTAT) 
+#if defined(TIA_out_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: V_in_ClearInterrupt
+    * Function Name: TIA_out_ClearInterrupt
     ********************************************************************************
     *
     * Summary:
@@ -138,11 +138,11 @@ uint8 V_in_ReadDataReg(void)
     *  Returns the value of the interrupt status register
     *  
     *******************************************************************************/
-    uint8 V_in_ClearInterrupt(void) 
+    uint8 TIA_out_ClearInterrupt(void) 
     {
-		uint8 maskedStatus = (uint8)(V_in_INTSTAT & V_in_MASK);
-		V_in_INTSTAT = maskedStatus;
-        return maskedStatus >> V_in_SHIFT;
+		uint8 maskedStatus = (uint8)(TIA_out_INTSTAT & TIA_out_MASK);
+		TIA_out_INTSTAT = maskedStatus;
+        return maskedStatus >> TIA_out_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

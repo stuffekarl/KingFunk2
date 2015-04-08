@@ -24,8 +24,8 @@
 #include <SW2.h>
 #include <SW2_aliases.h>
 #include <sw_int.h>
-#include <V_in.h>
-#include <V_in_aliases.h>
+#include <TIA_in.h>
+#include <TIA_in_aliases.h>
 #include <ADC.h>
 #include <cl_deb.h>
 #include <UART_1.h>
@@ -49,6 +49,11 @@
 #include <D6_aliases.h>
 #include <D7.h>
 #include <D7_aliases.h>
+#include <Opamp.h>
+#include <TIA_out.h>
+#include <TIA_out_aliases.h>
+#include <GND.h>
+#include <GND_aliases.h>
 #include <ADC_IRQ.h>
 #include <ADC_intClock.h>
 #include <UART_1_SCBCLK.h>

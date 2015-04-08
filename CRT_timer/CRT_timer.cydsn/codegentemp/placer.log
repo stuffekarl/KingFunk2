@@ -6,7 +6,7 @@
 
 #Build Date:         Oct 23 2014 13:00:08
 
-#File Generated:     Apr 8 2015 10:55:52
+#File Generated:     Apr 8 2015 22:31:07
 
 #Purpose:            
 
@@ -55,7 +55,7 @@ Design Statistics after Packing
 Device Utilization Summary after Packing
     Macrocells                  :	4/32
     UDBS                        :	4/4
-    IOs                         :	11/36
+    IOs                         :	13/36
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -115,7 +115,7 @@ Clock: cl_deb               | Frequency:  41.2 MHz | Target:   0.0 MHz
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 0.1 (sec)
+D2088: Phase 7, elapsed time : 0.0 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	1
@@ -125,11 +125,11 @@ Final Design Statistics
     Number of Status            	:	1
     Number of SyncCells         	:	0
     Number of count7cells       	:	0
-    Number of IOs       	:	11
+    Number of IOs       	:	13
 
 Device Utilization Summary
     Macrocells                  :	4/32
-    IOs                         :	11/36
+    IOs                         :	13/36
 
 
 

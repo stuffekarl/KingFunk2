@@ -2,7 +2,7 @@
 --	Conversion of CRT_timer.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Apr 08 10:55:51 2015
+--	Wed Apr 08 22:31:06 2015
 --
 
 USE cypress.cypress.all;
@@ -363,13 +363,13 @@ SIGNAL tmpIO_0__SW2_net_0 : bit;
 TERMINAL tmpSIOVREF__SW2_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__SW2_net_0 : bit;
 SIGNAL Net_679 : bit;
-SIGNAL tmpOE__V_in_net_0 : bit;
-SIGNAL tmpFB_0__V_in_net_0 : bit;
-TERMINAL Net_1056 : bit;
-SIGNAL tmpIO_0__V_in_net_0 : bit;
-TERMINAL tmpSIOVREF__V_in_net_0 : bit;
-TERMINAL Net_1054 : bit;
-SIGNAL tmpINTERRUPT_0__V_in_net_0 : bit;
+SIGNAL tmpOE__TIA_in_net_0 : bit;
+SIGNAL tmpFB_0__TIA_in_net_0 : bit;
+TERMINAL Net_1081 : bit;
+SIGNAL tmpIO_0__TIA_in_net_0 : bit;
+TERMINAL tmpSIOVREF__TIA_in_net_0 : bit;
+TERMINAL Net_1094 : bit;
+SIGNAL tmpINTERRUPT_0__TIA_in_net_0 : bit;
 SIGNAL \ADC:Net_3125\ : bit;
 SIGNAL \ADC:Net_3126\ : bit;
 SIGNAL \ADC:Net_1845\ : bit;
@@ -466,6 +466,7 @@ SIGNAL \ADC:Net_3207_1\ : bit;
 SIGNAL \ADC:Net_3207_0\ : bit;
 SIGNAL \ADC:Net_3235\ : bit;
 TERMINAL \ADC:Net_2580\ : bit;
+TERMINAL Net_1100 : bit;
 TERMINAL Net_1057 : bit;
 TERMINAL \ADC:mux_bus_plus_3\ : bit;
 TERMINAL \ADC:mux_bus_plus_4\ : bit;
@@ -635,6 +636,25 @@ TERMINAL Net_1036 : bit;
 TERMINAL Net_1037 : bit;
 TERMINAL Net_1038 : bit;
 TERMINAL Net_1039 : bit;
+TERMINAL Net_1092 : bit;
+TERMINAL Net_1087 : bit;
+TERMINAL \Opamp:Net_9\ : bit;
+TERMINAL \Opamp:Net_18\ : bit;
+TERMINAL \Opamp:Net_29\ : bit;
+TERMINAL \Opamp:Net_19\ : bit;
+SIGNAL \Opamp:Net_12\ : bit;
+TERMINAL Net_1088 : bit;
+SIGNAL tmpOE__TIA_out_net_0 : bit;
+SIGNAL tmpFB_0__TIA_out_net_0 : bit;
+SIGNAL tmpIO_0__TIA_out_net_0 : bit;
+TERMINAL tmpSIOVREF__TIA_out_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__TIA_out_net_0 : bit;
+TERMINAL Net_1099 : bit;
+SIGNAL tmpOE__GND_net_0 : bit;
+SIGNAL tmpFB_0__GND_net_0 : bit;
+SIGNAL tmpIO_0__GND_net_0 : bit;
+TERMINAL tmpSIOVREF__GND_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__GND_net_0 : bit;
 SIGNAL \Timer_1:TimerUDB:capture_last\\D\ : bit;
 SIGNAL \Timer_1:TimerUDB:tc_reg_i\\D\ : bit;
 SIGNAL \Timer_1:TimerUDB:hwEnable_reg\\D\ : bit;
@@ -1178,7 +1198,7 @@ SW2:cy_psoc3_pins_v1_10
 sw_int:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>Net_679);
-V_in:cy_psoc3_pins_v1_10
+TIA_in:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"77715107-f8d5-47e5-a629-0fb83101ac6b",
 		drive_mode=>"000",
 		ibuf_enabled=>"0",
@@ -1235,18 +1255,18 @@ V_in:cy_psoc3_pins_v1_10
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(one),
 		y=>(Net_12),
-		fb=>(tmpFB_0__V_in_net_0),
-		analog=>Net_1056,
-		io=>(tmpIO_0__V_in_net_0),
-		siovref=>(tmpSIOVREF__V_in_net_0),
-		annotation=>Net_1054,
+		fb=>(tmpFB_0__TIA_in_net_0),
+		analog=>Net_1081,
+		io=>(tmpIO_0__TIA_in_net_0),
+		siovref=>(tmpSIOVREF__TIA_in_net_0),
+		annotation=>Net_1094,
 		in_clock=>Net_12,
 		in_clock_en=>one,
 		in_reset=>Net_12,
 		out_clock=>Net_12,
 		out_clock_en=>one,
 		out_reset=>Net_12,
-		interrupt=>tmpINTERRUPT_0__V_in_net_0);
+		interrupt=>tmpINTERRUPT_0__TIA_in_net_0);
 \ADC:IRQ\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>\ADC:Net_3112\);
@@ -1423,7 +1443,7 @@ V_in:cy_psoc3_pins_v1_10
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
 	PORT MAP(signal1=>\ADC:mux_bus_plus_0\,
-		signal2=>Net_1056);
+		signal2=>Net_1100);
 \ADC:cy_analog_virtualmux_vplus1_connect\:cy_connect_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
@@ -2223,6 +2243,187 @@ GC_controller:cy_annotation_universal_v1_0
 			Net_1047, Net_1048, Net_1049, Net_1032,
 			Net_1050, Net_1033, Net_1034, Net_1035,
 			Net_1036, Net_1037, Net_1038, Net_1039));
+SFH213:cy_annotation_universal_v1_0
+	GENERIC MAP(comp_name=>"PhotoDiode_v1_0",
+		port_names=>"A, K",
+		width=>2)
+	PORT MAP(connect=>(Net_1092, Net_1094));
+GND_1:cy_annotation_universal_v1_0
+	GENERIC MAP(comp_name=>"Gnd_v1_0",
+		port_names=>"T1",
+		width=>1)
+	PORT MAP(connect=>Net_1092);
+\Opamp:cy_psoc4_abuf\:cy_psoc4_abuf_v1_0
+	GENERIC MAP(cy_registers=>"",
+		needs_dsab=>'0',
+		deepsleep_available=>'0',
+		has_resistor=>'0')
+	PORT MAP(vplus=>Net_1087,
+		vminus=>\Opamp:Net_9\,
+		vout1=>\Opamp:Net_18\,
+		rs_bot=>\Opamp:Net_29\,
+		vout10=>\Opamp:Net_19\,
+		cmpout=>\Opamp:Net_12\);
+\Opamp:cy_analog_virtualmux_1_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\Opamp:Net_9\,
+		signal2=>Net_1081);
+\Opamp:cy_analog_virtualmux_2_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>Net_1100,
+		signal2=>\Opamp:Net_19\);
+\Opamp:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\Opamp:Net_29\);
+R_1:cy_annotation_universal_v1_0
+	GENERIC MAP(comp_name=>"Resistor_v1_0",
+		port_names=>"T1, T2",
+		width=>2)
+	PORT MAP(connect=>(Net_1094, Net_1088));
+TIA_out:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"0f3b1dfd-42f1-4f7a-ba6e-10662a75af7a",
+		drive_mode=>"000",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"A",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"1",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>(Net_12),
+		fb=>(tmpFB_0__TIA_out_net_0),
+		analog=>Net_1100,
+		io=>(tmpIO_0__TIA_out_net_0),
+		siovref=>(tmpSIOVREF__TIA_out_net_0),
+		annotation=>Net_1088,
+		in_clock=>Net_12,
+		in_clock_en=>one,
+		in_reset=>Net_12,
+		out_clock=>Net_12,
+		out_clock_en=>one,
+		out_reset=>Net_12,
+		interrupt=>tmpINTERRUPT_0__TIA_out_net_0);
+GND_2:cy_annotation_universal_v1_0
+	GENERIC MAP(comp_name=>"Gnd_v1_0",
+		port_names=>"T1",
+		width=>1)
+	PORT MAP(connect=>Net_1099);
+GND:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"d6999e32-2354-4683-ab47-132742b243ac",
+		drive_mode=>"000",
+		ibuf_enabled=>"0",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"A",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"1",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>(Net_12),
+		fb=>(tmpFB_0__GND_net_0),
+		analog=>Net_1087,
+		io=>(tmpIO_0__GND_net_0),
+		siovref=>(tmpSIOVREF__GND_net_0),
+		annotation=>Net_1099,
+		in_clock=>Net_12,
+		in_clock_en=>one,
+		in_reset=>Net_12,
+		out_clock=>Net_12,
+		out_clock_en=>one,
+		out_reset=>Net_12,
+		interrupt=>tmpINTERRUPT_0__GND_net_0);
 \Timer_1:TimerUDB:capture_last\:cy_dff
 	PORT MAP(d=>Net_12,
 		clk=>\Timer_1:TimerUDB:ClockOutFromEnBlock\,

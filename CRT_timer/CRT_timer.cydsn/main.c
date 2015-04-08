@@ -24,6 +24,7 @@ volatile enum BTN_states BTN;
 //Prototypes
 CY_ISR_PROTO(sw_int_ISR);
 void puts_measurement(uint32 time);
+void print_measurement(uint32 time);
 int8 updateBTN(void);
 
 CY_ISR(sw_int_ISR){
@@ -40,11 +41,14 @@ CY_ISR(sw_int_ISR){
 }
 
 int main(){
+    int16 lightMax = -1;
+    
     Timer_1_Start();
-    ADC_Start();
     UART_1_Start();
     sw_int_StartEx(sw_int_ISR);
     B_press_Write(0);
+    Opamp_Start();
+    ADC_Start();
     ADC_StartConvert();
     LCD_Start();
     LCD_Position(0,0);
@@ -53,11 +57,15 @@ int main(){
     LCD_PutChar(LCD_CUSTOM_0);
     LCD_PutChar(LCD_CUSTOM_1);
     LCD_PutChar(LCD_CUSTOM_2);
+    LCD_PutChar(LCD_CUSTOM_4);
+    LCD_PutChar(LCD_CUSTOM_5);
+    
 
     UART_1_UartPutString("CRT_timer initialized..\n\r");
     CyGlobalIntEnable;
     
     while(1){
+        CyDelay(50);
         if (running){
             V_new = ADC_GetResult16(0);
              if(V_new > 1024){
@@ -66,28 +74,49 @@ int main(){
                 running = 0;
                 B_press_Write(0);
                 puts_measurement(time);
+                print_measurement(time);
             }
         }
         else{
+            int16 temp = ADC_GetResult16(0);
+            if (temp > lightMax)
+                lightMax = temp;
+            LCD_Position(0,0);
+            LCD_PrintString("                ");
+            LCD_Position(0,0);
+            LCD_PrintNumber(temp);
+            LCD_Position(0,5);
+            LCD_PrintString("max: ");
+            LCD_PrintNumber(lightMax);
             if (updateBTN()){
                 if (BTN == SELECT){
-                    LCD_ClearDisplay();
+                    LCD_Position(1,0);
+                    LCD_PrintString("                ");
+                    LCD_Position(1,0);
                     LCD_PrintString("Select pressed");
                 }
                 else if(BTN == LEFT){
-                    LCD_ClearDisplay();
+                    LCD_Position(1,0);
+                    LCD_PrintString("                ");
+                    LCD_Position(1,0);
                     LCD_PrintString("Left pressed");
                 }
                 else if(BTN == RIGHT){
-                    LCD_ClearDisplay();
+                    LCD_Position(1,0);
+                    LCD_PrintString("                ");
+                    LCD_Position(1,0);
                     LCD_PrintString("Right pressed");
                 }
                 else if(BTN == UP){
-                    LCD_ClearDisplay();
+                    LCD_Position(1,0);
+                    LCD_PrintString("                ");
+                    LCD_Position(1,0);
                     LCD_PrintString("Up pressed");
                 }
                 else if(BTN == DOWN){
-                    LCD_ClearDisplay();
+                    LCD_Position(1,0);
+                    LCD_PrintString("                ");
+                    LCD_Position(1,0);
                     LCD_PrintString("Down pressed");
                 }
             }
@@ -138,6 +167,34 @@ void puts_measurement(uint32 time){
     time_us %= 10;
     UART_1_UartPutChar(time_us + CONVERT_TO_ASCII);
     UART_1_UartPutString(" us.\n\r");
+}
+
+void print_measurement(uint32 time){
+    uint64 time_us = ((uint64)time * 125) / 3000;
+    LCD_Position(1,0);
+    LCD_PrintString("                ");
+    LCD_Position(1,0);
+    LCD_PrintString("t: ");
+    LCD_PutChar(time_us/100000000u + CONVERT_TO_ASCII);
+    time_us %= 100000000;
+    LCD_PutChar(time_us/10000000u + CONVERT_TO_ASCII);
+    time_us %= 10000000;
+    LCD_PutChar(time_us/1000000u + CONVERT_TO_ASCII);
+    time_us %= 1000000;
+    LCD_PutChar(',');
+    LCD_PutChar(time_us/100000u + CONVERT_TO_ASCII);
+    time_us %= 100000;
+    LCD_PutChar(time_us/10000u + CONVERT_TO_ASCII);
+    time_us %= 10000;
+    LCD_PutChar(time_us/1000u + CONVERT_TO_ASCII);
+    time_us %= 1000;
+    LCD_PutChar(',');
+    LCD_PutChar(time_us/100u + CONVERT_TO_ASCII);
+    time_us %= 100;
+    LCD_PutChar(time_us/10u + CONVERT_TO_ASCII);
+    time_us %= 10;
+    LCD_PutChar(time_us + CONVERT_TO_ASCII);
+    LCD_PrintString("us");
 }
 
 int8 updateBTN(void){

@@ -25,9 +25,9 @@
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\SW2_aliases.h" value="NONE;SW2" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\sw_int.c" value="ARM_C_FILE;sw_int" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\sw_int.h" value="NONE;sw_int" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\V_in.c" value="ARM_C_FILE;V_in" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\V_in.h" value="NONE;V_in" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\V_in_aliases.h" value="NONE;V_in" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\TIA_in.c" value="ARM_C_FILE;TIA_in" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\TIA_in.h" value="NONE;TIA_in" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\TIA_in_aliases.h" value="NONE;TIA_in" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC.c" value="ARM_C_FILE;ADC" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC.h" value="NONE;ADC" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_PM.c" value="ARM_C_FILE;ADC" />
@@ -72,6 +72,15 @@
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\D7.c" value="ARM_C_FILE;D7" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\D7.h" value="NONE;D7" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\D7_aliases.h" value="NONE;D7" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Opamp.c" value="ARM_C_FILE;Opamp" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Opamp.h" value="NONE;Opamp" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Opamp_PM.c" value="ARM_C_FILE;Opamp" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\TIA_out.c" value="ARM_C_FILE;TIA_out" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\TIA_out.h" value="NONE;TIA_out" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\TIA_out_aliases.h" value="NONE;TIA_out" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GND.c" value="ARM_C_FILE;GND" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GND.h" value="NONE;GND" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GND_aliases.h" value="NONE;GND" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_IRQ.c" value="ARM_C_FILE;ADC_IRQ" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_IRQ.h" value="NONE;ADC_IRQ" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_intClock.c" value="ARM_C_FILE;ADC_intClock" />

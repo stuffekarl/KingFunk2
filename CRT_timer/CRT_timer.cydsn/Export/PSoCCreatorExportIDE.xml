@@ -62,9 +62,6 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SW2_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\sw_int.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\sw_int.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\V_in.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\V_in.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\V_in_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Cm0Start.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\core_cm0_psoc4.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\core_cm0.h</File>
@@ -141,6 +138,18 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\B_press.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\B_press.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\B_press_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Opamp.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Opamp.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Opamp_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\GND.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\GND.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\GND_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\TIA_in.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\TIA_in.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\TIA_in_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\TIA_out.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\TIA_out.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\TIA_out_aliases.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\Export\ARM_GCC_Generic">

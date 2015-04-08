@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: V_in.h  
+* File Name: TIA_out.h  
 * Version 2.10
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_V_in_ALIASES_H) /* Pins V_in_ALIASES_H */
-#define CY_PINS_V_in_ALIASES_H
+#if !defined(CY_PINS_TIA_out_ALIASES_H) /* Pins TIA_out_ALIASES_H */
+#define CY_PINS_TIA_out_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -26,14 +26,14 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define V_in_0		(V_in__0__PC)
-#define V_in_0_PS		(V_in__0__PS)
-#define V_in_0_PC		(V_in__0__PC)
-#define V_in_0_DR		(V_in__0__DR)
-#define V_in_0_SHIFT	(V_in__0__SHIFT)
+#define TIA_out_0		(TIA_out__0__PC)
+#define TIA_out_0_PS		(TIA_out__0__PS)
+#define TIA_out_0_PC		(TIA_out__0__PC)
+#define TIA_out_0_DR		(TIA_out__0__DR)
+#define TIA_out_0_SHIFT	(TIA_out__0__SHIFT)
 
 
-#endif /* End Pins V_in_ALIASES_H */
+#endif /* End Pins TIA_out_ALIASES_H */
 
 
 /* [] END OF FILE */

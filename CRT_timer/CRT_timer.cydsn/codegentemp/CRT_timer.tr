@@ -179,12 +179,12 @@ Launch Clock Path
 pin name                                              model name          delay     AT  edge  Fanout
 ----------------------------------------------------  ------------------  -----  -----  ----  ------
 ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
-SW2(0)/in_clock                                       iocell9                 0      0  RISE       1
+SW2(0)/in_clock                                       iocell10                0      0  RISE       1
 
 Data path
 pin name                                    model name   delay     AT  slack  edge  Fanout
 ------------------------------------------  -----------  -----  -----  -----  ----  ------
-SW2(0)/fb                                   iocell9       4047   4047  29432  RISE       1
+SW2(0)/fb                                   iocell10      4047   4047  29432  RISE       1
 \Debouncer_1:DEBOUNCER[0]:d_sync_0\/main_0  macrocell2    4678   8725  29432  RISE       1
 
 Capture Clock Path
@@ -287,12 +287,12 @@ Launch Clock Path
 pin name                                              model name          delay     AT  edge  Fanout
 ----------------------------------------------------  ------------------  -----  -----  ----  ------
 ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
-SW2(0)/in_clock                                       iocell9                 0      0  RISE       1
+SW2(0)/in_clock                                       iocell10                0      0  RISE       1
 
 Data path
 pin name                                    model name   delay     AT  slack  edge  Fanout
 ------------------------------------------  -----------  -----  -----  -----  ----  ------
-SW2(0)/fb                                   iocell9       4047   4047  29432  RISE       1
+SW2(0)/fb                                   iocell10      4047   4047  29432  RISE       1
 \Debouncer_1:DEBOUNCER[0]:d_sync_0\/main_0  macrocell2    4678   8725  29432  RISE       1
 
 Capture Clock Path
@@ -925,12 +925,12 @@ Launch Clock Path
 pin name                                              model name          delay     AT  edge  Fanout
 ----------------------------------------------------  ------------------  -----  -----  ----  ------
 ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
-SW2(0)/in_clock                                       iocell9                 0      0  RISE       1
+SW2(0)/in_clock                                       iocell10                0      0  RISE       1
 
 Data path
 pin name                                    model name   delay     AT  slack  edge  Fanout
 ------------------------------------------  -----------  -----  -----  -----  ----  ------
-SW2(0)/fb                                   iocell9       4047   4047  29432  RISE       1
+SW2(0)/fb                                   iocell10      4047   4047  29432  RISE       1
 \Debouncer_1:DEBOUNCER[0]:d_sync_0\/main_0  macrocell2    4678   8725  29432  RISE       1
 
 Capture Clock Path
