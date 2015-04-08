@@ -6,7 +6,7 @@
 
 #Build Date:         Oct 23 2014 13:00:08
 
-#File Generated:     Apr 7 2015 22:46:20
+#File Generated:     Apr 8 2015 10:55:52
 
 #Purpose:            
 
@@ -77,8 +77,8 @@ analysis after routing.
                      Clock Summary 
 ======================================================================
 Number of clocks: 11
-Clock: ADC_intClock         | Frequency: N/A       | Target:   4.8 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   4.8 MHz
+Clock: ADC_intClock         | Frequency: N/A       | Target:   8.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   8.0 MHz
 Clock: CyHFCLK              | Frequency:  28.0 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
@@ -100,8 +100,8 @@ Phase 7
                      Clock Summary 
 ======================================================================
 Number of clocks: 11
-Clock: ADC_intClock         | Frequency: N/A       | Target:   4.8 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   4.8 MHz
+Clock: ADC_intClock         | Frequency: N/A       | Target:   8.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   8.0 MHz
 Clock: CyHFCLK              | Frequency:  28.0 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
@@ -146,8 +146,8 @@ analysis after routing.
                      Clock Summary 
 ======================================================================
 Number of clocks: 11
-Clock: ADC_intClock         | Frequency: N/A       | Target:   4.8 MHz
-Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   4.8 MHz
+Clock: ADC_intClock         | Frequency: N/A       | Target:   8.0 MHz
+Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   8.0 MHz
 Clock: CyHFCLK              | Frequency:   2.4 MHz | Target:  26.3 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz

@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: A_press.h  
+* File Name: B_press.h  
 * Version 2.10
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_A_press_ALIASES_H) /* Pins A_press_ALIASES_H */
-#define CY_PINS_A_press_ALIASES_H
+#if !defined(CY_PINS_B_press_ALIASES_H) /* Pins B_press_ALIASES_H */
+#define CY_PINS_B_press_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -26,14 +26,14 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define A_press_0		(A_press__0__PC)
-#define A_press_0_PS		(A_press__0__PS)
-#define A_press_0_PC		(A_press__0__PC)
-#define A_press_0_DR		(A_press__0__DR)
-#define A_press_0_SHIFT	(A_press__0__SHIFT)
+#define B_press_0		(B_press__0__PC)
+#define B_press_0_PS		(B_press__0__PS)
+#define B_press_0_PC		(B_press__0__PC)
+#define B_press_0_DR		(B_press__0__DR)
+#define B_press_0_SHIFT	(B_press__0__SHIFT)
 
 
-#endif /* End Pins A_press_ALIASES_H */
+#endif /* End Pins B_press_ALIASES_H */
 
 
 /* [] END OF FILE */

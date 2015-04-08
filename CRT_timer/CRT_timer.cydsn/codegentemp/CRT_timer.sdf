@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2015-04-07T20:46:21Z")
+ (DATE "2015-04-08T08:55:53Z")
  (DESIGN "CRT_timer")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -105,7 +105,7 @@
     (INTERCONNECT \\Timer_1\:TimerUDB\:sT32\:timerdp\:u2\\.cfbo \\Timer_1\:TimerUDB\:sT32\:timerdp\:u3\\.cfbi (0.000:0.000:0.000))
     (INTERCONNECT \\Timer_1\:TimerUDB\:sT32\:timerdp\:u3\\.sor \\Timer_1\:TimerUDB\:sT32\:timerdp\:u2\\.sil (0.000:0.000:0.000))
     (INTERCONNECT \\Timer_1\:TimerUDB\:sT32\:timerdp\:u3\\.cmsbo \\Timer_1\:TimerUDB\:sT32\:timerdp\:u2\\.cmsbi (0.000:0.000:0.000))
-    (INTERCONNECT A_press\(0\)_PAD A_press\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT B_press\(0\)_PAD B_press\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT D4\(0\).pad_out D4\(0\)_PAD (0.000:0.000:0.000))
     (INTERCONNECT D4\(0\)_PAD D4\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT D5\(0\).pad_out D5\(0\)_PAD (0.000:0.000:0.000))

@@ -8,6 +8,7 @@
 */
 #include <project.h>
 #include <stdio.h>
+#include "menus.h"
 
 #define CONVERT_TO_ASCII (0x30u)
 #define TIMER_MAX 4294967296
@@ -23,7 +24,7 @@ volatile enum BTN_states BTN;
 //Prototypes
 CY_ISR_PROTO(sw_int_ISR);
 void puts_measurement(uint32 time);
-int updateBTN(void);
+int8 updateBTN(void);
 
 CY_ISR(sw_int_ISR){
     char temp[60];
@@ -35,7 +36,7 @@ CY_ISR(sw_int_ISR){
     UART_1_UartPutString(temp);
     Timer_1_WriteCounter(0);
     Timer_1_Start();
-    A_press_Write(1);
+    B_press_Write(1);
 }
 
 int main(){
@@ -43,11 +44,15 @@ int main(){
     ADC_Start();
     UART_1_Start();
     sw_int_StartEx(sw_int_ISR);
-    A_press_Write(0);
+    B_press_Write(0);
     ADC_StartConvert();
     LCD_Start();
     LCD_Position(0,0);
     LCD_PrintString("Initialized..");
+    LCD_Position(1,7);
+    LCD_PutChar(LCD_CUSTOM_0);
+    LCD_PutChar(LCD_CUSTOM_1);
+    LCD_PutChar(LCD_CUSTOM_2);
 
     UART_1_UartPutString("CRT_timer initialized..\n\r");
     CyGlobalIntEnable;
@@ -59,12 +64,12 @@ int main(){
                 time = TIMER_MAX - Timer_1_ReadCounter();
                 Timer_1_Stop();
                 running = 0;
-                A_press_Write(0);
+                B_press_Write(0);
                 puts_measurement(time);
             }
         }
         else{
-            if (!updateBTN()){            
+            if (updateBTN()){
                 if (BTN == SELECT){
                     LCD_ClearDisplay();
                     LCD_PrintString("Select pressed");
@@ -135,7 +140,7 @@ void puts_measurement(uint32 time){
     UART_1_UartPutString(" us.\n\r");
 }
 
-int updateBTN(void){
+int8 updateBTN(void){
     uint16 temp = ADC_GetResult16(1); //A0
     if (lcdBtnOld != temp){
         if (temp == 0xFFFF || temp <= 5)
@@ -151,8 +156,7 @@ int updateBTN(void){
         else
             BTN = UNPRESSED;
         lcdBtnOld = temp;
-        return 0;
+        return 1;
     }
-    return -1;
-    
+    return 0;
 }

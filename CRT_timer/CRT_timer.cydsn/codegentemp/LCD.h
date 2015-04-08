@@ -27,7 +27,7 @@
 ***************************************/
 
 #define LCD_CONVERSION_ROUTINES     (1u)
-#define LCD_CUSTOM_CHAR_SET         (1u)
+#define LCD_CUSTOM_CHAR_SET         (3u)
 
 /* Custom character set types */
 #define LCD_NONE                     (0u)    /* No Custom Fonts      */

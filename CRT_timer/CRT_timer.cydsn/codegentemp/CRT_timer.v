@@ -1,6 +1,6 @@
 // ======================================================================
 // CRT_timer.v generated from TopDesign.cysch
-// 04/07/2015 at 22:46
+// 04/08/2015 at 10:55
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -179,7 +179,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v"
 `endif
 
-// ADC_SAR_SEQ_P4_v2_0(AdcAClock=2, AdcAdjust=0, AdcAlternateResolution=0, AdcAvgMode=1, AdcAvgSamplesNum=0, AdcBClock=2, AdcCClock=2, AdcChannelsEnConf=3, AdcChannelsModeConf=0, AdcClock=1, AdcClockFrequency=4666648, AdcCompareMode=0, AdcDataFormatJustification=0, AdcDClock=2, AdcDedicatedExtVref=false, AdcDifferentialResultFormat=1, AdcHighLimit=2047, AdcInjChannelEnabled=false, AdcInputBufGain=0, AdcLowLimit=0, AdcMaxResolution=12, AdcSampleMode=0, AdcSarMuxChannelConfig=00, AdcSequencedChannels=2, AdcSingleEndedNegativeInput=0, AdcSingleResultFormat=1, AdcSymbolHasSingleEndedInputChannel=false, AdcTotalChannels=2, AdcVrefSelect=1, AdcVrefVoltage_mV=1024, rm_int=false, SeqChannelsConfigTable=<?xml version="1.0" encoding="utf-16"?><CyChannelsConfigTable xmlns:Version="2_0"><m_channelsConfigTable><CyChannelsConfigTableRow><m_enabled>false</m_enabled><m_resolution>Twelve</m_resolution><m_mode>Diff</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow><CyChannelsConfigTableRow><m_enabled>true</m_enabled><m_resolution>Twelve</m_resolution><m_mode>Single</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow><CyChannelsConfigTableRow><m_enabled>true</m_enabled><m_resolution>Alternative</m_resolution><m_mode>Single</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow></m_channelsConfigTable></CyChannelsConfigTable>, TermMode_aclk=0, TermMode_eoc=0, TermMode_sdone=0, TermMode_soc=0, TermMode_vinMinus0=0, TermMode_vinMinus1=0, TermMode_vinMinus10=0, TermMode_vinMinus11=0, TermMode_vinMinus12=0, TermMode_vinMinus13=0, TermMode_vinMinus14=0, TermMode_vinMinus15=0, TermMode_vinMinus2=0, TermMode_vinMinus3=0, TermMode_vinMinus4=0, TermMode_vinMinus5=0, TermMode_vinMinus6=0, TermMode_vinMinus7=0, TermMode_vinMinus8=0, TermMode_vinMinus9=0, TermMode_vinMinusINJ=0, TermMode_vinNeg=0, TermMode_vinPlus0=0, TermMode_vinPlus1=0, TermMode_vinPlus10=0, TermMode_vinPlus11=0, TermMode_vinPlus12=0, TermMode_vinPlus13=0, TermMode_vinPlus14=0, TermMode_vinPlus15=0, TermMode_vinPlus2=0, TermMode_vinPlus3=0, TermMode_vinPlus4=0, TermMode_vinPlus5=0, TermMode_vinPlus6=0, TermMode_vinPlus7=0, TermMode_vinPlus8=0, TermMode_vinPlus9=0, TermMode_vinPlusINJ=0, TermMode_Vref=0, TermVisibility_aclk=false, TermVisibility_eoc=true, TermVisibility_sdone=true, TermVisibility_soc=false, TermVisibility_vinMinus0=false, TermVisibility_vinMinus1=false, TermVisibility_vinMinus10=false, TermVisibility_vinMinus11=false, TermVisibility_vinMinus12=false, TermVisibility_vinMinus13=false, TermVisibility_vinMinus14=false, TermVisibility_vinMinus15=false, TermVisibility_vinMinus2=false, TermVisibility_vinMinus3=false, TermVisibility_vinMinus4=false, TermVisibility_vinMinus5=false, TermVisibility_vinMinus6=false, TermVisibility_vinMinus7=false, TermVisibility_vinMinus8=false, TermVisibility_vinMinus9=false, TermVisibility_vinMinusINJ=false, TermVisibility_vinNeg=false, TermVisibility_vinPlus0=true, TermVisibility_vinPlus1=true, TermVisibility_vinPlus10=false, TermVisibility_vinPlus11=false, TermVisibility_vinPlus12=false, TermVisibility_vinPlus13=false, TermVisibility_vinPlus14=false, TermVisibility_vinPlus15=false, TermVisibility_vinPlus2=false, TermVisibility_vinPlus3=false, TermVisibility_vinPlus4=false, TermVisibility_vinPlus5=false, TermVisibility_vinPlus6=false, TermVisibility_vinPlus7=false, TermVisibility_vinPlus8=false, TermVisibility_vinPlus9=false, TermVisibility_vinPlusINJ=false, TermVisibility_Vref=false, CY_COMPONENT_NAME=ADC_SAR_SEQ_P4_v2_0, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=ADC, CY_INSTANCE_SHORT_NAME=ADC, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.1 SP1, INSTANCE_NAME=ADC, )
+// ADC_SAR_SEQ_P4_v2_0(AdcAClock=2, AdcAdjust=1, AdcAlternateResolution=0, AdcAvgMode=1, AdcAvgSamplesNum=0, AdcBClock=30, AdcCClock=2, AdcChannelsEnConf=3, AdcChannelsModeConf=0, AdcClock=1, AdcClockFrequency=9000000, AdcCompareMode=0, AdcDataFormatJustification=0, AdcDClock=2, AdcDedicatedExtVref=false, AdcDifferentialResultFormat=1, AdcHighLimit=2047, AdcInjChannelEnabled=false, AdcInputBufGain=0, AdcLowLimit=0, AdcMaxResolution=12, AdcSampleMode=0, AdcSarMuxChannelConfig=00, AdcSequencedChannels=2, AdcSingleEndedNegativeInput=0, AdcSingleResultFormat=1, AdcSymbolHasSingleEndedInputChannel=false, AdcTotalChannels=2, AdcVrefSelect=1, AdcVrefVoltage_mV=1024, rm_int=false, SeqChannelsConfigTable=<?xml version="1.0" encoding="utf-16"?><CyChannelsConfigTable xmlns:Version="2_0"><m_channelsConfigTable><CyChannelsConfigTableRow><m_enabled>false</m_enabled><m_resolution>Twelve</m_resolution><m_mode>Diff</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow><CyChannelsConfigTableRow><m_enabled>true</m_enabled><m_resolution>Twelve</m_resolution><m_mode>Single</m_mode><m_averaged>false</m_averaged><m_acqTime>AClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow><CyChannelsConfigTableRow><m_enabled>true</m_enabled><m_resolution>Alternative</m_resolution><m_mode>Single</m_mode><m_averaged>false</m_averaged><m_acqTime>BClocks</m_acqTime><m_limitsDetectIntrEnabled>false</m_limitsDetectIntrEnabled><m_saturationIntrEnabled>false</m_saturationIntrEnabled></CyChannelsConfigTableRow></m_channelsConfigTable></CyChannelsConfigTable>, TermMode_aclk=0, TermMode_eoc=0, TermMode_sdone=0, TermMode_soc=0, TermMode_vinMinus0=0, TermMode_vinMinus1=0, TermMode_vinMinus10=0, TermMode_vinMinus11=0, TermMode_vinMinus12=0, TermMode_vinMinus13=0, TermMode_vinMinus14=0, TermMode_vinMinus15=0, TermMode_vinMinus2=0, TermMode_vinMinus3=0, TermMode_vinMinus4=0, TermMode_vinMinus5=0, TermMode_vinMinus6=0, TermMode_vinMinus7=0, TermMode_vinMinus8=0, TermMode_vinMinus9=0, TermMode_vinMinusINJ=0, TermMode_vinNeg=0, TermMode_vinPlus0=0, TermMode_vinPlus1=0, TermMode_vinPlus10=0, TermMode_vinPlus11=0, TermMode_vinPlus12=0, TermMode_vinPlus13=0, TermMode_vinPlus14=0, TermMode_vinPlus15=0, TermMode_vinPlus2=0, TermMode_vinPlus3=0, TermMode_vinPlus4=0, TermMode_vinPlus5=0, TermMode_vinPlus6=0, TermMode_vinPlus7=0, TermMode_vinPlus8=0, TermMode_vinPlus9=0, TermMode_vinPlusINJ=0, TermMode_Vref=0, TermVisibility_aclk=false, TermVisibility_eoc=true, TermVisibility_sdone=true, TermVisibility_soc=false, TermVisibility_vinMinus0=false, TermVisibility_vinMinus1=false, TermVisibility_vinMinus10=false, TermVisibility_vinMinus11=false, TermVisibility_vinMinus12=false, TermVisibility_vinMinus13=false, TermVisibility_vinMinus14=false, TermVisibility_vinMinus15=false, TermVisibility_vinMinus2=false, TermVisibility_vinMinus3=false, TermVisibility_vinMinus4=false, TermVisibility_vinMinus5=false, TermVisibility_vinMinus6=false, TermVisibility_vinMinus7=false, TermVisibility_vinMinus8=false, TermVisibility_vinMinus9=false, TermVisibility_vinMinusINJ=false, TermVisibility_vinNeg=false, TermVisibility_vinPlus0=true, TermVisibility_vinPlus1=true, TermVisibility_vinPlus10=false, TermVisibility_vinPlus11=false, TermVisibility_vinPlus12=false, TermVisibility_vinPlus13=false, TermVisibility_vinPlus14=false, TermVisibility_vinPlus15=false, TermVisibility_vinPlus2=false, TermVisibility_vinPlus3=false, TermVisibility_vinPlus4=false, TermVisibility_vinPlus5=false, TermVisibility_vinPlus6=false, TermVisibility_vinPlus7=false, TermVisibility_vinPlus8=false, TermVisibility_vinPlus9=false, TermVisibility_vinPlusINJ=false, TermVisibility_Vref=false, CY_COMPONENT_NAME=ADC_SAR_SEQ_P4_v2_0, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=ADC, CY_INSTANCE_SHORT_NAME=ADC, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.1 SP1, INSTANCE_NAME=ADC, )
 module ADC_SAR_SEQ_P4_v2_0_1 (
     soc,
     aclk,
@@ -698,7 +698,7 @@ module ADC_SAR_SEQ_P4_v2_0_1 (
 		#(.id("294743e5-5647-4014-961c-f56f1e25e5c9/5c71752a-e182-47ca-942c-9cb20adbdf2f"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("214286571.432"),
+		  .period("111111111.111111"),
 		  .is_direct(0),
 		  .is_digital(0))
 		intClock
@@ -971,7 +971,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_70\CyControlReg_v1_70.v"
 `endif
 
-// CharLCDmp_v1_00(ConversionRoutines=true, CUSTOM0="0,E,8,8,8,E,0,0,", CUSTOM1="0,A,A,4,4,4,0,0,", CUSTOM2="0,E,A,E,8,8,0,0,", CUSTOM3="0,E,A,C,A,A,0,0,", CUSTOM4="0,E,8,C,8,E,0,0,", CUSTOM5="0,E,8,E,2,E,0,0,", CUSTOM6="0,E,8,E,2,E,0,0,", CUSTOM7="0,4,4,4,0,4,0,0,", CustomCharacterSet=1, CY_COMPONENT_NAME=CharLCDmp_v1_00, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=LCD, CY_INSTANCE_SHORT_NAME=LCD, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.1 SP1, INSTANCE_NAME=LCD, )
+// CharLCDmp_v1_00(ConversionRoutines=true, CUSTOM0="0,0,1,1,1,0,0,0,", CUSTOM1="E,1F,11,11,11,1F,E,0,", CUSTOM2="0,0,10,10,10,0,0,0,", CUSTOM3="0,E,A,C,A,A,0,0,", CUSTOM4="0,E,8,C,8,E,0,0,", CUSTOM5="0,E,8,E,2,E,0,0,", CUSTOM6="0,E,8,E,2,E,0,0,", CUSTOM7="0,4,4,4,0,4,0,0,", CustomCharacterSet=3, CY_COMPONENT_NAME=CharLCDmp_v1_00, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=LCD, CY_INSTANCE_SHORT_NAME=LCD, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.1 SP1, INSTANCE_NAME=LCD, )
 module CharLCDmp_v1_00_3 (
     RS,
     E,
@@ -1023,6 +1023,24 @@ endmodule
 // top
 module top ;
 
+    electrical  Net_1050;
+    electrical  Net_1049;
+    electrical  Net_1048;
+    electrical  Net_1047;
+    electrical  Net_1046;
+    electrical  Net_1045;
+    electrical  Net_1044;
+    electrical  Net_1043;
+    electrical  Net_1042;
+    electrical  Net_1041;
+    electrical  Net_1040;
+    electrical  Net_1039;
+    electrical  Net_1038;
+    electrical  Net_1037;
+    electrical  Net_1036;
+    electrical  Net_1035;
+    electrical  Net_1034;
+    electrical  Net_1033;
     electrical  Net_1005;
     electrical  Net_1004;
     electrical  Net_1003;
@@ -1035,6 +1053,7 @@ module top ;
           wire  Net_991;
           wire  Net_990;
           wire  Net_989;
+    electrical  Net_1053;
           wire  Net_411;
           wire  Net_410;
           wire  Net_681;
@@ -1047,6 +1066,7 @@ module top ;
           wire  Net_970;
           wire  Net_969;
     electrical  Net_968;
+    electrical  Net_1054;
           wire  Net_679;
           wire  Net_514;
           wire  Net_966;
@@ -1056,10 +1076,13 @@ module top ;
           wire  Net_962;
           wire  Net_961;
           wire  Net_967;
-    electrical  Net_1001;
-    electrical  Net_118;
-          wire  Net_12;
+    electrical  Net_1056;
           wire  Net_10;
+          wire  Net_12;
+    electrical  Net_1057;
+    electrical  Net_1032;
+    electrical  Net_1031;
+    electrical  Net_1008;
 
 
 	cy_clock_v1_0
@@ -1093,11 +1116,11 @@ module top ;
     defparam Timer_1.Resolution = 32;
     defparam Timer_1.SiliconRevision = "17";
 
-	wire [0:0] tmpOE__A_press_net;
-	wire [0:0] tmpFB_0__A_press_net;
-	wire [0:0] tmpIO_0__A_press_net;
-	wire [0:0] tmpINTERRUPT_0__A_press_net;
-	electrical [0:0] tmpSIOVREF__A_press_net;
+	wire [0:0] tmpOE__B_press_net;
+	wire [0:0] tmpFB_0__B_press_net;
+	wire [0:0] tmpIO_0__B_press_net;
+	wire [0:0] tmpINTERRUPT_0__B_press_net;
+	electrical [0:0] tmpSIOVREF__B_press_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("e851a3b9-efb8-48be-bbb8-b303b216c393"),
@@ -1143,20 +1166,21 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
-		  .use_annotation(1'b0),
+		  .use_annotation(1'b1),
 		  .vtrip(2'b10),
 		  .width(1),
 		  .ovt_hyst_trim(1'b0),
 		  .ovt_needed(1'b0),
 		  .ovt_slew_control(2'b00),
 		  .input_buffer_sel(2'b00))
-		A_press
-		 (.oe(tmpOE__A_press_net),
+		B_press
+		 (.oe(tmpOE__B_press_net),
 		  .y({1'b0}),
-		  .fb({tmpFB_0__A_press_net[0:0]}),
-		  .io({tmpIO_0__A_press_net[0:0]}),
-		  .siovref(tmpSIOVREF__A_press_net),
-		  .interrupt({tmpINTERRUPT_0__A_press_net[0:0]}),
+		  .fb({tmpFB_0__B_press_net[0:0]}),
+		  .io({tmpIO_0__B_press_net[0:0]}),
+		  .siovref(tmpSIOVREF__B_press_net),
+		  .interrupt({tmpINTERRUPT_0__B_press_net[0:0]}),
+		  .annotation({Net_1008}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -1164,7 +1188,7 @@ module top ;
 		  .out_clock_en({1'b1}),
 		  .out_reset({1'b0}));
 
-	assign tmpOE__A_press_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+	assign tmpOE__B_press_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 	wire [0:0] tmpOE__SW2_net;
 	wire [0:0] tmpIO_0__SW2_net;
@@ -1295,7 +1319,7 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
-		  .use_annotation(1'b0),
+		  .use_annotation(1'b1),
 		  .vtrip(2'b10),
 		  .width(1),
 		  .ovt_hyst_trim(1'b0),
@@ -1306,10 +1330,11 @@ module top ;
 		 (.oe(tmpOE__V_in_net),
 		  .y({1'b0}),
 		  .fb({tmpFB_0__V_in_net[0:0]}),
-		  .analog({Net_118}),
+		  .analog({Net_1056}),
 		  .io({tmpIO_0__V_in_net[0:0]}),
 		  .siovref(tmpSIOVREF__V_in_net),
 		  .interrupt({tmpINTERRUPT_0__V_in_net[0:0]}),
+		  .annotation({Net_1054}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -1325,8 +1350,8 @@ module top ;
         .eoc(Net_970),
         .aclk(1'b0),
         .soc(1'b0),
-        .vinPlus0(Net_118),
-        .vinPlus1(Net_1001));
+        .vinPlus0(Net_1056),
+        .vinPlus1(Net_1057));
 
 
 	cy_clock_v1_0
@@ -1406,7 +1431,7 @@ module top ;
 		  .sio_vtrip(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
-		  .use_annotation(1'b0),
+		  .use_annotation(1'b1),
 		  .vtrip(2'b10),
 		  .width(1),
 		  .ovt_hyst_trim(1'b0),
@@ -1417,10 +1442,11 @@ module top ;
 		 (.oe(tmpOE__A0_net),
 		  .y({1'b0}),
 		  .fb({tmpFB_0__A0_net[0:0]}),
-		  .analog({Net_1001}),
+		  .analog({Net_1057}),
 		  .io({tmpIO_0__A0_net[0:0]}),
 		  .siovref(tmpSIOVREF__A0_net),
 		  .interrupt({tmpINTERRUPT_0__A0_net[0:0]}),
+		  .annotation({Net_1053}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -1881,6 +1907,45 @@ module top ;
 		  .out_reset({1'b0}));
 
 	assign tmpOE__D7_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+    cy_annotation_universal_v1_0 Q_1 (
+        .connect({
+            Net_1032,
+            Net_1008,
+            Net_1031
+        })
+    );
+    defparam Q_1.comp_name = "PFET_En_v1_0";
+    defparam Q_1.port_names = "D, G, S";
+    defparam Q_1.width = 3;
+
+    cy_annotation_universal_v1_0 GC_controller (
+        .connect({
+            Net_1031,
+            Net_1040,
+            Net_1041,
+            Net_1042,
+            Net_1043,
+            Net_1044,
+            Net_1045,
+            Net_1046,
+            Net_1047,
+            Net_1048,
+            Net_1049,
+            Net_1032,
+            Net_1050,
+            Net_1033,
+            Net_1034,
+            Net_1035,
+            Net_1036,
+            Net_1037,
+            Net_1038,
+            Net_1039
+        })
+    );
+    defparam GC_controller.comp_name = "Connector20_v1_0";
+    defparam GC_controller.port_names = "T1, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T2, T20, T3, T4, T5, T6, T7, T8, T9";
+    defparam GC_controller.width = 20;
 
 
 

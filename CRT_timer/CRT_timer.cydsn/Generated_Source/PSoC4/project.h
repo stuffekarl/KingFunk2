@@ -19,8 +19,8 @@
 #include <cyfitter.h>
 #include <cydisabledsheets.h>
 #include <Timer_1.h>
-#include <A_press.h>
-#include <A_press_aliases.h>
+#include <B_press.h>
+#include <B_press_aliases.h>
 #include <SW2.h>
 #include <SW2_aliases.h>
 #include <sw_int.h>

@@ -42,13 +42,13 @@ C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_
 
 C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/ADC_intClock.c : 
 
-C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/CortexM0/ARM_GCC_484/Debug/A_press.o : C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/A_press.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/A_press_aliases.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cypins.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/A_press.c 
+C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/CortexM0/ARM_GCC_484/Debug/B_press.o : C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/B_press.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/B_press_aliases.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cypins.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/B_press.c 
 
-C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/A_press.h : 
+C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/B_press.h : 
 
-C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/A_press_aliases.h : 
+C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/B_press_aliases.h : 
 
-C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/A_press.c : 
+C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/B_press.c : 
 
 C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/CortexM0/ARM_GCC_484/Debug/Cm0Start.o : C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/Cm0Start.c 
 
@@ -112,15 +112,15 @@ C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_
 
 C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD.c : 
 
-C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/CortexM0/ARM_GCC_484/Debug/LCD_BarGraph.o : C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD_BarGraph.c 
-
-C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD_BarGraph.c : 
-
 C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/CortexM0/ARM_GCC_484/Debug/LCD_Cntl_Port.o : C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD_Cntl_Port.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD_Cntl_Port.c 
 
 C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD_Cntl_Port.h : 
 
 C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD_Cntl_Port.c : 
+
+C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/CortexM0/ARM_GCC_484/Debug/LCD_CustChars.o : C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD_CustChars.c 
+
+C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD_CustChars.c : 
 
 C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/CortexM0/ARM_GCC_484/Debug/LCD_PM.o : C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/LCD_PM.c 
 

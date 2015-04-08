@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: A_press.c  
+* File Name: B_press.c  
 * Version 2.10
 *
 * Description:
@@ -15,18 +15,18 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "A_press.h"
+#include "B_press.h"
 
 #define SetP4PinDriveMode(shift, mode)  \
     do { \
-        A_press_PC =   (A_press_PC & \
-                                (uint32)(~(uint32)(A_press_DRIVE_MODE_IND_MASK << (A_press_DRIVE_MODE_BITS * (shift))))) | \
-                                (uint32)((uint32)(mode) << (A_press_DRIVE_MODE_BITS * (shift))); \
+        B_press_PC =   (B_press_PC & \
+                                (uint32)(~(uint32)(B_press_DRIVE_MODE_IND_MASK << (B_press_DRIVE_MODE_BITS * (shift))))) | \
+                                (uint32)((uint32)(mode) << (B_press_DRIVE_MODE_BITS * (shift))); \
     } while (0)
 
 
 /*******************************************************************************
-* Function Name: A_press_Write
+* Function Name: B_press_Write
 ********************************************************************************
 *
 * Summary:
@@ -39,16 +39,16 @@
 *  None 
 *  
 *******************************************************************************/
-void A_press_Write(uint8 value) 
+void B_press_Write(uint8 value) 
 {
-    uint8 drVal = (uint8)(A_press_DR & (uint8)(~A_press_MASK));
-    drVal = (drVal | ((uint8)(value << A_press_SHIFT) & A_press_MASK));
-    A_press_DR = (uint32)drVal;
+    uint8 drVal = (uint8)(B_press_DR & (uint8)(~B_press_MASK));
+    drVal = (drVal | ((uint8)(value << B_press_SHIFT) & B_press_MASK));
+    B_press_DR = (uint32)drVal;
 }
 
 
 /*******************************************************************************
-* Function Name: A_press_SetDriveMode
+* Function Name: B_press_SetDriveMode
 ********************************************************************************
 *
 * Summary:
@@ -57,27 +57,27 @@ void A_press_Write(uint8 value)
 * Parameters:  
 *  mode:  Change the pins to one of the following drive modes.
 *
-*  A_press_DM_STRONG     Strong Drive 
-*  A_press_DM_OD_HI      Open Drain, Drives High 
-*  A_press_DM_OD_LO      Open Drain, Drives Low 
-*  A_press_DM_RES_UP     Resistive Pull Up 
-*  A_press_DM_RES_DWN    Resistive Pull Down 
-*  A_press_DM_RES_UPDWN  Resistive Pull Up/Down 
-*  A_press_DM_DIG_HIZ    High Impedance Digital 
-*  A_press_DM_ALG_HIZ    High Impedance Analog 
+*  B_press_DM_STRONG     Strong Drive 
+*  B_press_DM_OD_HI      Open Drain, Drives High 
+*  B_press_DM_OD_LO      Open Drain, Drives Low 
+*  B_press_DM_RES_UP     Resistive Pull Up 
+*  B_press_DM_RES_DWN    Resistive Pull Down 
+*  B_press_DM_RES_UPDWN  Resistive Pull Up/Down 
+*  B_press_DM_DIG_HIZ    High Impedance Digital 
+*  B_press_DM_ALG_HIZ    High Impedance Analog 
 *
 * Return: 
 *  None
 *
 *******************************************************************************/
-void A_press_SetDriveMode(uint8 mode) 
+void B_press_SetDriveMode(uint8 mode) 
 {
-	SetP4PinDriveMode(A_press__0__SHIFT, mode);
+	SetP4PinDriveMode(B_press__0__SHIFT, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: A_press_Read
+* Function Name: B_press_Read
 ********************************************************************************
 *
 * Summary:
@@ -91,17 +91,17 @@ void A_press_SetDriveMode(uint8 mode)
 *  Returns the current value of the Digital Port as a right justified number
 *  
 * Note:
-*  Macro A_press_ReadPS calls this function. 
+*  Macro B_press_ReadPS calls this function. 
 *  
 *******************************************************************************/
-uint8 A_press_Read(void) 
+uint8 B_press_Read(void) 
 {
-    return (uint8)((A_press_PS & A_press_MASK) >> A_press_SHIFT);
+    return (uint8)((B_press_PS & B_press_MASK) >> B_press_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: A_press_ReadDataReg
+* Function Name: B_press_ReadDataReg
 ********************************************************************************
 *
 * Summary:
@@ -114,17 +114,17 @@ uint8 A_press_Read(void)
 *  Returns the current value assigned to the Digital Port's data output register
 *  
 *******************************************************************************/
-uint8 A_press_ReadDataReg(void) 
+uint8 B_press_ReadDataReg(void) 
 {
-    return (uint8)((A_press_DR & A_press_MASK) >> A_press_SHIFT);
+    return (uint8)((B_press_DR & B_press_MASK) >> B_press_SHIFT);
 }
 
 
 /* If Interrupts Are Enabled for this Pins component */ 
-#if defined(A_press_INTSTAT) 
+#if defined(B_press_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: A_press_ClearInterrupt
+    * Function Name: B_press_ClearInterrupt
     ********************************************************************************
     *
     * Summary:
@@ -138,11 +138,11 @@ uint8 A_press_ReadDataReg(void)
     *  Returns the value of the interrupt status register
     *  
     *******************************************************************************/
-    uint8 A_press_ClearInterrupt(void) 
+    uint8 B_press_ClearInterrupt(void) 
     {
-		uint8 maskedStatus = (uint8)(A_press_INTSTAT & A_press_MASK);
-		A_press_INTSTAT = maskedStatus;
-        return maskedStatus >> A_press_SHIFT;
+		uint8 maskedStatus = (uint8)(B_press_INTSTAT & B_press_MASK);
+		B_press_INTSTAT = maskedStatus;
+        return maskedStatus >> B_press_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 
