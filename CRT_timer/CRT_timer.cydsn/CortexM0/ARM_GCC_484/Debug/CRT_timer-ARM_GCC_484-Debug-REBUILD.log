@@ -1,4 +1,4 @@
---------------- Rebuild Started: 04/08/2015 21:52:09 Project: CRT_timer, Configuration: ARM GCC 4.8.4 Debug ---------------
+--------------- Rebuild Started: 04/09/2015 09:11:43 Project: CRT_timer, Configuration: ARM GCC 4.8.4 Debug ---------------
 Deleting file ".\CortexM0\ARM_GCC_484\Debug\main.o"
 Deleting file ".\CortexM0\ARM_GCC_484\Debug\menus.o"
 Deleting file ".\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o"
@@ -57,7 +57,7 @@ Deleting file ".\CortexM0\ARM_GCC_484\Debug\.deps\ARM_C_FILE.P"
 Deleting file ".\CortexM0\ARM_GCC_484\Debug\.deps\GNU_ARM_ASM_FILE.P"
 cydsfit.exe -.appdatapath "C:\Users\Snufkin\AppData\Local\Cypress Semiconductor\PSoC Creator\3.1" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\CRT_timer.cyprj -d CY8C4245AXI-483 -s C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
-ADD: sdb.M0061: information: Info from component: ADC. The actual sample rate (142857 SPS) differs from the desired sample rate (160714 SPS) due to the clock configuration in the DWR.
+ADD: sdb.M0061: information: Info from component: ADC. The actual sample rate (111111 SPS) differs from the desired sample rate (125000 SPS) due to the clock configuration in the DWR.
  * C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\TopDesign\TopDesign.cysch (Instance:ADC)
 HDL Generation ...
 Synthesis ...
@@ -124,6 +124,6 @@ arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_484\Debug\CRT_timer.a
 arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM0\ARM_GCC_484\Debug\CRT_timer.elf .\CortexM0\ARM_GCC_484\Debug\main.o .\CortexM0\ARM_GCC_484\Debug\menus.o .\CortexM0\ARM_GCC_484\Debug\cymetadata.o .\CortexM0\ARM_GCC_484\Debug\Cm0Start.o .\CortexM0\ARM_GCC_484\Debug\CRT_timer.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_484\Debug\CyComponentLibrary.a" -mthumb -march=armv6-m -Wl,-Map,.\CortexM0\ARM_GCC_484\Debug/CRT_timer.map -T .\Generated_Source\PSoC4\cm0gcc.ld -g -specs=nano.specs "-u _printf_float" "" -Wl,--gc-sections -Wl,--end-group
 cyelftool.exe -C C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\CortexM0\ARM_GCC_484\Debug\CRT_timer.elf --flash_size 32768 --flash_row_size 128
 cyelftool.exe -S C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\CortexM0\ARM_GCC_484\Debug\CRT_timer.elf
-Flash used: 12472 of 32768 bytes (38.1 %).
+Flash used: 13392 of 32768 bytes (40.9 %).
 SRAM used: 1572 of 4096 bytes (38.4 %). Stack: 1024 bytes. Heap: 128 bytes.
---------------- Rebuild Succeeded: 04/08/2015 21:52:25 ---------------
+--------------- Rebuild Succeeded: 04/09/2015 09:12:00 ---------------

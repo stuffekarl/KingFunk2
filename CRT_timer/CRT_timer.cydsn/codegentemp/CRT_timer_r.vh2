@@ -1,5 +1,5 @@
 -- Project:   CRT_timer
--- Generated: 04/08/2015 22:31:07
+-- Generated: 04/09/2015 09:11:52
 -- PSoC Creator  3.1 SP1
 
 ENTITY CRT_timer IS

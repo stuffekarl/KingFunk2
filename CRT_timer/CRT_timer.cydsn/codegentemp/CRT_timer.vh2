@@ -2,7 +2,7 @@
 --	Conversion of CRT_timer.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Apr 08 22:31:06 2015
+--	Thu Apr 09 09:11:50 2015
 --
 
 USE cypress.cypress.all;
@@ -2247,7 +2247,7 @@ SFH213:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"PhotoDiode_v1_0",
 		port_names=>"A, K",
 		width=>2)
-	PORT MAP(connect=>(Net_1092, Net_1094));
+	PORT MAP(connect=>(Net_1094, Net_1092));
 GND_1:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"Gnd_v1_0",
 		port_names=>"T1",

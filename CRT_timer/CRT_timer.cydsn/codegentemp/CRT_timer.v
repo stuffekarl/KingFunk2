@@ -1,6 +1,6 @@
 // ======================================================================
 // CRT_timer.v generated from TopDesign.cysch
-// 04/08/2015 at 22:31
+// 04/09/2015 at 09:11
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1120,13 +1120,13 @@ module top ;
           wire  Net_962;
           wire  Net_961;
           wire  Net_967;
+    electrical  Net_1092;
     electrical  Net_1099;
     electrical  Net_1088;
     electrical  Net_1100;
     electrical  Net_1087;
     electrical  Net_1094;
     electrical  Net_1081;
-    electrical  Net_1092;
           wire  Net_10;
           wire  Net_12;
     electrical  Net_1057;
@@ -1999,8 +1999,8 @@ module top ;
 
     cy_annotation_universal_v1_0 SFH213 (
         .connect({
-            Net_1092,
-            Net_1094
+            Net_1094,
+            Net_1092
         })
     );
     defparam SFH213.comp_name = "PhotoDiode_v1_0";
