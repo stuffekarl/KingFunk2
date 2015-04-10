@@ -9,15 +9,12 @@
  *
  * ========================================
 */
+#include <project.h>
+
+//Variables
+typedef enum {UNPRESSED, SELECT, LEFT, DOWN, UP, RIGHT } BTN_states;
+
+//Protoypes
+BTN_states getButton();
 
 /* [] END OF FILE */
-
-#include <project.h>
-#include <stdio.h>
-
-//Target voltage to trigger on
-uint16 target;
-
-int8 updateMenu();
-
-typedef enum {MAIN, CALIBRATION, RESULTS, INITIAL } gui;

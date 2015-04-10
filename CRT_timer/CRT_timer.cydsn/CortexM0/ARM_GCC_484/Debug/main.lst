@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -17,26 +17,25 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              		.comm	running,1,1
-  18              		.comm	V_new,2,2
-  19              		.comm	time,4,4
-  20              		.comm	lcdBtnOld,2,2
-  21              		.comm	BTN,1,1
-  22              		.section	.rodata
-  23              		.align	2
-  24              	.LC1:
-  25 0000 53573220 		.ascii	"SW2 pressed\000"
-  25      70726573 
-  25      73656400 
-  26              		.section	.text.sw_int_ISR,"ax",%progbits
-  27              		.align	2
-  28              		.global	sw_int_ISR
-  29              		.code	16
-  30              		.thumb_func
-  31              		.type	sw_int_ISR, %function
-  32              	sw_int_ISR:
-  33              	.LFB33:
-  34              		.file 1 ".\\main.c"
+  17              		.comm	target,2,2
+  18              		.comm	running,1,1
+  19              		.comm	V_new,2,2
+  20              		.comm	time,4,4
+  21              		.section	.rodata
+  22              		.align	2
+  23              	.LC1:
+  24 0000 53573220 		.ascii	"SW2 pressed\000"
+  24      70726573 
+  24      73656400 
+  25              		.section	.text.sw_int_ISR,"ax",%progbits
+  26              		.align	2
+  27              		.global	sw_int_ISR
+  28              		.code	16
+  29              		.thumb_func
+  30              		.type	sw_int_ISR, %function
+  31              	sw_int_ISR:
+  32              	.LFB33:
+  33              		.file 1 ".\\main.c"
    1:.\main.c      **** /* ========================================
    2:.\main.c      ****  *
    3:.\main.c      ****  * Copyright Kristian Thomsen, 2015
@@ -48,1886 +47,1217 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 1
    9:.\main.c      **** #include <project.h>
   10:.\main.c      **** #include <stdio.h>
   11:.\main.c      **** #include "menus.h"
-  12:.\main.c      **** 
-  13:.\main.c      **** #define CONVERT_TO_ASCII (0x30u)
-  14:.\main.c      **** #define TIMER_MAX 4294967296
-  15:.\main.c      **** //#define debugging1 //Show time for checking result from ADC
-  16:.\main.c      **** #define debugging2 //Show time for starting the timer
-  17:.\main.c      **** 
-  18:.\main.c      **** enum BTN_states{ UNPRESSED, SELECT, LEFT, DOWN, UP, RIGHT };
+  12:.\main.c      **** #include "keypad.h"
+  13:.\main.c      **** 
+  14:.\main.c      **** #define CONVERT_TO_ASCII (0x30u)
+  15:.\main.c      **** #define TIMER_MAX 4294967296
+  16:.\main.c      **** //#define debugging1 //Show time for checking result from ADC
+  17:.\main.c      **** #define debugging2 //Show time for starting the timer
+  18:.\main.c      **** 
   19:.\main.c      **** volatile uint8 running; //flag - false = 0, true != 0
   20:.\main.c      **** uint16 V_new;
   21:.\main.c      **** uint32 time;
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 2
+  22:.\main.c      **** 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 2
 
 
-  22:.\main.c      **** uint16 lcdBtnOld;
-  23:.\main.c      **** volatile enum BTN_states BTN;
-  24:.\main.c      **** 
-  25:.\main.c      **** //Prototypes
-  26:.\main.c      **** CY_ISR_PROTO(sw_int_ISR);
-  27:.\main.c      **** void print_measurement(uint32 time);
-  28:.\main.c      **** int8 updateBTN(void);
-  29:.\main.c      **** 
-  30:.\main.c      **** CY_ISR(sw_int_ISR){
-  35              		.loc 1 30 0
-  36              		.cfi_startproc
-  37 0000 80B5     		push	{r7, lr}
-  38              		.cfi_def_cfa_offset 8
-  39              		.cfi_offset 7, -8
-  40              		.cfi_offset 14, -4
-  41 0002 00AF     		add	r7, sp, #0
-  42              		.cfi_def_cfa_register 7
-  31:.\main.c      ****     running = 1;
-  43              		.loc 1 31 0
-  44 0004 0A4B     		ldr	r3, .L2
-  45 0006 0122     		mov	r2, #1
-  46 0008 1A70     		strb	r2, [r3]
-  32:.\main.c      ****     LCD_ClearDisplay();
-  47              		.loc 1 32 0
-  48 000a 0120     		mov	r0, #1
-  49 000c FFF7FEFF 		bl	LCD_WriteControl
-  33:.\main.c      ****     LCD_PrintString("SW2 pressed");
-  50              		.loc 1 33 0
-  51 0010 084B     		ldr	r3, .L2+4
-  52 0012 181C     		mov	r0, r3
-  53 0014 FFF7FEFF 		bl	LCD_PrintString
-  34:.\main.c      ****     Timer_1_WriteCounter(0);
-  54              		.loc 1 34 0
-  55 0018 0020     		mov	r0, #0
-  56 001a FFF7FEFF 		bl	Timer_1_WriteCounter
-  35:.\main.c      ****     B_press_Write(1);
-  57              		.loc 1 35 0
-  58 001e 0120     		mov	r0, #1
-  59 0020 FFF7FEFF 		bl	B_press_Write
-  36:.\main.c      ****     #ifdef debugging2
-  37:.\main.c      ****         Test_pin_Write(1);
-  60              		.loc 1 37 0
-  61 0024 0120     		mov	r0, #1
-  62 0026 FFF7FEFF 		bl	Test_pin_Write
-  38:.\main.c      ****     #endif
-  39:.\main.c      ****     
-  40:.\main.c      **** }
-  63              		.loc 1 40 0
-  64 002a BD46     		mov	sp, r7
-  65              		@ sp needed
-  66 002c 80BD     		pop	{r7, pc}
-  67              	.L3:
-  68 002e C046     		.align	2
-  69              	.L2:
-  70 0030 00000000 		.word	running
-  71 0034 00000000 		.word	.LC1
-  72              		.cfi_endproc
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 3
+  23:.\main.c      **** //Prototypes
+  24:.\main.c      **** CY_ISR_PROTO(sw_int_ISR);
+  25:.\main.c      **** void print_measurement(uint32 time);
+  26:.\main.c      **** int8 updateBTN(void);
+  27:.\main.c      **** 
+  28:.\main.c      **** CY_ISR(sw_int_ISR){
+  34              		.loc 1 28 0
+  35              		.cfi_startproc
+  36 0000 80B5     		push	{r7, lr}
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 7, -8
+  39              		.cfi_offset 14, -4
+  40 0002 00AF     		add	r7, sp, #0
+  41              		.cfi_def_cfa_register 7
+  29:.\main.c      ****     running = 1;
+  42              		.loc 1 29 0
+  43 0004 0A4B     		ldr	r3, .L2
+  44 0006 0122     		mov	r2, #1
+  45 0008 1A70     		strb	r2, [r3]
+  30:.\main.c      ****     LCD_ClearDisplay();
+  46              		.loc 1 30 0
+  47 000a 0120     		mov	r0, #1
+  48 000c FFF7FEFF 		bl	LCD_WriteControl
+  31:.\main.c      ****     LCD_PrintString("SW2 pressed");
+  49              		.loc 1 31 0
+  50 0010 084B     		ldr	r3, .L2+4
+  51 0012 181C     		mov	r0, r3
+  52 0014 FFF7FEFF 		bl	LCD_PrintString
+  32:.\main.c      ****     Timer_1_WriteCounter(0);
+  53              		.loc 1 32 0
+  54 0018 0020     		mov	r0, #0
+  55 001a FFF7FEFF 		bl	Timer_1_WriteCounter
+  33:.\main.c      ****     B_press_Write(1);
+  56              		.loc 1 33 0
+  57 001e 0120     		mov	r0, #1
+  58 0020 FFF7FEFF 		bl	B_press_Write
+  34:.\main.c      ****     #ifdef debugging2
+  35:.\main.c      ****         Test_pin_Write(1);
+  59              		.loc 1 35 0
+  60 0024 0120     		mov	r0, #1
+  61 0026 FFF7FEFF 		bl	Test_pin_Write
+  36:.\main.c      ****     #endif
+  37:.\main.c      ****     
+  38:.\main.c      **** }
+  62              		.loc 1 38 0
+  63 002a BD46     		mov	sp, r7
+  64              		@ sp needed
+  65 002c 80BD     		pop	{r7, pc}
+  66              	.L3:
+  67 002e C046     		.align	2
+  68              	.L2:
+  69 0030 00000000 		.word	running
+  70 0034 00000000 		.word	.LC1
+  71              		.cfi_endproc
+  72              	.LFE33:
+  73              		.size	sw_int_ISR, .-sw_int_ISR
+  74              		.section	.rodata
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 3
 
 
-  73              	.LFE33:
-  74              		.size	sw_int_ISR, .-sw_int_ISR
-  75              		.section	.rodata
-  76              		.align	2
-  77              	.LC4:
-  78 000c 496E6974 		.ascii	"Initialized..\000"
-  78      69616C69 
-  78      7A65642E 
-  78      2E00
-  79 001a 0000     		.align	2
-  80              	.LC8:
-  81 001c 20202020 		.ascii	"                \000"
-  81      20202020 
-  81      20202020 
-  81      20202020 
-  81      00
-  82 002d 000000   		.align	2
-  83              	.LC11:
-  84 0030 53656C65 		.ascii	"Select pressed\000"
-  84      63742070 
-  84      72657373 
-  84      656400
-  85 003f 00       		.align	2
-  86              	.LC13:
-  87 0040 4C656674 		.ascii	"Left pressed\000"
-  87      20707265 
-  87      73736564 
-  87      00
-  88 004d 000000   		.align	2
-  89              	.LC15:
-  90 0050 52696768 		.ascii	"Right pressed\000"
-  90      74207072 
-  90      65737365 
-  90      6400
-  91 005e 0000     		.align	2
-  92              	.LC17:
-  93 0060 55702070 		.ascii	"Up pressed\000"
-  93      72657373 
-  93      656400
-  94 006b 00       		.align	2
-  95              	.LC19:
-  96 006c 446F776E 		.ascii	"Down pressed\000"
-  96      20707265 
-  96      73736564 
-  96      00
-  97              		.section	.text.main,"ax",%progbits
-  98              		.align	2
-  99              		.global	main
- 100              		.code	16
- 101              		.thumb_func
- 102              		.type	main, %function
- 103              	main:
- 104              	.LFB34:
-  41:.\main.c      **** 
-  42:.\main.c      **** int main(){
- 105              		.loc 1 42 0
- 106              		.cfi_startproc
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 4
+  75              		.align	2
+  76              	.LC5:
+  77 000c 496E6974 		.ascii	"Initialized..\000"
+  77      69616C69 
+  77      7A65642E 
+  77      2E00
+  78              		.section	.text.main,"ax",%progbits
+  79              		.align	2
+  80              		.global	main
+  81              		.code	16
+  82              		.thumb_func
+  83              		.type	main, %function
+  84              	main:
+  85              	.LFB34:
+  39:.\main.c      **** 
+  40:.\main.c      **** int main(){
+  86              		.loc 1 40 0
+  87              		.cfi_startproc
+  88 0000 80B5     		push	{r7, lr}
+  89              		.cfi_def_cfa_offset 8
+  90              		.cfi_offset 7, -8
+  91              		.cfi_offset 14, -4
+  92 0002 00AF     		add	r7, sp, #0
+  93              		.cfi_def_cfa_register 7
+  41:.\main.c      ****     target = 30;
+  94              		.loc 1 41 0
+  95 0004 2E4B     		ldr	r3, .L9
+  96 0006 1E22     		mov	r2, #30
+  97 0008 1A80     		strh	r2, [r3]
+  42:.\main.c      ****     Timer_1_Start();
+  98              		.loc 1 42 0
+  99 000a FFF7FEFF 		bl	Timer_1_Start
+  43:.\main.c      ****     sw_int_StartEx(sw_int_ISR);
+ 100              		.loc 1 43 0
+ 101 000e 2D4B     		ldr	r3, .L9+4
+ 102 0010 181C     		mov	r0, r3
+ 103 0012 FFF7FEFF 		bl	sw_int_StartEx
+  44:.\main.c      ****     B_press_Write(0);
+ 104              		.loc 1 44 0
+ 105 0016 0020     		mov	r0, #0
+ 106 0018 FFF7FEFF 		bl	B_press_Write
+  45:.\main.c      ****     Opamp_Start();
+ 107              		.loc 1 45 0
+ 108 001c FFF7FEFF 		bl	Opamp_Start
+  46:.\main.c      ****     ADC_Start();
+ 109              		.loc 1 46 0
+ 110 0020 FFF7FEFF 		bl	ADC_Start
+  47:.\main.c      ****     ADC_StartConvert();
+ 111              		.loc 1 47 0
+ 112 0024 FFF7FEFF 		bl	ADC_StartConvert
+  48:.\main.c      ****     LCD_Start();
+ 113              		.loc 1 48 0
+ 114 0028 FFF7FEFF 		bl	LCD_Start
+  49:.\main.c      ****     LCD_Position(0,0);
+ 115              		.loc 1 49 0
+ 116 002c 0020     		mov	r0, #0
+ 117 002e 0021     		mov	r1, #0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 4
 
 
- 107 0000 90B5     		push	{r4, r7, lr}
- 108              		.cfi_def_cfa_offset 12
- 109              		.cfi_offset 4, -12
- 110              		.cfi_offset 7, -8
- 111              		.cfi_offset 14, -4
- 112 0002 83B0     		sub	sp, sp, #12
- 113              		.cfi_def_cfa_offset 24
- 114 0004 00AF     		add	r7, sp, #0
- 115              		.cfi_def_cfa_register 7
-  43:.\main.c      ****     int16 lightMax = -1;
- 116              		.loc 1 43 0
- 117 0006 BB1D     		add	r3, r7, #6
- 118 0008 0122     		mov	r2, #1
- 119 000a 5242     		neg	r2, r2
- 120 000c 1A80     		strh	r2, [r3]
-  44:.\main.c      ****     
-  45:.\main.c      ****     Timer_1_Start();
- 121              		.loc 1 45 0
- 122 000e FFF7FEFF 		bl	Timer_1_Start
-  46:.\main.c      ****     sw_int_StartEx(sw_int_ISR);
- 123              		.loc 1 46 0
- 124 0012 744B     		ldr	r3, .L14
- 125 0014 181C     		mov	r0, r3
- 126 0016 FFF7FEFF 		bl	sw_int_StartEx
-  47:.\main.c      ****     B_press_Write(0);
- 127              		.loc 1 47 0
- 128 001a 0020     		mov	r0, #0
- 129 001c FFF7FEFF 		bl	B_press_Write
-  48:.\main.c      ****     Opamp_Start();
- 130              		.loc 1 48 0
- 131 0020 FFF7FEFF 		bl	Opamp_Start
-  49:.\main.c      ****     ADC_Start();
- 132              		.loc 1 49 0
- 133 0024 FFF7FEFF 		bl	ADC_Start
-  50:.\main.c      ****     ADC_StartConvert();
- 134              		.loc 1 50 0
- 135 0028 FFF7FEFF 		bl	ADC_StartConvert
-  51:.\main.c      ****     LCD_Start();
- 136              		.loc 1 51 0
- 137 002c FFF7FEFF 		bl	LCD_Start
-  52:.\main.c      ****     LCD_Position(0,0);
- 138              		.loc 1 52 0
- 139 0030 0020     		mov	r0, #0
- 140 0032 0021     		mov	r1, #0
- 141 0034 FFF7FEFF 		bl	LCD_Position
-  53:.\main.c      ****     LCD_PrintString("Initialized..");
- 142              		.loc 1 53 0
- 143 0038 6B4B     		ldr	r3, .L14+4
- 144 003a 181C     		mov	r0, r3
- 145 003c FFF7FEFF 		bl	LCD_PrintString
-  54:.\main.c      ****     LCD_Position(1,7);
- 146              		.loc 1 54 0
- 147 0040 0120     		mov	r0, #1
- 148 0042 0721     		mov	r1, #7
- 149 0044 FFF7FEFF 		bl	LCD_Position
-  55:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_0);
- 150              		.loc 1 55 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 5
+ 118 0030 FFF7FEFF 		bl	LCD_Position
+  50:.\main.c      ****     LCD_PrintString("Initialized..");
+ 119              		.loc 1 50 0
+ 120 0034 244B     		ldr	r3, .L9+8
+ 121 0036 181C     		mov	r0, r3
+ 122 0038 FFF7FEFF 		bl	LCD_PrintString
+  51:.\main.c      ****     LCD_Position(1,7);
+ 123              		.loc 1 51 0
+ 124 003c 0120     		mov	r0, #1
+ 125 003e 0721     		mov	r1, #7
+ 126 0040 FFF7FEFF 		bl	LCD_Position
+  52:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_0);
+ 127              		.loc 1 52 0
+ 128 0044 0020     		mov	r0, #0
+ 129 0046 FFF7FEFF 		bl	LCD_PutChar
+  53:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_1);
+ 130              		.loc 1 53 0
+ 131 004a 0120     		mov	r0, #1
+ 132 004c FFF7FEFF 		bl	LCD_PutChar
+  54:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_2);
+ 133              		.loc 1 54 0
+ 134 0050 0220     		mov	r0, #2
+ 135 0052 FFF7FEFF 		bl	LCD_PutChar
+  55:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_4);
+ 136              		.loc 1 55 0
+ 137 0056 0420     		mov	r0, #4
+ 138 0058 FFF7FEFF 		bl	LCD_PutChar
+  56:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_5);
+ 139              		.loc 1 56 0
+ 140 005c 0520     		mov	r0, #5
+ 141 005e FFF7FEFF 		bl	LCD_PutChar
+  57:.\main.c      ****     
+  58:.\main.c      ****     CyGlobalIntEnable;
+ 142              		.loc 1 58 0
+ 143              	@ 58 ".\main.c" 1
+ 144 0062 62B6     		CPSIE   i
+ 145              	@ 0 "" 2
+ 146              		.code	16
+ 147              	.L8:
+  59:.\main.c      ****     
+  60:.\main.c      ****     while(1){
+  61:.\main.c      ****         if (running){
+ 148              		.loc 1 61 0
+ 149 0064 194B     		ldr	r3, .L9+12
+ 150 0066 1B78     		ldrb	r3, [r3]
+ 151 0068 DBB2     		uxtb	r3, r3
+ 152 006a 002B     		cmp	r3, #0
+ 153 006c 23D0     		beq	.L5
+  62:.\main.c      ****             #ifdef debugging1
+  63:.\main.c      ****                 Test_pin_Write(1);
+  64:.\main.c      ****             #endif
+  65:.\main.c      ****             if(ADC_GetResult16(0) > target){
+ 154              		.loc 1 65 0
+ 155 006e 0020     		mov	r0, #0
+ 156 0070 FFF7FEFF 		bl	ADC_GetResult16
+ 157 0074 031C     		mov	r3, r0
+ 158 0076 1A1C     		mov	r2, r3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 5
 
 
- 151 0048 0020     		mov	r0, #0
- 152 004a FFF7FEFF 		bl	LCD_PutChar
-  56:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_1);
- 153              		.loc 1 56 0
- 154 004e 0120     		mov	r0, #1
- 155 0050 FFF7FEFF 		bl	LCD_PutChar
-  57:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_2);
- 156              		.loc 1 57 0
- 157 0054 0220     		mov	r0, #2
- 158 0056 FFF7FEFF 		bl	LCD_PutChar
-  58:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_4);
- 159              		.loc 1 58 0
- 160 005a 0420     		mov	r0, #4
- 161 005c FFF7FEFF 		bl	LCD_PutChar
-  59:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_5);
- 162              		.loc 1 59 0
- 163 0060 0520     		mov	r0, #5
- 164 0062 FFF7FEFF 		bl	LCD_PutChar
-  60:.\main.c      ****     
-  61:.\main.c      ****     CyGlobalIntEnable;
- 165              		.loc 1 61 0
- 166              	@ 61 ".\main.c" 1
- 167 0066 62B6     		CPSIE   i
- 168              	@ 0 "" 2
- 169              		.code	16
- 170              	.L13:
-  62:.\main.c      ****     
-  63:.\main.c      ****     while(1){
-  64:.\main.c      ****         if (running){
- 171              		.loc 1 64 0
- 172 0068 604B     		ldr	r3, .L14+8
- 173 006a 1B78     		ldrb	r3, [r3]
- 174 006c DBB2     		uxtb	r3, r3
- 175 006e 002B     		cmp	r3, #0
- 176 0070 21D0     		beq	.L5
-  65:.\main.c      ****             #ifdef debugging1
-  66:.\main.c      ****                 Test_pin_Write(1);
-  67:.\main.c      ****             #endif
-  68:.\main.c      ****             if(ADC_GetResult16(0) > 10){
- 177              		.loc 1 68 0
- 178 0072 0020     		mov	r0, #0
- 179 0074 FFF7FEFF 		bl	ADC_GetResult16
- 180 0078 031C     		mov	r3, r0
- 181 007a 0A2B     		cmp	r3, #10
- 182 007c 00DC     		bgt	.LCB96
- 183 007e B0E0     		b	.L7	@long jump
- 184              	.LCB96:
-  69:.\main.c      ****                 time = Timer_1_ReadCounter();
- 185              		.loc 1 69 0
- 186 0080 FFF7FEFF 		bl	Timer_1_ReadCounter
- 187 0084 021C     		mov	r2, r0
- 188 0086 5A4B     		ldr	r3, .L14+12
- 189 0088 1A60     		str	r2, [r3]
-  70:.\main.c      ****                 #ifdef debugging2
-  71:.\main.c      ****                     Test_pin_Write(0);
- 190              		.loc 1 71 0
- 191 008a 0020     		mov	r0, #0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 6
-
-
- 192 008c FFF7FEFF 		bl	Test_pin_Write
-  72:.\main.c      ****                 #endif
-  73:.\main.c      ****                 time = TIMER_MAX - time;
- 193              		.loc 1 73 0
- 194 0090 574B     		ldr	r3, .L14+12
- 195 0092 1B68     		ldr	r3, [r3]
- 196 0094 5A42     		neg	r2, r3
- 197 0096 564B     		ldr	r3, .L14+12
- 198 0098 1A60     		str	r2, [r3]
-  74:.\main.c      ****                 Timer_1_Stop();
- 199              		.loc 1 74 0
- 200 009a FFF7FEFF 		bl	Timer_1_Stop
-  75:.\main.c      ****                 running = 0;
- 201              		.loc 1 75 0
- 202 009e 534B     		ldr	r3, .L14+8
- 203 00a0 0022     		mov	r2, #0
- 204 00a2 1A70     		strb	r2, [r3]
-  76:.\main.c      ****                 B_press_Write(0);
- 205              		.loc 1 76 0
- 206 00a4 0020     		mov	r0, #0
- 207 00a6 FFF7FEFF 		bl	B_press_Write
-  77:.\main.c      ****                 print_measurement(time);
- 208              		.loc 1 77 0
- 209 00aa 514B     		ldr	r3, .L14+12
- 210 00ac 1B68     		ldr	r3, [r3]
- 211 00ae 181C     		mov	r0, r3
- 212 00b0 FFF7FEFF 		bl	print_measurement
-  78:.\main.c      ****             }
-  79:.\main.c      ****             #ifdef debugging1
-  80:.\main.c      ****                 Test_pin_Write(0);
-  81:.\main.c      ****             #endif
+ 159 0078 114B     		ldr	r3, .L9
+ 160 007a 1B88     		ldrh	r3, [r3]
+ 161 007c 9A42     		cmp	r2, r3
+ 162 007e 1DDD     		ble	.L7
+  66:.\main.c      ****                 time = Timer_1_ReadCounter();
+ 163              		.loc 1 66 0
+ 164 0080 FFF7FEFF 		bl	Timer_1_ReadCounter
+ 165 0084 021C     		mov	r2, r0
+ 166 0086 124B     		ldr	r3, .L9+16
+ 167 0088 1A60     		str	r2, [r3]
+  67:.\main.c      ****                 #ifdef debugging2
+  68:.\main.c      ****                     Test_pin_Write(0);
+ 168              		.loc 1 68 0
+ 169 008a 0020     		mov	r0, #0
+ 170 008c FFF7FEFF 		bl	Test_pin_Write
+  69:.\main.c      ****                 #endif
+  70:.\main.c      ****                 time = TIMER_MAX - time;
+ 171              		.loc 1 70 0
+ 172 0090 0F4B     		ldr	r3, .L9+16
+ 173 0092 1B68     		ldr	r3, [r3]
+ 174 0094 5A42     		neg	r2, r3
+ 175 0096 0E4B     		ldr	r3, .L9+16
+ 176 0098 1A60     		str	r2, [r3]
+  71:.\main.c      ****                 Timer_1_Stop();
+ 177              		.loc 1 71 0
+ 178 009a FFF7FEFF 		bl	Timer_1_Stop
+  72:.\main.c      ****                 running = 0;
+ 179              		.loc 1 72 0
+ 180 009e 0B4B     		ldr	r3, .L9+12
+ 181 00a0 0022     		mov	r2, #0
+ 182 00a2 1A70     		strb	r2, [r3]
+  73:.\main.c      ****                 B_press_Write(0);
+ 183              		.loc 1 73 0
+ 184 00a4 0020     		mov	r0, #0
+ 185 00a6 FFF7FEFF 		bl	B_press_Write
+  74:.\main.c      ****                 print_measurement(time);
+ 186              		.loc 1 74 0
+ 187 00aa 094B     		ldr	r3, .L9+16
+ 188 00ac 1B68     		ldr	r3, [r3]
+ 189 00ae 181C     		mov	r0, r3
+ 190 00b0 FFF7FEFF 		bl	print_measurement
+  75:.\main.c      ****             }
+  76:.\main.c      ****             #ifdef debugging1
+  77:.\main.c      ****                 Test_pin_Write(0);
+  78:.\main.c      ****             #endif
+  79:.\main.c      ****         }
+  80:.\main.c      ****         else{
+  81:.\main.c      ****             updateMenu();
   82:.\main.c      ****         }
-  83:.\main.c      ****         else{
-  84:.\main.c      ****             int16 temp = ADC_GetResult16(0);
-  85:.\main.c      ****             if (temp > lightMax){
-  86:.\main.c      ****                 lightMax = temp;
-  87:.\main.c      ****                 LCD_Position(0,0);
-  88:.\main.c      ****                 LCD_PrintString("                ");
-  89:.\main.c      ****                 LCD_Position(0,0);
-  90:.\main.c      ****                 LCD_PrintNumber(lightMax);
-  91:.\main.c      ****             }
-  92:.\main.c      ****             if (updateBTN()){
-  93:.\main.c      ****                 if (BTN == SELECT){
-  94:.\main.c      ****                     LCD_Position(1,0);
-  95:.\main.c      ****                     LCD_PrintString("                ");
-  96:.\main.c      ****                     LCD_Position(1,0);
-  97:.\main.c      ****                     LCD_PrintString("Select pressed");
-  98:.\main.c      ****                 }
-  99:.\main.c      ****                 else if(BTN == LEFT){
- 100:.\main.c      ****                     LCD_Position(1,0);
- 101:.\main.c      ****                     LCD_PrintString("                ");
- 102:.\main.c      ****                     LCD_Position(1,0);
- 103:.\main.c      ****                     LCD_PrintString("Left pressed");
- 104:.\main.c      ****                 }
- 105:.\main.c      ****                 else if(BTN == RIGHT){
- 106:.\main.c      ****                     LCD_Position(1,0);
- 107:.\main.c      ****                     LCD_PrintString("                ");
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 7
+  83:.\main.c      ****     }
+ 191              		.loc 1 83 0
+ 192 00b4 D6E7     		b	.L8
+ 193              	.L5:
+  81:.\main.c      ****             updateMenu();
+ 194              		.loc 1 81 0
+ 195 00b6 FFF7FEFF 		bl	updateMenu
+ 196              		.loc 1 83 0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 6
 
 
- 108:.\main.c      ****                     LCD_Position(1,0);
- 109:.\main.c      ****                     LCD_PrintString("Right pressed");
- 110:.\main.c      ****                 }
- 111:.\main.c      ****                 else if(BTN == UP){
- 112:.\main.c      ****                     LCD_Position(1,0);
- 113:.\main.c      ****                     LCD_PrintString("                ");
- 114:.\main.c      ****                     LCD_Position(1,0);
- 115:.\main.c      ****                     LCD_PrintString("Up pressed");
- 116:.\main.c      ****                 }
- 117:.\main.c      ****                 else if(BTN == DOWN){
- 118:.\main.c      ****                     LCD_Position(1,0);
- 119:.\main.c      ****                     LCD_PrintString("                ");
- 120:.\main.c      ****                     LCD_Position(1,0);
- 121:.\main.c      ****                     LCD_PrintString("Down pressed");
- 122:.\main.c      ****                 }
- 123:.\main.c      ****             }
- 124:.\main.c      ****         }
- 125:.\main.c      ****     }
- 213              		.loc 1 125 0
- 214 00b4 D8E7     		b	.L13
- 215              	.L5:
- 216              	.LBB2:
-  84:.\main.c      ****             int16 temp = ADC_GetResult16(0);
- 217              		.loc 1 84 0
- 218 00b6 3C1D     		add	r4, r7, #4
- 219 00b8 0020     		mov	r0, #0
- 220 00ba FFF7FEFF 		bl	ADC_GetResult16
- 221 00be 031C     		mov	r3, r0
- 222 00c0 2380     		strh	r3, [r4]
-  85:.\main.c      ****             if (temp > lightMax){
- 223              		.loc 1 85 0
- 224 00c2 3A1D     		add	r2, r7, #4
- 225 00c4 BB1D     		add	r3, r7, #6
- 226 00c6 0021     		mov	r1, #0
- 227 00c8 525E     		ldrsh	r2, [r2, r1]
- 228 00ca 0021     		mov	r1, #0
- 229 00cc 5B5E     		ldrsh	r3, [r3, r1]
- 230 00ce 9A42     		cmp	r2, r3
- 231 00d0 14DD     		ble	.L8
-  86:.\main.c      ****                 lightMax = temp;
- 232              		.loc 1 86 0
- 233 00d2 BB1D     		add	r3, r7, #6
- 234 00d4 3A1D     		add	r2, r7, #4
- 235 00d6 1288     		ldrh	r2, [r2]
- 236 00d8 1A80     		strh	r2, [r3]
-  87:.\main.c      ****                 LCD_Position(0,0);
- 237              		.loc 1 87 0
- 238 00da 0020     		mov	r0, #0
- 239 00dc 0021     		mov	r1, #0
- 240 00de FFF7FEFF 		bl	LCD_Position
-  88:.\main.c      ****                 LCD_PrintString("                ");
- 241              		.loc 1 88 0
- 242 00e2 444B     		ldr	r3, .L14+16
- 243 00e4 181C     		mov	r0, r3
- 244 00e6 FFF7FEFF 		bl	LCD_PrintString
-  89:.\main.c      ****                 LCD_Position(0,0);
- 245              		.loc 1 89 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 8
+ 197 00ba D3E7     		b	.L8
+ 198              	.L7:
+ 199 00bc D2E7     		b	.L8
+ 200              	.L10:
+ 201 00be C046     		.align	2
+ 202              	.L9:
+ 203 00c0 00000000 		.word	target
+ 204 00c4 00000000 		.word	sw_int_ISR
+ 205 00c8 0C000000 		.word	.LC5
+ 206 00cc 00000000 		.word	running
+ 207 00d0 00000000 		.word	time
+ 208              		.cfi_endproc
+ 209              	.LFE34:
+ 210              		.size	main, .-main
+ 211              		.global	__aeabi_uldivmod
+ 212              		.section	.rodata
+ 213 001a 0000     		.align	2
+ 214              	.LC9:
+ 215 001c 20202020 		.ascii	"                \000"
+ 215      20202020 
+ 215      20202020 
+ 215      20202020 
+ 215      00
+ 216 002d 000000   		.align	2
+ 217              	.LC11:
+ 218 0030 743A2000 		.ascii	"t: \000"
+ 219              		.align	2
+ 220              	.LC13:
+ 221 0034 757300   		.ascii	"us\000"
+ 222 0037 00       		.section	.text.print_measurement,"ax",%progbits
+ 223              		.align	2
+ 224              		.global	print_measurement
+ 225              		.code	16
+ 226              		.thumb_func
+ 227              		.type	print_measurement, %function
+ 228              	print_measurement:
+ 229              	.LFB35:
+  84:.\main.c      **** }
+  85:.\main.c      **** 
+  86:.\main.c      **** void print_measurement(uint32 time){
+ 230              		.loc 1 86 0
+ 231              		.cfi_startproc
+ 232 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 233              		.cfi_def_cfa_offset 20
+ 234              		.cfi_offset 4, -20
+ 235              		.cfi_offset 5, -16
+ 236              		.cfi_offset 6, -12
+ 237              		.cfi_offset 7, -8
+ 238              		.cfi_offset 14, -4
+ 239 0002 87B0     		sub	sp, sp, #28
+ 240              		.cfi_def_cfa_offset 48
+ 241 0004 00AF     		add	r7, sp, #0
+ 242              		.cfi_def_cfa_register 7
+ 243 0006 F860     		str	r0, [r7, #12]
+  87:.\main.c      ****     uint64 time_us = ((uint64)time * 125) / 3000;
+ 244              		.loc 1 87 0
+ 245 0008 FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 7
 
 
- 246 00ea 0020     		mov	r0, #0
- 247 00ec 0021     		mov	r1, #0
- 248 00ee FFF7FEFF 		bl	LCD_Position
-  90:.\main.c      ****                 LCD_PrintNumber(lightMax);
- 249              		.loc 1 90 0
- 250 00f2 BB1D     		add	r3, r7, #6
- 251 00f4 1B88     		ldrh	r3, [r3]
- 252 00f6 181C     		mov	r0, r3
- 253 00f8 FFF7FEFF 		bl	LCD_PrintNumber
- 254              	.L8:
-  92:.\main.c      ****             if (updateBTN()){
- 255              		.loc 1 92 0
- 256 00fc FFF7FEFF 		bl	updateBTN
- 257 0100 031C     		mov	r3, r0
- 258 0102 002B     		cmp	r3, #0
- 259 0104 6DD0     		beq	.L7
-  93:.\main.c      ****                 if (BTN == SELECT){
- 260              		.loc 1 93 0
- 261 0106 3C4B     		ldr	r3, .L14+20
- 262 0108 1B78     		ldrb	r3, [r3]
- 263 010a DBB2     		uxtb	r3, r3
- 264 010c 012B     		cmp	r3, #1
- 265 010e 10D1     		bne	.L9
-  94:.\main.c      ****                     LCD_Position(1,0);
- 266              		.loc 1 94 0
- 267 0110 0120     		mov	r0, #1
- 268 0112 0021     		mov	r1, #0
- 269 0114 FFF7FEFF 		bl	LCD_Position
-  95:.\main.c      ****                     LCD_PrintString("                ");
- 270              		.loc 1 95 0
- 271 0118 364B     		ldr	r3, .L14+16
- 272 011a 181C     		mov	r0, r3
- 273 011c FFF7FEFF 		bl	LCD_PrintString
-  96:.\main.c      ****                     LCD_Position(1,0);
- 274              		.loc 1 96 0
- 275 0120 0120     		mov	r0, #1
- 276 0122 0021     		mov	r1, #0
- 277 0124 FFF7FEFF 		bl	LCD_Position
-  97:.\main.c      ****                     LCD_PrintString("Select pressed");
- 278              		.loc 1 97 0
- 279 0128 344B     		ldr	r3, .L14+24
- 280 012a 181C     		mov	r0, r3
- 281 012c FFF7FEFF 		bl	LCD_PrintString
- 282 0130 57E0     		b	.L7
- 283              	.L9:
-  99:.\main.c      ****                 else if(BTN == LEFT){
- 284              		.loc 1 99 0
- 285 0132 314B     		ldr	r3, .L14+20
- 286 0134 1B78     		ldrb	r3, [r3]
- 287 0136 DBB2     		uxtb	r3, r3
- 288 0138 022B     		cmp	r3, #2
- 289 013a 10D1     		bne	.L10
- 100:.\main.c      ****                     LCD_Position(1,0);
- 290              		.loc 1 100 0
- 291 013c 0120     		mov	r0, #1
- 292 013e 0021     		mov	r1, #0
- 293 0140 FFF7FEFF 		bl	LCD_Position
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 9
+ 246 000a 191C     		mov	r1, r3
+ 247 000c 0023     		mov	r3, #0
+ 248 000e 1A1C     		mov	r2, r3
+ 249 0010 0B1C     		mov	r3, r1
+ 250 0012 141C     		mov	r4, r2
+ 251 0014 D80E     		lsr	r0, r3, #27
+ 252 0016 6501     		lsl	r5, r4, #5
+ 253 0018 7D60     		str	r5, [r7, #4]
+ 254 001a 7D68     		ldr	r5, [r7, #4]
+ 255 001c 0543     		orr	r5, r0
+ 256 001e 7D60     		str	r5, [r7, #4]
+ 257 0020 5801     		lsl	r0, r3, #5
+ 258 0022 3860     		str	r0, [r7]
+ 259 0024 3B68     		ldr	r3, [r7]
+ 260 0026 7C68     		ldr	r4, [r7, #4]
+ 261 0028 5B1A     		sub	r3, r3, r1
+ 262 002a 9441     		sbc	r4, r4, r2
+ 263 002c 980F     		lsr	r0, r3, #30
+ 264 002e A600     		lsl	r6, r4, #2
+ 265 0030 0643     		orr	r6, r0
+ 266 0032 9D00     		lsl	r5, r3, #2
+ 267 0034 2B1C     		mov	r3, r5
+ 268 0036 341C     		mov	r4, r6
+ 269 0038 5B18     		add	r3, r3, r1
+ 270 003a 5441     		adc	r4, r4, r2
+ 271 003c 181C     		mov	r0, r3
+ 272 003e 211C     		mov	r1, r4
+ 273 0040 884B     		ldr	r3, .L12+4
+ 274 0042 874A     		ldr	r2, .L12
+ 275 0044 FFF7FEFF 		bl	__aeabi_uldivmod
+ 276 0048 031C     		mov	r3, r0
+ 277 004a 0C1C     		mov	r4, r1
+ 278 004c 3B61     		str	r3, [r7, #16]
+ 279 004e 7C61     		str	r4, [r7, #20]
+  88:.\main.c      ****     LCD_Position(1,0);
+ 280              		.loc 1 88 0
+ 281 0050 0120     		mov	r0, #1
+ 282 0052 0021     		mov	r1, #0
+ 283 0054 FFF7FEFF 		bl	LCD_Position
+  89:.\main.c      ****     LCD_PrintString("                ");
+ 284              		.loc 1 89 0
+ 285 0058 8F4B     		ldr	r3, .L12+56
+ 286 005a 181C     		mov	r0, r3
+ 287 005c FFF7FEFF 		bl	LCD_PrintString
+  90:.\main.c      ****     LCD_Position(1,0);
+ 288              		.loc 1 90 0
+ 289 0060 0120     		mov	r0, #1
+ 290 0062 0021     		mov	r1, #0
+ 291 0064 FFF7FEFF 		bl	LCD_Position
+  91:.\main.c      ****     LCD_PrintString("t: ");
+ 292              		.loc 1 91 0
+ 293 0068 8C4B     		ldr	r3, .L12+60
+ 294 006a 181C     		mov	r0, r3
+ 295 006c FFF7FEFF 		bl	LCD_PrintString
+  92:.\main.c      ****     LCD_PutChar(time_us/100000000u + CONVERT_TO_ASCII);
+ 296              		.loc 1 92 0
+ 297 0070 3B69     		ldr	r3, [r7, #16]
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 8
 
 
- 101:.\main.c      ****                     LCD_PrintString("                ");
- 294              		.loc 1 101 0
- 295 0144 2B4B     		ldr	r3, .L14+16
- 296 0146 181C     		mov	r0, r3
- 297 0148 FFF7FEFF 		bl	LCD_PrintString
- 102:.\main.c      ****                     LCD_Position(1,0);
- 298              		.loc 1 102 0
- 299 014c 0120     		mov	r0, #1
- 300 014e 0021     		mov	r1, #0
- 301 0150 FFF7FEFF 		bl	LCD_Position
- 103:.\main.c      ****                     LCD_PrintString("Left pressed");
- 302              		.loc 1 103 0
- 303 0154 2A4B     		ldr	r3, .L14+28
- 304 0156 181C     		mov	r0, r3
- 305 0158 FFF7FEFF 		bl	LCD_PrintString
- 306 015c 41E0     		b	.L7
- 307              	.L10:
- 105:.\main.c      ****                 else if(BTN == RIGHT){
- 308              		.loc 1 105 0
- 309 015e 264B     		ldr	r3, .L14+20
- 310 0160 1B78     		ldrb	r3, [r3]
- 311 0162 DBB2     		uxtb	r3, r3
- 312 0164 052B     		cmp	r3, #5
- 313 0166 10D1     		bne	.L11
- 106:.\main.c      ****                     LCD_Position(1,0);
- 314              		.loc 1 106 0
- 315 0168 0120     		mov	r0, #1
- 316 016a 0021     		mov	r1, #0
- 317 016c FFF7FEFF 		bl	LCD_Position
- 107:.\main.c      ****                     LCD_PrintString("                ");
- 318              		.loc 1 107 0
- 319 0170 204B     		ldr	r3, .L14+16
- 320 0172 181C     		mov	r0, r3
- 321 0174 FFF7FEFF 		bl	LCD_PrintString
- 108:.\main.c      ****                     LCD_Position(1,0);
- 322              		.loc 1 108 0
- 323 0178 0120     		mov	r0, #1
- 324 017a 0021     		mov	r1, #0
- 325 017c FFF7FEFF 		bl	LCD_Position
- 109:.\main.c      ****                     LCD_PrintString("Right pressed");
- 326              		.loc 1 109 0
- 327 0180 204B     		ldr	r3, .L14+32
- 328 0182 181C     		mov	r0, r3
- 329 0184 FFF7FEFF 		bl	LCD_PrintString
- 330 0188 2BE0     		b	.L7
- 331              	.L11:
- 111:.\main.c      ****                 else if(BTN == UP){
- 332              		.loc 1 111 0
- 333 018a 1B4B     		ldr	r3, .L14+20
- 334 018c 1B78     		ldrb	r3, [r3]
- 335 018e DBB2     		uxtb	r3, r3
- 336 0190 042B     		cmp	r3, #4
- 337 0192 10D1     		bne	.L12
- 112:.\main.c      ****                     LCD_Position(1,0);
- 338              		.loc 1 112 0
- 339 0194 0120     		mov	r0, #1
- 340 0196 0021     		mov	r1, #0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 10
+ 298 0072 7C69     		ldr	r4, [r7, #20]
+ 299 0074 181C     		mov	r0, r3
+ 300 0076 211C     		mov	r1, r4
+ 301 0078 7B4A     		ldr	r2, .L12+8
+ 302 007a 7C4B     		ldr	r3, .L12+12
+ 303 007c FFF7FEFF 		bl	__aeabi_uldivmod
+ 304 0080 031C     		mov	r3, r0
+ 305 0082 0C1C     		mov	r4, r1
+ 306 0084 DBB2     		uxtb	r3, r3
+ 307 0086 3033     		add	r3, r3, #48
+ 308 0088 DBB2     		uxtb	r3, r3
+ 309 008a 181C     		mov	r0, r3
+ 310 008c FFF7FEFF 		bl	LCD_PutChar
+  93:.\main.c      ****     time_us %= 100000000;
+ 311              		.loc 1 93 0
+ 312 0090 3B69     		ldr	r3, [r7, #16]
+ 313 0092 7C69     		ldr	r4, [r7, #20]
+ 314 0094 181C     		mov	r0, r3
+ 315 0096 211C     		mov	r1, r4
+ 316 0098 734A     		ldr	r2, .L12+8
+ 317 009a 744B     		ldr	r3, .L12+12
+ 318 009c FFF7FEFF 		bl	__aeabi_uldivmod
+ 319 00a0 1C1C     		mov	r4, r3
+ 320 00a2 131C     		mov	r3, r2
+ 321 00a4 3B61     		str	r3, [r7, #16]
+ 322 00a6 7C61     		str	r4, [r7, #20]
+  94:.\main.c      ****     LCD_PutChar(time_us/10000000u + CONVERT_TO_ASCII);
+ 323              		.loc 1 94 0
+ 324 00a8 3B69     		ldr	r3, [r7, #16]
+ 325 00aa 7C69     		ldr	r4, [r7, #20]
+ 326 00ac 181C     		mov	r0, r3
+ 327 00ae 211C     		mov	r1, r4
+ 328 00b0 6F4A     		ldr	r2, .L12+16
+ 329 00b2 704B     		ldr	r3, .L12+20
+ 330 00b4 FFF7FEFF 		bl	__aeabi_uldivmod
+ 331 00b8 031C     		mov	r3, r0
+ 332 00ba 0C1C     		mov	r4, r1
+ 333 00bc DBB2     		uxtb	r3, r3
+ 334 00be 3033     		add	r3, r3, #48
+ 335 00c0 DBB2     		uxtb	r3, r3
+ 336 00c2 181C     		mov	r0, r3
+ 337 00c4 FFF7FEFF 		bl	LCD_PutChar
+  95:.\main.c      ****     time_us %= 10000000;
+ 338              		.loc 1 95 0
+ 339 00c8 3B69     		ldr	r3, [r7, #16]
+ 340 00ca 7C69     		ldr	r4, [r7, #20]
+ 341 00cc 181C     		mov	r0, r3
+ 342 00ce 211C     		mov	r1, r4
+ 343 00d0 674A     		ldr	r2, .L12+16
+ 344 00d2 684B     		ldr	r3, .L12+20
+ 345 00d4 FFF7FEFF 		bl	__aeabi_uldivmod
+ 346 00d8 1C1C     		mov	r4, r3
+ 347 00da 131C     		mov	r3, r2
+ 348 00dc 3B61     		str	r3, [r7, #16]
+ 349 00de 7C61     		str	r4, [r7, #20]
+  96:.\main.c      ****     LCD_PutChar(time_us/1000000u + CONVERT_TO_ASCII);
+ 350              		.loc 1 96 0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 9
 
 
- 341 0198 FFF7FEFF 		bl	LCD_Position
- 113:.\main.c      ****                     LCD_PrintString("                ");
- 342              		.loc 1 113 0
- 343 019c 154B     		ldr	r3, .L14+16
- 344 019e 181C     		mov	r0, r3
- 345 01a0 FFF7FEFF 		bl	LCD_PrintString
- 114:.\main.c      ****                     LCD_Position(1,0);
- 346              		.loc 1 114 0
- 347 01a4 0120     		mov	r0, #1
- 348 01a6 0021     		mov	r1, #0
- 349 01a8 FFF7FEFF 		bl	LCD_Position
- 115:.\main.c      ****                     LCD_PrintString("Up pressed");
- 350              		.loc 1 115 0
- 351 01ac 164B     		ldr	r3, .L14+36
- 352 01ae 181C     		mov	r0, r3
- 353 01b0 FFF7FEFF 		bl	LCD_PrintString
- 354 01b4 15E0     		b	.L7
- 355              	.L12:
- 117:.\main.c      ****                 else if(BTN == DOWN){
- 356              		.loc 1 117 0
- 357 01b6 104B     		ldr	r3, .L14+20
- 358 01b8 1B78     		ldrb	r3, [r3]
- 359 01ba DBB2     		uxtb	r3, r3
- 360 01bc 032B     		cmp	r3, #3
- 361 01be 10D1     		bne	.L7
- 118:.\main.c      ****                     LCD_Position(1,0);
- 362              		.loc 1 118 0
- 363 01c0 0120     		mov	r0, #1
- 364 01c2 0021     		mov	r1, #0
- 365 01c4 FFF7FEFF 		bl	LCD_Position
- 119:.\main.c      ****                     LCD_PrintString("                ");
- 366              		.loc 1 119 0
- 367 01c8 0A4B     		ldr	r3, .L14+16
- 368 01ca 181C     		mov	r0, r3
- 369 01cc FFF7FEFF 		bl	LCD_PrintString
- 120:.\main.c      ****                     LCD_Position(1,0);
- 370              		.loc 1 120 0
- 371 01d0 0120     		mov	r0, #1
- 372 01d2 0021     		mov	r1, #0
- 373 01d4 FFF7FEFF 		bl	LCD_Position
- 121:.\main.c      ****                     LCD_PrintString("Down pressed");
- 374              		.loc 1 121 0
- 375 01d8 0C4B     		ldr	r3, .L14+40
- 376 01da 181C     		mov	r0, r3
- 377 01dc FFF7FEFF 		bl	LCD_PrintString
- 378              	.LBE2:
- 379              		.loc 1 125 0
- 380 01e0 42E7     		b	.L13
- 381              	.L7:
- 382 01e2 41E7     		b	.L13
- 383              	.L15:
- 384              		.align	2
- 385              	.L14:
- 386 01e4 00000000 		.word	sw_int_ISR
- 387 01e8 0C000000 		.word	.LC4
- 388 01ec 00000000 		.word	running
- 389 01f0 00000000 		.word	time
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 11
+ 351 00e0 3B69     		ldr	r3, [r7, #16]
+ 352 00e2 7C69     		ldr	r4, [r7, #20]
+ 353 00e4 181C     		mov	r0, r3
+ 354 00e6 211C     		mov	r1, r4
+ 355 00e8 634A     		ldr	r2, .L12+24
+ 356 00ea 644B     		ldr	r3, .L12+28
+ 357 00ec FFF7FEFF 		bl	__aeabi_uldivmod
+ 358 00f0 031C     		mov	r3, r0
+ 359 00f2 0C1C     		mov	r4, r1
+ 360 00f4 DBB2     		uxtb	r3, r3
+ 361 00f6 3033     		add	r3, r3, #48
+ 362 00f8 DBB2     		uxtb	r3, r3
+ 363 00fa 181C     		mov	r0, r3
+ 364 00fc FFF7FEFF 		bl	LCD_PutChar
+  97:.\main.c      ****     time_us %= 1000000;
+ 365              		.loc 1 97 0
+ 366 0100 3B69     		ldr	r3, [r7, #16]
+ 367 0102 7C69     		ldr	r4, [r7, #20]
+ 368 0104 181C     		mov	r0, r3
+ 369 0106 211C     		mov	r1, r4
+ 370 0108 5B4A     		ldr	r2, .L12+24
+ 371 010a 5C4B     		ldr	r3, .L12+28
+ 372 010c FFF7FEFF 		bl	__aeabi_uldivmod
+ 373 0110 1C1C     		mov	r4, r3
+ 374 0112 131C     		mov	r3, r2
+ 375 0114 3B61     		str	r3, [r7, #16]
+ 376 0116 7C61     		str	r4, [r7, #20]
+  98:.\main.c      ****     LCD_PutChar(',');
+ 377              		.loc 1 98 0
+ 378 0118 2C20     		mov	r0, #44
+ 379 011a FFF7FEFF 		bl	LCD_PutChar
+  99:.\main.c      ****     LCD_PutChar(time_us/100000u + CONVERT_TO_ASCII);
+ 380              		.loc 1 99 0
+ 381 011e 3B69     		ldr	r3, [r7, #16]
+ 382 0120 7C69     		ldr	r4, [r7, #20]
+ 383 0122 181C     		mov	r0, r3
+ 384 0124 211C     		mov	r1, r4
+ 385 0126 564A     		ldr	r2, .L12+32
+ 386 0128 564B     		ldr	r3, .L12+36
+ 387 012a FFF7FEFF 		bl	__aeabi_uldivmod
+ 388 012e 031C     		mov	r3, r0
+ 389 0130 0C1C     		mov	r4, r1
+ 390 0132 DBB2     		uxtb	r3, r3
+ 391 0134 3033     		add	r3, r3, #48
+ 392 0136 DBB2     		uxtb	r3, r3
+ 393 0138 181C     		mov	r0, r3
+ 394 013a FFF7FEFF 		bl	LCD_PutChar
+ 100:.\main.c      ****     time_us %= 100000;
+ 395              		.loc 1 100 0
+ 396 013e 3B69     		ldr	r3, [r7, #16]
+ 397 0140 7C69     		ldr	r4, [r7, #20]
+ 398 0142 181C     		mov	r0, r3
+ 399 0144 211C     		mov	r1, r4
+ 400 0146 4E4A     		ldr	r2, .L12+32
+ 401 0148 4E4B     		ldr	r3, .L12+36
+ 402 014a FFF7FEFF 		bl	__aeabi_uldivmod
+ 403 014e 1C1C     		mov	r4, r3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 10
 
 
- 390 01f4 1C000000 		.word	.LC8
- 391 01f8 00000000 		.word	BTN
- 392 01fc 30000000 		.word	.LC11
- 393 0200 40000000 		.word	.LC13
- 394 0204 50000000 		.word	.LC15
- 395 0208 60000000 		.word	.LC17
- 396 020c 6C000000 		.word	.LC19
- 397              		.cfi_endproc
- 398              	.LFE34:
- 399              		.size	main, .-main
- 400              		.global	__aeabi_uldivmod
- 401              		.section	.rodata
- 402 0079 000000   		.align	2
- 403              	.LC22:
- 404 007c 743A2000 		.ascii	"t: \000"
- 405              		.align	2
- 406              	.LC24:
- 407 0080 757300   		.ascii	"us\000"
- 408 0083 00       		.section	.text.print_measurement,"ax",%progbits
- 409              		.align	2
- 410              		.global	print_measurement
- 411              		.code	16
- 412              		.thumb_func
- 413              		.type	print_measurement, %function
- 414              	print_measurement:
- 415              	.LFB35:
- 126:.\main.c      **** }
- 127:.\main.c      **** 
- 128:.\main.c      **** void print_measurement(uint32 time){
- 416              		.loc 1 128 0
- 417              		.cfi_startproc
- 418 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 419              		.cfi_def_cfa_offset 20
- 420              		.cfi_offset 4, -20
- 421              		.cfi_offset 5, -16
- 422              		.cfi_offset 6, -12
- 423              		.cfi_offset 7, -8
- 424              		.cfi_offset 14, -4
- 425 0002 87B0     		sub	sp, sp, #28
- 426              		.cfi_def_cfa_offset 48
- 427 0004 00AF     		add	r7, sp, #0
- 428              		.cfi_def_cfa_register 7
- 429 0006 F860     		str	r0, [r7, #12]
- 129:.\main.c      ****     uint64 time_us = ((uint64)time * 125) / 3000;
- 430              		.loc 1 129 0
- 431 0008 FB68     		ldr	r3, [r7, #12]
- 432 000a 191C     		mov	r1, r3
- 433 000c 0023     		mov	r3, #0
- 434 000e 1A1C     		mov	r2, r3
- 435 0010 0B1C     		mov	r3, r1
- 436 0012 141C     		mov	r4, r2
- 437 0014 D80E     		lsr	r0, r3, #27
- 438 0016 6501     		lsl	r5, r4, #5
- 439 0018 7D60     		str	r5, [r7, #4]
- 440 001a 7D68     		ldr	r5, [r7, #4]
- 441 001c 0543     		orr	r5, r0
- 442 001e 7D60     		str	r5, [r7, #4]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 12
+ 404 0150 131C     		mov	r3, r2
+ 405 0152 3B61     		str	r3, [r7, #16]
+ 406 0154 7C61     		str	r4, [r7, #20]
+ 101:.\main.c      ****     LCD_PutChar(time_us/10000u + CONVERT_TO_ASCII);
+ 407              		.loc 1 101 0
+ 408 0156 3B69     		ldr	r3, [r7, #16]
+ 409 0158 7C69     		ldr	r4, [r7, #20]
+ 410 015a 181C     		mov	r0, r3
+ 411 015c 211C     		mov	r1, r4
+ 412 015e 4A4A     		ldr	r2, .L12+40
+ 413 0160 4A4B     		ldr	r3, .L12+44
+ 414 0162 FFF7FEFF 		bl	__aeabi_uldivmod
+ 415 0166 031C     		mov	r3, r0
+ 416 0168 0C1C     		mov	r4, r1
+ 417 016a DBB2     		uxtb	r3, r3
+ 418 016c 3033     		add	r3, r3, #48
+ 419 016e DBB2     		uxtb	r3, r3
+ 420 0170 181C     		mov	r0, r3
+ 421 0172 FFF7FEFF 		bl	LCD_PutChar
+ 102:.\main.c      ****     time_us %= 10000;
+ 422              		.loc 1 102 0
+ 423 0176 3B69     		ldr	r3, [r7, #16]
+ 424 0178 7C69     		ldr	r4, [r7, #20]
+ 425 017a 181C     		mov	r0, r3
+ 426 017c 211C     		mov	r1, r4
+ 427 017e 424A     		ldr	r2, .L12+40
+ 428 0180 424B     		ldr	r3, .L12+44
+ 429 0182 FFF7FEFF 		bl	__aeabi_uldivmod
+ 430 0186 1C1C     		mov	r4, r3
+ 431 0188 131C     		mov	r3, r2
+ 432 018a 3B61     		str	r3, [r7, #16]
+ 433 018c 7C61     		str	r4, [r7, #20]
+ 103:.\main.c      ****     LCD_PutChar(time_us/1000u + CONVERT_TO_ASCII);
+ 434              		.loc 1 103 0
+ 435 018e 3B69     		ldr	r3, [r7, #16]
+ 436 0190 7C69     		ldr	r4, [r7, #20]
+ 437 0192 181C     		mov	r0, r3
+ 438 0194 211C     		mov	r1, r4
+ 439 0196 3E4A     		ldr	r2, .L12+48
+ 440 0198 3E4B     		ldr	r3, .L12+52
+ 441 019a FFF7FEFF 		bl	__aeabi_uldivmod
+ 442 019e 031C     		mov	r3, r0
+ 443 01a0 0C1C     		mov	r4, r1
+ 444 01a2 DBB2     		uxtb	r3, r3
+ 445 01a4 3033     		add	r3, r3, #48
+ 446 01a6 DBB2     		uxtb	r3, r3
+ 447 01a8 181C     		mov	r0, r3
+ 448 01aa FFF7FEFF 		bl	LCD_PutChar
+ 104:.\main.c      ****     time_us %= 1000;
+ 449              		.loc 1 104 0
+ 450 01ae 3B69     		ldr	r3, [r7, #16]
+ 451 01b0 7C69     		ldr	r4, [r7, #20]
+ 452 01b2 181C     		mov	r0, r3
+ 453 01b4 211C     		mov	r1, r4
+ 454 01b6 364A     		ldr	r2, .L12+48
+ 455 01b8 364B     		ldr	r3, .L12+52
+ 456 01ba FFF7FEFF 		bl	__aeabi_uldivmod
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 11
 
 
- 443 0020 5801     		lsl	r0, r3, #5
- 444 0022 3860     		str	r0, [r7]
- 445 0024 3B68     		ldr	r3, [r7]
- 446 0026 7C68     		ldr	r4, [r7, #4]
- 447 0028 5B1A     		sub	r3, r3, r1
- 448 002a 9441     		sbc	r4, r4, r2
- 449 002c 980F     		lsr	r0, r3, #30
- 450 002e A600     		lsl	r6, r4, #2
- 451 0030 0643     		orr	r6, r0
- 452 0032 9D00     		lsl	r5, r3, #2
- 453 0034 2B1C     		mov	r3, r5
- 454 0036 341C     		mov	r4, r6
- 455 0038 5B18     		add	r3, r3, r1
- 456 003a 5441     		adc	r4, r4, r2
- 457 003c 181C     		mov	r0, r3
- 458 003e 211C     		mov	r1, r4
- 459 0040 884B     		ldr	r3, .L17+4
- 460 0042 874A     		ldr	r2, .L17
- 461 0044 FFF7FEFF 		bl	__aeabi_uldivmod
- 462 0048 031C     		mov	r3, r0
- 463 004a 0C1C     		mov	r4, r1
- 464 004c 3B61     		str	r3, [r7, #16]
- 465 004e 7C61     		str	r4, [r7, #20]
- 130:.\main.c      ****     LCD_Position(1,0);
- 466              		.loc 1 130 0
- 467 0050 0120     		mov	r0, #1
- 468 0052 0021     		mov	r1, #0
- 469 0054 FFF7FEFF 		bl	LCD_Position
- 131:.\main.c      ****     LCD_PrintString("                ");
- 470              		.loc 1 131 0
- 471 0058 8F4B     		ldr	r3, .L17+56
- 472 005a 181C     		mov	r0, r3
- 473 005c FFF7FEFF 		bl	LCD_PrintString
- 132:.\main.c      ****     LCD_Position(1,0);
- 474              		.loc 1 132 0
- 475 0060 0120     		mov	r0, #1
- 476 0062 0021     		mov	r1, #0
- 477 0064 FFF7FEFF 		bl	LCD_Position
- 133:.\main.c      ****     LCD_PrintString("t: ");
- 478              		.loc 1 133 0
- 479 0068 8C4B     		ldr	r3, .L17+60
- 480 006a 181C     		mov	r0, r3
- 481 006c FFF7FEFF 		bl	LCD_PrintString
- 134:.\main.c      ****     LCD_PutChar(time_us/100000000u + CONVERT_TO_ASCII);
- 482              		.loc 1 134 0
- 483 0070 3B69     		ldr	r3, [r7, #16]
- 484 0072 7C69     		ldr	r4, [r7, #20]
- 485 0074 181C     		mov	r0, r3
- 486 0076 211C     		mov	r1, r4
- 487 0078 7B4A     		ldr	r2, .L17+8
- 488 007a 7C4B     		ldr	r3, .L17+12
- 489 007c FFF7FEFF 		bl	__aeabi_uldivmod
- 490 0080 031C     		mov	r3, r0
- 491 0082 0C1C     		mov	r4, r1
- 492 0084 DBB2     		uxtb	r3, r3
- 493 0086 3033     		add	r3, r3, #48
- 494 0088 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 13
+ 457 01be 1C1C     		mov	r4, r3
+ 458 01c0 131C     		mov	r3, r2
+ 459 01c2 3B61     		str	r3, [r7, #16]
+ 460 01c4 7C61     		str	r4, [r7, #20]
+ 105:.\main.c      ****     LCD_PutChar(',');
+ 461              		.loc 1 105 0
+ 462 01c6 2C20     		mov	r0, #44
+ 463 01c8 FFF7FEFF 		bl	LCD_PutChar
+ 106:.\main.c      ****     LCD_PutChar(time_us/100u + CONVERT_TO_ASCII);
+ 464              		.loc 1 106 0
+ 465 01cc 3B69     		ldr	r3, [r7, #16]
+ 466 01ce 7C69     		ldr	r4, [r7, #20]
+ 467 01d0 181C     		mov	r0, r3
+ 468 01d2 211C     		mov	r1, r4
+ 469 01d4 6422     		mov	r2, #100
+ 470 01d6 0023     		mov	r3, #0
+ 471 01d8 FFF7FEFF 		bl	__aeabi_uldivmod
+ 472 01dc 031C     		mov	r3, r0
+ 473 01de 0C1C     		mov	r4, r1
+ 474 01e0 DBB2     		uxtb	r3, r3
+ 475 01e2 3033     		add	r3, r3, #48
+ 476 01e4 DBB2     		uxtb	r3, r3
+ 477 01e6 181C     		mov	r0, r3
+ 478 01e8 FFF7FEFF 		bl	LCD_PutChar
+ 107:.\main.c      ****     time_us %= 100;
+ 479              		.loc 1 107 0
+ 480 01ec 3B69     		ldr	r3, [r7, #16]
+ 481 01ee 7C69     		ldr	r4, [r7, #20]
+ 482 01f0 181C     		mov	r0, r3
+ 483 01f2 211C     		mov	r1, r4
+ 484 01f4 6422     		mov	r2, #100
+ 485 01f6 0023     		mov	r3, #0
+ 486 01f8 FFF7FEFF 		bl	__aeabi_uldivmod
+ 487 01fc 1C1C     		mov	r4, r3
+ 488 01fe 131C     		mov	r3, r2
+ 489 0200 3B61     		str	r3, [r7, #16]
+ 490 0202 7C61     		str	r4, [r7, #20]
+ 108:.\main.c      ****     LCD_PutChar(time_us/10u + CONVERT_TO_ASCII);
+ 491              		.loc 1 108 0
+ 492 0204 3B69     		ldr	r3, [r7, #16]
+ 493 0206 7C69     		ldr	r4, [r7, #20]
+ 494 0208 181C     		mov	r0, r3
+ 495 020a 211C     		mov	r1, r4
+ 496 020c 0A22     		mov	r2, #10
+ 497 020e 0023     		mov	r3, #0
+ 498 0210 FFF7FEFF 		bl	__aeabi_uldivmod
+ 499 0214 031C     		mov	r3, r0
+ 500 0216 0C1C     		mov	r4, r1
+ 501 0218 DBB2     		uxtb	r3, r3
+ 502 021a 3033     		add	r3, r3, #48
+ 503 021c DBB2     		uxtb	r3, r3
+ 504 021e 181C     		mov	r0, r3
+ 505 0220 FFF7FEFF 		bl	LCD_PutChar
+ 109:.\main.c      ****     time_us %= 10;
+ 506              		.loc 1 109 0
+ 507 0224 3B69     		ldr	r3, [r7, #16]
+ 508 0226 7C69     		ldr	r4, [r7, #20]
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 12
 
 
- 495 008a 181C     		mov	r0, r3
- 496 008c FFF7FEFF 		bl	LCD_PutChar
- 135:.\main.c      ****     time_us %= 100000000;
- 497              		.loc 1 135 0
- 498 0090 3B69     		ldr	r3, [r7, #16]
- 499 0092 7C69     		ldr	r4, [r7, #20]
- 500 0094 181C     		mov	r0, r3
- 501 0096 211C     		mov	r1, r4
- 502 0098 734A     		ldr	r2, .L17+8
- 503 009a 744B     		ldr	r3, .L17+12
- 504 009c FFF7FEFF 		bl	__aeabi_uldivmod
- 505 00a0 1C1C     		mov	r4, r3
- 506 00a2 131C     		mov	r3, r2
- 507 00a4 3B61     		str	r3, [r7, #16]
- 508 00a6 7C61     		str	r4, [r7, #20]
- 136:.\main.c      ****     LCD_PutChar(time_us/10000000u + CONVERT_TO_ASCII);
- 509              		.loc 1 136 0
- 510 00a8 3B69     		ldr	r3, [r7, #16]
- 511 00aa 7C69     		ldr	r4, [r7, #20]
- 512 00ac 181C     		mov	r0, r3
- 513 00ae 211C     		mov	r1, r4
- 514 00b0 6F4A     		ldr	r2, .L17+16
- 515 00b2 704B     		ldr	r3, .L17+20
- 516 00b4 FFF7FEFF 		bl	__aeabi_uldivmod
- 517 00b8 031C     		mov	r3, r0
- 518 00ba 0C1C     		mov	r4, r1
- 519 00bc DBB2     		uxtb	r3, r3
- 520 00be 3033     		add	r3, r3, #48
- 521 00c0 DBB2     		uxtb	r3, r3
- 522 00c2 181C     		mov	r0, r3
- 523 00c4 FFF7FEFF 		bl	LCD_PutChar
- 137:.\main.c      ****     time_us %= 10000000;
- 524              		.loc 1 137 0
- 525 00c8 3B69     		ldr	r3, [r7, #16]
- 526 00ca 7C69     		ldr	r4, [r7, #20]
- 527 00cc 181C     		mov	r0, r3
- 528 00ce 211C     		mov	r1, r4
- 529 00d0 674A     		ldr	r2, .L17+16
- 530 00d2 684B     		ldr	r3, .L17+20
- 531 00d4 FFF7FEFF 		bl	__aeabi_uldivmod
- 532 00d8 1C1C     		mov	r4, r3
- 533 00da 131C     		mov	r3, r2
- 534 00dc 3B61     		str	r3, [r7, #16]
- 535 00de 7C61     		str	r4, [r7, #20]
- 138:.\main.c      ****     LCD_PutChar(time_us/1000000u + CONVERT_TO_ASCII);
- 536              		.loc 1 138 0
- 537 00e0 3B69     		ldr	r3, [r7, #16]
- 538 00e2 7C69     		ldr	r4, [r7, #20]
- 539 00e4 181C     		mov	r0, r3
- 540 00e6 211C     		mov	r1, r4
- 541 00e8 634A     		ldr	r2, .L17+24
- 542 00ea 644B     		ldr	r3, .L17+28
- 543 00ec FFF7FEFF 		bl	__aeabi_uldivmod
- 544 00f0 031C     		mov	r3, r0
- 545 00f2 0C1C     		mov	r4, r1
- 546 00f4 DBB2     		uxtb	r3, r3
- 547 00f6 3033     		add	r3, r3, #48
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 14
+ 509 0228 181C     		mov	r0, r3
+ 510 022a 211C     		mov	r1, r4
+ 511 022c 0A22     		mov	r2, #10
+ 512 022e 0023     		mov	r3, #0
+ 513 0230 FFF7FEFF 		bl	__aeabi_uldivmod
+ 514 0234 1C1C     		mov	r4, r3
+ 515 0236 131C     		mov	r3, r2
+ 516 0238 3B61     		str	r3, [r7, #16]
+ 517 023a 7C61     		str	r4, [r7, #20]
+ 110:.\main.c      ****     LCD_PutChar(time_us + CONVERT_TO_ASCII);
+ 518              		.loc 1 110 0
+ 519 023c 3B69     		ldr	r3, [r7, #16]
+ 520 023e 7C69     		ldr	r4, [r7, #20]
+ 521 0240 DBB2     		uxtb	r3, r3
+ 522 0242 3033     		add	r3, r3, #48
+ 523 0244 DBB2     		uxtb	r3, r3
+ 524 0246 181C     		mov	r0, r3
+ 525 0248 FFF7FEFF 		bl	LCD_PutChar
+ 111:.\main.c      ****     LCD_PrintString("us");
+ 526              		.loc 1 111 0
+ 527 024c 144B     		ldr	r3, .L12+64
+ 528 024e 181C     		mov	r0, r3
+ 529 0250 FFF7FEFF 		bl	LCD_PrintString
+ 112:.\main.c      **** }...
+ 530              		.loc 1 112 0
+ 531 0254 BD46     		mov	sp, r7
+ 532 0256 07B0     		add	sp, sp, #28
+ 533              		@ sp needed
+ 534 0258 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 535              	.L13:
+ 536 025a C046C046 		.align	3
+ 536      C046
+ 537              	.L12:
+ 538 0260 B80B0000 		.word	3000
+ 539 0264 00000000 		.word	0
+ 540 0268 00E1F505 		.word	100000000
+ 541 026c 00000000 		.word	0
+ 542 0270 80969800 		.word	10000000
+ 543 0274 00000000 		.word	0
+ 544 0278 40420F00 		.word	1000000
+ 545 027c 00000000 		.word	0
+ 546 0280 A0860100 		.word	100000
+ 547 0284 00000000 		.word	0
+ 548 0288 10270000 		.word	10000
+ 549 028c 00000000 		.word	0
+ 550 0290 E8030000 		.word	1000
+ 551 0294 00000000 		.word	0
+ 552 0298 1C000000 		.word	.LC9
+ 553 029c 30000000 		.word	.LC11
+ 554 02a0 34000000 		.word	.LC13
+ 555              		.cfi_endproc
+ 556              	.LFE35:
+ 557              		.size	print_measurement, .-print_measurement
+ 558 02a4 C046C046 		.text
+ 559              	.Letext0:
+ 560              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
+ 561              		.file 3 ".\\menus.h"
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 13
 
 
- 548 00f8 DBB2     		uxtb	r3, r3
- 549 00fa 181C     		mov	r0, r3
- 550 00fc FFF7FEFF 		bl	LCD_PutChar
- 139:.\main.c      ****     time_us %= 1000000;
- 551              		.loc 1 139 0
- 552 0100 3B69     		ldr	r3, [r7, #16]
- 553 0102 7C69     		ldr	r4, [r7, #20]
- 554 0104 181C     		mov	r0, r3
- 555 0106 211C     		mov	r1, r4
- 556 0108 5B4A     		ldr	r2, .L17+24
- 557 010a 5C4B     		ldr	r3, .L17+28
- 558 010c FFF7FEFF 		bl	__aeabi_uldivmod
- 559 0110 1C1C     		mov	r4, r3
- 560 0112 131C     		mov	r3, r2
- 561 0114 3B61     		str	r3, [r7, #16]
- 562 0116 7C61     		str	r4, [r7, #20]
- 140:.\main.c      ****     LCD_PutChar(',');
- 563              		.loc 1 140 0
- 564 0118 2C20     		mov	r0, #44
- 565 011a FFF7FEFF 		bl	LCD_PutChar
- 141:.\main.c      ****     LCD_PutChar(time_us/100000u + CONVERT_TO_ASCII);
- 566              		.loc 1 141 0
- 567 011e 3B69     		ldr	r3, [r7, #16]
- 568 0120 7C69     		ldr	r4, [r7, #20]
- 569 0122 181C     		mov	r0, r3
- 570 0124 211C     		mov	r1, r4
- 571 0126 564A     		ldr	r2, .L17+32
- 572 0128 564B     		ldr	r3, .L17+36
- 573 012a FFF7FEFF 		bl	__aeabi_uldivmod
- 574 012e 031C     		mov	r3, r0
- 575 0130 0C1C     		mov	r4, r1
- 576 0132 DBB2     		uxtb	r3, r3
- 577 0134 3033     		add	r3, r3, #48
- 578 0136 DBB2     		uxtb	r3, r3
- 579 0138 181C     		mov	r0, r3
- 580 013a FFF7FEFF 		bl	LCD_PutChar
- 142:.\main.c      ****     time_us %= 100000;
- 581              		.loc 1 142 0
- 582 013e 3B69     		ldr	r3, [r7, #16]
- 583 0140 7C69     		ldr	r4, [r7, #20]
- 584 0142 181C     		mov	r0, r3
- 585 0144 211C     		mov	r1, r4
- 586 0146 4E4A     		ldr	r2, .L17+32
- 587 0148 4E4B     		ldr	r3, .L17+36
- 588 014a FFF7FEFF 		bl	__aeabi_uldivmod
- 589 014e 1C1C     		mov	r4, r3
- 590 0150 131C     		mov	r3, r2
- 591 0152 3B61     		str	r3, [r7, #16]
- 592 0154 7C61     		str	r4, [r7, #20]
- 143:.\main.c      ****     LCD_PutChar(time_us/10000u + CONVERT_TO_ASCII);
- 593              		.loc 1 143 0
- 594 0156 3B69     		ldr	r3, [r7, #16]
- 595 0158 7C69     		ldr	r4, [r7, #20]
- 596 015a 181C     		mov	r0, r3
- 597 015c 211C     		mov	r1, r4
- 598 015e 4A4A     		ldr	r2, .L17+40
- 599 0160 4A4B     		ldr	r3, .L17+44
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 15
+ 562              		.section	.debug_info,"",%progbits
+ 563              	.Ldebug_info0:
+ 564 0000 51010000 		.4byte	0x151
+ 565 0004 0400     		.2byte	0x4
+ 566 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 567 000a 04       		.byte	0x4
+ 568 000b 01       		.uleb128 0x1
+ 569 000c 88000000 		.4byte	.LASF23
+ 570 0010 01       		.byte	0x1
+ 571 0011 B0010000 		.4byte	.LASF24
+ 572 0015 17010000 		.4byte	.LASF25
+ 573 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 574 001d 00000000 		.4byte	0
+ 575 0021 00000000 		.4byte	.Ldebug_line0
+ 576 0025 02       		.uleb128 0x2
+ 577 0026 01       		.byte	0x1
+ 578 0027 06       		.byte	0x6
+ 579 0028 99010000 		.4byte	.LASF0
+ 580 002c 02       		.uleb128 0x2
+ 581 002d 01       		.byte	0x1
+ 582 002e 08       		.byte	0x8
+ 583 002f 04010000 		.4byte	.LASF1
+ 584 0033 02       		.uleb128 0x2
+ 585 0034 02       		.byte	0x2
+ 586 0035 05       		.byte	0x5
+ 587 0036 66010000 		.4byte	.LASF2
+ 588 003a 02       		.uleb128 0x2
+ 589 003b 02       		.byte	0x2
+ 590 003c 07       		.byte	0x7
+ 591 003d 86010000 		.4byte	.LASF3
+ 592 0041 02       		.uleb128 0x2
+ 593 0042 04       		.byte	0x4
+ 594 0043 05       		.byte	0x5
+ 595 0044 5D010000 		.4byte	.LASF4
+ 596 0048 02       		.uleb128 0x2
+ 597 0049 04       		.byte	0x4
+ 598 004a 07       		.byte	0x7
+ 599 004b 48000000 		.4byte	.LASF5
+ 600 004f 02       		.uleb128 0x2
+ 601 0050 08       		.byte	0x8
+ 602 0051 05       		.byte	0x5
+ 603 0052 00000000 		.4byte	.LASF6
+ 604 0056 02       		.uleb128 0x2
+ 605 0057 08       		.byte	0x8
+ 606 0058 07       		.byte	0x7
+ 607 0059 5A000000 		.4byte	.LASF7
+ 608 005d 03       		.uleb128 0x3
+ 609 005e 04       		.byte	0x4
+ 610 005f 05       		.byte	0x5
+ 611 0060 696E7400 		.ascii	"int\000"
+ 612 0064 02       		.uleb128 0x2
+ 613 0065 04       		.byte	0x4
+ 614 0066 07       		.byte	0x7
+ 615 0067 16000000 		.4byte	.LASF8
+ 616 006b 04       		.uleb128 0x4
+ 617 006c 42000000 		.4byte	.LASF9
+ 618 0070 02       		.byte	0x2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 14
 
 
- 600 0162 FFF7FEFF 		bl	__aeabi_uldivmod
- 601 0166 031C     		mov	r3, r0
- 602 0168 0C1C     		mov	r4, r1
- 603 016a DBB2     		uxtb	r3, r3
- 604 016c 3033     		add	r3, r3, #48
- 605 016e DBB2     		uxtb	r3, r3
- 606 0170 181C     		mov	r0, r3
- 607 0172 FFF7FEFF 		bl	LCD_PutChar
- 144:.\main.c      ****     time_us %= 10000;
- 608              		.loc 1 144 0
- 609 0176 3B69     		ldr	r3, [r7, #16]
- 610 0178 7C69     		ldr	r4, [r7, #20]
- 611 017a 181C     		mov	r0, r3
- 612 017c 211C     		mov	r1, r4
- 613 017e 424A     		ldr	r2, .L17+40
- 614 0180 424B     		ldr	r3, .L17+44
- 615 0182 FFF7FEFF 		bl	__aeabi_uldivmod
- 616 0186 1C1C     		mov	r4, r3
- 617 0188 131C     		mov	r3, r2
- 618 018a 3B61     		str	r3, [r7, #16]
- 619 018c 7C61     		str	r4, [r7, #20]
- 145:.\main.c      ****     LCD_PutChar(time_us/1000u + CONVERT_TO_ASCII);
- 620              		.loc 1 145 0
- 621 018e 3B69     		ldr	r3, [r7, #16]
- 622 0190 7C69     		ldr	r4, [r7, #20]
- 623 0192 181C     		mov	r0, r3
- 624 0194 211C     		mov	r1, r4
- 625 0196 3E4A     		ldr	r2, .L17+48
- 626 0198 3E4B     		ldr	r3, .L17+52
- 627 019a FFF7FEFF 		bl	__aeabi_uldivmod
- 628 019e 031C     		mov	r3, r0
- 629 01a0 0C1C     		mov	r4, r1
- 630 01a2 DBB2     		uxtb	r3, r3
- 631 01a4 3033     		add	r3, r3, #48
- 632 01a6 DBB2     		uxtb	r3, r3
- 633 01a8 181C     		mov	r0, r3
- 634 01aa FFF7FEFF 		bl	LCD_PutChar
- 146:.\main.c      ****     time_us %= 1000;
- 635              		.loc 1 146 0
- 636 01ae 3B69     		ldr	r3, [r7, #16]
- 637 01b0 7C69     		ldr	r4, [r7, #20]
- 638 01b2 181C     		mov	r0, r3
- 639 01b4 211C     		mov	r1, r4
- 640 01b6 364A     		ldr	r2, .L17+48
- 641 01b8 364B     		ldr	r3, .L17+52
- 642 01ba FFF7FEFF 		bl	__aeabi_uldivmod
- 643 01be 1C1C     		mov	r4, r3
- 644 01c0 131C     		mov	r3, r2
- 645 01c2 3B61     		str	r3, [r7, #16]
- 646 01c4 7C61     		str	r4, [r7, #20]
- 147:.\main.c      ****     LCD_PutChar(',');
- 647              		.loc 1 147 0
- 648 01c6 2C20     		mov	r0, #44
- 649 01c8 FFF7FEFF 		bl	LCD_PutChar
- 148:.\main.c      ****     LCD_PutChar(time_us/100u + CONVERT_TO_ASCII);
- 650              		.loc 1 148 0
- 651 01cc 3B69     		ldr	r3, [r7, #16]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 16
+ 619 0071 A1       		.byte	0xa1
+ 620 0072 2C000000 		.4byte	0x2c
+ 621 0076 04       		.uleb128 0x4
+ 622 0077 B9010000 		.4byte	.LASF10
+ 623 007b 02       		.byte	0x2
+ 624 007c A2       		.byte	0xa2
+ 625 007d 3A000000 		.4byte	0x3a
+ 626 0081 04       		.uleb128 0x4
+ 627 0082 35000000 		.4byte	.LASF11
+ 628 0086 02       		.byte	0x2
+ 629 0087 A3       		.byte	0xa3
+ 630 0088 48000000 		.4byte	0x48
+ 631 008c 02       		.uleb128 0x2
+ 632 008d 04       		.byte	0x4
+ 633 008e 04       		.byte	0x4
+ 634 008f AA010000 		.4byte	.LASF12
+ 635 0093 02       		.uleb128 0x2
+ 636 0094 08       		.byte	0x8
+ 637 0095 04       		.byte	0x4
+ 638 0096 70010000 		.4byte	.LASF13
+ 639 009a 04       		.uleb128 0x4
+ 640 009b 76000000 		.4byte	.LASF14
+ 641 009f 02       		.byte	0x2
+ 642 00a0 AD       		.byte	0xad
+ 643 00a1 56000000 		.4byte	0x56
+ 644 00a5 02       		.uleb128 0x2
+ 645 00a6 01       		.byte	0x1
+ 646 00a7 08       		.byte	0x8
+ 647 00a8 12010000 		.4byte	.LASF15
+ 648 00ac 05       		.uleb128 0x5
+ 649 00ad 6B000000 		.4byte	0x6b
+ 650 00b1 02       		.uleb128 0x2
+ 651 00b2 04       		.byte	0x4
+ 652 00b3 07       		.byte	0x7
+ 653 00b4 C0010000 		.4byte	.LASF16
+ 654 00b8 06       		.uleb128 0x6
+ 655 00b9 7D000000 		.4byte	.LASF17
+ 656 00bd 01       		.byte	0x1
+ 657 00be 1C       		.byte	0x1c
+ 658 00bf 00000000 		.4byte	.LFB33
+ 659 00c3 38000000 		.4byte	.LFE33-.LFB33
+ 660 00c7 01       		.uleb128 0x1
+ 661 00c8 9C       		.byte	0x9c
+ 662 00c9 07       		.uleb128 0x7
+ 663 00ca A5010000 		.4byte	.LASF18
+ 664 00ce 01       		.byte	0x1
+ 665 00cf 28       		.byte	0x28
+ 666 00d0 5D000000 		.4byte	0x5d
+ 667 00d4 00000000 		.4byte	.LFB34
+ 668 00d8 D4000000 		.4byte	.LFE34-.LFB34
+ 669 00dc 01       		.uleb128 0x1
+ 670 00dd 9C       		.byte	0x9c
+ 671 00de 08       		.uleb128 0x8
+ 672 00df 23000000 		.4byte	.LASF26
+ 673 00e3 01       		.byte	0x1
+ 674 00e4 56       		.byte	0x56
+ 675 00e5 00000000 		.4byte	.LFB35
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 15
 
 
- 652 01ce 7C69     		ldr	r4, [r7, #20]
- 653 01d0 181C     		mov	r0, r3
- 654 01d2 211C     		mov	r1, r4
- 655 01d4 6422     		mov	r2, #100
- 656 01d6 0023     		mov	r3, #0
- 657 01d8 FFF7FEFF 		bl	__aeabi_uldivmod
- 658 01dc 031C     		mov	r3, r0
- 659 01de 0C1C     		mov	r4, r1
- 660 01e0 DBB2     		uxtb	r3, r3
- 661 01e2 3033     		add	r3, r3, #48
- 662 01e4 DBB2     		uxtb	r3, r3
- 663 01e6 181C     		mov	r0, r3
- 664 01e8 FFF7FEFF 		bl	LCD_PutChar
- 149:.\main.c      ****     time_us %= 100;
- 665              		.loc 1 149 0
- 666 01ec 3B69     		ldr	r3, [r7, #16]
- 667 01ee 7C69     		ldr	r4, [r7, #20]
- 668 01f0 181C     		mov	r0, r3
- 669 01f2 211C     		mov	r1, r4
- 670 01f4 6422     		mov	r2, #100
- 671 01f6 0023     		mov	r3, #0
- 672 01f8 FFF7FEFF 		bl	__aeabi_uldivmod
- 673 01fc 1C1C     		mov	r4, r3
- 674 01fe 131C     		mov	r3, r2
- 675 0200 3B61     		str	r3, [r7, #16]
- 676 0202 7C61     		str	r4, [r7, #20]
- 150:.\main.c      ****     LCD_PutChar(time_us/10u + CONVERT_TO_ASCII);
- 677              		.loc 1 150 0
- 678 0204 3B69     		ldr	r3, [r7, #16]
- 679 0206 7C69     		ldr	r4, [r7, #20]
- 680 0208 181C     		mov	r0, r3
- 681 020a 211C     		mov	r1, r4
- 682 020c 0A22     		mov	r2, #10
- 683 020e 0023     		mov	r3, #0
- 684 0210 FFF7FEFF 		bl	__aeabi_uldivmod
- 685 0214 031C     		mov	r3, r0
- 686 0216 0C1C     		mov	r4, r1
- 687 0218 DBB2     		uxtb	r3, r3
- 688 021a 3033     		add	r3, r3, #48
- 689 021c DBB2     		uxtb	r3, r3
- 690 021e 181C     		mov	r0, r3
- 691 0220 FFF7FEFF 		bl	LCD_PutChar
- 151:.\main.c      ****     time_us %= 10;
- 692              		.loc 1 151 0
- 693 0224 3B69     		ldr	r3, [r7, #16]
- 694 0226 7C69     		ldr	r4, [r7, #20]
- 695 0228 181C     		mov	r0, r3
- 696 022a 211C     		mov	r1, r4
- 697 022c 0A22     		mov	r2, #10
- 698 022e 0023     		mov	r3, #0
- 699 0230 FFF7FEFF 		bl	__aeabi_uldivmod
- 700 0234 1C1C     		mov	r4, r3
- 701 0236 131C     		mov	r3, r2
- 702 0238 3B61     		str	r3, [r7, #16]
- 703 023a 7C61     		str	r4, [r7, #20]
- 152:.\main.c      ****     LCD_PutChar(time_us + CONVERT_TO_ASCII);
- 704              		.loc 1 152 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 17
+ 676 00e9 A4020000 		.4byte	.LFE35-.LFB35
+ 677 00ed 01       		.uleb128 0x1
+ 678 00ee 9C       		.byte	0x9c
+ 679 00ef 10010000 		.4byte	0x110
+ 680 00f3 09       		.uleb128 0x9
+ 681 00f4 71000000 		.4byte	.LASF22
+ 682 00f8 01       		.byte	0x1
+ 683 00f9 56       		.byte	0x56
+ 684 00fa 81000000 		.4byte	0x81
+ 685 00fe 02       		.uleb128 0x2
+ 686 00ff 91       		.byte	0x91
+ 687 0100 5C       		.sleb128 -36
+ 688 0101 0A       		.uleb128 0xa
+ 689 0102 0E000000 		.4byte	.LASF27
+ 690 0106 01       		.byte	0x1
+ 691 0107 57       		.byte	0x57
+ 692 0108 9A000000 		.4byte	0x9a
+ 693 010c 02       		.uleb128 0x2
+ 694 010d 91       		.byte	0x91
+ 695 010e 60       		.sleb128 -32
+ 696 010f 00       		.byte	0
+ 697 0110 0B       		.uleb128 0xb
+ 698 0111 77010000 		.4byte	.LASF19
+ 699 0115 03       		.byte	0x3
+ 700 0116 13       		.byte	0x13
+ 701 0117 76000000 		.4byte	0x76
+ 702 011b 05       		.uleb128 0x5
+ 703 011c 03       		.byte	0x3
+ 704 011d 00000000 		.4byte	target
+ 705 0121 0B       		.uleb128 0xb
+ 706 0122 7E010000 		.4byte	.LASF20
+ 707 0126 01       		.byte	0x1
+ 708 0127 13       		.byte	0x13
+ 709 0128 AC000000 		.4byte	0xac
+ 710 012c 05       		.uleb128 0x5
+ 711 012d 03       		.byte	0x3
+ 712 012e 00000000 		.4byte	running
+ 713 0132 0B       		.uleb128 0xb
+ 714 0133 3C000000 		.4byte	.LASF21
+ 715 0137 01       		.byte	0x1
+ 716 0138 14       		.byte	0x14
+ 717 0139 76000000 		.4byte	0x76
+ 718 013d 05       		.uleb128 0x5
+ 719 013e 03       		.byte	0x3
+ 720 013f 00000000 		.4byte	V_new
+ 721 0143 0B       		.uleb128 0xb
+ 722 0144 71000000 		.4byte	.LASF22
+ 723 0148 01       		.byte	0x1
+ 724 0149 15       		.byte	0x15
+ 725 014a 81000000 		.4byte	0x81
+ 726 014e 05       		.uleb128 0x5
+ 727 014f 03       		.byte	0x3
+ 728 0150 00000000 		.4byte	time
+ 729 0154 00       		.byte	0
+ 730              		.section	.debug_abbrev,"",%progbits
+ 731              	.Ldebug_abbrev0:
+ 732 0000 01       		.uleb128 0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 16
 
 
- 705 023c 3B69     		ldr	r3, [r7, #16]
- 706 023e 7C69     		ldr	r4, [r7, #20]
- 707 0240 DBB2     		uxtb	r3, r3
- 708 0242 3033     		add	r3, r3, #48
- 709 0244 DBB2     		uxtb	r3, r3
- 710 0246 181C     		mov	r0, r3
- 711 0248 FFF7FEFF 		bl	LCD_PutChar
- 153:.\main.c      ****     LCD_PrintString("us");
- 712              		.loc 1 153 0
- 713 024c 144B     		ldr	r3, .L17+64
- 714 024e 181C     		mov	r0, r3
- 715 0250 FFF7FEFF 		bl	LCD_PrintString
- 154:.\main.c      **** }
- 716              		.loc 1 154 0
- 717 0254 BD46     		mov	sp, r7
- 718 0256 07B0     		add	sp, sp, #28
- 719              		@ sp needed
- 720 0258 F0BD     		pop	{r4, r5, r6, r7, pc}
- 721              	.L18:
- 722 025a C046C046 		.align	3
- 722      C046
- 723              	.L17:
- 724 0260 B80B0000 		.word	3000
- 725 0264 00000000 		.word	0
- 726 0268 00E1F505 		.word	100000000
- 727 026c 00000000 		.word	0
- 728 0270 80969800 		.word	10000000
- 729 0274 00000000 		.word	0
- 730 0278 40420F00 		.word	1000000
- 731 027c 00000000 		.word	0
- 732 0280 A0860100 		.word	100000
- 733 0284 00000000 		.word	0
- 734 0288 10270000 		.word	10000
- 735 028c 00000000 		.word	0
- 736 0290 E8030000 		.word	1000
- 737 0294 00000000 		.word	0
- 738 0298 1C000000 		.word	.LC8
- 739 029c 7C000000 		.word	.LC22
- 740 02a0 80000000 		.word	.LC24
- 741              		.cfi_endproc
- 742              	.LFE35:
- 743              		.size	print_measurement, .-print_measurement
- 744 02a4 C046C046 		.section	.text.updateBTN,"ax",%progbits
- 745              		.align	2
- 746              		.global	updateBTN
- 747              		.code	16
- 748              		.thumb_func
- 749              		.type	updateBTN, %function
- 750              	updateBTN:
- 751              	.LFB36:
- 155:.\main.c      **** 
- 156:.\main.c      **** int8 updateBTN(void){
- 752              		.loc 1 156 0
- 753              		.cfi_startproc
- 754 0000 80B5     		push	{r7, lr}
- 755              		.cfi_def_cfa_offset 8
- 756              		.cfi_offset 7, -8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 18
+ 733 0001 11       		.uleb128 0x11
+ 734 0002 01       		.byte	0x1
+ 735 0003 25       		.uleb128 0x25
+ 736 0004 0E       		.uleb128 0xe
+ 737 0005 13       		.uleb128 0x13
+ 738 0006 0B       		.uleb128 0xb
+ 739 0007 03       		.uleb128 0x3
+ 740 0008 0E       		.uleb128 0xe
+ 741 0009 1B       		.uleb128 0x1b
+ 742 000a 0E       		.uleb128 0xe
+ 743 000b 55       		.uleb128 0x55
+ 744 000c 17       		.uleb128 0x17
+ 745 000d 11       		.uleb128 0x11
+ 746 000e 01       		.uleb128 0x1
+ 747 000f 10       		.uleb128 0x10
+ 748 0010 17       		.uleb128 0x17
+ 749 0011 00       		.byte	0
+ 750 0012 00       		.byte	0
+ 751 0013 02       		.uleb128 0x2
+ 752 0014 24       		.uleb128 0x24
+ 753 0015 00       		.byte	0
+ 754 0016 0B       		.uleb128 0xb
+ 755 0017 0B       		.uleb128 0xb
+ 756 0018 3E       		.uleb128 0x3e
+ 757 0019 0B       		.uleb128 0xb
+ 758 001a 03       		.uleb128 0x3
+ 759 001b 0E       		.uleb128 0xe
+ 760 001c 00       		.byte	0
+ 761 001d 00       		.byte	0
+ 762 001e 03       		.uleb128 0x3
+ 763 001f 24       		.uleb128 0x24
+ 764 0020 00       		.byte	0
+ 765 0021 0B       		.uleb128 0xb
+ 766 0022 0B       		.uleb128 0xb
+ 767 0023 3E       		.uleb128 0x3e
+ 768 0024 0B       		.uleb128 0xb
+ 769 0025 03       		.uleb128 0x3
+ 770 0026 08       		.uleb128 0x8
+ 771 0027 00       		.byte	0
+ 772 0028 00       		.byte	0
+ 773 0029 04       		.uleb128 0x4
+ 774 002a 16       		.uleb128 0x16
+ 775 002b 00       		.byte	0
+ 776 002c 03       		.uleb128 0x3
+ 777 002d 0E       		.uleb128 0xe
+ 778 002e 3A       		.uleb128 0x3a
+ 779 002f 0B       		.uleb128 0xb
+ 780 0030 3B       		.uleb128 0x3b
+ 781 0031 0B       		.uleb128 0xb
+ 782 0032 49       		.uleb128 0x49
+ 783 0033 13       		.uleb128 0x13
+ 784 0034 00       		.byte	0
+ 785 0035 00       		.byte	0
+ 786 0036 05       		.uleb128 0x5
+ 787 0037 35       		.uleb128 0x35
+ 788 0038 00       		.byte	0
+ 789 0039 49       		.uleb128 0x49
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 17
 
 
- 757              		.cfi_offset 14, -4
- 758 0002 82B0     		sub	sp, sp, #8
- 759              		.cfi_def_cfa_offset 16
- 760 0004 00AF     		add	r7, sp, #0
- 761              		.cfi_def_cfa_register 7
- 157:.\main.c      ****     uint16 temp = ADC_GetResult16(1); //A0
- 762              		.loc 1 157 0
- 763 0006 0120     		mov	r0, #1
- 764 0008 FFF7FEFF 		bl	ADC_GetResult16
- 765 000c 031C     		mov	r3, r0
- 766 000e 1A1C     		mov	r2, r3
- 767 0010 BB1D     		add	r3, r7, #6
- 768 0012 1A80     		strh	r2, [r3]
- 158:.\main.c      ****     if (lcdBtnOld != temp){
- 769              		.loc 1 158 0
- 770 0014 204B     		ldr	r3, .L29
- 771 0016 1B88     		ldrh	r3, [r3]
- 772 0018 BA1D     		add	r2, r7, #6
- 773 001a 1288     		ldrh	r2, [r2]
- 774 001c 9A42     		cmp	r2, r3
- 775 001e 35D0     		beq	.L20
- 159:.\main.c      ****         if (temp == 0xFFFF || temp <= 5)
- 776              		.loc 1 159 0
- 777 0020 BB1D     		add	r3, r7, #6
- 778 0022 1A88     		ldrh	r2, [r3]
- 779 0024 1D4B     		ldr	r3, .L29+4
- 780 0026 9A42     		cmp	r2, r3
- 781 0028 03D0     		beq	.L21
- 782              		.loc 1 159 0 is_stmt 0 discriminator 1
- 783 002a BB1D     		add	r3, r7, #6
- 784 002c 1B88     		ldrh	r3, [r3]
- 785 002e 052B     		cmp	r3, #5
- 786 0030 03D8     		bhi	.L22
- 787              	.L21:
- 160:.\main.c      ****             BTN = RIGHT;
- 788              		.loc 1 160 0 is_stmt 1
- 789 0032 1B4B     		ldr	r3, .L29+8
- 790 0034 0522     		mov	r2, #5
- 791 0036 1A70     		strb	r2, [r3]
- 792 0038 22E0     		b	.L23
- 793              	.L22:
- 161:.\main.c      ****         else if(temp <= 20)
- 794              		.loc 1 161 0
- 795 003a BB1D     		add	r3, r7, #6
- 796 003c 1B88     		ldrh	r3, [r3]
- 797 003e 142B     		cmp	r3, #20
- 798 0040 03D8     		bhi	.L24
- 162:.\main.c      ****             BTN = UP;
- 799              		.loc 1 162 0
- 800 0042 174B     		ldr	r3, .L29+8
- 801 0044 0422     		mov	r2, #4
- 802 0046 1A70     		strb	r2, [r3]
- 803 0048 1AE0     		b	.L23
- 804              	.L24:
- 163:.\main.c      ****         else if(temp <= 40)
- 805              		.loc 1 163 0
- 806 004a BB1D     		add	r3, r7, #6
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 19
+ 790 003a 13       		.uleb128 0x13
+ 791 003b 00       		.byte	0
+ 792 003c 00       		.byte	0
+ 793 003d 06       		.uleb128 0x6
+ 794 003e 2E       		.uleb128 0x2e
+ 795 003f 00       		.byte	0
+ 796 0040 3F       		.uleb128 0x3f
+ 797 0041 19       		.uleb128 0x19
+ 798 0042 03       		.uleb128 0x3
+ 799 0043 0E       		.uleb128 0xe
+ 800 0044 3A       		.uleb128 0x3a
+ 801 0045 0B       		.uleb128 0xb
+ 802 0046 3B       		.uleb128 0x3b
+ 803 0047 0B       		.uleb128 0xb
+ 804 0048 27       		.uleb128 0x27
+ 805 0049 19       		.uleb128 0x19
+ 806 004a 11       		.uleb128 0x11
+ 807 004b 01       		.uleb128 0x1
+ 808 004c 12       		.uleb128 0x12
+ 809 004d 06       		.uleb128 0x6
+ 810 004e 40       		.uleb128 0x40
+ 811 004f 18       		.uleb128 0x18
+ 812 0050 9642     		.uleb128 0x2116
+ 813 0052 19       		.uleb128 0x19
+ 814 0053 00       		.byte	0
+ 815 0054 00       		.byte	0
+ 816 0055 07       		.uleb128 0x7
+ 817 0056 2E       		.uleb128 0x2e
+ 818 0057 00       		.byte	0
+ 819 0058 3F       		.uleb128 0x3f
+ 820 0059 19       		.uleb128 0x19
+ 821 005a 03       		.uleb128 0x3
+ 822 005b 0E       		.uleb128 0xe
+ 823 005c 3A       		.uleb128 0x3a
+ 824 005d 0B       		.uleb128 0xb
+ 825 005e 3B       		.uleb128 0x3b
+ 826 005f 0B       		.uleb128 0xb
+ 827 0060 49       		.uleb128 0x49
+ 828 0061 13       		.uleb128 0x13
+ 829 0062 11       		.uleb128 0x11
+ 830 0063 01       		.uleb128 0x1
+ 831 0064 12       		.uleb128 0x12
+ 832 0065 06       		.uleb128 0x6
+ 833 0066 40       		.uleb128 0x40
+ 834 0067 18       		.uleb128 0x18
+ 835 0068 9642     		.uleb128 0x2116
+ 836 006a 19       		.uleb128 0x19
+ 837 006b 00       		.byte	0
+ 838 006c 00       		.byte	0
+ 839 006d 08       		.uleb128 0x8
+ 840 006e 2E       		.uleb128 0x2e
+ 841 006f 01       		.byte	0x1
+ 842 0070 3F       		.uleb128 0x3f
+ 843 0071 19       		.uleb128 0x19
+ 844 0072 03       		.uleb128 0x3
+ 845 0073 0E       		.uleb128 0xe
+ 846 0074 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 18
 
 
- 807 004c 1B88     		ldrh	r3, [r3]
- 808 004e 282B     		cmp	r3, #40
- 809 0050 03D8     		bhi	.L25
- 164:.\main.c      ****             BTN = DOWN;
- 810              		.loc 1 164 0
- 811 0052 134B     		ldr	r3, .L29+8
- 812 0054 0322     		mov	r2, #3
- 813 0056 1A70     		strb	r2, [r3]
- 814 0058 12E0     		b	.L23
- 815              	.L25:
- 165:.\main.c      ****         else if(temp <= 60)
- 816              		.loc 1 165 0
- 817 005a BB1D     		add	r3, r7, #6
- 818 005c 1B88     		ldrh	r3, [r3]
- 819 005e 3C2B     		cmp	r3, #60
- 820 0060 03D8     		bhi	.L26
- 166:.\main.c      ****             BTN = LEFT;
- 821              		.loc 1 166 0
- 822 0062 0F4B     		ldr	r3, .L29+8
- 823 0064 0222     		mov	r2, #2
- 824 0066 1A70     		strb	r2, [r3]
- 825 0068 0AE0     		b	.L23
- 826              	.L26:
- 167:.\main.c      ****         else if(temp <= 100)
- 827              		.loc 1 167 0
- 828 006a BB1D     		add	r3, r7, #6
- 829 006c 1B88     		ldrh	r3, [r3]
- 830 006e 642B     		cmp	r3, #100
- 831 0070 03D8     		bhi	.L27
- 168:.\main.c      ****             BTN = SELECT;
- 832              		.loc 1 168 0
- 833 0072 0B4B     		ldr	r3, .L29+8
- 834 0074 0122     		mov	r2, #1
- 835 0076 1A70     		strb	r2, [r3]
- 836 0078 02E0     		b	.L23
- 837              	.L27:
- 169:.\main.c      ****         else
- 170:.\main.c      ****             BTN = UNPRESSED;
- 838              		.loc 1 170 0
- 839 007a 094B     		ldr	r3, .L29+8
- 840 007c 0022     		mov	r2, #0
- 841 007e 1A70     		strb	r2, [r3]
- 842              	.L23:
- 171:.\main.c      ****         lcdBtnOld = temp;
- 843              		.loc 1 171 0
- 844 0080 054B     		ldr	r3, .L29
- 845 0082 BA1D     		add	r2, r7, #6
- 846 0084 1288     		ldrh	r2, [r2]
- 847 0086 1A80     		strh	r2, [r3]
- 172:.\main.c      ****         return 1;
- 848              		.loc 1 172 0
- 849 0088 0123     		mov	r3, #1
- 850 008a 00E0     		b	.L28
- 851              	.L20:
- 173:.\main.c      ****     }
- 174:.\main.c      ****     return 0;
- 852              		.loc 1 174 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 20
+ 847 0075 0B       		.uleb128 0xb
+ 848 0076 3B       		.uleb128 0x3b
+ 849 0077 0B       		.uleb128 0xb
+ 850 0078 27       		.uleb128 0x27
+ 851 0079 19       		.uleb128 0x19
+ 852 007a 11       		.uleb128 0x11
+ 853 007b 01       		.uleb128 0x1
+ 854 007c 12       		.uleb128 0x12
+ 855 007d 06       		.uleb128 0x6
+ 856 007e 40       		.uleb128 0x40
+ 857 007f 18       		.uleb128 0x18
+ 858 0080 9642     		.uleb128 0x2116
+ 859 0082 19       		.uleb128 0x19
+ 860 0083 01       		.uleb128 0x1
+ 861 0084 13       		.uleb128 0x13
+ 862 0085 00       		.byte	0
+ 863 0086 00       		.byte	0
+ 864 0087 09       		.uleb128 0x9
+ 865 0088 05       		.uleb128 0x5
+ 866 0089 00       		.byte	0
+ 867 008a 03       		.uleb128 0x3
+ 868 008b 0E       		.uleb128 0xe
+ 869 008c 3A       		.uleb128 0x3a
+ 870 008d 0B       		.uleb128 0xb
+ 871 008e 3B       		.uleb128 0x3b
+ 872 008f 0B       		.uleb128 0xb
+ 873 0090 49       		.uleb128 0x49
+ 874 0091 13       		.uleb128 0x13
+ 875 0092 02       		.uleb128 0x2
+ 876 0093 18       		.uleb128 0x18
+ 877 0094 00       		.byte	0
+ 878 0095 00       		.byte	0
+ 879 0096 0A       		.uleb128 0xa
+ 880 0097 34       		.uleb128 0x34
+ 881 0098 00       		.byte	0
+ 882 0099 03       		.uleb128 0x3
+ 883 009a 0E       		.uleb128 0xe
+ 884 009b 3A       		.uleb128 0x3a
+ 885 009c 0B       		.uleb128 0xb
+ 886 009d 3B       		.uleb128 0x3b
+ 887 009e 0B       		.uleb128 0xb
+ 888 009f 49       		.uleb128 0x49
+ 889 00a0 13       		.uleb128 0x13
+ 890 00a1 02       		.uleb128 0x2
+ 891 00a2 18       		.uleb128 0x18
+ 892 00a3 00       		.byte	0
+ 893 00a4 00       		.byte	0
+ 894 00a5 0B       		.uleb128 0xb
+ 895 00a6 34       		.uleb128 0x34
+ 896 00a7 00       		.byte	0
+ 897 00a8 03       		.uleb128 0x3
+ 898 00a9 0E       		.uleb128 0xe
+ 899 00aa 3A       		.uleb128 0x3a
+ 900 00ab 0B       		.uleb128 0xb
+ 901 00ac 3B       		.uleb128 0x3b
+ 902 00ad 0B       		.uleb128 0xb
+ 903 00ae 49       		.uleb128 0x49
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 19
 
 
- 853 008c 0023     		mov	r3, #0
- 854              	.L28:
- 855 008e 5BB2     		sxtb	r3, r3
- 175:.\main.c      **** }...
- 856              		.loc 1 175 0
- 857 0090 181C     		mov	r0, r3
- 858 0092 BD46     		mov	sp, r7
- 859 0094 02B0     		add	sp, sp, #8
- 860              		@ sp needed
- 861 0096 80BD     		pop	{r7, pc}
- 862              	.L30:
- 863              		.align	2
- 864              	.L29:
- 865 0098 00000000 		.word	lcdBtnOld
- 866 009c FFFF0000 		.word	65535
- 867 00a0 00000000 		.word	BTN
- 868              		.cfi_endproc
- 869              	.LFE36:
- 870              		.size	updateBTN, .-updateBTN
- 871              		.text
- 872              	.Letext0:
- 873              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
- 874              		.section	.debug_info,"",%progbits
- 875              	.Ldebug_info0:
- 876 0000 00020000 		.4byte	0x200
- 877 0004 0400     		.2byte	0x4
- 878 0006 00000000 		.4byte	.Ldebug_abbrev0
- 879 000a 04       		.byte	0x4
- 880 000b 01       		.uleb128 0x1
- 881 000c 4F000000 		.4byte	.LASF33
- 882 0010 01       		.byte	0x1
- 883 0011 10010000 		.4byte	.LASF34
- 884 0015 76010000 		.4byte	.LASF35
- 885 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 886 001d 00000000 		.4byte	0
- 887 0021 00000000 		.4byte	.Ldebug_line0
- 888 0025 02       		.uleb128 0x2
- 889 0026 01       		.byte	0x1
- 890 0027 06       		.byte	0x6
- 891 0028 05020000 		.4byte	.LASF0
- 892 002c 02       		.uleb128 0x2
- 893 002d 01       		.byte	0x1
- 894 002e 08       		.byte	0x8
- 895 002f D2000000 		.4byte	.LASF1
- 896 0033 02       		.uleb128 0x2
- 897 0034 02       		.byte	0x2
- 898 0035 05       		.byte	0x5
- 899 0036 E8010000 		.4byte	.LASF2
- 900 003a 02       		.uleb128 0x2
- 901 003b 02       		.byte	0x2
- 902 003c 07       		.byte	0x7
- 903 003d 1D000000 		.4byte	.LASF3
- 904 0041 02       		.uleb128 0x2
- 905 0042 04       		.byte	0x4
- 906 0043 05       		.byte	0x5
- 907 0044 F2010000 		.4byte	.LASF4
- 908 0048 02       		.uleb128 0x2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 21
+ 904 00af 13       		.uleb128 0x13
+ 905 00b0 3F       		.uleb128 0x3f
+ 906 00b1 19       		.uleb128 0x19
+ 907 00b2 02       		.uleb128 0x2
+ 908 00b3 18       		.uleb128 0x18
+ 909 00b4 00       		.byte	0
+ 910 00b5 00       		.byte	0
+ 911 00b6 00       		.byte	0
+ 912              		.section	.debug_aranges,"",%progbits
+ 913 0000 2C000000 		.4byte	0x2c
+ 914 0004 0200     		.2byte	0x2
+ 915 0006 00000000 		.4byte	.Ldebug_info0
+ 916 000a 04       		.byte	0x4
+ 917 000b 00       		.byte	0
+ 918 000c 0000     		.2byte	0
+ 919 000e 0000     		.2byte	0
+ 920 0010 00000000 		.4byte	.LFB33
+ 921 0014 38000000 		.4byte	.LFE33-.LFB33
+ 922 0018 00000000 		.4byte	.LFB34
+ 923 001c D4000000 		.4byte	.LFE34-.LFB34
+ 924 0020 00000000 		.4byte	.LFB35
+ 925 0024 A4020000 		.4byte	.LFE35-.LFB35
+ 926 0028 00000000 		.4byte	0
+ 927 002c 00000000 		.4byte	0
+ 928              		.section	.debug_ranges,"",%progbits
+ 929              	.Ldebug_ranges0:
+ 930 0000 00000000 		.4byte	.LFB33
+ 931 0004 38000000 		.4byte	.LFE33
+ 932 0008 00000000 		.4byte	.LFB34
+ 933 000c D4000000 		.4byte	.LFE34
+ 934 0010 00000000 		.4byte	.LFB35
+ 935 0014 A4020000 		.4byte	.LFE35
+ 936 0018 00000000 		.4byte	0
+ 937 001c 00000000 		.4byte	0
+ 938              		.section	.debug_line,"",%progbits
+ 939              	.Ldebug_line0:
+ 940 0000 C8000000 		.section	.debug_str,"MS",%progbits,1
+ 940      02005200 
+ 940      00000201 
+ 940      FB0E0D00 
+ 940      01010101 
+ 941              	.LASF6:
+ 942 0000 6C6F6E67 		.ascii	"long long int\000"
+ 942      206C6F6E 
+ 942      6720696E 
+ 942      7400
+ 943              	.LASF27:
+ 944 000e 74696D65 		.ascii	"time_us\000"
+ 944      5F757300 
+ 945              	.LASF8:
+ 946 0016 756E7369 		.ascii	"unsigned int\000"
+ 946      676E6564 
+ 946      20696E74 
+ 946      00
+ 947              	.LASF26:
+ 948 0023 7072696E 		.ascii	"print_measurement\000"
+ 948      745F6D65 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 20
 
 
- 909 0049 04       		.byte	0x4
- 910 004a 07       		.byte	0x7
- 911 004b E6000000 		.4byte	.LASF5
- 912 004f 02       		.uleb128 0x2
- 913 0050 08       		.byte	0x8
- 914 0051 05       		.byte	0x5
- 915 0052 BC010000 		.4byte	.LASF6
- 916 0056 02       		.uleb128 0x2
- 917 0057 08       		.byte	0x8
- 918 0058 07       		.byte	0x7
- 919 0059 4B010000 		.4byte	.LASF7
- 920 005d 03       		.uleb128 0x3
- 921 005e 04       		.byte	0x4
- 922 005f 05       		.byte	0x5
- 923 0060 696E7400 		.ascii	"int\000"
- 924 0064 02       		.uleb128 0x2
- 925 0065 04       		.byte	0x4
- 926 0066 07       		.byte	0x7
- 927 0067 30000000 		.4byte	.LASF8
- 928 006b 04       		.uleb128 0x4
- 929 006c FD000000 		.4byte	.LASF9
- 930 0070 02       		.byte	0x2
- 931 0071 A1       		.byte	0xa1
- 932 0072 2C000000 		.4byte	0x2c
- 933 0076 04       		.uleb128 0x4
- 934 0077 19010000 		.4byte	.LASF10
- 935 007b 02       		.byte	0x2
- 936 007c A2       		.byte	0xa2
- 937 007d 3A000000 		.4byte	0x3a
- 938 0081 04       		.uleb128 0x4
- 939 0082 25010000 		.4byte	.LASF11
- 940 0086 02       		.byte	0x2
- 941 0087 A3       		.byte	0xa3
- 942 0088 48000000 		.4byte	0x48
- 943 008c 04       		.uleb128 0x4
- 944 008d 20010000 		.4byte	.LASF12
- 945 0091 02       		.byte	0x2
- 946 0092 A4       		.byte	0xa4
- 947 0093 25000000 		.4byte	0x25
- 948 0097 04       		.uleb128 0x4
- 949 0098 E0000000 		.4byte	.LASF13
- 950 009c 02       		.byte	0x2
- 951 009d A5       		.byte	0xa5
- 952 009e 33000000 		.4byte	0x33
- 953 00a2 02       		.uleb128 0x2
- 954 00a3 04       		.byte	0x4
- 955 00a4 04       		.byte	0x4
- 956 00a5 00000000 		.4byte	.LASF14
- 957 00a9 02       		.uleb128 0x2
- 958 00aa 08       		.byte	0x8
- 959 00ab 04       		.byte	0x4
- 960 00ac 09010000 		.4byte	.LASF15
- 961 00b0 04       		.uleb128 0x4
- 962 00b1 16000000 		.4byte	.LASF16
- 963 00b5 02       		.byte	0x2
- 964 00b6 AD       		.byte	0xad
- 965 00b7 56000000 		.4byte	0x56
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 22
+ 948      61737572 
+ 948      656D656E 
+ 948      7400
+ 949              	.LASF11:
+ 950 0035 75696E74 		.ascii	"uint32\000"
+ 950      333200
+ 951              	.LASF21:
+ 952 003c 565F6E65 		.ascii	"V_new\000"
+ 952      7700
+ 953              	.LASF9:
+ 954 0042 75696E74 		.ascii	"uint8\000"
+ 954      3800
+ 955              	.LASF5:
+ 956 0048 6C6F6E67 		.ascii	"long unsigned int\000"
+ 956      20756E73 
+ 956      69676E65 
+ 956      6420696E 
+ 956      7400
+ 957              	.LASF7:
+ 958 005a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 958      206C6F6E 
+ 958      6720756E 
+ 958      7369676E 
+ 958      65642069 
+ 959              	.LASF22:
+ 960 0071 74696D65 		.ascii	"time\000"
+ 960      00
+ 961              	.LASF14:
+ 962 0076 75696E74 		.ascii	"uint64\000"
+ 962      363400
+ 963              	.LASF17:
+ 964 007d 73775F69 		.ascii	"sw_int_ISR\000"
+ 964      6E745F49 
+ 964      535200
+ 965              	.LASF23:
+ 966 0088 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 966      4320342E 
+ 966      382E3420 
+ 966      32303134 
+ 966      30353236 
+ 967 00bb 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 967      20726576 
+ 967      6973696F 
+ 967      6E203231 
+ 967      31333538 
+ 968 00ee 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 968      66756E63 
+ 968      74696F6E 
+ 968      2D736563 
+ 968      74696F6E 
+ 969              	.LASF1:
+ 970 0104 756E7369 		.ascii	"unsigned char\000"
+ 970      676E6564 
+ 970      20636861 
+ 970      7200
+ 971              	.LASF15:
+ 972 0112 63686172 		.ascii	"char\000"
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 21
 
 
- 966 00bb 02       		.uleb128 0x2
- 967 00bc 01       		.byte	0x1
- 968 00bd 08       		.byte	0x8
- 969 00be CA010000 		.4byte	.LASF17
- 970 00c2 05       		.uleb128 0x5
- 971 00c3 6B000000 		.4byte	0x6b
- 972 00c7 02       		.uleb128 0x2
- 973 00c8 04       		.byte	0x4
- 974 00c9 07       		.byte	0x7
- 975 00ca 6D010000 		.4byte	.LASF18
- 976 00ce 06       		.uleb128 0x6
- 977 00cf 06000000 		.4byte	.LASF36
- 978 00d3 01       		.byte	0x1
- 979 00d4 01       		.byte	0x1
- 980 00d5 12       		.byte	0x12
- 981 00d6 FE000000 		.4byte	0xfe
- 982 00da 07       		.uleb128 0x7
- 983 00db 45000000 		.4byte	.LASF19
- 984 00df 00       		.sleb128 0
- 985 00e0 07       		.uleb128 0x7
- 986 00e1 CB000000 		.4byte	.LASF20
- 987 00e5 01       		.sleb128 1
- 988 00e6 07       		.uleb128 0x7
- 989 00e7 11000000 		.4byte	.LASF21
- 990 00eb 02       		.sleb128 2
- 991 00ec 07       		.uleb128 0x7
- 992 00ed D8010000 		.4byte	.LASF22
- 993 00f1 03       		.sleb128 3
- 994 00f2 08       		.uleb128 0x8
- 995 00f3 555000   		.ascii	"UP\000"
- 996 00f6 04       		.sleb128 4
- 997 00f7 07       		.uleb128 0x7
- 998 00f8 62010000 		.4byte	.LASF23
- 999 00fc 05       		.sleb128 5
- 1000 00fd 00       		.byte	0
- 1001 00fe 09       		.uleb128 0x9
- 1002 00ff DD010000 		.4byte	.LASF37
- 1003 0103 01       		.byte	0x1
- 1004 0104 1E       		.byte	0x1e
- 1005 0105 00000000 		.4byte	.LFB33
- 1006 0109 38000000 		.4byte	.LFE33-.LFB33
- 1007 010d 01       		.uleb128 0x1
- 1008 010e 9C       		.byte	0x9c
- 1009 010f 0A       		.uleb128 0xa
- 1010 0110 2C010000 		.4byte	.LASF26
- 1011 0114 01       		.byte	0x1
- 1012 0115 2A       		.byte	0x2a
- 1013 0116 5D000000 		.4byte	0x5d
- 1014 011a 00000000 		.4byte	.LFB34
- 1015 011e 10020000 		.4byte	.LFE34-.LFB34
- 1016 0122 01       		.uleb128 0x1
- 1017 0123 9C       		.byte	0x9c
- 1018 0124 4F010000 		.4byte	0x14f
- 1019 0128 0B       		.uleb128 0xb
- 1020 0129 CF010000 		.4byte	.LASF24
- 1021 012d 01       		.byte	0x1
- 1022 012e 2B       		.byte	0x2b
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 23
+ 972      00
+ 973              	.LASF25:
+ 974 0117 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 974      73657273 
+ 974      5C536E75 
+ 974      666B696E 
+ 974      5C446F63 
+ 975 0144 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 975      696D6572 
+ 975      5C435254 
+ 975      5F74696D 
+ 975      65722E63 
+ 976              	.LASF4:
+ 977 015d 6C6F6E67 		.ascii	"long int\000"
+ 977      20696E74 
+ 977      00
+ 978              	.LASF2:
+ 979 0166 73686F72 		.ascii	"short int\000"
+ 979      7420696E 
+ 979      7400
+ 980              	.LASF13:
+ 981 0170 646F7562 		.ascii	"double\000"
+ 981      6C6500
+ 982              	.LASF19:
+ 983 0177 74617267 		.ascii	"target\000"
+ 983      657400
+ 984              	.LASF20:
+ 985 017e 72756E6E 		.ascii	"running\000"
+ 985      696E6700 
+ 986              	.LASF3:
+ 987 0186 73686F72 		.ascii	"short unsigned int\000"
+ 987      7420756E 
+ 987      7369676E 
+ 987      65642069 
+ 987      6E7400
+ 988              	.LASF0:
+ 989 0199 7369676E 		.ascii	"signed char\000"
+ 989      65642063 
+ 989      68617200 
+ 990              	.LASF18:
+ 991 01a5 6D61696E 		.ascii	"main\000"
+ 991      00
+ 992              	.LASF12:
+ 993 01aa 666C6F61 		.ascii	"float\000"
+ 993      7400
+ 994              	.LASF24:
+ 995 01b0 2E5C6D61 		.ascii	".\\main.c\000"
+ 995      696E2E63 
+ 995      00
+ 996              	.LASF10:
+ 997 01b9 75696E74 		.ascii	"uint16\000"
+ 997      313600
+ 998              	.LASF16:
+ 999 01c0 73697A65 		.ascii	"sizetype\000"
+ 999      74797065 
+ 999      00
+ 1000              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccCMbczD.s 			page 22
 
 
- 1023 012f 97000000 		.4byte	0x97
- 1024 0133 02       		.uleb128 0x2
- 1025 0134 91       		.byte	0x91
- 1026 0135 6E       		.sleb128 -18
- 1027 0136 0C       		.uleb128 0xc
- 1028 0137 B6000000 		.4byte	.LBB2
- 1029 013b 2A010000 		.4byte	.LBE2-.LBB2
- 1030 013f 0B       		.uleb128 0xb
- 1031 0140 F8000000 		.4byte	.LASF25
- 1032 0144 01       		.byte	0x1
- 1033 0145 54       		.byte	0x54
- 1034 0146 97000000 		.4byte	0x97
- 1035 014a 02       		.uleb128 0x2
- 1036 014b 91       		.byte	0x91
- 1037 014c 6C       		.sleb128 -20
- 1038 014d 00       		.byte	0
- 1039 014e 00       		.byte	0
- 1040 014f 0D       		.uleb128 0xd
- 1041 0150 31010000 		.4byte	.LASF27
- 1042 0154 01       		.byte	0x1
- 1043 0155 80       		.byte	0x80
- 1044 0156 00000000 		.4byte	.LFB35
- 1045 015a A4020000 		.4byte	.LFE35-.LFB35
- 1046 015e 01       		.uleb128 0x1
- 1047 015f 9C       		.byte	0x9c
- 1048 0160 81010000 		.4byte	0x181
- 1049 0164 0E       		.uleb128 0xe
- 1050 0165 68010000 		.4byte	.LASF31
- 1051 0169 01       		.byte	0x1
- 1052 016a 80       		.byte	0x80
- 1053 016b 81000000 		.4byte	0x81
- 1054 016f 02       		.uleb128 0x2
- 1055 0170 91       		.byte	0x91
- 1056 0171 5C       		.sleb128 -36
- 1057 0172 0B       		.uleb128 0xb
- 1058 0173 3D000000 		.4byte	.LASF28
- 1059 0177 01       		.byte	0x1
- 1060 0178 81       		.byte	0x81
- 1061 0179 B0000000 		.4byte	0xb0
- 1062 017d 02       		.uleb128 0x2
- 1063 017e 91       		.byte	0x91
- 1064 017f 60       		.sleb128 -32
- 1065 0180 00       		.byte	0
- 1066 0181 0F       		.uleb128 0xf
- 1067 0182 FB010000 		.4byte	.LASF38
- 1068 0186 01       		.byte	0x1
- 1069 0187 9C       		.byte	0x9c
- 1070 0188 8C000000 		.4byte	0x8c
- 1071 018c 00000000 		.4byte	.LFB36
- 1072 0190 A4000000 		.4byte	.LFE36-.LFB36
- 1073 0194 01       		.uleb128 0x1
- 1074 0195 9C       		.byte	0x9c
- 1075 0196 A9010000 		.4byte	0x1a9
- 1076 019a 0B       		.uleb128 0xb
- 1077 019b F8000000 		.4byte	.LASF25
- 1078 019f 01       		.byte	0x1
- 1079 01a0 9D       		.byte	0x9d
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 24
-
-
- 1080 01a1 76000000 		.4byte	0x76
- 1081 01a5 02       		.uleb128 0x2
- 1082 01a6 91       		.byte	0x91
- 1083 01a7 76       		.sleb128 -10
- 1084 01a8 00       		.byte	0
- 1085 01a9 10       		.uleb128 0x10
- 1086 01aa 43010000 		.4byte	.LASF29
- 1087 01ae 01       		.byte	0x1
- 1088 01af 13       		.byte	0x13
- 1089 01b0 C2000000 		.4byte	0xc2
- 1090 01b4 05       		.uleb128 0x5
- 1091 01b5 03       		.byte	0x3
- 1092 01b6 00000000 		.4byte	running
- 1093 01ba 10       		.uleb128 0x10
- 1094 01bb 03010000 		.4byte	.LASF30
- 1095 01bf 01       		.byte	0x1
- 1096 01c0 14       		.byte	0x14
- 1097 01c1 76000000 		.4byte	0x76
- 1098 01c5 05       		.uleb128 0x5
- 1099 01c6 03       		.byte	0x3
- 1100 01c7 00000000 		.4byte	V_new
- 1101 01cb 10       		.uleb128 0x10
- 1102 01cc 68010000 		.4byte	.LASF31
- 1103 01d0 01       		.byte	0x1
- 1104 01d1 15       		.byte	0x15
- 1105 01d2 81000000 		.4byte	0x81
- 1106 01d6 05       		.uleb128 0x5
- 1107 01d7 03       		.byte	0x3
- 1108 01d8 00000000 		.4byte	time
- 1109 01dc 10       		.uleb128 0x10
- 1110 01dd 11020000 		.4byte	.LASF32
- 1111 01e1 01       		.byte	0x1
- 1112 01e2 16       		.byte	0x16
- 1113 01e3 76000000 		.4byte	0x76
- 1114 01e7 05       		.uleb128 0x5
- 1115 01e8 03       		.byte	0x3
- 1116 01e9 00000000 		.4byte	lcdBtnOld
- 1117 01ed 11       		.uleb128 0x11
- 1118 01ee 42544E00 		.ascii	"BTN\000"
- 1119 01f2 01       		.byte	0x1
- 1120 01f3 17       		.byte	0x17
- 1121 01f4 FE010000 		.4byte	0x1fe
- 1122 01f8 05       		.uleb128 0x5
- 1123 01f9 03       		.byte	0x3
- 1124 01fa 00000000 		.4byte	BTN
- 1125 01fe 05       		.uleb128 0x5
- 1126 01ff CE000000 		.4byte	0xce
- 1127 0203 00       		.byte	0
- 1128              		.section	.debug_abbrev,"",%progbits
- 1129              	.Ldebug_abbrev0:
- 1130 0000 01       		.uleb128 0x1
- 1131 0001 11       		.uleb128 0x11
- 1132 0002 01       		.byte	0x1
- 1133 0003 25       		.uleb128 0x25
- 1134 0004 0E       		.uleb128 0xe
- 1135 0005 13       		.uleb128 0x13
- 1136 0006 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 25
-
-
- 1137 0007 03       		.uleb128 0x3
- 1138 0008 0E       		.uleb128 0xe
- 1139 0009 1B       		.uleb128 0x1b
- 1140 000a 0E       		.uleb128 0xe
- 1141 000b 55       		.uleb128 0x55
- 1142 000c 17       		.uleb128 0x17
- 1143 000d 11       		.uleb128 0x11
- 1144 000e 01       		.uleb128 0x1
- 1145 000f 10       		.uleb128 0x10
- 1146 0010 17       		.uleb128 0x17
- 1147 0011 00       		.byte	0
- 1148 0012 00       		.byte	0
- 1149 0013 02       		.uleb128 0x2
- 1150 0014 24       		.uleb128 0x24
- 1151 0015 00       		.byte	0
- 1152 0016 0B       		.uleb128 0xb
- 1153 0017 0B       		.uleb128 0xb
- 1154 0018 3E       		.uleb128 0x3e
- 1155 0019 0B       		.uleb128 0xb
- 1156 001a 03       		.uleb128 0x3
- 1157 001b 0E       		.uleb128 0xe
- 1158 001c 00       		.byte	0
- 1159 001d 00       		.byte	0
- 1160 001e 03       		.uleb128 0x3
- 1161 001f 24       		.uleb128 0x24
- 1162 0020 00       		.byte	0
- 1163 0021 0B       		.uleb128 0xb
- 1164 0022 0B       		.uleb128 0xb
- 1165 0023 3E       		.uleb128 0x3e
- 1166 0024 0B       		.uleb128 0xb
- 1167 0025 03       		.uleb128 0x3
- 1168 0026 08       		.uleb128 0x8
- 1169 0027 00       		.byte	0
- 1170 0028 00       		.byte	0
- 1171 0029 04       		.uleb128 0x4
- 1172 002a 16       		.uleb128 0x16
- 1173 002b 00       		.byte	0
- 1174 002c 03       		.uleb128 0x3
- 1175 002d 0E       		.uleb128 0xe
- 1176 002e 3A       		.uleb128 0x3a
- 1177 002f 0B       		.uleb128 0xb
- 1178 0030 3B       		.uleb128 0x3b
- 1179 0031 0B       		.uleb128 0xb
- 1180 0032 49       		.uleb128 0x49
- 1181 0033 13       		.uleb128 0x13
- 1182 0034 00       		.byte	0
- 1183 0035 00       		.byte	0
- 1184 0036 05       		.uleb128 0x5
- 1185 0037 35       		.uleb128 0x35
- 1186 0038 00       		.byte	0
- 1187 0039 49       		.uleb128 0x49
- 1188 003a 13       		.uleb128 0x13
- 1189 003b 00       		.byte	0
- 1190 003c 00       		.byte	0
- 1191 003d 06       		.uleb128 0x6
- 1192 003e 04       		.uleb128 0x4
- 1193 003f 01       		.byte	0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 26
-
-
- 1194 0040 03       		.uleb128 0x3
- 1195 0041 0E       		.uleb128 0xe
- 1196 0042 0B       		.uleb128 0xb
- 1197 0043 0B       		.uleb128 0xb
- 1198 0044 3A       		.uleb128 0x3a
- 1199 0045 0B       		.uleb128 0xb
- 1200 0046 3B       		.uleb128 0x3b
- 1201 0047 0B       		.uleb128 0xb
- 1202 0048 01       		.uleb128 0x1
- 1203 0049 13       		.uleb128 0x13
- 1204 004a 00       		.byte	0
- 1205 004b 00       		.byte	0
- 1206 004c 07       		.uleb128 0x7
- 1207 004d 28       		.uleb128 0x28
- 1208 004e 00       		.byte	0
- 1209 004f 03       		.uleb128 0x3
- 1210 0050 0E       		.uleb128 0xe
- 1211 0051 1C       		.uleb128 0x1c
- 1212 0052 0D       		.uleb128 0xd
- 1213 0053 00       		.byte	0
- 1214 0054 00       		.byte	0
- 1215 0055 08       		.uleb128 0x8
- 1216 0056 28       		.uleb128 0x28
- 1217 0057 00       		.byte	0
- 1218 0058 03       		.uleb128 0x3
- 1219 0059 08       		.uleb128 0x8
- 1220 005a 1C       		.uleb128 0x1c
- 1221 005b 0D       		.uleb128 0xd
- 1222 005c 00       		.byte	0
- 1223 005d 00       		.byte	0
- 1224 005e 09       		.uleb128 0x9
- 1225 005f 2E       		.uleb128 0x2e
- 1226 0060 00       		.byte	0
- 1227 0061 3F       		.uleb128 0x3f
- 1228 0062 19       		.uleb128 0x19
- 1229 0063 03       		.uleb128 0x3
- 1230 0064 0E       		.uleb128 0xe
- 1231 0065 3A       		.uleb128 0x3a
- 1232 0066 0B       		.uleb128 0xb
- 1233 0067 3B       		.uleb128 0x3b
- 1234 0068 0B       		.uleb128 0xb
- 1235 0069 27       		.uleb128 0x27
- 1236 006a 19       		.uleb128 0x19
- 1237 006b 11       		.uleb128 0x11
- 1238 006c 01       		.uleb128 0x1
- 1239 006d 12       		.uleb128 0x12
- 1240 006e 06       		.uleb128 0x6
- 1241 006f 40       		.uleb128 0x40
- 1242 0070 18       		.uleb128 0x18
- 1243 0071 9642     		.uleb128 0x2116
- 1244 0073 19       		.uleb128 0x19
- 1245 0074 00       		.byte	0
- 1246 0075 00       		.byte	0
- 1247 0076 0A       		.uleb128 0xa
- 1248 0077 2E       		.uleb128 0x2e
- 1249 0078 01       		.byte	0x1
- 1250 0079 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 27
-
-
- 1251 007a 19       		.uleb128 0x19
- 1252 007b 03       		.uleb128 0x3
- 1253 007c 0E       		.uleb128 0xe
- 1254 007d 3A       		.uleb128 0x3a
- 1255 007e 0B       		.uleb128 0xb
- 1256 007f 3B       		.uleb128 0x3b
- 1257 0080 0B       		.uleb128 0xb
- 1258 0081 49       		.uleb128 0x49
- 1259 0082 13       		.uleb128 0x13
- 1260 0083 11       		.uleb128 0x11
- 1261 0084 01       		.uleb128 0x1
- 1262 0085 12       		.uleb128 0x12
- 1263 0086 06       		.uleb128 0x6
- 1264 0087 40       		.uleb128 0x40
- 1265 0088 18       		.uleb128 0x18
- 1266 0089 9642     		.uleb128 0x2116
- 1267 008b 19       		.uleb128 0x19
- 1268 008c 01       		.uleb128 0x1
- 1269 008d 13       		.uleb128 0x13
- 1270 008e 00       		.byte	0
- 1271 008f 00       		.byte	0
- 1272 0090 0B       		.uleb128 0xb
- 1273 0091 34       		.uleb128 0x34
- 1274 0092 00       		.byte	0
- 1275 0093 03       		.uleb128 0x3
- 1276 0094 0E       		.uleb128 0xe
- 1277 0095 3A       		.uleb128 0x3a
- 1278 0096 0B       		.uleb128 0xb
- 1279 0097 3B       		.uleb128 0x3b
- 1280 0098 0B       		.uleb128 0xb
- 1281 0099 49       		.uleb128 0x49
- 1282 009a 13       		.uleb128 0x13
- 1283 009b 02       		.uleb128 0x2
- 1284 009c 18       		.uleb128 0x18
- 1285 009d 00       		.byte	0
- 1286 009e 00       		.byte	0
- 1287 009f 0C       		.uleb128 0xc
- 1288 00a0 0B       		.uleb128 0xb
- 1289 00a1 01       		.byte	0x1
- 1290 00a2 11       		.uleb128 0x11
- 1291 00a3 01       		.uleb128 0x1
- 1292 00a4 12       		.uleb128 0x12
- 1293 00a5 06       		.uleb128 0x6
- 1294 00a6 00       		.byte	0
- 1295 00a7 00       		.byte	0
- 1296 00a8 0D       		.uleb128 0xd
- 1297 00a9 2E       		.uleb128 0x2e
- 1298 00aa 01       		.byte	0x1
- 1299 00ab 3F       		.uleb128 0x3f
- 1300 00ac 19       		.uleb128 0x19
- 1301 00ad 03       		.uleb128 0x3
- 1302 00ae 0E       		.uleb128 0xe
- 1303 00af 3A       		.uleb128 0x3a
- 1304 00b0 0B       		.uleb128 0xb
- 1305 00b1 3B       		.uleb128 0x3b
- 1306 00b2 0B       		.uleb128 0xb
- 1307 00b3 27       		.uleb128 0x27
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 28
-
-
- 1308 00b4 19       		.uleb128 0x19
- 1309 00b5 11       		.uleb128 0x11
- 1310 00b6 01       		.uleb128 0x1
- 1311 00b7 12       		.uleb128 0x12
- 1312 00b8 06       		.uleb128 0x6
- 1313 00b9 40       		.uleb128 0x40
- 1314 00ba 18       		.uleb128 0x18
- 1315 00bb 9642     		.uleb128 0x2116
- 1316 00bd 19       		.uleb128 0x19
- 1317 00be 01       		.uleb128 0x1
- 1318 00bf 13       		.uleb128 0x13
- 1319 00c0 00       		.byte	0
- 1320 00c1 00       		.byte	0
- 1321 00c2 0E       		.uleb128 0xe
- 1322 00c3 05       		.uleb128 0x5
- 1323 00c4 00       		.byte	0
- 1324 00c5 03       		.uleb128 0x3
- 1325 00c6 0E       		.uleb128 0xe
- 1326 00c7 3A       		.uleb128 0x3a
- 1327 00c8 0B       		.uleb128 0xb
- 1328 00c9 3B       		.uleb128 0x3b
- 1329 00ca 0B       		.uleb128 0xb
- 1330 00cb 49       		.uleb128 0x49
- 1331 00cc 13       		.uleb128 0x13
- 1332 00cd 02       		.uleb128 0x2
- 1333 00ce 18       		.uleb128 0x18
- 1334 00cf 00       		.byte	0
- 1335 00d0 00       		.byte	0
- 1336 00d1 0F       		.uleb128 0xf
- 1337 00d2 2E       		.uleb128 0x2e
- 1338 00d3 01       		.byte	0x1
- 1339 00d4 3F       		.uleb128 0x3f
- 1340 00d5 19       		.uleb128 0x19
- 1341 00d6 03       		.uleb128 0x3
- 1342 00d7 0E       		.uleb128 0xe
- 1343 00d8 3A       		.uleb128 0x3a
- 1344 00d9 0B       		.uleb128 0xb
- 1345 00da 3B       		.uleb128 0x3b
- 1346 00db 0B       		.uleb128 0xb
- 1347 00dc 27       		.uleb128 0x27
- 1348 00dd 19       		.uleb128 0x19
- 1349 00de 49       		.uleb128 0x49
- 1350 00df 13       		.uleb128 0x13
- 1351 00e0 11       		.uleb128 0x11
- 1352 00e1 01       		.uleb128 0x1
- 1353 00e2 12       		.uleb128 0x12
- 1354 00e3 06       		.uleb128 0x6
- 1355 00e4 40       		.uleb128 0x40
- 1356 00e5 18       		.uleb128 0x18
- 1357 00e6 9642     		.uleb128 0x2116
- 1358 00e8 19       		.uleb128 0x19
- 1359 00e9 01       		.uleb128 0x1
- 1360 00ea 13       		.uleb128 0x13
- 1361 00eb 00       		.byte	0
- 1362 00ec 00       		.byte	0
- 1363 00ed 10       		.uleb128 0x10
- 1364 00ee 34       		.uleb128 0x34
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 29
-
-
- 1365 00ef 00       		.byte	0
- 1366 00f0 03       		.uleb128 0x3
- 1367 00f1 0E       		.uleb128 0xe
- 1368 00f2 3A       		.uleb128 0x3a
- 1369 00f3 0B       		.uleb128 0xb
- 1370 00f4 3B       		.uleb128 0x3b
- 1371 00f5 0B       		.uleb128 0xb
- 1372 00f6 49       		.uleb128 0x49
- 1373 00f7 13       		.uleb128 0x13
- 1374 00f8 3F       		.uleb128 0x3f
- 1375 00f9 19       		.uleb128 0x19
- 1376 00fa 02       		.uleb128 0x2
- 1377 00fb 18       		.uleb128 0x18
- 1378 00fc 00       		.byte	0
- 1379 00fd 00       		.byte	0
- 1380 00fe 11       		.uleb128 0x11
- 1381 00ff 34       		.uleb128 0x34
- 1382 0100 00       		.byte	0
- 1383 0101 03       		.uleb128 0x3
- 1384 0102 08       		.uleb128 0x8
- 1385 0103 3A       		.uleb128 0x3a
- 1386 0104 0B       		.uleb128 0xb
- 1387 0105 3B       		.uleb128 0x3b
- 1388 0106 0B       		.uleb128 0xb
- 1389 0107 49       		.uleb128 0x49
- 1390 0108 13       		.uleb128 0x13
- 1391 0109 3F       		.uleb128 0x3f
- 1392 010a 19       		.uleb128 0x19
- 1393 010b 02       		.uleb128 0x2
- 1394 010c 18       		.uleb128 0x18
- 1395 010d 00       		.byte	0
- 1396 010e 00       		.byte	0
- 1397 010f 00       		.byte	0
- 1398              		.section	.debug_aranges,"",%progbits
- 1399 0000 34000000 		.4byte	0x34
- 1400 0004 0200     		.2byte	0x2
- 1401 0006 00000000 		.4byte	.Ldebug_info0
- 1402 000a 04       		.byte	0x4
- 1403 000b 00       		.byte	0
- 1404 000c 0000     		.2byte	0
- 1405 000e 0000     		.2byte	0
- 1406 0010 00000000 		.4byte	.LFB33
- 1407 0014 38000000 		.4byte	.LFE33-.LFB33
- 1408 0018 00000000 		.4byte	.LFB34
- 1409 001c 10020000 		.4byte	.LFE34-.LFB34
- 1410 0020 00000000 		.4byte	.LFB35
- 1411 0024 A4020000 		.4byte	.LFE35-.LFB35
- 1412 0028 00000000 		.4byte	.LFB36
- 1413 002c A4000000 		.4byte	.LFE36-.LFB36
- 1414 0030 00000000 		.4byte	0
- 1415 0034 00000000 		.4byte	0
- 1416              		.section	.debug_ranges,"",%progbits
- 1417              	.Ldebug_ranges0:
- 1418 0000 00000000 		.4byte	.LFB33
- 1419 0004 38000000 		.4byte	.LFE33
- 1420 0008 00000000 		.4byte	.LFB34
- 1421 000c 10020000 		.4byte	.LFE34
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 30
-
-
- 1422 0010 00000000 		.4byte	.LFB35
- 1423 0014 A4020000 		.4byte	.LFE35
- 1424 0018 00000000 		.4byte	.LFB36
- 1425 001c A4000000 		.4byte	.LFE36
- 1426 0020 00000000 		.4byte	0
- 1427 0024 00000000 		.4byte	0
- 1428              		.section	.debug_line,"",%progbits
- 1429              	.Ldebug_line0:
- 1430 0000 05010000 		.section	.debug_str,"MS",%progbits,1
- 1430      02004500 
- 1430      00000201 
- 1430      FB0E0D00 
- 1430      01010101 
- 1431              	.LASF14:
- 1432 0000 666C6F61 		.ascii	"float\000"
- 1432      7400
- 1433              	.LASF36:
- 1434 0006 42544E5F 		.ascii	"BTN_states\000"
- 1434      73746174 
- 1434      657300
- 1435              	.LASF21:
- 1436 0011 4C454654 		.ascii	"LEFT\000"
- 1436      00
- 1437              	.LASF16:
- 1438 0016 75696E74 		.ascii	"uint64\000"
- 1438      363400
- 1439              	.LASF3:
- 1440 001d 73686F72 		.ascii	"short unsigned int\000"
- 1440      7420756E 
- 1440      7369676E 
- 1440      65642069 
- 1440      6E7400
- 1441              	.LASF8:
- 1442 0030 756E7369 		.ascii	"unsigned int\000"
- 1442      676E6564 
- 1442      20696E74 
- 1442      00
- 1443              	.LASF28:
- 1444 003d 74696D65 		.ascii	"time_us\000"
- 1444      5F757300 
- 1445              	.LASF19:
- 1446 0045 554E5052 		.ascii	"UNPRESSED\000"
- 1446      45535345 
- 1446      4400
- 1447              	.LASF33:
- 1448 004f 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 1448      4320342E 
- 1448      382E3420 
- 1448      32303134 
- 1448      30353236 
- 1449 0082 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 1449      20726576 
- 1449      6973696F 
- 1449      6E203231 
- 1449      31333538 
- 1450 00b5 30202D66 		.ascii	"0 -ffunction-sections\000"
- 1450      66756E63 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 31
-
-
- 1450      74696F6E 
- 1450      2D736563 
- 1450      74696F6E 
- 1451              	.LASF20:
- 1452 00cb 53454C45 		.ascii	"SELECT\000"
- 1452      435400
- 1453              	.LASF1:
- 1454 00d2 756E7369 		.ascii	"unsigned char\000"
- 1454      676E6564 
- 1454      20636861 
- 1454      7200
- 1455              	.LASF13:
- 1456 00e0 696E7431 		.ascii	"int16\000"
- 1456      3600
- 1457              	.LASF5:
- 1458 00e6 6C6F6E67 		.ascii	"long unsigned int\000"
- 1458      20756E73 
- 1458      69676E65 
- 1458      6420696E 
- 1458      7400
- 1459              	.LASF25:
- 1460 00f8 74656D70 		.ascii	"temp\000"
- 1460      00
- 1461              	.LASF9:
- 1462 00fd 75696E74 		.ascii	"uint8\000"
- 1462      3800
- 1463              	.LASF30:
- 1464 0103 565F6E65 		.ascii	"V_new\000"
- 1464      7700
- 1465              	.LASF15:
- 1466 0109 646F7562 		.ascii	"double\000"
- 1466      6C6500
- 1467              	.LASF34:
- 1468 0110 2E5C6D61 		.ascii	".\\main.c\000"
- 1468      696E2E63 
- 1468      00
- 1469              	.LASF10:
- 1470 0119 75696E74 		.ascii	"uint16\000"
- 1470      313600
- 1471              	.LASF12:
- 1472 0120 696E7438 		.ascii	"int8\000"
- 1472      00
- 1473              	.LASF11:
- 1474 0125 75696E74 		.ascii	"uint32\000"
- 1474      333200
- 1475              	.LASF26:
- 1476 012c 6D61696E 		.ascii	"main\000"
- 1476      00
- 1477              	.LASF27:
- 1478 0131 7072696E 		.ascii	"print_measurement\000"
- 1478      745F6D65 
- 1478      61737572 
- 1478      656D656E 
- 1478      7400
- 1479              	.LASF29:
- 1480 0143 72756E6E 		.ascii	"running\000"
- 1480      696E6700 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 32
-
-
- 1481              	.LASF7:
- 1482 014b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1482      206C6F6E 
- 1482      6720756E 
- 1482      7369676E 
- 1482      65642069 
- 1483              	.LASF23:
- 1484 0162 52494748 		.ascii	"RIGHT\000"
- 1484      5400
- 1485              	.LASF31:
- 1486 0168 74696D65 		.ascii	"time\000"
- 1486      00
- 1487              	.LASF18:
- 1488 016d 73697A65 		.ascii	"sizetype\000"
- 1488      74797065 
- 1488      00
- 1489              	.LASF35:
- 1490 0176 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
- 1490      73657273 
- 1490      5C536E75 
- 1490      666B696E 
- 1490      5C446F63 
- 1491 01a3 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
- 1491      696D6572 
- 1491      5C435254 
- 1491      5F74696D 
- 1491      65722E63 
- 1492              	.LASF6:
- 1493 01bc 6C6F6E67 		.ascii	"long long int\000"
- 1493      206C6F6E 
- 1493      6720696E 
- 1493      7400
- 1494              	.LASF17:
- 1495 01ca 63686172 		.ascii	"char\000"
- 1495      00
- 1496              	.LASF24:
- 1497 01cf 6C696768 		.ascii	"lightMax\000"
- 1497      744D6178 
- 1497      00
- 1498              	.LASF22:
- 1499 01d8 444F574E 		.ascii	"DOWN\000"
- 1499      00
- 1500              	.LASF37:
- 1501 01dd 73775F69 		.ascii	"sw_int_ISR\000"
- 1501      6E745F49 
- 1501      535200
- 1502              	.LASF2:
- 1503 01e8 73686F72 		.ascii	"short int\000"
- 1503      7420696E 
- 1503      7400
- 1504              	.LASF4:
- 1505 01f2 6C6F6E67 		.ascii	"long int\000"
- 1505      20696E74 
- 1505      00
- 1506              	.LASF38:
- 1507 01fb 75706461 		.ascii	"updateBTN\000"
- 1507      74654254 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccojFyof.s 			page 33
-
-
- 1507      4E00
- 1508              	.LASF0:
- 1509 0205 7369676E 		.ascii	"signed char\000"
- 1509      65642063 
- 1509      68617200 
- 1510              	.LASF32:
- 1511 0211 6C636442 		.ascii	"lcdBtnOld\000"
- 1511      746E4F6C 
- 1511      6400
- 1512              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

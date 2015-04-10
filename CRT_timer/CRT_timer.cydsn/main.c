@@ -9,18 +9,16 @@
 #include <project.h>
 #include <stdio.h>
 #include "menus.h"
+#include "keypad.h"
 
 #define CONVERT_TO_ASCII (0x30u)
 #define TIMER_MAX 4294967296
 //#define debugging1 //Show time for checking result from ADC
 #define debugging2 //Show time for starting the timer
 
-enum BTN_states{ UNPRESSED, SELECT, LEFT, DOWN, UP, RIGHT };
 volatile uint8 running; //flag - false = 0, true != 0
 uint16 V_new;
 uint32 time;
-uint16 lcdBtnOld;
-volatile enum BTN_states BTN;
 
 //Prototypes
 CY_ISR_PROTO(sw_int_ISR);
@@ -40,8 +38,7 @@ CY_ISR(sw_int_ISR){
 }
 
 int main(){
-    int16 lightMax = -1;
-    
+    target = 30;
     Timer_1_Start();
     sw_int_StartEx(sw_int_ISR);
     B_press_Write(0);
@@ -65,7 +62,7 @@ int main(){
             #ifdef debugging1
                 Test_pin_Write(1);
             #endif
-            if(ADC_GetResult16(0) > 10){
+            if(ADC_GetResult16(0) > target){
                 time = Timer_1_ReadCounter();
                 #ifdef debugging2
                     Test_pin_Write(0);
@@ -81,46 +78,7 @@ int main(){
             #endif
         }
         else{
-            int16 temp = ADC_GetResult16(0);
-            if (temp > lightMax){
-                lightMax = temp;
-                LCD_Position(0,0);
-                LCD_PrintString("                ");
-                LCD_Position(0,0);
-                LCD_PrintNumber(lightMax);
-            }
-            if (updateBTN()){
-                if (BTN == SELECT){
-                    LCD_Position(1,0);
-                    LCD_PrintString("                ");
-                    LCD_Position(1,0);
-                    LCD_PrintString("Select pressed");
-                }
-                else if(BTN == LEFT){
-                    LCD_Position(1,0);
-                    LCD_PrintString("                ");
-                    LCD_Position(1,0);
-                    LCD_PrintString("Left pressed");
-                }
-                else if(BTN == RIGHT){
-                    LCD_Position(1,0);
-                    LCD_PrintString("                ");
-                    LCD_Position(1,0);
-                    LCD_PrintString("Right pressed");
-                }
-                else if(BTN == UP){
-                    LCD_Position(1,0);
-                    LCD_PrintString("                ");
-                    LCD_Position(1,0);
-                    LCD_PrintString("Up pressed");
-                }
-                else if(BTN == DOWN){
-                    LCD_Position(1,0);
-                    LCD_PrintString("                ");
-                    LCD_Position(1,0);
-                    LCD_PrintString("Down pressed");
-                }
-            }
+            updateMenu();
         }
     }
 }
@@ -151,25 +109,4 @@ void print_measurement(uint32 time){
     time_us %= 10;
     LCD_PutChar(time_us + CONVERT_TO_ASCII);
     LCD_PrintString("us");
-}
-
-int8 updateBTN(void){
-    uint16 temp = ADC_GetResult16(1); //A0
-    if (lcdBtnOld != temp){
-        if (temp == 0xFFFF || temp <= 5)
-            BTN = RIGHT;
-        else if(temp <= 20)
-            BTN = UP;
-        else if(temp <= 40)
-            BTN = DOWN;
-        else if(temp <= 60)
-            BTN = LEFT;
-        else if(temp <= 100)
-            BTN = SELECT;
-        else
-            BTN = UNPRESSED;
-        lcdBtnOld = temp;
-        return 1;
-    }
-    return 0;
 }

@@ -1,0 +1,679 @@
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"keypad.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	btn_old
+  18              		.bss
+  19              		.type	btn_old, %object
+  20              		.size	btn_old, 1
+  21              	btn_old:
+  22 0000 00       		.space	1
+  23              		.section	.text.getButton,"ax",%progbits
+  24              		.align	2
+  25              		.global	getButton
+  26              		.code	16
+  27              		.thumb_func
+  28              		.type	getButton, %function
+  29              	getButton:
+  30              	.LFB33:
+  31              		.file 1 ".\\keypad.c"
+   1:.\keypad.c    **** /* ========================================
+   2:.\keypad.c    ****  *
+   3:.\keypad.c    ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\keypad.c    ****  * All Rights Reserved
+   5:.\keypad.c    ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\keypad.c    ****  *
+   7:.\keypad.c    ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\keypad.c    ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\keypad.c    ****  *
+  10:.\keypad.c    ****  * ========================================
+  11:.\keypad.c    **** */
+  12:.\keypad.c    **** 
+  13:.\keypad.c    **** /* [] END OF FILE */
+  14:.\keypad.c    **** 
+  15:.\keypad.c    **** #include <project.h>
+  16:.\keypad.c    **** #include "keypad.h"
+  17:.\keypad.c    **** 
+  18:.\keypad.c    **** BTN_states btn_old = UNPRESSED;
+  19:.\keypad.c    **** 
+  20:.\keypad.c    **** BTN_states getButton(void){
+  32              		.loc 1 20 0
+  33              		.cfi_startproc
+  34 0000 80B5     		push	{r7, lr}
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 7, -8
+  37              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 2
+
+
+  38 0002 82B0     		sub	sp, sp, #8
+  39              		.cfi_def_cfa_offset 16
+  40 0004 00AF     		add	r7, sp, #0
+  41              		.cfi_def_cfa_register 7
+  21:.\keypad.c    ****     BTN_states btn;
+  22:.\keypad.c    ****     uint16 temp = ADC_GetResult16(1); //A0
+  42              		.loc 1 22 0
+  43 0006 0120     		mov	r0, #1
+  44 0008 FFF7FEFF 		bl	ADC_GetResult16
+  45 000c 031C     		mov	r3, r0
+  46 000e 1A1C     		mov	r2, r3
+  47 0010 3B1D     		add	r3, r7, #4
+  48 0012 1A80     		strh	r2, [r3]
+  23:.\keypad.c    ****     
+  24:.\keypad.c    ****     if (temp == 0xFFFF || temp <= 5)
+  49              		.loc 1 24 0
+  50 0014 3B1D     		add	r3, r7, #4
+  51 0016 1A88     		ldrh	r2, [r3]
+  52 0018 1F4B     		ldr	r3, .L11
+  53 001a 9A42     		cmp	r2, r3
+  54 001c 03D0     		beq	.L2
+  55              		.loc 1 24 0 is_stmt 0 discriminator 1
+  56 001e 3B1D     		add	r3, r7, #4
+  57 0020 1B88     		ldrh	r3, [r3]
+  58 0022 052B     		cmp	r3, #5
+  59 0024 03D8     		bhi	.L3
+  60              	.L2:
+  25:.\keypad.c    ****         btn = RIGHT;
+  61              		.loc 1 25 0 is_stmt 1
+  62 0026 FB1D     		add	r3, r7, #7
+  63 0028 0522     		mov	r2, #5
+  64 002a 1A70     		strb	r2, [r3]
+  65 002c 22E0     		b	.L4
+  66              	.L3:
+  26:.\keypad.c    ****     else if(temp <= 20)
+  67              		.loc 1 26 0
+  68 002e 3B1D     		add	r3, r7, #4
+  69 0030 1B88     		ldrh	r3, [r3]
+  70 0032 142B     		cmp	r3, #20
+  71 0034 03D8     		bhi	.L5
+  27:.\keypad.c    ****         btn = UP;
+  72              		.loc 1 27 0
+  73 0036 FB1D     		add	r3, r7, #7
+  74 0038 0422     		mov	r2, #4
+  75 003a 1A70     		strb	r2, [r3]
+  76 003c 1AE0     		b	.L4
+  77              	.L5:
+  28:.\keypad.c    ****     else if(temp <= 40)
+  78              		.loc 1 28 0
+  79 003e 3B1D     		add	r3, r7, #4
+  80 0040 1B88     		ldrh	r3, [r3]
+  81 0042 282B     		cmp	r3, #40
+  82 0044 03D8     		bhi	.L6
+  29:.\keypad.c    ****         btn = DOWN;
+  83              		.loc 1 29 0
+  84 0046 FB1D     		add	r3, r7, #7
+  85 0048 0322     		mov	r2, #3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 3
+
+
+  86 004a 1A70     		strb	r2, [r3]
+  87 004c 12E0     		b	.L4
+  88              	.L6:
+  30:.\keypad.c    ****     else if(temp <= 60)
+  89              		.loc 1 30 0
+  90 004e 3B1D     		add	r3, r7, #4
+  91 0050 1B88     		ldrh	r3, [r3]
+  92 0052 3C2B     		cmp	r3, #60
+  93 0054 03D8     		bhi	.L7
+  31:.\keypad.c    ****         btn = LEFT;
+  94              		.loc 1 31 0
+  95 0056 FB1D     		add	r3, r7, #7
+  96 0058 0222     		mov	r2, #2
+  97 005a 1A70     		strb	r2, [r3]
+  98 005c 0AE0     		b	.L4
+  99              	.L7:
+  32:.\keypad.c    ****     else if(temp <= 100)
+ 100              		.loc 1 32 0
+ 101 005e 3B1D     		add	r3, r7, #4
+ 102 0060 1B88     		ldrh	r3, [r3]
+ 103 0062 642B     		cmp	r3, #100
+ 104 0064 03D8     		bhi	.L8
+  33:.\keypad.c    ****         btn = SELECT;
+ 105              		.loc 1 33 0
+ 106 0066 FB1D     		add	r3, r7, #7
+ 107 0068 0122     		mov	r2, #1
+ 108 006a 1A70     		strb	r2, [r3]
+ 109 006c 02E0     		b	.L4
+ 110              	.L8:
+  34:.\keypad.c    ****     else
+  35:.\keypad.c    ****         btn = UNPRESSED;
+ 111              		.loc 1 35 0
+ 112 006e FB1D     		add	r3, r7, #7
+ 113 0070 0022     		mov	r2, #0
+ 114 0072 1A70     		strb	r2, [r3]
+ 115              	.L4:
+  36:.\keypad.c    ****     
+  37:.\keypad.c    ****     if (btn_old != btn)
+ 116              		.loc 1 37 0
+ 117 0074 094B     		ldr	r3, .L11+4
+ 118 0076 1B78     		ldrb	r3, [r3]
+ 119 0078 FA1D     		add	r2, r7, #7
+ 120 007a 1278     		ldrb	r2, [r2]
+ 121 007c 9A42     		cmp	r2, r3
+ 122 007e 06D0     		beq	.L9
+  38:.\keypad.c    ****         return btn_old = btn;
+ 123              		.loc 1 38 0
+ 124 0080 064B     		ldr	r3, .L11+4
+ 125 0082 FA1D     		add	r2, r7, #7
+ 126 0084 1278     		ldrb	r2, [r2]
+ 127 0086 1A70     		strb	r2, [r3]
+ 128 0088 044B     		ldr	r3, .L11+4
+ 129 008a 1B78     		ldrb	r3, [r3]
+ 130 008c 00E0     		b	.L10
+ 131              	.L9:
+  39:.\keypad.c    ****     else
+  40:.\keypad.c    ****         return UNPRESSED;
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 4
+
+
+ 132              		.loc 1 40 0
+ 133 008e 0023     		mov	r3, #0
+ 134              	.L10:
+  41:.\keypad.c    **** }...
+ 135              		.loc 1 41 0
+ 136 0090 181C     		mov	r0, r3
+ 137 0092 BD46     		mov	sp, r7
+ 138 0094 02B0     		add	sp, sp, #8
+ 139              		@ sp needed
+ 140 0096 80BD     		pop	{r7, pc}
+ 141              	.L12:
+ 142              		.align	2
+ 143              	.L11:
+ 144 0098 FFFF0000 		.word	65535
+ 145 009c 00000000 		.word	btn_old
+ 146              		.cfi_endproc
+ 147              	.LFE33:
+ 148              		.size	getButton, .-getButton
+ 149              		.text
+ 150              	.Letext0:
+ 151              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
+ 152              		.file 3 ".\\keypad.h"
+ 153              		.section	.debug_info,"",%progbits
+ 154              	.Ldebug_info0:
+ 155 0000 0D010000 		.4byte	0x10d
+ 156 0004 0400     		.2byte	0x4
+ 157 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 158 000a 04       		.byte	0x4
+ 159 000b 01       		.uleb128 0x1
+ 160 000c 6A000000 		.4byte	.LASF21
+ 161 0010 01       		.byte	0x1
+ 162 0011 4F010000 		.4byte	.LASF22
+ 163 0015 F9000000 		.4byte	.LASF23
+ 164 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 165 001d 00000000 		.4byte	0
+ 166 0021 00000000 		.4byte	.Ldebug_line0
+ 167 0025 02       		.uleb128 0x2
+ 168 0026 01       		.byte	0x1
+ 169 0027 06       		.byte	0x6
+ 170 0028 6D010000 		.4byte	.LASF0
+ 171 002c 02       		.uleb128 0x2
+ 172 002d 01       		.byte	0x1
+ 173 002e 08       		.byte	0x8
+ 174 002f E6000000 		.4byte	.LASF1
+ 175 0033 02       		.uleb128 0x2
+ 176 0034 02       		.byte	0x2
+ 177 0035 05       		.byte	0x5
+ 178 0036 87010000 		.4byte	.LASF2
+ 179 003a 02       		.uleb128 0x2
+ 180 003b 02       		.byte	0x2
+ 181 003c 07       		.byte	0x7
+ 182 003d 5A010000 		.4byte	.LASF3
+ 183 0041 02       		.uleb128 0x2
+ 184 0042 04       		.byte	0x4
+ 185 0043 05       		.byte	0x5
+ 186 0044 3F010000 		.4byte	.LASF4
+ 187 0048 02       		.uleb128 0x2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 5
+
+
+ 188 0049 04       		.byte	0x4
+ 189 004a 07       		.byte	0x7
+ 190 004b 2F000000 		.4byte	.LASF5
+ 191 004f 02       		.uleb128 0x2
+ 192 0050 08       		.byte	0x8
+ 193 0051 05       		.byte	0x5
+ 194 0052 00000000 		.4byte	.LASF6
+ 195 0056 02       		.uleb128 0x2
+ 196 0057 08       		.byte	0x8
+ 197 0058 07       		.byte	0x7
+ 198 0059 48000000 		.4byte	.LASF7
+ 199 005d 03       		.uleb128 0x3
+ 200 005e 04       		.byte	0x4
+ 201 005f 05       		.byte	0x5
+ 202 0060 696E7400 		.ascii	"int\000"
+ 203 0064 02       		.uleb128 0x2
+ 204 0065 04       		.byte	0x4
+ 205 0066 07       		.byte	0x7
+ 206 0067 0E000000 		.4byte	.LASF8
+ 207 006b 04       		.uleb128 0x4
+ 208 006c 91010000 		.4byte	.LASF18
+ 209 0070 02       		.byte	0x2
+ 210 0071 A2       		.byte	0xa2
+ 211 0072 3A000000 		.4byte	0x3a
+ 212 0076 02       		.uleb128 0x2
+ 213 0077 04       		.byte	0x4
+ 214 0078 04       		.byte	0x4
+ 215 0079 81010000 		.4byte	.LASF9
+ 216 007d 02       		.uleb128 0x2
+ 217 007e 08       		.byte	0x8
+ 218 007f 04       		.byte	0x4
+ 219 0080 48010000 		.4byte	.LASF10
+ 220 0084 02       		.uleb128 0x2
+ 221 0085 01       		.byte	0x1
+ 222 0086 08       		.byte	0x8
+ 223 0087 F4000000 		.4byte	.LASF11
+ 224 008b 02       		.uleb128 0x2
+ 225 008c 04       		.byte	0x4
+ 226 008d 07       		.byte	0x7
+ 227 008e A3010000 		.4byte	.LASF12
+ 228 0092 05       		.uleb128 0x5
+ 229 0093 01       		.byte	0x1
+ 230 0094 03       		.byte	0x3
+ 231 0095 0F       		.byte	0xf
+ 232 0096 BE000000 		.4byte	0xbe
+ 233 009a 06       		.uleb128 0x6
+ 234 009b AC010000 		.4byte	.LASF13
+ 235 009f 00       		.sleb128 0
+ 236 00a0 06       		.uleb128 0x6
+ 237 00a1 41000000 		.4byte	.LASF14
+ 238 00a5 01       		.sleb128 1
+ 239 00a6 06       		.uleb128 0x6
+ 240 00a7 2A000000 		.4byte	.LASF15
+ 241 00ab 02       		.sleb128 2
+ 242 00ac 06       		.uleb128 0x6
+ 243 00ad 65000000 		.4byte	.LASF16
+ 244 00b1 03       		.sleb128 3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 6
+
+
+ 245 00b2 07       		.uleb128 0x7
+ 246 00b3 555000   		.ascii	"UP\000"
+ 247 00b6 04       		.sleb128 4
+ 248 00b7 06       		.uleb128 0x6
+ 249 00b8 5F000000 		.4byte	.LASF17
+ 250 00bc 05       		.sleb128 5
+ 251 00bd 00       		.byte	0
+ 252 00be 04       		.uleb128 0x4
+ 253 00bf 98010000 		.4byte	.LASF19
+ 254 00c3 03       		.byte	0x3
+ 255 00c4 0F       		.byte	0xf
+ 256 00c5 92000000 		.4byte	0x92
+ 257 00c9 08       		.uleb128 0x8
+ 258 00ca 20000000 		.4byte	.LASF24
+ 259 00ce 01       		.byte	0x1
+ 260 00cf 14       		.byte	0x14
+ 261 00d0 BE000000 		.4byte	0xbe
+ 262 00d4 00000000 		.4byte	.LFB33
+ 263 00d8 A0000000 		.4byte	.LFE33-.LFB33
+ 264 00dc 01       		.uleb128 0x1
+ 265 00dd 9C       		.byte	0x9c
+ 266 00de FF000000 		.4byte	0xff
+ 267 00e2 09       		.uleb128 0x9
+ 268 00e3 62746E00 		.ascii	"btn\000"
+ 269 00e7 01       		.byte	0x1
+ 270 00e8 15       		.byte	0x15
+ 271 00e9 BE000000 		.4byte	0xbe
+ 272 00ed 02       		.uleb128 0x2
+ 273 00ee 91       		.byte	0x91
+ 274 00ef 77       		.sleb128 -9
+ 275 00f0 0A       		.uleb128 0xa
+ 276 00f1 1B000000 		.4byte	.LASF20
+ 277 00f5 01       		.byte	0x1
+ 278 00f6 16       		.byte	0x16
+ 279 00f7 6B000000 		.4byte	0x6b
+ 280 00fb 02       		.uleb128 0x2
+ 281 00fc 91       		.byte	0x91
+ 282 00fd 74       		.sleb128 -12
+ 283 00fe 00       		.byte	0
+ 284 00ff 0B       		.uleb128 0xb
+ 285 0100 79010000 		.4byte	.LASF25
+ 286 0104 01       		.byte	0x1
+ 287 0105 12       		.byte	0x12
+ 288 0106 BE000000 		.4byte	0xbe
+ 289 010a 05       		.uleb128 0x5
+ 290 010b 03       		.byte	0x3
+ 291 010c 00000000 		.4byte	btn_old
+ 292 0110 00       		.byte	0
+ 293              		.section	.debug_abbrev,"",%progbits
+ 294              	.Ldebug_abbrev0:
+ 295 0000 01       		.uleb128 0x1
+ 296 0001 11       		.uleb128 0x11
+ 297 0002 01       		.byte	0x1
+ 298 0003 25       		.uleb128 0x25
+ 299 0004 0E       		.uleb128 0xe
+ 300 0005 13       		.uleb128 0x13
+ 301 0006 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 7
+
+
+ 302 0007 03       		.uleb128 0x3
+ 303 0008 0E       		.uleb128 0xe
+ 304 0009 1B       		.uleb128 0x1b
+ 305 000a 0E       		.uleb128 0xe
+ 306 000b 55       		.uleb128 0x55
+ 307 000c 17       		.uleb128 0x17
+ 308 000d 11       		.uleb128 0x11
+ 309 000e 01       		.uleb128 0x1
+ 310 000f 10       		.uleb128 0x10
+ 311 0010 17       		.uleb128 0x17
+ 312 0011 00       		.byte	0
+ 313 0012 00       		.byte	0
+ 314 0013 02       		.uleb128 0x2
+ 315 0014 24       		.uleb128 0x24
+ 316 0015 00       		.byte	0
+ 317 0016 0B       		.uleb128 0xb
+ 318 0017 0B       		.uleb128 0xb
+ 319 0018 3E       		.uleb128 0x3e
+ 320 0019 0B       		.uleb128 0xb
+ 321 001a 03       		.uleb128 0x3
+ 322 001b 0E       		.uleb128 0xe
+ 323 001c 00       		.byte	0
+ 324 001d 00       		.byte	0
+ 325 001e 03       		.uleb128 0x3
+ 326 001f 24       		.uleb128 0x24
+ 327 0020 00       		.byte	0
+ 328 0021 0B       		.uleb128 0xb
+ 329 0022 0B       		.uleb128 0xb
+ 330 0023 3E       		.uleb128 0x3e
+ 331 0024 0B       		.uleb128 0xb
+ 332 0025 03       		.uleb128 0x3
+ 333 0026 08       		.uleb128 0x8
+ 334 0027 00       		.byte	0
+ 335 0028 00       		.byte	0
+ 336 0029 04       		.uleb128 0x4
+ 337 002a 16       		.uleb128 0x16
+ 338 002b 00       		.byte	0
+ 339 002c 03       		.uleb128 0x3
+ 340 002d 0E       		.uleb128 0xe
+ 341 002e 3A       		.uleb128 0x3a
+ 342 002f 0B       		.uleb128 0xb
+ 343 0030 3B       		.uleb128 0x3b
+ 344 0031 0B       		.uleb128 0xb
+ 345 0032 49       		.uleb128 0x49
+ 346 0033 13       		.uleb128 0x13
+ 347 0034 00       		.byte	0
+ 348 0035 00       		.byte	0
+ 349 0036 05       		.uleb128 0x5
+ 350 0037 04       		.uleb128 0x4
+ 351 0038 01       		.byte	0x1
+ 352 0039 0B       		.uleb128 0xb
+ 353 003a 0B       		.uleb128 0xb
+ 354 003b 3A       		.uleb128 0x3a
+ 355 003c 0B       		.uleb128 0xb
+ 356 003d 3B       		.uleb128 0x3b
+ 357 003e 0B       		.uleb128 0xb
+ 358 003f 01       		.uleb128 0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 8
+
+
+ 359 0040 13       		.uleb128 0x13
+ 360 0041 00       		.byte	0
+ 361 0042 00       		.byte	0
+ 362 0043 06       		.uleb128 0x6
+ 363 0044 28       		.uleb128 0x28
+ 364 0045 00       		.byte	0
+ 365 0046 03       		.uleb128 0x3
+ 366 0047 0E       		.uleb128 0xe
+ 367 0048 1C       		.uleb128 0x1c
+ 368 0049 0D       		.uleb128 0xd
+ 369 004a 00       		.byte	0
+ 370 004b 00       		.byte	0
+ 371 004c 07       		.uleb128 0x7
+ 372 004d 28       		.uleb128 0x28
+ 373 004e 00       		.byte	0
+ 374 004f 03       		.uleb128 0x3
+ 375 0050 08       		.uleb128 0x8
+ 376 0051 1C       		.uleb128 0x1c
+ 377 0052 0D       		.uleb128 0xd
+ 378 0053 00       		.byte	0
+ 379 0054 00       		.byte	0
+ 380 0055 08       		.uleb128 0x8
+ 381 0056 2E       		.uleb128 0x2e
+ 382 0057 01       		.byte	0x1
+ 383 0058 3F       		.uleb128 0x3f
+ 384 0059 19       		.uleb128 0x19
+ 385 005a 03       		.uleb128 0x3
+ 386 005b 0E       		.uleb128 0xe
+ 387 005c 3A       		.uleb128 0x3a
+ 388 005d 0B       		.uleb128 0xb
+ 389 005e 3B       		.uleb128 0x3b
+ 390 005f 0B       		.uleb128 0xb
+ 391 0060 27       		.uleb128 0x27
+ 392 0061 19       		.uleb128 0x19
+ 393 0062 49       		.uleb128 0x49
+ 394 0063 13       		.uleb128 0x13
+ 395 0064 11       		.uleb128 0x11
+ 396 0065 01       		.uleb128 0x1
+ 397 0066 12       		.uleb128 0x12
+ 398 0067 06       		.uleb128 0x6
+ 399 0068 40       		.uleb128 0x40
+ 400 0069 18       		.uleb128 0x18
+ 401 006a 9642     		.uleb128 0x2116
+ 402 006c 19       		.uleb128 0x19
+ 403 006d 01       		.uleb128 0x1
+ 404 006e 13       		.uleb128 0x13
+ 405 006f 00       		.byte	0
+ 406 0070 00       		.byte	0
+ 407 0071 09       		.uleb128 0x9
+ 408 0072 34       		.uleb128 0x34
+ 409 0073 00       		.byte	0
+ 410 0074 03       		.uleb128 0x3
+ 411 0075 08       		.uleb128 0x8
+ 412 0076 3A       		.uleb128 0x3a
+ 413 0077 0B       		.uleb128 0xb
+ 414 0078 3B       		.uleb128 0x3b
+ 415 0079 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 9
+
+
+ 416 007a 49       		.uleb128 0x49
+ 417 007b 13       		.uleb128 0x13
+ 418 007c 02       		.uleb128 0x2
+ 419 007d 18       		.uleb128 0x18
+ 420 007e 00       		.byte	0
+ 421 007f 00       		.byte	0
+ 422 0080 0A       		.uleb128 0xa
+ 423 0081 34       		.uleb128 0x34
+ 424 0082 00       		.byte	0
+ 425 0083 03       		.uleb128 0x3
+ 426 0084 0E       		.uleb128 0xe
+ 427 0085 3A       		.uleb128 0x3a
+ 428 0086 0B       		.uleb128 0xb
+ 429 0087 3B       		.uleb128 0x3b
+ 430 0088 0B       		.uleb128 0xb
+ 431 0089 49       		.uleb128 0x49
+ 432 008a 13       		.uleb128 0x13
+ 433 008b 02       		.uleb128 0x2
+ 434 008c 18       		.uleb128 0x18
+ 435 008d 00       		.byte	0
+ 436 008e 00       		.byte	0
+ 437 008f 0B       		.uleb128 0xb
+ 438 0090 34       		.uleb128 0x34
+ 439 0091 00       		.byte	0
+ 440 0092 03       		.uleb128 0x3
+ 441 0093 0E       		.uleb128 0xe
+ 442 0094 3A       		.uleb128 0x3a
+ 443 0095 0B       		.uleb128 0xb
+ 444 0096 3B       		.uleb128 0x3b
+ 445 0097 0B       		.uleb128 0xb
+ 446 0098 49       		.uleb128 0x49
+ 447 0099 13       		.uleb128 0x13
+ 448 009a 3F       		.uleb128 0x3f
+ 449 009b 19       		.uleb128 0x19
+ 450 009c 02       		.uleb128 0x2
+ 451 009d 18       		.uleb128 0x18
+ 452 009e 00       		.byte	0
+ 453 009f 00       		.byte	0
+ 454 00a0 00       		.byte	0
+ 455              		.section	.debug_aranges,"",%progbits
+ 456 0000 1C000000 		.4byte	0x1c
+ 457 0004 0200     		.2byte	0x2
+ 458 0006 00000000 		.4byte	.Ldebug_info0
+ 459 000a 04       		.byte	0x4
+ 460 000b 00       		.byte	0
+ 461 000c 0000     		.2byte	0
+ 462 000e 0000     		.2byte	0
+ 463 0010 00000000 		.4byte	.LFB33
+ 464 0014 A0000000 		.4byte	.LFE33-.LFB33
+ 465 0018 00000000 		.4byte	0
+ 466 001c 00000000 		.4byte	0
+ 467              		.section	.debug_ranges,"",%progbits
+ 468              	.Ldebug_ranges0:
+ 469 0000 00000000 		.4byte	.LFB33
+ 470 0004 A0000000 		.4byte	.LFE33
+ 471 0008 00000000 		.4byte	0
+ 472 000c 00000000 		.4byte	0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 10
+
+
+ 473              		.section	.debug_line,"",%progbits
+ 474              	.Ldebug_line0:
+ 475 0000 81000000 		.section	.debug_str,"MS",%progbits,1
+ 475      02005500 
+ 475      00000201 
+ 475      FB0E0D00 
+ 475      01010101 
+ 476              	.LASF6:
+ 477 0000 6C6F6E67 		.ascii	"long long int\000"
+ 477      206C6F6E 
+ 477      6720696E 
+ 477      7400
+ 478              	.LASF8:
+ 479 000e 756E7369 		.ascii	"unsigned int\000"
+ 479      676E6564 
+ 479      20696E74 
+ 479      00
+ 480              	.LASF20:
+ 481 001b 74656D70 		.ascii	"temp\000"
+ 481      00
+ 482              	.LASF24:
+ 483 0020 67657442 		.ascii	"getButton\000"
+ 483      7574746F 
+ 483      6E00
+ 484              	.LASF15:
+ 485 002a 4C454654 		.ascii	"LEFT\000"
+ 485      00
+ 486              	.LASF5:
+ 487 002f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 487      20756E73 
+ 487      69676E65 
+ 487      6420696E 
+ 487      7400
+ 488              	.LASF14:
+ 489 0041 53454C45 		.ascii	"SELECT\000"
+ 489      435400
+ 490              	.LASF7:
+ 491 0048 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 491      206C6F6E 
+ 491      6720756E 
+ 491      7369676E 
+ 491      65642069 
+ 492              	.LASF17:
+ 493 005f 52494748 		.ascii	"RIGHT\000"
+ 493      5400
+ 494              	.LASF16:
+ 495 0065 444F574E 		.ascii	"DOWN\000"
+ 495      00
+ 496              	.LASF21:
+ 497 006a 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 497      4320342E 
+ 497      382E3420 
+ 497      32303134 
+ 497      30353236 
+ 498 009d 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 498      20726576 
+ 498      6973696F 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 11
+
+
+ 498      6E203231 
+ 498      31333538 
+ 499 00d0 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 499      66756E63 
+ 499      74696F6E 
+ 499      2D736563 
+ 499      74696F6E 
+ 500              	.LASF1:
+ 501 00e6 756E7369 		.ascii	"unsigned char\000"
+ 501      676E6564 
+ 501      20636861 
+ 501      7200
+ 502              	.LASF11:
+ 503 00f4 63686172 		.ascii	"char\000"
+ 503      00
+ 504              	.LASF23:
+ 505 00f9 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 505      73657273 
+ 505      5C536E75 
+ 505      666B696E 
+ 505      5C446F63 
+ 506 0126 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 506      696D6572 
+ 506      5C435254 
+ 506      5F74696D 
+ 506      65722E63 
+ 507              	.LASF4:
+ 508 013f 6C6F6E67 		.ascii	"long int\000"
+ 508      20696E74 
+ 508      00
+ 509              	.LASF10:
+ 510 0148 646F7562 		.ascii	"double\000"
+ 510      6C6500
+ 511              	.LASF22:
+ 512 014f 2E5C6B65 		.ascii	".\\keypad.c\000"
+ 512      79706164 
+ 512      2E6300
+ 513              	.LASF3:
+ 514 015a 73686F72 		.ascii	"short unsigned int\000"
+ 514      7420756E 
+ 514      7369676E 
+ 514      65642069 
+ 514      6E7400
+ 515              	.LASF0:
+ 516 016d 7369676E 		.ascii	"signed char\000"
+ 516      65642063 
+ 516      68617200 
+ 517              	.LASF25:
+ 518 0179 62746E5F 		.ascii	"btn_old\000"
+ 518      6F6C6400 
+ 519              	.LASF9:
+ 520 0181 666C6F61 		.ascii	"float\000"
+ 520      7400
+ 521              	.LASF2:
+ 522 0187 73686F72 		.ascii	"short int\000"
+ 522      7420696E 
+ 522      7400
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdSVrqg.s 			page 12
+
+
+ 523              	.LASF18:
+ 524 0191 75696E74 		.ascii	"uint16\000"
+ 524      313600
+ 525              	.LASF19:
+ 526 0198 42544E5F 		.ascii	"BTN_states\000"
+ 526      73746174 
+ 526      657300
+ 527              	.LASF12:
+ 528 01a3 73697A65 		.ascii	"sizetype\000"
+ 528      74797065 
+ 528      00
+ 529              	.LASF13:
+ 530 01ac 554E5052 		.ascii	"UNPRESSED\000"
+ 530      45535345 
+ 530      4400
+ 531              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
