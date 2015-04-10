@@ -28,12 +28,8 @@
 #include <TIA_in_aliases.h>
 #include <ADC.h>
 #include <cl_deb.h>
-#include <UART_1.h>
-#include <UART_1_SPI_UART.h>
-#include <UART_1_PINS.h>
-#include <UART_1_SPI_UART_PVT.h>
-#include <UART_1_PVT.h>
-#include <UART_1_BOOT.h>
+#include <timer_enable.h>
+#include <timer_enable_aliases.h>
 #include <A0.h>
 #include <A0_aliases.h>
 #include <LCD.h>
@@ -58,9 +54,6 @@
 #include <Test_pin_aliases.h>
 #include <ADC_IRQ.h>
 #include <ADC_intClock.h>
-#include <UART_1_SCBCLK.h>
-#include <UART_1_tx.h>
-#include <UART_1_tx_aliases.h>
 #include <LCD_Cntl_Port.h>
 #include <core_cm0_psoc4.h>
 #include <core_cm0.h>

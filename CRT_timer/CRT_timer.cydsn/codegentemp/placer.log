@@ -6,7 +6,7 @@
 
 #Build Date:         Oct 23 2014 13:00:08
 
-#File Generated:     Apr 10 2015 20:58:04
+#File Generated:     Apr 10 2015 21:45:29
 
 #Purpose:            
 
@@ -47,7 +47,7 @@ Design Statistics after Packing
     Number of Combinational MCs 	:	1
     Number of Sequential MCs    	:	3
     Number of DPs               	:	4
-    Number of Controls          	:	2
+    Number of Controls          	:	1
     Number of Status            	:	1
     Number of SyncCells         	:	0
     Number of count7cells       	:	0
@@ -76,7 +76,7 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 11
+Number of clocks: 9
 Clock: ADC_intClock         | Frequency: N/A       | Target:   8.0 MHz
 Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   8.0 MHz
 Clock: CyHFCLK              | Frequency:  28.0 MHz | Target:  24.0 MHz
@@ -85,8 +85,6 @@ Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyLFCLK              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  24.0 MHz
 Clock: CySYSCLK             | Frequency: N/A       | Target:  24.0 MHz
-Clock: UART_1_SCBCLK        | Frequency: N/A       | Target:   0.1 MHz
-Clock: UART_1_SCBCLK(FFB)   | Frequency: N/A       | Target:   0.1 MHz
 Clock: cl_deb               | Frequency:  82.3 MHz | Target:   0.0 MHz
 
 ======================================================================
@@ -99,7 +97,7 @@ Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 11
+Number of clocks: 9
 Clock: ADC_intClock         | Frequency: N/A       | Target:   8.0 MHz
 Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   8.0 MHz
 Clock: CyHFCLK              | Frequency:  28.0 MHz | Target:  24.0 MHz
@@ -108,9 +106,7 @@ Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyLFCLK              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  24.0 MHz
 Clock: CySYSCLK             | Frequency: N/A       | Target:  24.0 MHz
-Clock: UART_1_SCBCLK        | Frequency: N/A       | Target:   0.1 MHz
-Clock: UART_1_SCBCLK(FFB)   | Frequency: N/A       | Target:   0.1 MHz
-Clock: cl_deb               | Frequency:  41.2 MHz | Target:   0.0 MHz
+Clock: cl_deb               | Frequency:  39.2 MHz | Target:   0.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -121,7 +117,7 @@ Final Design Statistics
     Number of Combinational MCs 	:	1
     Number of Sequential MCs    	:	3
     Number of DPs               	:	4
-    Number of Controls          	:	2
+    Number of Controls          	:	1
     Number of Status            	:	1
     Number of SyncCells         	:	0
     Number of count7cells       	:	0
@@ -145,7 +141,7 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 11
+Number of clocks: 9
 Clock: ADC_intClock         | Frequency: N/A       | Target:   8.0 MHz
 Clock: ADC_intClock(FFB)    | Frequency: N/A       | Target:   8.0 MHz
 Clock: CyHFCLK              | Frequency:   2.4 MHz | Target:  26.3 MHz
@@ -154,8 +150,6 @@ Clock: CyIMO                | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyLFCLK              | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyRouted1            | Frequency: N/A       | Target:  24.0 MHz
 Clock: CySYSCLK             | Frequency: N/A       | Target:  24.0 MHz
-Clock: UART_1_SCBCLK        | Frequency: N/A       | Target:   0.1 MHz
-Clock: UART_1_SCBCLK(FFB)   | Frequency: N/A       | Target:   0.1 MHz
 Clock: cl_deb               | Frequency:   2.4 MHz | Target:   0.0 MHz
 
 ======================================================================
@@ -167,5 +161,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.5 sec.
+I2076: Total run-time: 0.4 sec.
 

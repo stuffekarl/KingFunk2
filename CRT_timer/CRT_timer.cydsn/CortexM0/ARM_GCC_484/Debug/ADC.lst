@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
   15:.\Generated_Source\PSoC4/ADC.c **** * the software package with which this file was provided.
   16:.\Generated_Source\PSoC4/ADC.c **** *******************************************************************************/
   17:.\Generated_Source\PSoC4/ADC.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 2
 
 
   18:.\Generated_Source\PSoC4/ADC.c **** #include "ADC.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
   48              		.cfi_def_cfa_register 7
   65:.\Generated_Source\PSoC4/ADC.c ****     /* If not Initialized then initialize all required hardware and software */
   66:.\Generated_Source\PSoC4/ADC.c ****     if(ADC_initVar == 0u)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 3
 
 
   49              		.loc 1 66 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
   87:.\Generated_Source\PSoC4/ADC.c **** * Return:
   88:.\Generated_Source\PSoC4/ADC.c **** *  None.
   89:.\Generated_Source\PSoC4/ADC.c **** *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 4
 
 
   90:.\Generated_Source\PSoC4/ADC.c **** * Global variables:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  133:.\Generated_Source\PSoC4/ADC.c ****                  (uint8)ADC_cy_psoc4_sarmux_8__CH_8_PIN
  134:.\Generated_Source\PSoC4/ADC.c ****             #endif /* End ADC_TOTAL_CHANNELS_NUM > 8u */
  135:.\Generated_Source\PSoC4/ADC.c ****         };
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 5
 
 
  136:.\Generated_Source\PSoC4/ADC.c ****     #endif /* End ADC_TOTAL_CHANNELS_NUM > 1u */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  153:.\Generated_Source\PSoC4/ADC.c ****     /* Connect Vm to VSSA when even one channel is single-ended or multiple channels configured */
  154:.\Generated_Source\PSoC4/ADC.c ****     #if(ADC_DEFAULT_MUX_SWITCH0 != 0u)
  155:.\Generated_Source\PSoC4/ADC.c ****         ADC_MUX_SWITCH0_REG |= ADC_DEFAULT_MUX_SWITCH0;
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 6
 
 
  131              		.loc 1 155 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  168 007c 7A68     		ldr	r2, [r7, #4]
  169 007e 564B     		ldr	r3, .L14+80
  170 0080 1340     		and	r3, r2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 7
 
 
  171 0082 7B60     		str	r3, [r7, #4]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  198 00ac 7B60     		str	r3, [r7, #4]
  200:.\Generated_Source\PSoC4/ADC.c ****         #if(ADC_TOTAL_CHANNELS_NUM > 1u)
  201:.\Generated_Source\PSoC4/ADC.c ****             tmpRegVal |= ADC_InputsPlacement[chNum];
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 8
 
 
  199              		.loc 1 201 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  232 00e8 0A43     		orr	r2, r1
  233 00ea 1A60     		str	r2, [r3]
  234              	.L7:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 9
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 9
 
 
  223:.\Generated_Source\PSoC4/ADC.c ****             }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  264 011e 03D0     		beq	.L9
  248:.\Generated_Source\PSoC4/ADC.c ****         {
  249:.\Generated_Source\PSoC4/ADC.c ****                counts = (int32)ADC_DEFAULT_MAX_WRK_ALT;
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 10
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 10
 
 
  265              		.loc 1 249 0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  296 014e 5200     		lsl	r2, r2, #1
  297 0150 0021     		mov	r1, #0
  298 0152 D152     		strh	r1, [r2, r3]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 11
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 11
 
 
  299              	.L12:
@@ -657,8 +657,8 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  342 01a4 0000FF07 		.word	134152192
  343 01a8 1C001A40 		.word	1075445788
  344 01ac 10001A40 		.word	1075445776
- 345 01b0 02001E00 		.word	1966082
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 12
+ 345 01b0 64001E00 		.word	1966180
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 12
 
 
  346 01b4 14001A40 		.word	1075445780
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  383              		.cfi_def_cfa_register 7
  297:.\Generated_Source\PSoC4/ADC.c ****     if (0u == (ADC_SAR_CTRL_REG & ADC_ENABLE))
  384              		.loc 1 297 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 13
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 13
 
 
  385 0004 074B     		ldr	r3, .L18
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  317:.\Generated_Source\PSoC4/ADC.c **** ********************************************************************************
  318:.\Generated_Source\PSoC4/ADC.c **** *
  319:.\Generated_Source\PSoC4/ADC.c **** * Summary:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 14
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 14
 
 
  320:.\Generated_Source\PSoC4/ADC.c **** *  This function stops ADC conversions and puts the ADC into its lowest power
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  340:.\Generated_Source\PSoC4/ADC.c **** * Summary:
  341:.\Generated_Source\PSoC4/ADC.c **** *  Description:
  342:.\Generated_Source\PSoC4/ADC.c **** *  For free running mode, this API starts the conversion process and it
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 15
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 15
 
 
  343:.\Generated_Source\PSoC4/ADC.c **** *  runs continuously.
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  486              		.type	ADC_StopConvert, %function
  487              	ADC_StopConvert:
  488              	.LFB5:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 16
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 16
 
 
  365:.\Generated_Source\PSoC4/ADC.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  521              		.type	ADC_IsEndConversion, %function
  522              	ADC_IsEndConversion:
  523              	.LFB6:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 17
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 17
 
 
  387:.\Generated_Source\PSoC4/ADC.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  421:.\Generated_Source\PSoC4/ADC.c ****         do
  422:.\Generated_Source\PSoC4/ADC.c ****         {
  423:.\Generated_Source\PSoC4/ADC.c ****             status = ADC_SAR_INTR_REG & ADC_EOS_MASK;
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 18
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 18
 
 
  544              		.loc 1 423 0 discriminator 1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  570              		.loc 1 451 0
  571 003a 181C     		mov	r0, r3
  572 003c BD46     		mov	sp, r7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 19
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 19
 
 
  573 003e 04B0     		add	sp, sp, #16
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  604 000a 012B     		cmp	r3, #1
  605 000c 02D9     		bls	.L37
  606              		.loc 1 474 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 20
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 20
 
 
  607 000e 0020     		mov	r0, #0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  644              	.LFE7:
  645              		.size	ADC_GetResult16, .-ADC_GetResult16
  646              		.section	.text.ADC_SetChanMask,"ax",%progbits
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 21
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 21
 
 
  647              		.align	2
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  675 0016 80BD     		pop	{r7, pc}
  676              	.L45:
  677              		.align	2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 22
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 22
 
 
  678              	.L44:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  559:.\Generated_Source\PSoC4/ADC.c **** {
  691              		.loc 1 559 0
  692              		.cfi_startproc
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 23
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 23
 
 
  693 0000 80B5     		push	{r7, lr}
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  569:.\Generated_Source\PSoC4/ADC.c **** * Summary:
  570:.\Generated_Source\PSoC4/ADC.c **** *  Sets the low limit parameter for a limit condition.
  571:.\Generated_Source\PSoC4/ADC.c **** *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 24
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 24
 
 
  572:.\Generated_Source\PSoC4/ADC.c **** * Parameters:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  780              		.thumb_func
  781              		.type	ADC_SetLimitMask, %function
  782              	ADC_SetLimitMask:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 25
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 25
 
 
  783              	.LFB11:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  814              		.align	2
  815              		.global	ADC_SetSatMask
  816              		.code	16
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 26
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 26
 
 
  817              		.thumb_func
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  848              	.LFE12:
  849              		.size	ADC_SetSatMask, .-ADC_SetSatMask
  850              		.section	.text.ADC_SetOffset,"ax",%progbits
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 27
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 27
 
 
  851              		.align	2
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  877 0014 0020     		mov	r0, #0
  878 0016 FFF7FEFF 		bl	CyHalt
  879              	.L59:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 28
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 28
 
 
  658:.\Generated_Source\PSoC4/ADC.c **** 
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  685:.\Generated_Source\PSoC4/ADC.c **** *   per 10 volt.
  686:.\Generated_Source\PSoC4/ADC.c **** *
  687:.\Generated_Source\PSoC4/ADC.c **** *******************************************************************************/
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 29
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 29
 
 
  688:.\Generated_Source\PSoC4/ADC.c **** void ADC_SetGain(uint32 chan, int32 adcGain)
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  696:.\Generated_Source\PSoC4/ADC.c **** 
  697:.\Generated_Source\PSoC4/ADC.c **** #if(ADC_DEFAULT_JUSTIFICATION_SEL == ADC__RIGHT)
  698:.\Generated_Source\PSoC4/ADC.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 30
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 30
 
 
  699:.\Generated_Source\PSoC4/ADC.c **** 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  731:.\Generated_Source\PSoC4/ADC.c ****             {
  732:.\Generated_Source\PSoC4/ADC.c ****                 adcCounts /= ADC_DEFAULT_AVG_SAMPLES_DIV;
  733:.\Generated_Source\PSoC4/ADC.c ****             }
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 31
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 31
 
 
  734:.\Generated_Source\PSoC4/ADC.c ****         #endif /* ADC_DEFAULT_AVG_MODE == ADC__ACCUMULATE */
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1022 0068 5B42     		neg	r3, r3
  1023              	.L70:
  739:.\Generated_Source\PSoC4/ADC.c ****         mVolts = (int16)((((int32)adcCounts * ADC_10MV_COUNTS) + ( (adcCounts > 0) ?
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 32
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 32
 
 
  1024              		.loc 1 739 0 is_stmt 1
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  748:.\Generated_Source\PSoC4/ADC.c ****     * Function Name: ADC_CountsTo_uVolts
  749:.\Generated_Source\PSoC4/ADC.c ****     ********************************************************************************
  750:.\Generated_Source\PSoC4/ADC.c ****     *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 33
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 33
 
 
  751:.\Generated_Source\PSoC4/ADC.c ****     * Summary:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1094              	.L76:
  781:.\Generated_Source\PSoC4/ADC.c **** 
  782:.\Generated_Source\PSoC4/ADC.c ****         /* Divide the adcCount when accumulate averaging mode selected */
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 34
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 34
 
 
  783:.\Generated_Source\PSoC4/ADC.c ****         #if(ADC_DEFAULT_AVG_MODE == ADC__ACCUMULATE)
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1138 0072 0C1C     		mov	r4, r1
  1139 0074 3B61     		str	r3, [r7, #16]
  1140 0076 7C61     		str	r4, [r7, #20]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 35
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 35
 
 
  794:.\Generated_Source\PSoC4/ADC.c **** 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  818:.\Generated_Source\PSoC4/ADC.c ****     *
  819:.\Generated_Source\PSoC4/ADC.c ****     *******************************************************************************/
  820:.\Generated_Source\PSoC4/ADC.c ****     float32 ADC_CountsTo_Volts(uint32 chan, int16 adcCounts)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 36
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 36
 
 
  821:.\Generated_Source\PSoC4/ADC.c ****     {
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1206              		.loc 1 838 0
  1207 0032 BB1C     		add	r3, r7, #2
  1208 0034 0022     		mov	r2, #0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 37
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 37
 
 
  1209 0036 9B5E     		ldrsh	r3, [r3, r2]
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1260 0004 0400     		.2byte	0x4
  1261 0006 00000000 		.4byte	.Ldebug_abbrev0
  1262 000a 04       		.byte	0x4
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 38
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 38
 
 
  1263 000b 01       		.uleb128 0x1
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1317 0077 00000000 		.4byte	.LASF10
  1318 007b 02       		.byte	0x2
  1319 007c A2       		.byte	0xa2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 39
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 39
 
 
  1320 007d 3A000000 		.4byte	0x3a
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1374 00f0 24000000 		.4byte	.LFE0-.LFB0
  1375 00f4 01       		.uleb128 0x1
  1376 00f5 9C       		.byte	0x9c
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 40
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 40
 
 
  1377 00f6 08       		.uleb128 0x8
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1431 0162 2701     		.2byte	0x127
  1432 0164 00000000 		.4byte	.LFB2
  1433 0168 28000000 		.4byte	.LFE2-.LFB2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 41
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 41
 
 
  1434 016c 01       		.uleb128 0x1
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1488 01de 7F030000 		.4byte	.LASF32
  1489 01e2 01       		.byte	0x1
  1490 01e3 D501     		.2byte	0x1d5
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 42
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 42
 
 
  1491 01e5 8C000000 		.4byte	0x8c
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1545 025a 81000000 		.4byte	0x81
  1546 025e 02       		.uleb128 0x2
  1547 025f 91       		.byte	0x91
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 43
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 43
 
 
  1548 0260 74       		.sleb128 -12
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1602 02d2 74       		.sleb128 -12
  1603 02d3 00       		.byte	0
  1604 02d4 14       		.uleb128 0x14
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 44
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 44
 
 
  1605 02d5 6A030000 		.4byte	.LASF45
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1659 0344 D102     		.2byte	0x2d1
  1660 0346 8C000000 		.4byte	0x8c
  1661 034a 00000000 		.4byte	.LFB15
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 45
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 45
 
 
  1662 034e A4000000 		.4byte	.LFE15-.LFB15
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1716 03bd 62       		.sleb128 -30
  1717 03be 11       		.uleb128 0x11
  1718 03bf 1B010000 		.4byte	.LASF53
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 46
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 46
 
 
  1719 03c3 01       		.byte	0x1
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1773 0431 05       		.uleb128 0x5
  1774 0432 03       		.byte	0x3
  1775 0433 00000000 		.4byte	ADC_channelsConfig
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 47
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 47
 
 
  1776 0437 0C       		.uleb128 0xc
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1830 0007 03       		.uleb128 0x3
  1831 0008 0E       		.uleb128 0xe
  1832 0009 1B       		.uleb128 0x1b
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 48
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 48
 
 
  1833 000a 0E       		.uleb128 0xe
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1887 0040 13       		.uleb128 0x13
  1888 0041 00       		.byte	0
  1889 0042 00       		.byte	0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 49
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 49
 
 
  1890 0043 06       		.uleb128 0x6
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  1944 007b 00       		.byte	0
  1945 007c 09       		.uleb128 0x9
  1946 007d 34       		.uleb128 0x34
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 50
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 50
 
 
  1947 007e 00       		.byte	0
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  2001 00b4 06       		.uleb128 0x6
  2002 00b5 40       		.uleb128 0x40
  2003 00b6 18       		.uleb128 0x18
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 51
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 51
 
 
  2004 00b7 9642     		.uleb128 0x2116
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  2058 00f0 10       		.uleb128 0x10
  2059 00f1 05       		.uleb128 0x5
  2060 00f2 00       		.byte	0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 52
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 52
 
 
  2061 00f3 03       		.uleb128 0x3
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  2115 012a 13       		.uleb128 0x13
  2116 012b 2E       		.uleb128 0x2e
  2117 012c 01       		.byte	0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 53
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 53
 
 
  2118 012d 3F       		.uleb128 0x3f
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  2172 0165 3B       		.uleb128 0x3b
  2173 0166 0B       		.uleb128 0xb
  2174 0167 49       		.uleb128 0x49
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 54
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 54
 
 
  2175 0168 13       		.uleb128 0x13
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  2229              		.section	.debug_ranges,"",%progbits
  2230              	.Ldebug_ranges0:
  2231 0000 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 55
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 55
 
 
  2232 0004 24000000 		.4byte	.LFE0
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  2279 0016 4144435F 		.ascii	"ADC_CountsTo_Volts\000"
  2279      436F756E 
  2279      7473546F 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 56
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 56
 
 
  2279      5F566F6C 
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  2303 00bc 4144435F 		.ascii	"ADC_countsPer10Volt\000"
  2303      636F756E 
  2303      74735065 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 57
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 57
 
 
  2303      72313056 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  2331 0153 73686F72 		.ascii	"short unsigned int\000"
  2331      7420756E 
  2331      7369676E 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 58
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 58
 
 
  2331      65642069 
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  2357      382E3420 
  2357      32303134 
  2357      30353236 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 59
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 59
 
 
  2358 021d 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 1
  2376      00
  2377              	.LASF21:
  2378 031b 63684E75 		.ascii	"chNum\000"
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccoDCDlZ.s 			page 60
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccIdTGXd.s 			page 60
 
 
  2378      6D00

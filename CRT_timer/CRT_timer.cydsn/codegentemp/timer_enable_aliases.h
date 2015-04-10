@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: UART_1_tx.h  
+* File Name: timer_enable.h  
 * Version 2.10
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_UART_1_tx_ALIASES_H) /* Pins UART_1_tx_ALIASES_H */
-#define CY_PINS_UART_1_tx_ALIASES_H
+#if !defined(CY_PINS_timer_enable_ALIASES_H) /* Pins timer_enable_ALIASES_H */
+#define CY_PINS_timer_enable_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -26,14 +26,14 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define UART_1_tx_0		(UART_1_tx__0__PC)
-#define UART_1_tx_0_PS		(UART_1_tx__0__PS)
-#define UART_1_tx_0_PC		(UART_1_tx__0__PC)
-#define UART_1_tx_0_DR		(UART_1_tx__0__DR)
-#define UART_1_tx_0_SHIFT	(UART_1_tx__0__SHIFT)
+#define timer_enable_0		(timer_enable__0__PC)
+#define timer_enable_0_PS		(timer_enable__0__PS)
+#define timer_enable_0_PC		(timer_enable__0__PC)
+#define timer_enable_0_DR		(timer_enable__0__DR)
+#define timer_enable_0_SHIFT	(timer_enable__0__SHIFT)
 
 
-#endif /* End Pins UART_1_tx_ALIASES_H */
+#endif /* End Pins timer_enable_ALIASES_H */
 
 
 /* [] END OF FILE */

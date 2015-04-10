@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
   24:.\Generated_Source\PSoC4/Timer_1.c **** #include "Timer_1.h"
   25:.\Generated_Source\PSoC4/Timer_1.c **** 
   26:.\Generated_Source\PSoC4/Timer_1.c **** uint8 Timer_1_initVar = 0u;
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 2
 
 
   27:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
   70:.\Generated_Source\PSoC4/Timer_1.c ****             #if (CY_PSOC5A)
   71:.\Generated_Source\PSoC4/Timer_1.c ****                 /* Set last 2 bits of control2 register if one shot(halt on
   72:.\Generated_Source\PSoC4/Timer_1.c ****                 interrupt) is enabled*/
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 3
 
 
   73:.\Generated_Source\PSoC4/Timer_1.c ****                 Timer_1_CONTROL2 |= 0x03u;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
   50 0012 5B42     		neg	r3, r3
   51 0014 181C     		mov	r0, r3
   52 0016 FFF7FEFF 		bl	Timer_1_WriteCounter
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 4
 
 
  120:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  155:.\Generated_Source\PSoC4/Timer_1.c ****         #if (Timer_1_InterruptOnCaptureCount && !Timer_1_UDB_CONTROL_REG_REMOVED)
  156:.\Generated_Source\PSoC4/Timer_1.c ****             Timer_1_SetInterruptCount(Timer_1_INIT_INT_CAPTURE_COUNT);
  157:.\Generated_Source\PSoC4/Timer_1.c ****         #endif /* Set interrupt count in UDB implementation if interrupt count feature is checked.*
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 5
 
 
  158:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  102              		.cfi_offset 14, -4
  103 0002 00AF     		add	r7, sp, #0
  104              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 6
 
 
  182:.\Generated_Source\PSoC4/Timer_1.c ****     /* Globally Enable the Fixed Function Block chosen */
@@ -310,37 +310,23 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  188:.\Generated_Source\PSoC4/Timer_1.c ****     /* Remove assignment if control register is removed */
  189:.\Generated_Source\PSoC4/Timer_1.c ****     #if (!Timer_1_UDB_CONTROL_REG_REMOVED || Timer_1_UsingFixedFunction)
  190:.\Generated_Source\PSoC4/Timer_1.c ****         Timer_1_CONTROL |= Timer_1_CTRL_ENABLE;
- 105              		.loc 1 190 0
- 106 0004 054B     		ldr	r3, .L5
- 107 0006 054A     		ldr	r2, .L5
- 108 0008 1278     		ldrb	r2, [r2]
- 109 000a D2B2     		uxtb	r2, r2
- 110 000c 8021     		mov	r1, #128
- 111 000e 4942     		neg	r1, r1
- 112 0010 0A43     		orr	r2, r1
- 113 0012 D2B2     		uxtb	r2, r2
- 114 0014 1A70     		strb	r2, [r3]
  191:.\Generated_Source\PSoC4/Timer_1.c ****     #endif /* Remove assignment if control register is removed */
  192:.\Generated_Source\PSoC4/Timer_1.c **** }
- 115              		.loc 1 192 0
- 116 0016 BD46     		mov	sp, r7
- 117              		@ sp needed
- 118 0018 80BD     		pop	{r7, pc}
- 119              	.L6:
- 120 001a C046     		.align	2
- 121              	.L5:
- 122 001c 71000F40 		.word	1074724977
- 123              		.cfi_endproc
- 124              	.LFE1:
- 125              		.size	Timer_1_Enable, .-Timer_1_Enable
- 126              		.section	.text.Timer_1_Start,"ax",%progbits
- 127              		.align	2
- 128              		.global	Timer_1_Start
- 129              		.code	16
- 130              		.thumb_func
- 131              		.type	Timer_1_Start, %function
- 132              	Timer_1_Start:
- 133              	.LFB2:
+ 105              		.loc 1 192 0
+ 106 0004 BD46     		mov	sp, r7
+ 107              		@ sp needed
+ 108 0006 80BD     		pop	{r7, pc}
+ 109              		.cfi_endproc
+ 110              	.LFE1:
+ 111              		.size	Timer_1_Enable, .-Timer_1_Enable
+ 112              		.section	.text.Timer_1_Start,"ax",%progbits
+ 113              		.align	2
+ 114              		.global	Timer_1_Start
+ 115              		.code	16
+ 116              		.thumb_func
+ 117              		.type	Timer_1_Start, %function
+ 118              	Timer_1_Start:
+ 119              	.LFB2:
  193:.\Generated_Source\PSoC4/Timer_1.c **** 
  194:.\Generated_Source\PSoC4/Timer_1.c **** 
  195:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
@@ -358,9 +344,6 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  207:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
  208:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  209:.\Generated_Source\PSoC4/Timer_1.c **** *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 7
-
-
  210:.\Generated_Source\PSoC4/Timer_1.c **** * Global variables:
  211:.\Generated_Source\PSoC4/Timer_1.c **** *  Timer_1_initVar: Is modified when this function is called for the
  212:.\Generated_Source\PSoC4/Timer_1.c **** *   first time. Is used to ensure that initialization happens only once.
@@ -368,60 +351,60 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  214:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  215:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_Start(void) 
  216:.\Generated_Source\PSoC4/Timer_1.c **** {
- 134              		.loc 1 216 0
- 135              		.cfi_startproc
- 136 0000 80B5     		push	{r7, lr}
- 137              		.cfi_def_cfa_offset 8
- 138              		.cfi_offset 7, -8
- 139              		.cfi_offset 14, -4
- 140 0002 00AF     		add	r7, sp, #0
- 141              		.cfi_def_cfa_register 7
+ 120              		.loc 1 216 0
+ 121              		.cfi_startproc
+ 122 0000 80B5     		push	{r7, lr}
+ 123              		.cfi_def_cfa_offset 8
+ 124              		.cfi_offset 7, -8
+ 125              		.cfi_offset 14, -4
+ 126 0002 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 7
+
+
+ 127              		.cfi_def_cfa_register 7
  217:.\Generated_Source\PSoC4/Timer_1.c ****     if(Timer_1_initVar == 0u)
- 142              		.loc 1 217 0
- 143 0004 064B     		ldr	r3, .L9
- 144 0006 1B78     		ldrb	r3, [r3]
- 145 0008 002B     		cmp	r3, #0
- 146 000a 04D1     		bne	.L8
+ 128              		.loc 1 217 0
+ 129 0004 064B     		ldr	r3, .L7
+ 130 0006 1B78     		ldrb	r3, [r3]
+ 131 0008 002B     		cmp	r3, #0
+ 132 000a 04D1     		bne	.L6
  218:.\Generated_Source\PSoC4/Timer_1.c ****     {
  219:.\Generated_Source\PSoC4/Timer_1.c ****         Timer_1_Init();
- 147              		.loc 1 219 0
- 148 000c FFF7FEFF 		bl	Timer_1_Init
+ 133              		.loc 1 219 0
+ 134 000c FFF7FEFF 		bl	Timer_1_Init
  220:.\Generated_Source\PSoC4/Timer_1.c **** 
  221:.\Generated_Source\PSoC4/Timer_1.c ****         Timer_1_initVar = 1u;   /* Clear this bit for Initialization */
- 149              		.loc 1 221 0
- 150 0010 034B     		ldr	r3, .L9
- 151 0012 0122     		mov	r2, #1
- 152 0014 1A70     		strb	r2, [r3]
- 153              	.L8:
+ 135              		.loc 1 221 0
+ 136 0010 034B     		ldr	r3, .L7
+ 137 0012 0122     		mov	r2, #1
+ 138 0014 1A70     		strb	r2, [r3]
+ 139              	.L6:
  222:.\Generated_Source\PSoC4/Timer_1.c ****     }
  223:.\Generated_Source\PSoC4/Timer_1.c **** 
  224:.\Generated_Source\PSoC4/Timer_1.c ****     /* Enable the Timer */
  225:.\Generated_Source\PSoC4/Timer_1.c ****     Timer_1_Enable();
- 154              		.loc 1 225 0
- 155 0016 FFF7FEFF 		bl	Timer_1_Enable
+ 140              		.loc 1 225 0
+ 141 0016 FFF7FEFF 		bl	Timer_1_Enable
  226:.\Generated_Source\PSoC4/Timer_1.c **** }
- 156              		.loc 1 226 0
- 157 001a BD46     		mov	sp, r7
- 158              		@ sp needed
- 159 001c 80BD     		pop	{r7, pc}
- 160              	.L10:
- 161 001e C046     		.align	2
- 162              	.L9:
- 163 0020 00000000 		.word	Timer_1_initVar
- 164              		.cfi_endproc
- 165              	.LFE2:
- 166              		.size	Timer_1_Start, .-Timer_1_Start
- 167              		.section	.text.Timer_1_Stop,"ax",%progbits
- 168              		.align	2
- 169              		.global	Timer_1_Stop
- 170              		.code	16
- 171              		.thumb_func
- 172              		.type	Timer_1_Stop, %function
- 173              	Timer_1_Stop:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 8
-
-
- 174              	.LFB3:
+ 142              		.loc 1 226 0
+ 143 001a BD46     		mov	sp, r7
+ 144              		@ sp needed
+ 145 001c 80BD     		pop	{r7, pc}
+ 146              	.L8:
+ 147 001e C046     		.align	2
+ 148              	.L7:
+ 149 0020 00000000 		.word	Timer_1_initVar
+ 150              		.cfi_endproc
+ 151              	.LFE2:
+ 152              		.size	Timer_1_Start, .-Timer_1_Start
+ 153              		.section	.text.Timer_1_Stop,"ax",%progbits
+ 154              		.align	2
+ 155              		.global	Timer_1_Stop
+ 156              		.code	16
+ 157              		.thumb_func
+ 158              		.type	Timer_1_Stop, %function
+ 159              	Timer_1_Stop:
+ 160              	.LFB3:
  227:.\Generated_Source\PSoC4/Timer_1.c **** 
  228:.\Generated_Source\PSoC4/Timer_1.c **** 
  229:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
@@ -435,6 +418,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  237:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
  238:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  239:.\Generated_Source\PSoC4/Timer_1.c **** *
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 8
+
+
  240:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
  241:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  242:.\Generated_Source\PSoC4/Timer_1.c **** *
@@ -444,26 +430,17 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  246:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  247:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_Stop(void) 
  248:.\Generated_Source\PSoC4/Timer_1.c **** {
- 175              		.loc 1 248 0
- 176              		.cfi_startproc
- 177 0000 80B5     		push	{r7, lr}
- 178              		.cfi_def_cfa_offset 8
- 179              		.cfi_offset 7, -8
- 180              		.cfi_offset 14, -4
- 181 0002 00AF     		add	r7, sp, #0
- 182              		.cfi_def_cfa_register 7
+ 161              		.loc 1 248 0
+ 162              		.cfi_startproc
+ 163 0000 80B5     		push	{r7, lr}
+ 164              		.cfi_def_cfa_offset 8
+ 165              		.cfi_offset 7, -8
+ 166              		.cfi_offset 14, -4
+ 167 0002 00AF     		add	r7, sp, #0
+ 168              		.cfi_def_cfa_register 7
  249:.\Generated_Source\PSoC4/Timer_1.c ****     /* Disable Timer */
  250:.\Generated_Source\PSoC4/Timer_1.c ****     #if(!Timer_1_UDB_CONTROL_REG_REMOVED || Timer_1_UsingFixedFunction)
  251:.\Generated_Source\PSoC4/Timer_1.c ****         Timer_1_CONTROL &= ((uint8)(~Timer_1_CTRL_ENABLE));
- 183              		.loc 1 251 0
- 184 0004 044B     		ldr	r3, .L12
- 185 0006 044A     		ldr	r2, .L12
- 186 0008 1278     		ldrb	r2, [r2]
- 187 000a D1B2     		uxtb	r1, r2
- 188 000c 7F22     		mov	r2, #127
- 189 000e 0A40     		and	r2, r1
- 190 0010 D2B2     		uxtb	r2, r2
- 191 0012 1A70     		strb	r2, [r3]
  252:.\Generated_Source\PSoC4/Timer_1.c ****     #endif /* Remove assignment if control register is removed */
  253:.\Generated_Source\PSoC4/Timer_1.c **** 
  254:.\Generated_Source\PSoC4/Timer_1.c ****     /* Globally disable the Fixed Function Block chosen */
@@ -472,28 +449,21 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  257:.\Generated_Source\PSoC4/Timer_1.c ****         Timer_1_GLOBAL_STBY_ENABLE &= ((uint8)(~Timer_1_BLOCK_STBY_EN_MASK));
  258:.\Generated_Source\PSoC4/Timer_1.c ****     #endif /* Disable global enable for the Timer Fixed function block to stop the Timer*/
  259:.\Generated_Source\PSoC4/Timer_1.c **** }
- 192              		.loc 1 259 0
- 193 0014 BD46     		mov	sp, r7
- 194              		@ sp needed
- 195 0016 80BD     		pop	{r7, pc}
- 196              	.L13:
- 197              		.align	2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 9
-
-
- 198              	.L12:
- 199 0018 71000F40 		.word	1074724977
- 200              		.cfi_endproc
- 201              	.LFE3:
- 202              		.size	Timer_1_Stop, .-Timer_1_Stop
- 203              		.section	.text.Timer_1_SetInterruptMode,"ax",%progbits
- 204              		.align	2
- 205              		.global	Timer_1_SetInterruptMode
- 206              		.code	16
- 207              		.thumb_func
- 208              		.type	Timer_1_SetInterruptMode, %function
- 209              	Timer_1_SetInterruptMode:
- 210              	.LFB4:
+ 169              		.loc 1 259 0
+ 170 0004 BD46     		mov	sp, r7
+ 171              		@ sp needed
+ 172 0006 80BD     		pop	{r7, pc}
+ 173              		.cfi_endproc
+ 174              	.LFE3:
+ 175              		.size	Timer_1_Stop, .-Timer_1_Stop
+ 176              		.section	.text.Timer_1_SetInterruptMode,"ax",%progbits
+ 177              		.align	2
+ 178              		.global	Timer_1_SetInterruptMode
+ 179              		.code	16
+ 180              		.thumb_func
+ 181              		.type	Timer_1_SetInterruptMode, %function
+ 182              	Timer_1_SetInterruptMode:
+ 183              	.LFB4:
  260:.\Generated_Source\PSoC4/Timer_1.c **** 
  261:.\Generated_Source\PSoC4/Timer_1.c **** 
  262:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
@@ -508,6 +478,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  271:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
  272:.\Generated_Source\PSoC4/Timer_1.c **** *  interruptMode:   This parameter is used to enable interrups on either/or
  273:.\Generated_Source\PSoC4/Timer_1.c **** *                   terminal count or capture.
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 9
+
+
  274:.\Generated_Source\PSoC4/Timer_1.c **** *
  275:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
  276:.\Generated_Source\PSoC4/Timer_1.c **** *  void
@@ -515,49 +488,46 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  278:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  279:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_SetInterruptMode(uint8 interruptMode) 
  280:.\Generated_Source\PSoC4/Timer_1.c **** {
- 211              		.loc 1 280 0
- 212              		.cfi_startproc
- 213 0000 80B5     		push	{r7, lr}
- 214              		.cfi_def_cfa_offset 8
- 215              		.cfi_offset 7, -8
- 216              		.cfi_offset 14, -4
- 217 0002 82B0     		sub	sp, sp, #8
- 218              		.cfi_def_cfa_offset 16
- 219 0004 00AF     		add	r7, sp, #0
- 220              		.cfi_def_cfa_register 7
- 221 0006 021C     		mov	r2, r0
- 222 0008 FB1D     		add	r3, r7, #7
- 223 000a 1A70     		strb	r2, [r3]
+ 184              		.loc 1 280 0
+ 185              		.cfi_startproc
+ 186 0000 80B5     		push	{r7, lr}
+ 187              		.cfi_def_cfa_offset 8
+ 188              		.cfi_offset 7, -8
+ 189              		.cfi_offset 14, -4
+ 190 0002 82B0     		sub	sp, sp, #8
+ 191              		.cfi_def_cfa_offset 16
+ 192 0004 00AF     		add	r7, sp, #0
+ 193              		.cfi_def_cfa_register 7
+ 194 0006 021C     		mov	r2, r0
+ 195 0008 FB1D     		add	r3, r7, #7
+ 196 000a 1A70     		strb	r2, [r3]
  281:.\Generated_Source\PSoC4/Timer_1.c ****     Timer_1_STATUS_MASK = interruptMode;
- 224              		.loc 1 281 0
- 225 000c 034B     		ldr	r3, .L15
- 226 000e FA1D     		add	r2, r7, #7
- 227 0010 1278     		ldrb	r2, [r2]
- 228 0012 1A70     		strb	r2, [r3]
+ 197              		.loc 1 281 0
+ 198 000c 034B     		ldr	r3, .L11
+ 199 000e FA1D     		add	r2, r7, #7
+ 200 0010 1278     		ldrb	r2, [r2]
+ 201 0012 1A70     		strb	r2, [r3]
  282:.\Generated_Source\PSoC4/Timer_1.c **** }
- 229              		.loc 1 282 0
- 230 0014 BD46     		mov	sp, r7
- 231 0016 02B0     		add	sp, sp, #8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 10
-
-
- 232              		@ sp needed
- 233 0018 80BD     		pop	{r7, pc}
- 234              	.L16:
- 235 001a C046     		.align	2
- 236              	.L15:
- 237 001c 83000F40 		.word	1074724995
- 238              		.cfi_endproc
- 239              	.LFE4:
- 240              		.size	Timer_1_SetInterruptMode, .-Timer_1_SetInterruptMode
- 241              		.section	.text.Timer_1_SoftwareCapture,"ax",%progbits
- 242              		.align	2
- 243              		.global	Timer_1_SoftwareCapture
- 244              		.code	16
- 245              		.thumb_func
- 246              		.type	Timer_1_SoftwareCapture, %function
- 247              	Timer_1_SoftwareCapture:
- 248              	.LFB5:
+ 202              		.loc 1 282 0
+ 203 0014 BD46     		mov	sp, r7
+ 204 0016 02B0     		add	sp, sp, #8
+ 205              		@ sp needed
+ 206 0018 80BD     		pop	{r7, pc}
+ 207              	.L12:
+ 208 001a C046     		.align	2
+ 209              	.L11:
+ 210 001c 83000F40 		.word	1074724995
+ 211              		.cfi_endproc
+ 212              	.LFE4:
+ 213              		.size	Timer_1_SetInterruptMode, .-Timer_1_SetInterruptMode
+ 214              		.section	.text.Timer_1_SoftwareCapture,"ax",%progbits
+ 215              		.align	2
+ 216              		.global	Timer_1_SoftwareCapture
+ 217              		.code	16
+ 218              		.thumb_func
+ 219              		.type	Timer_1_SoftwareCapture, %function
+ 220              	Timer_1_SoftwareCapture:
+ 221              	.LFB5:
  283:.\Generated_Source\PSoC4/Timer_1.c **** 
  284:.\Generated_Source\PSoC4/Timer_1.c **** 
  285:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
@@ -568,6 +538,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  290:.\Generated_Source\PSoC4/Timer_1.c **** *  This function forces a capture independent of the capture signal.
  291:.\Generated_Source\PSoC4/Timer_1.c **** *
  292:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 10
+
+
  293:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  294:.\Generated_Source\PSoC4/Timer_1.c **** *
  295:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
@@ -579,47 +552,44 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  301:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  302:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_SoftwareCapture(void) 
  303:.\Generated_Source\PSoC4/Timer_1.c **** {
- 249              		.loc 1 303 0
- 250              		.cfi_startproc
- 251 0000 80B5     		push	{r7, lr}
- 252              		.cfi_def_cfa_offset 8
- 253              		.cfi_offset 7, -8
- 254              		.cfi_offset 14, -4
- 255 0002 00AF     		add	r7, sp, #0
- 256              		.cfi_def_cfa_register 7
+ 222              		.loc 1 303 0
+ 223              		.cfi_startproc
+ 224 0000 80B5     		push	{r7, lr}
+ 225              		.cfi_def_cfa_offset 8
+ 226              		.cfi_offset 7, -8
+ 227              		.cfi_offset 14, -4
+ 228 0002 00AF     		add	r7, sp, #0
+ 229              		.cfi_def_cfa_register 7
  304:.\Generated_Source\PSoC4/Timer_1.c ****     /* Generate a software capture by reading the counter register */
  305:.\Generated_Source\PSoC4/Timer_1.c ****     #if(Timer_1_UsingFixedFunction)
  306:.\Generated_Source\PSoC4/Timer_1.c ****         (void)CY_GET_REG16(Timer_1_COUNTER_LSB_PTR);
  307:.\Generated_Source\PSoC4/Timer_1.c ****     #else
  308:.\Generated_Source\PSoC4/Timer_1.c ****         (void)CY_GET_REG8(Timer_1_COUNTER_LSB_PTR_8BIT);
- 257              		.loc 1 308 0
- 258 0004 014B     		ldr	r3, .L18
- 259 0006 1B78     		ldrb	r3, [r3]
+ 230              		.loc 1 308 0
+ 231 0004 014B     		ldr	r3, .L14
+ 232 0006 1B78     		ldrb	r3, [r3]
  309:.\Generated_Source\PSoC4/Timer_1.c ****     #endif/* (Timer_1_UsingFixedFunction) */
  310:.\Generated_Source\PSoC4/Timer_1.c ****     /* Capture Data is now in the FIFO */
  311:.\Generated_Source\PSoC4/Timer_1.c **** }
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 11
-
-
- 260              		.loc 1 311 0
- 261 0008 BD46     		mov	sp, r7
- 262              		@ sp needed
- 263 000a 80BD     		pop	{r7, pc}
- 264              	.L19:
- 265              		.align	2
- 266              	.L18:
- 267 000c 00000F40 		.word	1074724864
- 268              		.cfi_endproc
- 269              	.LFE5:
- 270              		.size	Timer_1_SoftwareCapture, .-Timer_1_SoftwareCapture
- 271              		.section	.text.Timer_1_ReadStatusRegister,"ax",%progbits
- 272              		.align	2
- 273              		.global	Timer_1_ReadStatusRegister
- 274              		.code	16
- 275              		.thumb_func
- 276              		.type	Timer_1_ReadStatusRegister, %function
- 277              	Timer_1_ReadStatusRegister:
- 278              	.LFB6:
+ 233              		.loc 1 311 0
+ 234 0008 BD46     		mov	sp, r7
+ 235              		@ sp needed
+ 236 000a 80BD     		pop	{r7, pc}
+ 237              	.L15:
+ 238              		.align	2
+ 239              	.L14:
+ 240 000c 00000F40 		.word	1074724864
+ 241              		.cfi_endproc
+ 242              	.LFE5:
+ 243              		.size	Timer_1_SoftwareCapture, .-Timer_1_SoftwareCapture
+ 244              		.section	.text.Timer_1_ReadStatusRegister,"ax",%progbits
+ 245              		.align	2
+ 246              		.global	Timer_1_ReadStatusRegister
+ 247              		.code	16
+ 248              		.thumb_func
+ 249              		.type	Timer_1_ReadStatusRegister, %function
+ 250              	Timer_1_ReadStatusRegister:
+ 251              	.LFB6:
  312:.\Generated_Source\PSoC4/Timer_1.c **** 
  313:.\Generated_Source\PSoC4/Timer_1.c **** 
  314:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
@@ -628,6 +598,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  317:.\Generated_Source\PSoC4/Timer_1.c **** *
  318:.\Generated_Source\PSoC4/Timer_1.c **** * Summary:
  319:.\Generated_Source\PSoC4/Timer_1.c **** *  Reads the status register and returns it's state. This function should use
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 11
+
+
  320:.\Generated_Source\PSoC4/Timer_1.c **** *  defined types for the bit-field information as the bits in this register may
  321:.\Generated_Source\PSoC4/Timer_1.c **** *  be permuteable.
  322:.\Generated_Source\PSoC4/Timer_1.c **** *
@@ -643,43 +616,40 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  332:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  333:.\Generated_Source\PSoC4/Timer_1.c **** uint8   Timer_1_ReadStatusRegister(void) 
  334:.\Generated_Source\PSoC4/Timer_1.c **** {
- 279              		.loc 1 334 0
- 280              		.cfi_startproc
- 281 0000 80B5     		push	{r7, lr}
- 282              		.cfi_def_cfa_offset 8
- 283              		.cfi_offset 7, -8
- 284              		.cfi_offset 14, -4
- 285 0002 00AF     		add	r7, sp, #0
- 286              		.cfi_def_cfa_register 7
+ 252              		.loc 1 334 0
+ 253              		.cfi_startproc
+ 254 0000 80B5     		push	{r7, lr}
+ 255              		.cfi_def_cfa_offset 8
+ 256              		.cfi_offset 7, -8
+ 257              		.cfi_offset 14, -4
+ 258 0002 00AF     		add	r7, sp, #0
+ 259              		.cfi_def_cfa_register 7
  335:.\Generated_Source\PSoC4/Timer_1.c ****     return (Timer_1_STATUS);
- 287              		.loc 1 335 0
- 288 0004 024B     		ldr	r3, .L22
- 289 0006 1B78     		ldrb	r3, [r3]
- 290 0008 DBB2     		uxtb	r3, r3
+ 260              		.loc 1 335 0
+ 261 0004 024B     		ldr	r3, .L18
+ 262 0006 1B78     		ldrb	r3, [r3]
+ 263 0008 DBB2     		uxtb	r3, r3
  336:.\Generated_Source\PSoC4/Timer_1.c **** }
- 291              		.loc 1 336 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 12
-
-
- 292 000a 181C     		mov	r0, r3
- 293 000c BD46     		mov	sp, r7
- 294              		@ sp needed
- 295 000e 80BD     		pop	{r7, pc}
- 296              	.L23:
- 297              		.align	2
- 298              	.L22:
- 299 0010 63000F40 		.word	1074724963
- 300              		.cfi_endproc
- 301              	.LFE6:
- 302              		.size	Timer_1_ReadStatusRegister, .-Timer_1_ReadStatusRegister
- 303              		.section	.text.Timer_1_ReadControlRegister,"ax",%progbits
- 304              		.align	2
- 305              		.global	Timer_1_ReadControlRegister
- 306              		.code	16
- 307              		.thumb_func
- 308              		.type	Timer_1_ReadControlRegister, %function
- 309              	Timer_1_ReadControlRegister:
- 310              	.LFB7:
+ 264              		.loc 1 336 0
+ 265 000a 181C     		mov	r0, r3
+ 266 000c BD46     		mov	sp, r7
+ 267              		@ sp needed
+ 268 000e 80BD     		pop	{r7, pc}
+ 269              	.L19:
+ 270              		.align	2
+ 271              	.L18:
+ 272 0010 63000F40 		.word	1074724963
+ 273              		.cfi_endproc
+ 274              	.LFE6:
+ 275              		.size	Timer_1_ReadStatusRegister, .-Timer_1_ReadStatusRegister
+ 276              		.section	.text.Timer_1_ReadPeriod,"ax",%progbits
+ 277              		.align	2
+ 278              		.global	Timer_1_ReadPeriod
+ 279              		.code	16
+ 280              		.thumb_func
+ 281              		.type	Timer_1_ReadPeriod, %function
+ 282              	Timer_1_ReadPeriod:
+ 283              	.LFB7:
  337:.\Generated_Source\PSoC4/Timer_1.c **** 
  338:.\Generated_Source\PSoC4/Timer_1.c **** 
  339:.\Generated_Source\PSoC4/Timer_1.c **** #if (!Timer_1_UDB_CONTROL_REG_REMOVED) /* Remove API if control register is unused */
@@ -688,6 +658,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  342:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
  343:.\Generated_Source\PSoC4/Timer_1.c **** * Function Name: Timer_1_ReadControlRegister
  344:.\Generated_Source\PSoC4/Timer_1.c **** ********************************************************************************
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 12
+
+
  345:.\Generated_Source\PSoC4/Timer_1.c **** *
  346:.\Generated_Source\PSoC4/Timer_1.c **** * Summary:
  347:.\Generated_Source\PSoC4/Timer_1.c **** *  Reads the control register and returns it's value.
@@ -701,47 +674,12 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  355:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  356:.\Generated_Source\PSoC4/Timer_1.c **** uint8 Timer_1_ReadControlRegister(void) 
  357:.\Generated_Source\PSoC4/Timer_1.c **** {
- 311              		.loc 1 357 0
- 312              		.cfi_startproc
- 313 0000 80B5     		push	{r7, lr}
- 314              		.cfi_def_cfa_offset 8
- 315              		.cfi_offset 7, -8
- 316              		.cfi_offset 14, -4
- 317 0002 00AF     		add	r7, sp, #0
- 318              		.cfi_def_cfa_register 7
  358:.\Generated_Source\PSoC4/Timer_1.c ****     #if (!Timer_1_UDB_CONTROL_REG_REMOVED) 
  359:.\Generated_Source\PSoC4/Timer_1.c ****         return ((uint8)Timer_1_CONTROL);
- 319              		.loc 1 359 0
- 320 0004 024B     		ldr	r3, .L26
- 321 0006 1B78     		ldrb	r3, [r3]
- 322 0008 DBB2     		uxtb	r3, r3
  360:.\Generated_Source\PSoC4/Timer_1.c ****     #else
  361:.\Generated_Source\PSoC4/Timer_1.c ****         return (0);
  362:.\Generated_Source\PSoC4/Timer_1.c ****     #endif /* (!Timer_1_UDB_CONTROL_REG_REMOVED) */
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 13
-
-
  363:.\Generated_Source\PSoC4/Timer_1.c **** }
- 323              		.loc 1 363 0
- 324 000a 181C     		mov	r0, r3
- 325 000c BD46     		mov	sp, r7
- 326              		@ sp needed
- 327 000e 80BD     		pop	{r7, pc}
- 328              	.L27:
- 329              		.align	2
- 330              	.L26:
- 331 0010 71000F40 		.word	1074724977
- 332              		.cfi_endproc
- 333              	.LFE7:
- 334              		.size	Timer_1_ReadControlRegister, .-Timer_1_ReadControlRegister
- 335              		.section	.text.Timer_1_WriteControlRegister,"ax",%progbits
- 336              		.align	2
- 337              		.global	Timer_1_WriteControlRegister
- 338              		.code	16
- 339              		.thumb_func
- 340              		.type	Timer_1_WriteControlRegister, %function
- 341              	Timer_1_WriteControlRegister:
- 342              	.LFB8:
  364:.\Generated_Source\PSoC4/Timer_1.c **** 
  365:.\Generated_Source\PSoC4/Timer_1.c **** 
  366:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
@@ -759,53 +697,12 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  378:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  379:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_WriteControlRegister(uint8 control) 
  380:.\Generated_Source\PSoC4/Timer_1.c **** {
- 343              		.loc 1 380 0
- 344              		.cfi_startproc
- 345 0000 80B5     		push	{r7, lr}
- 346              		.cfi_def_cfa_offset 8
- 347              		.cfi_offset 7, -8
- 348              		.cfi_offset 14, -4
- 349 0002 82B0     		sub	sp, sp, #8
- 350              		.cfi_def_cfa_offset 16
- 351 0004 00AF     		add	r7, sp, #0
- 352              		.cfi_def_cfa_register 7
- 353 0006 021C     		mov	r2, r0
- 354 0008 FB1D     		add	r3, r7, #7
- 355 000a 1A70     		strb	r2, [r3]
  381:.\Generated_Source\PSoC4/Timer_1.c ****     #if (!Timer_1_UDB_CONTROL_REG_REMOVED) 
  382:.\Generated_Source\PSoC4/Timer_1.c ****         Timer_1_CONTROL = control;
- 356              		.loc 1 382 0
- 357 000c 034B     		ldr	r3, .L29
- 358 000e FA1D     		add	r2, r7, #7
- 359 0010 1278     		ldrb	r2, [r2]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 14
-
-
- 360 0012 1A70     		strb	r2, [r3]
  383:.\Generated_Source\PSoC4/Timer_1.c ****     #else
  384:.\Generated_Source\PSoC4/Timer_1.c ****         control = 0u;
  385:.\Generated_Source\PSoC4/Timer_1.c ****     #endif /* (!Timer_1_UDB_CONTROL_REG_REMOVED) */
  386:.\Generated_Source\PSoC4/Timer_1.c **** }
- 361              		.loc 1 386 0
- 362 0014 BD46     		mov	sp, r7
- 363 0016 02B0     		add	sp, sp, #8
- 364              		@ sp needed
- 365 0018 80BD     		pop	{r7, pc}
- 366              	.L30:
- 367 001a C046     		.align	2
- 368              	.L29:
- 369 001c 71000F40 		.word	1074724977
- 370              		.cfi_endproc
- 371              	.LFE8:
- 372              		.size	Timer_1_WriteControlRegister, .-Timer_1_WriteControlRegister
- 373              		.section	.text.Timer_1_ReadPeriod,"ax",%progbits
- 374              		.align	2
- 375              		.global	Timer_1_ReadPeriod
- 376              		.code	16
- 377              		.thumb_func
- 378              		.type	Timer_1_ReadPeriod, %function
- 379              	Timer_1_ReadPeriod:
- 380              	.LFB9:
  387:.\Generated_Source\PSoC4/Timer_1.c **** 
  388:.\Generated_Source\PSoC4/Timer_1.c **** #endif /* Remove API if control register is unused */
  389:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -821,51 +718,51 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  399:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  400:.\Generated_Source\PSoC4/Timer_1.c **** *
  401:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 13
+
+
  402:.\Generated_Source\PSoC4/Timer_1.c **** *  The present value of the counter.
  403:.\Generated_Source\PSoC4/Timer_1.c **** *
  404:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  405:.\Generated_Source\PSoC4/Timer_1.c **** uint32 Timer_1_ReadPeriod(void) 
  406:.\Generated_Source\PSoC4/Timer_1.c **** {
- 381              		.loc 1 406 0
- 382              		.cfi_startproc
- 383 0000 80B5     		push	{r7, lr}
- 384              		.cfi_def_cfa_offset 8
- 385              		.cfi_offset 7, -8
- 386              		.cfi_offset 14, -4
- 387 0002 00AF     		add	r7, sp, #0
- 388              		.cfi_def_cfa_register 7
+ 284              		.loc 1 406 0
+ 285              		.cfi_startproc
+ 286 0000 80B5     		push	{r7, lr}
+ 287              		.cfi_def_cfa_offset 8
+ 288              		.cfi_offset 7, -8
+ 289              		.cfi_offset 14, -4
+ 290 0002 00AF     		add	r7, sp, #0
+ 291              		.cfi_def_cfa_register 7
  407:.\Generated_Source\PSoC4/Timer_1.c ****    #if(Timer_1_UsingFixedFunction)
  408:.\Generated_Source\PSoC4/Timer_1.c ****        return ((uint32)CY_GET_REG16(Timer_1_PERIOD_LSB_PTR));
  409:.\Generated_Source\PSoC4/Timer_1.c ****    #else
  410:.\Generated_Source\PSoC4/Timer_1.c ****        return (CY_GET_REG32(Timer_1_PERIOD_LSB_PTR));
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 15
-
-
- 389              		.loc 1 410 0
- 390 0004 024B     		ldr	r3, .L33
- 391 0006 1B68     		ldr	r3, [r3]
+ 292              		.loc 1 410 0
+ 293 0004 024B     		ldr	r3, .L22
+ 294 0006 1B68     		ldr	r3, [r3]
  411:.\Generated_Source\PSoC4/Timer_1.c ****    #endif /* (Timer_1_UsingFixedFunction) */
  412:.\Generated_Source\PSoC4/Timer_1.c **** }
- 392              		.loc 1 412 0
- 393 0008 181C     		mov	r0, r3
- 394 000a BD46     		mov	sp, r7
- 395              		@ sp needed
- 396 000c 80BD     		pop	{r7, pc}
- 397              	.L34:
- 398 000e C046     		.align	2
- 399              	.L33:
- 400 0010 80200F40 		.word	1074733184
- 401              		.cfi_endproc
- 402              	.LFE9:
- 403              		.size	Timer_1_ReadPeriod, .-Timer_1_ReadPeriod
- 404              		.section	.text.Timer_1_WritePeriod,"ax",%progbits
- 405              		.align	2
- 406              		.global	Timer_1_WritePeriod
- 407              		.code	16
- 408              		.thumb_func
- 409              		.type	Timer_1_WritePeriod, %function
- 410              	Timer_1_WritePeriod:
- 411              	.LFB10:
+ 295              		.loc 1 412 0
+ 296 0008 181C     		mov	r0, r3
+ 297 000a BD46     		mov	sp, r7
+ 298              		@ sp needed
+ 299 000c 80BD     		pop	{r7, pc}
+ 300              	.L23:
+ 301 000e C046     		.align	2
+ 302              	.L22:
+ 303 0010 80200F40 		.word	1074733184
+ 304              		.cfi_endproc
+ 305              	.LFE7:
+ 306              		.size	Timer_1_ReadPeriod, .-Timer_1_ReadPeriod
+ 307              		.section	.text.Timer_1_WritePeriod,"ax",%progbits
+ 308              		.align	2
+ 309              		.global	Timer_1_WritePeriod
+ 310              		.code	16
+ 311              		.thumb_func
+ 312              		.type	Timer_1_WritePeriod, %function
+ 313              	Timer_1_WritePeriod:
+ 314              	.LFB8:
  413:.\Generated_Source\PSoC4/Timer_1.c **** 
  414:.\Generated_Source\PSoC4/Timer_1.c **** 
  415:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
@@ -881,56 +778,56 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  425:.\Generated_Source\PSoC4/Timer_1.c **** *          result in the counter remaining at zero.
  426:.\Generated_Source\PSoC4/Timer_1.c **** *
  427:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 14
+
+
  428:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  429:.\Generated_Source\PSoC4/Timer_1.c **** *
  430:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  431:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_WritePeriod(uint32 period) 
  432:.\Generated_Source\PSoC4/Timer_1.c **** {
- 412              		.loc 1 432 0
- 413              		.cfi_startproc
- 414 0000 80B5     		push	{r7, lr}
- 415              		.cfi_def_cfa_offset 8
- 416              		.cfi_offset 7, -8
- 417              		.cfi_offset 14, -4
- 418 0002 82B0     		sub	sp, sp, #8
- 419              		.cfi_def_cfa_offset 16
- 420 0004 00AF     		add	r7, sp, #0
- 421              		.cfi_def_cfa_register 7
- 422 0006 7860     		str	r0, [r7, #4]
+ 315              		.loc 1 432 0
+ 316              		.cfi_startproc
+ 317 0000 80B5     		push	{r7, lr}
+ 318              		.cfi_def_cfa_offset 8
+ 319              		.cfi_offset 7, -8
+ 320              		.cfi_offset 14, -4
+ 321 0002 82B0     		sub	sp, sp, #8
+ 322              		.cfi_def_cfa_offset 16
+ 323 0004 00AF     		add	r7, sp, #0
+ 324              		.cfi_def_cfa_register 7
+ 325 0006 7860     		str	r0, [r7, #4]
  433:.\Generated_Source\PSoC4/Timer_1.c ****     #if(Timer_1_UsingFixedFunction)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 16
-
-
  434:.\Generated_Source\PSoC4/Timer_1.c ****         uint16 period_temp = (uint16)period;
  435:.\Generated_Source\PSoC4/Timer_1.c ****         CY_SET_REG16(Timer_1_PERIOD_LSB_PTR, period_temp);
  436:.\Generated_Source\PSoC4/Timer_1.c ****     #else
  437:.\Generated_Source\PSoC4/Timer_1.c ****         CY_SET_REG32(Timer_1_PERIOD_LSB_PTR, period);
- 423              		.loc 1 437 0
- 424 0008 024B     		ldr	r3, .L36
- 425 000a 7A68     		ldr	r2, [r7, #4]
- 426 000c 1A60     		str	r2, [r3]
+ 326              		.loc 1 437 0
+ 327 0008 024B     		ldr	r3, .L25
+ 328 000a 7A68     		ldr	r2, [r7, #4]
+ 329 000c 1A60     		str	r2, [r3]
  438:.\Generated_Source\PSoC4/Timer_1.c ****     #endif /*Write Period value with appropriate resolution suffix depending on UDB or fixed functi
  439:.\Generated_Source\PSoC4/Timer_1.c **** }
- 427              		.loc 1 439 0
- 428 000e BD46     		mov	sp, r7
- 429 0010 02B0     		add	sp, sp, #8
- 430              		@ sp needed
- 431 0012 80BD     		pop	{r7, pc}
- 432              	.L37:
- 433              		.align	2
- 434              	.L36:
- 435 0014 80200F40 		.word	1074733184
- 436              		.cfi_endproc
- 437              	.LFE10:
- 438              		.size	Timer_1_WritePeriod, .-Timer_1_WritePeriod
- 439              		.section	.text.Timer_1_ReadCapture,"ax",%progbits
- 440              		.align	2
- 441              		.global	Timer_1_ReadCapture
- 442              		.code	16
- 443              		.thumb_func
- 444              		.type	Timer_1_ReadCapture, %function
- 445              	Timer_1_ReadCapture:
- 446              	.LFB11:
+ 330              		.loc 1 439 0
+ 331 000e BD46     		mov	sp, r7
+ 332 0010 02B0     		add	sp, sp, #8
+ 333              		@ sp needed
+ 334 0012 80BD     		pop	{r7, pc}
+ 335              	.L26:
+ 336              		.align	2
+ 337              	.L25:
+ 338 0014 80200F40 		.word	1074733184
+ 339              		.cfi_endproc
+ 340              	.LFE8:
+ 341              		.size	Timer_1_WritePeriod, .-Timer_1_WritePeriod
+ 342              		.section	.text.Timer_1_ReadCapture,"ax",%progbits
+ 343              		.align	2
+ 344              		.global	Timer_1_ReadCapture
+ 345              		.code	16
+ 346              		.thumb_func
+ 347              		.type	Timer_1_ReadCapture, %function
+ 348              	Timer_1_ReadCapture:
+ 349              	.LFB9:
  440:.\Generated_Source\PSoC4/Timer_1.c **** 
  441:.\Generated_Source\PSoC4/Timer_1.c **** 
  442:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
@@ -941,6 +838,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  447:.\Generated_Source\PSoC4/Timer_1.c **** *  This function returns the last value captured.
  448:.\Generated_Source\PSoC4/Timer_1.c **** *
  449:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 15
+
+
  450:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  451:.\Generated_Source\PSoC4/Timer_1.c **** *
  452:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
@@ -949,46 +849,43 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  455:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  456:.\Generated_Source\PSoC4/Timer_1.c **** uint32 Timer_1_ReadCapture(void) 
  457:.\Generated_Source\PSoC4/Timer_1.c **** {
- 447              		.loc 1 457 0
- 448              		.cfi_startproc
- 449 0000 80B5     		push	{r7, lr}
- 450              		.cfi_def_cfa_offset 8
- 451              		.cfi_offset 7, -8
- 452              		.cfi_offset 14, -4
- 453 0002 00AF     		add	r7, sp, #0
- 454              		.cfi_def_cfa_register 7
+ 350              		.loc 1 457 0
+ 351              		.cfi_startproc
+ 352 0000 80B5     		push	{r7, lr}
+ 353              		.cfi_def_cfa_offset 8
+ 354              		.cfi_offset 7, -8
+ 355              		.cfi_offset 14, -4
+ 356 0002 00AF     		add	r7, sp, #0
+ 357              		.cfi_def_cfa_register 7
  458:.\Generated_Source\PSoC4/Timer_1.c ****    #if(Timer_1_UsingFixedFunction)
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 17
-
-
  459:.\Generated_Source\PSoC4/Timer_1.c ****        return ((uint32)CY_GET_REG16(Timer_1_CAPTURE_LSB_PTR));
  460:.\Generated_Source\PSoC4/Timer_1.c ****    #else
  461:.\Generated_Source\PSoC4/Timer_1.c ****        return (CY_GET_REG32(Timer_1_CAPTURE_LSB_PTR));
- 455              		.loc 1 461 0
- 456 0004 024B     		ldr	r3, .L40
- 457 0006 1B68     		ldr	r3, [r3]
+ 358              		.loc 1 461 0
+ 359 0004 024B     		ldr	r3, .L29
+ 360 0006 1B68     		ldr	r3, [r3]
  462:.\Generated_Source\PSoC4/Timer_1.c ****    #endif /* (Timer_1_UsingFixedFunction) */
  463:.\Generated_Source\PSoC4/Timer_1.c **** }
- 458              		.loc 1 463 0
- 459 0008 181C     		mov	r0, r3
- 460 000a BD46     		mov	sp, r7
- 461              		@ sp needed
- 462 000c 80BD     		pop	{r7, pc}
- 463              	.L41:
- 464 000e C046     		.align	2
- 465              	.L40:
- 466 0010 00210F40 		.word	1074733312
- 467              		.cfi_endproc
- 468              	.LFE11:
- 469              		.size	Timer_1_ReadCapture, .-Timer_1_ReadCapture
- 470              		.section	.text.Timer_1_WriteCounter,"ax",%progbits
- 471              		.align	2
- 472              		.global	Timer_1_WriteCounter
- 473              		.code	16
- 474              		.thumb_func
- 475              		.type	Timer_1_WriteCounter, %function
- 476              	Timer_1_WriteCounter:
- 477              	.LFB12:
+ 361              		.loc 1 463 0
+ 362 0008 181C     		mov	r0, r3
+ 363 000a BD46     		mov	sp, r7
+ 364              		@ sp needed
+ 365 000c 80BD     		pop	{r7, pc}
+ 366              	.L30:
+ 367 000e C046     		.align	2
+ 368              	.L29:
+ 369 0010 00210F40 		.word	1074733312
+ 370              		.cfi_endproc
+ 371              	.LFE9:
+ 372              		.size	Timer_1_ReadCapture, .-Timer_1_ReadCapture
+ 373              		.section	.text.Timer_1_WriteCounter,"ax",%progbits
+ 374              		.align	2
+ 375              		.global	Timer_1_WriteCounter
+ 376              		.code	16
+ 377              		.thumb_func
+ 378              		.type	Timer_1_WriteCounter, %function
+ 379              	Timer_1_WriteCounter:
+ 380              	.LFB10:
  464:.\Generated_Source\PSoC4/Timer_1.c **** 
  465:.\Generated_Source\PSoC4/Timer_1.c **** 
  466:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
@@ -1001,26 +898,26 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  473:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
  474:.\Generated_Source\PSoC4/Timer_1.c **** *  counter:  New counter value.
  475:.\Generated_Source\PSoC4/Timer_1.c **** *
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 16
+
+
  476:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
  477:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  478:.\Generated_Source\PSoC4/Timer_1.c **** *
  479:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  480:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_WriteCounter(uint32 counter) 
  481:.\Generated_Source\PSoC4/Timer_1.c **** {
- 478              		.loc 1 481 0
- 479              		.cfi_startproc
- 480 0000 80B5     		push	{r7, lr}
- 481              		.cfi_def_cfa_offset 8
- 482              		.cfi_offset 7, -8
- 483              		.cfi_offset 14, -4
- 484 0002 82B0     		sub	sp, sp, #8
- 485              		.cfi_def_cfa_offset 16
- 486 0004 00AF     		add	r7, sp, #0
- 487              		.cfi_def_cfa_register 7
- 488 0006 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 18
-
-
+ 381              		.loc 1 481 0
+ 382              		.cfi_startproc
+ 383 0000 80B5     		push	{r7, lr}
+ 384              		.cfi_def_cfa_offset 8
+ 385              		.cfi_offset 7, -8
+ 386              		.cfi_offset 14, -4
+ 387 0002 82B0     		sub	sp, sp, #8
+ 388              		.cfi_def_cfa_offset 16
+ 389 0004 00AF     		add	r7, sp, #0
+ 390              		.cfi_def_cfa_register 7
+ 391 0006 7860     		str	r0, [r7, #4]
  482:.\Generated_Source\PSoC4/Timer_1.c ****    #if(Timer_1_UsingFixedFunction)
  483:.\Generated_Source\PSoC4/Timer_1.c ****         /* This functionality is removed until a FixedFunction HW update to
  484:.\Generated_Source\PSoC4/Timer_1.c ****          * allow this register to be written
@@ -1029,38 +926,41 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  487:.\Generated_Source\PSoC4/Timer_1.c ****         
  488:.\Generated_Source\PSoC4/Timer_1.c ****     #else
  489:.\Generated_Source\PSoC4/Timer_1.c ****         CY_SET_REG32(Timer_1_COUNTER_LSB_PTR, counter);
- 489              		.loc 1 489 0
- 490 0008 024B     		ldr	r3, .L43
- 491 000a 7A68     		ldr	r2, [r7, #4]
- 492 000c 1A60     		str	r2, [r3]
+ 392              		.loc 1 489 0
+ 393 0008 024B     		ldr	r3, .L32
+ 394 000a 7A68     		ldr	r2, [r7, #4]
+ 395 000c 1A60     		str	r2, [r3]
  490:.\Generated_Source\PSoC4/Timer_1.c ****     #endif /* Set Write Counter only for the UDB implementation (Write Counter not available in fix
  491:.\Generated_Source\PSoC4/Timer_1.c **** }
- 493              		.loc 1 491 0
- 494 000e BD46     		mov	sp, r7
- 495 0010 02B0     		add	sp, sp, #8
- 496              		@ sp needed
- 497 0012 80BD     		pop	{r7, pc}
- 498              	.L44:
- 499              		.align	2
- 500              	.L43:
- 501 0014 00200F40 		.word	1074733056
- 502              		.cfi_endproc
- 503              	.LFE12:
- 504              		.size	Timer_1_WriteCounter, .-Timer_1_WriteCounter
- 505              		.section	.text.Timer_1_ReadCounter,"ax",%progbits
- 506              		.align	2
- 507              		.global	Timer_1_ReadCounter
- 508              		.code	16
- 509              		.thumb_func
- 510              		.type	Timer_1_ReadCounter, %function
- 511              	Timer_1_ReadCounter:
- 512              	.LFB13:
+ 396              		.loc 1 491 0
+ 397 000e BD46     		mov	sp, r7
+ 398 0010 02B0     		add	sp, sp, #8
+ 399              		@ sp needed
+ 400 0012 80BD     		pop	{r7, pc}
+ 401              	.L33:
+ 402              		.align	2
+ 403              	.L32:
+ 404 0014 00200F40 		.word	1074733056
+ 405              		.cfi_endproc
+ 406              	.LFE10:
+ 407              		.size	Timer_1_WriteCounter, .-Timer_1_WriteCounter
+ 408              		.section	.text.Timer_1_ReadCounter,"ax",%progbits
+ 409              		.align	2
+ 410              		.global	Timer_1_ReadCounter
+ 411              		.code	16
+ 412              		.thumb_func
+ 413              		.type	Timer_1_ReadCounter, %function
+ 414              	Timer_1_ReadCounter:
+ 415              	.LFB11:
  492:.\Generated_Source\PSoC4/Timer_1.c **** 
  493:.\Generated_Source\PSoC4/Timer_1.c **** 
  494:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
  495:.\Generated_Source\PSoC4/Timer_1.c **** * Function Name: Timer_1_ReadCounter
  496:.\Generated_Source\PSoC4/Timer_1.c **** ********************************************************************************
  497:.\Generated_Source\PSoC4/Timer_1.c **** *
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 17
+
+
  498:.\Generated_Source\PSoC4/Timer_1.c **** * Summary:
  499:.\Generated_Source\PSoC4/Timer_1.c **** *  This function returns the current counter value.
  500:.\Generated_Source\PSoC4/Timer_1.c **** *
@@ -1073,17 +973,14 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  507:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  508:.\Generated_Source\PSoC4/Timer_1.c **** uint32 Timer_1_ReadCounter(void) 
  509:.\Generated_Source\PSoC4/Timer_1.c **** {
- 513              		.loc 1 509 0
- 514              		.cfi_startproc
- 515 0000 80B5     		push	{r7, lr}
- 516              		.cfi_def_cfa_offset 8
- 517              		.cfi_offset 7, -8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 19
-
-
- 518              		.cfi_offset 14, -4
- 519 0002 00AF     		add	r7, sp, #0
- 520              		.cfi_def_cfa_register 7
+ 416              		.loc 1 509 0
+ 417              		.cfi_startproc
+ 418 0000 80B5     		push	{r7, lr}
+ 419              		.cfi_def_cfa_offset 8
+ 420              		.cfi_offset 7, -8
+ 421              		.cfi_offset 14, -4
+ 422 0002 00AF     		add	r7, sp, #0
+ 423              		.cfi_def_cfa_register 7
  510:.\Generated_Source\PSoC4/Timer_1.c ****     /* Force capture by reading Accumulator */
  511:.\Generated_Source\PSoC4/Timer_1.c ****     /* Must first do a software capture to be able to read the counter */
  512:.\Generated_Source\PSoC4/Timer_1.c ****     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
@@ -1091,9 +988,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  514:.\Generated_Source\PSoC4/Timer_1.c ****         (void)CY_GET_REG16(Timer_1_COUNTER_LSB_PTR);
  515:.\Generated_Source\PSoC4/Timer_1.c ****     #else
  516:.\Generated_Source\PSoC4/Timer_1.c ****         (void)CY_GET_REG8(Timer_1_COUNTER_LSB_PTR_8BIT);
- 521              		.loc 1 516 0
- 522 0004 034B     		ldr	r3, .L47
- 523 0006 1B78     		ldrb	r3, [r3]
+ 424              		.loc 1 516 0
+ 425 0004 034B     		ldr	r3, .L36
+ 426 0006 1B78     		ldrb	r3, [r3]
  517:.\Generated_Source\PSoC4/Timer_1.c ****     #endif/* (Timer_1_UsingFixedFunction) */
  518:.\Generated_Source\PSoC4/Timer_1.c **** 
  519:.\Generated_Source\PSoC4/Timer_1.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
@@ -1101,32 +998,35 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  521:.\Generated_Source\PSoC4/Timer_1.c ****         return ((uint32)CY_GET_REG16(Timer_1_CAPTURE_LSB_PTR));
  522:.\Generated_Source\PSoC4/Timer_1.c ****     #else
  523:.\Generated_Source\PSoC4/Timer_1.c ****         return (CY_GET_REG32(Timer_1_CAPTURE_LSB_PTR));
- 524              		.loc 1 523 0
- 525 0008 034B     		ldr	r3, .L47+4
- 526 000a 1B68     		ldr	r3, [r3]
+ 427              		.loc 1 523 0
+ 428 0008 034B     		ldr	r3, .L36+4
+ 429 000a 1B68     		ldr	r3, [r3]
  524:.\Generated_Source\PSoC4/Timer_1.c ****     #endif /* (Timer_1_UsingFixedFunction) */
  525:.\Generated_Source\PSoC4/Timer_1.c **** }
- 527              		.loc 1 525 0
- 528 000c 181C     		mov	r0, r3
- 529 000e BD46     		mov	sp, r7
- 530              		@ sp needed
- 531 0010 80BD     		pop	{r7, pc}
- 532              	.L48:
- 533 0012 C046     		.align	2
- 534              	.L47:
- 535 0014 00000F40 		.word	1074724864
- 536 0018 00210F40 		.word	1074733312
- 537              		.cfi_endproc
- 538              	.LFE13:
- 539              		.size	Timer_1_ReadCounter, .-Timer_1_ReadCounter
- 540              		.section	.text.Timer_1_ClearFIFO,"ax",%progbits
- 541              		.align	2
- 542              		.global	Timer_1_ClearFIFO
- 543              		.code	16
- 544              		.thumb_func
- 545              		.type	Timer_1_ClearFIFO, %function
- 546              	Timer_1_ClearFIFO:
- 547              	.LFB14:
+ 430              		.loc 1 525 0
+ 431 000c 181C     		mov	r0, r3
+ 432 000e BD46     		mov	sp, r7
+ 433              		@ sp needed
+ 434 0010 80BD     		pop	{r7, pc}
+ 435              	.L37:
+ 436 0012 C046     		.align	2
+ 437              	.L36:
+ 438 0014 00000F40 		.word	1074724864
+ 439 0018 00210F40 		.word	1074733312
+ 440              		.cfi_endproc
+ 441              	.LFE11:
+ 442              		.size	Timer_1_ReadCounter, .-Timer_1_ReadCounter
+ 443              		.section	.text.Timer_1_ClearFIFO,"ax",%progbits
+ 444              		.align	2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 18
+
+
+ 445              		.global	Timer_1_ClearFIFO
+ 446              		.code	16
+ 447              		.thumb_func
+ 448              		.type	Timer_1_ClearFIFO, %function
+ 449              	Timer_1_ClearFIFO:
+ 450              	.LFB12:
  526:.\Generated_Source\PSoC4/Timer_1.c **** 
  527:.\Generated_Source\PSoC4/Timer_1.c **** 
  528:.\Generated_Source\PSoC4/Timer_1.c **** #if(!Timer_1_UsingFixedFunction) /* UDB Specific Functions */
@@ -1138,9 +1038,6 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  534:.\Generated_Source\PSoC4/Timer_1.c ****  ******************************************************************************/
  535:.\Generated_Source\PSoC4/Timer_1.c **** 
  536:.\Generated_Source\PSoC4/Timer_1.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 20
-
-
  537:.\Generated_Source\PSoC4/Timer_1.c **** #if (Timer_1_SoftwareCaptureMode)
  538:.\Generated_Source\PSoC4/Timer_1.c **** 
  539:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -1181,6 +1078,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  574:.\Generated_Source\PSoC4/Timer_1.c ****         Timer_1_CONTROL &= ((uint8)(~Timer_1_CTRL_CAP_MODE_MASK));
  575:.\Generated_Source\PSoC4/Timer_1.c **** 
  576:.\Generated_Source\PSoC4/Timer_1.c ****         /* Write The New Setting */
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 19
+
+
  577:.\Generated_Source\PSoC4/Timer_1.c ****         Timer_1_CONTROL |= captureMode;
  578:.\Generated_Source\PSoC4/Timer_1.c ****     #endif /* (!Timer_1_UDB_CONTROL_REG_REMOVED) */
  579:.\Generated_Source\PSoC4/Timer_1.c **** }
@@ -1198,9 +1098,6 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  591:.\Generated_Source\PSoC4/Timer_1.c **** *  This function sets the trigger input mode
  592:.\Generated_Source\PSoC4/Timer_1.c **** *
  593:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 21
-
-
  594:.\Generated_Source\PSoC4/Timer_1.c **** *  triggerMode: Pass one of the pre-defined Trigger Modes (except Software)
  595:.\Generated_Source\PSoC4/Timer_1.c ****     #define Timer_1__B_TIMER__TM_NONE 0x00u
  596:.\Generated_Source\PSoC4/Timer_1.c ****     #define Timer_1__B_TIMER__TM_RISINGEDGE 0x04u
@@ -1241,6 +1138,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  631:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
  632:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  633:.\Generated_Source\PSoC4/Timer_1.c **** *
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 20
+
+
  634:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
  635:.\Generated_Source\PSoC4/Timer_1.c **** *  void
  636:.\Generated_Source\PSoC4/Timer_1.c **** *
@@ -1258,9 +1158,6 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  648:.\Generated_Source\PSoC4/Timer_1.c **** ********************************************************************************
  649:.\Generated_Source\PSoC4/Timer_1.c **** *
  650:.\Generated_Source\PSoC4/Timer_1.c **** * Summary:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 22
-
-
  651:.\Generated_Source\PSoC4/Timer_1.c **** *  Clears the control bit enabling Hardware Trigger mode
  652:.\Generated_Source\PSoC4/Timer_1.c **** *
  653:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
@@ -1301,6 +1198,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  688:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_SetInterruptCount(uint8 interruptCount) 
  689:.\Generated_Source\PSoC4/Timer_1.c **** {
  690:.\Generated_Source\PSoC4/Timer_1.c ****     /* This must only set to two bits of the control register associated */
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 21
+
+
  691:.\Generated_Source\PSoC4/Timer_1.c ****     interruptCount &= Timer_1_CTRL_INTCNT_MASK;
  692:.\Generated_Source\PSoC4/Timer_1.c **** 
  693:.\Generated_Source\PSoC4/Timer_1.c ****     #if (!Timer_1_UDB_CONTROL_REG_REMOVED)
@@ -1318,9 +1218,6 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  705:.\Generated_Source\PSoC4/Timer_1.c **** 
  706:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
  707:.\Generated_Source\PSoC4/Timer_1.c **** * Function Name: Timer_1_SetCaptureCount
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 23
-
-
  708:.\Generated_Source\PSoC4/Timer_1.c **** ********************************************************************************
  709:.\Generated_Source\PSoC4/Timer_1.c **** *
  710:.\Generated_Source\PSoC4/Timer_1.c **** * Summary:
@@ -1361,6 +1258,9 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  745:.\Generated_Source\PSoC4/Timer_1.c **** }
  746:.\Generated_Source\PSoC4/Timer_1.c **** #endif /* Timer_1_UsingHWCaptureCounter */
  747:.\Generated_Source\PSoC4/Timer_1.c **** 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 22
+
+
  748:.\Generated_Source\PSoC4/Timer_1.c **** 
  749:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
  750:.\Generated_Source\PSoC4/Timer_1.c **** * Function Name: Timer_1_ClearFIFO
@@ -1378,953 +1278,900 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 1
  762:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  763:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_ClearFIFO(void) 
  764:.\Generated_Source\PSoC4/Timer_1.c **** {
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 24
-
-
- 548              		.loc 1 764 0
- 549              		.cfi_startproc
- 550 0000 80B5     		push	{r7, lr}
- 551              		.cfi_def_cfa_offset 8
- 552              		.cfi_offset 7, -8
- 553              		.cfi_offset 14, -4
- 554 0002 00AF     		add	r7, sp, #0
- 555              		.cfi_def_cfa_register 7
+ 451              		.loc 1 764 0
+ 452              		.cfi_startproc
+ 453 0000 80B5     		push	{r7, lr}
+ 454              		.cfi_def_cfa_offset 8
+ 455              		.cfi_offset 7, -8
+ 456              		.cfi_offset 14, -4
+ 457 0002 00AF     		add	r7, sp, #0
+ 458              		.cfi_def_cfa_register 7
  765:.\Generated_Source\PSoC4/Timer_1.c ****     while(0u != (Timer_1_ReadStatusRegister() & Timer_1_STATUS_FIFONEMP))
- 556              		.loc 1 765 0
- 557 0004 01E0     		b	.L50
- 558              	.L51:
+ 459              		.loc 1 765 0
+ 460 0004 01E0     		b	.L39
+ 461              	.L40:
  766:.\Generated_Source\PSoC4/Timer_1.c ****     {
  767:.\Generated_Source\PSoC4/Timer_1.c ****         (void)Timer_1_ReadCapture();
- 559              		.loc 1 767 0
- 560 0006 FFF7FEFF 		bl	Timer_1_ReadCapture
- 561              	.L50:
+ 462              		.loc 1 767 0
+ 463 0006 FFF7FEFF 		bl	Timer_1_ReadCapture
+ 464              	.L39:
  765:.\Generated_Source\PSoC4/Timer_1.c ****     while(0u != (Timer_1_ReadStatusRegister() & Timer_1_STATUS_FIFONEMP))
- 562              		.loc 1 765 0 discriminator 1
- 563 000a FFF7FEFF 		bl	Timer_1_ReadStatusRegister
- 564 000e 031C     		mov	r3, r0
- 565 0010 1A1C     		mov	r2, r3
- 566 0012 0823     		mov	r3, #8
- 567 0014 1340     		and	r3, r2
- 568 0016 F6D1     		bne	.L51
+ 465              		.loc 1 765 0 discriminator 1
+ 466 000a FFF7FEFF 		bl	Timer_1_ReadStatusRegister
+ 467 000e 031C     		mov	r3, r0
+ 468 0010 1A1C     		mov	r2, r3
+ 469 0012 0823     		mov	r3, #8
+ 470 0014 1340     		and	r3, r2
+ 471 0016 F6D1     		bne	.L40
  768:.\Generated_Source\PSoC4/Timer_1.c ****     }
  769:.\Generated_Source\PSoC4/Timer_1.c **** }
- 569              		.loc 1 769 0
- 570 0018 BD46     		mov	sp, r7
- 571              		@ sp needed
- 572 001a 80BD     		pop	{r7, pc}
- 573              		.cfi_endproc
- 574              	.LFE14:
- 575              		.size	Timer_1_ClearFIFO, .-Timer_1_ClearFIFO
- 576              		.text
- 577              	.Letext0:
- 578              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
- 579              		.section	.debug_info,"",%progbits
- 580              	.Ldebug_info0:
- 581 0000 4E020000 		.4byte	0x24e
- 582 0004 0400     		.2byte	0x4
- 583 0006 00000000 		.4byte	.Ldebug_abbrev0
- 584 000a 04       		.byte	0x4
- 585 000b 01       		.uleb128 0x1
- 586 000c 5F000000 		.4byte	.LASF36
- 587 0010 01       		.byte	0x1
- 588 0011 7D020000 		.4byte	.LASF37
- 589 0015 DB000000 		.4byte	.LASF38
- 590 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 591 001d 00000000 		.4byte	0
- 592 0021 00000000 		.4byte	.Ldebug_line0
- 593 0025 02       		.uleb128 0x2
- 594 0026 01       		.byte	0x1
- 595 0027 06       		.byte	0x6
- 596 0028 01030000 		.4byte	.LASF0
- 597 002c 02       		.uleb128 0x2
- 598 002d 01       		.byte	0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 25
+ 472              		.loc 1 769 0
+ 473 0018 BD46     		mov	sp, r7
+ 474              		@ sp needed
+ 475 001a 80BD     		pop	{r7, pc}
+ 476              		.cfi_endproc
+ 477              	.LFE12:
+ 478              		.size	Timer_1_ClearFIFO, .-Timer_1_ClearFIFO
+ 479              		.text
+ 480              	.Letext0:
+ 481              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 482              		.section	.debug_info,"",%progbits
+ 483              	.Ldebug_info0:
+ 484 0000 12020000 		.4byte	0x212
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 23
 
 
- 599 002e 08       		.byte	0x8
- 600 002f 21010000 		.4byte	.LASF1
- 601 0033 02       		.uleb128 0x2
- 602 0034 02       		.byte	0x2
- 603 0035 05       		.byte	0x5
- 604 0036 CE020000 		.4byte	.LASF2
- 605 003a 02       		.uleb128 0x2
- 606 003b 02       		.byte	0x2
- 607 003c 07       		.byte	0x7
- 608 003d 39000000 		.4byte	.LASF3
- 609 0041 02       		.uleb128 0x2
- 610 0042 04       		.byte	0x4
- 611 0043 05       		.byte	0x5
- 612 0044 F3020000 		.4byte	.LASF4
- 613 0048 02       		.uleb128 0x2
- 614 0049 04       		.byte	0x4
- 615 004a 07       		.byte	0x7
- 616 004b 47010000 		.4byte	.LASF5
- 617 004f 02       		.uleb128 0x2
- 618 0050 08       		.byte	0x8
- 619 0051 05       		.byte	0x5
- 620 0052 61020000 		.4byte	.LASF6
- 621 0056 02       		.uleb128 0x2
- 622 0057 08       		.byte	0x8
- 623 0058 07       		.byte	0x7
- 624 0059 01020000 		.4byte	.LASF7
- 625 005d 03       		.uleb128 0x3
- 626 005e 04       		.byte	0x4
- 627 005f 05       		.byte	0x5
- 628 0060 696E7400 		.ascii	"int\000"
- 629 0064 02       		.uleb128 0x2
- 630 0065 04       		.byte	0x4
- 631 0066 07       		.byte	0x7
- 632 0067 4C000000 		.4byte	.LASF8
- 633 006b 04       		.uleb128 0x4
- 634 006c 59010000 		.4byte	.LASF9
- 635 0070 02       		.byte	0x2
- 636 0071 A1       		.byte	0xa1
- 637 0072 2C000000 		.4byte	0x2c
- 638 0076 04       		.uleb128 0x4
- 639 0077 C3010000 		.4byte	.LASF10
- 640 007b 02       		.byte	0x2
- 641 007c A3       		.byte	0xa3
- 642 007d 48000000 		.4byte	0x48
- 643 0081 02       		.uleb128 0x2
- 644 0082 04       		.byte	0x4
- 645 0083 04       		.byte	0x4
- 646 0084 59000000 		.4byte	.LASF11
- 647 0088 02       		.uleb128 0x2
- 648 0089 08       		.byte	0x8
- 649 008a 04       		.byte	0x4
- 650 008b 76010000 		.4byte	.LASF12
- 651 008f 02       		.uleb128 0x2
- 652 0090 01       		.byte	0x1
- 653 0091 08       		.byte	0x8
- 654 0092 FC020000 		.4byte	.LASF13
- 655 0096 05       		.uleb128 0x5
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 26
+ 485 0004 0400     		.2byte	0x4
+ 486 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 487 000a 04       		.byte	0x4
+ 488 000b 01       		.uleb128 0x1
+ 489 000c 5F000000 		.4byte	.LASF33
+ 490 0010 01       		.byte	0x1
+ 491 0011 3C020000 		.4byte	.LASF34
+ 492 0015 DB000000 		.4byte	.LASF35
+ 493 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 494 001d 00000000 		.4byte	0
+ 495 0021 00000000 		.4byte	.Ldebug_line0
+ 496 0025 02       		.uleb128 0x2
+ 497 0026 01       		.byte	0x1
+ 498 0027 06       		.byte	0x6
+ 499 0028 C0020000 		.4byte	.LASF0
+ 500 002c 02       		.uleb128 0x2
+ 501 002d 01       		.byte	0x1
+ 502 002e 08       		.byte	0x8
+ 503 002f 21010000 		.4byte	.LASF1
+ 504 0033 02       		.uleb128 0x2
+ 505 0034 02       		.byte	0x2
+ 506 0035 05       		.byte	0x5
+ 507 0036 8D020000 		.4byte	.LASF2
+ 508 003a 02       		.uleb128 0x2
+ 509 003b 02       		.byte	0x2
+ 510 003c 07       		.byte	0x7
+ 511 003d 39000000 		.4byte	.LASF3
+ 512 0041 02       		.uleb128 0x2
+ 513 0042 04       		.byte	0x4
+ 514 0043 05       		.byte	0x5
+ 515 0044 B2020000 		.4byte	.LASF4
+ 516 0048 02       		.uleb128 0x2
+ 517 0049 04       		.byte	0x4
+ 518 004a 07       		.byte	0x7
+ 519 004b 34010000 		.4byte	.LASF5
+ 520 004f 02       		.uleb128 0x2
+ 521 0050 08       		.byte	0x8
+ 522 0051 05       		.byte	0x5
+ 523 0052 20020000 		.4byte	.LASF6
+ 524 0056 02       		.uleb128 0x2
+ 525 0057 08       		.byte	0x8
+ 526 0058 07       		.byte	0x7
+ 527 0059 C0010000 		.4byte	.LASF7
+ 528 005d 03       		.uleb128 0x3
+ 529 005e 04       		.byte	0x4
+ 530 005f 05       		.byte	0x5
+ 531 0060 696E7400 		.ascii	"int\000"
+ 532 0064 02       		.uleb128 0x2
+ 533 0065 04       		.byte	0x4
+ 534 0066 07       		.byte	0x7
+ 535 0067 4C000000 		.4byte	.LASF8
+ 536 006b 04       		.uleb128 0x4
+ 537 006c 46010000 		.4byte	.LASF9
+ 538 0070 02       		.byte	0x2
+ 539 0071 A1       		.byte	0xa1
+ 540 0072 2C000000 		.4byte	0x2c
+ 541 0076 04       		.uleb128 0x4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 24
 
 
- 656 0097 2F010000 		.4byte	.LASF14
- 657 009b 02       		.byte	0x2
- 658 009c 4B01     		.2byte	0x14b
- 659 009e A2000000 		.4byte	0xa2
- 660 00a2 06       		.uleb128 0x6
- 661 00a3 6B000000 		.4byte	0x6b
- 662 00a7 05       		.uleb128 0x5
- 663 00a8 00000000 		.4byte	.LASF15
- 664 00ac 02       		.byte	0x2
- 665 00ad 4D01     		.2byte	0x14d
- 666 00af B3000000 		.4byte	0xb3
- 667 00b3 06       		.uleb128 0x6
- 668 00b4 76000000 		.4byte	0x76
- 669 00b8 02       		.uleb128 0x2
- 670 00b9 04       		.byte	0x4
- 671 00ba 07       		.byte	0x7
- 672 00bb 58020000 		.4byte	.LASF16
- 673 00bf 07       		.uleb128 0x7
- 674 00c0 F4010000 		.4byte	.LASF20
- 675 00c4 01       		.byte	0x1
- 676 00c5 2B       		.byte	0x2b
- 677 00c6 00000000 		.4byte	.LFB0
- 678 00ca 54000000 		.4byte	.LFE0-.LFB0
- 679 00ce 01       		.uleb128 0x1
- 680 00cf 9C       		.byte	0x9c
- 681 00d0 E3000000 		.4byte	0xe3
- 682 00d4 08       		.uleb128 0x8
- 683 00d5 41020000 		.4byte	.LASF39
- 684 00d9 01       		.byte	0x1
- 685 00da 2F       		.byte	0x2f
- 686 00db 6B000000 		.4byte	0x6b
- 687 00df 02       		.uleb128 0x2
- 688 00e0 91       		.byte	0x91
- 689 00e1 6F       		.sleb128 -17
- 690 00e2 00       		.byte	0
- 691 00e3 09       		.uleb128 0x9
- 692 00e4 67010000 		.4byte	.LASF17
- 693 00e8 01       		.byte	0x1
- 694 00e9 B4       		.byte	0xb4
- 695 00ea 00000000 		.4byte	.LFB1
- 696 00ee 20000000 		.4byte	.LFE1-.LFB1
- 697 00f2 01       		.uleb128 0x1
- 698 00f3 9C       		.byte	0x9c
- 699 00f4 0A       		.uleb128 0xa
- 700 00f5 E6010000 		.4byte	.LASF18
- 701 00f9 01       		.byte	0x1
- 702 00fa D7       		.byte	0xd7
- 703 00fb 00000000 		.4byte	.LFB2
- 704 00ff 24000000 		.4byte	.LFE2-.LFB2
- 705 0103 01       		.uleb128 0x1
- 706 0104 9C       		.byte	0x9c
- 707 0105 09       		.uleb128 0x9
- 708 0106 0D030000 		.4byte	.LASF19
- 709 010a 01       		.byte	0x1
- 710 010b F7       		.byte	0xf7
- 711 010c 00000000 		.4byte	.LFB3
- 712 0110 1C000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 27
+ 542 0077 9E010000 		.4byte	.LASF10
+ 543 007b 02       		.byte	0x2
+ 544 007c A3       		.byte	0xa3
+ 545 007d 48000000 		.4byte	0x48
+ 546 0081 02       		.uleb128 0x2
+ 547 0082 04       		.byte	0x4
+ 548 0083 04       		.byte	0x4
+ 549 0084 59000000 		.4byte	.LASF11
+ 550 0088 02       		.uleb128 0x2
+ 551 0089 08       		.byte	0x8
+ 552 008a 04       		.byte	0x4
+ 553 008b 6E010000 		.4byte	.LASF12
+ 554 008f 02       		.uleb128 0x2
+ 555 0090 01       		.byte	0x1
+ 556 0091 08       		.byte	0x8
+ 557 0092 BB020000 		.4byte	.LASF13
+ 558 0096 05       		.uleb128 0x5
+ 559 0097 2F010000 		.4byte	.LASF14
+ 560 009b 02       		.byte	0x2
+ 561 009c 4B01     		.2byte	0x14b
+ 562 009e A2000000 		.4byte	0xa2
+ 563 00a2 06       		.uleb128 0x6
+ 564 00a3 6B000000 		.4byte	0x6b
+ 565 00a7 05       		.uleb128 0x5
+ 566 00a8 00000000 		.4byte	.LASF15
+ 567 00ac 02       		.byte	0x2
+ 568 00ad 4D01     		.2byte	0x14d
+ 569 00af B3000000 		.4byte	0xb3
+ 570 00b3 06       		.uleb128 0x6
+ 571 00b4 76000000 		.4byte	0x76
+ 572 00b8 02       		.uleb128 0x2
+ 573 00b9 04       		.byte	0x4
+ 574 00ba 07       		.byte	0x7
+ 575 00bb 17020000 		.4byte	.LASF16
+ 576 00bf 07       		.uleb128 0x7
+ 577 00c0 B3010000 		.4byte	.LASF20
+ 578 00c4 01       		.byte	0x1
+ 579 00c5 2B       		.byte	0x2b
+ 580 00c6 00000000 		.4byte	.LFB0
+ 581 00ca 54000000 		.4byte	.LFE0-.LFB0
+ 582 00ce 01       		.uleb128 0x1
+ 583 00cf 9C       		.byte	0x9c
+ 584 00d0 E3000000 		.4byte	0xe3
+ 585 00d4 08       		.uleb128 0x8
+ 586 00d5 00020000 		.4byte	.LASF36
+ 587 00d9 01       		.byte	0x1
+ 588 00da 2F       		.byte	0x2f
+ 589 00db 6B000000 		.4byte	0x6b
+ 590 00df 02       		.uleb128 0x2
+ 591 00e0 91       		.byte	0x91
+ 592 00e1 6F       		.sleb128 -17
+ 593 00e2 00       		.byte	0
+ 594 00e3 09       		.uleb128 0x9
+ 595 00e4 5F010000 		.4byte	.LASF17
+ 596 00e8 01       		.byte	0x1
+ 597 00e9 B4       		.byte	0xb4
+ 598 00ea 00000000 		.4byte	.LFB1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 25
 
 
- 713 0114 01       		.uleb128 0x1
- 714 0115 9C       		.byte	0x9c
- 715 0116 0B       		.uleb128 0xb
- 716 0117 7D010000 		.4byte	.LASF21
- 717 011b 01       		.byte	0x1
- 718 011c 1701     		.2byte	0x117
- 719 011e 00000000 		.4byte	.LFB4
- 720 0122 20000000 		.4byte	.LFE4-.LFB4
- 721 0126 01       		.uleb128 0x1
- 722 0127 9C       		.byte	0x9c
- 723 0128 3C010000 		.4byte	0x13c
- 724 012c 0C       		.uleb128 0xc
- 725 012d 6F020000 		.4byte	.LASF26
- 726 0131 01       		.byte	0x1
- 727 0132 1701     		.2byte	0x117
- 728 0134 6B000000 		.4byte	0x6b
- 729 0138 02       		.uleb128 0x2
- 730 0139 91       		.byte	0x91
- 731 013a 77       		.sleb128 -9
- 732 013b 00       		.byte	0
- 733 013c 0D       		.uleb128 0xd
- 734 013d 06000000 		.4byte	.LASF22
- 735 0141 01       		.byte	0x1
- 736 0142 2E01     		.2byte	0x12e
- 737 0144 00000000 		.4byte	.LFB5
- 738 0148 10000000 		.4byte	.LFE5-.LFB5
- 739 014c 01       		.uleb128 0x1
- 740 014d 9C       		.byte	0x9c
- 741 014e 0E       		.uleb128 0xe
- 742 014f D8020000 		.4byte	.LASF23
- 743 0153 01       		.byte	0x1
- 744 0154 4D01     		.2byte	0x14d
- 745 0156 6B000000 		.4byte	0x6b
- 746 015a 00000000 		.4byte	.LFB6
- 747 015e 14000000 		.4byte	.LFE6-.LFB6
- 748 0162 01       		.uleb128 0x1
- 749 0163 9C       		.byte	0x9c
- 750 0164 0E       		.uleb128 0xe
- 751 0165 CA010000 		.4byte	.LASF24
- 752 0169 01       		.byte	0x1
- 753 016a 6401     		.2byte	0x164
- 754 016c 6B000000 		.4byte	0x6b
- 755 0170 00000000 		.4byte	.LFB7
- 756 0174 14000000 		.4byte	.LFE7-.LFB7
- 757 0178 01       		.uleb128 0x1
- 758 0179 9C       		.byte	0x9c
- 759 017a 0B       		.uleb128 0xb
- 760 017b A6010000 		.4byte	.LASF25
- 761 017f 01       		.byte	0x1
- 762 0180 7B01     		.2byte	0x17b
- 763 0182 00000000 		.4byte	.LFB8
- 764 0186 20000000 		.4byte	.LFE8-.LFB8
- 765 018a 01       		.uleb128 0x1
- 766 018b 9C       		.byte	0x9c
- 767 018c A0010000 		.4byte	0x1a0
- 768 0190 0C       		.uleb128 0xc
- 769 0191 5F010000 		.4byte	.LASF27
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 28
+ 599 00ee 08000000 		.4byte	.LFE1-.LFB1
+ 600 00f2 01       		.uleb128 0x1
+ 601 00f3 9C       		.byte	0x9c
+ 602 00f4 0A       		.uleb128 0xa
+ 603 00f5 A5010000 		.4byte	.LASF18
+ 604 00f9 01       		.byte	0x1
+ 605 00fa D7       		.byte	0xd7
+ 606 00fb 00000000 		.4byte	.LFB2
+ 607 00ff 24000000 		.4byte	.LFE2-.LFB2
+ 608 0103 01       		.uleb128 0x1
+ 609 0104 9C       		.byte	0x9c
+ 610 0105 09       		.uleb128 0x9
+ 611 0106 CC020000 		.4byte	.LASF19
+ 612 010a 01       		.byte	0x1
+ 613 010b F7       		.byte	0xf7
+ 614 010c 00000000 		.4byte	.LFB3
+ 615 0110 08000000 		.4byte	.LFE3-.LFB3
+ 616 0114 01       		.uleb128 0x1
+ 617 0115 9C       		.byte	0x9c
+ 618 0116 0B       		.uleb128 0xb
+ 619 0117 75010000 		.4byte	.LASF21
+ 620 011b 01       		.byte	0x1
+ 621 011c 1701     		.2byte	0x117
+ 622 011e 00000000 		.4byte	.LFB4
+ 623 0122 20000000 		.4byte	.LFE4-.LFB4
+ 624 0126 01       		.uleb128 0x1
+ 625 0127 9C       		.byte	0x9c
+ 626 0128 3C010000 		.4byte	0x13c
+ 627 012c 0C       		.uleb128 0xc
+ 628 012d 2E020000 		.4byte	.LASF26
+ 629 0131 01       		.byte	0x1
+ 630 0132 1701     		.2byte	0x117
+ 631 0134 6B000000 		.4byte	0x6b
+ 632 0138 02       		.uleb128 0x2
+ 633 0139 91       		.byte	0x91
+ 634 013a 77       		.sleb128 -9
+ 635 013b 00       		.byte	0
+ 636 013c 0D       		.uleb128 0xd
+ 637 013d 06000000 		.4byte	.LASF22
+ 638 0141 01       		.byte	0x1
+ 639 0142 2E01     		.2byte	0x12e
+ 640 0144 00000000 		.4byte	.LFB5
+ 641 0148 10000000 		.4byte	.LFE5-.LFB5
+ 642 014c 01       		.uleb128 0x1
+ 643 014d 9C       		.byte	0x9c
+ 644 014e 0E       		.uleb128 0xe
+ 645 014f 97020000 		.4byte	.LASF23
+ 646 0153 01       		.byte	0x1
+ 647 0154 4D01     		.2byte	0x14d
+ 648 0156 6B000000 		.4byte	0x6b
+ 649 015a 00000000 		.4byte	.LFB6
+ 650 015e 14000000 		.4byte	.LFE6-.LFB6
+ 651 0162 01       		.uleb128 0x1
+ 652 0163 9C       		.byte	0x9c
+ 653 0164 0E       		.uleb128 0xe
+ 654 0165 4C010000 		.4byte	.LASF24
+ 655 0169 01       		.byte	0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 26
 
 
- 770 0195 01       		.byte	0x1
- 771 0196 7B01     		.2byte	0x17b
- 772 0198 6B000000 		.4byte	0x6b
- 773 019c 02       		.uleb128 0x2
- 774 019d 91       		.byte	0x91
- 775 019e 77       		.sleb128 -9
- 776 019f 00       		.byte	0
- 777 01a0 0E       		.uleb128 0xe
- 778 01a1 34010000 		.4byte	.LASF28
- 779 01a5 01       		.byte	0x1
- 780 01a6 9501     		.2byte	0x195
- 781 01a8 76000000 		.4byte	0x76
- 782 01ac 00000000 		.4byte	.LFB9
- 783 01b0 14000000 		.4byte	.LFE9-.LFB9
- 784 01b4 01       		.uleb128 0x1
- 785 01b5 9C       		.byte	0x9c
- 786 01b6 0B       		.uleb128 0xb
- 787 01b7 1E000000 		.4byte	.LASF29
- 788 01bb 01       		.byte	0x1
- 789 01bc AF01     		.2byte	0x1af
- 790 01be 00000000 		.4byte	.LFB10
- 791 01c2 18000000 		.4byte	.LFE10-.LFB10
- 792 01c6 01       		.uleb128 0x1
- 793 01c7 9C       		.byte	0x9c
- 794 01c8 DC010000 		.4byte	0x1dc
- 795 01cc 0C       		.uleb128 0xc
- 796 01cd 32000000 		.4byte	.LASF30
- 797 01d1 01       		.byte	0x1
- 798 01d2 AF01     		.2byte	0x1af
- 799 01d4 76000000 		.4byte	0x76
- 800 01d8 02       		.uleb128 0x2
- 801 01d9 91       		.byte	0x91
- 802 01da 74       		.sleb128 -12
- 803 01db 00       		.byte	0
- 804 01dc 0E       		.uleb128 0xe
- 805 01dd 2D020000 		.4byte	.LASF31
- 806 01e1 01       		.byte	0x1
- 807 01e2 C801     		.2byte	0x1c8
- 808 01e4 76000000 		.4byte	0x76
- 809 01e8 00000000 		.4byte	.LFB11
- 810 01ec 14000000 		.4byte	.LFE11-.LFB11
- 811 01f0 01       		.uleb128 0x1
- 812 01f1 9C       		.byte	0x9c
- 813 01f2 0B       		.uleb128 0xb
- 814 01f3 18020000 		.4byte	.LASF32
- 815 01f7 01       		.byte	0x1
- 816 01f8 E001     		.2byte	0x1e0
- 817 01fa 00000000 		.4byte	.LFB12
- 818 01fe 18000000 		.4byte	.LFE12-.LFB12
- 819 0202 01       		.uleb128 0x1
- 820 0203 9C       		.byte	0x9c
- 821 0204 18020000 		.4byte	0x218
- 822 0208 0C       		.uleb128 0xc
- 823 0209 B4020000 		.4byte	.LASF33
- 824 020d 01       		.byte	0x1
- 825 020e E001     		.2byte	0x1e0
- 826 0210 76000000 		.4byte	0x76
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 29
+ 656 016a 9501     		.2byte	0x195
+ 657 016c 76000000 		.4byte	0x76
+ 658 0170 00000000 		.4byte	.LFB7
+ 659 0174 14000000 		.4byte	.LFE7-.LFB7
+ 660 0178 01       		.uleb128 0x1
+ 661 0179 9C       		.byte	0x9c
+ 662 017a 0B       		.uleb128 0xb
+ 663 017b 1E000000 		.4byte	.LASF25
+ 664 017f 01       		.byte	0x1
+ 665 0180 AF01     		.2byte	0x1af
+ 666 0182 00000000 		.4byte	.LFB8
+ 667 0186 18000000 		.4byte	.LFE8-.LFB8
+ 668 018a 01       		.uleb128 0x1
+ 669 018b 9C       		.byte	0x9c
+ 670 018c A0010000 		.4byte	0x1a0
+ 671 0190 0C       		.uleb128 0xc
+ 672 0191 32000000 		.4byte	.LASF27
+ 673 0195 01       		.byte	0x1
+ 674 0196 AF01     		.2byte	0x1af
+ 675 0198 76000000 		.4byte	0x76
+ 676 019c 02       		.uleb128 0x2
+ 677 019d 91       		.byte	0x91
+ 678 019e 74       		.sleb128 -12
+ 679 019f 00       		.byte	0
+ 680 01a0 0E       		.uleb128 0xe
+ 681 01a1 EC010000 		.4byte	.LASF28
+ 682 01a5 01       		.byte	0x1
+ 683 01a6 C801     		.2byte	0x1c8
+ 684 01a8 76000000 		.4byte	0x76
+ 685 01ac 00000000 		.4byte	.LFB9
+ 686 01b0 14000000 		.4byte	.LFE9-.LFB9
+ 687 01b4 01       		.uleb128 0x1
+ 688 01b5 9C       		.byte	0x9c
+ 689 01b6 0B       		.uleb128 0xb
+ 690 01b7 D7010000 		.4byte	.LASF29
+ 691 01bb 01       		.byte	0x1
+ 692 01bc E001     		.2byte	0x1e0
+ 693 01be 00000000 		.4byte	.LFB10
+ 694 01c2 18000000 		.4byte	.LFE10-.LFB10
+ 695 01c6 01       		.uleb128 0x1
+ 696 01c7 9C       		.byte	0x9c
+ 697 01c8 DC010000 		.4byte	0x1dc
+ 698 01cc 0C       		.uleb128 0xc
+ 699 01cd 73020000 		.4byte	.LASF30
+ 700 01d1 01       		.byte	0x1
+ 701 01d2 E001     		.2byte	0x1e0
+ 702 01d4 76000000 		.4byte	0x76
+ 703 01d8 02       		.uleb128 0x2
+ 704 01d9 91       		.byte	0x91
+ 705 01da 74       		.sleb128 -12
+ 706 01db 00       		.byte	0
+ 707 01dc 0E       		.uleb128 0xe
+ 708 01dd 5F020000 		.4byte	.LASF31
+ 709 01e1 01       		.byte	0x1
+ 710 01e2 FC01     		.2byte	0x1fc
+ 711 01e4 76000000 		.4byte	0x76
+ 712 01e8 00000000 		.4byte	.LFB11
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 27
 
 
- 827 0214 02       		.uleb128 0x2
- 828 0215 91       		.byte	0x91
- 829 0216 74       		.sleb128 -12
- 830 0217 00       		.byte	0
- 831 0218 0E       		.uleb128 0xe
- 832 0219 A0020000 		.4byte	.LASF34
- 833 021d 01       		.byte	0x1
- 834 021e FC01     		.2byte	0x1fc
- 835 0220 76000000 		.4byte	0x76
- 836 0224 00000000 		.4byte	.LFB13
- 837 0228 1C000000 		.4byte	.LFE13-.LFB13
- 838 022c 01       		.uleb128 0x1
- 839 022d 9C       		.byte	0x9c
- 840 022e 0F       		.uleb128 0xf
- 841 022f BC020000 		.4byte	.LASF35
- 842 0233 01       		.byte	0x1
- 843 0234 FB02     		.2byte	0x2fb
- 844 0236 00000000 		.4byte	.LFB14
- 845 023a 1C000000 		.4byte	.LFE14-.LFB14
- 846 023e 01       		.uleb128 0x1
- 847 023f 9C       		.byte	0x9c
- 848 0240 10       		.uleb128 0x10
- 849 0241 96010000 		.4byte	.LASF40
- 850 0245 01       		.byte	0x1
- 851 0246 1A       		.byte	0x1a
- 852 0247 6B000000 		.4byte	0x6b
- 853 024b 05       		.uleb128 0x5
- 854 024c 03       		.byte	0x3
- 855 024d 00000000 		.4byte	Timer_1_initVar
- 856 0251 00       		.byte	0
- 857              		.section	.debug_abbrev,"",%progbits
- 858              	.Ldebug_abbrev0:
- 859 0000 01       		.uleb128 0x1
- 860 0001 11       		.uleb128 0x11
- 861 0002 01       		.byte	0x1
- 862 0003 25       		.uleb128 0x25
- 863 0004 0E       		.uleb128 0xe
- 864 0005 13       		.uleb128 0x13
- 865 0006 0B       		.uleb128 0xb
- 866 0007 03       		.uleb128 0x3
- 867 0008 0E       		.uleb128 0xe
- 868 0009 1B       		.uleb128 0x1b
- 869 000a 0E       		.uleb128 0xe
- 870 000b 55       		.uleb128 0x55
- 871 000c 17       		.uleb128 0x17
- 872 000d 11       		.uleb128 0x11
- 873 000e 01       		.uleb128 0x1
- 874 000f 10       		.uleb128 0x10
- 875 0010 17       		.uleb128 0x17
- 876 0011 00       		.byte	0
- 877 0012 00       		.byte	0
- 878 0013 02       		.uleb128 0x2
- 879 0014 24       		.uleb128 0x24
- 880 0015 00       		.byte	0
- 881 0016 0B       		.uleb128 0xb
- 882 0017 0B       		.uleb128 0xb
- 883 0018 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 30
+ 713 01ec 1C000000 		.4byte	.LFE11-.LFB11
+ 714 01f0 01       		.uleb128 0x1
+ 715 01f1 9C       		.byte	0x9c
+ 716 01f2 0F       		.uleb128 0xf
+ 717 01f3 7B020000 		.4byte	.LASF32
+ 718 01f7 01       		.byte	0x1
+ 719 01f8 FB02     		.2byte	0x2fb
+ 720 01fa 00000000 		.4byte	.LFB12
+ 721 01fe 1C000000 		.4byte	.LFE12-.LFB12
+ 722 0202 01       		.uleb128 0x1
+ 723 0203 9C       		.byte	0x9c
+ 724 0204 10       		.uleb128 0x10
+ 725 0205 8E010000 		.4byte	.LASF37
+ 726 0209 01       		.byte	0x1
+ 727 020a 1A       		.byte	0x1a
+ 728 020b 6B000000 		.4byte	0x6b
+ 729 020f 05       		.uleb128 0x5
+ 730 0210 03       		.byte	0x3
+ 731 0211 00000000 		.4byte	Timer_1_initVar
+ 732 0215 00       		.byte	0
+ 733              		.section	.debug_abbrev,"",%progbits
+ 734              	.Ldebug_abbrev0:
+ 735 0000 01       		.uleb128 0x1
+ 736 0001 11       		.uleb128 0x11
+ 737 0002 01       		.byte	0x1
+ 738 0003 25       		.uleb128 0x25
+ 739 0004 0E       		.uleb128 0xe
+ 740 0005 13       		.uleb128 0x13
+ 741 0006 0B       		.uleb128 0xb
+ 742 0007 03       		.uleb128 0x3
+ 743 0008 0E       		.uleb128 0xe
+ 744 0009 1B       		.uleb128 0x1b
+ 745 000a 0E       		.uleb128 0xe
+ 746 000b 55       		.uleb128 0x55
+ 747 000c 17       		.uleb128 0x17
+ 748 000d 11       		.uleb128 0x11
+ 749 000e 01       		.uleb128 0x1
+ 750 000f 10       		.uleb128 0x10
+ 751 0010 17       		.uleb128 0x17
+ 752 0011 00       		.byte	0
+ 753 0012 00       		.byte	0
+ 754 0013 02       		.uleb128 0x2
+ 755 0014 24       		.uleb128 0x24
+ 756 0015 00       		.byte	0
+ 757 0016 0B       		.uleb128 0xb
+ 758 0017 0B       		.uleb128 0xb
+ 759 0018 3E       		.uleb128 0x3e
+ 760 0019 0B       		.uleb128 0xb
+ 761 001a 03       		.uleb128 0x3
+ 762 001b 0E       		.uleb128 0xe
+ 763 001c 00       		.byte	0
+ 764 001d 00       		.byte	0
+ 765 001e 03       		.uleb128 0x3
+ 766 001f 24       		.uleb128 0x24
+ 767 0020 00       		.byte	0
+ 768 0021 0B       		.uleb128 0xb
+ 769 0022 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 28
 
 
- 884 0019 0B       		.uleb128 0xb
- 885 001a 03       		.uleb128 0x3
- 886 001b 0E       		.uleb128 0xe
- 887 001c 00       		.byte	0
- 888 001d 00       		.byte	0
- 889 001e 03       		.uleb128 0x3
- 890 001f 24       		.uleb128 0x24
- 891 0020 00       		.byte	0
- 892 0021 0B       		.uleb128 0xb
- 893 0022 0B       		.uleb128 0xb
- 894 0023 3E       		.uleb128 0x3e
- 895 0024 0B       		.uleb128 0xb
- 896 0025 03       		.uleb128 0x3
- 897 0026 08       		.uleb128 0x8
- 898 0027 00       		.byte	0
- 899 0028 00       		.byte	0
- 900 0029 04       		.uleb128 0x4
- 901 002a 16       		.uleb128 0x16
- 902 002b 00       		.byte	0
- 903 002c 03       		.uleb128 0x3
- 904 002d 0E       		.uleb128 0xe
- 905 002e 3A       		.uleb128 0x3a
- 906 002f 0B       		.uleb128 0xb
- 907 0030 3B       		.uleb128 0x3b
- 908 0031 0B       		.uleb128 0xb
- 909 0032 49       		.uleb128 0x49
- 910 0033 13       		.uleb128 0x13
- 911 0034 00       		.byte	0
- 912 0035 00       		.byte	0
- 913 0036 05       		.uleb128 0x5
- 914 0037 16       		.uleb128 0x16
- 915 0038 00       		.byte	0
- 916 0039 03       		.uleb128 0x3
- 917 003a 0E       		.uleb128 0xe
- 918 003b 3A       		.uleb128 0x3a
- 919 003c 0B       		.uleb128 0xb
- 920 003d 3B       		.uleb128 0x3b
- 921 003e 05       		.uleb128 0x5
- 922 003f 49       		.uleb128 0x49
- 923 0040 13       		.uleb128 0x13
- 924 0041 00       		.byte	0
- 925 0042 00       		.byte	0
- 926 0043 06       		.uleb128 0x6
- 927 0044 35       		.uleb128 0x35
- 928 0045 00       		.byte	0
- 929 0046 49       		.uleb128 0x49
- 930 0047 13       		.uleb128 0x13
- 931 0048 00       		.byte	0
- 932 0049 00       		.byte	0
- 933 004a 07       		.uleb128 0x7
- 934 004b 2E       		.uleb128 0x2e
- 935 004c 01       		.byte	0x1
- 936 004d 3F       		.uleb128 0x3f
- 937 004e 19       		.uleb128 0x19
- 938 004f 03       		.uleb128 0x3
- 939 0050 0E       		.uleb128 0xe
- 940 0051 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 31
+ 770 0023 3E       		.uleb128 0x3e
+ 771 0024 0B       		.uleb128 0xb
+ 772 0025 03       		.uleb128 0x3
+ 773 0026 08       		.uleb128 0x8
+ 774 0027 00       		.byte	0
+ 775 0028 00       		.byte	0
+ 776 0029 04       		.uleb128 0x4
+ 777 002a 16       		.uleb128 0x16
+ 778 002b 00       		.byte	0
+ 779 002c 03       		.uleb128 0x3
+ 780 002d 0E       		.uleb128 0xe
+ 781 002e 3A       		.uleb128 0x3a
+ 782 002f 0B       		.uleb128 0xb
+ 783 0030 3B       		.uleb128 0x3b
+ 784 0031 0B       		.uleb128 0xb
+ 785 0032 49       		.uleb128 0x49
+ 786 0033 13       		.uleb128 0x13
+ 787 0034 00       		.byte	0
+ 788 0035 00       		.byte	0
+ 789 0036 05       		.uleb128 0x5
+ 790 0037 16       		.uleb128 0x16
+ 791 0038 00       		.byte	0
+ 792 0039 03       		.uleb128 0x3
+ 793 003a 0E       		.uleb128 0xe
+ 794 003b 3A       		.uleb128 0x3a
+ 795 003c 0B       		.uleb128 0xb
+ 796 003d 3B       		.uleb128 0x3b
+ 797 003e 05       		.uleb128 0x5
+ 798 003f 49       		.uleb128 0x49
+ 799 0040 13       		.uleb128 0x13
+ 800 0041 00       		.byte	0
+ 801 0042 00       		.byte	0
+ 802 0043 06       		.uleb128 0x6
+ 803 0044 35       		.uleb128 0x35
+ 804 0045 00       		.byte	0
+ 805 0046 49       		.uleb128 0x49
+ 806 0047 13       		.uleb128 0x13
+ 807 0048 00       		.byte	0
+ 808 0049 00       		.byte	0
+ 809 004a 07       		.uleb128 0x7
+ 810 004b 2E       		.uleb128 0x2e
+ 811 004c 01       		.byte	0x1
+ 812 004d 3F       		.uleb128 0x3f
+ 813 004e 19       		.uleb128 0x19
+ 814 004f 03       		.uleb128 0x3
+ 815 0050 0E       		.uleb128 0xe
+ 816 0051 3A       		.uleb128 0x3a
+ 817 0052 0B       		.uleb128 0xb
+ 818 0053 3B       		.uleb128 0x3b
+ 819 0054 0B       		.uleb128 0xb
+ 820 0055 27       		.uleb128 0x27
+ 821 0056 19       		.uleb128 0x19
+ 822 0057 11       		.uleb128 0x11
+ 823 0058 01       		.uleb128 0x1
+ 824 0059 12       		.uleb128 0x12
+ 825 005a 06       		.uleb128 0x6
+ 826 005b 40       		.uleb128 0x40
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 29
 
 
- 941 0052 0B       		.uleb128 0xb
- 942 0053 3B       		.uleb128 0x3b
- 943 0054 0B       		.uleb128 0xb
- 944 0055 27       		.uleb128 0x27
- 945 0056 19       		.uleb128 0x19
- 946 0057 11       		.uleb128 0x11
- 947 0058 01       		.uleb128 0x1
- 948 0059 12       		.uleb128 0x12
- 949 005a 06       		.uleb128 0x6
- 950 005b 40       		.uleb128 0x40
- 951 005c 18       		.uleb128 0x18
- 952 005d 9642     		.uleb128 0x2116
- 953 005f 19       		.uleb128 0x19
- 954 0060 01       		.uleb128 0x1
- 955 0061 13       		.uleb128 0x13
- 956 0062 00       		.byte	0
- 957 0063 00       		.byte	0
- 958 0064 08       		.uleb128 0x8
- 959 0065 34       		.uleb128 0x34
- 960 0066 00       		.byte	0
- 961 0067 03       		.uleb128 0x3
- 962 0068 0E       		.uleb128 0xe
- 963 0069 3A       		.uleb128 0x3a
- 964 006a 0B       		.uleb128 0xb
- 965 006b 3B       		.uleb128 0x3b
- 966 006c 0B       		.uleb128 0xb
- 967 006d 49       		.uleb128 0x49
- 968 006e 13       		.uleb128 0x13
- 969 006f 02       		.uleb128 0x2
- 970 0070 18       		.uleb128 0x18
- 971 0071 00       		.byte	0
- 972 0072 00       		.byte	0
- 973 0073 09       		.uleb128 0x9
- 974 0074 2E       		.uleb128 0x2e
- 975 0075 00       		.byte	0
- 976 0076 3F       		.uleb128 0x3f
- 977 0077 19       		.uleb128 0x19
- 978 0078 03       		.uleb128 0x3
- 979 0079 0E       		.uleb128 0xe
- 980 007a 3A       		.uleb128 0x3a
- 981 007b 0B       		.uleb128 0xb
- 982 007c 3B       		.uleb128 0x3b
- 983 007d 0B       		.uleb128 0xb
- 984 007e 27       		.uleb128 0x27
- 985 007f 19       		.uleb128 0x19
- 986 0080 11       		.uleb128 0x11
- 987 0081 01       		.uleb128 0x1
- 988 0082 12       		.uleb128 0x12
- 989 0083 06       		.uleb128 0x6
- 990 0084 40       		.uleb128 0x40
- 991 0085 18       		.uleb128 0x18
- 992 0086 9742     		.uleb128 0x2117
- 993 0088 19       		.uleb128 0x19
- 994 0089 00       		.byte	0
- 995 008a 00       		.byte	0
- 996 008b 0A       		.uleb128 0xa
- 997 008c 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 32
+ 827 005c 18       		.uleb128 0x18
+ 828 005d 9642     		.uleb128 0x2116
+ 829 005f 19       		.uleb128 0x19
+ 830 0060 01       		.uleb128 0x1
+ 831 0061 13       		.uleb128 0x13
+ 832 0062 00       		.byte	0
+ 833 0063 00       		.byte	0
+ 834 0064 08       		.uleb128 0x8
+ 835 0065 34       		.uleb128 0x34
+ 836 0066 00       		.byte	0
+ 837 0067 03       		.uleb128 0x3
+ 838 0068 0E       		.uleb128 0xe
+ 839 0069 3A       		.uleb128 0x3a
+ 840 006a 0B       		.uleb128 0xb
+ 841 006b 3B       		.uleb128 0x3b
+ 842 006c 0B       		.uleb128 0xb
+ 843 006d 49       		.uleb128 0x49
+ 844 006e 13       		.uleb128 0x13
+ 845 006f 02       		.uleb128 0x2
+ 846 0070 18       		.uleb128 0x18
+ 847 0071 00       		.byte	0
+ 848 0072 00       		.byte	0
+ 849 0073 09       		.uleb128 0x9
+ 850 0074 2E       		.uleb128 0x2e
+ 851 0075 00       		.byte	0
+ 852 0076 3F       		.uleb128 0x3f
+ 853 0077 19       		.uleb128 0x19
+ 854 0078 03       		.uleb128 0x3
+ 855 0079 0E       		.uleb128 0xe
+ 856 007a 3A       		.uleb128 0x3a
+ 857 007b 0B       		.uleb128 0xb
+ 858 007c 3B       		.uleb128 0x3b
+ 859 007d 0B       		.uleb128 0xb
+ 860 007e 27       		.uleb128 0x27
+ 861 007f 19       		.uleb128 0x19
+ 862 0080 11       		.uleb128 0x11
+ 863 0081 01       		.uleb128 0x1
+ 864 0082 12       		.uleb128 0x12
+ 865 0083 06       		.uleb128 0x6
+ 866 0084 40       		.uleb128 0x40
+ 867 0085 18       		.uleb128 0x18
+ 868 0086 9742     		.uleb128 0x2117
+ 869 0088 19       		.uleb128 0x19
+ 870 0089 00       		.byte	0
+ 871 008a 00       		.byte	0
+ 872 008b 0A       		.uleb128 0xa
+ 873 008c 2E       		.uleb128 0x2e
+ 874 008d 00       		.byte	0
+ 875 008e 3F       		.uleb128 0x3f
+ 876 008f 19       		.uleb128 0x19
+ 877 0090 03       		.uleb128 0x3
+ 878 0091 0E       		.uleb128 0xe
+ 879 0092 3A       		.uleb128 0x3a
+ 880 0093 0B       		.uleb128 0xb
+ 881 0094 3B       		.uleb128 0x3b
+ 882 0095 0B       		.uleb128 0xb
+ 883 0096 27       		.uleb128 0x27
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 30
 
 
- 998 008d 00       		.byte	0
- 999 008e 3F       		.uleb128 0x3f
- 1000 008f 19       		.uleb128 0x19
- 1001 0090 03       		.uleb128 0x3
- 1002 0091 0E       		.uleb128 0xe
- 1003 0092 3A       		.uleb128 0x3a
- 1004 0093 0B       		.uleb128 0xb
- 1005 0094 3B       		.uleb128 0x3b
- 1006 0095 0B       		.uleb128 0xb
- 1007 0096 27       		.uleb128 0x27
- 1008 0097 19       		.uleb128 0x19
- 1009 0098 11       		.uleb128 0x11
- 1010 0099 01       		.uleb128 0x1
- 1011 009a 12       		.uleb128 0x12
- 1012 009b 06       		.uleb128 0x6
- 1013 009c 40       		.uleb128 0x40
- 1014 009d 18       		.uleb128 0x18
- 1015 009e 9642     		.uleb128 0x2116
- 1016 00a0 19       		.uleb128 0x19
- 1017 00a1 00       		.byte	0
- 1018 00a2 00       		.byte	0
- 1019 00a3 0B       		.uleb128 0xb
- 1020 00a4 2E       		.uleb128 0x2e
- 1021 00a5 01       		.byte	0x1
- 1022 00a6 3F       		.uleb128 0x3f
- 1023 00a7 19       		.uleb128 0x19
- 1024 00a8 03       		.uleb128 0x3
- 1025 00a9 0E       		.uleb128 0xe
- 1026 00aa 3A       		.uleb128 0x3a
- 1027 00ab 0B       		.uleb128 0xb
- 1028 00ac 3B       		.uleb128 0x3b
- 1029 00ad 05       		.uleb128 0x5
- 1030 00ae 27       		.uleb128 0x27
- 1031 00af 19       		.uleb128 0x19
- 1032 00b0 11       		.uleb128 0x11
- 1033 00b1 01       		.uleb128 0x1
- 1034 00b2 12       		.uleb128 0x12
- 1035 00b3 06       		.uleb128 0x6
- 1036 00b4 40       		.uleb128 0x40
- 1037 00b5 18       		.uleb128 0x18
- 1038 00b6 9742     		.uleb128 0x2117
- 1039 00b8 19       		.uleb128 0x19
- 1040 00b9 01       		.uleb128 0x1
- 1041 00ba 13       		.uleb128 0x13
- 1042 00bb 00       		.byte	0
- 1043 00bc 00       		.byte	0
- 1044 00bd 0C       		.uleb128 0xc
- 1045 00be 05       		.uleb128 0x5
- 1046 00bf 00       		.byte	0
- 1047 00c0 03       		.uleb128 0x3
- 1048 00c1 0E       		.uleb128 0xe
- 1049 00c2 3A       		.uleb128 0x3a
- 1050 00c3 0B       		.uleb128 0xb
- 1051 00c4 3B       		.uleb128 0x3b
- 1052 00c5 05       		.uleb128 0x5
- 1053 00c6 49       		.uleb128 0x49
- 1054 00c7 13       		.uleb128 0x13
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 33
+ 884 0097 19       		.uleb128 0x19
+ 885 0098 11       		.uleb128 0x11
+ 886 0099 01       		.uleb128 0x1
+ 887 009a 12       		.uleb128 0x12
+ 888 009b 06       		.uleb128 0x6
+ 889 009c 40       		.uleb128 0x40
+ 890 009d 18       		.uleb128 0x18
+ 891 009e 9642     		.uleb128 0x2116
+ 892 00a0 19       		.uleb128 0x19
+ 893 00a1 00       		.byte	0
+ 894 00a2 00       		.byte	0
+ 895 00a3 0B       		.uleb128 0xb
+ 896 00a4 2E       		.uleb128 0x2e
+ 897 00a5 01       		.byte	0x1
+ 898 00a6 3F       		.uleb128 0x3f
+ 899 00a7 19       		.uleb128 0x19
+ 900 00a8 03       		.uleb128 0x3
+ 901 00a9 0E       		.uleb128 0xe
+ 902 00aa 3A       		.uleb128 0x3a
+ 903 00ab 0B       		.uleb128 0xb
+ 904 00ac 3B       		.uleb128 0x3b
+ 905 00ad 05       		.uleb128 0x5
+ 906 00ae 27       		.uleb128 0x27
+ 907 00af 19       		.uleb128 0x19
+ 908 00b0 11       		.uleb128 0x11
+ 909 00b1 01       		.uleb128 0x1
+ 910 00b2 12       		.uleb128 0x12
+ 911 00b3 06       		.uleb128 0x6
+ 912 00b4 40       		.uleb128 0x40
+ 913 00b5 18       		.uleb128 0x18
+ 914 00b6 9742     		.uleb128 0x2117
+ 915 00b8 19       		.uleb128 0x19
+ 916 00b9 01       		.uleb128 0x1
+ 917 00ba 13       		.uleb128 0x13
+ 918 00bb 00       		.byte	0
+ 919 00bc 00       		.byte	0
+ 920 00bd 0C       		.uleb128 0xc
+ 921 00be 05       		.uleb128 0x5
+ 922 00bf 00       		.byte	0
+ 923 00c0 03       		.uleb128 0x3
+ 924 00c1 0E       		.uleb128 0xe
+ 925 00c2 3A       		.uleb128 0x3a
+ 926 00c3 0B       		.uleb128 0xb
+ 927 00c4 3B       		.uleb128 0x3b
+ 928 00c5 05       		.uleb128 0x5
+ 929 00c6 49       		.uleb128 0x49
+ 930 00c7 13       		.uleb128 0x13
+ 931 00c8 02       		.uleb128 0x2
+ 932 00c9 18       		.uleb128 0x18
+ 933 00ca 00       		.byte	0
+ 934 00cb 00       		.byte	0
+ 935 00cc 0D       		.uleb128 0xd
+ 936 00cd 2E       		.uleb128 0x2e
+ 937 00ce 00       		.byte	0
+ 938 00cf 3F       		.uleb128 0x3f
+ 939 00d0 19       		.uleb128 0x19
+ 940 00d1 03       		.uleb128 0x3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 31
 
 
- 1055 00c8 02       		.uleb128 0x2
- 1056 00c9 18       		.uleb128 0x18
- 1057 00ca 00       		.byte	0
- 1058 00cb 00       		.byte	0
- 1059 00cc 0D       		.uleb128 0xd
- 1060 00cd 2E       		.uleb128 0x2e
- 1061 00ce 00       		.byte	0
- 1062 00cf 3F       		.uleb128 0x3f
- 1063 00d0 19       		.uleb128 0x19
- 1064 00d1 03       		.uleb128 0x3
- 1065 00d2 0E       		.uleb128 0xe
- 1066 00d3 3A       		.uleb128 0x3a
- 1067 00d4 0B       		.uleb128 0xb
- 1068 00d5 3B       		.uleb128 0x3b
- 1069 00d6 05       		.uleb128 0x5
- 1070 00d7 27       		.uleb128 0x27
- 1071 00d8 19       		.uleb128 0x19
- 1072 00d9 11       		.uleb128 0x11
- 1073 00da 01       		.uleb128 0x1
- 1074 00db 12       		.uleb128 0x12
- 1075 00dc 06       		.uleb128 0x6
- 1076 00dd 40       		.uleb128 0x40
- 1077 00de 18       		.uleb128 0x18
- 1078 00df 9742     		.uleb128 0x2117
- 1079 00e1 19       		.uleb128 0x19
- 1080 00e2 00       		.byte	0
- 1081 00e3 00       		.byte	0
- 1082 00e4 0E       		.uleb128 0xe
- 1083 00e5 2E       		.uleb128 0x2e
- 1084 00e6 00       		.byte	0
- 1085 00e7 3F       		.uleb128 0x3f
- 1086 00e8 19       		.uleb128 0x19
- 1087 00e9 03       		.uleb128 0x3
- 1088 00ea 0E       		.uleb128 0xe
- 1089 00eb 3A       		.uleb128 0x3a
- 1090 00ec 0B       		.uleb128 0xb
- 1091 00ed 3B       		.uleb128 0x3b
- 1092 00ee 05       		.uleb128 0x5
- 1093 00ef 27       		.uleb128 0x27
- 1094 00f0 19       		.uleb128 0x19
- 1095 00f1 49       		.uleb128 0x49
- 1096 00f2 13       		.uleb128 0x13
- 1097 00f3 11       		.uleb128 0x11
- 1098 00f4 01       		.uleb128 0x1
- 1099 00f5 12       		.uleb128 0x12
- 1100 00f6 06       		.uleb128 0x6
- 1101 00f7 40       		.uleb128 0x40
- 1102 00f8 18       		.uleb128 0x18
- 1103 00f9 9742     		.uleb128 0x2117
- 1104 00fb 19       		.uleb128 0x19
- 1105 00fc 00       		.byte	0
- 1106 00fd 00       		.byte	0
- 1107 00fe 0F       		.uleb128 0xf
- 1108 00ff 2E       		.uleb128 0x2e
- 1109 0100 00       		.byte	0
- 1110 0101 3F       		.uleb128 0x3f
- 1111 0102 19       		.uleb128 0x19
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 34
+ 941 00d2 0E       		.uleb128 0xe
+ 942 00d3 3A       		.uleb128 0x3a
+ 943 00d4 0B       		.uleb128 0xb
+ 944 00d5 3B       		.uleb128 0x3b
+ 945 00d6 05       		.uleb128 0x5
+ 946 00d7 27       		.uleb128 0x27
+ 947 00d8 19       		.uleb128 0x19
+ 948 00d9 11       		.uleb128 0x11
+ 949 00da 01       		.uleb128 0x1
+ 950 00db 12       		.uleb128 0x12
+ 951 00dc 06       		.uleb128 0x6
+ 952 00dd 40       		.uleb128 0x40
+ 953 00de 18       		.uleb128 0x18
+ 954 00df 9742     		.uleb128 0x2117
+ 955 00e1 19       		.uleb128 0x19
+ 956 00e2 00       		.byte	0
+ 957 00e3 00       		.byte	0
+ 958 00e4 0E       		.uleb128 0xe
+ 959 00e5 2E       		.uleb128 0x2e
+ 960 00e6 00       		.byte	0
+ 961 00e7 3F       		.uleb128 0x3f
+ 962 00e8 19       		.uleb128 0x19
+ 963 00e9 03       		.uleb128 0x3
+ 964 00ea 0E       		.uleb128 0xe
+ 965 00eb 3A       		.uleb128 0x3a
+ 966 00ec 0B       		.uleb128 0xb
+ 967 00ed 3B       		.uleb128 0x3b
+ 968 00ee 05       		.uleb128 0x5
+ 969 00ef 27       		.uleb128 0x27
+ 970 00f0 19       		.uleb128 0x19
+ 971 00f1 49       		.uleb128 0x49
+ 972 00f2 13       		.uleb128 0x13
+ 973 00f3 11       		.uleb128 0x11
+ 974 00f4 01       		.uleb128 0x1
+ 975 00f5 12       		.uleb128 0x12
+ 976 00f6 06       		.uleb128 0x6
+ 977 00f7 40       		.uleb128 0x40
+ 978 00f8 18       		.uleb128 0x18
+ 979 00f9 9742     		.uleb128 0x2117
+ 980 00fb 19       		.uleb128 0x19
+ 981 00fc 00       		.byte	0
+ 982 00fd 00       		.byte	0
+ 983 00fe 0F       		.uleb128 0xf
+ 984 00ff 2E       		.uleb128 0x2e
+ 985 0100 00       		.byte	0
+ 986 0101 3F       		.uleb128 0x3f
+ 987 0102 19       		.uleb128 0x19
+ 988 0103 03       		.uleb128 0x3
+ 989 0104 0E       		.uleb128 0xe
+ 990 0105 3A       		.uleb128 0x3a
+ 991 0106 0B       		.uleb128 0xb
+ 992 0107 3B       		.uleb128 0x3b
+ 993 0108 05       		.uleb128 0x5
+ 994 0109 27       		.uleb128 0x27
+ 995 010a 19       		.uleb128 0x19
+ 996 010b 11       		.uleb128 0x11
+ 997 010c 01       		.uleb128 0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 32
 
 
- 1112 0103 03       		.uleb128 0x3
- 1113 0104 0E       		.uleb128 0xe
- 1114 0105 3A       		.uleb128 0x3a
- 1115 0106 0B       		.uleb128 0xb
- 1116 0107 3B       		.uleb128 0x3b
- 1117 0108 05       		.uleb128 0x5
- 1118 0109 27       		.uleb128 0x27
- 1119 010a 19       		.uleb128 0x19
- 1120 010b 11       		.uleb128 0x11
- 1121 010c 01       		.uleb128 0x1
- 1122 010d 12       		.uleb128 0x12
- 1123 010e 06       		.uleb128 0x6
- 1124 010f 40       		.uleb128 0x40
- 1125 0110 18       		.uleb128 0x18
- 1126 0111 9642     		.uleb128 0x2116
- 1127 0113 19       		.uleb128 0x19
- 1128 0114 00       		.byte	0
- 1129 0115 00       		.byte	0
- 1130 0116 10       		.uleb128 0x10
- 1131 0117 34       		.uleb128 0x34
- 1132 0118 00       		.byte	0
- 1133 0119 03       		.uleb128 0x3
- 1134 011a 0E       		.uleb128 0xe
- 1135 011b 3A       		.uleb128 0x3a
- 1136 011c 0B       		.uleb128 0xb
- 1137 011d 3B       		.uleb128 0x3b
- 1138 011e 0B       		.uleb128 0xb
- 1139 011f 49       		.uleb128 0x49
- 1140 0120 13       		.uleb128 0x13
- 1141 0121 3F       		.uleb128 0x3f
- 1142 0122 19       		.uleb128 0x19
- 1143 0123 02       		.uleb128 0x2
- 1144 0124 18       		.uleb128 0x18
- 1145 0125 00       		.byte	0
- 1146 0126 00       		.byte	0
- 1147 0127 00       		.byte	0
- 1148              		.section	.debug_aranges,"",%progbits
- 1149 0000 8C000000 		.4byte	0x8c
- 1150 0004 0200     		.2byte	0x2
- 1151 0006 00000000 		.4byte	.Ldebug_info0
- 1152 000a 04       		.byte	0x4
- 1153 000b 00       		.byte	0
- 1154 000c 0000     		.2byte	0
- 1155 000e 0000     		.2byte	0
- 1156 0010 00000000 		.4byte	.LFB0
- 1157 0014 54000000 		.4byte	.LFE0-.LFB0
- 1158 0018 00000000 		.4byte	.LFB1
- 1159 001c 20000000 		.4byte	.LFE1-.LFB1
- 1160 0020 00000000 		.4byte	.LFB2
- 1161 0024 24000000 		.4byte	.LFE2-.LFB2
- 1162 0028 00000000 		.4byte	.LFB3
- 1163 002c 1C000000 		.4byte	.LFE3-.LFB3
- 1164 0030 00000000 		.4byte	.LFB4
- 1165 0034 20000000 		.4byte	.LFE4-.LFB4
- 1166 0038 00000000 		.4byte	.LFB5
- 1167 003c 10000000 		.4byte	.LFE5-.LFB5
- 1168 0040 00000000 		.4byte	.LFB6
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 35
+ 998 010d 12       		.uleb128 0x12
+ 999 010e 06       		.uleb128 0x6
+ 1000 010f 40       		.uleb128 0x40
+ 1001 0110 18       		.uleb128 0x18
+ 1002 0111 9642     		.uleb128 0x2116
+ 1003 0113 19       		.uleb128 0x19
+ 1004 0114 00       		.byte	0
+ 1005 0115 00       		.byte	0
+ 1006 0116 10       		.uleb128 0x10
+ 1007 0117 34       		.uleb128 0x34
+ 1008 0118 00       		.byte	0
+ 1009 0119 03       		.uleb128 0x3
+ 1010 011a 0E       		.uleb128 0xe
+ 1011 011b 3A       		.uleb128 0x3a
+ 1012 011c 0B       		.uleb128 0xb
+ 1013 011d 3B       		.uleb128 0x3b
+ 1014 011e 0B       		.uleb128 0xb
+ 1015 011f 49       		.uleb128 0x49
+ 1016 0120 13       		.uleb128 0x13
+ 1017 0121 3F       		.uleb128 0x3f
+ 1018 0122 19       		.uleb128 0x19
+ 1019 0123 02       		.uleb128 0x2
+ 1020 0124 18       		.uleb128 0x18
+ 1021 0125 00       		.byte	0
+ 1022 0126 00       		.byte	0
+ 1023 0127 00       		.byte	0
+ 1024              		.section	.debug_aranges,"",%progbits
+ 1025 0000 7C000000 		.4byte	0x7c
+ 1026 0004 0200     		.2byte	0x2
+ 1027 0006 00000000 		.4byte	.Ldebug_info0
+ 1028 000a 04       		.byte	0x4
+ 1029 000b 00       		.byte	0
+ 1030 000c 0000     		.2byte	0
+ 1031 000e 0000     		.2byte	0
+ 1032 0010 00000000 		.4byte	.LFB0
+ 1033 0014 54000000 		.4byte	.LFE0-.LFB0
+ 1034 0018 00000000 		.4byte	.LFB1
+ 1035 001c 08000000 		.4byte	.LFE1-.LFB1
+ 1036 0020 00000000 		.4byte	.LFB2
+ 1037 0024 24000000 		.4byte	.LFE2-.LFB2
+ 1038 0028 00000000 		.4byte	.LFB3
+ 1039 002c 08000000 		.4byte	.LFE3-.LFB3
+ 1040 0030 00000000 		.4byte	.LFB4
+ 1041 0034 20000000 		.4byte	.LFE4-.LFB4
+ 1042 0038 00000000 		.4byte	.LFB5
+ 1043 003c 10000000 		.4byte	.LFE5-.LFB5
+ 1044 0040 00000000 		.4byte	.LFB6
+ 1045 0044 14000000 		.4byte	.LFE6-.LFB6
+ 1046 0048 00000000 		.4byte	.LFB7
+ 1047 004c 14000000 		.4byte	.LFE7-.LFB7
+ 1048 0050 00000000 		.4byte	.LFB8
+ 1049 0054 18000000 		.4byte	.LFE8-.LFB8
+ 1050 0058 00000000 		.4byte	.LFB9
+ 1051 005c 14000000 		.4byte	.LFE9-.LFB9
+ 1052 0060 00000000 		.4byte	.LFB10
+ 1053 0064 18000000 		.4byte	.LFE10-.LFB10
+ 1054 0068 00000000 		.4byte	.LFB11
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 33
 
 
- 1169 0044 14000000 		.4byte	.LFE6-.LFB6
- 1170 0048 00000000 		.4byte	.LFB7
- 1171 004c 14000000 		.4byte	.LFE7-.LFB7
- 1172 0050 00000000 		.4byte	.LFB8
- 1173 0054 20000000 		.4byte	.LFE8-.LFB8
- 1174 0058 00000000 		.4byte	.LFB9
- 1175 005c 14000000 		.4byte	.LFE9-.LFB9
- 1176 0060 00000000 		.4byte	.LFB10
- 1177 0064 18000000 		.4byte	.LFE10-.LFB10
- 1178 0068 00000000 		.4byte	.LFB11
- 1179 006c 14000000 		.4byte	.LFE11-.LFB11
- 1180 0070 00000000 		.4byte	.LFB12
- 1181 0074 18000000 		.4byte	.LFE12-.LFB12
- 1182 0078 00000000 		.4byte	.LFB13
- 1183 007c 1C000000 		.4byte	.LFE13-.LFB13
- 1184 0080 00000000 		.4byte	.LFB14
- 1185 0084 1C000000 		.4byte	.LFE14-.LFB14
- 1186 0088 00000000 		.4byte	0
- 1187 008c 00000000 		.4byte	0
- 1188              		.section	.debug_ranges,"",%progbits
- 1189              	.Ldebug_ranges0:
- 1190 0000 00000000 		.4byte	.LFB0
- 1191 0004 54000000 		.4byte	.LFE0
- 1192 0008 00000000 		.4byte	.LFB1
- 1193 000c 20000000 		.4byte	.LFE1
- 1194 0010 00000000 		.4byte	.LFB2
- 1195 0014 24000000 		.4byte	.LFE2
- 1196 0018 00000000 		.4byte	.LFB3
- 1197 001c 1C000000 		.4byte	.LFE3
- 1198 0020 00000000 		.4byte	.LFB4
- 1199 0024 20000000 		.4byte	.LFE4
- 1200 0028 00000000 		.4byte	.LFB5
- 1201 002c 10000000 		.4byte	.LFE5
- 1202 0030 00000000 		.4byte	.LFB6
- 1203 0034 14000000 		.4byte	.LFE6
- 1204 0038 00000000 		.4byte	.LFB7
- 1205 003c 14000000 		.4byte	.LFE7
- 1206 0040 00000000 		.4byte	.LFB8
- 1207 0044 20000000 		.4byte	.LFE8
- 1208 0048 00000000 		.4byte	.LFB9
- 1209 004c 14000000 		.4byte	.LFE9
- 1210 0050 00000000 		.4byte	.LFB10
- 1211 0054 18000000 		.4byte	.LFE10
- 1212 0058 00000000 		.4byte	.LFB11
- 1213 005c 14000000 		.4byte	.LFE11
- 1214 0060 00000000 		.4byte	.LFB12
- 1215 0064 18000000 		.4byte	.LFE12
- 1216 0068 00000000 		.4byte	.LFB13
- 1217 006c 1C000000 		.4byte	.LFE13
- 1218 0070 00000000 		.4byte	.LFB14
- 1219 0074 1C000000 		.4byte	.LFE14
- 1220 0078 00000000 		.4byte	0
- 1221 007c 00000000 		.4byte	0
- 1222              		.section	.debug_line,"",%progbits
- 1223              	.Ldebug_line0:
- 1224 0000 72010000 		.section	.debug_str,"MS",%progbits,1
- 1224      02004600 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 36
+ 1055 006c 1C000000 		.4byte	.LFE11-.LFB11
+ 1056 0070 00000000 		.4byte	.LFB12
+ 1057 0074 1C000000 		.4byte	.LFE12-.LFB12
+ 1058 0078 00000000 		.4byte	0
+ 1059 007c 00000000 		.4byte	0
+ 1060              		.section	.debug_ranges,"",%progbits
+ 1061              	.Ldebug_ranges0:
+ 1062 0000 00000000 		.4byte	.LFB0
+ 1063 0004 54000000 		.4byte	.LFE0
+ 1064 0008 00000000 		.4byte	.LFB1
+ 1065 000c 08000000 		.4byte	.LFE1
+ 1066 0010 00000000 		.4byte	.LFB2
+ 1067 0014 24000000 		.4byte	.LFE2
+ 1068 0018 00000000 		.4byte	.LFB3
+ 1069 001c 08000000 		.4byte	.LFE3
+ 1070 0020 00000000 		.4byte	.LFB4
+ 1071 0024 20000000 		.4byte	.LFE4
+ 1072 0028 00000000 		.4byte	.LFB5
+ 1073 002c 10000000 		.4byte	.LFE5
+ 1074 0030 00000000 		.4byte	.LFB6
+ 1075 0034 14000000 		.4byte	.LFE6
+ 1076 0038 00000000 		.4byte	.LFB7
+ 1077 003c 14000000 		.4byte	.LFE7
+ 1078 0040 00000000 		.4byte	.LFB8
+ 1079 0044 18000000 		.4byte	.LFE8
+ 1080 0048 00000000 		.4byte	.LFB9
+ 1081 004c 14000000 		.4byte	.LFE9
+ 1082 0050 00000000 		.4byte	.LFB10
+ 1083 0054 18000000 		.4byte	.LFE10
+ 1084 0058 00000000 		.4byte	.LFB11
+ 1085 005c 1C000000 		.4byte	.LFE11
+ 1086 0060 00000000 		.4byte	.LFB12
+ 1087 0064 1C000000 		.4byte	.LFE12
+ 1088 0068 00000000 		.4byte	0
+ 1089 006c 00000000 		.4byte	0
+ 1090              		.section	.debug_line,"",%progbits
+ 1091              	.Ldebug_line0:
+ 1092 0000 4E010000 		.section	.debug_str,"MS",%progbits,1
+ 1092      02004600 
+ 1092      00000201 
+ 1092      FB0E0D00 
+ 1092      01010101 
+ 1093              	.LASF15:
+ 1094 0000 72656733 		.ascii	"reg32\000"
+ 1094      3200
+ 1095              	.LASF22:
+ 1096 0006 54696D65 		.ascii	"Timer_1_SoftwareCapture\000"
+ 1096      725F315F 
+ 1096      536F6674 
+ 1096      77617265 
+ 1096      43617074 
+ 1097              	.LASF25:
+ 1098 001e 54696D65 		.ascii	"Timer_1_WritePeriod\000"
+ 1098      725F315F 
+ 1098      57726974 
+ 1098      65506572 
+ 1098      696F6400 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 34
 
 
- 1224      00000201 
- 1224      FB0E0D00 
- 1224      01010101 
- 1225              	.LASF15:
- 1226 0000 72656733 		.ascii	"reg32\000"
- 1226      3200
- 1227              	.LASF22:
- 1228 0006 54696D65 		.ascii	"Timer_1_SoftwareCapture\000"
- 1228      725F315F 
- 1228      536F6674 
- 1228      77617265 
- 1228      43617074 
- 1229              	.LASF29:
- 1230 001e 54696D65 		.ascii	"Timer_1_WritePeriod\000"
- 1230      725F315F 
- 1230      57726974 
- 1230      65506572 
- 1230      696F6400 
- 1231              	.LASF30:
- 1232 0032 70657269 		.ascii	"period\000"
- 1232      6F6400
- 1233              	.LASF3:
- 1234 0039 73686F72 		.ascii	"short unsigned int\000"
- 1234      7420756E 
- 1234      7369676E 
- 1234      65642069 
- 1234      6E7400
- 1235              	.LASF8:
- 1236 004c 756E7369 		.ascii	"unsigned int\000"
- 1236      676E6564 
- 1236      20696E74 
- 1236      00
- 1237              	.LASF11:
- 1238 0059 666C6F61 		.ascii	"float\000"
- 1238      7400
- 1239              	.LASF36:
- 1240 005f 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 1240      4320342E 
- 1240      382E3420 
- 1240      32303134 
- 1240      30353236 
- 1241 0092 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 1241      20726576 
- 1241      6973696F 
- 1241      6E203231 
- 1241      31333538 
- 1242 00c5 30202D66 		.ascii	"0 -ffunction-sections\000"
- 1242      66756E63 
- 1242      74696F6E 
- 1242      2D736563 
- 1242      74696F6E 
- 1243              	.LASF38:
- 1244 00db 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
- 1244      73657273 
- 1244      5C536E75 
- 1244      666B696E 
- 1244      5C446F63 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 37
+ 1099              	.LASF27:
+ 1100 0032 70657269 		.ascii	"period\000"
+ 1100      6F6400
+ 1101              	.LASF3:
+ 1102 0039 73686F72 		.ascii	"short unsigned int\000"
+ 1102      7420756E 
+ 1102      7369676E 
+ 1102      65642069 
+ 1102      6E7400
+ 1103              	.LASF8:
+ 1104 004c 756E7369 		.ascii	"unsigned int\000"
+ 1104      676E6564 
+ 1104      20696E74 
+ 1104      00
+ 1105              	.LASF11:
+ 1106 0059 666C6F61 		.ascii	"float\000"
+ 1106      7400
+ 1107              	.LASF33:
+ 1108 005f 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1108      4320342E 
+ 1108      382E3420 
+ 1108      32303134 
+ 1108      30353236 
+ 1109 0092 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 1109      20726576 
+ 1109      6973696F 
+ 1109      6E203231 
+ 1109      31333538 
+ 1110 00c5 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 1110      66756E63 
+ 1110      74696F6E 
+ 1110      2D736563 
+ 1110      74696F6E 
+ 1111              	.LASF35:
+ 1112 00db 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 1112      73657273 
+ 1112      5C536E75 
+ 1112      666B696E 
+ 1112      5C446F63 
+ 1113 0108 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 1113      696D6572 
+ 1113      5C435254 
+ 1113      5F74696D 
+ 1113      65722E63 
+ 1114              	.LASF1:
+ 1115 0121 756E7369 		.ascii	"unsigned char\000"
+ 1115      676E6564 
+ 1115      20636861 
+ 1115      7200
+ 1116              	.LASF14:
+ 1117 012f 72656738 		.ascii	"reg8\000"
+ 1117      00
+ 1118              	.LASF5:
+ 1119 0134 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1119      20756E73 
+ 1119      69676E65 
+ 1119      6420696E 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 35
 
 
- 1245 0108 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
- 1245      696D6572 
- 1245      5C435254 
- 1245      5F74696D 
- 1245      65722E63 
- 1246              	.LASF1:
- 1247 0121 756E7369 		.ascii	"unsigned char\000"
- 1247      676E6564 
- 1247      20636861 
- 1247      7200
- 1248              	.LASF14:
- 1249 012f 72656738 		.ascii	"reg8\000"
- 1249      00
- 1250              	.LASF28:
- 1251 0134 54696D65 		.ascii	"Timer_1_ReadPeriod\000"
- 1251      725F315F 
- 1251      52656164 
- 1251      50657269 
- 1251      6F6400
- 1252              	.LASF5:
- 1253 0147 6C6F6E67 		.ascii	"long unsigned int\000"
- 1253      20756E73 
- 1253      69676E65 
- 1253      6420696E 
- 1253      7400
- 1254              	.LASF9:
- 1255 0159 75696E74 		.ascii	"uint8\000"
- 1255      3800
- 1256              	.LASF27:
- 1257 015f 636F6E74 		.ascii	"control\000"
- 1257      726F6C00 
- 1258              	.LASF17:
- 1259 0167 54696D65 		.ascii	"Timer_1_Enable\000"
- 1259      725F315F 
- 1259      456E6162 
- 1259      6C6500
- 1260              	.LASF12:
- 1261 0176 646F7562 		.ascii	"double\000"
- 1261      6C6500
- 1262              	.LASF21:
- 1263 017d 54696D65 		.ascii	"Timer_1_SetInterruptMode\000"
- 1263      725F315F 
- 1263      53657449 
- 1263      6E746572 
- 1263      72757074 
- 1264              	.LASF40:
- 1265 0196 54696D65 		.ascii	"Timer_1_initVar\000"
- 1265      725F315F 
- 1265      696E6974 
- 1265      56617200 
- 1266              	.LASF25:
- 1267 01a6 54696D65 		.ascii	"Timer_1_WriteControlRegister\000"
- 1267      725F315F 
- 1267      57726974 
- 1267      65436F6E 
- 1267      74726F6C 
- 1268              	.LASF10:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 38
+ 1119      7400
+ 1120              	.LASF9:
+ 1121 0146 75696E74 		.ascii	"uint8\000"
+ 1121      3800
+ 1122              	.LASF24:
+ 1123 014c 54696D65 		.ascii	"Timer_1_ReadPeriod\000"
+ 1123      725F315F 
+ 1123      52656164 
+ 1123      50657269 
+ 1123      6F6400
+ 1124              	.LASF17:
+ 1125 015f 54696D65 		.ascii	"Timer_1_Enable\000"
+ 1125      725F315F 
+ 1125      456E6162 
+ 1125      6C6500
+ 1126              	.LASF12:
+ 1127 016e 646F7562 		.ascii	"double\000"
+ 1127      6C6500
+ 1128              	.LASF21:
+ 1129 0175 54696D65 		.ascii	"Timer_1_SetInterruptMode\000"
+ 1129      725F315F 
+ 1129      53657449 
+ 1129      6E746572 
+ 1129      72757074 
+ 1130              	.LASF37:
+ 1131 018e 54696D65 		.ascii	"Timer_1_initVar\000"
+ 1131      725F315F 
+ 1131      696E6974 
+ 1131      56617200 
+ 1132              	.LASF10:
+ 1133 019e 75696E74 		.ascii	"uint32\000"
+ 1133      333200
+ 1134              	.LASF18:
+ 1135 01a5 54696D65 		.ascii	"Timer_1_Start\000"
+ 1135      725F315F 
+ 1135      53746172 
+ 1135      7400
+ 1136              	.LASF20:
+ 1137 01b3 54696D65 		.ascii	"Timer_1_Init\000"
+ 1137      725F315F 
+ 1137      496E6974 
+ 1137      00
+ 1138              	.LASF7:
+ 1139 01c0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1139      206C6F6E 
+ 1139      6720756E 
+ 1139      7369676E 
+ 1139      65642069 
+ 1140              	.LASF29:
+ 1141 01d7 54696D65 		.ascii	"Timer_1_WriteCounter\000"
+ 1141      725F315F 
+ 1141      57726974 
+ 1141      65436F75 
+ 1141      6E746572 
+ 1142              	.LASF28:
+ 1143 01ec 54696D65 		.ascii	"Timer_1_ReadCapture\000"
+ 1143      725F315F 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 36
 
 
- 1269 01c3 75696E74 		.ascii	"uint32\000"
- 1269      333200
- 1270              	.LASF24:
- 1271 01ca 54696D65 		.ascii	"Timer_1_ReadControlRegister\000"
- 1271      725F315F 
- 1271      52656164 
- 1271      436F6E74 
- 1271      726F6C52 
- 1272              	.LASF18:
- 1273 01e6 54696D65 		.ascii	"Timer_1_Start\000"
- 1273      725F315F 
- 1273      53746172 
- 1273      7400
- 1274              	.LASF20:
- 1275 01f4 54696D65 		.ascii	"Timer_1_Init\000"
- 1275      725F315F 
- 1275      496E6974 
- 1275      00
- 1276              	.LASF7:
- 1277 0201 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1277      206C6F6E 
- 1277      6720756E 
- 1277      7369676E 
- 1277      65642069 
- 1278              	.LASF32:
- 1279 0218 54696D65 		.ascii	"Timer_1_WriteCounter\000"
- 1279      725F315F 
- 1279      57726974 
- 1279      65436F75 
- 1279      6E746572 
- 1280              	.LASF31:
- 1281 022d 54696D65 		.ascii	"Timer_1_ReadCapture\000"
- 1281      725F315F 
- 1281      52656164 
- 1281      43617074 
- 1281      75726500 
- 1282              	.LASF39:
- 1283 0241 54696D65 		.ascii	"Timer_1_interruptState\000"
- 1283      725F315F 
- 1283      696E7465 
- 1283      72727570 
- 1283      74537461 
- 1284              	.LASF16:
- 1285 0258 73697A65 		.ascii	"sizetype\000"
- 1285      74797065 
- 1285      00
- 1286              	.LASF6:
- 1287 0261 6C6F6E67 		.ascii	"long long int\000"
- 1287      206C6F6E 
- 1287      6720696E 
- 1287      7400
- 1288              	.LASF26:
- 1289 026f 696E7465 		.ascii	"interruptMode\000"
- 1289      72727570 
- 1289      744D6F64 
- 1289      6500
- 1290              	.LASF37:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cctBMOuA.s 			page 39
+ 1143      52656164 
+ 1143      43617074 
+ 1143      75726500 
+ 1144              	.LASF36:
+ 1145 0200 54696D65 		.ascii	"Timer_1_interruptState\000"
+ 1145      725F315F 
+ 1145      696E7465 
+ 1145      72727570 
+ 1145      74537461 
+ 1146              	.LASF16:
+ 1147 0217 73697A65 		.ascii	"sizetype\000"
+ 1147      74797065 
+ 1147      00
+ 1148              	.LASF6:
+ 1149 0220 6C6F6E67 		.ascii	"long long int\000"
+ 1149      206C6F6E 
+ 1149      6720696E 
+ 1149      7400
+ 1150              	.LASF26:
+ 1151 022e 696E7465 		.ascii	"interruptMode\000"
+ 1151      72727570 
+ 1151      744D6F64 
+ 1151      6500
+ 1152              	.LASF34:
+ 1153 023c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Timer_1.c\000"
+ 1153      6E657261 
+ 1153      7465645F 
+ 1153      536F7572 
+ 1153      63655C50 
+ 1154              	.LASF31:
+ 1155 025f 54696D65 		.ascii	"Timer_1_ReadCounter\000"
+ 1155      725F315F 
+ 1155      52656164 
+ 1155      436F756E 
+ 1155      74657200 
+ 1156              	.LASF30:
+ 1157 0273 636F756E 		.ascii	"counter\000"
+ 1157      74657200 
+ 1158              	.LASF32:
+ 1159 027b 54696D65 		.ascii	"Timer_1_ClearFIFO\000"
+ 1159      725F315F 
+ 1159      436C6561 
+ 1159      72464946 
+ 1159      4F00
+ 1160              	.LASF2:
+ 1161 028d 73686F72 		.ascii	"short int\000"
+ 1161      7420696E 
+ 1161      7400
+ 1162              	.LASF23:
+ 1163 0297 54696D65 		.ascii	"Timer_1_ReadStatusRegister\000"
+ 1163      725F315F 
+ 1163      52656164 
+ 1163      53746174 
+ 1163      75735265 
+ 1164              	.LASF4:
+ 1165 02b2 6C6F6E67 		.ascii	"long int\000"
+ 1165      20696E74 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cck7h5Ce.s 			page 37
 
 
- 1291 027d 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Timer_1.c\000"
- 1291      6E657261 
- 1291      7465645F 
- 1291      536F7572 
- 1291      63655C50 
- 1292              	.LASF34:
- 1293 02a0 54696D65 		.ascii	"Timer_1_ReadCounter\000"
- 1293      725F315F 
- 1293      52656164 
- 1293      436F756E 
- 1293      74657200 
- 1294              	.LASF33:
- 1295 02b4 636F756E 		.ascii	"counter\000"
- 1295      74657200 
- 1296              	.LASF35:
- 1297 02bc 54696D65 		.ascii	"Timer_1_ClearFIFO\000"
- 1297      725F315F 
- 1297      436C6561 
- 1297      72464946 
- 1297      4F00
- 1298              	.LASF2:
- 1299 02ce 73686F72 		.ascii	"short int\000"
- 1299      7420696E 
- 1299      7400
- 1300              	.LASF23:
- 1301 02d8 54696D65 		.ascii	"Timer_1_ReadStatusRegister\000"
- 1301      725F315F 
- 1301      52656164 
- 1301      53746174 
- 1301      75735265 
- 1302              	.LASF4:
- 1303 02f3 6C6F6E67 		.ascii	"long int\000"
- 1303      20696E74 
- 1303      00
- 1304              	.LASF13:
- 1305 02fc 63686172 		.ascii	"char\000"
- 1305      00
- 1306              	.LASF0:
- 1307 0301 7369676E 		.ascii	"signed char\000"
- 1307      65642063 
- 1307      68617200 
- 1308              	.LASF19:
- 1309 030d 54696D65 		.ascii	"Timer_1_Stop\000"
- 1309      725F315F 
- 1309      53746F70 
- 1309      00
- 1310              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 1165      00
+ 1166              	.LASF13:
+ 1167 02bb 63686172 		.ascii	"char\000"
+ 1167      00
+ 1168              	.LASF0:
+ 1169 02c0 7369676E 		.ascii	"signed char\000"
+ 1169      65642063 
+ 1169      68617200 
+ 1170              	.LASF19:
+ 1171 02cc 54696D65 		.ascii	"Timer_1_Stop\000"
+ 1171      725F315F 
+ 1171      53746F70 
+ 1171      00
+ 1172              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

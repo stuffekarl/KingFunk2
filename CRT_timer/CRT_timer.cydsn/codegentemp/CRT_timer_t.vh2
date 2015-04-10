@@ -1,5 +1,5 @@
 -- Project:   C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\CRT_timer.cyprj
--- Generated: 04/10/2015 20:58:06
+-- Generated: 04/10/2015 21:45:30
 -- PSoC Creator  3.1 SP1
 
 ENTITY CRT_timer IS
@@ -13,7 +13,7 @@ ENTITY CRT_timer IS
         RS(0)_PAD : OUT std_ulogic;
         SW2(0)_PAD : IN std_ulogic;
         Test_pin(0)_PAD : OUT std_ulogic;
-        \UART_1:tx(0)_PAD\ : INOUT std_ulogic);
+        timer_enable(0)_PAD : IN std_ulogic);
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDD OF __DEFAULT__ : ENTITY IS 3.3e0;
 END CRT_timer;
@@ -38,13 +38,13 @@ ARCHITECTURE __DEFAULT__ OF CRT_timer IS
     SIGNAL GND(0)__PA : bit;
     SIGNAL Net_12 : bit;
     ATTRIBUTE GROUND OF Net_12 : SIGNAL IS true;
-    SIGNAL Net_410 : bit;
     SIGNAL Net_514 : bit;
     SIGNAL Net_515_digital : bit;
     ATTRIBUTE udbclken_assigned OF Net_515_digital : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_515_digital : SIGNAL IS true;
     SIGNAL Net_679 : bit;
-    ATTRIBUTE placement_force OF Net_679 : SIGNAL IS "U(1,1,A)1";
+    ATTRIBUTE placement_force OF Net_679 : SIGNAL IS "U(1,1,B)1";
+    SIGNAL Net_962 : bit;
     SIGNAL Net_969 : bit;
     SIGNAL Net_970 : bit;
     SIGNAL Net_989 : bit;
@@ -80,41 +80,19 @@ ARCHITECTURE __DEFAULT__ OF CRT_timer IS
     SIGNAL \ADC:Net_3111_9\ : bit;
     SIGNAL \ADC:Net_3112\ : bit;
     SIGNAL \Debouncer_1:DEBOUNCER[0]:d_sync_0\ : bit;
-    ATTRIBUTE placement_force OF \Debouncer_1:DEBOUNCER[0]:d_sync_0\ : SIGNAL IS "U(1,1,A)3";
+    ATTRIBUTE placement_force OF \Debouncer_1:DEBOUNCER[0]:d_sync_0\ : SIGNAL IS "U(1,1,B)3";
     SIGNAL \Debouncer_1:DEBOUNCER[0]:d_sync_1\ : bit;
-    ATTRIBUTE placement_force OF \Debouncer_1:DEBOUNCER[0]:d_sync_1\ : SIGNAL IS "U(1,1,A)2";
+    ATTRIBUTE placement_force OF \Debouncer_1:DEBOUNCER[0]:d_sync_1\ : SIGNAL IS "U(1,1,B)2";
     SIGNAL \LCD:Cntl_Port:control_6\ : bit;
     SIGNAL \LCD:Cntl_Port:control_7\ : bit;
     SIGNAL \Opamp:Net_12\ : bit;
-    SIGNAL \Timer_1:TimerUDB:control_0\ : bit;
-    SIGNAL \Timer_1:TimerUDB:control_1\ : bit;
-    SIGNAL \Timer_1:TimerUDB:control_2\ : bit;
-    SIGNAL \Timer_1:TimerUDB:control_3\ : bit;
-    SIGNAL \Timer_1:TimerUDB:control_4\ : bit;
-    SIGNAL \Timer_1:TimerUDB:control_5\ : bit;
-    SIGNAL \Timer_1:TimerUDB:control_6\ : bit;
-    SIGNAL \Timer_1:TimerUDB:control_7\ : bit;
     SIGNAL \Timer_1:TimerUDB:per_zero\ : bit;
     SIGNAL \Timer_1:TimerUDB:sT32:timerdp:u1.ce0__sig\ : bit;
     SIGNAL \Timer_1:TimerUDB:sT32:timerdp:u2.ce0__sig\ : bit;
     SIGNAL \Timer_1:TimerUDB:status_2\ : bit;
     SIGNAL \Timer_1:TimerUDB:status_3\ : bit;
     SIGNAL \Timer_1:TimerUDB:status_tc\ : bit;
-    ATTRIBUTE placement_force OF \Timer_1:TimerUDB:status_tc\ : SIGNAL IS "U(0,0,A)1";
-    SIGNAL \UART_1:Net_656\ : bit;
-    SIGNAL \UART_1:Net_660\ : bit;
-    SIGNAL \UART_1:Net_687\ : bit;
-    SIGNAL \UART_1:Net_703\ : bit;
-    SIGNAL \UART_1:Net_751\ : bit;
-    SIGNAL \UART_1:Net_823\ : bit;
-    SIGNAL \UART_1:Net_824\ : bit;
-    SIGNAL \UART_1:Net_847_ff2\ : bit;
-    ATTRIBUTE global_signal OF \UART_1:Net_847_ff2\ : SIGNAL IS true;
-    SIGNAL \UART_1:ss_0\ : bit;
-    SIGNAL \UART_1:ss_1\ : bit;
-    SIGNAL \UART_1:ss_2\ : bit;
-    SIGNAL \UART_1:ss_3\ : bit;
-    SIGNAL \\\UART_1:tx(0)\\__PA\ : bit;
+    ATTRIBUTE placement_force OF \Timer_1:TimerUDB:status_tc\ : SIGNAL IS "U(0,0,B)1";
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
@@ -122,6 +100,7 @@ ARCHITECTURE __DEFAULT__ OF CRT_timer IS
     SIGNAL dclk_to_genclk : bit;
     SIGNAL one : bit;
     ATTRIBUTE POWER OF one : SIGNAL IS true;
+    SIGNAL timer_enable(0)__PA : bit;
     SIGNAL \Timer_1:TimerUDB:sT32:timerdp:u0.ce0__sig\ : bit;
     SIGNAL \Timer_1:TimerUDB:sT32:timerdp:u0.cl0__sig\ : bit;
     SIGNAL \Timer_1:TimerUDB:sT32:timerdp:u0.z0__sig\ : bit;
@@ -200,8 +179,6 @@ ARCHITECTURE __DEFAULT__ OF CRT_timer IS
     ATTRIBUTE Location OF \Opamp:cy_psoc4_abuf\ : LABEL IS "F(OA,1)";
     ATTRIBUTE lib_model OF \Timer_1:TimerUDB:rstSts:stsreg\ : LABEL IS "statusicell1";
     ATTRIBUTE Location OF \Timer_1:TimerUDB:rstSts:stsreg\ : LABEL IS "U(0,0)";
-    ATTRIBUTE lib_model OF \Timer_1:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "controlcell2";
-    ATTRIBUTE Location OF \Timer_1:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \Timer_1:TimerUDB:sT32:timerdp:u0\ : LABEL IS "datapathcell1";
     ATTRIBUTE Location OF \Timer_1:TimerUDB:sT32:timerdp:u0\ : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \Timer_1:TimerUDB:sT32:timerdp:u1\ : LABEL IS "datapathcell2";
@@ -212,10 +189,9 @@ ARCHITECTURE __DEFAULT__ OF CRT_timer IS
     ATTRIBUTE Location OF \Timer_1:TimerUDB:sT32:timerdp:u3\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \Timer_1:TimerUDB:status_tc\ : LABEL IS "macrocell4";
     ATTRIBUTE Location OF \Timer_1:TimerUDB:status_tc\ : LABEL IS "U(0,0)";
-    ATTRIBUTE Location OF \UART_1:SCB\ : LABEL IS "F(SCB,1)";
-    ATTRIBUTE lib_model OF \UART_1:tx(0)\ : LABEL IS "iocell14";
-    ATTRIBUTE Location OF \UART_1:tx(0)\ : LABEL IS "P0[5]";
     ATTRIBUTE Location OF sw_int : LABEL IS "[IntrHod=(0)][IntrId=(0)]";
+    ATTRIBUTE lib_model OF timer_enable(0) : LABEL IS "iocell14";
+    ATTRIBUTE Location OF timer_enable(0) : LABEL IS "P0[2]";
     COMPONENT controlcell
         PORT (
             control_0 : OUT std_ulogic;
@@ -435,30 +411,6 @@ ARCHITECTURE __DEFAULT__ OF CRT_timer IS
             gen_clk_out_5 : OUT std_ulogic;
             gen_clk_out_6 : OUT std_ulogic;
             gen_clk_out_7 : OUT std_ulogic);
-    END COMPONENT;
-    COMPONENT m0s8scbcell
-        PORT (
-            clock : IN std_ulogic;
-            interrupt : OUT std_ulogic;
-            cts : IN std_ulogic;
-            rts : OUT std_ulogic;
-            rx : IN std_ulogic;
-            tx : OUT std_ulogic;
-            mosi_m : OUT std_ulogic;
-            miso_m : IN std_ulogic;
-            select_m_0 : OUT std_ulogic;
-            select_m_1 : OUT std_ulogic;
-            select_m_2 : OUT std_ulogic;
-            select_m_3 : OUT std_ulogic;
-            sclk_m : OUT std_ulogic;
-            mosi_s : IN std_ulogic;
-            miso_s : OUT std_ulogic;
-            select_s : IN std_ulogic;
-            sclk_s : IN std_ulogic;
-            scl : INOUT std_ulogic;
-            sda : INOUT std_ulogic;
-            rx_req : OUT std_ulogic;
-            tx_req : OUT std_ulogic);
     END COMPONENT;
     COMPONENT macrocell
         PORT (
@@ -753,9 +705,7 @@ BEGIN
             imo => ClockBlock_IMO,
             hfclk => ClockBlock_HFCLK,
             ff_div_7 => \ADC:Net_1845_ff7\,
-            ff_div_2 => open,
-            udb_div_0 => dclk_to_genclk,
-            ff_div_3 => \UART_1:Net_847_ff2\);
+            udb_div_0 => dclk_to_genclk);
 
     ClockGenBlock:m0s8clockgenblockcell
         PORT MAP(
@@ -1881,25 +1831,6 @@ BEGIN
             status_1 => open,
             status_0 => \Timer_1:TimerUDB:status_tc\);
 
-    \Timer_1:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\:controlcell
-        GENERIC MAP(
-            cy_ctrl_mode_0 => "11111111",
-            cy_ctrl_mode_1 => "00000000",
-            cy_ext_reset => 0,
-            cy_force_order => 1,
-            cy_init_value => "00000000")
-        PORT MAP(
-            clock => ClockBlock_HFCLK,
-            control_7 => \Timer_1:TimerUDB:control_7\,
-            control_6 => \Timer_1:TimerUDB:control_6\,
-            control_5 => \Timer_1:TimerUDB:control_5\,
-            control_4 => \Timer_1:TimerUDB:control_4\,
-            control_3 => \Timer_1:TimerUDB:control_3\,
-            control_2 => \Timer_1:TimerUDB:control_2\,
-            control_1 => \Timer_1:TimerUDB:control_1\,
-            control_0 => \Timer_1:TimerUDB:control_0\,
-            busclk => ClockBlock_HFCLK);
-
     \Timer_1:TimerUDB:sT32:timerdp:u0\:datapathcell
         GENERIC MAP(
             a0_init => "00000000",
@@ -1927,7 +1858,7 @@ BEGIN
             uses_p_out => '0')
         PORT MAP(
             clock => ClockBlock_HFCLK,
-            cs_addr_1 => \Timer_1:TimerUDB:control_7\,
+            cs_addr_1 => Net_962,
             cs_addr_0 => \Timer_1:TimerUDB:per_zero\,
             busclk => ClockBlock_HFCLK,
             ce0 => \Timer_1:TimerUDB:sT32:timerdp:u0.ce0__sig\,
@@ -1971,7 +1902,7 @@ BEGIN
             uses_p_out => '0')
         PORT MAP(
             clock => ClockBlock_HFCLK,
-            cs_addr_1 => \Timer_1:TimerUDB:control_7\,
+            cs_addr_1 => Net_962,
             cs_addr_0 => \Timer_1:TimerUDB:per_zero\,
             busclk => ClockBlock_HFCLK,
             ce0i => \Timer_1:TimerUDB:sT32:timerdp:u0.ce0__sig\,
@@ -2028,7 +1959,7 @@ BEGIN
             uses_p_out => '0')
         PORT MAP(
             clock => ClockBlock_HFCLK,
-            cs_addr_1 => \Timer_1:TimerUDB:control_7\,
+            cs_addr_1 => Net_962,
             cs_addr_0 => \Timer_1:TimerUDB:per_zero\,
             busclk => ClockBlock_HFCLK,
             ce0i => \Timer_1:TimerUDB:sT32:timerdp:u1.ce0__sig\,
@@ -2085,7 +2016,7 @@ BEGIN
             uses_p_out => '0')
         PORT MAP(
             clock => ClockBlock_HFCLK,
-            cs_addr_1 => \Timer_1:TimerUDB:control_7\,
+            cs_addr_1 => Net_962,
             cs_addr_0 => \Timer_1:TimerUDB:per_zero\,
             z0_comb => \Timer_1:TimerUDB:per_zero\,
             f0_bus_stat_comb => \Timer_1:TimerUDB:status_3\,
@@ -2110,64 +2041,25 @@ BEGIN
             eqn_main => "(main_0 * main_1)")
         PORT MAP(
             q => \Timer_1:TimerUDB:status_tc\,
-            main_0 => \Timer_1:TimerUDB:control_7\,
-            main_1 => \Timer_1:TimerUDB:per_zero\);
+            main_0 => \Timer_1:TimerUDB:per_zero\,
+            main_1 => Net_962);
 
-    \UART_1:SCB\:m0s8scbcell
+    sw_int:interrupt
         GENERIC MAP(
-            cy_registers => "",
-            scb_mode => 2)
+            int_type => "10")
         PORT MAP(
-            clock => \UART_1:Net_847_ff2\,
-            interrupt => Net_410,
-            rx => open,
-            tx => \UART_1:Net_656\,
-            cts => open,
-            rts => \UART_1:Net_751\,
-            mosi_m => \UART_1:Net_660\,
-            miso_m => open,
-            select_m_3 => \UART_1:ss_3\,
-            select_m_2 => \UART_1:ss_2\,
-            select_m_1 => \UART_1:ss_1\,
-            select_m_0 => \UART_1:ss_0\,
-            sclk_m => \UART_1:Net_687\,
-            mosi_s => open,
-            miso_s => \UART_1:Net_703\,
-            select_s => open,
-            sclk_s => open,
-            tx_req => \UART_1:Net_823\,
-            rx_req => \UART_1:Net_824\);
+            interrupt => Net_679,
+            clock => ClockBlock_HFCLK);
 
-    \UART_1:tx(0)\:iocell
+    timer_enable:logicalport
         GENERIC MAP(
-            in_sync_mode => 0,
-            out_sync_mode => 0,
-            oe_sync_mode => 0,
-            logicalport => "\UART_1:tx\",
-            logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000100000000000000000000000000000000000000001")
-        PORT MAP(
-            pa_out => \\\UART_1:tx(0)\\__PA\,
-            oe => open,
-            pin_input => \UART_1:Net_656\,
-            pad_out => \UART_1:tx(0)_PAD\,
-            pad_in => \UART_1:tx(0)_PAD\,
-            in_clock => open,
-            in_clock_en => '1',
-            in_reset => '0',
-            out_clock => open,
-            out_clock_en => '1',
-            out_reset => '0');
-
-    \UART_1:tx\:logicalport
-        GENERIC MAP(
-            drive_mode => "110",
-            ibuf_enabled => "0",
-            id => "43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/23b8206d-1c77-4e61-be4a-b4037d5de5fc",
-            init_dr_st => "1",
+            drive_mode => "001",
+            ibuf_enabled => "1",
+            id => "a6283ab6-ab81-4438-b505-11956195f636",
+            init_dr_st => "0",
             input_buffer_sel => "00",
             input_clk_en => 0,
-            input_sync => "0",
+            input_sync => "1",
             input_sync_mode => "0",
             intr_mode => "00",
             invert_in_clock => 0,
@@ -2183,7 +2075,7 @@ BEGIN
             oe_sync => "0",
             output_clk_en => 0,
             output_clock_mode => "0",
-            output_conn => "1",
+            output_conn => "0",
             output_mode => "0",
             output_reset => 0,
             output_sync => "0",
@@ -2197,7 +2089,7 @@ BEGIN
             pa_out_clock_en => -1,
             pa_out_reset => -1,
             pin_aliases => "",
-            pin_mode => "B",
+            pin_mode => "I",
             por_state => 4,
             port_alias_group => "",
             port_alias_required => 0,
@@ -2227,13 +2119,27 @@ BEGIN
             in_clock_en => open,
             in_reset => open,
             out_clock_en => open,
-            out_reset => open);
+            out_reset => open,
+            in_clock => open);
 
-    sw_int:interrupt
+    timer_enable(0):iocell
         GENERIC MAP(
-            int_type => "10")
+            in_sync_mode => 2,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "timer_enable",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
         PORT MAP(
-            interrupt => Net_679,
-            clock => ClockBlock_HFCLK);
+            pa_out => timer_enable(0)__PA,
+            oe => open,
+            fb => Net_962,
+            pad_in => timer_enable(0)_PAD,
+            in_clock => ClockBlock_HFCLK,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
 
 END __DEFAULT__;

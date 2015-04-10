@@ -1,5 +1,5 @@
 # CRT_timer
-# 2015-04-10 18:58:04Z
+# 2015-04-10 19:45:29Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
@@ -21,4 +21,4 @@ set_io "TIA_out(0)" iocell 1 3
 set_io "Test_pin(0)" iocell 1 1
 set_location "\ADC:cy_psoc4_sar\" p4sarcell -1 -1 0
 set_location "\Opamp:cy_psoc4_abuf\" p4abufcell -1 -1 1
-set_io "\UART_1:tx(0)\" iocell 0 5
+set_io "timer_enable(0)" iocell 0 2

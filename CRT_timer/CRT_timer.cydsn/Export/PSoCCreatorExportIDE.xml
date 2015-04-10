@@ -80,24 +80,6 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\core_cmInstr.h</File>
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">.\Generated_Source\PSoC4\CyBootAsmIar.s</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\project.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_SPI_UART.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_SPI_UART.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_SPI_UART_INT.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_UART.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_BOOT.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_UART_BOOT.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_PINS.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_SPI_UART_PVT.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_PVT.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_BOOT.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_SCBCLK.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_SCBCLK.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_tx.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_tx.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\UART_1_tx_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cl_deb.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cl_deb.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\A0.c</File>
@@ -153,6 +135,9 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Test_pin.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Test_pin.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\Test_pin_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\timer_enable.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\timer_enable.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\timer_enable_aliases.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\Export\ARM_GCC_Generic">

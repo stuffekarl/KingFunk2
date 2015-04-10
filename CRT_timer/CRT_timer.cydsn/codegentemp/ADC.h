@@ -128,7 +128,7 @@ typedef struct
 #define ADC_DEFAULT_LOW_LIMIT              (0u)
 #define ADC_DEFAULT_HIGH_LIMIT             (2047u)
 #define ADC_DEFAULT_COMPARE_MODE           (0u)
-#define ADC_DEFAULT_ACLKS_NUM              (2u)
+#define ADC_DEFAULT_ACLKS_NUM              (100u)
 #define ADC_DEFAULT_BCLKS_NUM              (30u)
 #define ADC_DEFAULT_CCLKS_NUM              (2u)
 #define ADC_DEFAULT_DCLKS_NUM              (2u)

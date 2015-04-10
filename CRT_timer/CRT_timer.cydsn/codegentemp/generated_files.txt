@@ -34,19 +34,9 @@
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_INT.c" value="ARM_C_FILE;ADC" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\cl_deb.c" value="ARM_C_FILE;cl_deb" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\cl_deb.h" value="NONE;cl_deb" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1.c" value="ARM_C_FILE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1.h" value="NONE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_SPI_UART.h" value="NONE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_SPI_UART.c" value="ARM_C_FILE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_SPI_UART_INT.c" value="ARM_C_FILE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_PM.c" value="ARM_C_FILE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_UART.c" value="ARM_C_FILE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_BOOT.c" value="ARM_C_FILE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_UART_BOOT.c" value="ARM_C_FILE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_PINS.h" value="NONE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_SPI_UART_PVT.h" value="NONE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_PVT.h" value="NONE;UART_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_BOOT.h" value="NONE;UART_1" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\timer_enable.c" value="ARM_C_FILE;timer_enable" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\timer_enable.h" value="NONE;timer_enable" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\timer_enable_aliases.h" value="NONE;timer_enable" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\A0.c" value="ARM_C_FILE;A0" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\A0.h" value="NONE;A0" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\A0_aliases.h" value="NONE;A0" />
@@ -88,11 +78,6 @@
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_IRQ.h" value="NONE;ADC_IRQ" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_intClock.c" value="ARM_C_FILE;ADC_intClock" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_intClock.h" value="NONE;ADC_intClock" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_SCBCLK.c" value="ARM_C_FILE;UART_1_SCBCLK" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_SCBCLK.h" value="NONE;UART_1_SCBCLK" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_tx.c" value="ARM_C_FILE;UART_1_tx" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_tx.h" value="NONE;UART_1_tx" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\UART_1_tx_aliases.h" value="NONE;UART_1_tx" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\LCD_Cntl_Port.c" value="ARM_C_FILE;LCD_Cntl_Port" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\LCD_Cntl_Port.h" value="NONE;LCD_Cntl_Port" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\cm0gcc.ld" value="NONE;cy_boot" />

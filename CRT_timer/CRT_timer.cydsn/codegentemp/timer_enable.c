@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: UART_1_tx.c  
+* File Name: timer_enable.c  
 * Version 2.10
 *
 * Description:
@@ -15,18 +15,18 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "UART_1_tx.h"
+#include "timer_enable.h"
 
 #define SetP4PinDriveMode(shift, mode)  \
     do { \
-        UART_1_tx_PC =   (UART_1_tx_PC & \
-                                (uint32)(~(uint32)(UART_1_tx_DRIVE_MODE_IND_MASK << (UART_1_tx_DRIVE_MODE_BITS * (shift))))) | \
-                                (uint32)((uint32)(mode) << (UART_1_tx_DRIVE_MODE_BITS * (shift))); \
+        timer_enable_PC =   (timer_enable_PC & \
+                                (uint32)(~(uint32)(timer_enable_DRIVE_MODE_IND_MASK << (timer_enable_DRIVE_MODE_BITS * (shift))))) | \
+                                (uint32)((uint32)(mode) << (timer_enable_DRIVE_MODE_BITS * (shift))); \
     } while (0)
 
 
 /*******************************************************************************
-* Function Name: UART_1_tx_Write
+* Function Name: timer_enable_Write
 ********************************************************************************
 *
 * Summary:
@@ -39,16 +39,16 @@
 *  None 
 *  
 *******************************************************************************/
-void UART_1_tx_Write(uint8 value) 
+void timer_enable_Write(uint8 value) 
 {
-    uint8 drVal = (uint8)(UART_1_tx_DR & (uint8)(~UART_1_tx_MASK));
-    drVal = (drVal | ((uint8)(value << UART_1_tx_SHIFT) & UART_1_tx_MASK));
-    UART_1_tx_DR = (uint32)drVal;
+    uint8 drVal = (uint8)(timer_enable_DR & (uint8)(~timer_enable_MASK));
+    drVal = (drVal | ((uint8)(value << timer_enable_SHIFT) & timer_enable_MASK));
+    timer_enable_DR = (uint32)drVal;
 }
 
 
 /*******************************************************************************
-* Function Name: UART_1_tx_SetDriveMode
+* Function Name: timer_enable_SetDriveMode
 ********************************************************************************
 *
 * Summary:
@@ -57,27 +57,27 @@ void UART_1_tx_Write(uint8 value)
 * Parameters:  
 *  mode:  Change the pins to one of the following drive modes.
 *
-*  UART_1_tx_DM_STRONG     Strong Drive 
-*  UART_1_tx_DM_OD_HI      Open Drain, Drives High 
-*  UART_1_tx_DM_OD_LO      Open Drain, Drives Low 
-*  UART_1_tx_DM_RES_UP     Resistive Pull Up 
-*  UART_1_tx_DM_RES_DWN    Resistive Pull Down 
-*  UART_1_tx_DM_RES_UPDWN  Resistive Pull Up/Down 
-*  UART_1_tx_DM_DIG_HIZ    High Impedance Digital 
-*  UART_1_tx_DM_ALG_HIZ    High Impedance Analog 
+*  timer_enable_DM_STRONG     Strong Drive 
+*  timer_enable_DM_OD_HI      Open Drain, Drives High 
+*  timer_enable_DM_OD_LO      Open Drain, Drives Low 
+*  timer_enable_DM_RES_UP     Resistive Pull Up 
+*  timer_enable_DM_RES_DWN    Resistive Pull Down 
+*  timer_enable_DM_RES_UPDWN  Resistive Pull Up/Down 
+*  timer_enable_DM_DIG_HIZ    High Impedance Digital 
+*  timer_enable_DM_ALG_HIZ    High Impedance Analog 
 *
 * Return: 
 *  None
 *
 *******************************************************************************/
-void UART_1_tx_SetDriveMode(uint8 mode) 
+void timer_enable_SetDriveMode(uint8 mode) 
 {
-	SetP4PinDriveMode(UART_1_tx__0__SHIFT, mode);
+	SetP4PinDriveMode(timer_enable__0__SHIFT, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: UART_1_tx_Read
+* Function Name: timer_enable_Read
 ********************************************************************************
 *
 * Summary:
@@ -91,17 +91,17 @@ void UART_1_tx_SetDriveMode(uint8 mode)
 *  Returns the current value of the Digital Port as a right justified number
 *  
 * Note:
-*  Macro UART_1_tx_ReadPS calls this function. 
+*  Macro timer_enable_ReadPS calls this function. 
 *  
 *******************************************************************************/
-uint8 UART_1_tx_Read(void) 
+uint8 timer_enable_Read(void) 
 {
-    return (uint8)((UART_1_tx_PS & UART_1_tx_MASK) >> UART_1_tx_SHIFT);
+    return (uint8)((timer_enable_PS & timer_enable_MASK) >> timer_enable_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: UART_1_tx_ReadDataReg
+* Function Name: timer_enable_ReadDataReg
 ********************************************************************************
 *
 * Summary:
@@ -114,17 +114,17 @@ uint8 UART_1_tx_Read(void)
 *  Returns the current value assigned to the Digital Port's data output register
 *  
 *******************************************************************************/
-uint8 UART_1_tx_ReadDataReg(void) 
+uint8 timer_enable_ReadDataReg(void) 
 {
-    return (uint8)((UART_1_tx_DR & UART_1_tx_MASK) >> UART_1_tx_SHIFT);
+    return (uint8)((timer_enable_DR & timer_enable_MASK) >> timer_enable_SHIFT);
 }
 
 
 /* If Interrupts Are Enabled for this Pins component */ 
-#if defined(UART_1_tx_INTSTAT) 
+#if defined(timer_enable_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: UART_1_tx_ClearInterrupt
+    * Function Name: timer_enable_ClearInterrupt
     ********************************************************************************
     *
     * Summary:
@@ -138,11 +138,11 @@ uint8 UART_1_tx_ReadDataReg(void)
     *  Returns the value of the interrupt status register
     *  
     *******************************************************************************/
-    uint8 UART_1_tx_ClearInterrupt(void) 
+    uint8 timer_enable_ClearInterrupt(void) 
     {
-		uint8 maskedStatus = (uint8)(UART_1_tx_INTSTAT & UART_1_tx_MASK);
-		UART_1_tx_INTSTAT = maskedStatus;
-        return maskedStatus >> UART_1_tx_SHIFT;
+		uint8 maskedStatus = (uint8)(timer_enable_INTSTAT & timer_enable_MASK);
+		timer_enable_INTSTAT = maskedStatus;
+        return maskedStatus >> timer_enable_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 
