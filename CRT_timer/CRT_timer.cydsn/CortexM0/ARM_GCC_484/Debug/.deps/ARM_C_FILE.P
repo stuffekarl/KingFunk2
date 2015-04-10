@@ -176,6 +176,14 @@ C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_
 
 C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/TIA_out.c : 
 
+C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/CortexM0/ARM_GCC_484/Debug/Test_pin.o : C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/Test_pin.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/Test_pin_aliases.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cypins.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/Test_pin.c 
+
+C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/Test_pin.h : 
+
+C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/Test_pin_aliases.h : 
+
+C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/Test_pin.c : 
+
 C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/CortexM0/ARM_GCC_484/Debug/Timer_1.o : C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/Timer_1.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/Timer_1.c 
 
 C:/Users/Snufkin/Documents/GitHub/KingFunk2/CRT_timer/CRT_timer.cydsn/Generated_Source/PSoC4/Timer_1.h : 

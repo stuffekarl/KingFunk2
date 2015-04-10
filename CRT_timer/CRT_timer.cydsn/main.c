@@ -12,6 +12,7 @@
 
 #define CONVERT_TO_ASCII (0x30u)
 #define TIMER_MAX 4294967296
+#define debugging //Comment or uncomment this line for debugging
 
 enum BTN_states{ UNPRESSED, SELECT, LEFT, DOWN, UP, RIGHT };
 volatile uint8 running; //flag - false = 0, true != 0
@@ -65,10 +66,11 @@ int main(){
     CyGlobalIntEnable;
     
     while(1){
-        CyDelay(50);
         if (running){
-            V_new = ADC_GetResult16(0);
-             if(V_new > 1024){
+            #ifdef debugging
+                Test_pin_Write(1);
+            #endif
+            if(ADC_GetResult16(0) > 2047){
                 time = TIMER_MAX - Timer_1_ReadCounter();
                 Timer_1_Stop();
                 running = 0;
@@ -76,6 +78,9 @@ int main(){
                 puts_measurement(time);
                 print_measurement(time);
             }
+            #ifdef debugging
+                Test_pin_Write(0);
+            #endif
         }
         else{
             int16 temp = ADC_GetResult16(0);
@@ -120,6 +125,7 @@ int main(){
                     LCD_PrintString("Down pressed");
                 }
             }
+            CyDelay(200);
         }
     }
 }

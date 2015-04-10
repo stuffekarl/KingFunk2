@@ -54,6 +54,8 @@
 #include <TIA_out_aliases.h>
 #include <GND.h>
 #include <GND_aliases.h>
+#include <Test_pin.h>
+#include <Test_pin_aliases.h>
 #include <ADC_IRQ.h>
 #include <ADC_intClock.h>
 #include <UART_1_SCBCLK.h>

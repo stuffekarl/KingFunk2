@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,28 +58,29 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 1
   10:.\main.c      **** #include <stdio.h>
   11:.\main.c      **** #include "menus.h"
   12:.\main.c      **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 2
 
 
   13:.\main.c      **** #define CONVERT_TO_ASCII (0x30u)
   14:.\main.c      **** #define TIMER_MAX 4294967296
-  15:.\main.c      **** 
-  16:.\main.c      **** enum BTN_states{ UNPRESSED, SELECT, LEFT, DOWN, UP, RIGHT };
-  17:.\main.c      **** volatile uint8 running; //flag - false = 0, true != 0
-  18:.\main.c      **** uint16 V_start;
-  19:.\main.c      **** uint16 V_new;
-  20:.\main.c      **** uint32 time;
-  21:.\main.c      **** uint16 lcdBtnOld;
-  22:.\main.c      **** volatile enum BTN_states BTN;
-  23:.\main.c      **** 
-  24:.\main.c      **** //Prototypes
-  25:.\main.c      **** CY_ISR_PROTO(sw_int_ISR);
-  26:.\main.c      **** void puts_measurement(uint32 time);
-  27:.\main.c      **** void print_measurement(uint32 time);
-  28:.\main.c      **** int8 updateBTN(void);
-  29:.\main.c      **** 
-  30:.\main.c      **** CY_ISR(sw_int_ISR){
-  40              		.loc 1 30 0
+  15:.\main.c      **** #define debugging //Comment or uncomment this line for debugging
+  16:.\main.c      **** 
+  17:.\main.c      **** enum BTN_states{ UNPRESSED, SELECT, LEFT, DOWN, UP, RIGHT };
+  18:.\main.c      **** volatile uint8 running; //flag - false = 0, true != 0
+  19:.\main.c      **** uint16 V_start;
+  20:.\main.c      **** uint16 V_new;
+  21:.\main.c      **** uint32 time;
+  22:.\main.c      **** uint16 lcdBtnOld;
+  23:.\main.c      **** volatile enum BTN_states BTN;
+  24:.\main.c      **** 
+  25:.\main.c      **** //Prototypes
+  26:.\main.c      **** CY_ISR_PROTO(sw_int_ISR);
+  27:.\main.c      **** void puts_measurement(uint32 time);
+  28:.\main.c      **** void print_measurement(uint32 time);
+  29:.\main.c      **** int8 updateBTN(void);
+  30:.\main.c      **** 
+  31:.\main.c      **** CY_ISR(sw_int_ISR){
+  40              		.loc 1 31 0
   41              		.cfi_startproc
   42 0000 80B5     		push	{r7, lr}
   43              		.cfi_def_cfa_offset 8
@@ -89,22 +90,22 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 1
   47              		.cfi_def_cfa_offset 72
   48 0004 00AF     		add	r7, sp, #0
   49              		.cfi_def_cfa_register 7
-  31:.\main.c      ****     char temp[60];
-  32:.\main.c      ****     running = 1;
-  50              		.loc 1 32 0
+  32:.\main.c      ****     char temp[60];
+  33:.\main.c      ****     running = 1;
+  50              		.loc 1 33 0
   51 0006 184B     		ldr	r3, .L2
   52 0008 0122     		mov	r2, #1
   53 000a 1A70     		strb	r2, [r3]
-  33:.\main.c      ****     V_start = ADC_GetResult16(0);
-  54              		.loc 1 33 0
+  34:.\main.c      ****     V_start = ADC_GetResult16(0);
+  54              		.loc 1 34 0
   55 000c 0020     		mov	r0, #0
   56 000e FFF7FEFF 		bl	ADC_GetResult16
   57 0012 031C     		mov	r3, r0
   58 0014 9AB2     		uxth	r2, r3
   59 0016 154B     		ldr	r3, .L2+4
   60 0018 1A80     		strh	r2, [r3]
-  34:.\main.c      ****     sprintf(temp, "Starting new measurement, current voltage: %d mV\n\r", ADC_CountsTo_mVolts(0, V_
-  61              		.loc 1 34 0
+  35:.\main.c      ****     sprintf(temp, "Starting new measurement, current voltage: %d mV\n\r", ADC_CountsTo_mVolts(0, V_
+  61              		.loc 1 35 0
   62 001a 144B     		ldr	r3, .L2+4
   63 001c 1B88     		ldrh	r3, [r3]
   64 001e 9BB2     		uxth	r3, r3
@@ -117,38 +118,38 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 1
   71 002e 104A     		ldr	r2, .L2+8
   72 0030 081C     		mov	r0, r1
   73 0032 111C     		mov	r1, r2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 3
+
+
   74 0034 1A1C     		mov	r2, r3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 3
-
-
   75 0036 FFF7FEFF 		bl	sprintf
-  35:.\main.c      ****     LCD_ClearDisplay();
-  76              		.loc 1 35 0
+  36:.\main.c      ****     LCD_ClearDisplay();
+  76              		.loc 1 36 0
   77 003a 0120     		mov	r0, #1
   78 003c FFF7FEFF 		bl	LCD_WriteControl
-  36:.\main.c      ****     LCD_PrintString("SW2 pressed");
-  79              		.loc 1 36 0
+  37:.\main.c      ****     LCD_PrintString("SW2 pressed");
+  79              		.loc 1 37 0
   80 0040 0C4B     		ldr	r3, .L2+12
   81 0042 181C     		mov	r0, r3
   82 0044 FFF7FEFF 		bl	LCD_PrintString
-  37:.\main.c      ****     UART_1_UartPutString(temp);
-  83              		.loc 1 37 0
+  38:.\main.c      ****     UART_1_UartPutString(temp);
+  83              		.loc 1 38 0
   84 0048 3B1D     		add	r3, r7, #4
   85 004a 181C     		mov	r0, r3
   86 004c FFF7FEFF 		bl	UART_1_UartPutString
-  38:.\main.c      ****     Timer_1_WriteCounter(0);
-  87              		.loc 1 38 0
+  39:.\main.c      ****     Timer_1_WriteCounter(0);
+  87              		.loc 1 39 0
   88 0050 0020     		mov	r0, #0
   89 0052 FFF7FEFF 		bl	Timer_1_WriteCounter
-  39:.\main.c      ****     Timer_1_Start();
-  90              		.loc 1 39 0
+  40:.\main.c      ****     Timer_1_Start();
+  90              		.loc 1 40 0
   91 0056 FFF7FEFF 		bl	Timer_1_Start
-  40:.\main.c      ****     B_press_Write(1);
-  92              		.loc 1 40 0
+  41:.\main.c      ****     B_press_Write(1);
+  92              		.loc 1 41 0
   93 005a 0120     		mov	r0, #1
   94 005c FFF7FEFF 		bl	B_press_Write
-  41:.\main.c      **** }
-  95              		.loc 1 41 0
+  42:.\main.c      **** }
+  95              		.loc 1 42 0
   96 0060 BD46     		mov	sp, r7
   97 0062 10B0     		add	sp, sp, #64
   98              		@ sp needed
@@ -177,45 +178,45 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 1
  116      7220696E 
  116      69746961 
  116      6C697A65 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 4
+
+
  117 006a 0000     		.align	2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 4
-
-
- 118              	.LC14:
+ 118              	.LC13:
  119 006c 20202020 		.ascii	"                \000"
  119      20202020 
  119      20202020 
  119      20202020 
  119      00
  120 007d 000000   		.align	2
- 121              	.LC16:
+ 121              	.LC15:
  122 0080 6D61783A 		.ascii	"max: \000"
  122      2000
  123 0086 0000     		.align	2
- 124              	.LC19:
+ 124              	.LC18:
  125 0088 53656C65 		.ascii	"Select pressed\000"
  125      63742070 
  125      72657373 
  125      656400
  126 0097 00       		.align	2
- 127              	.LC21:
+ 127              	.LC20:
  128 0098 4C656674 		.ascii	"Left pressed\000"
  128      20707265 
  128      73736564 
  128      00
  129 00a5 000000   		.align	2
- 130              	.LC23:
+ 130              	.LC22:
  131 00a8 52696768 		.ascii	"Right pressed\000"
  131      74207072 
  131      65737365 
  131      6400
  132 00b6 0000     		.align	2
- 133              	.LC25:
+ 133              	.LC24:
  134 00b8 55702070 		.ascii	"Up pressed\000"
  134      72657373 
  134      656400
  135 00c3 00       		.align	2
- 136              	.LC27:
+ 136              	.LC26:
  137 00c4 446F776E 		.ascii	"Down pressed\000"
  137      20707265 
  137      73736564 
@@ -228,2410 +229,2417 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 1
  143              		.type	main, %function
  144              	main:
  145              	.LFB34:
-  42:.\main.c      **** 
-  43:.\main.c      **** int main(){
- 146              		.loc 1 43 0
+  43:.\main.c      **** 
+  44:.\main.c      **** int main(){
+ 146              		.loc 1 44 0
  147              		.cfi_startproc
  148 0000 90B5     		push	{r4, r7, lr}
  149              		.cfi_def_cfa_offset 12
  150              		.cfi_offset 4, -12
  151              		.cfi_offset 7, -8
  152              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 5
+
+
  153 0002 83B0     		sub	sp, sp, #12
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 5
-
-
  154              		.cfi_def_cfa_offset 24
  155 0004 00AF     		add	r7, sp, #0
  156              		.cfi_def_cfa_register 7
-  44:.\main.c      ****     int16 lightMax = -1;
- 157              		.loc 1 44 0
+  45:.\main.c      ****     int16 lightMax = -1;
+ 157              		.loc 1 45 0
  158 0006 BB1D     		add	r3, r7, #6
  159 0008 0122     		mov	r2, #1
  160 000a 5242     		neg	r2, r2
  161 000c 1A80     		strh	r2, [r3]
-  45:.\main.c      ****     
-  46:.\main.c      ****     Timer_1_Start();
- 162              		.loc 1 46 0
+  46:.\main.c      ****     
+  47:.\main.c      ****     Timer_1_Start();
+ 162              		.loc 1 47 0
  163 000e FFF7FEFF 		bl	Timer_1_Start
-  47:.\main.c      ****     UART_1_Start();
- 164              		.loc 1 47 0
+  48:.\main.c      ****     UART_1_Start();
+ 164              		.loc 1 48 0
  165 0012 FFF7FEFF 		bl	UART_1_Start
-  48:.\main.c      ****     sw_int_StartEx(sw_int_ISR);
- 166              		.loc 1 48 0
- 167 0016 814B     		ldr	r3, .L14
+  49:.\main.c      ****     sw_int_StartEx(sw_int_ISR);
+ 166              		.loc 1 49 0
+ 167 0016 804B     		ldr	r3, .L15
  168 0018 181C     		mov	r0, r3
  169 001a FFF7FEFF 		bl	sw_int_StartEx
-  49:.\main.c      ****     B_press_Write(0);
- 170              		.loc 1 49 0
+  50:.\main.c      ****     B_press_Write(0);
+ 170              		.loc 1 50 0
  171 001e 0020     		mov	r0, #0
  172 0020 FFF7FEFF 		bl	B_press_Write
-  50:.\main.c      ****     Opamp_Start();
- 173              		.loc 1 50 0
+  51:.\main.c      ****     Opamp_Start();
+ 173              		.loc 1 51 0
  174 0024 FFF7FEFF 		bl	Opamp_Start
-  51:.\main.c      ****     ADC_Start();
- 175              		.loc 1 51 0
+  52:.\main.c      ****     ADC_Start();
+ 175              		.loc 1 52 0
  176 0028 FFF7FEFF 		bl	ADC_Start
-  52:.\main.c      ****     ADC_StartConvert();
- 177              		.loc 1 52 0
+  53:.\main.c      ****     ADC_StartConvert();
+ 177              		.loc 1 53 0
  178 002c FFF7FEFF 		bl	ADC_StartConvert
-  53:.\main.c      ****     LCD_Start();
- 179              		.loc 1 53 0
+  54:.\main.c      ****     LCD_Start();
+ 179              		.loc 1 54 0
  180 0030 FFF7FEFF 		bl	LCD_Start
-  54:.\main.c      ****     LCD_Position(0,0);
- 181              		.loc 1 54 0
+  55:.\main.c      ****     LCD_Position(0,0);
+ 181              		.loc 1 55 0
  182 0034 0020     		mov	r0, #0
  183 0036 0021     		mov	r1, #0
  184 0038 FFF7FEFF 		bl	LCD_Position
-  55:.\main.c      ****     LCD_PrintString("Initialized..");
- 185              		.loc 1 55 0
- 186 003c 784B     		ldr	r3, .L14+4
+  56:.\main.c      ****     LCD_PrintString("Initialized..");
+ 185              		.loc 1 56 0
+ 186 003c 774B     		ldr	r3, .L15+4
  187 003e 181C     		mov	r0, r3
  188 0040 FFF7FEFF 		bl	LCD_PrintString
-  56:.\main.c      ****     LCD_Position(1,7);
- 189              		.loc 1 56 0
+  57:.\main.c      ****     LCD_Position(1,7);
+ 189              		.loc 1 57 0
  190 0044 0120     		mov	r0, #1
  191 0046 0721     		mov	r1, #7
  192 0048 FFF7FEFF 		bl	LCD_Position
-  57:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_0);
- 193              		.loc 1 57 0
+  58:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_0);
+ 193              		.loc 1 58 0
  194 004c 0020     		mov	r0, #0
  195 004e FFF7FEFF 		bl	LCD_PutChar
-  58:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_1);
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 6
 
 
- 196              		.loc 1 58 0
+  59:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_1);
+ 196              		.loc 1 59 0
  197 0052 0120     		mov	r0, #1
  198 0054 FFF7FEFF 		bl	LCD_PutChar
-  59:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_2);
- 199              		.loc 1 59 0
+  60:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_2);
+ 199              		.loc 1 60 0
  200 0058 0220     		mov	r0, #2
  201 005a FFF7FEFF 		bl	LCD_PutChar
-  60:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_4);
- 202              		.loc 1 60 0
+  61:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_4);
+ 202              		.loc 1 61 0
  203 005e 0420     		mov	r0, #4
  204 0060 FFF7FEFF 		bl	LCD_PutChar
-  61:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_5);
- 205              		.loc 1 61 0
+  62:.\main.c      ****     LCD_PutChar(LCD_CUSTOM_5);
+ 205              		.loc 1 62 0
  206 0064 0520     		mov	r0, #5
  207 0066 FFF7FEFF 		bl	LCD_PutChar
-  62:.\main.c      ****     
-  63:.\main.c      **** 
-  64:.\main.c      ****     UART_1_UartPutString("CRT_timer initialized..\n\r");
- 208              		.loc 1 64 0
- 209 006a 6E4B     		ldr	r3, .L14+8
+  63:.\main.c      ****     
+  64:.\main.c      **** 
+  65:.\main.c      ****     UART_1_UartPutString("CRT_timer initialized..\n\r");
+ 208              		.loc 1 65 0
+ 209 006a 6D4B     		ldr	r3, .L15+8
  210 006c 181C     		mov	r0, r3
  211 006e FFF7FEFF 		bl	UART_1_UartPutString
-  65:.\main.c      ****     CyGlobalIntEnable;
- 212              		.loc 1 65 0
- 213              	@ 65 ".\main.c" 1
+  66:.\main.c      ****     CyGlobalIntEnable;
+ 212              		.loc 1 66 0
+ 213              	@ 66 ".\main.c" 1
  214 0072 62B6     		CPSIE   i
  215              	@ 0 "" 2
  216              		.code	16
- 217              	.L13:
-  66:.\main.c      ****     
-  67:.\main.c      ****     while(1){
-  68:.\main.c      ****         CyDelay(50);
- 218              		.loc 1 68 0
- 219 0074 3220     		mov	r0, #50
- 220 0076 FFF7FEFF 		bl	CyDelay
+ 217              	.L14:
+  67:.\main.c      ****     
+  68:.\main.c      ****     while(1){
   69:.\main.c      ****         if (running){
- 221              		.loc 1 69 0
- 222 007a 6B4B     		ldr	r3, .L14+12
- 223 007c 1B78     		ldrb	r3, [r3]
- 224 007e DBB2     		uxtb	r3, r3
- 225 0080 002B     		cmp	r3, #0
- 226 0082 26D0     		beq	.L5
-  70:.\main.c      ****             V_new = ADC_GetResult16(0);
- 227              		.loc 1 70 0
+ 218              		.loc 1 69 0
+ 219 0074 6B4B     		ldr	r3, .L15+12
+ 220 0076 1B78     		ldrb	r3, [r3]
+ 221 0078 DBB2     		uxtb	r3, r3
+ 222 007a 002B     		cmp	r3, #0
+ 223 007c 26D0     		beq	.L5
+  70:.\main.c      ****             #ifdef debugging
+  71:.\main.c      ****                 Test_pin_Write(1);
+ 224              		.loc 1 71 0
+ 225 007e 0120     		mov	r0, #1
+ 226 0080 FFF7FEFF 		bl	Test_pin_Write
+  72:.\main.c      ****             #endif
+  73:.\main.c      ****             if(ADC_GetResult16(0) > 2047){
+ 227              		.loc 1 73 0
  228 0084 0020     		mov	r0, #0
  229 0086 FFF7FEFF 		bl	ADC_GetResult16
  230 008a 031C     		mov	r3, r0
- 231 008c 9AB2     		uxth	r2, r3
- 232 008e 674B     		ldr	r3, .L14+16
- 233 0090 1A80     		strh	r2, [r3]
-  71:.\main.c      ****              if(V_new > 1024){
- 234              		.loc 1 71 0
- 235 0092 664B     		ldr	r3, .L14+16
- 236 0094 1A88     		ldrh	r2, [r3]
- 237 0096 8023     		mov	r3, #128
- 238 0098 DB00     		lsl	r3, r3, #3
- 239 009a 9A42     		cmp	r2, r3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 7
+ 231 008c 1A1C     		mov	r2, r3
+ 232 008e 664B     		ldr	r3, .L15+16
+ 233 0090 9A42     		cmp	r2, r3
+ 234 0092 17DD     		ble	.L6
+  74:.\main.c      ****                 time = TIMER_MAX - Timer_1_ReadCounter();
+ 235              		.loc 1 74 0
+ 236 0094 FFF7FEFF 		bl	Timer_1_ReadCounter
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 7
 
 
- 240 009c 00D8     		bhi	.LCB137
- 241 009e BBE0     		b	.L7	@long jump
- 242              	.LCB137:
-  72:.\main.c      ****                 time = TIMER_MAX - Timer_1_ReadCounter();
- 243              		.loc 1 72 0
- 244 00a0 FFF7FEFF 		bl	Timer_1_ReadCounter
- 245 00a4 031C     		mov	r3, r0
- 246 00a6 5A42     		neg	r2, r3
- 247 00a8 614B     		ldr	r3, .L14+20
- 248 00aa 1A60     		str	r2, [r3]
-  73:.\main.c      ****                 Timer_1_Stop();
- 249              		.loc 1 73 0
- 250 00ac FFF7FEFF 		bl	Timer_1_Stop
-  74:.\main.c      ****                 running = 0;
- 251              		.loc 1 74 0
- 252 00b0 5D4B     		ldr	r3, .L14+12
- 253 00b2 0022     		mov	r2, #0
- 254 00b4 1A70     		strb	r2, [r3]
-  75:.\main.c      ****                 B_press_Write(0);
- 255              		.loc 1 75 0
- 256 00b6 0020     		mov	r0, #0
- 257 00b8 FFF7FEFF 		bl	B_press_Write
-  76:.\main.c      ****                 puts_measurement(time);
- 258              		.loc 1 76 0
- 259 00bc 5C4B     		ldr	r3, .L14+20
- 260 00be 1B68     		ldr	r3, [r3]
- 261 00c0 181C     		mov	r0, r3
- 262 00c2 FFF7FEFF 		bl	puts_measurement
-  77:.\main.c      ****                 print_measurement(time);
- 263              		.loc 1 77 0
- 264 00c6 5A4B     		ldr	r3, .L14+20
- 265 00c8 1B68     		ldr	r3, [r3]
- 266 00ca 181C     		mov	r0, r3
- 267 00cc FFF7FEFF 		bl	print_measurement
-  78:.\main.c      ****             }
-  79:.\main.c      ****         }
-  80:.\main.c      ****         else{
-  81:.\main.c      ****             int16 temp = ADC_GetResult16(0);
-  82:.\main.c      ****             if (temp > lightMax)
-  83:.\main.c      ****                 lightMax = temp;
-  84:.\main.c      ****             LCD_Position(0,0);
-  85:.\main.c      ****             LCD_PrintString("                ");
-  86:.\main.c      ****             LCD_Position(0,0);
-  87:.\main.c      ****             LCD_PrintNumber(temp);
-  88:.\main.c      ****             LCD_Position(0,5);
-  89:.\main.c      ****             LCD_PrintString("max: ");
-  90:.\main.c      ****             LCD_PrintNumber(lightMax);
-  91:.\main.c      ****             if (updateBTN()){
-  92:.\main.c      ****                 if (BTN == SELECT){
-  93:.\main.c      ****                     LCD_Position(1,0);
-  94:.\main.c      ****                     LCD_PrintString("                ");
-  95:.\main.c      ****                     LCD_Position(1,0);
-  96:.\main.c      ****                     LCD_PrintString("Select pressed");
-  97:.\main.c      ****                 }
-  98:.\main.c      ****                 else if(BTN == LEFT){
-  99:.\main.c      ****                     LCD_Position(1,0);
- 100:.\main.c      ****                     LCD_PrintString("                ");
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 8
+ 237 0098 031C     		mov	r3, r0
+ 238 009a 5A42     		neg	r2, r3
+ 239 009c 634B     		ldr	r3, .L15+20
+ 240 009e 1A60     		str	r2, [r3]
+  75:.\main.c      ****                 Timer_1_Stop();
+ 241              		.loc 1 75 0
+ 242 00a0 FFF7FEFF 		bl	Timer_1_Stop
+  76:.\main.c      ****                 running = 0;
+ 243              		.loc 1 76 0
+ 244 00a4 5F4B     		ldr	r3, .L15+12
+ 245 00a6 0022     		mov	r2, #0
+ 246 00a8 1A70     		strb	r2, [r3]
+  77:.\main.c      ****                 B_press_Write(0);
+ 247              		.loc 1 77 0
+ 248 00aa 0020     		mov	r0, #0
+ 249 00ac FFF7FEFF 		bl	B_press_Write
+  78:.\main.c      ****                 puts_measurement(time);
+ 250              		.loc 1 78 0
+ 251 00b0 5E4B     		ldr	r3, .L15+20
+ 252 00b2 1B68     		ldr	r3, [r3]
+ 253 00b4 181C     		mov	r0, r3
+ 254 00b6 FFF7FEFF 		bl	puts_measurement
+  79:.\main.c      ****                 print_measurement(time);
+ 255              		.loc 1 79 0
+ 256 00ba 5C4B     		ldr	r3, .L15+20
+ 257 00bc 1B68     		ldr	r3, [r3]
+ 258 00be 181C     		mov	r0, r3
+ 259 00c0 FFF7FEFF 		bl	print_measurement
+ 260              	.L6:
+  80:.\main.c      ****             }
+  81:.\main.c      ****             #ifdef debugging
+  82:.\main.c      ****                 Test_pin_Write(0);
+ 261              		.loc 1 82 0
+ 262 00c4 0020     		mov	r0, #0
+ 263 00c6 FFF7FEFF 		bl	Test_pin_Write
+  83:.\main.c      ****             #endif
+  84:.\main.c      ****         }
+  85:.\main.c      ****         else{
+  86:.\main.c      ****             int16 temp = ADC_GetResult16(0);
+  87:.\main.c      ****             if (temp > lightMax)
+  88:.\main.c      ****                 lightMax = temp;
+  89:.\main.c      ****             LCD_Position(0,0);
+  90:.\main.c      ****             LCD_PrintString("                ");
+  91:.\main.c      ****             LCD_Position(0,0);
+  92:.\main.c      ****             LCD_PrintNumber(temp);
+  93:.\main.c      ****             LCD_Position(0,5);
+  94:.\main.c      ****             LCD_PrintString("max: ");
+  95:.\main.c      ****             LCD_PrintNumber(lightMax);
+  96:.\main.c      ****             if (updateBTN()){
+  97:.\main.c      ****                 if (BTN == SELECT){
+  98:.\main.c      ****                     LCD_Position(1,0);
+  99:.\main.c      ****                     LCD_PrintString("                ");
+ 100:.\main.c      ****                     LCD_Position(1,0);
+ 101:.\main.c      ****                     LCD_PrintString("Select pressed");
+ 102:.\main.c      ****                 }
+ 103:.\main.c      ****                 else if(BTN == LEFT){
+ 104:.\main.c      ****                     LCD_Position(1,0);
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 8
 
 
- 101:.\main.c      ****                     LCD_Position(1,0);
- 102:.\main.c      ****                     LCD_PrintString("Left pressed");
- 103:.\main.c      ****                 }
- 104:.\main.c      ****                 else if(BTN == RIGHT){
- 105:.\main.c      ****                     LCD_Position(1,0);
- 106:.\main.c      ****                     LCD_PrintString("                ");
- 107:.\main.c      ****                     LCD_Position(1,0);
- 108:.\main.c      ****                     LCD_PrintString("Right pressed");
- 109:.\main.c      ****                 }
- 110:.\main.c      ****                 else if(BTN == UP){
- 111:.\main.c      ****                     LCD_Position(1,0);
- 112:.\main.c      ****                     LCD_PrintString("                ");
- 113:.\main.c      ****                     LCD_Position(1,0);
- 114:.\main.c      ****                     LCD_PrintString("Up pressed");
- 115:.\main.c      ****                 }
- 116:.\main.c      ****                 else if(BTN == DOWN){
- 117:.\main.c      ****                     LCD_Position(1,0);
- 118:.\main.c      ****                     LCD_PrintString("                ");
- 119:.\main.c      ****                     LCD_Position(1,0);
- 120:.\main.c      ****                     LCD_PrintString("Down pressed");
- 121:.\main.c      ****                 }
- 122:.\main.c      ****             }
- 123:.\main.c      ****         }
- 124:.\main.c      ****     }
- 268              		.loc 1 124 0
- 269 00d0 D0E7     		b	.L13
- 270              	.L5:
- 271              	.LBB2:
-  81:.\main.c      ****             int16 temp = ADC_GetResult16(0);
- 272              		.loc 1 81 0
- 273 00d2 3C1D     		add	r4, r7, #4
- 274 00d4 0020     		mov	r0, #0
- 275 00d6 FFF7FEFF 		bl	ADC_GetResult16
- 276 00da 031C     		mov	r3, r0
- 277 00dc 2380     		strh	r3, [r4]
-  82:.\main.c      ****             if (temp > lightMax)
- 278              		.loc 1 82 0
- 279 00de 3A1D     		add	r2, r7, #4
- 280 00e0 BB1D     		add	r3, r7, #6
- 281 00e2 0021     		mov	r1, #0
- 282 00e4 525E     		ldrsh	r2, [r2, r1]
- 283 00e6 0021     		mov	r1, #0
- 284 00e8 5B5E     		ldrsh	r3, [r3, r1]
- 285 00ea 9A42     		cmp	r2, r3
- 286 00ec 03DD     		ble	.L8
-  83:.\main.c      ****                 lightMax = temp;
- 287              		.loc 1 83 0
- 288 00ee BB1D     		add	r3, r7, #6
- 289 00f0 3A1D     		add	r2, r7, #4
- 290 00f2 1288     		ldrh	r2, [r2]
- 291 00f4 1A80     		strh	r2, [r3]
- 292              	.L8:
-  84:.\main.c      ****             LCD_Position(0,0);
- 293              		.loc 1 84 0
- 294 00f6 0020     		mov	r0, #0
- 295 00f8 0021     		mov	r1, #0
- 296 00fa FFF7FEFF 		bl	LCD_Position
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 9
+ 105:.\main.c      ****                     LCD_PrintString("                ");
+ 106:.\main.c      ****                     LCD_Position(1,0);
+ 107:.\main.c      ****                     LCD_PrintString("Left pressed");
+ 108:.\main.c      ****                 }
+ 109:.\main.c      ****                 else if(BTN == RIGHT){
+ 110:.\main.c      ****                     LCD_Position(1,0);
+ 111:.\main.c      ****                     LCD_PrintString("                ");
+ 112:.\main.c      ****                     LCD_Position(1,0);
+ 113:.\main.c      ****                     LCD_PrintString("Right pressed");
+ 114:.\main.c      ****                 }
+ 115:.\main.c      ****                 else if(BTN == UP){
+ 116:.\main.c      ****                     LCD_Position(1,0);
+ 117:.\main.c      ****                     LCD_PrintString("                ");
+ 118:.\main.c      ****                     LCD_Position(1,0);
+ 119:.\main.c      ****                     LCD_PrintString("Up pressed");
+ 120:.\main.c      ****                 }
+ 121:.\main.c      ****                 else if(BTN == DOWN){
+ 122:.\main.c      ****                     LCD_Position(1,0);
+ 123:.\main.c      ****                     LCD_PrintString("                ");
+ 124:.\main.c      ****                     LCD_Position(1,0);
+ 125:.\main.c      ****                     LCD_PrintString("Down pressed");
+ 126:.\main.c      ****                 }
+ 127:.\main.c      ****             }
+ 128:.\main.c      ****             CyDelay(200);
+ 129:.\main.c      ****         }
+ 130:.\main.c      ****     }
+ 264              		.loc 1 130 0
+ 265 00ca D3E7     		b	.L14
+ 266              	.L5:
+ 267              	.LBB2:
+  86:.\main.c      ****             int16 temp = ADC_GetResult16(0);
+ 268              		.loc 1 86 0
+ 269 00cc 3C1D     		add	r4, r7, #4
+ 270 00ce 0020     		mov	r0, #0
+ 271 00d0 FFF7FEFF 		bl	ADC_GetResult16
+ 272 00d4 031C     		mov	r3, r0
+ 273 00d6 2380     		strh	r3, [r4]
+  87:.\main.c      ****             if (temp > lightMax)
+ 274              		.loc 1 87 0
+ 275 00d8 3A1D     		add	r2, r7, #4
+ 276 00da BB1D     		add	r3, r7, #6
+ 277 00dc 0021     		mov	r1, #0
+ 278 00de 525E     		ldrsh	r2, [r2, r1]
+ 279 00e0 0021     		mov	r1, #0
+ 280 00e2 5B5E     		ldrsh	r3, [r3, r1]
+ 281 00e4 9A42     		cmp	r2, r3
+ 282 00e6 03DD     		ble	.L8
+  88:.\main.c      ****                 lightMax = temp;
+ 283              		.loc 1 88 0
+ 284 00e8 BB1D     		add	r3, r7, #6
+ 285 00ea 3A1D     		add	r2, r7, #4
+ 286 00ec 1288     		ldrh	r2, [r2]
+ 287 00ee 1A80     		strh	r2, [r3]
+ 288              	.L8:
+  89:.\main.c      ****             LCD_Position(0,0);
+ 289              		.loc 1 89 0
+ 290 00f0 0020     		mov	r0, #0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 9
 
 
-  85:.\main.c      ****             LCD_PrintString("                ");
- 297              		.loc 1 85 0
- 298 00fe 4D4B     		ldr	r3, .L14+24
- 299 0100 181C     		mov	r0, r3
- 300 0102 FFF7FEFF 		bl	LCD_PrintString
-  86:.\main.c      ****             LCD_Position(0,0);
- 301              		.loc 1 86 0
- 302 0106 0020     		mov	r0, #0
- 303 0108 0021     		mov	r1, #0
- 304 010a FFF7FEFF 		bl	LCD_Position
-  87:.\main.c      ****             LCD_PrintNumber(temp);
- 305              		.loc 1 87 0
- 306 010e 3B1D     		add	r3, r7, #4
- 307 0110 1B88     		ldrh	r3, [r3]
- 308 0112 181C     		mov	r0, r3
- 309 0114 FFF7FEFF 		bl	LCD_PrintNumber
-  88:.\main.c      ****             LCD_Position(0,5);
- 310              		.loc 1 88 0
- 311 0118 0020     		mov	r0, #0
- 312 011a 0521     		mov	r1, #5
- 313 011c FFF7FEFF 		bl	LCD_Position
-  89:.\main.c      ****             LCD_PrintString("max: ");
- 314              		.loc 1 89 0
- 315 0120 454B     		ldr	r3, .L14+28
- 316 0122 181C     		mov	r0, r3
- 317 0124 FFF7FEFF 		bl	LCD_PrintString
-  90:.\main.c      ****             LCD_PrintNumber(lightMax);
- 318              		.loc 1 90 0
- 319 0128 BB1D     		add	r3, r7, #6
- 320 012a 1B88     		ldrh	r3, [r3]
- 321 012c 181C     		mov	r0, r3
- 322 012e FFF7FEFF 		bl	LCD_PrintNumber
-  91:.\main.c      ****             if (updateBTN()){
- 323              		.loc 1 91 0
- 324 0132 FFF7FEFF 		bl	updateBTN
- 325 0136 031C     		mov	r3, r0
- 326 0138 002B     		cmp	r3, #0
- 327 013a 6DD0     		beq	.L7
-  92:.\main.c      ****                 if (BTN == SELECT){
- 328              		.loc 1 92 0
- 329 013c 3F4B     		ldr	r3, .L14+32
- 330 013e 1B78     		ldrb	r3, [r3]
- 331 0140 DBB2     		uxtb	r3, r3
- 332 0142 012B     		cmp	r3, #1
- 333 0144 10D1     		bne	.L9
-  93:.\main.c      ****                     LCD_Position(1,0);
- 334              		.loc 1 93 0
- 335 0146 0120     		mov	r0, #1
- 336 0148 0021     		mov	r1, #0
- 337 014a FFF7FEFF 		bl	LCD_Position
-  94:.\main.c      ****                     LCD_PrintString("                ");
- 338              		.loc 1 94 0
- 339 014e 394B     		ldr	r3, .L14+24
- 340 0150 181C     		mov	r0, r3
- 341 0152 FFF7FEFF 		bl	LCD_PrintString
-  95:.\main.c      ****                     LCD_Position(1,0);
- 342              		.loc 1 95 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 10
+ 291 00f2 0021     		mov	r1, #0
+ 292 00f4 FFF7FEFF 		bl	LCD_Position
+  90:.\main.c      ****             LCD_PrintString("                ");
+ 293              		.loc 1 90 0
+ 294 00f8 4D4B     		ldr	r3, .L15+24
+ 295 00fa 181C     		mov	r0, r3
+ 296 00fc FFF7FEFF 		bl	LCD_PrintString
+  91:.\main.c      ****             LCD_Position(0,0);
+ 297              		.loc 1 91 0
+ 298 0100 0020     		mov	r0, #0
+ 299 0102 0021     		mov	r1, #0
+ 300 0104 FFF7FEFF 		bl	LCD_Position
+  92:.\main.c      ****             LCD_PrintNumber(temp);
+ 301              		.loc 1 92 0
+ 302 0108 3B1D     		add	r3, r7, #4
+ 303 010a 1B88     		ldrh	r3, [r3]
+ 304 010c 181C     		mov	r0, r3
+ 305 010e FFF7FEFF 		bl	LCD_PrintNumber
+  93:.\main.c      ****             LCD_Position(0,5);
+ 306              		.loc 1 93 0
+ 307 0112 0020     		mov	r0, #0
+ 308 0114 0521     		mov	r1, #5
+ 309 0116 FFF7FEFF 		bl	LCD_Position
+  94:.\main.c      ****             LCD_PrintString("max: ");
+ 310              		.loc 1 94 0
+ 311 011a 464B     		ldr	r3, .L15+28
+ 312 011c 181C     		mov	r0, r3
+ 313 011e FFF7FEFF 		bl	LCD_PrintString
+  95:.\main.c      ****             LCD_PrintNumber(lightMax);
+ 314              		.loc 1 95 0
+ 315 0122 BB1D     		add	r3, r7, #6
+ 316 0124 1B88     		ldrh	r3, [r3]
+ 317 0126 181C     		mov	r0, r3
+ 318 0128 FFF7FEFF 		bl	LCD_PrintNumber
+  96:.\main.c      ****             if (updateBTN()){
+ 319              		.loc 1 96 0
+ 320 012c FFF7FEFF 		bl	updateBTN
+ 321 0130 031C     		mov	r3, r0
+ 322 0132 002B     		cmp	r3, #0
+ 323 0134 6CD0     		beq	.L9
+  97:.\main.c      ****                 if (BTN == SELECT){
+ 324              		.loc 1 97 0
+ 325 0136 404B     		ldr	r3, .L15+32
+ 326 0138 1B78     		ldrb	r3, [r3]
+ 327 013a DBB2     		uxtb	r3, r3
+ 328 013c 012B     		cmp	r3, #1
+ 329 013e 10D1     		bne	.L10
+  98:.\main.c      ****                     LCD_Position(1,0);
+ 330              		.loc 1 98 0
+ 331 0140 0120     		mov	r0, #1
+ 332 0142 0021     		mov	r1, #0
+ 333 0144 FFF7FEFF 		bl	LCD_Position
+  99:.\main.c      ****                     LCD_PrintString("                ");
+ 334              		.loc 1 99 0
+ 335 0148 394B     		ldr	r3, .L15+24
+ 336 014a 181C     		mov	r0, r3
+ 337 014c FFF7FEFF 		bl	LCD_PrintString
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 10
 
 
- 343 0156 0120     		mov	r0, #1
- 344 0158 0021     		mov	r1, #0
- 345 015a FFF7FEFF 		bl	LCD_Position
-  96:.\main.c      ****                     LCD_PrintString("Select pressed");
- 346              		.loc 1 96 0
- 347 015e 384B     		ldr	r3, .L14+36
- 348 0160 181C     		mov	r0, r3
- 349 0162 FFF7FEFF 		bl	LCD_PrintString
- 350 0166 57E0     		b	.L7
- 351              	.L9:
-  98:.\main.c      ****                 else if(BTN == LEFT){
- 352              		.loc 1 98 0
- 353 0168 344B     		ldr	r3, .L14+32
- 354 016a 1B78     		ldrb	r3, [r3]
- 355 016c DBB2     		uxtb	r3, r3
- 356 016e 022B     		cmp	r3, #2
- 357 0170 10D1     		bne	.L10
-  99:.\main.c      ****                     LCD_Position(1,0);
- 358              		.loc 1 99 0
- 359 0172 0120     		mov	r0, #1
- 360 0174 0021     		mov	r1, #0
- 361 0176 FFF7FEFF 		bl	LCD_Position
- 100:.\main.c      ****                     LCD_PrintString("                ");
- 362              		.loc 1 100 0
- 363 017a 2E4B     		ldr	r3, .L14+24
- 364 017c 181C     		mov	r0, r3
- 365 017e FFF7FEFF 		bl	LCD_PrintString
- 101:.\main.c      ****                     LCD_Position(1,0);
- 366              		.loc 1 101 0
- 367 0182 0120     		mov	r0, #1
- 368 0184 0021     		mov	r1, #0
- 369 0186 FFF7FEFF 		bl	LCD_Position
- 102:.\main.c      ****                     LCD_PrintString("Left pressed");
- 370              		.loc 1 102 0
- 371 018a 2E4B     		ldr	r3, .L14+40
- 372 018c 181C     		mov	r0, r3
- 373 018e FFF7FEFF 		bl	LCD_PrintString
- 374 0192 41E0     		b	.L7
- 375              	.L10:
- 104:.\main.c      ****                 else if(BTN == RIGHT){
- 376              		.loc 1 104 0
- 377 0194 294B     		ldr	r3, .L14+32
- 378 0196 1B78     		ldrb	r3, [r3]
- 379 0198 DBB2     		uxtb	r3, r3
- 380 019a 052B     		cmp	r3, #5
- 381 019c 10D1     		bne	.L11
- 105:.\main.c      ****                     LCD_Position(1,0);
- 382              		.loc 1 105 0
- 383 019e 0120     		mov	r0, #1
- 384 01a0 0021     		mov	r1, #0
- 385 01a2 FFF7FEFF 		bl	LCD_Position
- 106:.\main.c      ****                     LCD_PrintString("                ");
- 386              		.loc 1 106 0
- 387 01a6 234B     		ldr	r3, .L14+24
- 388 01a8 181C     		mov	r0, r3
- 389 01aa FFF7FEFF 		bl	LCD_PrintString
- 107:.\main.c      ****                     LCD_Position(1,0);
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 11
+ 100:.\main.c      ****                     LCD_Position(1,0);
+ 338              		.loc 1 100 0
+ 339 0150 0120     		mov	r0, #1
+ 340 0152 0021     		mov	r1, #0
+ 341 0154 FFF7FEFF 		bl	LCD_Position
+ 101:.\main.c      ****                     LCD_PrintString("Select pressed");
+ 342              		.loc 1 101 0
+ 343 0158 384B     		ldr	r3, .L15+36
+ 344 015a 181C     		mov	r0, r3
+ 345 015c FFF7FEFF 		bl	LCD_PrintString
+ 346 0160 56E0     		b	.L9
+ 347              	.L10:
+ 103:.\main.c      ****                 else if(BTN == LEFT){
+ 348              		.loc 1 103 0
+ 349 0162 354B     		ldr	r3, .L15+32
+ 350 0164 1B78     		ldrb	r3, [r3]
+ 351 0166 DBB2     		uxtb	r3, r3
+ 352 0168 022B     		cmp	r3, #2
+ 353 016a 10D1     		bne	.L11
+ 104:.\main.c      ****                     LCD_Position(1,0);
+ 354              		.loc 1 104 0
+ 355 016c 0120     		mov	r0, #1
+ 356 016e 0021     		mov	r1, #0
+ 357 0170 FFF7FEFF 		bl	LCD_Position
+ 105:.\main.c      ****                     LCD_PrintString("                ");
+ 358              		.loc 1 105 0
+ 359 0174 2E4B     		ldr	r3, .L15+24
+ 360 0176 181C     		mov	r0, r3
+ 361 0178 FFF7FEFF 		bl	LCD_PrintString
+ 106:.\main.c      ****                     LCD_Position(1,0);
+ 362              		.loc 1 106 0
+ 363 017c 0120     		mov	r0, #1
+ 364 017e 0021     		mov	r1, #0
+ 365 0180 FFF7FEFF 		bl	LCD_Position
+ 107:.\main.c      ****                     LCD_PrintString("Left pressed");
+ 366              		.loc 1 107 0
+ 367 0184 2E4B     		ldr	r3, .L15+40
+ 368 0186 181C     		mov	r0, r3
+ 369 0188 FFF7FEFF 		bl	LCD_PrintString
+ 370 018c 40E0     		b	.L9
+ 371              	.L11:
+ 109:.\main.c      ****                 else if(BTN == RIGHT){
+ 372              		.loc 1 109 0
+ 373 018e 2A4B     		ldr	r3, .L15+32
+ 374 0190 1B78     		ldrb	r3, [r3]
+ 375 0192 DBB2     		uxtb	r3, r3
+ 376 0194 052B     		cmp	r3, #5
+ 377 0196 10D1     		bne	.L12
+ 110:.\main.c      ****                     LCD_Position(1,0);
+ 378              		.loc 1 110 0
+ 379 0198 0120     		mov	r0, #1
+ 380 019a 0021     		mov	r1, #0
+ 381 019c FFF7FEFF 		bl	LCD_Position
+ 111:.\main.c      ****                     LCD_PrintString("                ");
+ 382              		.loc 1 111 0
+ 383 01a0 234B     		ldr	r3, .L15+24
+ 384 01a2 181C     		mov	r0, r3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 11
 
 
- 390              		.loc 1 107 0
- 391 01ae 0120     		mov	r0, #1
- 392 01b0 0021     		mov	r1, #0
- 393 01b2 FFF7FEFF 		bl	LCD_Position
- 108:.\main.c      ****                     LCD_PrintString("Right pressed");
- 394              		.loc 1 108 0
- 395 01b6 244B     		ldr	r3, .L14+44
- 396 01b8 181C     		mov	r0, r3
- 397 01ba FFF7FEFF 		bl	LCD_PrintString
- 398 01be 2BE0     		b	.L7
- 399              	.L11:
- 110:.\main.c      ****                 else if(BTN == UP){
- 400              		.loc 1 110 0
- 401 01c0 1E4B     		ldr	r3, .L14+32
- 402 01c2 1B78     		ldrb	r3, [r3]
- 403 01c4 DBB2     		uxtb	r3, r3
- 404 01c6 042B     		cmp	r3, #4
- 405 01c8 10D1     		bne	.L12
- 111:.\main.c      ****                     LCD_Position(1,0);
- 406              		.loc 1 111 0
- 407 01ca 0120     		mov	r0, #1
- 408 01cc 0021     		mov	r1, #0
- 409 01ce FFF7FEFF 		bl	LCD_Position
- 112:.\main.c      ****                     LCD_PrintString("                ");
- 410              		.loc 1 112 0
- 411 01d2 184B     		ldr	r3, .L14+24
- 412 01d4 181C     		mov	r0, r3
- 413 01d6 FFF7FEFF 		bl	LCD_PrintString
- 113:.\main.c      ****                     LCD_Position(1,0);
- 414              		.loc 1 113 0
- 415 01da 0120     		mov	r0, #1
- 416 01dc 0021     		mov	r1, #0
- 417 01de FFF7FEFF 		bl	LCD_Position
- 114:.\main.c      ****                     LCD_PrintString("Up pressed");
- 418              		.loc 1 114 0
- 419 01e2 1A4B     		ldr	r3, .L14+48
- 420 01e4 181C     		mov	r0, r3
- 421 01e6 FFF7FEFF 		bl	LCD_PrintString
- 422 01ea 15E0     		b	.L7
- 423              	.L12:
- 116:.\main.c      ****                 else if(BTN == DOWN){
- 424              		.loc 1 116 0
- 425 01ec 134B     		ldr	r3, .L14+32
- 426 01ee 1B78     		ldrb	r3, [r3]
- 427 01f0 DBB2     		uxtb	r3, r3
- 428 01f2 032B     		cmp	r3, #3
- 429 01f4 10D1     		bne	.L7
- 117:.\main.c      ****                     LCD_Position(1,0);
- 430              		.loc 1 117 0
- 431 01f6 0120     		mov	r0, #1
- 432 01f8 0021     		mov	r1, #0
- 433 01fa FFF7FEFF 		bl	LCD_Position
- 118:.\main.c      ****                     LCD_PrintString("                ");
- 434              		.loc 1 118 0
- 435 01fe 0D4B     		ldr	r3, .L14+24
- 436 0200 181C     		mov	r0, r3
- 437 0202 FFF7FEFF 		bl	LCD_PrintString
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 12
+ 385 01a4 FFF7FEFF 		bl	LCD_PrintString
+ 112:.\main.c      ****                     LCD_Position(1,0);
+ 386              		.loc 1 112 0
+ 387 01a8 0120     		mov	r0, #1
+ 388 01aa 0021     		mov	r1, #0
+ 389 01ac FFF7FEFF 		bl	LCD_Position
+ 113:.\main.c      ****                     LCD_PrintString("Right pressed");
+ 390              		.loc 1 113 0
+ 391 01b0 244B     		ldr	r3, .L15+44
+ 392 01b2 181C     		mov	r0, r3
+ 393 01b4 FFF7FEFF 		bl	LCD_PrintString
+ 394 01b8 2AE0     		b	.L9
+ 395              	.L12:
+ 115:.\main.c      ****                 else if(BTN == UP){
+ 396              		.loc 1 115 0
+ 397 01ba 1F4B     		ldr	r3, .L15+32
+ 398 01bc 1B78     		ldrb	r3, [r3]
+ 399 01be DBB2     		uxtb	r3, r3
+ 400 01c0 042B     		cmp	r3, #4
+ 401 01c2 10D1     		bne	.L13
+ 116:.\main.c      ****                     LCD_Position(1,0);
+ 402              		.loc 1 116 0
+ 403 01c4 0120     		mov	r0, #1
+ 404 01c6 0021     		mov	r1, #0
+ 405 01c8 FFF7FEFF 		bl	LCD_Position
+ 117:.\main.c      ****                     LCD_PrintString("                ");
+ 406              		.loc 1 117 0
+ 407 01cc 184B     		ldr	r3, .L15+24
+ 408 01ce 181C     		mov	r0, r3
+ 409 01d0 FFF7FEFF 		bl	LCD_PrintString
+ 118:.\main.c      ****                     LCD_Position(1,0);
+ 410              		.loc 1 118 0
+ 411 01d4 0120     		mov	r0, #1
+ 412 01d6 0021     		mov	r1, #0
+ 413 01d8 FFF7FEFF 		bl	LCD_Position
+ 119:.\main.c      ****                     LCD_PrintString("Up pressed");
+ 414              		.loc 1 119 0
+ 415 01dc 1A4B     		ldr	r3, .L15+48
+ 416 01de 181C     		mov	r0, r3
+ 417 01e0 FFF7FEFF 		bl	LCD_PrintString
+ 418 01e4 14E0     		b	.L9
+ 419              	.L13:
+ 121:.\main.c      ****                 else if(BTN == DOWN){
+ 420              		.loc 1 121 0
+ 421 01e6 144B     		ldr	r3, .L15+32
+ 422 01e8 1B78     		ldrb	r3, [r3]
+ 423 01ea DBB2     		uxtb	r3, r3
+ 424 01ec 032B     		cmp	r3, #3
+ 425 01ee 0FD1     		bne	.L9
+ 122:.\main.c      ****                     LCD_Position(1,0);
+ 426              		.loc 1 122 0
+ 427 01f0 0120     		mov	r0, #1
+ 428 01f2 0021     		mov	r1, #0
+ 429 01f4 FFF7FEFF 		bl	LCD_Position
+ 123:.\main.c      ****                     LCD_PrintString("                ");
+ 430              		.loc 1 123 0
+ 431 01f8 0D4B     		ldr	r3, .L15+24
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 12
 
 
- 119:.\main.c      ****                     LCD_Position(1,0);
- 438              		.loc 1 119 0
- 439 0206 0120     		mov	r0, #1
- 440 0208 0021     		mov	r1, #0
- 441 020a FFF7FEFF 		bl	LCD_Position
- 120:.\main.c      ****                     LCD_PrintString("Down pressed");
- 442              		.loc 1 120 0
- 443 020e 104B     		ldr	r3, .L14+52
- 444 0210 181C     		mov	r0, r3
- 445 0212 FFF7FEFF 		bl	LCD_PrintString
+ 432 01fa 181C     		mov	r0, r3
+ 433 01fc FFF7FEFF 		bl	LCD_PrintString
+ 124:.\main.c      ****                     LCD_Position(1,0);
+ 434              		.loc 1 124 0
+ 435 0200 0120     		mov	r0, #1
+ 436 0202 0021     		mov	r1, #0
+ 437 0204 FFF7FEFF 		bl	LCD_Position
+ 125:.\main.c      ****                     LCD_PrintString("Down pressed");
+ 438              		.loc 1 125 0
+ 439 0208 104B     		ldr	r3, .L15+52
+ 440 020a 181C     		mov	r0, r3
+ 441 020c FFF7FEFF 		bl	LCD_PrintString
+ 442              	.L9:
+ 128:.\main.c      ****             CyDelay(200);
+ 443              		.loc 1 128 0
+ 444 0210 C820     		mov	r0, #200
+ 445 0212 FFF7FEFF 		bl	CyDelay
  446              	.LBE2:
- 447              		.loc 1 124 0
- 448 0216 2DE7     		b	.L13
- 449              	.L7:
- 450 0218 2CE7     		b	.L13
+ 447              		.loc 1 130 0
+ 448 0216 2DE7     		b	.L14
+ 449              	.L16:
+ 450              		.align	2
  451              	.L15:
- 452 021a C046     		.align	2
- 453              	.L14:
- 454 021c 00000000 		.word	sw_int_ISR
- 455 0220 40000000 		.word	.LC7
- 456 0224 50000000 		.word	.LC9
- 457 0228 00000000 		.word	running
- 458 022c 00000000 		.word	V_new
- 459 0230 00000000 		.word	time
- 460 0234 6C000000 		.word	.LC14
- 461 0238 80000000 		.word	.LC16
- 462 023c 00000000 		.word	BTN
- 463 0240 88000000 		.word	.LC19
- 464 0244 98000000 		.word	.LC21
- 465 0248 A8000000 		.word	.LC23
- 466 024c B8000000 		.word	.LC25
- 467 0250 C4000000 		.word	.LC27
- 468              		.cfi_endproc
- 469              	.LFE34:
- 470              		.size	main, .-main
- 471              		.global	__aeabi_uldivmod
- 472              		.section	.rodata
- 473 00d1 000000   		.align	2
- 474              	.LC29:
- 475 00d4 54696D65 		.ascii	"Timer stopped, measured time was: \000"
- 475      72207374 
- 475      6F707065 
- 475      642C206D 
- 475      65617375 
- 476              		.global	__aeabi_uidiv
- 477              		.global	__aeabi_uidivmod
- 478 00f7 00       		.align	2
- 479              	.LC31:
- 480 00f8 20636F75 		.ascii	" counts or \000"
- 480      6E747320 
- 480      6F722000 
- 481              		.align	2
- 482              	.LC33:
- 483 0104 2075732E 		.ascii	" us.\012\015\000"
- 483      0A0D00
- 484              		.section	.text.puts_measurement,"ax",%progbits
- 485              		.align	2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 13
+ 452 0218 00000000 		.word	sw_int_ISR
+ 453 021c 40000000 		.word	.LC7
+ 454 0220 50000000 		.word	.LC9
+ 455 0224 00000000 		.word	running
+ 456 0228 FF070000 		.word	2047
+ 457 022c 00000000 		.word	time
+ 458 0230 6C000000 		.word	.LC13
+ 459 0234 80000000 		.word	.LC15
+ 460 0238 00000000 		.word	BTN
+ 461 023c 88000000 		.word	.LC18
+ 462 0240 98000000 		.word	.LC20
+ 463 0244 A8000000 		.word	.LC22
+ 464 0248 B8000000 		.word	.LC24
+ 465 024c C4000000 		.word	.LC26
+ 466              		.cfi_endproc
+ 467              	.LFE34:
+ 468              		.size	main, .-main
+ 469              		.global	__aeabi_uldivmod
+ 470              		.section	.rodata
+ 471 00d1 000000   		.align	2
+ 472              	.LC28:
+ 473 00d4 54696D65 		.ascii	"Timer stopped, measured time was: \000"
+ 473      72207374 
+ 473      6F707065 
+ 473      642C206D 
+ 473      65617375 
+ 474              		.global	__aeabi_uidiv
+ 475              		.global	__aeabi_uidivmod
+ 476 00f7 00       		.align	2
+ 477              	.LC30:
+ 478 00f8 20636F75 		.ascii	" counts or \000"
+ 478      6E747320 
+ 478      6F722000 
+ 479              		.align	2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 13
 
 
- 486              		.global	puts_measurement
- 487              		.code	16
- 488              		.thumb_func
- 489              		.type	puts_measurement, %function
- 490              	puts_measurement:
- 491              	.LFB35:
- 125:.\main.c      **** }
- 126:.\main.c      **** 
- 127:.\main.c      **** void puts_measurement(uint32 time){
- 492              		.loc 1 127 0
- 493              		.cfi_startproc
- 494 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 495              		.cfi_def_cfa_offset 20
- 496              		.cfi_offset 4, -20
- 497              		.cfi_offset 5, -16
- 498              		.cfi_offset 6, -12
- 499              		.cfi_offset 7, -8
- 500              		.cfi_offset 14, -4
- 501 0002 87B0     		sub	sp, sp, #28
- 502              		.cfi_def_cfa_offset 48
- 503 0004 00AF     		add	r7, sp, #0
- 504              		.cfi_def_cfa_register 7
- 505 0006 F860     		str	r0, [r7, #12]
- 128:.\main.c      ****     uint64 time_us = ((uint64)time * 125) / 3000;
- 506              		.loc 1 128 0
- 507 0008 FB68     		ldr	r3, [r7, #12]
- 508 000a 191C     		mov	r1, r3
- 509 000c 0023     		mov	r3, #0
- 510 000e 1A1C     		mov	r2, r3
- 511 0010 0B1C     		mov	r3, r1
- 512 0012 141C     		mov	r4, r2
- 513 0014 D80E     		lsr	r0, r3, #27
- 514 0016 6501     		lsl	r5, r4, #5
- 515 0018 7D60     		str	r5, [r7, #4]
- 516 001a 7D68     		ldr	r5, [r7, #4]
- 517 001c 0543     		orr	r5, r0
- 518 001e 7D60     		str	r5, [r7, #4]
- 519 0020 5801     		lsl	r0, r3, #5
- 520 0022 3860     		str	r0, [r7]
- 521 0024 3B68     		ldr	r3, [r7]
- 522 0026 7C68     		ldr	r4, [r7, #4]
- 523 0028 5B1A     		sub	r3, r3, r1
- 524 002a 9441     		sbc	r4, r4, r2
- 525 002c 980F     		lsr	r0, r3, #30
- 526 002e A600     		lsl	r6, r4, #2
- 527 0030 0643     		orr	r6, r0
- 528 0032 9D00     		lsl	r5, r3, #2
- 529 0034 2B1C     		mov	r3, r5
- 530 0036 341C     		mov	r4, r6
- 531 0038 5B18     		add	r3, r3, r1
- 532 003a 5441     		adc	r4, r4, r2
- 533 003c 181C     		mov	r0, r3
- 534 003e 211C     		mov	r1, r4
- 535 0040 CA4B     		ldr	r3, .L17+4
- 536 0042 C94A     		ldr	r2, .L17
- 537 0044 FFF7FEFF 		bl	__aeabi_uldivmod
- 538 0048 031C     		mov	r3, r0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 14
+ 480              	.LC32:
+ 481 0104 2075732E 		.ascii	" us.\012\015\000"
+ 481      0A0D00
+ 482              		.section	.text.puts_measurement,"ax",%progbits
+ 483              		.align	2
+ 484              		.global	puts_measurement
+ 485              		.code	16
+ 486              		.thumb_func
+ 487              		.type	puts_measurement, %function
+ 488              	puts_measurement:
+ 489              	.LFB35:
+ 131:.\main.c      **** }
+ 132:.\main.c      **** 
+ 133:.\main.c      **** void puts_measurement(uint32 time){
+ 490              		.loc 1 133 0
+ 491              		.cfi_startproc
+ 492 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 493              		.cfi_def_cfa_offset 20
+ 494              		.cfi_offset 4, -20
+ 495              		.cfi_offset 5, -16
+ 496              		.cfi_offset 6, -12
+ 497              		.cfi_offset 7, -8
+ 498              		.cfi_offset 14, -4
+ 499 0002 87B0     		sub	sp, sp, #28
+ 500              		.cfi_def_cfa_offset 48
+ 501 0004 00AF     		add	r7, sp, #0
+ 502              		.cfi_def_cfa_register 7
+ 503 0006 F860     		str	r0, [r7, #12]
+ 134:.\main.c      ****     uint64 time_us = ((uint64)time * 125) / 3000;
+ 504              		.loc 1 134 0
+ 505 0008 FB68     		ldr	r3, [r7, #12]
+ 506 000a 191C     		mov	r1, r3
+ 507 000c 0023     		mov	r3, #0
+ 508 000e 1A1C     		mov	r2, r3
+ 509 0010 0B1C     		mov	r3, r1
+ 510 0012 141C     		mov	r4, r2
+ 511 0014 D80E     		lsr	r0, r3, #27
+ 512 0016 6501     		lsl	r5, r4, #5
+ 513 0018 7D60     		str	r5, [r7, #4]
+ 514 001a 7D68     		ldr	r5, [r7, #4]
+ 515 001c 0543     		orr	r5, r0
+ 516 001e 7D60     		str	r5, [r7, #4]
+ 517 0020 5801     		lsl	r0, r3, #5
+ 518 0022 3860     		str	r0, [r7]
+ 519 0024 3B68     		ldr	r3, [r7]
+ 520 0026 7C68     		ldr	r4, [r7, #4]
+ 521 0028 5B1A     		sub	r3, r3, r1
+ 522 002a 9441     		sbc	r4, r4, r2
+ 523 002c 980F     		lsr	r0, r3, #30
+ 524 002e A600     		lsl	r6, r4, #2
+ 525 0030 0643     		orr	r6, r0
+ 526 0032 9D00     		lsl	r5, r3, #2
+ 527 0034 2B1C     		mov	r3, r5
+ 528 0036 341C     		mov	r4, r6
+ 529 0038 5B18     		add	r3, r3, r1
+ 530 003a 5441     		adc	r4, r4, r2
+ 531 003c 181C     		mov	r0, r3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 14
 
 
- 539 004a 0C1C     		mov	r4, r1
- 540 004c 3B61     		str	r3, [r7, #16]
- 541 004e 7C61     		str	r4, [r7, #20]
- 129:.\main.c      ****     UART_1_UartPutString("Timer stopped, measured time was: ");
- 542              		.loc 1 129 0
- 543 0050 D34B     		ldr	r3, .L17+56
- 544 0052 181C     		mov	r0, r3
- 545 0054 FFF7FEFF 		bl	UART_1_UartPutString
- 130:.\main.c      ****     UART_1_UartPutChar(time/1000000000u + CONVERT_TO_ASCII);
- 546              		.loc 1 130 0
- 547 0058 FB68     		ldr	r3, [r7, #12]
- 548 005a 181C     		mov	r0, r3
- 549 005c D149     		ldr	r1, .L17+60
- 550 005e FFF7FEFF 		bl	__aeabi_uidiv
- 551 0062 031C     		mov	r3, r0
- 552 0064 3033     		add	r3, r3, #48
- 553 0066 181C     		mov	r0, r3
- 554 0068 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 131:.\main.c      ****     time %= 1000000000;
- 555              		.loc 1 131 0
- 556 006c FB68     		ldr	r3, [r7, #12]
- 557 006e 181C     		mov	r0, r3
- 558 0070 CC49     		ldr	r1, .L17+60
- 559 0072 FFF7FEFF 		bl	__aeabi_uidivmod
- 560 0076 0B1C     		mov	r3, r1
- 561 0078 FB60     		str	r3, [r7, #12]
- 132:.\main.c      ****     UART_1_UartPutChar(time/100000000u + CONVERT_TO_ASCII);
- 562              		.loc 1 132 0
- 563 007a FB68     		ldr	r3, [r7, #12]
- 564 007c 181C     		mov	r0, r3
- 565 007e CA49     		ldr	r1, .L17+64
- 566 0080 FFF7FEFF 		bl	__aeabi_uidiv
- 567 0084 031C     		mov	r3, r0
- 568 0086 3033     		add	r3, r3, #48
- 569 0088 181C     		mov	r0, r3
- 570 008a FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 133:.\main.c      ****     time %= 100000000;
- 571              		.loc 1 133 0
- 572 008e FB68     		ldr	r3, [r7, #12]
- 573 0090 181C     		mov	r0, r3
- 574 0092 C549     		ldr	r1, .L17+64
- 575 0094 FFF7FEFF 		bl	__aeabi_uidivmod
- 576 0098 0B1C     		mov	r3, r1
- 577 009a FB60     		str	r3, [r7, #12]
- 134:.\main.c      ****     UART_1_UartPutChar(time/10000000u + CONVERT_TO_ASCII);
- 578              		.loc 1 134 0
- 579 009c FB68     		ldr	r3, [r7, #12]
- 580 009e 181C     		mov	r0, r3
- 581 00a0 C249     		ldr	r1, .L17+68
- 582 00a2 FFF7FEFF 		bl	__aeabi_uidiv
- 583 00a6 031C     		mov	r3, r0
- 584 00a8 3033     		add	r3, r3, #48
- 585 00aa 181C     		mov	r0, r3
- 586 00ac FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 135:.\main.c      ****     time %= 10000000;
- 587              		.loc 1 135 0
- 588 00b0 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 15
+ 532 003e 211C     		mov	r1, r4
+ 533 0040 CA4B     		ldr	r3, .L18+4
+ 534 0042 C94A     		ldr	r2, .L18
+ 535 0044 FFF7FEFF 		bl	__aeabi_uldivmod
+ 536 0048 031C     		mov	r3, r0
+ 537 004a 0C1C     		mov	r4, r1
+ 538 004c 3B61     		str	r3, [r7, #16]
+ 539 004e 7C61     		str	r4, [r7, #20]
+ 135:.\main.c      ****     UART_1_UartPutString("Timer stopped, measured time was: ");
+ 540              		.loc 1 135 0
+ 541 0050 D34B     		ldr	r3, .L18+56
+ 542 0052 181C     		mov	r0, r3
+ 543 0054 FFF7FEFF 		bl	UART_1_UartPutString
+ 136:.\main.c      ****     UART_1_UartPutChar(time/1000000000u + CONVERT_TO_ASCII);
+ 544              		.loc 1 136 0
+ 545 0058 FB68     		ldr	r3, [r7, #12]
+ 546 005a 181C     		mov	r0, r3
+ 547 005c D149     		ldr	r1, .L18+60
+ 548 005e FFF7FEFF 		bl	__aeabi_uidiv
+ 549 0062 031C     		mov	r3, r0
+ 550 0064 3033     		add	r3, r3, #48
+ 551 0066 181C     		mov	r0, r3
+ 552 0068 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 137:.\main.c      ****     time %= 1000000000;
+ 553              		.loc 1 137 0
+ 554 006c FB68     		ldr	r3, [r7, #12]
+ 555 006e 181C     		mov	r0, r3
+ 556 0070 CC49     		ldr	r1, .L18+60
+ 557 0072 FFF7FEFF 		bl	__aeabi_uidivmod
+ 558 0076 0B1C     		mov	r3, r1
+ 559 0078 FB60     		str	r3, [r7, #12]
+ 138:.\main.c      ****     UART_1_UartPutChar(time/100000000u + CONVERT_TO_ASCII);
+ 560              		.loc 1 138 0
+ 561 007a FB68     		ldr	r3, [r7, #12]
+ 562 007c 181C     		mov	r0, r3
+ 563 007e CA49     		ldr	r1, .L18+64
+ 564 0080 FFF7FEFF 		bl	__aeabi_uidiv
+ 565 0084 031C     		mov	r3, r0
+ 566 0086 3033     		add	r3, r3, #48
+ 567 0088 181C     		mov	r0, r3
+ 568 008a FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 139:.\main.c      ****     time %= 100000000;
+ 569              		.loc 1 139 0
+ 570 008e FB68     		ldr	r3, [r7, #12]
+ 571 0090 181C     		mov	r0, r3
+ 572 0092 C549     		ldr	r1, .L18+64
+ 573 0094 FFF7FEFF 		bl	__aeabi_uidivmod
+ 574 0098 0B1C     		mov	r3, r1
+ 575 009a FB60     		str	r3, [r7, #12]
+ 140:.\main.c      ****     UART_1_UartPutChar(time/10000000u + CONVERT_TO_ASCII);
+ 576              		.loc 1 140 0
+ 577 009c FB68     		ldr	r3, [r7, #12]
+ 578 009e 181C     		mov	r0, r3
+ 579 00a0 C249     		ldr	r1, .L18+68
+ 580 00a2 FFF7FEFF 		bl	__aeabi_uidiv
+ 581 00a6 031C     		mov	r3, r0
+ 582 00a8 3033     		add	r3, r3, #48
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 15
 
 
- 589 00b2 181C     		mov	r0, r3
- 590 00b4 BD49     		ldr	r1, .L17+68
- 591 00b6 FFF7FEFF 		bl	__aeabi_uidivmod
- 592 00ba 0B1C     		mov	r3, r1
- 593 00bc FB60     		str	r3, [r7, #12]
- 136:.\main.c      ****     UART_1_UartPutChar(time/1000000u + CONVERT_TO_ASCII);
- 594              		.loc 1 136 0
- 595 00be FB68     		ldr	r3, [r7, #12]
- 596 00c0 181C     		mov	r0, r3
- 597 00c2 BB49     		ldr	r1, .L17+72
- 598 00c4 FFF7FEFF 		bl	__aeabi_uidiv
- 599 00c8 031C     		mov	r3, r0
- 600 00ca 3033     		add	r3, r3, #48
- 601 00cc 181C     		mov	r0, r3
- 602 00ce FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 137:.\main.c      ****     time %= 1000000;
- 603              		.loc 1 137 0
- 604 00d2 FB68     		ldr	r3, [r7, #12]
- 605 00d4 181C     		mov	r0, r3
- 606 00d6 B649     		ldr	r1, .L17+72
- 607 00d8 FFF7FEFF 		bl	__aeabi_uidivmod
- 608 00dc 0B1C     		mov	r3, r1
- 609 00de FB60     		str	r3, [r7, #12]
- 138:.\main.c      ****     UART_1_UartPutChar(time/100000u + CONVERT_TO_ASCII);
- 610              		.loc 1 138 0
- 611 00e0 FB68     		ldr	r3, [r7, #12]
- 612 00e2 181C     		mov	r0, r3
- 613 00e4 B349     		ldr	r1, .L17+76
- 614 00e6 FFF7FEFF 		bl	__aeabi_uidiv
- 615 00ea 031C     		mov	r3, r0
- 616 00ec 3033     		add	r3, r3, #48
- 617 00ee 181C     		mov	r0, r3
- 618 00f0 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 139:.\main.c      ****     time %= 100000;
- 619              		.loc 1 139 0
- 620 00f4 FB68     		ldr	r3, [r7, #12]
- 621 00f6 181C     		mov	r0, r3
- 622 00f8 AE49     		ldr	r1, .L17+76
- 623 00fa FFF7FEFF 		bl	__aeabi_uidivmod
- 624 00fe 0B1C     		mov	r3, r1
- 625 0100 FB60     		str	r3, [r7, #12]
- 140:.\main.c      ****     UART_1_UartPutChar(time/10000u + CONVERT_TO_ASCII);
- 626              		.loc 1 140 0
- 627 0102 FB68     		ldr	r3, [r7, #12]
- 628 0104 181C     		mov	r0, r3
- 629 0106 AC49     		ldr	r1, .L17+80
- 630 0108 FFF7FEFF 		bl	__aeabi_uidiv
- 631 010c 031C     		mov	r3, r0
- 632 010e 3033     		add	r3, r3, #48
- 633 0110 181C     		mov	r0, r3
- 634 0112 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 141:.\main.c      ****     time %= 10000;
- 635              		.loc 1 141 0
- 636 0116 FB68     		ldr	r3, [r7, #12]
- 637 0118 181C     		mov	r0, r3
- 638 011a A749     		ldr	r1, .L17+80
- 639 011c FFF7FEFF 		bl	__aeabi_uidivmod
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 16
+ 583 00aa 181C     		mov	r0, r3
+ 584 00ac FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 141:.\main.c      ****     time %= 10000000;
+ 585              		.loc 1 141 0
+ 586 00b0 FB68     		ldr	r3, [r7, #12]
+ 587 00b2 181C     		mov	r0, r3
+ 588 00b4 BD49     		ldr	r1, .L18+68
+ 589 00b6 FFF7FEFF 		bl	__aeabi_uidivmod
+ 590 00ba 0B1C     		mov	r3, r1
+ 591 00bc FB60     		str	r3, [r7, #12]
+ 142:.\main.c      ****     UART_1_UartPutChar(time/1000000u + CONVERT_TO_ASCII);
+ 592              		.loc 1 142 0
+ 593 00be FB68     		ldr	r3, [r7, #12]
+ 594 00c0 181C     		mov	r0, r3
+ 595 00c2 BB49     		ldr	r1, .L18+72
+ 596 00c4 FFF7FEFF 		bl	__aeabi_uidiv
+ 597 00c8 031C     		mov	r3, r0
+ 598 00ca 3033     		add	r3, r3, #48
+ 599 00cc 181C     		mov	r0, r3
+ 600 00ce FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 143:.\main.c      ****     time %= 1000000;
+ 601              		.loc 1 143 0
+ 602 00d2 FB68     		ldr	r3, [r7, #12]
+ 603 00d4 181C     		mov	r0, r3
+ 604 00d6 B649     		ldr	r1, .L18+72
+ 605 00d8 FFF7FEFF 		bl	__aeabi_uidivmod
+ 606 00dc 0B1C     		mov	r3, r1
+ 607 00de FB60     		str	r3, [r7, #12]
+ 144:.\main.c      ****     UART_1_UartPutChar(time/100000u + CONVERT_TO_ASCII);
+ 608              		.loc 1 144 0
+ 609 00e0 FB68     		ldr	r3, [r7, #12]
+ 610 00e2 181C     		mov	r0, r3
+ 611 00e4 B349     		ldr	r1, .L18+76
+ 612 00e6 FFF7FEFF 		bl	__aeabi_uidiv
+ 613 00ea 031C     		mov	r3, r0
+ 614 00ec 3033     		add	r3, r3, #48
+ 615 00ee 181C     		mov	r0, r3
+ 616 00f0 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 145:.\main.c      ****     time %= 100000;
+ 617              		.loc 1 145 0
+ 618 00f4 FB68     		ldr	r3, [r7, #12]
+ 619 00f6 181C     		mov	r0, r3
+ 620 00f8 AE49     		ldr	r1, .L18+76
+ 621 00fa FFF7FEFF 		bl	__aeabi_uidivmod
+ 622 00fe 0B1C     		mov	r3, r1
+ 623 0100 FB60     		str	r3, [r7, #12]
+ 146:.\main.c      ****     UART_1_UartPutChar(time/10000u + CONVERT_TO_ASCII);
+ 624              		.loc 1 146 0
+ 625 0102 FB68     		ldr	r3, [r7, #12]
+ 626 0104 181C     		mov	r0, r3
+ 627 0106 AC49     		ldr	r1, .L18+80
+ 628 0108 FFF7FEFF 		bl	__aeabi_uidiv
+ 629 010c 031C     		mov	r3, r0
+ 630 010e 3033     		add	r3, r3, #48
+ 631 0110 181C     		mov	r0, r3
+ 632 0112 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 147:.\main.c      ****     time %= 10000;
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 16
 
 
- 640 0120 0B1C     		mov	r3, r1
- 641 0122 FB60     		str	r3, [r7, #12]
- 142:.\main.c      ****     UART_1_UartPutChar(time/1000u + CONVERT_TO_ASCII);
- 642              		.loc 1 142 0
- 643 0124 FB68     		ldr	r3, [r7, #12]
- 644 0126 181C     		mov	r0, r3
- 645 0128 FA23     		mov	r3, #250
- 646 012a 9900     		lsl	r1, r3, #2
- 647 012c FFF7FEFF 		bl	__aeabi_uidiv
- 648 0130 031C     		mov	r3, r0
- 649 0132 3033     		add	r3, r3, #48
- 650 0134 181C     		mov	r0, r3
- 651 0136 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 143:.\main.c      ****     time %= 1000;
- 652              		.loc 1 143 0
- 653 013a FB68     		ldr	r3, [r7, #12]
- 654 013c 181C     		mov	r0, r3
- 655 013e FA23     		mov	r3, #250
- 656 0140 9900     		lsl	r1, r3, #2
- 657 0142 FFF7FEFF 		bl	__aeabi_uidivmod
- 658 0146 0B1C     		mov	r3, r1
- 659 0148 FB60     		str	r3, [r7, #12]
- 144:.\main.c      ****     UART_1_UartPutChar(time/100u + CONVERT_TO_ASCII);
- 660              		.loc 1 144 0
- 661 014a FB68     		ldr	r3, [r7, #12]
- 662 014c 181C     		mov	r0, r3
- 663 014e 6421     		mov	r1, #100
- 664 0150 FFF7FEFF 		bl	__aeabi_uidiv
- 665 0154 031C     		mov	r3, r0
- 666 0156 3033     		add	r3, r3, #48
- 667 0158 181C     		mov	r0, r3
- 668 015a FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 145:.\main.c      ****     time %= 100;
- 669              		.loc 1 145 0
- 670 015e FB68     		ldr	r3, [r7, #12]
- 671 0160 181C     		mov	r0, r3
- 672 0162 6421     		mov	r1, #100
- 673 0164 FFF7FEFF 		bl	__aeabi_uidivmod
- 674 0168 0B1C     		mov	r3, r1
- 675 016a FB60     		str	r3, [r7, #12]
- 146:.\main.c      ****     UART_1_UartPutChar(time/10u + CONVERT_TO_ASCII);
- 676              		.loc 1 146 0
- 677 016c FB68     		ldr	r3, [r7, #12]
- 678 016e 181C     		mov	r0, r3
- 679 0170 0A21     		mov	r1, #10
- 680 0172 FFF7FEFF 		bl	__aeabi_uidiv
- 681 0176 031C     		mov	r3, r0
- 682 0178 3033     		add	r3, r3, #48
- 683 017a 181C     		mov	r0, r3
- 684 017c FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 147:.\main.c      ****     time %= 10;
- 685              		.loc 1 147 0
- 686 0180 FB68     		ldr	r3, [r7, #12]
- 687 0182 181C     		mov	r0, r3
- 688 0184 0A21     		mov	r1, #10
- 689 0186 FFF7FEFF 		bl	__aeabi_uidivmod
- 690 018a 0B1C     		mov	r3, r1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 17
+ 633              		.loc 1 147 0
+ 634 0116 FB68     		ldr	r3, [r7, #12]
+ 635 0118 181C     		mov	r0, r3
+ 636 011a A749     		ldr	r1, .L18+80
+ 637 011c FFF7FEFF 		bl	__aeabi_uidivmod
+ 638 0120 0B1C     		mov	r3, r1
+ 639 0122 FB60     		str	r3, [r7, #12]
+ 148:.\main.c      ****     UART_1_UartPutChar(time/1000u + CONVERT_TO_ASCII);
+ 640              		.loc 1 148 0
+ 641 0124 FB68     		ldr	r3, [r7, #12]
+ 642 0126 181C     		mov	r0, r3
+ 643 0128 FA23     		mov	r3, #250
+ 644 012a 9900     		lsl	r1, r3, #2
+ 645 012c FFF7FEFF 		bl	__aeabi_uidiv
+ 646 0130 031C     		mov	r3, r0
+ 647 0132 3033     		add	r3, r3, #48
+ 648 0134 181C     		mov	r0, r3
+ 649 0136 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 149:.\main.c      ****     time %= 1000;
+ 650              		.loc 1 149 0
+ 651 013a FB68     		ldr	r3, [r7, #12]
+ 652 013c 181C     		mov	r0, r3
+ 653 013e FA23     		mov	r3, #250
+ 654 0140 9900     		lsl	r1, r3, #2
+ 655 0142 FFF7FEFF 		bl	__aeabi_uidivmod
+ 656 0146 0B1C     		mov	r3, r1
+ 657 0148 FB60     		str	r3, [r7, #12]
+ 150:.\main.c      ****     UART_1_UartPutChar(time/100u + CONVERT_TO_ASCII);
+ 658              		.loc 1 150 0
+ 659 014a FB68     		ldr	r3, [r7, #12]
+ 660 014c 181C     		mov	r0, r3
+ 661 014e 6421     		mov	r1, #100
+ 662 0150 FFF7FEFF 		bl	__aeabi_uidiv
+ 663 0154 031C     		mov	r3, r0
+ 664 0156 3033     		add	r3, r3, #48
+ 665 0158 181C     		mov	r0, r3
+ 666 015a FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 151:.\main.c      ****     time %= 100;
+ 667              		.loc 1 151 0
+ 668 015e FB68     		ldr	r3, [r7, #12]
+ 669 0160 181C     		mov	r0, r3
+ 670 0162 6421     		mov	r1, #100
+ 671 0164 FFF7FEFF 		bl	__aeabi_uidivmod
+ 672 0168 0B1C     		mov	r3, r1
+ 673 016a FB60     		str	r3, [r7, #12]
+ 152:.\main.c      ****     UART_1_UartPutChar(time/10u + CONVERT_TO_ASCII);
+ 674              		.loc 1 152 0
+ 675 016c FB68     		ldr	r3, [r7, #12]
+ 676 016e 181C     		mov	r0, r3
+ 677 0170 0A21     		mov	r1, #10
+ 678 0172 FFF7FEFF 		bl	__aeabi_uidiv
+ 679 0176 031C     		mov	r3, r0
+ 680 0178 3033     		add	r3, r3, #48
+ 681 017a 181C     		mov	r0, r3
+ 682 017c FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 153:.\main.c      ****     time %= 10;
+ 683              		.loc 1 153 0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 17
 
 
- 691 018c FB60     		str	r3, [r7, #12]
- 148:.\main.c      ****     UART_1_UartPutChar(time + CONVERT_TO_ASCII);
- 692              		.loc 1 148 0
- 693 018e FB68     		ldr	r3, [r7, #12]
- 694 0190 3033     		add	r3, r3, #48
- 695 0192 181C     		mov	r0, r3
- 696 0194 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 149:.\main.c      ****     UART_1_UartPutString(" counts or ");
- 697              		.loc 1 149 0
- 698 0198 884B     		ldr	r3, .L17+84
- 699 019a 181C     		mov	r0, r3
- 700 019c FFF7FEFF 		bl	UART_1_UartPutString
- 150:.\main.c      ****     UART_1_UartPutChar(time_us/100000000u + CONVERT_TO_ASCII);
- 701              		.loc 1 150 0
- 702 01a0 3B69     		ldr	r3, [r7, #16]
- 703 01a2 7C69     		ldr	r4, [r7, #20]
- 704 01a4 181C     		mov	r0, r3
- 705 01a6 211C     		mov	r1, r4
- 706 01a8 714A     		ldr	r2, .L17+8
- 707 01aa 724B     		ldr	r3, .L17+12
- 708 01ac FFF7FEFF 		bl	__aeabi_uldivmod
- 709 01b0 031C     		mov	r3, r0
- 710 01b2 0C1C     		mov	r4, r1
- 711 01b4 3033     		add	r3, r3, #48
- 712 01b6 181C     		mov	r0, r3
- 713 01b8 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 151:.\main.c      ****     time_us %= 100000000;
- 714              		.loc 1 151 0
- 715 01bc 3B69     		ldr	r3, [r7, #16]
- 716 01be 7C69     		ldr	r4, [r7, #20]
- 717 01c0 181C     		mov	r0, r3
- 718 01c2 211C     		mov	r1, r4
- 719 01c4 6A4A     		ldr	r2, .L17+8
- 720 01c6 6B4B     		ldr	r3, .L17+12
- 721 01c8 FFF7FEFF 		bl	__aeabi_uldivmod
- 722 01cc 1C1C     		mov	r4, r3
- 723 01ce 131C     		mov	r3, r2
- 724 01d0 3B61     		str	r3, [r7, #16]
- 725 01d2 7C61     		str	r4, [r7, #20]
- 152:.\main.c      ****     UART_1_UartPutChar(time_us/10000000u + CONVERT_TO_ASCII);
- 726              		.loc 1 152 0
- 727 01d4 3B69     		ldr	r3, [r7, #16]
- 728 01d6 7C69     		ldr	r4, [r7, #20]
- 729 01d8 181C     		mov	r0, r3
- 730 01da 211C     		mov	r1, r4
- 731 01dc 664A     		ldr	r2, .L17+16
- 732 01de 674B     		ldr	r3, .L17+20
- 733 01e0 FFF7FEFF 		bl	__aeabi_uldivmod
- 734 01e4 031C     		mov	r3, r0
- 735 01e6 0C1C     		mov	r4, r1
- 736 01e8 3033     		add	r3, r3, #48
- 737 01ea 181C     		mov	r0, r3
- 738 01ec FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 153:.\main.c      ****     time_us %= 10000000;
- 739              		.loc 1 153 0
- 740 01f0 3B69     		ldr	r3, [r7, #16]
- 741 01f2 7C69     		ldr	r4, [r7, #20]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 18
+ 684 0180 FB68     		ldr	r3, [r7, #12]
+ 685 0182 181C     		mov	r0, r3
+ 686 0184 0A21     		mov	r1, #10
+ 687 0186 FFF7FEFF 		bl	__aeabi_uidivmod
+ 688 018a 0B1C     		mov	r3, r1
+ 689 018c FB60     		str	r3, [r7, #12]
+ 154:.\main.c      ****     UART_1_UartPutChar(time + CONVERT_TO_ASCII);
+ 690              		.loc 1 154 0
+ 691 018e FB68     		ldr	r3, [r7, #12]
+ 692 0190 3033     		add	r3, r3, #48
+ 693 0192 181C     		mov	r0, r3
+ 694 0194 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 155:.\main.c      ****     UART_1_UartPutString(" counts or ");
+ 695              		.loc 1 155 0
+ 696 0198 884B     		ldr	r3, .L18+84
+ 697 019a 181C     		mov	r0, r3
+ 698 019c FFF7FEFF 		bl	UART_1_UartPutString
+ 156:.\main.c      ****     UART_1_UartPutChar(time_us/100000000u + CONVERT_TO_ASCII);
+ 699              		.loc 1 156 0
+ 700 01a0 3B69     		ldr	r3, [r7, #16]
+ 701 01a2 7C69     		ldr	r4, [r7, #20]
+ 702 01a4 181C     		mov	r0, r3
+ 703 01a6 211C     		mov	r1, r4
+ 704 01a8 714A     		ldr	r2, .L18+8
+ 705 01aa 724B     		ldr	r3, .L18+12
+ 706 01ac FFF7FEFF 		bl	__aeabi_uldivmod
+ 707 01b0 031C     		mov	r3, r0
+ 708 01b2 0C1C     		mov	r4, r1
+ 709 01b4 3033     		add	r3, r3, #48
+ 710 01b6 181C     		mov	r0, r3
+ 711 01b8 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 157:.\main.c      ****     time_us %= 100000000;
+ 712              		.loc 1 157 0
+ 713 01bc 3B69     		ldr	r3, [r7, #16]
+ 714 01be 7C69     		ldr	r4, [r7, #20]
+ 715 01c0 181C     		mov	r0, r3
+ 716 01c2 211C     		mov	r1, r4
+ 717 01c4 6A4A     		ldr	r2, .L18+8
+ 718 01c6 6B4B     		ldr	r3, .L18+12
+ 719 01c8 FFF7FEFF 		bl	__aeabi_uldivmod
+ 720 01cc 1C1C     		mov	r4, r3
+ 721 01ce 131C     		mov	r3, r2
+ 722 01d0 3B61     		str	r3, [r7, #16]
+ 723 01d2 7C61     		str	r4, [r7, #20]
+ 158:.\main.c      ****     UART_1_UartPutChar(time_us/10000000u + CONVERT_TO_ASCII);
+ 724              		.loc 1 158 0
+ 725 01d4 3B69     		ldr	r3, [r7, #16]
+ 726 01d6 7C69     		ldr	r4, [r7, #20]
+ 727 01d8 181C     		mov	r0, r3
+ 728 01da 211C     		mov	r1, r4
+ 729 01dc 664A     		ldr	r2, .L18+16
+ 730 01de 674B     		ldr	r3, .L18+20
+ 731 01e0 FFF7FEFF 		bl	__aeabi_uldivmod
+ 732 01e4 031C     		mov	r3, r0
+ 733 01e6 0C1C     		mov	r4, r1
+ 734 01e8 3033     		add	r3, r3, #48
+ 735 01ea 181C     		mov	r0, r3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 18
 
 
- 742 01f4 181C     		mov	r0, r3
- 743 01f6 211C     		mov	r1, r4
- 744 01f8 5F4A     		ldr	r2, .L17+16
- 745 01fa 604B     		ldr	r3, .L17+20
- 746 01fc FFF7FEFF 		bl	__aeabi_uldivmod
- 747 0200 1C1C     		mov	r4, r3
- 748 0202 131C     		mov	r3, r2
- 749 0204 3B61     		str	r3, [r7, #16]
- 750 0206 7C61     		str	r4, [r7, #20]
- 154:.\main.c      ****     UART_1_UartPutChar(time_us/1000000u + CONVERT_TO_ASCII);
- 751              		.loc 1 154 0
- 752 0208 3B69     		ldr	r3, [r7, #16]
- 753 020a 7C69     		ldr	r4, [r7, #20]
- 754 020c 181C     		mov	r0, r3
- 755 020e 211C     		mov	r1, r4
- 756 0210 5B4A     		ldr	r2, .L17+24
- 757 0212 5C4B     		ldr	r3, .L17+28
- 758 0214 FFF7FEFF 		bl	__aeabi_uldivmod
- 759 0218 031C     		mov	r3, r0
- 760 021a 0C1C     		mov	r4, r1
- 761 021c 3033     		add	r3, r3, #48
- 762 021e 181C     		mov	r0, r3
- 763 0220 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 155:.\main.c      ****     time_us %= 1000000;
- 764              		.loc 1 155 0
- 765 0224 3B69     		ldr	r3, [r7, #16]
- 766 0226 7C69     		ldr	r4, [r7, #20]
- 767 0228 181C     		mov	r0, r3
- 768 022a 211C     		mov	r1, r4
- 769 022c 544A     		ldr	r2, .L17+24
- 770 022e 554B     		ldr	r3, .L17+28
- 771 0230 FFF7FEFF 		bl	__aeabi_uldivmod
- 772 0234 1C1C     		mov	r4, r3
- 773 0236 131C     		mov	r3, r2
- 774 0238 3B61     		str	r3, [r7, #16]
- 775 023a 7C61     		str	r4, [r7, #20]
- 156:.\main.c      ****     UART_1_UartPutChar(',');
- 776              		.loc 1 156 0
- 777 023c 2C20     		mov	r0, #44
- 778 023e FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 157:.\main.c      ****     UART_1_UartPutChar(time_us/100000u + CONVERT_TO_ASCII);
- 779              		.loc 1 157 0
- 780 0242 3B69     		ldr	r3, [r7, #16]
- 781 0244 7C69     		ldr	r4, [r7, #20]
- 782 0246 181C     		mov	r0, r3
- 783 0248 211C     		mov	r1, r4
- 784 024a 4F4A     		ldr	r2, .L17+32
- 785 024c 4F4B     		ldr	r3, .L17+36
- 786 024e FFF7FEFF 		bl	__aeabi_uldivmod
- 787 0252 031C     		mov	r3, r0
- 788 0254 0C1C     		mov	r4, r1
- 789 0256 3033     		add	r3, r3, #48
- 790 0258 181C     		mov	r0, r3
- 791 025a FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 158:.\main.c      ****     time_us %= 100000;
- 792              		.loc 1 158 0
- 793 025e 3B69     		ldr	r3, [r7, #16]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 19
+ 736 01ec FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 159:.\main.c      ****     time_us %= 10000000;
+ 737              		.loc 1 159 0
+ 738 01f0 3B69     		ldr	r3, [r7, #16]
+ 739 01f2 7C69     		ldr	r4, [r7, #20]
+ 740 01f4 181C     		mov	r0, r3
+ 741 01f6 211C     		mov	r1, r4
+ 742 01f8 5F4A     		ldr	r2, .L18+16
+ 743 01fa 604B     		ldr	r3, .L18+20
+ 744 01fc FFF7FEFF 		bl	__aeabi_uldivmod
+ 745 0200 1C1C     		mov	r4, r3
+ 746 0202 131C     		mov	r3, r2
+ 747 0204 3B61     		str	r3, [r7, #16]
+ 748 0206 7C61     		str	r4, [r7, #20]
+ 160:.\main.c      ****     UART_1_UartPutChar(time_us/1000000u + CONVERT_TO_ASCII);
+ 749              		.loc 1 160 0
+ 750 0208 3B69     		ldr	r3, [r7, #16]
+ 751 020a 7C69     		ldr	r4, [r7, #20]
+ 752 020c 181C     		mov	r0, r3
+ 753 020e 211C     		mov	r1, r4
+ 754 0210 5B4A     		ldr	r2, .L18+24
+ 755 0212 5C4B     		ldr	r3, .L18+28
+ 756 0214 FFF7FEFF 		bl	__aeabi_uldivmod
+ 757 0218 031C     		mov	r3, r0
+ 758 021a 0C1C     		mov	r4, r1
+ 759 021c 3033     		add	r3, r3, #48
+ 760 021e 181C     		mov	r0, r3
+ 761 0220 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 161:.\main.c      ****     time_us %= 1000000;
+ 762              		.loc 1 161 0
+ 763 0224 3B69     		ldr	r3, [r7, #16]
+ 764 0226 7C69     		ldr	r4, [r7, #20]
+ 765 0228 181C     		mov	r0, r3
+ 766 022a 211C     		mov	r1, r4
+ 767 022c 544A     		ldr	r2, .L18+24
+ 768 022e 554B     		ldr	r3, .L18+28
+ 769 0230 FFF7FEFF 		bl	__aeabi_uldivmod
+ 770 0234 1C1C     		mov	r4, r3
+ 771 0236 131C     		mov	r3, r2
+ 772 0238 3B61     		str	r3, [r7, #16]
+ 773 023a 7C61     		str	r4, [r7, #20]
+ 162:.\main.c      ****     UART_1_UartPutChar(',');
+ 774              		.loc 1 162 0
+ 775 023c 2C20     		mov	r0, #44
+ 776 023e FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 163:.\main.c      ****     UART_1_UartPutChar(time_us/100000u + CONVERT_TO_ASCII);
+ 777              		.loc 1 163 0
+ 778 0242 3B69     		ldr	r3, [r7, #16]
+ 779 0244 7C69     		ldr	r4, [r7, #20]
+ 780 0246 181C     		mov	r0, r3
+ 781 0248 211C     		mov	r1, r4
+ 782 024a 4F4A     		ldr	r2, .L18+32
+ 783 024c 4F4B     		ldr	r3, .L18+36
+ 784 024e FFF7FEFF 		bl	__aeabi_uldivmod
+ 785 0252 031C     		mov	r3, r0
+ 786 0254 0C1C     		mov	r4, r1
+ 787 0256 3033     		add	r3, r3, #48
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 19
 
 
- 794 0260 7C69     		ldr	r4, [r7, #20]
- 795 0262 181C     		mov	r0, r3
- 796 0264 211C     		mov	r1, r4
- 797 0266 484A     		ldr	r2, .L17+32
- 798 0268 484B     		ldr	r3, .L17+36
- 799 026a FFF7FEFF 		bl	__aeabi_uldivmod
- 800 026e 1C1C     		mov	r4, r3
- 801 0270 131C     		mov	r3, r2
- 802 0272 3B61     		str	r3, [r7, #16]
- 803 0274 7C61     		str	r4, [r7, #20]
- 159:.\main.c      ****     UART_1_UartPutChar(time_us/10000u + CONVERT_TO_ASCII);
- 804              		.loc 1 159 0
- 805 0276 3B69     		ldr	r3, [r7, #16]
- 806 0278 7C69     		ldr	r4, [r7, #20]
- 807 027a 181C     		mov	r0, r3
- 808 027c 211C     		mov	r1, r4
- 809 027e 444A     		ldr	r2, .L17+40
- 810 0280 444B     		ldr	r3, .L17+44
- 811 0282 FFF7FEFF 		bl	__aeabi_uldivmod
- 812 0286 031C     		mov	r3, r0
- 813 0288 0C1C     		mov	r4, r1
- 814 028a 3033     		add	r3, r3, #48
- 815 028c 181C     		mov	r0, r3
- 816 028e FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 160:.\main.c      ****     time_us %= 10000;
- 817              		.loc 1 160 0
- 818 0292 3B69     		ldr	r3, [r7, #16]
- 819 0294 7C69     		ldr	r4, [r7, #20]
- 820 0296 181C     		mov	r0, r3
- 821 0298 211C     		mov	r1, r4
- 822 029a 3D4A     		ldr	r2, .L17+40
- 823 029c 3D4B     		ldr	r3, .L17+44
- 824 029e FFF7FEFF 		bl	__aeabi_uldivmod
- 825 02a2 1C1C     		mov	r4, r3
- 826 02a4 131C     		mov	r3, r2
- 827 02a6 3B61     		str	r3, [r7, #16]
- 828 02a8 7C61     		str	r4, [r7, #20]
- 161:.\main.c      ****     UART_1_UartPutChar(time_us/1000u + CONVERT_TO_ASCII);
- 829              		.loc 1 161 0
- 830 02aa 3B69     		ldr	r3, [r7, #16]
- 831 02ac 7C69     		ldr	r4, [r7, #20]
- 832 02ae 181C     		mov	r0, r3
- 833 02b0 211C     		mov	r1, r4
- 834 02b2 394A     		ldr	r2, .L17+48
- 835 02b4 394B     		ldr	r3, .L17+52
- 836 02b6 FFF7FEFF 		bl	__aeabi_uldivmod
- 837 02ba 031C     		mov	r3, r0
- 838 02bc 0C1C     		mov	r4, r1
- 839 02be 3033     		add	r3, r3, #48
- 840 02c0 181C     		mov	r0, r3
- 841 02c2 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 162:.\main.c      ****     time_us %= 1000;
- 842              		.loc 1 162 0
- 843 02c6 3B69     		ldr	r3, [r7, #16]
- 844 02c8 7C69     		ldr	r4, [r7, #20]
- 845 02ca 181C     		mov	r0, r3
- 846 02cc 211C     		mov	r1, r4
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 20
+ 788 0258 181C     		mov	r0, r3
+ 789 025a FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 164:.\main.c      ****     time_us %= 100000;
+ 790              		.loc 1 164 0
+ 791 025e 3B69     		ldr	r3, [r7, #16]
+ 792 0260 7C69     		ldr	r4, [r7, #20]
+ 793 0262 181C     		mov	r0, r3
+ 794 0264 211C     		mov	r1, r4
+ 795 0266 484A     		ldr	r2, .L18+32
+ 796 0268 484B     		ldr	r3, .L18+36
+ 797 026a FFF7FEFF 		bl	__aeabi_uldivmod
+ 798 026e 1C1C     		mov	r4, r3
+ 799 0270 131C     		mov	r3, r2
+ 800 0272 3B61     		str	r3, [r7, #16]
+ 801 0274 7C61     		str	r4, [r7, #20]
+ 165:.\main.c      ****     UART_1_UartPutChar(time_us/10000u + CONVERT_TO_ASCII);
+ 802              		.loc 1 165 0
+ 803 0276 3B69     		ldr	r3, [r7, #16]
+ 804 0278 7C69     		ldr	r4, [r7, #20]
+ 805 027a 181C     		mov	r0, r3
+ 806 027c 211C     		mov	r1, r4
+ 807 027e 444A     		ldr	r2, .L18+40
+ 808 0280 444B     		ldr	r3, .L18+44
+ 809 0282 FFF7FEFF 		bl	__aeabi_uldivmod
+ 810 0286 031C     		mov	r3, r0
+ 811 0288 0C1C     		mov	r4, r1
+ 812 028a 3033     		add	r3, r3, #48
+ 813 028c 181C     		mov	r0, r3
+ 814 028e FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 166:.\main.c      ****     time_us %= 10000;
+ 815              		.loc 1 166 0
+ 816 0292 3B69     		ldr	r3, [r7, #16]
+ 817 0294 7C69     		ldr	r4, [r7, #20]
+ 818 0296 181C     		mov	r0, r3
+ 819 0298 211C     		mov	r1, r4
+ 820 029a 3D4A     		ldr	r2, .L18+40
+ 821 029c 3D4B     		ldr	r3, .L18+44
+ 822 029e FFF7FEFF 		bl	__aeabi_uldivmod
+ 823 02a2 1C1C     		mov	r4, r3
+ 824 02a4 131C     		mov	r3, r2
+ 825 02a6 3B61     		str	r3, [r7, #16]
+ 826 02a8 7C61     		str	r4, [r7, #20]
+ 167:.\main.c      ****     UART_1_UartPutChar(time_us/1000u + CONVERT_TO_ASCII);
+ 827              		.loc 1 167 0
+ 828 02aa 3B69     		ldr	r3, [r7, #16]
+ 829 02ac 7C69     		ldr	r4, [r7, #20]
+ 830 02ae 181C     		mov	r0, r3
+ 831 02b0 211C     		mov	r1, r4
+ 832 02b2 394A     		ldr	r2, .L18+48
+ 833 02b4 394B     		ldr	r3, .L18+52
+ 834 02b6 FFF7FEFF 		bl	__aeabi_uldivmod
+ 835 02ba 031C     		mov	r3, r0
+ 836 02bc 0C1C     		mov	r4, r1
+ 837 02be 3033     		add	r3, r3, #48
+ 838 02c0 181C     		mov	r0, r3
+ 839 02c2 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 168:.\main.c      ****     time_us %= 1000;
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 20
 
 
- 847 02ce 324A     		ldr	r2, .L17+48
- 848 02d0 324B     		ldr	r3, .L17+52
- 849 02d2 FFF7FEFF 		bl	__aeabi_uldivmod
- 850 02d6 1C1C     		mov	r4, r3
- 851 02d8 131C     		mov	r3, r2
- 852 02da 3B61     		str	r3, [r7, #16]
- 853 02dc 7C61     		str	r4, [r7, #20]
- 163:.\main.c      ****     UART_1_UartPutChar(',');
- 854              		.loc 1 163 0
- 855 02de 2C20     		mov	r0, #44
- 856 02e0 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 164:.\main.c      ****     UART_1_UartPutChar(time_us/100u + CONVERT_TO_ASCII);
- 857              		.loc 1 164 0
- 858 02e4 3B69     		ldr	r3, [r7, #16]
- 859 02e6 7C69     		ldr	r4, [r7, #20]
- 860 02e8 181C     		mov	r0, r3
- 861 02ea 211C     		mov	r1, r4
- 862 02ec 6422     		mov	r2, #100
- 863 02ee 0023     		mov	r3, #0
- 864 02f0 FFF7FEFF 		bl	__aeabi_uldivmod
- 865 02f4 031C     		mov	r3, r0
- 866 02f6 0C1C     		mov	r4, r1
- 867 02f8 3033     		add	r3, r3, #48
- 868 02fa 181C     		mov	r0, r3
- 869 02fc FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 165:.\main.c      ****     time_us %= 100;
- 870              		.loc 1 165 0
- 871 0300 3B69     		ldr	r3, [r7, #16]
- 872 0302 7C69     		ldr	r4, [r7, #20]
- 873 0304 181C     		mov	r0, r3
- 874 0306 211C     		mov	r1, r4
- 875 0308 6422     		mov	r2, #100
- 876 030a 0023     		mov	r3, #0
- 877 030c FFF7FEFF 		bl	__aeabi_uldivmod
- 878 0310 1C1C     		mov	r4, r3
- 879 0312 131C     		mov	r3, r2
- 880 0314 3B61     		str	r3, [r7, #16]
- 881 0316 7C61     		str	r4, [r7, #20]
- 166:.\main.c      ****     UART_1_UartPutChar(time_us/10u + CONVERT_TO_ASCII);
- 882              		.loc 1 166 0
- 883 0318 3B69     		ldr	r3, [r7, #16]
- 884 031a 7C69     		ldr	r4, [r7, #20]
- 885 031c 181C     		mov	r0, r3
- 886 031e 211C     		mov	r1, r4
- 887 0320 0A22     		mov	r2, #10
- 888 0322 0023     		mov	r3, #0
- 889 0324 FFF7FEFF 		bl	__aeabi_uldivmod
- 890 0328 031C     		mov	r3, r0
- 891 032a 0C1C     		mov	r4, r1
- 892 032c 3033     		add	r3, r3, #48
- 893 032e 181C     		mov	r0, r3
- 894 0330 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 167:.\main.c      ****     time_us %= 10;
- 895              		.loc 1 167 0
- 896 0334 3B69     		ldr	r3, [r7, #16]
- 897 0336 7C69     		ldr	r4, [r7, #20]
- 898 0338 181C     		mov	r0, r3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 21
+ 840              		.loc 1 168 0
+ 841 02c6 3B69     		ldr	r3, [r7, #16]
+ 842 02c8 7C69     		ldr	r4, [r7, #20]
+ 843 02ca 181C     		mov	r0, r3
+ 844 02cc 211C     		mov	r1, r4
+ 845 02ce 324A     		ldr	r2, .L18+48
+ 846 02d0 324B     		ldr	r3, .L18+52
+ 847 02d2 FFF7FEFF 		bl	__aeabi_uldivmod
+ 848 02d6 1C1C     		mov	r4, r3
+ 849 02d8 131C     		mov	r3, r2
+ 850 02da 3B61     		str	r3, [r7, #16]
+ 851 02dc 7C61     		str	r4, [r7, #20]
+ 169:.\main.c      ****     UART_1_UartPutChar(',');
+ 852              		.loc 1 169 0
+ 853 02de 2C20     		mov	r0, #44
+ 854 02e0 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 170:.\main.c      ****     UART_1_UartPutChar(time_us/100u + CONVERT_TO_ASCII);
+ 855              		.loc 1 170 0
+ 856 02e4 3B69     		ldr	r3, [r7, #16]
+ 857 02e6 7C69     		ldr	r4, [r7, #20]
+ 858 02e8 181C     		mov	r0, r3
+ 859 02ea 211C     		mov	r1, r4
+ 860 02ec 6422     		mov	r2, #100
+ 861 02ee 0023     		mov	r3, #0
+ 862 02f0 FFF7FEFF 		bl	__aeabi_uldivmod
+ 863 02f4 031C     		mov	r3, r0
+ 864 02f6 0C1C     		mov	r4, r1
+ 865 02f8 3033     		add	r3, r3, #48
+ 866 02fa 181C     		mov	r0, r3
+ 867 02fc FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 171:.\main.c      ****     time_us %= 100;
+ 868              		.loc 1 171 0
+ 869 0300 3B69     		ldr	r3, [r7, #16]
+ 870 0302 7C69     		ldr	r4, [r7, #20]
+ 871 0304 181C     		mov	r0, r3
+ 872 0306 211C     		mov	r1, r4
+ 873 0308 6422     		mov	r2, #100
+ 874 030a 0023     		mov	r3, #0
+ 875 030c FFF7FEFF 		bl	__aeabi_uldivmod
+ 876 0310 1C1C     		mov	r4, r3
+ 877 0312 131C     		mov	r3, r2
+ 878 0314 3B61     		str	r3, [r7, #16]
+ 879 0316 7C61     		str	r4, [r7, #20]
+ 172:.\main.c      ****     UART_1_UartPutChar(time_us/10u + CONVERT_TO_ASCII);
+ 880              		.loc 1 172 0
+ 881 0318 3B69     		ldr	r3, [r7, #16]
+ 882 031a 7C69     		ldr	r4, [r7, #20]
+ 883 031c 181C     		mov	r0, r3
+ 884 031e 211C     		mov	r1, r4
+ 885 0320 0A22     		mov	r2, #10
+ 886 0322 0023     		mov	r3, #0
+ 887 0324 FFF7FEFF 		bl	__aeabi_uldivmod
+ 888 0328 031C     		mov	r3, r0
+ 889 032a 0C1C     		mov	r4, r1
+ 890 032c 3033     		add	r3, r3, #48
+ 891 032e 181C     		mov	r0, r3
+ 892 0330 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 21
 
 
- 899 033a 211C     		mov	r1, r4
- 900 033c 0A22     		mov	r2, #10
- 901 033e 0023     		mov	r3, #0
- 902 0340 FFF7FEFF 		bl	__aeabi_uldivmod
- 903 0344 1C1C     		mov	r4, r3
- 904 0346 131C     		mov	r3, r2
- 905 0348 3B61     		str	r3, [r7, #16]
- 906 034a 7C61     		str	r4, [r7, #20]
- 168:.\main.c      ****     UART_1_UartPutChar(time_us + CONVERT_TO_ASCII);
- 907              		.loc 1 168 0
- 908 034c 3B69     		ldr	r3, [r7, #16]
- 909 034e 3033     		add	r3, r3, #48
- 910 0350 181C     		mov	r0, r3
- 911 0352 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
- 169:.\main.c      ****     UART_1_UartPutString(" us.\n\r");
- 912              		.loc 1 169 0
- 913 0356 1A4B     		ldr	r3, .L17+88
- 914 0358 181C     		mov	r0, r3
- 915 035a FFF7FEFF 		bl	UART_1_UartPutString
- 170:.\main.c      **** }
- 916              		.loc 1 170 0
- 917 035e BD46     		mov	sp, r7
- 918 0360 07B0     		add	sp, sp, #28
- 919              		@ sp needed
- 920 0362 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 173:.\main.c      ****     time_us %= 10;
+ 893              		.loc 1 173 0
+ 894 0334 3B69     		ldr	r3, [r7, #16]
+ 895 0336 7C69     		ldr	r4, [r7, #20]
+ 896 0338 181C     		mov	r0, r3
+ 897 033a 211C     		mov	r1, r4
+ 898 033c 0A22     		mov	r2, #10
+ 899 033e 0023     		mov	r3, #0
+ 900 0340 FFF7FEFF 		bl	__aeabi_uldivmod
+ 901 0344 1C1C     		mov	r4, r3
+ 902 0346 131C     		mov	r3, r2
+ 903 0348 3B61     		str	r3, [r7, #16]
+ 904 034a 7C61     		str	r4, [r7, #20]
+ 174:.\main.c      ****     UART_1_UartPutChar(time_us + CONVERT_TO_ASCII);
+ 905              		.loc 1 174 0
+ 906 034c 3B69     		ldr	r3, [r7, #16]
+ 907 034e 3033     		add	r3, r3, #48
+ 908 0350 181C     		mov	r0, r3
+ 909 0352 FFF7FEFF 		bl	UART_1_SpiUartWriteTxData
+ 175:.\main.c      ****     UART_1_UartPutString(" us.\n\r");
+ 910              		.loc 1 175 0
+ 911 0356 1A4B     		ldr	r3, .L18+88
+ 912 0358 181C     		mov	r0, r3
+ 913 035a FFF7FEFF 		bl	UART_1_UartPutString
+ 176:.\main.c      **** }
+ 914              		.loc 1 176 0
+ 915 035e BD46     		mov	sp, r7
+ 916 0360 07B0     		add	sp, sp, #28
+ 917              		@ sp needed
+ 918 0362 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 919              	.L19:
+ 920 0364 C046C046 		.align	3
  921              	.L18:
- 922 0364 C046C046 		.align	3
- 923              	.L17:
- 924 0368 B80B0000 		.word	3000
- 925 036c 00000000 		.word	0
- 926 0370 00E1F505 		.word	100000000
- 927 0374 00000000 		.word	0
- 928 0378 80969800 		.word	10000000
- 929 037c 00000000 		.word	0
- 930 0380 40420F00 		.word	1000000
- 931 0384 00000000 		.word	0
- 932 0388 A0860100 		.word	100000
- 933 038c 00000000 		.word	0
- 934 0390 10270000 		.word	10000
- 935 0394 00000000 		.word	0
- 936 0398 E8030000 		.word	1000
- 937 039c 00000000 		.word	0
- 938 03a0 D4000000 		.word	.LC29
- 939 03a4 00CA9A3B 		.word	1000000000
- 940 03a8 00E1F505 		.word	100000000
- 941 03ac 80969800 		.word	10000000
- 942 03b0 40420F00 		.word	1000000
- 943 03b4 A0860100 		.word	100000
- 944 03b8 10270000 		.word	10000
- 945 03bc F8000000 		.word	.LC31
- 946 03c0 04010000 		.word	.LC33
- 947              		.cfi_endproc
- 948              	.LFE35:
- 949              		.size	puts_measurement, .-puts_measurement
- 950 03c4 C046C046 		.section	.rodata
- 951 010b 00       		.align	2
- 952              	.LC36:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 22
+ 922 0368 B80B0000 		.word	3000
+ 923 036c 00000000 		.word	0
+ 924 0370 00E1F505 		.word	100000000
+ 925 0374 00000000 		.word	0
+ 926 0378 80969800 		.word	10000000
+ 927 037c 00000000 		.word	0
+ 928 0380 40420F00 		.word	1000000
+ 929 0384 00000000 		.word	0
+ 930 0388 A0860100 		.word	100000
+ 931 038c 00000000 		.word	0
+ 932 0390 10270000 		.word	10000
+ 933 0394 00000000 		.word	0
+ 934 0398 E8030000 		.word	1000
+ 935 039c 00000000 		.word	0
+ 936 03a0 D4000000 		.word	.LC28
+ 937 03a4 00CA9A3B 		.word	1000000000
+ 938 03a8 00E1F505 		.word	100000000
+ 939 03ac 80969800 		.word	10000000
+ 940 03b0 40420F00 		.word	1000000
+ 941 03b4 A0860100 		.word	100000
+ 942 03b8 10270000 		.word	10000
+ 943 03bc F8000000 		.word	.LC30
+ 944 03c0 04010000 		.word	.LC32
+ 945              		.cfi_endproc
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 22
 
 
- 953 010c 743A2000 		.ascii	"t: \000"
- 954              		.align	2
- 955              	.LC38:
- 956 0110 757300   		.ascii	"us\000"
- 957 0113 00       		.section	.text.print_measurement,"ax",%progbits
- 958              		.align	2
- 959              		.global	print_measurement
- 960              		.code	16
- 961              		.thumb_func
- 962              		.type	print_measurement, %function
- 963              	print_measurement:
- 964              	.LFB36:
- 171:.\main.c      **** 
- 172:.\main.c      **** void print_measurement(uint32 time){
- 965              		.loc 1 172 0
- 966              		.cfi_startproc
- 967 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 968              		.cfi_def_cfa_offset 20
- 969              		.cfi_offset 4, -20
- 970              		.cfi_offset 5, -16
- 971              		.cfi_offset 6, -12
- 972              		.cfi_offset 7, -8
- 973              		.cfi_offset 14, -4
- 974 0002 87B0     		sub	sp, sp, #28
- 975              		.cfi_def_cfa_offset 48
- 976 0004 00AF     		add	r7, sp, #0
- 977              		.cfi_def_cfa_register 7
- 978 0006 F860     		str	r0, [r7, #12]
- 173:.\main.c      ****     uint64 time_us = ((uint64)time * 125) / 3000;
- 979              		.loc 1 173 0
- 980 0008 FB68     		ldr	r3, [r7, #12]
- 981 000a 191C     		mov	r1, r3
- 982 000c 0023     		mov	r3, #0
- 983 000e 1A1C     		mov	r2, r3
- 984 0010 0B1C     		mov	r3, r1
- 985 0012 141C     		mov	r4, r2
- 986 0014 D80E     		lsr	r0, r3, #27
- 987 0016 6501     		lsl	r5, r4, #5
- 988 0018 7D60     		str	r5, [r7, #4]
- 989 001a 7D68     		ldr	r5, [r7, #4]
- 990 001c 0543     		orr	r5, r0
- 991 001e 7D60     		str	r5, [r7, #4]
- 992 0020 5801     		lsl	r0, r3, #5
- 993 0022 3860     		str	r0, [r7]
- 994 0024 3B68     		ldr	r3, [r7]
- 995 0026 7C68     		ldr	r4, [r7, #4]
- 996 0028 5B1A     		sub	r3, r3, r1
- 997 002a 9441     		sbc	r4, r4, r2
- 998 002c 980F     		lsr	r0, r3, #30
- 999 002e A600     		lsl	r6, r4, #2
- 1000 0030 0643     		orr	r6, r0
- 1001 0032 9D00     		lsl	r5, r3, #2
- 1002 0034 2B1C     		mov	r3, r5
- 1003 0036 341C     		mov	r4, r6
- 1004 0038 5B18     		add	r3, r3, r1
- 1005 003a 5441     		adc	r4, r4, r2
- 1006 003c 181C     		mov	r0, r3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 23
+ 946              	.LFE35:
+ 947              		.size	puts_measurement, .-puts_measurement
+ 948 03c4 C046C046 		.section	.rodata
+ 949 010b 00       		.align	2
+ 950              	.LC35:
+ 951 010c 743A2000 		.ascii	"t: \000"
+ 952              		.align	2
+ 953              	.LC37:
+ 954 0110 757300   		.ascii	"us\000"
+ 955 0113 00       		.section	.text.print_measurement,"ax",%progbits
+ 956              		.align	2
+ 957              		.global	print_measurement
+ 958              		.code	16
+ 959              		.thumb_func
+ 960              		.type	print_measurement, %function
+ 961              	print_measurement:
+ 962              	.LFB36:
+ 177:.\main.c      **** 
+ 178:.\main.c      **** void print_measurement(uint32 time){
+ 963              		.loc 1 178 0
+ 964              		.cfi_startproc
+ 965 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 966              		.cfi_def_cfa_offset 20
+ 967              		.cfi_offset 4, -20
+ 968              		.cfi_offset 5, -16
+ 969              		.cfi_offset 6, -12
+ 970              		.cfi_offset 7, -8
+ 971              		.cfi_offset 14, -4
+ 972 0002 87B0     		sub	sp, sp, #28
+ 973              		.cfi_def_cfa_offset 48
+ 974 0004 00AF     		add	r7, sp, #0
+ 975              		.cfi_def_cfa_register 7
+ 976 0006 F860     		str	r0, [r7, #12]
+ 179:.\main.c      ****     uint64 time_us = ((uint64)time * 125) / 3000;
+ 977              		.loc 1 179 0
+ 978 0008 FB68     		ldr	r3, [r7, #12]
+ 979 000a 191C     		mov	r1, r3
+ 980 000c 0023     		mov	r3, #0
+ 981 000e 1A1C     		mov	r2, r3
+ 982 0010 0B1C     		mov	r3, r1
+ 983 0012 141C     		mov	r4, r2
+ 984 0014 D80E     		lsr	r0, r3, #27
+ 985 0016 6501     		lsl	r5, r4, #5
+ 986 0018 7D60     		str	r5, [r7, #4]
+ 987 001a 7D68     		ldr	r5, [r7, #4]
+ 988 001c 0543     		orr	r5, r0
+ 989 001e 7D60     		str	r5, [r7, #4]
+ 990 0020 5801     		lsl	r0, r3, #5
+ 991 0022 3860     		str	r0, [r7]
+ 992 0024 3B68     		ldr	r3, [r7]
+ 993 0026 7C68     		ldr	r4, [r7, #4]
+ 994 0028 5B1A     		sub	r3, r3, r1
+ 995 002a 9441     		sbc	r4, r4, r2
+ 996 002c 980F     		lsr	r0, r3, #30
+ 997 002e A600     		lsl	r6, r4, #2
+ 998 0030 0643     		orr	r6, r0
+ 999 0032 9D00     		lsl	r5, r3, #2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 23
 
 
- 1007 003e 211C     		mov	r1, r4
- 1008 0040 884B     		ldr	r3, .L20+4
- 1009 0042 874A     		ldr	r2, .L20
- 1010 0044 FFF7FEFF 		bl	__aeabi_uldivmod
- 1011 0048 031C     		mov	r3, r0
- 1012 004a 0C1C     		mov	r4, r1
- 1013 004c 3B61     		str	r3, [r7, #16]
- 1014 004e 7C61     		str	r4, [r7, #20]
- 174:.\main.c      ****     LCD_Position(1,0);
- 1015              		.loc 1 174 0
- 1016 0050 0120     		mov	r0, #1
- 1017 0052 0021     		mov	r1, #0
- 1018 0054 FFF7FEFF 		bl	LCD_Position
- 175:.\main.c      ****     LCD_PrintString("                ");
- 1019              		.loc 1 175 0
- 1020 0058 8F4B     		ldr	r3, .L20+56
- 1021 005a 181C     		mov	r0, r3
- 1022 005c FFF7FEFF 		bl	LCD_PrintString
- 176:.\main.c      ****     LCD_Position(1,0);
- 1023              		.loc 1 176 0
- 1024 0060 0120     		mov	r0, #1
- 1025 0062 0021     		mov	r1, #0
- 1026 0064 FFF7FEFF 		bl	LCD_Position
- 177:.\main.c      ****     LCD_PrintString("t: ");
- 1027              		.loc 1 177 0
- 1028 0068 8C4B     		ldr	r3, .L20+60
- 1029 006a 181C     		mov	r0, r3
- 1030 006c FFF7FEFF 		bl	LCD_PrintString
- 178:.\main.c      ****     LCD_PutChar(time_us/100000000u + CONVERT_TO_ASCII);
- 1031              		.loc 1 178 0
- 1032 0070 3B69     		ldr	r3, [r7, #16]
- 1033 0072 7C69     		ldr	r4, [r7, #20]
- 1034 0074 181C     		mov	r0, r3
- 1035 0076 211C     		mov	r1, r4
- 1036 0078 7B4A     		ldr	r2, .L20+8
- 1037 007a 7C4B     		ldr	r3, .L20+12
- 1038 007c FFF7FEFF 		bl	__aeabi_uldivmod
- 1039 0080 031C     		mov	r3, r0
- 1040 0082 0C1C     		mov	r4, r1
- 1041 0084 DBB2     		uxtb	r3, r3
- 1042 0086 3033     		add	r3, r3, #48
- 1043 0088 DBB2     		uxtb	r3, r3
- 1044 008a 181C     		mov	r0, r3
- 1045 008c FFF7FEFF 		bl	LCD_PutChar
- 179:.\main.c      ****     time_us %= 100000000;
- 1046              		.loc 1 179 0
- 1047 0090 3B69     		ldr	r3, [r7, #16]
- 1048 0092 7C69     		ldr	r4, [r7, #20]
- 1049 0094 181C     		mov	r0, r3
- 1050 0096 211C     		mov	r1, r4
- 1051 0098 734A     		ldr	r2, .L20+8
- 1052 009a 744B     		ldr	r3, .L20+12
- 1053 009c FFF7FEFF 		bl	__aeabi_uldivmod
- 1054 00a0 1C1C     		mov	r4, r3
- 1055 00a2 131C     		mov	r3, r2
- 1056 00a4 3B61     		str	r3, [r7, #16]
- 1057 00a6 7C61     		str	r4, [r7, #20]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 24
+ 1000 0034 2B1C     		mov	r3, r5
+ 1001 0036 341C     		mov	r4, r6
+ 1002 0038 5B18     		add	r3, r3, r1
+ 1003 003a 5441     		adc	r4, r4, r2
+ 1004 003c 181C     		mov	r0, r3
+ 1005 003e 211C     		mov	r1, r4
+ 1006 0040 884B     		ldr	r3, .L21+4
+ 1007 0042 874A     		ldr	r2, .L21
+ 1008 0044 FFF7FEFF 		bl	__aeabi_uldivmod
+ 1009 0048 031C     		mov	r3, r0
+ 1010 004a 0C1C     		mov	r4, r1
+ 1011 004c 3B61     		str	r3, [r7, #16]
+ 1012 004e 7C61     		str	r4, [r7, #20]
+ 180:.\main.c      ****     LCD_Position(1,0);
+ 1013              		.loc 1 180 0
+ 1014 0050 0120     		mov	r0, #1
+ 1015 0052 0021     		mov	r1, #0
+ 1016 0054 FFF7FEFF 		bl	LCD_Position
+ 181:.\main.c      ****     LCD_PrintString("                ");
+ 1017              		.loc 1 181 0
+ 1018 0058 8F4B     		ldr	r3, .L21+56
+ 1019 005a 181C     		mov	r0, r3
+ 1020 005c FFF7FEFF 		bl	LCD_PrintString
+ 182:.\main.c      ****     LCD_Position(1,0);
+ 1021              		.loc 1 182 0
+ 1022 0060 0120     		mov	r0, #1
+ 1023 0062 0021     		mov	r1, #0
+ 1024 0064 FFF7FEFF 		bl	LCD_Position
+ 183:.\main.c      ****     LCD_PrintString("t: ");
+ 1025              		.loc 1 183 0
+ 1026 0068 8C4B     		ldr	r3, .L21+60
+ 1027 006a 181C     		mov	r0, r3
+ 1028 006c FFF7FEFF 		bl	LCD_PrintString
+ 184:.\main.c      ****     LCD_PutChar(time_us/100000000u + CONVERT_TO_ASCII);
+ 1029              		.loc 1 184 0
+ 1030 0070 3B69     		ldr	r3, [r7, #16]
+ 1031 0072 7C69     		ldr	r4, [r7, #20]
+ 1032 0074 181C     		mov	r0, r3
+ 1033 0076 211C     		mov	r1, r4
+ 1034 0078 7B4A     		ldr	r2, .L21+8
+ 1035 007a 7C4B     		ldr	r3, .L21+12
+ 1036 007c FFF7FEFF 		bl	__aeabi_uldivmod
+ 1037 0080 031C     		mov	r3, r0
+ 1038 0082 0C1C     		mov	r4, r1
+ 1039 0084 DBB2     		uxtb	r3, r3
+ 1040 0086 3033     		add	r3, r3, #48
+ 1041 0088 DBB2     		uxtb	r3, r3
+ 1042 008a 181C     		mov	r0, r3
+ 1043 008c FFF7FEFF 		bl	LCD_PutChar
+ 185:.\main.c      ****     time_us %= 100000000;
+ 1044              		.loc 1 185 0
+ 1045 0090 3B69     		ldr	r3, [r7, #16]
+ 1046 0092 7C69     		ldr	r4, [r7, #20]
+ 1047 0094 181C     		mov	r0, r3
+ 1048 0096 211C     		mov	r1, r4
+ 1049 0098 734A     		ldr	r2, .L21+8
+ 1050 009a 744B     		ldr	r3, .L21+12
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 24
 
 
- 180:.\main.c      ****     LCD_PutChar(time_us/10000000u + CONVERT_TO_ASCII);
- 1058              		.loc 1 180 0
- 1059 00a8 3B69     		ldr	r3, [r7, #16]
- 1060 00aa 7C69     		ldr	r4, [r7, #20]
- 1061 00ac 181C     		mov	r0, r3
- 1062 00ae 211C     		mov	r1, r4
- 1063 00b0 6F4A     		ldr	r2, .L20+16
- 1064 00b2 704B     		ldr	r3, .L20+20
- 1065 00b4 FFF7FEFF 		bl	__aeabi_uldivmod
- 1066 00b8 031C     		mov	r3, r0
- 1067 00ba 0C1C     		mov	r4, r1
- 1068 00bc DBB2     		uxtb	r3, r3
- 1069 00be 3033     		add	r3, r3, #48
- 1070 00c0 DBB2     		uxtb	r3, r3
- 1071 00c2 181C     		mov	r0, r3
- 1072 00c4 FFF7FEFF 		bl	LCD_PutChar
- 181:.\main.c      ****     time_us %= 10000000;
- 1073              		.loc 1 181 0
- 1074 00c8 3B69     		ldr	r3, [r7, #16]
- 1075 00ca 7C69     		ldr	r4, [r7, #20]
- 1076 00cc 181C     		mov	r0, r3
- 1077 00ce 211C     		mov	r1, r4
- 1078 00d0 674A     		ldr	r2, .L20+16
- 1079 00d2 684B     		ldr	r3, .L20+20
- 1080 00d4 FFF7FEFF 		bl	__aeabi_uldivmod
- 1081 00d8 1C1C     		mov	r4, r3
- 1082 00da 131C     		mov	r3, r2
- 1083 00dc 3B61     		str	r3, [r7, #16]
- 1084 00de 7C61     		str	r4, [r7, #20]
- 182:.\main.c      ****     LCD_PutChar(time_us/1000000u + CONVERT_TO_ASCII);
- 1085              		.loc 1 182 0
- 1086 00e0 3B69     		ldr	r3, [r7, #16]
- 1087 00e2 7C69     		ldr	r4, [r7, #20]
- 1088 00e4 181C     		mov	r0, r3
- 1089 00e6 211C     		mov	r1, r4
- 1090 00e8 634A     		ldr	r2, .L20+24
- 1091 00ea 644B     		ldr	r3, .L20+28
- 1092 00ec FFF7FEFF 		bl	__aeabi_uldivmod
- 1093 00f0 031C     		mov	r3, r0
- 1094 00f2 0C1C     		mov	r4, r1
- 1095 00f4 DBB2     		uxtb	r3, r3
- 1096 00f6 3033     		add	r3, r3, #48
- 1097 00f8 DBB2     		uxtb	r3, r3
- 1098 00fa 181C     		mov	r0, r3
- 1099 00fc FFF7FEFF 		bl	LCD_PutChar
- 183:.\main.c      ****     time_us %= 1000000;
- 1100              		.loc 1 183 0
- 1101 0100 3B69     		ldr	r3, [r7, #16]
- 1102 0102 7C69     		ldr	r4, [r7, #20]
- 1103 0104 181C     		mov	r0, r3
- 1104 0106 211C     		mov	r1, r4
- 1105 0108 5B4A     		ldr	r2, .L20+24
- 1106 010a 5C4B     		ldr	r3, .L20+28
- 1107 010c FFF7FEFF 		bl	__aeabi_uldivmod
- 1108 0110 1C1C     		mov	r4, r3
- 1109 0112 131C     		mov	r3, r2
- 1110 0114 3B61     		str	r3, [r7, #16]
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 25
+ 1051 009c FFF7FEFF 		bl	__aeabi_uldivmod
+ 1052 00a0 1C1C     		mov	r4, r3
+ 1053 00a2 131C     		mov	r3, r2
+ 1054 00a4 3B61     		str	r3, [r7, #16]
+ 1055 00a6 7C61     		str	r4, [r7, #20]
+ 186:.\main.c      ****     LCD_PutChar(time_us/10000000u + CONVERT_TO_ASCII);
+ 1056              		.loc 1 186 0
+ 1057 00a8 3B69     		ldr	r3, [r7, #16]
+ 1058 00aa 7C69     		ldr	r4, [r7, #20]
+ 1059 00ac 181C     		mov	r0, r3
+ 1060 00ae 211C     		mov	r1, r4
+ 1061 00b0 6F4A     		ldr	r2, .L21+16
+ 1062 00b2 704B     		ldr	r3, .L21+20
+ 1063 00b4 FFF7FEFF 		bl	__aeabi_uldivmod
+ 1064 00b8 031C     		mov	r3, r0
+ 1065 00ba 0C1C     		mov	r4, r1
+ 1066 00bc DBB2     		uxtb	r3, r3
+ 1067 00be 3033     		add	r3, r3, #48
+ 1068 00c0 DBB2     		uxtb	r3, r3
+ 1069 00c2 181C     		mov	r0, r3
+ 1070 00c4 FFF7FEFF 		bl	LCD_PutChar
+ 187:.\main.c      ****     time_us %= 10000000;
+ 1071              		.loc 1 187 0
+ 1072 00c8 3B69     		ldr	r3, [r7, #16]
+ 1073 00ca 7C69     		ldr	r4, [r7, #20]
+ 1074 00cc 181C     		mov	r0, r3
+ 1075 00ce 211C     		mov	r1, r4
+ 1076 00d0 674A     		ldr	r2, .L21+16
+ 1077 00d2 684B     		ldr	r3, .L21+20
+ 1078 00d4 FFF7FEFF 		bl	__aeabi_uldivmod
+ 1079 00d8 1C1C     		mov	r4, r3
+ 1080 00da 131C     		mov	r3, r2
+ 1081 00dc 3B61     		str	r3, [r7, #16]
+ 1082 00de 7C61     		str	r4, [r7, #20]
+ 188:.\main.c      ****     LCD_PutChar(time_us/1000000u + CONVERT_TO_ASCII);
+ 1083              		.loc 1 188 0
+ 1084 00e0 3B69     		ldr	r3, [r7, #16]
+ 1085 00e2 7C69     		ldr	r4, [r7, #20]
+ 1086 00e4 181C     		mov	r0, r3
+ 1087 00e6 211C     		mov	r1, r4
+ 1088 00e8 634A     		ldr	r2, .L21+24
+ 1089 00ea 644B     		ldr	r3, .L21+28
+ 1090 00ec FFF7FEFF 		bl	__aeabi_uldivmod
+ 1091 00f0 031C     		mov	r3, r0
+ 1092 00f2 0C1C     		mov	r4, r1
+ 1093 00f4 DBB2     		uxtb	r3, r3
+ 1094 00f6 3033     		add	r3, r3, #48
+ 1095 00f8 DBB2     		uxtb	r3, r3
+ 1096 00fa 181C     		mov	r0, r3
+ 1097 00fc FFF7FEFF 		bl	LCD_PutChar
+ 189:.\main.c      ****     time_us %= 1000000;
+ 1098              		.loc 1 189 0
+ 1099 0100 3B69     		ldr	r3, [r7, #16]
+ 1100 0102 7C69     		ldr	r4, [r7, #20]
+ 1101 0104 181C     		mov	r0, r3
+ 1102 0106 211C     		mov	r1, r4
+ 1103 0108 5B4A     		ldr	r2, .L21+24
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 25
 
 
- 1111 0116 7C61     		str	r4, [r7, #20]
- 184:.\main.c      ****     LCD_PutChar(',');
- 1112              		.loc 1 184 0
- 1113 0118 2C20     		mov	r0, #44
- 1114 011a FFF7FEFF 		bl	LCD_PutChar
- 185:.\main.c      ****     LCD_PutChar(time_us/100000u + CONVERT_TO_ASCII);
- 1115              		.loc 1 185 0
- 1116 011e 3B69     		ldr	r3, [r7, #16]
- 1117 0120 7C69     		ldr	r4, [r7, #20]
- 1118 0122 181C     		mov	r0, r3
- 1119 0124 211C     		mov	r1, r4
- 1120 0126 564A     		ldr	r2, .L20+32
- 1121 0128 564B     		ldr	r3, .L20+36
- 1122 012a FFF7FEFF 		bl	__aeabi_uldivmod
- 1123 012e 031C     		mov	r3, r0
- 1124 0130 0C1C     		mov	r4, r1
- 1125 0132 DBB2     		uxtb	r3, r3
- 1126 0134 3033     		add	r3, r3, #48
- 1127 0136 DBB2     		uxtb	r3, r3
- 1128 0138 181C     		mov	r0, r3
- 1129 013a FFF7FEFF 		bl	LCD_PutChar
- 186:.\main.c      ****     time_us %= 100000;
- 1130              		.loc 1 186 0
- 1131 013e 3B69     		ldr	r3, [r7, #16]
- 1132 0140 7C69     		ldr	r4, [r7, #20]
- 1133 0142 181C     		mov	r0, r3
- 1134 0144 211C     		mov	r1, r4
- 1135 0146 4E4A     		ldr	r2, .L20+32
- 1136 0148 4E4B     		ldr	r3, .L20+36
- 1137 014a FFF7FEFF 		bl	__aeabi_uldivmod
- 1138 014e 1C1C     		mov	r4, r3
- 1139 0150 131C     		mov	r3, r2
- 1140 0152 3B61     		str	r3, [r7, #16]
- 1141 0154 7C61     		str	r4, [r7, #20]
- 187:.\main.c      ****     LCD_PutChar(time_us/10000u + CONVERT_TO_ASCII);
- 1142              		.loc 1 187 0
- 1143 0156 3B69     		ldr	r3, [r7, #16]
- 1144 0158 7C69     		ldr	r4, [r7, #20]
- 1145 015a 181C     		mov	r0, r3
- 1146 015c 211C     		mov	r1, r4
- 1147 015e 4A4A     		ldr	r2, .L20+40
- 1148 0160 4A4B     		ldr	r3, .L20+44
- 1149 0162 FFF7FEFF 		bl	__aeabi_uldivmod
- 1150 0166 031C     		mov	r3, r0
- 1151 0168 0C1C     		mov	r4, r1
- 1152 016a DBB2     		uxtb	r3, r3
- 1153 016c 3033     		add	r3, r3, #48
- 1154 016e DBB2     		uxtb	r3, r3
- 1155 0170 181C     		mov	r0, r3
- 1156 0172 FFF7FEFF 		bl	LCD_PutChar
- 188:.\main.c      ****     time_us %= 10000;
- 1157              		.loc 1 188 0
- 1158 0176 3B69     		ldr	r3, [r7, #16]
- 1159 0178 7C69     		ldr	r4, [r7, #20]
- 1160 017a 181C     		mov	r0, r3
- 1161 017c 211C     		mov	r1, r4
- 1162 017e 424A     		ldr	r2, .L20+40
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 26
+ 1104 010a 5C4B     		ldr	r3, .L21+28
+ 1105 010c FFF7FEFF 		bl	__aeabi_uldivmod
+ 1106 0110 1C1C     		mov	r4, r3
+ 1107 0112 131C     		mov	r3, r2
+ 1108 0114 3B61     		str	r3, [r7, #16]
+ 1109 0116 7C61     		str	r4, [r7, #20]
+ 190:.\main.c      ****     LCD_PutChar(',');
+ 1110              		.loc 1 190 0
+ 1111 0118 2C20     		mov	r0, #44
+ 1112 011a FFF7FEFF 		bl	LCD_PutChar
+ 191:.\main.c      ****     LCD_PutChar(time_us/100000u + CONVERT_TO_ASCII);
+ 1113              		.loc 1 191 0
+ 1114 011e 3B69     		ldr	r3, [r7, #16]
+ 1115 0120 7C69     		ldr	r4, [r7, #20]
+ 1116 0122 181C     		mov	r0, r3
+ 1117 0124 211C     		mov	r1, r4
+ 1118 0126 564A     		ldr	r2, .L21+32
+ 1119 0128 564B     		ldr	r3, .L21+36
+ 1120 012a FFF7FEFF 		bl	__aeabi_uldivmod
+ 1121 012e 031C     		mov	r3, r0
+ 1122 0130 0C1C     		mov	r4, r1
+ 1123 0132 DBB2     		uxtb	r3, r3
+ 1124 0134 3033     		add	r3, r3, #48
+ 1125 0136 DBB2     		uxtb	r3, r3
+ 1126 0138 181C     		mov	r0, r3
+ 1127 013a FFF7FEFF 		bl	LCD_PutChar
+ 192:.\main.c      ****     time_us %= 100000;
+ 1128              		.loc 1 192 0
+ 1129 013e 3B69     		ldr	r3, [r7, #16]
+ 1130 0140 7C69     		ldr	r4, [r7, #20]
+ 1131 0142 181C     		mov	r0, r3
+ 1132 0144 211C     		mov	r1, r4
+ 1133 0146 4E4A     		ldr	r2, .L21+32
+ 1134 0148 4E4B     		ldr	r3, .L21+36
+ 1135 014a FFF7FEFF 		bl	__aeabi_uldivmod
+ 1136 014e 1C1C     		mov	r4, r3
+ 1137 0150 131C     		mov	r3, r2
+ 1138 0152 3B61     		str	r3, [r7, #16]
+ 1139 0154 7C61     		str	r4, [r7, #20]
+ 193:.\main.c      ****     LCD_PutChar(time_us/10000u + CONVERT_TO_ASCII);
+ 1140              		.loc 1 193 0
+ 1141 0156 3B69     		ldr	r3, [r7, #16]
+ 1142 0158 7C69     		ldr	r4, [r7, #20]
+ 1143 015a 181C     		mov	r0, r3
+ 1144 015c 211C     		mov	r1, r4
+ 1145 015e 4A4A     		ldr	r2, .L21+40
+ 1146 0160 4A4B     		ldr	r3, .L21+44
+ 1147 0162 FFF7FEFF 		bl	__aeabi_uldivmod
+ 1148 0166 031C     		mov	r3, r0
+ 1149 0168 0C1C     		mov	r4, r1
+ 1150 016a DBB2     		uxtb	r3, r3
+ 1151 016c 3033     		add	r3, r3, #48
+ 1152 016e DBB2     		uxtb	r3, r3
+ 1153 0170 181C     		mov	r0, r3
+ 1154 0172 FFF7FEFF 		bl	LCD_PutChar
+ 194:.\main.c      ****     time_us %= 10000;
+ 1155              		.loc 1 194 0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 26
 
 
- 1163 0180 424B     		ldr	r3, .L20+44
- 1164 0182 FFF7FEFF 		bl	__aeabi_uldivmod
- 1165 0186 1C1C     		mov	r4, r3
- 1166 0188 131C     		mov	r3, r2
- 1167 018a 3B61     		str	r3, [r7, #16]
- 1168 018c 7C61     		str	r4, [r7, #20]
- 189:.\main.c      ****     LCD_PutChar(time_us/1000u + CONVERT_TO_ASCII);
- 1169              		.loc 1 189 0
- 1170 018e 3B69     		ldr	r3, [r7, #16]
- 1171 0190 7C69     		ldr	r4, [r7, #20]
- 1172 0192 181C     		mov	r0, r3
- 1173 0194 211C     		mov	r1, r4
- 1174 0196 3E4A     		ldr	r2, .L20+48
- 1175 0198 3E4B     		ldr	r3, .L20+52
- 1176 019a FFF7FEFF 		bl	__aeabi_uldivmod
- 1177 019e 031C     		mov	r3, r0
- 1178 01a0 0C1C     		mov	r4, r1
- 1179 01a2 DBB2     		uxtb	r3, r3
- 1180 01a4 3033     		add	r3, r3, #48
- 1181 01a6 DBB2     		uxtb	r3, r3
- 1182 01a8 181C     		mov	r0, r3
- 1183 01aa FFF7FEFF 		bl	LCD_PutChar
- 190:.\main.c      ****     time_us %= 1000;
- 1184              		.loc 1 190 0
- 1185 01ae 3B69     		ldr	r3, [r7, #16]
- 1186 01b0 7C69     		ldr	r4, [r7, #20]
- 1187 01b2 181C     		mov	r0, r3
- 1188 01b4 211C     		mov	r1, r4
- 1189 01b6 364A     		ldr	r2, .L20+48
- 1190 01b8 364B     		ldr	r3, .L20+52
- 1191 01ba FFF7FEFF 		bl	__aeabi_uldivmod
- 1192 01be 1C1C     		mov	r4, r3
- 1193 01c0 131C     		mov	r3, r2
- 1194 01c2 3B61     		str	r3, [r7, #16]
- 1195 01c4 7C61     		str	r4, [r7, #20]
- 191:.\main.c      ****     LCD_PutChar(',');
- 1196              		.loc 1 191 0
- 1197 01c6 2C20     		mov	r0, #44
- 1198 01c8 FFF7FEFF 		bl	LCD_PutChar
- 192:.\main.c      ****     LCD_PutChar(time_us/100u + CONVERT_TO_ASCII);
- 1199              		.loc 1 192 0
- 1200 01cc 3B69     		ldr	r3, [r7, #16]
- 1201 01ce 7C69     		ldr	r4, [r7, #20]
- 1202 01d0 181C     		mov	r0, r3
- 1203 01d2 211C     		mov	r1, r4
- 1204 01d4 6422     		mov	r2, #100
- 1205 01d6 0023     		mov	r3, #0
- 1206 01d8 FFF7FEFF 		bl	__aeabi_uldivmod
- 1207 01dc 031C     		mov	r3, r0
- 1208 01de 0C1C     		mov	r4, r1
- 1209 01e0 DBB2     		uxtb	r3, r3
- 1210 01e2 3033     		add	r3, r3, #48
- 1211 01e4 DBB2     		uxtb	r3, r3
- 1212 01e6 181C     		mov	r0, r3
- 1213 01e8 FFF7FEFF 		bl	LCD_PutChar
- 193:.\main.c      ****     time_us %= 100;
- 1214              		.loc 1 193 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 27
+ 1156 0176 3B69     		ldr	r3, [r7, #16]
+ 1157 0178 7C69     		ldr	r4, [r7, #20]
+ 1158 017a 181C     		mov	r0, r3
+ 1159 017c 211C     		mov	r1, r4
+ 1160 017e 424A     		ldr	r2, .L21+40
+ 1161 0180 424B     		ldr	r3, .L21+44
+ 1162 0182 FFF7FEFF 		bl	__aeabi_uldivmod
+ 1163 0186 1C1C     		mov	r4, r3
+ 1164 0188 131C     		mov	r3, r2
+ 1165 018a 3B61     		str	r3, [r7, #16]
+ 1166 018c 7C61     		str	r4, [r7, #20]
+ 195:.\main.c      ****     LCD_PutChar(time_us/1000u + CONVERT_TO_ASCII);
+ 1167              		.loc 1 195 0
+ 1168 018e 3B69     		ldr	r3, [r7, #16]
+ 1169 0190 7C69     		ldr	r4, [r7, #20]
+ 1170 0192 181C     		mov	r0, r3
+ 1171 0194 211C     		mov	r1, r4
+ 1172 0196 3E4A     		ldr	r2, .L21+48
+ 1173 0198 3E4B     		ldr	r3, .L21+52
+ 1174 019a FFF7FEFF 		bl	__aeabi_uldivmod
+ 1175 019e 031C     		mov	r3, r0
+ 1176 01a0 0C1C     		mov	r4, r1
+ 1177 01a2 DBB2     		uxtb	r3, r3
+ 1178 01a4 3033     		add	r3, r3, #48
+ 1179 01a6 DBB2     		uxtb	r3, r3
+ 1180 01a8 181C     		mov	r0, r3
+ 1181 01aa FFF7FEFF 		bl	LCD_PutChar
+ 196:.\main.c      ****     time_us %= 1000;
+ 1182              		.loc 1 196 0
+ 1183 01ae 3B69     		ldr	r3, [r7, #16]
+ 1184 01b0 7C69     		ldr	r4, [r7, #20]
+ 1185 01b2 181C     		mov	r0, r3
+ 1186 01b4 211C     		mov	r1, r4
+ 1187 01b6 364A     		ldr	r2, .L21+48
+ 1188 01b8 364B     		ldr	r3, .L21+52
+ 1189 01ba FFF7FEFF 		bl	__aeabi_uldivmod
+ 1190 01be 1C1C     		mov	r4, r3
+ 1191 01c0 131C     		mov	r3, r2
+ 1192 01c2 3B61     		str	r3, [r7, #16]
+ 1193 01c4 7C61     		str	r4, [r7, #20]
+ 197:.\main.c      ****     LCD_PutChar(',');
+ 1194              		.loc 1 197 0
+ 1195 01c6 2C20     		mov	r0, #44
+ 1196 01c8 FFF7FEFF 		bl	LCD_PutChar
+ 198:.\main.c      ****     LCD_PutChar(time_us/100u + CONVERT_TO_ASCII);
+ 1197              		.loc 1 198 0
+ 1198 01cc 3B69     		ldr	r3, [r7, #16]
+ 1199 01ce 7C69     		ldr	r4, [r7, #20]
+ 1200 01d0 181C     		mov	r0, r3
+ 1201 01d2 211C     		mov	r1, r4
+ 1202 01d4 6422     		mov	r2, #100
+ 1203 01d6 0023     		mov	r3, #0
+ 1204 01d8 FFF7FEFF 		bl	__aeabi_uldivmod
+ 1205 01dc 031C     		mov	r3, r0
+ 1206 01de 0C1C     		mov	r4, r1
+ 1207 01e0 DBB2     		uxtb	r3, r3
+ 1208 01e2 3033     		add	r3, r3, #48
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 27
 
 
- 1215 01ec 3B69     		ldr	r3, [r7, #16]
- 1216 01ee 7C69     		ldr	r4, [r7, #20]
- 1217 01f0 181C     		mov	r0, r3
- 1218 01f2 211C     		mov	r1, r4
- 1219 01f4 6422     		mov	r2, #100
- 1220 01f6 0023     		mov	r3, #0
- 1221 01f8 FFF7FEFF 		bl	__aeabi_uldivmod
- 1222 01fc 1C1C     		mov	r4, r3
- 1223 01fe 131C     		mov	r3, r2
- 1224 0200 3B61     		str	r3, [r7, #16]
- 1225 0202 7C61     		str	r4, [r7, #20]
- 194:.\main.c      ****     LCD_PutChar(time_us/10u + CONVERT_TO_ASCII);
- 1226              		.loc 1 194 0
- 1227 0204 3B69     		ldr	r3, [r7, #16]
- 1228 0206 7C69     		ldr	r4, [r7, #20]
- 1229 0208 181C     		mov	r0, r3
- 1230 020a 211C     		mov	r1, r4
- 1231 020c 0A22     		mov	r2, #10
- 1232 020e 0023     		mov	r3, #0
- 1233 0210 FFF7FEFF 		bl	__aeabi_uldivmod
- 1234 0214 031C     		mov	r3, r0
- 1235 0216 0C1C     		mov	r4, r1
- 1236 0218 DBB2     		uxtb	r3, r3
- 1237 021a 3033     		add	r3, r3, #48
- 1238 021c DBB2     		uxtb	r3, r3
- 1239 021e 181C     		mov	r0, r3
- 1240 0220 FFF7FEFF 		bl	LCD_PutChar
- 195:.\main.c      ****     time_us %= 10;
- 1241              		.loc 1 195 0
- 1242 0224 3B69     		ldr	r3, [r7, #16]
- 1243 0226 7C69     		ldr	r4, [r7, #20]
- 1244 0228 181C     		mov	r0, r3
- 1245 022a 211C     		mov	r1, r4
- 1246 022c 0A22     		mov	r2, #10
- 1247 022e 0023     		mov	r3, #0
- 1248 0230 FFF7FEFF 		bl	__aeabi_uldivmod
- 1249 0234 1C1C     		mov	r4, r3
- 1250 0236 131C     		mov	r3, r2
- 1251 0238 3B61     		str	r3, [r7, #16]
- 1252 023a 7C61     		str	r4, [r7, #20]
- 196:.\main.c      ****     LCD_PutChar(time_us + CONVERT_TO_ASCII);
- 1253              		.loc 1 196 0
- 1254 023c 3B69     		ldr	r3, [r7, #16]
- 1255 023e 7C69     		ldr	r4, [r7, #20]
- 1256 0240 DBB2     		uxtb	r3, r3
- 1257 0242 3033     		add	r3, r3, #48
- 1258 0244 DBB2     		uxtb	r3, r3
- 1259 0246 181C     		mov	r0, r3
- 1260 0248 FFF7FEFF 		bl	LCD_PutChar
- 197:.\main.c      ****     LCD_PrintString("us");
- 1261              		.loc 1 197 0
- 1262 024c 144B     		ldr	r3, .L20+64
- 1263 024e 181C     		mov	r0, r3
- 1264 0250 FFF7FEFF 		bl	LCD_PrintString
- 198:.\main.c      **** }
- 1265              		.loc 1 198 0
- 1266 0254 BD46     		mov	sp, r7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 28
+ 1209 01e4 DBB2     		uxtb	r3, r3
+ 1210 01e6 181C     		mov	r0, r3
+ 1211 01e8 FFF7FEFF 		bl	LCD_PutChar
+ 199:.\main.c      ****     time_us %= 100;
+ 1212              		.loc 1 199 0
+ 1213 01ec 3B69     		ldr	r3, [r7, #16]
+ 1214 01ee 7C69     		ldr	r4, [r7, #20]
+ 1215 01f0 181C     		mov	r0, r3
+ 1216 01f2 211C     		mov	r1, r4
+ 1217 01f4 6422     		mov	r2, #100
+ 1218 01f6 0023     		mov	r3, #0
+ 1219 01f8 FFF7FEFF 		bl	__aeabi_uldivmod
+ 1220 01fc 1C1C     		mov	r4, r3
+ 1221 01fe 131C     		mov	r3, r2
+ 1222 0200 3B61     		str	r3, [r7, #16]
+ 1223 0202 7C61     		str	r4, [r7, #20]
+ 200:.\main.c      ****     LCD_PutChar(time_us/10u + CONVERT_TO_ASCII);
+ 1224              		.loc 1 200 0
+ 1225 0204 3B69     		ldr	r3, [r7, #16]
+ 1226 0206 7C69     		ldr	r4, [r7, #20]
+ 1227 0208 181C     		mov	r0, r3
+ 1228 020a 211C     		mov	r1, r4
+ 1229 020c 0A22     		mov	r2, #10
+ 1230 020e 0023     		mov	r3, #0
+ 1231 0210 FFF7FEFF 		bl	__aeabi_uldivmod
+ 1232 0214 031C     		mov	r3, r0
+ 1233 0216 0C1C     		mov	r4, r1
+ 1234 0218 DBB2     		uxtb	r3, r3
+ 1235 021a 3033     		add	r3, r3, #48
+ 1236 021c DBB2     		uxtb	r3, r3
+ 1237 021e 181C     		mov	r0, r3
+ 1238 0220 FFF7FEFF 		bl	LCD_PutChar
+ 201:.\main.c      ****     time_us %= 10;
+ 1239              		.loc 1 201 0
+ 1240 0224 3B69     		ldr	r3, [r7, #16]
+ 1241 0226 7C69     		ldr	r4, [r7, #20]
+ 1242 0228 181C     		mov	r0, r3
+ 1243 022a 211C     		mov	r1, r4
+ 1244 022c 0A22     		mov	r2, #10
+ 1245 022e 0023     		mov	r3, #0
+ 1246 0230 FFF7FEFF 		bl	__aeabi_uldivmod
+ 1247 0234 1C1C     		mov	r4, r3
+ 1248 0236 131C     		mov	r3, r2
+ 1249 0238 3B61     		str	r3, [r7, #16]
+ 1250 023a 7C61     		str	r4, [r7, #20]
+ 202:.\main.c      ****     LCD_PutChar(time_us + CONVERT_TO_ASCII);
+ 1251              		.loc 1 202 0
+ 1252 023c 3B69     		ldr	r3, [r7, #16]
+ 1253 023e 7C69     		ldr	r4, [r7, #20]
+ 1254 0240 DBB2     		uxtb	r3, r3
+ 1255 0242 3033     		add	r3, r3, #48
+ 1256 0244 DBB2     		uxtb	r3, r3
+ 1257 0246 181C     		mov	r0, r3
+ 1258 0248 FFF7FEFF 		bl	LCD_PutChar
+ 203:.\main.c      ****     LCD_PrintString("us");
+ 1259              		.loc 1 203 0
+ 1260 024c 144B     		ldr	r3, .L21+64
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 28
 
 
- 1267 0256 07B0     		add	sp, sp, #28
- 1268              		@ sp needed
- 1269 0258 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1261 024e 181C     		mov	r0, r3
+ 1262 0250 FFF7FEFF 		bl	LCD_PrintString
+ 204:.\main.c      **** }
+ 1263              		.loc 1 204 0
+ 1264 0254 BD46     		mov	sp, r7
+ 1265 0256 07B0     		add	sp, sp, #28
+ 1266              		@ sp needed
+ 1267 0258 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1268              	.L22:
+ 1269 025a C046C046 		.align	3
+ 1269      C046
  1270              	.L21:
- 1271 025a C046C046 		.align	3
- 1271      C046
- 1272              	.L20:
- 1273 0260 B80B0000 		.word	3000
- 1274 0264 00000000 		.word	0
- 1275 0268 00E1F505 		.word	100000000
- 1276 026c 00000000 		.word	0
- 1277 0270 80969800 		.word	10000000
- 1278 0274 00000000 		.word	0
- 1279 0278 40420F00 		.word	1000000
- 1280 027c 00000000 		.word	0
- 1281 0280 A0860100 		.word	100000
- 1282 0284 00000000 		.word	0
- 1283 0288 10270000 		.word	10000
- 1284 028c 00000000 		.word	0
- 1285 0290 E8030000 		.word	1000
- 1286 0294 00000000 		.word	0
- 1287 0298 6C000000 		.word	.LC14
- 1288 029c 0C010000 		.word	.LC36
- 1289 02a0 10010000 		.word	.LC38
- 1290              		.cfi_endproc
- 1291              	.LFE36:
- 1292              		.size	print_measurement, .-print_measurement
- 1293 02a4 C046C046 		.section	.text.updateBTN,"ax",%progbits
- 1294              		.align	2
- 1295              		.global	updateBTN
- 1296              		.code	16
- 1297              		.thumb_func
- 1298              		.type	updateBTN, %function
- 1299              	updateBTN:
- 1300              	.LFB37:
- 199:.\main.c      **** 
- 200:.\main.c      **** int8 updateBTN(void){
- 1301              		.loc 1 200 0
- 1302              		.cfi_startproc
- 1303 0000 80B5     		push	{r7, lr}
- 1304              		.cfi_def_cfa_offset 8
- 1305              		.cfi_offset 7, -8
- 1306              		.cfi_offset 14, -4
- 1307 0002 82B0     		sub	sp, sp, #8
- 1308              		.cfi_def_cfa_offset 16
- 1309 0004 00AF     		add	r7, sp, #0
- 1310              		.cfi_def_cfa_register 7
- 201:.\main.c      ****     uint16 temp = ADC_GetResult16(1); //A0
- 1311              		.loc 1 201 0
- 1312 0006 0120     		mov	r0, #1
- 1313 0008 FFF7FEFF 		bl	ADC_GetResult16
- 1314 000c 031C     		mov	r3, r0
- 1315 000e 1A1C     		mov	r2, r3
- 1316 0010 BB1D     		add	r3, r7, #6
- 1317 0012 1A80     		strh	r2, [r3]
- 202:.\main.c      ****     if (lcdBtnOld != temp){
- 1318              		.loc 1 202 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 29
+ 1271 0260 B80B0000 		.word	3000
+ 1272 0264 00000000 		.word	0
+ 1273 0268 00E1F505 		.word	100000000
+ 1274 026c 00000000 		.word	0
+ 1275 0270 80969800 		.word	10000000
+ 1276 0274 00000000 		.word	0
+ 1277 0278 40420F00 		.word	1000000
+ 1278 027c 00000000 		.word	0
+ 1279 0280 A0860100 		.word	100000
+ 1280 0284 00000000 		.word	0
+ 1281 0288 10270000 		.word	10000
+ 1282 028c 00000000 		.word	0
+ 1283 0290 E8030000 		.word	1000
+ 1284 0294 00000000 		.word	0
+ 1285 0298 6C000000 		.word	.LC13
+ 1286 029c 0C010000 		.word	.LC35
+ 1287 02a0 10010000 		.word	.LC37
+ 1288              		.cfi_endproc
+ 1289              	.LFE36:
+ 1290              		.size	print_measurement, .-print_measurement
+ 1291 02a4 C046C046 		.section	.text.updateBTN,"ax",%progbits
+ 1292              		.align	2
+ 1293              		.global	updateBTN
+ 1294              		.code	16
+ 1295              		.thumb_func
+ 1296              		.type	updateBTN, %function
+ 1297              	updateBTN:
+ 1298              	.LFB37:
+ 205:.\main.c      **** 
+ 206:.\main.c      **** int8 updateBTN(void){
+ 1299              		.loc 1 206 0
+ 1300              		.cfi_startproc
+ 1301 0000 80B5     		push	{r7, lr}
+ 1302              		.cfi_def_cfa_offset 8
+ 1303              		.cfi_offset 7, -8
+ 1304              		.cfi_offset 14, -4
+ 1305 0002 82B0     		sub	sp, sp, #8
+ 1306              		.cfi_def_cfa_offset 16
+ 1307 0004 00AF     		add	r7, sp, #0
+ 1308              		.cfi_def_cfa_register 7
+ 207:.\main.c      ****     uint16 temp = ADC_GetResult16(1); //A0
+ 1309              		.loc 1 207 0
+ 1310 0006 0120     		mov	r0, #1
+ 1311 0008 FFF7FEFF 		bl	ADC_GetResult16
+ 1312 000c 031C     		mov	r3, r0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 29
 
 
- 1319 0014 204B     		ldr	r3, .L32
- 1320 0016 1B88     		ldrh	r3, [r3]
- 1321 0018 BA1D     		add	r2, r7, #6
- 1322 001a 1288     		ldrh	r2, [r2]
- 1323 001c 9A42     		cmp	r2, r3
- 1324 001e 35D0     		beq	.L23
- 203:.\main.c      ****         if (temp == 0xFFFF || temp <= 5)
- 1325              		.loc 1 203 0
- 1326 0020 BB1D     		add	r3, r7, #6
- 1327 0022 1A88     		ldrh	r2, [r3]
- 1328 0024 1D4B     		ldr	r3, .L32+4
- 1329 0026 9A42     		cmp	r2, r3
- 1330 0028 03D0     		beq	.L24
- 1331              		.loc 1 203 0 is_stmt 0 discriminator 1
- 1332 002a BB1D     		add	r3, r7, #6
- 1333 002c 1B88     		ldrh	r3, [r3]
- 1334 002e 052B     		cmp	r3, #5
- 1335 0030 03D8     		bhi	.L25
- 1336              	.L24:
- 204:.\main.c      ****             BTN = RIGHT;
- 1337              		.loc 1 204 0 is_stmt 1
- 1338 0032 1B4B     		ldr	r3, .L32+8
- 1339 0034 0522     		mov	r2, #5
- 1340 0036 1A70     		strb	r2, [r3]
- 1341 0038 22E0     		b	.L26
- 1342              	.L25:
- 205:.\main.c      ****         else if(temp <= 20)
- 1343              		.loc 1 205 0
- 1344 003a BB1D     		add	r3, r7, #6
- 1345 003c 1B88     		ldrh	r3, [r3]
- 1346 003e 142B     		cmp	r3, #20
- 1347 0040 03D8     		bhi	.L27
- 206:.\main.c      ****             BTN = UP;
- 1348              		.loc 1 206 0
- 1349 0042 174B     		ldr	r3, .L32+8
- 1350 0044 0422     		mov	r2, #4
- 1351 0046 1A70     		strb	r2, [r3]
- 1352 0048 1AE0     		b	.L26
- 1353              	.L27:
- 207:.\main.c      ****         else if(temp <= 40)
- 1354              		.loc 1 207 0
- 1355 004a BB1D     		add	r3, r7, #6
- 1356 004c 1B88     		ldrh	r3, [r3]
- 1357 004e 282B     		cmp	r3, #40
- 1358 0050 03D8     		bhi	.L28
- 208:.\main.c      ****             BTN = DOWN;
- 1359              		.loc 1 208 0
- 1360 0052 134B     		ldr	r3, .L32+8
- 1361 0054 0322     		mov	r2, #3
- 1362 0056 1A70     		strb	r2, [r3]
- 1363 0058 12E0     		b	.L26
- 1364              	.L28:
- 209:.\main.c      ****         else if(temp <= 60)
- 1365              		.loc 1 209 0
- 1366 005a BB1D     		add	r3, r7, #6
- 1367 005c 1B88     		ldrh	r3, [r3]
- 1368 005e 3C2B     		cmp	r3, #60
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 30
+ 1313 000e 1A1C     		mov	r2, r3
+ 1314 0010 BB1D     		add	r3, r7, #6
+ 1315 0012 1A80     		strh	r2, [r3]
+ 208:.\main.c      ****     if (lcdBtnOld != temp){
+ 1316              		.loc 1 208 0
+ 1317 0014 204B     		ldr	r3, .L33
+ 1318 0016 1B88     		ldrh	r3, [r3]
+ 1319 0018 BA1D     		add	r2, r7, #6
+ 1320 001a 1288     		ldrh	r2, [r2]
+ 1321 001c 9A42     		cmp	r2, r3
+ 1322 001e 35D0     		beq	.L24
+ 209:.\main.c      ****         if (temp == 0xFFFF || temp <= 5)
+ 1323              		.loc 1 209 0
+ 1324 0020 BB1D     		add	r3, r7, #6
+ 1325 0022 1A88     		ldrh	r2, [r3]
+ 1326 0024 1D4B     		ldr	r3, .L33+4
+ 1327 0026 9A42     		cmp	r2, r3
+ 1328 0028 03D0     		beq	.L25
+ 1329              		.loc 1 209 0 is_stmt 0 discriminator 1
+ 1330 002a BB1D     		add	r3, r7, #6
+ 1331 002c 1B88     		ldrh	r3, [r3]
+ 1332 002e 052B     		cmp	r3, #5
+ 1333 0030 03D8     		bhi	.L26
+ 1334              	.L25:
+ 210:.\main.c      ****             BTN = RIGHT;
+ 1335              		.loc 1 210 0 is_stmt 1
+ 1336 0032 1B4B     		ldr	r3, .L33+8
+ 1337 0034 0522     		mov	r2, #5
+ 1338 0036 1A70     		strb	r2, [r3]
+ 1339 0038 22E0     		b	.L27
+ 1340              	.L26:
+ 211:.\main.c      ****         else if(temp <= 20)
+ 1341              		.loc 1 211 0
+ 1342 003a BB1D     		add	r3, r7, #6
+ 1343 003c 1B88     		ldrh	r3, [r3]
+ 1344 003e 142B     		cmp	r3, #20
+ 1345 0040 03D8     		bhi	.L28
+ 212:.\main.c      ****             BTN = UP;
+ 1346              		.loc 1 212 0
+ 1347 0042 174B     		ldr	r3, .L33+8
+ 1348 0044 0422     		mov	r2, #4
+ 1349 0046 1A70     		strb	r2, [r3]
+ 1350 0048 1AE0     		b	.L27
+ 1351              	.L28:
+ 213:.\main.c      ****         else if(temp <= 40)
+ 1352              		.loc 1 213 0
+ 1353 004a BB1D     		add	r3, r7, #6
+ 1354 004c 1B88     		ldrh	r3, [r3]
+ 1355 004e 282B     		cmp	r3, #40
+ 1356 0050 03D8     		bhi	.L29
+ 214:.\main.c      ****             BTN = DOWN;
+ 1357              		.loc 1 214 0
+ 1358 0052 134B     		ldr	r3, .L33+8
+ 1359 0054 0322     		mov	r2, #3
+ 1360 0056 1A70     		strb	r2, [r3]
+ 1361 0058 12E0     		b	.L27
+ 1362              	.L29:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 30
 
 
- 1369 0060 03D8     		bhi	.L29
- 210:.\main.c      ****             BTN = LEFT;
- 1370              		.loc 1 210 0
- 1371 0062 0F4B     		ldr	r3, .L32+8
- 1372 0064 0222     		mov	r2, #2
- 1373 0066 1A70     		strb	r2, [r3]
- 1374 0068 0AE0     		b	.L26
- 1375              	.L29:
- 211:.\main.c      ****         else if(temp <= 100)
- 1376              		.loc 1 211 0
- 1377 006a BB1D     		add	r3, r7, #6
- 1378 006c 1B88     		ldrh	r3, [r3]
- 1379 006e 642B     		cmp	r3, #100
- 1380 0070 03D8     		bhi	.L30
- 212:.\main.c      ****             BTN = SELECT;
- 1381              		.loc 1 212 0
- 1382 0072 0B4B     		ldr	r3, .L32+8
- 1383 0074 0122     		mov	r2, #1
- 1384 0076 1A70     		strb	r2, [r3]
- 1385 0078 02E0     		b	.L26
- 1386              	.L30:
- 213:.\main.c      ****         else
- 214:.\main.c      ****             BTN = UNPRESSED;
- 1387              		.loc 1 214 0
- 1388 007a 094B     		ldr	r3, .L32+8
- 1389 007c 0022     		mov	r2, #0
- 1390 007e 1A70     		strb	r2, [r3]
- 1391              	.L26:
- 215:.\main.c      ****         lcdBtnOld = temp;
- 1392              		.loc 1 215 0
- 1393 0080 054B     		ldr	r3, .L32
- 1394 0082 BA1D     		add	r2, r7, #6
- 1395 0084 1288     		ldrh	r2, [r2]
- 1396 0086 1A80     		strh	r2, [r3]
- 216:.\main.c      ****         return 1;
- 1397              		.loc 1 216 0
- 1398 0088 0123     		mov	r3, #1
- 1399 008a 00E0     		b	.L31
- 1400              	.L23:
- 217:.\main.c      ****     }
- 218:.\main.c      ****     return 0;
- 1401              		.loc 1 218 0
- 1402 008c 0023     		mov	r3, #0
- 1403              	.L31:
- 1404 008e 5BB2     		sxtb	r3, r3
- 219:.\main.c      **** }...
- 1405              		.loc 1 219 0
- 1406 0090 181C     		mov	r0, r3
- 1407 0092 BD46     		mov	sp, r7
- 1408 0094 02B0     		add	sp, sp, #8
- 1409              		@ sp needed
- 1410 0096 80BD     		pop	{r7, pc}
+ 215:.\main.c      ****         else if(temp <= 60)
+ 1363              		.loc 1 215 0
+ 1364 005a BB1D     		add	r3, r7, #6
+ 1365 005c 1B88     		ldrh	r3, [r3]
+ 1366 005e 3C2B     		cmp	r3, #60
+ 1367 0060 03D8     		bhi	.L30
+ 216:.\main.c      ****             BTN = LEFT;
+ 1368              		.loc 1 216 0
+ 1369 0062 0F4B     		ldr	r3, .L33+8
+ 1370 0064 0222     		mov	r2, #2
+ 1371 0066 1A70     		strb	r2, [r3]
+ 1372 0068 0AE0     		b	.L27
+ 1373              	.L30:
+ 217:.\main.c      ****         else if(temp <= 100)
+ 1374              		.loc 1 217 0
+ 1375 006a BB1D     		add	r3, r7, #6
+ 1376 006c 1B88     		ldrh	r3, [r3]
+ 1377 006e 642B     		cmp	r3, #100
+ 1378 0070 03D8     		bhi	.L31
+ 218:.\main.c      ****             BTN = SELECT;
+ 1379              		.loc 1 218 0
+ 1380 0072 0B4B     		ldr	r3, .L33+8
+ 1381 0074 0122     		mov	r2, #1
+ 1382 0076 1A70     		strb	r2, [r3]
+ 1383 0078 02E0     		b	.L27
+ 1384              	.L31:
+ 219:.\main.c      ****         else
+ 220:.\main.c      ****             BTN = UNPRESSED;
+ 1385              		.loc 1 220 0
+ 1386 007a 094B     		ldr	r3, .L33+8
+ 1387 007c 0022     		mov	r2, #0
+ 1388 007e 1A70     		strb	r2, [r3]
+ 1389              	.L27:
+ 221:.\main.c      ****         lcdBtnOld = temp;
+ 1390              		.loc 1 221 0
+ 1391 0080 054B     		ldr	r3, .L33
+ 1392 0082 BA1D     		add	r2, r7, #6
+ 1393 0084 1288     		ldrh	r2, [r2]
+ 1394 0086 1A80     		strh	r2, [r3]
+ 222:.\main.c      ****         return 1;
+ 1395              		.loc 1 222 0
+ 1396 0088 0123     		mov	r3, #1
+ 1397 008a 00E0     		b	.L32
+ 1398              	.L24:
+ 223:.\main.c      ****     }
+ 224:.\main.c      ****     return 0;
+ 1399              		.loc 1 224 0
+ 1400 008c 0023     		mov	r3, #0
+ 1401              	.L32:
+ 1402 008e 5BB2     		sxtb	r3, r3
+ 225:.\main.c      **** }...
+ 1403              		.loc 1 225 0
+ 1404 0090 181C     		mov	r0, r3
+ 1405 0092 BD46     		mov	sp, r7
+ 1406 0094 02B0     		add	sp, sp, #8
+ 1407              		@ sp needed
+ 1408 0096 80BD     		pop	{r7, pc}
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 31
+
+
+ 1409              	.L34:
+ 1410              		.align	2
  1411              	.L33:
- 1412              		.align	2
- 1413              	.L32:
- 1414 0098 00000000 		.word	lcdBtnOld
- 1415 009c FFFF0000 		.word	65535
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 31
+ 1412 0098 00000000 		.word	lcdBtnOld
+ 1413 009c FFFF0000 		.word	65535
+ 1414 00a0 00000000 		.word	BTN
+ 1415              		.cfi_endproc
+ 1416              	.LFE37:
+ 1417              		.size	updateBTN, .-updateBTN
+ 1418              		.text
+ 1419              	.Letext0:
+ 1420              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
+ 1421              		.section	.debug_info,"",%progbits
+ 1422              	.Ldebug_info0:
+ 1423 0000 67020000 		.4byte	0x267
+ 1424 0004 0400     		.2byte	0x4
+ 1425 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1426 000a 04       		.byte	0x4
+ 1427 000b 01       		.uleb128 0x1
+ 1428 000c 49000000 		.4byte	.LASF36
+ 1429 0010 01       		.byte	0x1
+ 1430 0011 10010000 		.4byte	.LASF37
+ 1431 0015 7B010000 		.4byte	.LASF38
+ 1432 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1433 001d 00000000 		.4byte	0
+ 1434 0021 00000000 		.4byte	.Ldebug_line0
+ 1435 0025 02       		.uleb128 0x2
+ 1436 0026 01       		.byte	0x1
+ 1437 0027 06       		.byte	0x6
+ 1438 0028 21020000 		.4byte	.LASF0
+ 1439 002c 02       		.uleb128 0x2
+ 1440 002d 01       		.byte	0x1
+ 1441 002e 08       		.byte	0x8
+ 1442 002f CC000000 		.4byte	.LASF1
+ 1443 0033 02       		.uleb128 0x2
+ 1444 0034 02       		.byte	0x2
+ 1445 0035 05       		.byte	0x5
+ 1446 0036 ED010000 		.4byte	.LASF2
+ 1447 003a 02       		.uleb128 0x2
+ 1448 003b 02       		.byte	0x2
+ 1449 003c 07       		.byte	0x7
+ 1450 003d F7000000 		.4byte	.LASF3
+ 1451 0041 02       		.uleb128 0x2
+ 1452 0042 04       		.byte	0x4
+ 1453 0043 05       		.byte	0x5
+ 1454 0044 0E020000 		.4byte	.LASF4
+ 1455 0048 02       		.uleb128 0x2
+ 1456 0049 04       		.byte	0x4
+ 1457 004a 07       		.byte	0x7
+ 1458 004b E0000000 		.4byte	.LASF5
+ 1459 004f 02       		.uleb128 0x2
+ 1460 0050 08       		.byte	0x8
+ 1461 0051 05       		.byte	0x5
+ 1462 0052 C1010000 		.4byte	.LASF6
+ 1463 0056 02       		.uleb128 0x2
+ 1464 0057 08       		.byte	0x8
+ 1465 0058 07       		.byte	0x7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 32
 
 
- 1416 00a0 00000000 		.word	BTN
- 1417              		.cfi_endproc
- 1418              	.LFE37:
- 1419              		.size	updateBTN, .-updateBTN
- 1420              		.text
- 1421              	.Letext0:
- 1422              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
- 1423              		.section	.debug_info,"",%progbits
- 1424              	.Ldebug_info0:
- 1425 0000 67020000 		.4byte	0x267
- 1426 0004 0400     		.2byte	0x4
- 1427 0006 00000000 		.4byte	.Ldebug_abbrev0
- 1428 000a 04       		.byte	0x4
- 1429 000b 01       		.uleb128 0x1
- 1430 000c 49000000 		.4byte	.LASF36
- 1431 0010 01       		.byte	0x1
- 1432 0011 10010000 		.4byte	.LASF37
- 1433 0015 7B010000 		.4byte	.LASF38
- 1434 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 1435 001d 00000000 		.4byte	0
- 1436 0021 00000000 		.4byte	.Ldebug_line0
- 1437 0025 02       		.uleb128 0x2
- 1438 0026 01       		.byte	0x1
- 1439 0027 06       		.byte	0x6
- 1440 0028 21020000 		.4byte	.LASF0
- 1441 002c 02       		.uleb128 0x2
- 1442 002d 01       		.byte	0x1
- 1443 002e 08       		.byte	0x8
- 1444 002f CC000000 		.4byte	.LASF1
- 1445 0033 02       		.uleb128 0x2
- 1446 0034 02       		.byte	0x2
- 1447 0035 05       		.byte	0x5
- 1448 0036 ED010000 		.4byte	.LASF2
- 1449 003a 02       		.uleb128 0x2
- 1450 003b 02       		.byte	0x2
- 1451 003c 07       		.byte	0x7
- 1452 003d F7000000 		.4byte	.LASF3
- 1453 0041 02       		.uleb128 0x2
- 1454 0042 04       		.byte	0x4
- 1455 0043 05       		.byte	0x5
- 1456 0044 0E020000 		.4byte	.LASF4
- 1457 0048 02       		.uleb128 0x2
- 1458 0049 04       		.byte	0x4
- 1459 004a 07       		.byte	0x7
- 1460 004b E0000000 		.4byte	.LASF5
- 1461 004f 02       		.uleb128 0x2
- 1462 0050 08       		.byte	0x8
- 1463 0051 05       		.byte	0x5
- 1464 0052 C1010000 		.4byte	.LASF6
- 1465 0056 02       		.uleb128 0x2
- 1466 0057 08       		.byte	0x8
- 1467 0058 07       		.byte	0x7
- 1468 0059 50010000 		.4byte	.LASF7
- 1469 005d 03       		.uleb128 0x3
- 1470 005e 04       		.byte	0x4
- 1471 005f 05       		.byte	0x5
- 1472 0060 696E7400 		.ascii	"int\000"
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 32
+ 1466 0059 50010000 		.4byte	.LASF7
+ 1467 005d 03       		.uleb128 0x3
+ 1468 005e 04       		.byte	0x4
+ 1469 005f 05       		.byte	0x5
+ 1470 0060 696E7400 		.ascii	"int\000"
+ 1471 0064 02       		.uleb128 0x2
+ 1472 0065 04       		.byte	0x4
+ 1473 0066 07       		.byte	0x7
+ 1474 0067 3B010000 		.4byte	.LASF8
+ 1475 006b 04       		.uleb128 0x4
+ 1476 006c F7010000 		.4byte	.LASF9
+ 1477 0070 02       		.byte	0x2
+ 1478 0071 A1       		.byte	0xa1
+ 1479 0072 2C000000 		.4byte	0x2c
+ 1480 0076 04       		.uleb128 0x4
+ 1481 0077 28010000 		.4byte	.LASF10
+ 1482 007b 02       		.byte	0x2
+ 1483 007c A2       		.byte	0xa2
+ 1484 007d 3A000000 		.4byte	0x3a
+ 1485 0081 04       		.uleb128 0x4
+ 1486 0082 34010000 		.4byte	.LASF11
+ 1487 0086 02       		.byte	0x2
+ 1488 0087 A3       		.byte	0xa3
+ 1489 0088 48000000 		.4byte	0x48
+ 1490 008c 04       		.uleb128 0x4
+ 1491 008d 2F010000 		.4byte	.LASF12
+ 1492 0091 02       		.byte	0x2
+ 1493 0092 A4       		.byte	0xa4
+ 1494 0093 25000000 		.4byte	0x25
+ 1495 0097 04       		.uleb128 0x4
+ 1496 0098 DA000000 		.4byte	.LASF13
+ 1497 009c 02       		.byte	0x2
+ 1498 009d A5       		.byte	0xa5
+ 1499 009e 33000000 		.4byte	0x33
+ 1500 00a2 02       		.uleb128 0x2
+ 1501 00a3 04       		.byte	0x4
+ 1502 00a4 04       		.byte	0x4
+ 1503 00a5 43000000 		.4byte	.LASF14
+ 1504 00a9 02       		.uleb128 0x2
+ 1505 00aa 08       		.byte	0x8
+ 1506 00ab 04       		.byte	0x4
+ 1507 00ac 2D020000 		.4byte	.LASF15
+ 1508 00b0 04       		.uleb128 0x4
+ 1509 00b1 22000000 		.4byte	.LASF16
+ 1510 00b5 02       		.byte	0x2
+ 1511 00b6 AD       		.byte	0xad
+ 1512 00b7 56000000 		.4byte	0x56
+ 1513 00bb 02       		.uleb128 0x2
+ 1514 00bc 01       		.byte	0x1
+ 1515 00bd 08       		.byte	0x8
+ 1516 00be CF010000 		.4byte	.LASF17
+ 1517 00c2 05       		.uleb128 0x5
+ 1518 00c3 6B000000 		.4byte	0x6b
+ 1519 00c7 02       		.uleb128 0x2
+ 1520 00c8 04       		.byte	0x4
+ 1521 00c9 07       		.byte	0x7
+ 1522 00ca 72010000 		.4byte	.LASF18
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 33
 
 
- 1473 0064 02       		.uleb128 0x2
- 1474 0065 04       		.byte	0x4
- 1475 0066 07       		.byte	0x7
- 1476 0067 3B010000 		.4byte	.LASF8
- 1477 006b 04       		.uleb128 0x4
- 1478 006c F7010000 		.4byte	.LASF9
- 1479 0070 02       		.byte	0x2
- 1480 0071 A1       		.byte	0xa1
- 1481 0072 2C000000 		.4byte	0x2c
- 1482 0076 04       		.uleb128 0x4
- 1483 0077 28010000 		.4byte	.LASF10
- 1484 007b 02       		.byte	0x2
- 1485 007c A2       		.byte	0xa2
- 1486 007d 3A000000 		.4byte	0x3a
- 1487 0081 04       		.uleb128 0x4
- 1488 0082 34010000 		.4byte	.LASF11
- 1489 0086 02       		.byte	0x2
- 1490 0087 A3       		.byte	0xa3
- 1491 0088 48000000 		.4byte	0x48
- 1492 008c 04       		.uleb128 0x4
- 1493 008d 2F010000 		.4byte	.LASF12
- 1494 0091 02       		.byte	0x2
- 1495 0092 A4       		.byte	0xa4
- 1496 0093 25000000 		.4byte	0x25
- 1497 0097 04       		.uleb128 0x4
- 1498 0098 DA000000 		.4byte	.LASF13
- 1499 009c 02       		.byte	0x2
- 1500 009d A5       		.byte	0xa5
- 1501 009e 33000000 		.4byte	0x33
- 1502 00a2 02       		.uleb128 0x2
- 1503 00a3 04       		.byte	0x4
- 1504 00a4 04       		.byte	0x4
- 1505 00a5 43000000 		.4byte	.LASF14
- 1506 00a9 02       		.uleb128 0x2
- 1507 00aa 08       		.byte	0x8
- 1508 00ab 04       		.byte	0x4
- 1509 00ac 2D020000 		.4byte	.LASF15
- 1510 00b0 04       		.uleb128 0x4
- 1511 00b1 22000000 		.4byte	.LASF16
- 1512 00b5 02       		.byte	0x2
- 1513 00b6 AD       		.byte	0xad
- 1514 00b7 56000000 		.4byte	0x56
- 1515 00bb 02       		.uleb128 0x2
- 1516 00bc 01       		.byte	0x1
- 1517 00bd 08       		.byte	0x8
- 1518 00be CF010000 		.4byte	.LASF17
- 1519 00c2 05       		.uleb128 0x5
- 1520 00c3 6B000000 		.4byte	0x6b
- 1521 00c7 02       		.uleb128 0x2
- 1522 00c8 04       		.byte	0x4
- 1523 00c9 07       		.byte	0x7
- 1524 00ca 72010000 		.4byte	.LASF18
- 1525 00ce 06       		.uleb128 0x6
- 1526 00cf 12000000 		.4byte	.LASF39
- 1527 00d3 01       		.byte	0x1
- 1528 00d4 01       		.byte	0x1
- 1529 00d5 10       		.byte	0x10
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 33
+ 1523 00ce 06       		.uleb128 0x6
+ 1524 00cf 12000000 		.4byte	.LASF39
+ 1525 00d3 01       		.byte	0x1
+ 1526 00d4 01       		.byte	0x1
+ 1527 00d5 11       		.byte	0x11
+ 1528 00d6 FE000000 		.4byte	0xfe
+ 1529 00da 07       		.uleb128 0x7
+ 1530 00db 39000000 		.4byte	.LASF19
+ 1531 00df 00       		.sleb128 0
+ 1532 00e0 07       		.uleb128 0x7
+ 1533 00e1 C5000000 		.4byte	.LASF20
+ 1534 00e5 01       		.sleb128 1
+ 1535 00e6 07       		.uleb128 0x7
+ 1536 00e7 1D000000 		.4byte	.LASF21
+ 1537 00eb 02       		.sleb128 2
+ 1538 00ec 07       		.uleb128 0x7
+ 1539 00ed DD010000 		.4byte	.LASF22
+ 1540 00f1 03       		.sleb128 3
+ 1541 00f2 08       		.uleb128 0x8
+ 1542 00f3 555000   		.ascii	"UP\000"
+ 1543 00f6 04       		.sleb128 4
+ 1544 00f7 07       		.uleb128 0x7
+ 1545 00f8 67010000 		.4byte	.LASF23
+ 1546 00fc 05       		.sleb128 5
+ 1547 00fd 00       		.byte	0
+ 1548 00fe 09       		.uleb128 0x9
+ 1549 00ff E2010000 		.4byte	.LASF24
+ 1550 0103 01       		.byte	0x1
+ 1551 0104 1F       		.byte	0x1f
+ 1552 0105 00000000 		.4byte	.LFB33
+ 1553 0109 78000000 		.4byte	.LFE33-.LFB33
+ 1554 010d 01       		.uleb128 0x1
+ 1555 010e 9C       		.byte	0x9c
+ 1556 010f 23010000 		.4byte	0x123
+ 1557 0113 0A       		.uleb128 0xa
+ 1558 0114 F2000000 		.4byte	.LASF26
+ 1559 0118 01       		.byte	0x1
+ 1560 0119 20       		.byte	0x20
+ 1561 011a 23010000 		.4byte	0x123
+ 1562 011e 03       		.uleb128 0x3
+ 1563 011f 91       		.byte	0x91
+ 1564 0120 BC7F     		.sleb128 -68
+ 1565 0122 00       		.byte	0
+ 1566 0123 0B       		.uleb128 0xb
+ 1567 0124 BB000000 		.4byte	0xbb
+ 1568 0128 33010000 		.4byte	0x133
+ 1569 012c 0C       		.uleb128 0xc
+ 1570 012d C7000000 		.4byte	0xc7
+ 1571 0131 3B       		.byte	0x3b
+ 1572 0132 00       		.byte	0
+ 1573 0133 0D       		.uleb128 0xd
+ 1574 0134 23010000 		.4byte	.LASF25
+ 1575 0138 01       		.byte	0x1
+ 1576 0139 2C       		.byte	0x2c
+ 1577 013a 5D000000 		.4byte	0x5d
+ 1578 013e 00000000 		.4byte	.LFB34
+ 1579 0142 50020000 		.4byte	.LFE34-.LFB34
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 34
 
 
- 1530 00d6 FE000000 		.4byte	0xfe
- 1531 00da 07       		.uleb128 0x7
- 1532 00db 39000000 		.4byte	.LASF19
- 1533 00df 00       		.sleb128 0
- 1534 00e0 07       		.uleb128 0x7
- 1535 00e1 C5000000 		.4byte	.LASF20
- 1536 00e5 01       		.sleb128 1
- 1537 00e6 07       		.uleb128 0x7
- 1538 00e7 1D000000 		.4byte	.LASF21
- 1539 00eb 02       		.sleb128 2
- 1540 00ec 07       		.uleb128 0x7
- 1541 00ed DD010000 		.4byte	.LASF22
- 1542 00f1 03       		.sleb128 3
- 1543 00f2 08       		.uleb128 0x8
- 1544 00f3 555000   		.ascii	"UP\000"
- 1545 00f6 04       		.sleb128 4
- 1546 00f7 07       		.uleb128 0x7
- 1547 00f8 67010000 		.4byte	.LASF23
- 1548 00fc 05       		.sleb128 5
- 1549 00fd 00       		.byte	0
- 1550 00fe 09       		.uleb128 0x9
- 1551 00ff E2010000 		.4byte	.LASF24
- 1552 0103 01       		.byte	0x1
- 1553 0104 1E       		.byte	0x1e
- 1554 0105 00000000 		.4byte	.LFB33
- 1555 0109 78000000 		.4byte	.LFE33-.LFB33
- 1556 010d 01       		.uleb128 0x1
- 1557 010e 9C       		.byte	0x9c
- 1558 010f 23010000 		.4byte	0x123
- 1559 0113 0A       		.uleb128 0xa
- 1560 0114 F2000000 		.4byte	.LASF26
- 1561 0118 01       		.byte	0x1
- 1562 0119 1F       		.byte	0x1f
- 1563 011a 23010000 		.4byte	0x123
- 1564 011e 03       		.uleb128 0x3
- 1565 011f 91       		.byte	0x91
- 1566 0120 BC7F     		.sleb128 -68
- 1567 0122 00       		.byte	0
- 1568 0123 0B       		.uleb128 0xb
- 1569 0124 BB000000 		.4byte	0xbb
- 1570 0128 33010000 		.4byte	0x133
- 1571 012c 0C       		.uleb128 0xc
- 1572 012d C7000000 		.4byte	0xc7
- 1573 0131 3B       		.byte	0x3b
- 1574 0132 00       		.byte	0
- 1575 0133 0D       		.uleb128 0xd
- 1576 0134 23010000 		.4byte	.LASF25
- 1577 0138 01       		.byte	0x1
- 1578 0139 2B       		.byte	0x2b
- 1579 013a 5D000000 		.4byte	0x5d
- 1580 013e 00000000 		.4byte	.LFB34
- 1581 0142 54020000 		.4byte	.LFE34-.LFB34
- 1582 0146 01       		.uleb128 0x1
- 1583 0147 9C       		.byte	0x9c
- 1584 0148 73010000 		.4byte	0x173
- 1585 014c 0A       		.uleb128 0xa
- 1586 014d D4010000 		.4byte	.LASF27
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 34
+ 1580 0146 01       		.uleb128 0x1
+ 1581 0147 9C       		.byte	0x9c
+ 1582 0148 73010000 		.4byte	0x173
+ 1583 014c 0A       		.uleb128 0xa
+ 1584 014d D4010000 		.4byte	.LASF27
+ 1585 0151 01       		.byte	0x1
+ 1586 0152 2D       		.byte	0x2d
+ 1587 0153 97000000 		.4byte	0x97
+ 1588 0157 02       		.uleb128 0x2
+ 1589 0158 91       		.byte	0x91
+ 1590 0159 6E       		.sleb128 -18
+ 1591 015a 0E       		.uleb128 0xe
+ 1592 015b CC000000 		.4byte	.LBB2
+ 1593 015f 4A010000 		.4byte	.LBE2-.LBB2
+ 1594 0163 0A       		.uleb128 0xa
+ 1595 0164 F2000000 		.4byte	.LASF26
+ 1596 0168 01       		.byte	0x1
+ 1597 0169 56       		.byte	0x56
+ 1598 016a 97000000 		.4byte	0x97
+ 1599 016e 02       		.uleb128 0x2
+ 1600 016f 91       		.byte	0x91
+ 1601 0170 6C       		.sleb128 -20
+ 1602 0171 00       		.byte	0
+ 1603 0172 00       		.byte	0
+ 1604 0173 09       		.uleb128 0x9
+ 1605 0174 FD010000 		.4byte	.LASF28
+ 1606 0178 01       		.byte	0x1
+ 1607 0179 85       		.byte	0x85
+ 1608 017a 00000000 		.4byte	.LFB35
+ 1609 017e C4030000 		.4byte	.LFE35-.LFB35
+ 1610 0182 01       		.uleb128 0x1
+ 1611 0183 9C       		.byte	0x9c
+ 1612 0184 A5010000 		.4byte	0x1a5
+ 1613 0188 0F       		.uleb128 0xf
+ 1614 0189 6D010000 		.4byte	.LASF31
+ 1615 018d 01       		.byte	0x1
+ 1616 018e 85       		.byte	0x85
+ 1617 018f 81000000 		.4byte	0x81
+ 1618 0193 02       		.uleb128 0x2
+ 1619 0194 91       		.byte	0x91
+ 1620 0195 5C       		.sleb128 -36
+ 1621 0196 0A       		.uleb128 0xa
+ 1622 0197 29000000 		.4byte	.LASF29
+ 1623 019b 01       		.byte	0x1
+ 1624 019c 86       		.byte	0x86
+ 1625 019d B0000000 		.4byte	0xb0
+ 1626 01a1 02       		.uleb128 0x2
+ 1627 01a2 91       		.byte	0x91
+ 1628 01a3 60       		.sleb128 -32
+ 1629 01a4 00       		.byte	0
+ 1630 01a5 09       		.uleb128 0x9
+ 1631 01a6 00000000 		.4byte	.LASF30
+ 1632 01aa 01       		.byte	0x1
+ 1633 01ab B2       		.byte	0xb2
+ 1634 01ac 00000000 		.4byte	.LFB36
+ 1635 01b0 A4020000 		.4byte	.LFE36-.LFB36
+ 1636 01b4 01       		.uleb128 0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 35
 
 
- 1587 0151 01       		.byte	0x1
- 1588 0152 2C       		.byte	0x2c
- 1589 0153 97000000 		.4byte	0x97
- 1590 0157 02       		.uleb128 0x2
- 1591 0158 91       		.byte	0x91
- 1592 0159 6E       		.sleb128 -18
- 1593 015a 0E       		.uleb128 0xe
- 1594 015b D2000000 		.4byte	.LBB2
- 1595 015f 44010000 		.4byte	.LBE2-.LBB2
- 1596 0163 0A       		.uleb128 0xa
- 1597 0164 F2000000 		.4byte	.LASF26
- 1598 0168 01       		.byte	0x1
- 1599 0169 51       		.byte	0x51
- 1600 016a 97000000 		.4byte	0x97
- 1601 016e 02       		.uleb128 0x2
- 1602 016f 91       		.byte	0x91
- 1603 0170 6C       		.sleb128 -20
- 1604 0171 00       		.byte	0
- 1605 0172 00       		.byte	0
- 1606 0173 09       		.uleb128 0x9
- 1607 0174 FD010000 		.4byte	.LASF28
- 1608 0178 01       		.byte	0x1
- 1609 0179 7F       		.byte	0x7f
- 1610 017a 00000000 		.4byte	.LFB35
- 1611 017e C4030000 		.4byte	.LFE35-.LFB35
- 1612 0182 01       		.uleb128 0x1
- 1613 0183 9C       		.byte	0x9c
- 1614 0184 A5010000 		.4byte	0x1a5
- 1615 0188 0F       		.uleb128 0xf
- 1616 0189 6D010000 		.4byte	.LASF31
- 1617 018d 01       		.byte	0x1
- 1618 018e 7F       		.byte	0x7f
- 1619 018f 81000000 		.4byte	0x81
- 1620 0193 02       		.uleb128 0x2
- 1621 0194 91       		.byte	0x91
- 1622 0195 5C       		.sleb128 -36
- 1623 0196 0A       		.uleb128 0xa
- 1624 0197 29000000 		.4byte	.LASF29
- 1625 019b 01       		.byte	0x1
- 1626 019c 80       		.byte	0x80
- 1627 019d B0000000 		.4byte	0xb0
- 1628 01a1 02       		.uleb128 0x2
- 1629 01a2 91       		.byte	0x91
- 1630 01a3 60       		.sleb128 -32
- 1631 01a4 00       		.byte	0
- 1632 01a5 09       		.uleb128 0x9
- 1633 01a6 00000000 		.4byte	.LASF30
- 1634 01aa 01       		.byte	0x1
- 1635 01ab AC       		.byte	0xac
- 1636 01ac 00000000 		.4byte	.LFB36
- 1637 01b0 A4020000 		.4byte	.LFE36-.LFB36
- 1638 01b4 01       		.uleb128 0x1
- 1639 01b5 9C       		.byte	0x9c
- 1640 01b6 D7010000 		.4byte	0x1d7
- 1641 01ba 0F       		.uleb128 0xf
- 1642 01bb 6D010000 		.4byte	.LASF31
- 1643 01bf 01       		.byte	0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 35
+ 1637 01b5 9C       		.byte	0x9c
+ 1638 01b6 D7010000 		.4byte	0x1d7
+ 1639 01ba 0F       		.uleb128 0xf
+ 1640 01bb 6D010000 		.4byte	.LASF31
+ 1641 01bf 01       		.byte	0x1
+ 1642 01c0 B2       		.byte	0xb2
+ 1643 01c1 81000000 		.4byte	0x81
+ 1644 01c5 02       		.uleb128 0x2
+ 1645 01c6 91       		.byte	0x91
+ 1646 01c7 5C       		.sleb128 -36
+ 1647 01c8 0A       		.uleb128 0xa
+ 1648 01c9 29000000 		.4byte	.LASF29
+ 1649 01cd 01       		.byte	0x1
+ 1650 01ce B3       		.byte	0xb3
+ 1651 01cf B0000000 		.4byte	0xb0
+ 1652 01d3 02       		.uleb128 0x2
+ 1653 01d4 91       		.byte	0x91
+ 1654 01d5 60       		.sleb128 -32
+ 1655 01d6 00       		.byte	0
+ 1656 01d7 10       		.uleb128 0x10
+ 1657 01d8 17020000 		.4byte	.LASF40
+ 1658 01dc 01       		.byte	0x1
+ 1659 01dd CE       		.byte	0xce
+ 1660 01de 8C000000 		.4byte	0x8c
+ 1661 01e2 00000000 		.4byte	.LFB37
+ 1662 01e6 A4000000 		.4byte	.LFE37-.LFB37
+ 1663 01ea 01       		.uleb128 0x1
+ 1664 01eb 9C       		.byte	0x9c
+ 1665 01ec FF010000 		.4byte	0x1ff
+ 1666 01f0 0A       		.uleb128 0xa
+ 1667 01f1 F2000000 		.4byte	.LASF26
+ 1668 01f5 01       		.byte	0x1
+ 1669 01f6 CF       		.byte	0xcf
+ 1670 01f7 76000000 		.4byte	0x76
+ 1671 01fb 02       		.uleb128 0x2
+ 1672 01fc 91       		.byte	0x91
+ 1673 01fd 76       		.sleb128 -10
+ 1674 01fe 00       		.byte	0
+ 1675 01ff 11       		.uleb128 0x11
+ 1676 0200 48010000 		.4byte	.LASF32
+ 1677 0204 01       		.byte	0x1
+ 1678 0205 12       		.byte	0x12
+ 1679 0206 C2000000 		.4byte	0xc2
+ 1680 020a 05       		.uleb128 0x5
+ 1681 020b 03       		.byte	0x3
+ 1682 020c 00000000 		.4byte	running
+ 1683 0210 11       		.uleb128 0x11
+ 1684 0211 31000000 		.4byte	.LASF33
+ 1685 0215 01       		.byte	0x1
+ 1686 0216 13       		.byte	0x13
+ 1687 0217 76000000 		.4byte	0x76
+ 1688 021b 05       		.uleb128 0x5
+ 1689 021c 03       		.byte	0x3
+ 1690 021d 00000000 		.4byte	V_start
+ 1691 0221 11       		.uleb128 0x11
+ 1692 0222 0A010000 		.4byte	.LASF34
+ 1693 0226 01       		.byte	0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 36
 
 
- 1644 01c0 AC       		.byte	0xac
- 1645 01c1 81000000 		.4byte	0x81
- 1646 01c5 02       		.uleb128 0x2
- 1647 01c6 91       		.byte	0x91
- 1648 01c7 5C       		.sleb128 -36
- 1649 01c8 0A       		.uleb128 0xa
- 1650 01c9 29000000 		.4byte	.LASF29
- 1651 01cd 01       		.byte	0x1
- 1652 01ce AD       		.byte	0xad
- 1653 01cf B0000000 		.4byte	0xb0
- 1654 01d3 02       		.uleb128 0x2
- 1655 01d4 91       		.byte	0x91
- 1656 01d5 60       		.sleb128 -32
- 1657 01d6 00       		.byte	0
- 1658 01d7 10       		.uleb128 0x10
- 1659 01d8 17020000 		.4byte	.LASF40
- 1660 01dc 01       		.byte	0x1
- 1661 01dd C8       		.byte	0xc8
- 1662 01de 8C000000 		.4byte	0x8c
- 1663 01e2 00000000 		.4byte	.LFB37
- 1664 01e6 A4000000 		.4byte	.LFE37-.LFB37
- 1665 01ea 01       		.uleb128 0x1
- 1666 01eb 9C       		.byte	0x9c
- 1667 01ec FF010000 		.4byte	0x1ff
- 1668 01f0 0A       		.uleb128 0xa
- 1669 01f1 F2000000 		.4byte	.LASF26
- 1670 01f5 01       		.byte	0x1
- 1671 01f6 C9       		.byte	0xc9
- 1672 01f7 76000000 		.4byte	0x76
- 1673 01fb 02       		.uleb128 0x2
- 1674 01fc 91       		.byte	0x91
- 1675 01fd 76       		.sleb128 -10
- 1676 01fe 00       		.byte	0
- 1677 01ff 11       		.uleb128 0x11
- 1678 0200 48010000 		.4byte	.LASF32
- 1679 0204 01       		.byte	0x1
- 1680 0205 11       		.byte	0x11
- 1681 0206 C2000000 		.4byte	0xc2
- 1682 020a 05       		.uleb128 0x5
- 1683 020b 03       		.byte	0x3
- 1684 020c 00000000 		.4byte	running
- 1685 0210 11       		.uleb128 0x11
- 1686 0211 31000000 		.4byte	.LASF33
- 1687 0215 01       		.byte	0x1
- 1688 0216 12       		.byte	0x12
- 1689 0217 76000000 		.4byte	0x76
- 1690 021b 05       		.uleb128 0x5
- 1691 021c 03       		.byte	0x3
- 1692 021d 00000000 		.4byte	V_start
- 1693 0221 11       		.uleb128 0x11
- 1694 0222 0A010000 		.4byte	.LASF34
- 1695 0226 01       		.byte	0x1
- 1696 0227 13       		.byte	0x13
- 1697 0228 76000000 		.4byte	0x76
- 1698 022c 05       		.uleb128 0x5
- 1699 022d 03       		.byte	0x3
- 1700 022e 00000000 		.4byte	V_new
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 36
+ 1694 0227 14       		.byte	0x14
+ 1695 0228 76000000 		.4byte	0x76
+ 1696 022c 05       		.uleb128 0x5
+ 1697 022d 03       		.byte	0x3
+ 1698 022e 00000000 		.4byte	V_new
+ 1699 0232 11       		.uleb128 0x11
+ 1700 0233 6D010000 		.4byte	.LASF31
+ 1701 0237 01       		.byte	0x1
+ 1702 0238 15       		.byte	0x15
+ 1703 0239 81000000 		.4byte	0x81
+ 1704 023d 05       		.uleb128 0x5
+ 1705 023e 03       		.byte	0x3
+ 1706 023f 00000000 		.4byte	time
+ 1707 0243 11       		.uleb128 0x11
+ 1708 0244 19010000 		.4byte	.LASF35
+ 1709 0248 01       		.byte	0x1
+ 1710 0249 16       		.byte	0x16
+ 1711 024a 76000000 		.4byte	0x76
+ 1712 024e 05       		.uleb128 0x5
+ 1713 024f 03       		.byte	0x3
+ 1714 0250 00000000 		.4byte	lcdBtnOld
+ 1715 0254 12       		.uleb128 0x12
+ 1716 0255 42544E00 		.ascii	"BTN\000"
+ 1717 0259 01       		.byte	0x1
+ 1718 025a 17       		.byte	0x17
+ 1719 025b 65020000 		.4byte	0x265
+ 1720 025f 05       		.uleb128 0x5
+ 1721 0260 03       		.byte	0x3
+ 1722 0261 00000000 		.4byte	BTN
+ 1723 0265 05       		.uleb128 0x5
+ 1724 0266 CE000000 		.4byte	0xce
+ 1725 026a 00       		.byte	0
+ 1726              		.section	.debug_abbrev,"",%progbits
+ 1727              	.Ldebug_abbrev0:
+ 1728 0000 01       		.uleb128 0x1
+ 1729 0001 11       		.uleb128 0x11
+ 1730 0002 01       		.byte	0x1
+ 1731 0003 25       		.uleb128 0x25
+ 1732 0004 0E       		.uleb128 0xe
+ 1733 0005 13       		.uleb128 0x13
+ 1734 0006 0B       		.uleb128 0xb
+ 1735 0007 03       		.uleb128 0x3
+ 1736 0008 0E       		.uleb128 0xe
+ 1737 0009 1B       		.uleb128 0x1b
+ 1738 000a 0E       		.uleb128 0xe
+ 1739 000b 55       		.uleb128 0x55
+ 1740 000c 17       		.uleb128 0x17
+ 1741 000d 11       		.uleb128 0x11
+ 1742 000e 01       		.uleb128 0x1
+ 1743 000f 10       		.uleb128 0x10
+ 1744 0010 17       		.uleb128 0x17
+ 1745 0011 00       		.byte	0
+ 1746 0012 00       		.byte	0
+ 1747 0013 02       		.uleb128 0x2
+ 1748 0014 24       		.uleb128 0x24
+ 1749 0015 00       		.byte	0
+ 1750 0016 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 37
 
 
- 1701 0232 11       		.uleb128 0x11
- 1702 0233 6D010000 		.4byte	.LASF31
- 1703 0237 01       		.byte	0x1
- 1704 0238 14       		.byte	0x14
- 1705 0239 81000000 		.4byte	0x81
- 1706 023d 05       		.uleb128 0x5
- 1707 023e 03       		.byte	0x3
- 1708 023f 00000000 		.4byte	time
- 1709 0243 11       		.uleb128 0x11
- 1710 0244 19010000 		.4byte	.LASF35
- 1711 0248 01       		.byte	0x1
- 1712 0249 15       		.byte	0x15
- 1713 024a 76000000 		.4byte	0x76
- 1714 024e 05       		.uleb128 0x5
- 1715 024f 03       		.byte	0x3
- 1716 0250 00000000 		.4byte	lcdBtnOld
- 1717 0254 12       		.uleb128 0x12
- 1718 0255 42544E00 		.ascii	"BTN\000"
- 1719 0259 01       		.byte	0x1
- 1720 025a 16       		.byte	0x16
- 1721 025b 65020000 		.4byte	0x265
- 1722 025f 05       		.uleb128 0x5
- 1723 0260 03       		.byte	0x3
- 1724 0261 00000000 		.4byte	BTN
- 1725 0265 05       		.uleb128 0x5
- 1726 0266 CE000000 		.4byte	0xce
- 1727 026a 00       		.byte	0
- 1728              		.section	.debug_abbrev,"",%progbits
- 1729              	.Ldebug_abbrev0:
- 1730 0000 01       		.uleb128 0x1
- 1731 0001 11       		.uleb128 0x11
- 1732 0002 01       		.byte	0x1
- 1733 0003 25       		.uleb128 0x25
- 1734 0004 0E       		.uleb128 0xe
- 1735 0005 13       		.uleb128 0x13
- 1736 0006 0B       		.uleb128 0xb
- 1737 0007 03       		.uleb128 0x3
- 1738 0008 0E       		.uleb128 0xe
- 1739 0009 1B       		.uleb128 0x1b
- 1740 000a 0E       		.uleb128 0xe
- 1741 000b 55       		.uleb128 0x55
- 1742 000c 17       		.uleb128 0x17
- 1743 000d 11       		.uleb128 0x11
- 1744 000e 01       		.uleb128 0x1
- 1745 000f 10       		.uleb128 0x10
- 1746 0010 17       		.uleb128 0x17
- 1747 0011 00       		.byte	0
- 1748 0012 00       		.byte	0
- 1749 0013 02       		.uleb128 0x2
- 1750 0014 24       		.uleb128 0x24
- 1751 0015 00       		.byte	0
- 1752 0016 0B       		.uleb128 0xb
- 1753 0017 0B       		.uleb128 0xb
- 1754 0018 3E       		.uleb128 0x3e
- 1755 0019 0B       		.uleb128 0xb
- 1756 001a 03       		.uleb128 0x3
- 1757 001b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 37
+ 1751 0017 0B       		.uleb128 0xb
+ 1752 0018 3E       		.uleb128 0x3e
+ 1753 0019 0B       		.uleb128 0xb
+ 1754 001a 03       		.uleb128 0x3
+ 1755 001b 0E       		.uleb128 0xe
+ 1756 001c 00       		.byte	0
+ 1757 001d 00       		.byte	0
+ 1758 001e 03       		.uleb128 0x3
+ 1759 001f 24       		.uleb128 0x24
+ 1760 0020 00       		.byte	0
+ 1761 0021 0B       		.uleb128 0xb
+ 1762 0022 0B       		.uleb128 0xb
+ 1763 0023 3E       		.uleb128 0x3e
+ 1764 0024 0B       		.uleb128 0xb
+ 1765 0025 03       		.uleb128 0x3
+ 1766 0026 08       		.uleb128 0x8
+ 1767 0027 00       		.byte	0
+ 1768 0028 00       		.byte	0
+ 1769 0029 04       		.uleb128 0x4
+ 1770 002a 16       		.uleb128 0x16
+ 1771 002b 00       		.byte	0
+ 1772 002c 03       		.uleb128 0x3
+ 1773 002d 0E       		.uleb128 0xe
+ 1774 002e 3A       		.uleb128 0x3a
+ 1775 002f 0B       		.uleb128 0xb
+ 1776 0030 3B       		.uleb128 0x3b
+ 1777 0031 0B       		.uleb128 0xb
+ 1778 0032 49       		.uleb128 0x49
+ 1779 0033 13       		.uleb128 0x13
+ 1780 0034 00       		.byte	0
+ 1781 0035 00       		.byte	0
+ 1782 0036 05       		.uleb128 0x5
+ 1783 0037 35       		.uleb128 0x35
+ 1784 0038 00       		.byte	0
+ 1785 0039 49       		.uleb128 0x49
+ 1786 003a 13       		.uleb128 0x13
+ 1787 003b 00       		.byte	0
+ 1788 003c 00       		.byte	0
+ 1789 003d 06       		.uleb128 0x6
+ 1790 003e 04       		.uleb128 0x4
+ 1791 003f 01       		.byte	0x1
+ 1792 0040 03       		.uleb128 0x3
+ 1793 0041 0E       		.uleb128 0xe
+ 1794 0042 0B       		.uleb128 0xb
+ 1795 0043 0B       		.uleb128 0xb
+ 1796 0044 3A       		.uleb128 0x3a
+ 1797 0045 0B       		.uleb128 0xb
+ 1798 0046 3B       		.uleb128 0x3b
+ 1799 0047 0B       		.uleb128 0xb
+ 1800 0048 01       		.uleb128 0x1
+ 1801 0049 13       		.uleb128 0x13
+ 1802 004a 00       		.byte	0
+ 1803 004b 00       		.byte	0
+ 1804 004c 07       		.uleb128 0x7
+ 1805 004d 28       		.uleb128 0x28
+ 1806 004e 00       		.byte	0
+ 1807 004f 03       		.uleb128 0x3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 38
 
 
- 1758 001c 00       		.byte	0
- 1759 001d 00       		.byte	0
- 1760 001e 03       		.uleb128 0x3
- 1761 001f 24       		.uleb128 0x24
- 1762 0020 00       		.byte	0
- 1763 0021 0B       		.uleb128 0xb
- 1764 0022 0B       		.uleb128 0xb
- 1765 0023 3E       		.uleb128 0x3e
- 1766 0024 0B       		.uleb128 0xb
- 1767 0025 03       		.uleb128 0x3
- 1768 0026 08       		.uleb128 0x8
- 1769 0027 00       		.byte	0
- 1770 0028 00       		.byte	0
- 1771 0029 04       		.uleb128 0x4
- 1772 002a 16       		.uleb128 0x16
- 1773 002b 00       		.byte	0
- 1774 002c 03       		.uleb128 0x3
- 1775 002d 0E       		.uleb128 0xe
- 1776 002e 3A       		.uleb128 0x3a
- 1777 002f 0B       		.uleb128 0xb
- 1778 0030 3B       		.uleb128 0x3b
- 1779 0031 0B       		.uleb128 0xb
- 1780 0032 49       		.uleb128 0x49
- 1781 0033 13       		.uleb128 0x13
- 1782 0034 00       		.byte	0
- 1783 0035 00       		.byte	0
- 1784 0036 05       		.uleb128 0x5
- 1785 0037 35       		.uleb128 0x35
- 1786 0038 00       		.byte	0
- 1787 0039 49       		.uleb128 0x49
- 1788 003a 13       		.uleb128 0x13
- 1789 003b 00       		.byte	0
- 1790 003c 00       		.byte	0
- 1791 003d 06       		.uleb128 0x6
- 1792 003e 04       		.uleb128 0x4
- 1793 003f 01       		.byte	0x1
- 1794 0040 03       		.uleb128 0x3
- 1795 0041 0E       		.uleb128 0xe
- 1796 0042 0B       		.uleb128 0xb
- 1797 0043 0B       		.uleb128 0xb
- 1798 0044 3A       		.uleb128 0x3a
- 1799 0045 0B       		.uleb128 0xb
- 1800 0046 3B       		.uleb128 0x3b
- 1801 0047 0B       		.uleb128 0xb
- 1802 0048 01       		.uleb128 0x1
- 1803 0049 13       		.uleb128 0x13
- 1804 004a 00       		.byte	0
- 1805 004b 00       		.byte	0
- 1806 004c 07       		.uleb128 0x7
- 1807 004d 28       		.uleb128 0x28
- 1808 004e 00       		.byte	0
- 1809 004f 03       		.uleb128 0x3
- 1810 0050 0E       		.uleb128 0xe
- 1811 0051 1C       		.uleb128 0x1c
- 1812 0052 0D       		.uleb128 0xd
- 1813 0053 00       		.byte	0
- 1814 0054 00       		.byte	0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 38
+ 1808 0050 0E       		.uleb128 0xe
+ 1809 0051 1C       		.uleb128 0x1c
+ 1810 0052 0D       		.uleb128 0xd
+ 1811 0053 00       		.byte	0
+ 1812 0054 00       		.byte	0
+ 1813 0055 08       		.uleb128 0x8
+ 1814 0056 28       		.uleb128 0x28
+ 1815 0057 00       		.byte	0
+ 1816 0058 03       		.uleb128 0x3
+ 1817 0059 08       		.uleb128 0x8
+ 1818 005a 1C       		.uleb128 0x1c
+ 1819 005b 0D       		.uleb128 0xd
+ 1820 005c 00       		.byte	0
+ 1821 005d 00       		.byte	0
+ 1822 005e 09       		.uleb128 0x9
+ 1823 005f 2E       		.uleb128 0x2e
+ 1824 0060 01       		.byte	0x1
+ 1825 0061 3F       		.uleb128 0x3f
+ 1826 0062 19       		.uleb128 0x19
+ 1827 0063 03       		.uleb128 0x3
+ 1828 0064 0E       		.uleb128 0xe
+ 1829 0065 3A       		.uleb128 0x3a
+ 1830 0066 0B       		.uleb128 0xb
+ 1831 0067 3B       		.uleb128 0x3b
+ 1832 0068 0B       		.uleb128 0xb
+ 1833 0069 27       		.uleb128 0x27
+ 1834 006a 19       		.uleb128 0x19
+ 1835 006b 11       		.uleb128 0x11
+ 1836 006c 01       		.uleb128 0x1
+ 1837 006d 12       		.uleb128 0x12
+ 1838 006e 06       		.uleb128 0x6
+ 1839 006f 40       		.uleb128 0x40
+ 1840 0070 18       		.uleb128 0x18
+ 1841 0071 9642     		.uleb128 0x2116
+ 1842 0073 19       		.uleb128 0x19
+ 1843 0074 01       		.uleb128 0x1
+ 1844 0075 13       		.uleb128 0x13
+ 1845 0076 00       		.byte	0
+ 1846 0077 00       		.byte	0
+ 1847 0078 0A       		.uleb128 0xa
+ 1848 0079 34       		.uleb128 0x34
+ 1849 007a 00       		.byte	0
+ 1850 007b 03       		.uleb128 0x3
+ 1851 007c 0E       		.uleb128 0xe
+ 1852 007d 3A       		.uleb128 0x3a
+ 1853 007e 0B       		.uleb128 0xb
+ 1854 007f 3B       		.uleb128 0x3b
+ 1855 0080 0B       		.uleb128 0xb
+ 1856 0081 49       		.uleb128 0x49
+ 1857 0082 13       		.uleb128 0x13
+ 1858 0083 02       		.uleb128 0x2
+ 1859 0084 18       		.uleb128 0x18
+ 1860 0085 00       		.byte	0
+ 1861 0086 00       		.byte	0
+ 1862 0087 0B       		.uleb128 0xb
+ 1863 0088 01       		.uleb128 0x1
+ 1864 0089 01       		.byte	0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 39
 
 
- 1815 0055 08       		.uleb128 0x8
- 1816 0056 28       		.uleb128 0x28
- 1817 0057 00       		.byte	0
- 1818 0058 03       		.uleb128 0x3
- 1819 0059 08       		.uleb128 0x8
- 1820 005a 1C       		.uleb128 0x1c
- 1821 005b 0D       		.uleb128 0xd
- 1822 005c 00       		.byte	0
- 1823 005d 00       		.byte	0
- 1824 005e 09       		.uleb128 0x9
- 1825 005f 2E       		.uleb128 0x2e
- 1826 0060 01       		.byte	0x1
- 1827 0061 3F       		.uleb128 0x3f
- 1828 0062 19       		.uleb128 0x19
- 1829 0063 03       		.uleb128 0x3
- 1830 0064 0E       		.uleb128 0xe
- 1831 0065 3A       		.uleb128 0x3a
- 1832 0066 0B       		.uleb128 0xb
- 1833 0067 3B       		.uleb128 0x3b
- 1834 0068 0B       		.uleb128 0xb
- 1835 0069 27       		.uleb128 0x27
- 1836 006a 19       		.uleb128 0x19
- 1837 006b 11       		.uleb128 0x11
- 1838 006c 01       		.uleb128 0x1
- 1839 006d 12       		.uleb128 0x12
- 1840 006e 06       		.uleb128 0x6
- 1841 006f 40       		.uleb128 0x40
- 1842 0070 18       		.uleb128 0x18
- 1843 0071 9642     		.uleb128 0x2116
- 1844 0073 19       		.uleb128 0x19
- 1845 0074 01       		.uleb128 0x1
- 1846 0075 13       		.uleb128 0x13
- 1847 0076 00       		.byte	0
- 1848 0077 00       		.byte	0
- 1849 0078 0A       		.uleb128 0xa
- 1850 0079 34       		.uleb128 0x34
- 1851 007a 00       		.byte	0
- 1852 007b 03       		.uleb128 0x3
- 1853 007c 0E       		.uleb128 0xe
- 1854 007d 3A       		.uleb128 0x3a
- 1855 007e 0B       		.uleb128 0xb
- 1856 007f 3B       		.uleb128 0x3b
- 1857 0080 0B       		.uleb128 0xb
- 1858 0081 49       		.uleb128 0x49
- 1859 0082 13       		.uleb128 0x13
- 1860 0083 02       		.uleb128 0x2
- 1861 0084 18       		.uleb128 0x18
- 1862 0085 00       		.byte	0
- 1863 0086 00       		.byte	0
- 1864 0087 0B       		.uleb128 0xb
- 1865 0088 01       		.uleb128 0x1
- 1866 0089 01       		.byte	0x1
- 1867 008a 49       		.uleb128 0x49
- 1868 008b 13       		.uleb128 0x13
- 1869 008c 01       		.uleb128 0x1
- 1870 008d 13       		.uleb128 0x13
- 1871 008e 00       		.byte	0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 39
+ 1865 008a 49       		.uleb128 0x49
+ 1866 008b 13       		.uleb128 0x13
+ 1867 008c 01       		.uleb128 0x1
+ 1868 008d 13       		.uleb128 0x13
+ 1869 008e 00       		.byte	0
+ 1870 008f 00       		.byte	0
+ 1871 0090 0C       		.uleb128 0xc
+ 1872 0091 21       		.uleb128 0x21
+ 1873 0092 00       		.byte	0
+ 1874 0093 49       		.uleb128 0x49
+ 1875 0094 13       		.uleb128 0x13
+ 1876 0095 2F       		.uleb128 0x2f
+ 1877 0096 0B       		.uleb128 0xb
+ 1878 0097 00       		.byte	0
+ 1879 0098 00       		.byte	0
+ 1880 0099 0D       		.uleb128 0xd
+ 1881 009a 2E       		.uleb128 0x2e
+ 1882 009b 01       		.byte	0x1
+ 1883 009c 3F       		.uleb128 0x3f
+ 1884 009d 19       		.uleb128 0x19
+ 1885 009e 03       		.uleb128 0x3
+ 1886 009f 0E       		.uleb128 0xe
+ 1887 00a0 3A       		.uleb128 0x3a
+ 1888 00a1 0B       		.uleb128 0xb
+ 1889 00a2 3B       		.uleb128 0x3b
+ 1890 00a3 0B       		.uleb128 0xb
+ 1891 00a4 49       		.uleb128 0x49
+ 1892 00a5 13       		.uleb128 0x13
+ 1893 00a6 11       		.uleb128 0x11
+ 1894 00a7 01       		.uleb128 0x1
+ 1895 00a8 12       		.uleb128 0x12
+ 1896 00a9 06       		.uleb128 0x6
+ 1897 00aa 40       		.uleb128 0x40
+ 1898 00ab 18       		.uleb128 0x18
+ 1899 00ac 9642     		.uleb128 0x2116
+ 1900 00ae 19       		.uleb128 0x19
+ 1901 00af 01       		.uleb128 0x1
+ 1902 00b0 13       		.uleb128 0x13
+ 1903 00b1 00       		.byte	0
+ 1904 00b2 00       		.byte	0
+ 1905 00b3 0E       		.uleb128 0xe
+ 1906 00b4 0B       		.uleb128 0xb
+ 1907 00b5 01       		.byte	0x1
+ 1908 00b6 11       		.uleb128 0x11
+ 1909 00b7 01       		.uleb128 0x1
+ 1910 00b8 12       		.uleb128 0x12
+ 1911 00b9 06       		.uleb128 0x6
+ 1912 00ba 00       		.byte	0
+ 1913 00bb 00       		.byte	0
+ 1914 00bc 0F       		.uleb128 0xf
+ 1915 00bd 05       		.uleb128 0x5
+ 1916 00be 00       		.byte	0
+ 1917 00bf 03       		.uleb128 0x3
+ 1918 00c0 0E       		.uleb128 0xe
+ 1919 00c1 3A       		.uleb128 0x3a
+ 1920 00c2 0B       		.uleb128 0xb
+ 1921 00c3 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 40
 
 
- 1872 008f 00       		.byte	0
- 1873 0090 0C       		.uleb128 0xc
- 1874 0091 21       		.uleb128 0x21
- 1875 0092 00       		.byte	0
- 1876 0093 49       		.uleb128 0x49
- 1877 0094 13       		.uleb128 0x13
- 1878 0095 2F       		.uleb128 0x2f
- 1879 0096 0B       		.uleb128 0xb
- 1880 0097 00       		.byte	0
- 1881 0098 00       		.byte	0
- 1882 0099 0D       		.uleb128 0xd
- 1883 009a 2E       		.uleb128 0x2e
- 1884 009b 01       		.byte	0x1
- 1885 009c 3F       		.uleb128 0x3f
- 1886 009d 19       		.uleb128 0x19
- 1887 009e 03       		.uleb128 0x3
- 1888 009f 0E       		.uleb128 0xe
- 1889 00a0 3A       		.uleb128 0x3a
- 1890 00a1 0B       		.uleb128 0xb
- 1891 00a2 3B       		.uleb128 0x3b
- 1892 00a3 0B       		.uleb128 0xb
- 1893 00a4 49       		.uleb128 0x49
- 1894 00a5 13       		.uleb128 0x13
- 1895 00a6 11       		.uleb128 0x11
- 1896 00a7 01       		.uleb128 0x1
- 1897 00a8 12       		.uleb128 0x12
- 1898 00a9 06       		.uleb128 0x6
- 1899 00aa 40       		.uleb128 0x40
- 1900 00ab 18       		.uleb128 0x18
- 1901 00ac 9642     		.uleb128 0x2116
- 1902 00ae 19       		.uleb128 0x19
- 1903 00af 01       		.uleb128 0x1
- 1904 00b0 13       		.uleb128 0x13
- 1905 00b1 00       		.byte	0
- 1906 00b2 00       		.byte	0
- 1907 00b3 0E       		.uleb128 0xe
- 1908 00b4 0B       		.uleb128 0xb
- 1909 00b5 01       		.byte	0x1
- 1910 00b6 11       		.uleb128 0x11
- 1911 00b7 01       		.uleb128 0x1
- 1912 00b8 12       		.uleb128 0x12
- 1913 00b9 06       		.uleb128 0x6
- 1914 00ba 00       		.byte	0
- 1915 00bb 00       		.byte	0
- 1916 00bc 0F       		.uleb128 0xf
- 1917 00bd 05       		.uleb128 0x5
- 1918 00be 00       		.byte	0
- 1919 00bf 03       		.uleb128 0x3
- 1920 00c0 0E       		.uleb128 0xe
- 1921 00c1 3A       		.uleb128 0x3a
- 1922 00c2 0B       		.uleb128 0xb
- 1923 00c3 3B       		.uleb128 0x3b
- 1924 00c4 0B       		.uleb128 0xb
- 1925 00c5 49       		.uleb128 0x49
- 1926 00c6 13       		.uleb128 0x13
- 1927 00c7 02       		.uleb128 0x2
- 1928 00c8 18       		.uleb128 0x18
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 40
+ 1922 00c4 0B       		.uleb128 0xb
+ 1923 00c5 49       		.uleb128 0x49
+ 1924 00c6 13       		.uleb128 0x13
+ 1925 00c7 02       		.uleb128 0x2
+ 1926 00c8 18       		.uleb128 0x18
+ 1927 00c9 00       		.byte	0
+ 1928 00ca 00       		.byte	0
+ 1929 00cb 10       		.uleb128 0x10
+ 1930 00cc 2E       		.uleb128 0x2e
+ 1931 00cd 01       		.byte	0x1
+ 1932 00ce 3F       		.uleb128 0x3f
+ 1933 00cf 19       		.uleb128 0x19
+ 1934 00d0 03       		.uleb128 0x3
+ 1935 00d1 0E       		.uleb128 0xe
+ 1936 00d2 3A       		.uleb128 0x3a
+ 1937 00d3 0B       		.uleb128 0xb
+ 1938 00d4 3B       		.uleb128 0x3b
+ 1939 00d5 0B       		.uleb128 0xb
+ 1940 00d6 27       		.uleb128 0x27
+ 1941 00d7 19       		.uleb128 0x19
+ 1942 00d8 49       		.uleb128 0x49
+ 1943 00d9 13       		.uleb128 0x13
+ 1944 00da 11       		.uleb128 0x11
+ 1945 00db 01       		.uleb128 0x1
+ 1946 00dc 12       		.uleb128 0x12
+ 1947 00dd 06       		.uleb128 0x6
+ 1948 00de 40       		.uleb128 0x40
+ 1949 00df 18       		.uleb128 0x18
+ 1950 00e0 9642     		.uleb128 0x2116
+ 1951 00e2 19       		.uleb128 0x19
+ 1952 00e3 01       		.uleb128 0x1
+ 1953 00e4 13       		.uleb128 0x13
+ 1954 00e5 00       		.byte	0
+ 1955 00e6 00       		.byte	0
+ 1956 00e7 11       		.uleb128 0x11
+ 1957 00e8 34       		.uleb128 0x34
+ 1958 00e9 00       		.byte	0
+ 1959 00ea 03       		.uleb128 0x3
+ 1960 00eb 0E       		.uleb128 0xe
+ 1961 00ec 3A       		.uleb128 0x3a
+ 1962 00ed 0B       		.uleb128 0xb
+ 1963 00ee 3B       		.uleb128 0x3b
+ 1964 00ef 0B       		.uleb128 0xb
+ 1965 00f0 49       		.uleb128 0x49
+ 1966 00f1 13       		.uleb128 0x13
+ 1967 00f2 3F       		.uleb128 0x3f
+ 1968 00f3 19       		.uleb128 0x19
+ 1969 00f4 02       		.uleb128 0x2
+ 1970 00f5 18       		.uleb128 0x18
+ 1971 00f6 00       		.byte	0
+ 1972 00f7 00       		.byte	0
+ 1973 00f8 12       		.uleb128 0x12
+ 1974 00f9 34       		.uleb128 0x34
+ 1975 00fa 00       		.byte	0
+ 1976 00fb 03       		.uleb128 0x3
+ 1977 00fc 08       		.uleb128 0x8
+ 1978 00fd 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 41
 
 
- 1929 00c9 00       		.byte	0
- 1930 00ca 00       		.byte	0
- 1931 00cb 10       		.uleb128 0x10
- 1932 00cc 2E       		.uleb128 0x2e
- 1933 00cd 01       		.byte	0x1
- 1934 00ce 3F       		.uleb128 0x3f
- 1935 00cf 19       		.uleb128 0x19
- 1936 00d0 03       		.uleb128 0x3
- 1937 00d1 0E       		.uleb128 0xe
- 1938 00d2 3A       		.uleb128 0x3a
- 1939 00d3 0B       		.uleb128 0xb
- 1940 00d4 3B       		.uleb128 0x3b
- 1941 00d5 0B       		.uleb128 0xb
- 1942 00d6 27       		.uleb128 0x27
- 1943 00d7 19       		.uleb128 0x19
- 1944 00d8 49       		.uleb128 0x49
- 1945 00d9 13       		.uleb128 0x13
- 1946 00da 11       		.uleb128 0x11
- 1947 00db 01       		.uleb128 0x1
- 1948 00dc 12       		.uleb128 0x12
- 1949 00dd 06       		.uleb128 0x6
- 1950 00de 40       		.uleb128 0x40
- 1951 00df 18       		.uleb128 0x18
- 1952 00e0 9642     		.uleb128 0x2116
- 1953 00e2 19       		.uleb128 0x19
- 1954 00e3 01       		.uleb128 0x1
- 1955 00e4 13       		.uleb128 0x13
- 1956 00e5 00       		.byte	0
- 1957 00e6 00       		.byte	0
- 1958 00e7 11       		.uleb128 0x11
- 1959 00e8 34       		.uleb128 0x34
- 1960 00e9 00       		.byte	0
- 1961 00ea 03       		.uleb128 0x3
- 1962 00eb 0E       		.uleb128 0xe
- 1963 00ec 3A       		.uleb128 0x3a
- 1964 00ed 0B       		.uleb128 0xb
- 1965 00ee 3B       		.uleb128 0x3b
- 1966 00ef 0B       		.uleb128 0xb
- 1967 00f0 49       		.uleb128 0x49
- 1968 00f1 13       		.uleb128 0x13
- 1969 00f2 3F       		.uleb128 0x3f
- 1970 00f3 19       		.uleb128 0x19
- 1971 00f4 02       		.uleb128 0x2
- 1972 00f5 18       		.uleb128 0x18
- 1973 00f6 00       		.byte	0
- 1974 00f7 00       		.byte	0
- 1975 00f8 12       		.uleb128 0x12
- 1976 00f9 34       		.uleb128 0x34
- 1977 00fa 00       		.byte	0
- 1978 00fb 03       		.uleb128 0x3
- 1979 00fc 08       		.uleb128 0x8
- 1980 00fd 3A       		.uleb128 0x3a
- 1981 00fe 0B       		.uleb128 0xb
- 1982 00ff 3B       		.uleb128 0x3b
- 1983 0100 0B       		.uleb128 0xb
- 1984 0101 49       		.uleb128 0x49
- 1985 0102 13       		.uleb128 0x13
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 41
+ 1979 00fe 0B       		.uleb128 0xb
+ 1980 00ff 3B       		.uleb128 0x3b
+ 1981 0100 0B       		.uleb128 0xb
+ 1982 0101 49       		.uleb128 0x49
+ 1983 0102 13       		.uleb128 0x13
+ 1984 0103 3F       		.uleb128 0x3f
+ 1985 0104 19       		.uleb128 0x19
+ 1986 0105 02       		.uleb128 0x2
+ 1987 0106 18       		.uleb128 0x18
+ 1988 0107 00       		.byte	0
+ 1989 0108 00       		.byte	0
+ 1990 0109 00       		.byte	0
+ 1991              		.section	.debug_aranges,"",%progbits
+ 1992 0000 3C000000 		.4byte	0x3c
+ 1993 0004 0200     		.2byte	0x2
+ 1994 0006 00000000 		.4byte	.Ldebug_info0
+ 1995 000a 04       		.byte	0x4
+ 1996 000b 00       		.byte	0
+ 1997 000c 0000     		.2byte	0
+ 1998 000e 0000     		.2byte	0
+ 1999 0010 00000000 		.4byte	.LFB33
+ 2000 0014 78000000 		.4byte	.LFE33-.LFB33
+ 2001 0018 00000000 		.4byte	.LFB34
+ 2002 001c 50020000 		.4byte	.LFE34-.LFB34
+ 2003 0020 00000000 		.4byte	.LFB35
+ 2004 0024 C4030000 		.4byte	.LFE35-.LFB35
+ 2005 0028 00000000 		.4byte	.LFB36
+ 2006 002c A4020000 		.4byte	.LFE36-.LFB36
+ 2007 0030 00000000 		.4byte	.LFB37
+ 2008 0034 A4000000 		.4byte	.LFE37-.LFB37
+ 2009 0038 00000000 		.4byte	0
+ 2010 003c 00000000 		.4byte	0
+ 2011              		.section	.debug_ranges,"",%progbits
+ 2012              	.Ldebug_ranges0:
+ 2013 0000 00000000 		.4byte	.LFB33
+ 2014 0004 78000000 		.4byte	.LFE33
+ 2015 0008 00000000 		.4byte	.LFB34
+ 2016 000c 50020000 		.4byte	.LFE34
+ 2017 0010 00000000 		.4byte	.LFB35
+ 2018 0014 C4030000 		.4byte	.LFE35
+ 2019 0018 00000000 		.4byte	.LFB36
+ 2020 001c A4020000 		.4byte	.LFE36
+ 2021 0020 00000000 		.4byte	.LFB37
+ 2022 0024 A4000000 		.4byte	.LFE37
+ 2023 0028 00000000 		.4byte	0
+ 2024 002c 00000000 		.4byte	0
+ 2025              		.section	.debug_line,"",%progbits
+ 2026              	.Ldebug_line0:
+ 2027 0000 4C010000 		.section	.debug_str,"MS",%progbits,1
+ 2027      02004500 
+ 2027      00000201 
+ 2027      FB0E0D00 
+ 2027      01010101 
+ 2028              	.LASF30:
+ 2029 0000 7072696E 		.ascii	"print_measurement\000"
+ 2029      745F6D65 
+ 2029      61737572 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 42
 
 
- 1986 0103 3F       		.uleb128 0x3f
- 1987 0104 19       		.uleb128 0x19
- 1988 0105 02       		.uleb128 0x2
- 1989 0106 18       		.uleb128 0x18
- 1990 0107 00       		.byte	0
- 1991 0108 00       		.byte	0
- 1992 0109 00       		.byte	0
- 1993              		.section	.debug_aranges,"",%progbits
- 1994 0000 3C000000 		.4byte	0x3c
- 1995 0004 0200     		.2byte	0x2
- 1996 0006 00000000 		.4byte	.Ldebug_info0
- 1997 000a 04       		.byte	0x4
- 1998 000b 00       		.byte	0
- 1999 000c 0000     		.2byte	0
- 2000 000e 0000     		.2byte	0
- 2001 0010 00000000 		.4byte	.LFB33
- 2002 0014 78000000 		.4byte	.LFE33-.LFB33
- 2003 0018 00000000 		.4byte	.LFB34
- 2004 001c 54020000 		.4byte	.LFE34-.LFB34
- 2005 0020 00000000 		.4byte	.LFB35
- 2006 0024 C4030000 		.4byte	.LFE35-.LFB35
- 2007 0028 00000000 		.4byte	.LFB36
- 2008 002c A4020000 		.4byte	.LFE36-.LFB36
- 2009 0030 00000000 		.4byte	.LFB37
- 2010 0034 A4000000 		.4byte	.LFE37-.LFB37
- 2011 0038 00000000 		.4byte	0
- 2012 003c 00000000 		.4byte	0
- 2013              		.section	.debug_ranges,"",%progbits
- 2014              	.Ldebug_ranges0:
- 2015 0000 00000000 		.4byte	.LFB33
- 2016 0004 78000000 		.4byte	.LFE33
- 2017 0008 00000000 		.4byte	.LFB34
- 2018 000c 54020000 		.4byte	.LFE34
- 2019 0010 00000000 		.4byte	.LFB35
- 2020 0014 C4030000 		.4byte	.LFE35
- 2021 0018 00000000 		.4byte	.LFB36
- 2022 001c A4020000 		.4byte	.LFE36
- 2023 0020 00000000 		.4byte	.LFB37
- 2024 0024 A4000000 		.4byte	.LFE37
- 2025 0028 00000000 		.4byte	0
- 2026 002c 00000000 		.4byte	0
- 2027              		.section	.debug_line,"",%progbits
- 2028              	.Ldebug_line0:
- 2029 0000 4B010000 		.section	.debug_str,"MS",%progbits,1
- 2029      02004500 
- 2029      00000201 
- 2029      FB0E0D00 
- 2029      01010101 
- 2030              	.LASF30:
- 2031 0000 7072696E 		.ascii	"print_measurement\000"
- 2031      745F6D65 
- 2031      61737572 
- 2031      656D656E 
- 2031      7400
- 2032              	.LASF39:
- 2033 0012 42544E5F 		.ascii	"BTN_states\000"
- 2033      73746174 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 42
+ 2029      656D656E 
+ 2029      7400
+ 2030              	.LASF39:
+ 2031 0012 42544E5F 		.ascii	"BTN_states\000"
+ 2031      73746174 
+ 2031      657300
+ 2032              	.LASF21:
+ 2033 001d 4C454654 		.ascii	"LEFT\000"
+ 2033      00
+ 2034              	.LASF16:
+ 2035 0022 75696E74 		.ascii	"uint64\000"
+ 2035      363400
+ 2036              	.LASF29:
+ 2037 0029 74696D65 		.ascii	"time_us\000"
+ 2037      5F757300 
+ 2038              	.LASF33:
+ 2039 0031 565F7374 		.ascii	"V_start\000"
+ 2039      61727400 
+ 2040              	.LASF19:
+ 2041 0039 554E5052 		.ascii	"UNPRESSED\000"
+ 2041      45535345 
+ 2041      4400
+ 2042              	.LASF14:
+ 2043 0043 666C6F61 		.ascii	"float\000"
+ 2043      7400
+ 2044              	.LASF36:
+ 2045 0049 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 2045      4320342E 
+ 2045      382E3420 
+ 2045      32303134 
+ 2045      30353236 
+ 2046 007c 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 2046      20726576 
+ 2046      6973696F 
+ 2046      6E203231 
+ 2046      31333538 
+ 2047 00af 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 2047      66756E63 
+ 2047      74696F6E 
+ 2047      2D736563 
+ 2047      74696F6E 
+ 2048              	.LASF20:
+ 2049 00c5 53454C45 		.ascii	"SELECT\000"
+ 2049      435400
+ 2050              	.LASF1:
+ 2051 00cc 756E7369 		.ascii	"unsigned char\000"
+ 2051      676E6564 
+ 2051      20636861 
+ 2051      7200
+ 2052              	.LASF13:
+ 2053 00da 696E7431 		.ascii	"int16\000"
+ 2053      3600
+ 2054              	.LASF5:
+ 2055 00e0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2055      20756E73 
+ 2055      69676E65 
+ 2055      6420696E 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 43
 
 
- 2033      657300
- 2034              	.LASF21:
- 2035 001d 4C454654 		.ascii	"LEFT\000"
- 2035      00
- 2036              	.LASF16:
- 2037 0022 75696E74 		.ascii	"uint64\000"
- 2037      363400
- 2038              	.LASF29:
- 2039 0029 74696D65 		.ascii	"time_us\000"
- 2039      5F757300 
- 2040              	.LASF33:
- 2041 0031 565F7374 		.ascii	"V_start\000"
- 2041      61727400 
- 2042              	.LASF19:
- 2043 0039 554E5052 		.ascii	"UNPRESSED\000"
- 2043      45535345 
- 2043      4400
- 2044              	.LASF14:
- 2045 0043 666C6F61 		.ascii	"float\000"
- 2045      7400
- 2046              	.LASF36:
- 2047 0049 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 2047      4320342E 
- 2047      382E3420 
- 2047      32303134 
- 2047      30353236 
- 2048 007c 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 2048      20726576 
- 2048      6973696F 
- 2048      6E203231 
- 2048      31333538 
- 2049 00af 30202D66 		.ascii	"0 -ffunction-sections\000"
- 2049      66756E63 
- 2049      74696F6E 
- 2049      2D736563 
- 2049      74696F6E 
- 2050              	.LASF20:
- 2051 00c5 53454C45 		.ascii	"SELECT\000"
- 2051      435400
- 2052              	.LASF1:
- 2053 00cc 756E7369 		.ascii	"unsigned char\000"
- 2053      676E6564 
- 2053      20636861 
- 2053      7200
- 2054              	.LASF13:
- 2055 00da 696E7431 		.ascii	"int16\000"
- 2055      3600
- 2056              	.LASF5:
- 2057 00e0 6C6F6E67 		.ascii	"long unsigned int\000"
- 2057      20756E73 
- 2057      69676E65 
- 2057      6420696E 
- 2057      7400
- 2058              	.LASF26:
- 2059 00f2 74656D70 		.ascii	"temp\000"
- 2059      00
- 2060              	.LASF3:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 43
-
-
- 2061 00f7 73686F72 		.ascii	"short unsigned int\000"
- 2061      7420756E 
- 2061      7369676E 
- 2061      65642069 
- 2061      6E7400
- 2062              	.LASF34:
- 2063 010a 565F6E65 		.ascii	"V_new\000"
- 2063      7700
- 2064              	.LASF37:
- 2065 0110 2E5C6D61 		.ascii	".\\main.c\000"
- 2065      696E2E63 
- 2065      00
- 2066              	.LASF35:
- 2067 0119 6C636442 		.ascii	"lcdBtnOld\000"
- 2067      746E4F6C 
- 2067      6400
- 2068              	.LASF25:
- 2069 0123 6D61696E 		.ascii	"main\000"
- 2069      00
- 2070              	.LASF10:
- 2071 0128 75696E74 		.ascii	"uint16\000"
- 2071      313600
- 2072              	.LASF12:
- 2073 012f 696E7438 		.ascii	"int8\000"
- 2073      00
- 2074              	.LASF11:
- 2075 0134 75696E74 		.ascii	"uint32\000"
- 2075      333200
- 2076              	.LASF8:
- 2077 013b 756E7369 		.ascii	"unsigned int\000"
- 2077      676E6564 
- 2077      20696E74 
- 2077      00
- 2078              	.LASF32:
- 2079 0148 72756E6E 		.ascii	"running\000"
- 2079      696E6700 
- 2080              	.LASF7:
- 2081 0150 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2081      206C6F6E 
- 2081      6720756E 
- 2081      7369676E 
- 2081      65642069 
- 2082              	.LASF23:
- 2083 0167 52494748 		.ascii	"RIGHT\000"
- 2083      5400
- 2084              	.LASF31:
- 2085 016d 74696D65 		.ascii	"time\000"
+ 2055      7400
+ 2056              	.LASF26:
+ 2057 00f2 74656D70 		.ascii	"temp\000"
+ 2057      00
+ 2058              	.LASF3:
+ 2059 00f7 73686F72 		.ascii	"short unsigned int\000"
+ 2059      7420756E 
+ 2059      7369676E 
+ 2059      65642069 
+ 2059      6E7400
+ 2060              	.LASF34:
+ 2061 010a 565F6E65 		.ascii	"V_new\000"
+ 2061      7700
+ 2062              	.LASF37:
+ 2063 0110 2E5C6D61 		.ascii	".\\main.c\000"
+ 2063      696E2E63 
+ 2063      00
+ 2064              	.LASF35:
+ 2065 0119 6C636442 		.ascii	"lcdBtnOld\000"
+ 2065      746E4F6C 
+ 2065      6400
+ 2066              	.LASF25:
+ 2067 0123 6D61696E 		.ascii	"main\000"
+ 2067      00
+ 2068              	.LASF10:
+ 2069 0128 75696E74 		.ascii	"uint16\000"
+ 2069      313600
+ 2070              	.LASF12:
+ 2071 012f 696E7438 		.ascii	"int8\000"
+ 2071      00
+ 2072              	.LASF11:
+ 2073 0134 75696E74 		.ascii	"uint32\000"
+ 2073      333200
+ 2074              	.LASF8:
+ 2075 013b 756E7369 		.ascii	"unsigned int\000"
+ 2075      676E6564 
+ 2075      20696E74 
+ 2075      00
+ 2076              	.LASF32:
+ 2077 0148 72756E6E 		.ascii	"running\000"
+ 2077      696E6700 
+ 2078              	.LASF7:
+ 2079 0150 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2079      206C6F6E 
+ 2079      6720756E 
+ 2079      7369676E 
+ 2079      65642069 
+ 2080              	.LASF23:
+ 2081 0167 52494748 		.ascii	"RIGHT\000"
+ 2081      5400
+ 2082              	.LASF31:
+ 2083 016d 74696D65 		.ascii	"time\000"
+ 2083      00
+ 2084              	.LASF18:
+ 2085 0172 73697A65 		.ascii	"sizetype\000"
+ 2085      74797065 
  2085      00
- 2086              	.LASF18:
- 2087 0172 73697A65 		.ascii	"sizetype\000"
- 2087      74797065 
- 2087      00
- 2088              	.LASF38:
- 2089 017b 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
- 2089      73657273 
- 2089      5C536E75 
- 2089      666B696E 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccTjf5Kh.s 			page 44
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 44
 
 
- 2089      5C446F63 
- 2090 01a8 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
- 2090      696D6572 
- 2090      5C435254 
- 2090      5F74696D 
- 2090      65722E63 
- 2091              	.LASF6:
- 2092 01c1 6C6F6E67 		.ascii	"long long int\000"
- 2092      206C6F6E 
- 2092      6720696E 
- 2092      7400
- 2093              	.LASF17:
- 2094 01cf 63686172 		.ascii	"char\000"
+ 2086              	.LASF38:
+ 2087 017b 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 2087      73657273 
+ 2087      5C536E75 
+ 2087      666B696E 
+ 2087      5C446F63 
+ 2088 01a8 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 2088      696D6572 
+ 2088      5C435254 
+ 2088      5F74696D 
+ 2088      65722E63 
+ 2089              	.LASF6:
+ 2090 01c1 6C6F6E67 		.ascii	"long long int\000"
+ 2090      206C6F6E 
+ 2090      6720696E 
+ 2090      7400
+ 2091              	.LASF17:
+ 2092 01cf 63686172 		.ascii	"char\000"
+ 2092      00
+ 2093              	.LASF27:
+ 2094 01d4 6C696768 		.ascii	"lightMax\000"
+ 2094      744D6178 
  2094      00
- 2095              	.LASF27:
- 2096 01d4 6C696768 		.ascii	"lightMax\000"
- 2096      744D6178 
+ 2095              	.LASF22:
+ 2096 01dd 444F574E 		.ascii	"DOWN\000"
  2096      00
- 2097              	.LASF22:
- 2098 01dd 444F574E 		.ascii	"DOWN\000"
- 2098      00
- 2099              	.LASF24:
- 2100 01e2 73775F69 		.ascii	"sw_int_ISR\000"
- 2100      6E745F49 
- 2100      535200
- 2101              	.LASF2:
- 2102 01ed 73686F72 		.ascii	"short int\000"
- 2102      7420696E 
- 2102      7400
- 2103              	.LASF9:
- 2104 01f7 75696E74 		.ascii	"uint8\000"
- 2104      3800
- 2105              	.LASF28:
- 2106 01fd 70757473 		.ascii	"puts_measurement\000"
- 2106      5F6D6561 
- 2106      73757265 
- 2106      6D656E74 
+ 2097              	.LASF24:
+ 2098 01e2 73775F69 		.ascii	"sw_int_ISR\000"
+ 2098      6E745F49 
+ 2098      535200
+ 2099              	.LASF2:
+ 2100 01ed 73686F72 		.ascii	"short int\000"
+ 2100      7420696E 
+ 2100      7400
+ 2101              	.LASF9:
+ 2102 01f7 75696E74 		.ascii	"uint8\000"
+ 2102      3800
+ 2103              	.LASF28:
+ 2104 01fd 70757473 		.ascii	"puts_measurement\000"
+ 2104      5F6D6561 
+ 2104      73757265 
+ 2104      6D656E74 
+ 2104      00
+ 2105              	.LASF4:
+ 2106 020e 6C6F6E67 		.ascii	"long int\000"
+ 2106      20696E74 
  2106      00
- 2107              	.LASF4:
- 2108 020e 6C6F6E67 		.ascii	"long int\000"
- 2108      20696E74 
- 2108      00
- 2109              	.LASF40:
- 2110 0217 75706461 		.ascii	"updateBTN\000"
- 2110      74654254 
- 2110      4E00
- 2111              	.LASF0:
- 2112 0221 7369676E 		.ascii	"signed char\000"
- 2112      65642063 
- 2112      68617200 
- 2113              	.LASF15:
- 2114 022d 646F7562 		.ascii	"double\000"
- 2114      6C6500
- 2115              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 2107              	.LASF40:
+ 2108 0217 75706461 		.ascii	"updateBTN\000"
+ 2108      74654254 
+ 2108      4E00
+ 2109              	.LASF0:
+ 2110 0221 7369676E 		.ascii	"signed char\000"
+ 2110      65642063 
+ 2110      68617200 
+ 2111              	.LASF15:
+ 2112 022d 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccda6Q2u.s 			page 45
+
+
+ 2112      6C6500
+ 2113              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

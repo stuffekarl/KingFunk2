@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2015-04-09T07:11:53Z")
+ (DATE "2015-04-10T18:58:06Z")
  (DESIGN "CRT_timer")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -119,6 +119,7 @@
     (INTERCONNECT RS\(0\).pad_out RS\(0\)_PAD (0.000:0.000:0.000))
     (INTERCONNECT RS\(0\)_PAD RS\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT SW2\(0\)_PAD SW2\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Test_pin\(0\)_PAD Test_pin\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT \\UART_1\:tx\(0\)\\.pad_out \\UART_1\:tx\(0\)_PAD\\ (0.000:0.000:0.000))
     (INTERCONNECT \\UART_1\:tx\(0\)_PAD\\ \\UART_1\:tx\(0\)\\.pad_in (0.000:0.000:0.000))
    )

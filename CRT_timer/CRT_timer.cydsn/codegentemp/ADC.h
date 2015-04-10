@@ -124,7 +124,7 @@ typedef struct
 #define ADC_DEFAULT_AVG_SAMPLES_NUM        (0u)
 #define ADC_DEFAULT_AVG_SAMPLES_DIV        (int16)(0x100u >> (7u - 0u))
 #define ADC_DEFAULT_AVG_MODE               (1u)
-#define ADC_MAX_RESOLUTION                 (12u)
+#define ADC_MAX_RESOLUTION                 (8u)
 #define ADC_DEFAULT_LOW_LIMIT              (0u)
 #define ADC_DEFAULT_HIGH_LIMIT             (2047u)
 #define ADC_DEFAULT_COMPARE_MODE           (0u)

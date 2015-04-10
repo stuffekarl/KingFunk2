@@ -81,6 +81,9 @@
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GND.c" value="ARM_C_FILE;GND" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GND.h" value="NONE;GND" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GND_aliases.h" value="NONE;GND" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Test_pin.c" value="ARM_C_FILE;Test_pin" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Test_pin.h" value="NONE;Test_pin" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Test_pin_aliases.h" value="NONE;Test_pin" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_IRQ.c" value="ARM_C_FILE;ADC_IRQ" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_IRQ.h" value="NONE;ADC_IRQ" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_intClock.c" value="ARM_C_FILE;ADC_intClock" />
