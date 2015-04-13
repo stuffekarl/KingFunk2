@@ -13,15 +13,17 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="CRT_timer\CRT_timer\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="CRT_timer\CRT_timer\TopDesign">
 <ExpandedNodeIds>
 <v>CRT_timer</v>
 <v>CRT_timer\CRT_timer</v>
 <v>CRT_timer\CRT_timer\TopDesign</v>
 <v>CRT_timer\CRT_timer\CRT_timer.cydwr</v>
 <v>CRT_timer\CRT_timer\Header Files</v>
+<v>CRT_timer\CRT_timer\Header Files\keypad.h</v>
 <v>CRT_timer\CRT_timer\Header Files\menus.h</v>
 <v>CRT_timer\CRT_timer\Source Files</v>
+<v>CRT_timer\CRT_timer\Source Files\keypad.c</v>
 <v>CRT_timer\CRT_timer\Source Files\main.c</v>
 <v>CRT_timer\CRT_timer\Source Files\menus.c</v>
 <v>CRT_timer\CRT_timer\Generated_Source</v>
@@ -128,24 +130,10 @@
 <v>CRT_timer\CRT_timer\Generated_Source\PSoC4\Timer_1\Timer_1.c</v>
 <v>CRT_timer\CRT_timer\Generated_Source\PSoC4\Timer_1\Timer_1.h</v>
 <v>CRT_timer\CRT_timer\Generated_Source\PSoC4\Timer_1\Timer_1_PM.c</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1.c</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1.h</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_BOOT.c</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_BOOT.h</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_PINS.h</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_PM.c</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_PVT.h</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_SPI_UART.c</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_SPI_UART.h</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_SPI_UART_INT.c</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_SPI_UART_PVT.h</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_UART.c</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1\UART_1_UART_BOOT.c</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1_SCBCLK\UART_1_SCBCLK.c</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1_SCBCLK\UART_1_SCBCLK.h</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1_tx\UART_1_tx.c</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1_tx\UART_1_tx.h</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\UART_1_tx\UART_1_tx_aliases.h</v>
+<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\timer_enable</v>
+<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\timer_enable\timer_enable.c</v>
+<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\timer_enable\timer_enable.h</v>
+<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\timer_enable\timer_enable_aliases.h</v>
 <v>CRT_timer\CRT_timer\Generated_Source\PSoC4\cydevice_trm.h</v>
 <v>CRT_timer\CRT_timer\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
 <v>CRT_timer\CRT_timer\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
@@ -166,8 +154,10 @@
 <v>CRT_timer\CRT_timer\TopDesign</v>
 <v>CRT_timer\CRT_timer\CRT_timer.cydwr</v>
 <v>CRT_timer\CRT_timer\Header Files</v>
+<v>CRT_timer\CRT_timer\Header Files\keypad.h</v>
 <v>CRT_timer\CRT_timer\Header Files\menus.h</v>
 <v>CRT_timer\CRT_timer\Source Files</v>
+<v>CRT_timer\CRT_timer\Source Files\keypad.c</v>
 <v>CRT_timer\CRT_timer\Source Files\main.c</v>
 <v>CRT_timer\CRT_timer\Source Files\menus.c</v>
 <v>CRT_timer\CRT_timer\Generated_Source</v>
@@ -209,8 +199,6 @@
 <v>CRT_timer\CRT_timer\Generated_Source\PSoC4\D7\D7.c</v>
 <v>CRT_timer\CRT_timer\Generated_Source\PSoC4\D7\D7.h</v>
 <v>CRT_timer\CRT_timer\Generated_Source\PSoC4\D7\D7_aliases.h</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\E</v>
-<v>CRT_timer\CRT_timer\Generated_Source\PSoC4\E\E.c</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -259,6 +247,7 @@
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\D7.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\E.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\GND.lst</v>
+<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\keypad.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\LCD.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\LCD_Cntl_Port.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\LCD_CustChars.lst</v>
@@ -275,15 +264,7 @@
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\TIA_out.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\Timer_1.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\Timer_1_PM.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_BOOT.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_PM.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_SCBCLK.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_SPI_UART.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_SPI_UART_INT.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_tx.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_UART.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_UART_BOOT.lst</v>
+<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\timer_enable.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\CRT_timer.elf</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\CRT_timer.hex</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\CRT_timer.map</v>
@@ -319,6 +300,7 @@
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\D7.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\E.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\GND.lst</v>
+<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\keypad.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\LCD.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\LCD_Cntl_Port.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\LCD_CustChars.lst</v>
@@ -335,12 +317,11 @@
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\TIA_out.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\Timer_1.lst</v>
 <v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\Timer_1_PM.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_BOOT.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_PM.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_SCBCLK.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_SPI_UART.lst</v>
-<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\UART_1_SPI_UART_INT.lst</v>
+<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\Listing Files\timer_enable.lst</v>
+<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\CRT_timer.elf</v>
+<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\CRT_timer.hex</v>
+<v>CRT_timer\CRT_timer\CortexM0\ARM_GCC_484\Debug\CRT_timer.map</v>
+<v>CRT_timer\CRT_timer\CRT_timer.rpt</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -367,7 +348,6 @@
 <v>CRT_timer\CRT_timer\PFET_En_v1_0</v>
 <v>CRT_timer\CRT_timer\PhotoDiode_v1_0</v>
 <v>CRT_timer\CRT_timer\Resistor_v1_0</v>
-<v>CRT_timer\CRT_timer\SCB_P4_v2_0</v>
 <v>CRT_timer\CRT_timer\Timer_v2_70</v>
 <v>CRT_timer\CRT_timer\ZeroTerminal</v>
 </ExpandedNodeIds>
@@ -389,7 +369,6 @@
 <v>CRT_timer\CRT_timer\PFET_En_v1_0</v>
 <v>CRT_timer\CRT_timer\PhotoDiode_v1_0</v>
 <v>CRT_timer\CRT_timer\Resistor_v1_0</v>
-<v>CRT_timer\CRT_timer\SCB_P4_v2_0</v>
 <v>CRT_timer\CRT_timer\Timer_v2_70</v>
 <v>CRT_timer\CRT_timer\ZeroTerminal</v>
 </VisibleNodeIds>
@@ -413,11 +392,13 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\CRT_timer.cydsn\main.c" />
 <name v=".\CRT_timer.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\CRT_timer.cydsn\CRT_timer.cydwr" />
-<name v=".\CRT_timer.cydsn\menus.h" />
+<name v=".\CRT_timer.cydsn\main.c" />
 <name v=".\CRT_timer.cydsn\menus.c" />
+<name v=".\CRT_timer.cydsn\keypad.c" />
+<name v=".\CRT_timer.cydsn\keypad.h" />
+<name v=".\CRT_timer.cydsn\menus.h" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

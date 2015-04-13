@@ -40,6 +40,14 @@ int8 updateMenu(){
         else if(press == UP){
             currentMenu = MAIN;
         }
+        else if(press == RIGHT){
+            target++;
+            oldMenu = INITIAL;
+        }
+        else if(press == LEFT){
+            target--;
+            oldMenu = INITIAL;
+        }
     }
     else if(currentMenu == RESULTS){
         if (press == DOWN){
@@ -91,7 +99,7 @@ void drawMenu(gui menu){
             LCD_PrintString("last timing: ");
         }
         LCD_Position(1,13);
-        LCD_PrintNumber(1337);
+        LCD_PrintNumber(123);
     }
     
     oldMenu = menu;

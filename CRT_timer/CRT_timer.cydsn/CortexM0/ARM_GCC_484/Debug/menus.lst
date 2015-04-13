@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 1
   13:.\menus.c     **** /* [] END OF FILE */
   14:.\menus.c     **** 
   15:.\menus.c     **** #include <project.h>
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 2
 
 
   16:.\menus.c     **** #include "menus.h"
@@ -91,7 +91,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 1
   58 000e 2370     		strb	r3, [r4]
   28:.\menus.c     ****     if (currentMenu == MAIN){
   59              		.loc 1 28 0
-  60 0010 264B     		ldr	r3, .L13
+  60 0010 344B     		ldr	r3, .L15
   61 0012 1B78     		ldrb	r3, [r3]
   62 0014 002B     		cmp	r3, #0
   63 0016 0FD1     		bne	.L2
@@ -103,10 +103,10 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 1
   68 001e 03D1     		bne	.L3
   30:.\menus.c     ****             currentMenu = CALIBRATION;
   69              		.loc 1 30 0
-  70 0020 224B     		ldr	r3, .L13
+  70 0020 304B     		ldr	r3, .L15
   71 0022 0122     		mov	r2, #1
   72 0024 1A70     		strb	r2, [r3]
-  73 0026 36E0     		b	.L5
+  73 0026 52E0     		b	.L5
   74              	.L3:
   31:.\menus.c     ****         }
   32:.\menus.c     ****         else if(press == UP){
@@ -114,25 +114,25 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 1
   76 0028 FB1D     		add	r3, r7, #7
   77 002a 1B78     		ldrb	r3, [r3]
   78 002c 042B     		cmp	r3, #4
-  79 002e 32D1     		bne	.L5
+  79 002e 4ED1     		bne	.L5
   33:.\menus.c     ****             currentMenu = RESULTS;
   80              		.loc 1 33 0
-  81 0030 1E4B     		ldr	r3, .L13
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 3
+  81 0030 2C4B     		ldr	r3, .L15
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 3
 
 
   82 0032 0222     		mov	r2, #2
   83 0034 1A70     		strb	r2, [r3]
-  84 0036 2EE0     		b	.L5
+  84 0036 4AE0     		b	.L5
   85              	.L2:
   34:.\menus.c     ****         }
   35:.\menus.c     ****     }
   36:.\menus.c     ****     else if(currentMenu == CALIBRATION){
   86              		.loc 1 36 0
-  87 0038 1C4B     		ldr	r3, .L13
+  87 0038 2A4B     		ldr	r3, .L15
   88 003a 1B78     		ldrb	r3, [r3]
   89 003c 012B     		cmp	r3, #1
-  90 003e 0FD1     		bne	.L6
+  90 003e 2BD1     		bne	.L6
   37:.\menus.c     ****         if (press == DOWN){
   91              		.loc 1 37 0
   92 0040 FB1D     		add	r3, r7, #7
@@ -141,10 +141,10 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 1
   95 0046 03D1     		bne	.L7
   38:.\menus.c     ****             currentMenu = RESULTS;
   96              		.loc 1 38 0
-  97 0048 184B     		ldr	r3, .L13
+  97 0048 264B     		ldr	r3, .L15
   98 004a 0222     		mov	r2, #2
   99 004c 1A70     		strb	r2, [r3]
- 100 004e 22E0     		b	.L5
+ 100 004e 3EE0     		b	.L5
  101              	.L7:
   39:.\menus.c     ****         }
   40:.\menus.c     ****         else if(press == UP){
@@ -152,1148 +152,1195 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 1
  103 0050 FB1D     		add	r3, r7, #7
  104 0052 1B78     		ldrb	r3, [r3]
  105 0054 042B     		cmp	r3, #4
- 106 0056 1ED1     		bne	.L5
+ 106 0056 03D1     		bne	.L9
   41:.\menus.c     ****             currentMenu = MAIN;
  107              		.loc 1 41 0
- 108 0058 144B     		ldr	r3, .L13
+ 108 0058 224B     		ldr	r3, .L15
  109 005a 0022     		mov	r2, #0
  110 005c 1A70     		strb	r2, [r3]
- 111 005e 1AE0     		b	.L5
- 112              	.L6:
+ 111 005e 36E0     		b	.L5
+ 112              	.L9:
   42:.\menus.c     ****         }
-  43:.\menus.c     ****     }
-  44:.\menus.c     ****     else if(currentMenu == RESULTS){
- 113              		.loc 1 44 0
- 114 0060 124B     		ldr	r3, .L13
+  43:.\menus.c     ****         else if(press == RIGHT){
+ 113              		.loc 1 43 0
+ 114 0060 FB1D     		add	r3, r7, #7
  115 0062 1B78     		ldrb	r3, [r3]
- 116 0064 022B     		cmp	r3, #2
- 117 0066 0FD1     		bne	.L9
-  45:.\menus.c     ****         if (press == DOWN){
- 118              		.loc 1 45 0
- 119 0068 FB1D     		add	r3, r7, #7
- 120 006a 1B78     		ldrb	r3, [r3]
- 121 006c 032B     		cmp	r3, #3
- 122 006e 03D1     		bne	.L10
-  46:.\menus.c     ****             currentMenu = MAIN;
- 123              		.loc 1 46 0
- 124 0070 0E4B     		ldr	r3, .L13
- 125 0072 0022     		mov	r2, #0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 4
+ 116 0064 052B     		cmp	r3, #5
+ 117 0066 09D1     		bne	.L10
+  44:.\menus.c     ****             target++;
+ 118              		.loc 1 44 0
+ 119 0068 1F4B     		ldr	r3, .L15+4
+ 120 006a 1B88     		ldrh	r3, [r3]
+ 121 006c 0133     		add	r3, r3, #1
+ 122 006e 9AB2     		uxth	r2, r3
+ 123 0070 1D4B     		ldr	r3, .L15+4
+ 124 0072 1A80     		strh	r2, [r3]
+  45:.\menus.c     ****             oldMenu = INITIAL;
+ 125              		.loc 1 45 0
+ 126 0074 1D4B     		ldr	r3, .L15+8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 4
 
 
- 126 0074 1A70     		strb	r2, [r3]
- 127 0076 0EE0     		b	.L5
- 128              	.L10:
-  47:.\menus.c     ****         }
-  48:.\menus.c     ****         else if(press == UP){
- 129              		.loc 1 48 0
- 130 0078 FB1D     		add	r3, r7, #7
- 131 007a 1B78     		ldrb	r3, [r3]
- 132 007c 042B     		cmp	r3, #4
- 133 007e 0AD1     		bne	.L5
-  49:.\menus.c     ****             currentMenu = CALIBRATION;
- 134              		.loc 1 49 0
- 135 0080 0A4B     		ldr	r3, .L13
- 136 0082 0122     		mov	r2, #1
- 137 0084 1A70     		strb	r2, [r3]
- 138 0086 06E0     		b	.L5
- 139              	.L9:
+ 127 0076 0322     		mov	r2, #3
+ 128 0078 1A70     		strb	r2, [r3]
+ 129 007a 28E0     		b	.L5
+ 130              	.L10:
+  46:.\menus.c     ****         }
+  47:.\menus.c     ****         else if(press == LEFT){
+ 131              		.loc 1 47 0
+ 132 007c FB1D     		add	r3, r7, #7
+ 133 007e 1B78     		ldrb	r3, [r3]
+ 134 0080 022B     		cmp	r3, #2
+ 135 0082 24D1     		bne	.L5
+  48:.\menus.c     ****             target--;
+ 136              		.loc 1 48 0
+ 137 0084 184B     		ldr	r3, .L15+4
+ 138 0086 1B88     		ldrh	r3, [r3]
+ 139 0088 013B     		sub	r3, r3, #1
+ 140 008a 9AB2     		uxth	r2, r3
+ 141 008c 164B     		ldr	r3, .L15+4
+ 142 008e 1A80     		strh	r2, [r3]
+  49:.\menus.c     ****             oldMenu = INITIAL;
+ 143              		.loc 1 49 0
+ 144 0090 164B     		ldr	r3, .L15+8
+ 145 0092 0322     		mov	r2, #3
+ 146 0094 1A70     		strb	r2, [r3]
+ 147 0096 1AE0     		b	.L5
+ 148              	.L6:
   50:.\menus.c     ****         }
   51:.\menus.c     ****     }
-  52:.\menus.c     ****     else if(currentMenu == INITIAL){
- 140              		.loc 1 52 0
- 141 0088 084B     		ldr	r3, .L13
- 142 008a 1B78     		ldrb	r3, [r3]
- 143 008c 032B     		cmp	r3, #3
- 144 008e 02D1     		bne	.L5
-  53:.\menus.c     ****         currentMenu = MAIN;
- 145              		.loc 1 53 0
- 146 0090 064B     		ldr	r3, .L13
- 147 0092 0022     		mov	r2, #0
- 148 0094 1A70     		strb	r2, [r3]
- 149              	.L5:
-  54:.\menus.c     ****     }
-  55:.\menus.c     ****     
-  56:.\menus.c     ****     drawMenu(currentMenu);
- 150              		.loc 1 56 0
- 151 0096 054B     		ldr	r3, .L13
- 152 0098 1B78     		ldrb	r3, [r3]
- 153 009a 181C     		mov	r0, r3
- 154 009c FFF7FEFF 		bl	drawMenu
-  57:.\menus.c     ****     return 0;
- 155              		.loc 1 57 0
- 156 00a0 0023     		mov	r3, #0
- 157 00a2 5BB2     		sxtb	r3, r3
-  58:.\menus.c     **** }
- 158              		.loc 1 58 0
- 159 00a4 181C     		mov	r0, r3
- 160 00a6 BD46     		mov	sp, r7
- 161 00a8 03B0     		add	sp, sp, #12
- 162              		@ sp needed
- 163 00aa 90BD     		pop	{r4, r7, pc}
- 164              	.L14:
- 165              		.align	2
- 166              	.L13:
- 167 00ac 00000000 		.word	currentMenu
- 168              		.cfi_endproc
- 169              	.LFE33:
- 170              		.size	updateMenu, .-updateMenu
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 5
+  52:.\menus.c     ****     else if(currentMenu == RESULTS){
+ 149              		.loc 1 52 0
+ 150 0098 124B     		ldr	r3, .L15
+ 151 009a 1B78     		ldrb	r3, [r3]
+ 152 009c 022B     		cmp	r3, #2
+ 153 009e 0FD1     		bne	.L11
+  53:.\menus.c     ****         if (press == DOWN){
+ 154              		.loc 1 53 0
+ 155 00a0 FB1D     		add	r3, r7, #7
+ 156 00a2 1B78     		ldrb	r3, [r3]
+ 157 00a4 032B     		cmp	r3, #3
+ 158 00a6 03D1     		bne	.L12
+  54:.\menus.c     ****             currentMenu = MAIN;
+ 159              		.loc 1 54 0
+ 160 00a8 0E4B     		ldr	r3, .L15
+ 161 00aa 0022     		mov	r2, #0
+ 162 00ac 1A70     		strb	r2, [r3]
+ 163 00ae 0EE0     		b	.L5
+ 164              	.L12:
+  55:.\menus.c     ****         }
+  56:.\menus.c     ****         else if(press == UP){
+ 165              		.loc 1 56 0
+ 166 00b0 FB1D     		add	r3, r7, #7
+ 167 00b2 1B78     		ldrb	r3, [r3]
+ 168 00b4 042B     		cmp	r3, #4
+ 169 00b6 0AD1     		bne	.L5
+  57:.\menus.c     ****             currentMenu = CALIBRATION;
+ 170              		.loc 1 57 0
+ 171 00b8 0A4B     		ldr	r3, .L15
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 5
 
 
- 171              		.section	.rodata
- 172              		.align	2
- 173              	.LC2:
- 174 0000 20202020 		.ascii	"    <MAIN>     \000"
- 174      3C4D4149 
- 174      4E3E2020 
- 174      20202000 
- 175              		.align	2
- 176              	.LC5:
- 177 0010 4D61783A 		.ascii	"Max: \000"
- 177      2000
- 178 0016 0000     		.align	2
- 179              	.LC7:
- 180 0018 203C4341 		.ascii	" <CALIBRATION>  \000"
- 180      4C494252 
- 180      4154494F 
- 180      4E3E2020 
- 180      00
- 181 0029 000000   		.align	2
- 182              	.LC9:
- 183 002c 74617267 		.ascii	"target: \000"
- 183      65743A20 
- 183      00
- 184 0035 000000   		.align	2
- 185              	.LC12:
- 186 0038 2020203C 		.ascii	"   <RESULTS>    \000"
- 186      52455355 
- 186      4C54533E 
- 186      20202020 
- 186      00
- 187 0049 000000   		.align	2
- 188              	.LC14:
- 189 004c 6C617374 		.ascii	"last timing: \000"
- 189      2074696D 
- 189      696E673A 
- 189      2000
- 190              		.section	.text.drawMenu,"ax",%progbits
- 191              		.align	2
- 192              		.global	drawMenu
- 193              		.code	16
- 194              		.thumb_func
- 195              		.type	drawMenu, %function
- 196              	drawMenu:
- 197              	.LFB34:
-  59:.\menus.c     **** 
-  60:.\menus.c     **** void drawMenu(gui menu){
- 198              		.loc 1 60 0
- 199              		.cfi_startproc
- 200 0000 90B5     		push	{r4, r7, lr}
- 201              		.cfi_def_cfa_offset 12
- 202              		.cfi_offset 4, -12
- 203              		.cfi_offset 7, -8
- 204              		.cfi_offset 14, -4
- 205 0002 85B0     		sub	sp, sp, #20
- 206              		.cfi_def_cfa_offset 32
- 207 0004 00AF     		add	r7, sp, #0
- 208              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 6
+ 172 00ba 0122     		mov	r2, #1
+ 173 00bc 1A70     		strb	r2, [r3]
+ 174 00be 06E0     		b	.L5
+ 175              	.L11:
+  58:.\menus.c     ****         }
+  59:.\menus.c     ****     }
+  60:.\menus.c     ****     else if(currentMenu == INITIAL){
+ 176              		.loc 1 60 0
+ 177 00c0 084B     		ldr	r3, .L15
+ 178 00c2 1B78     		ldrb	r3, [r3]
+ 179 00c4 032B     		cmp	r3, #3
+ 180 00c6 02D1     		bne	.L5
+  61:.\menus.c     ****         currentMenu = MAIN;
+ 181              		.loc 1 61 0
+ 182 00c8 064B     		ldr	r3, .L15
+ 183 00ca 0022     		mov	r2, #0
+ 184 00cc 1A70     		strb	r2, [r3]
+ 185              	.L5:
+  62:.\menus.c     ****     }
+  63:.\menus.c     ****     
+  64:.\menus.c     ****     drawMenu(currentMenu);
+ 186              		.loc 1 64 0
+ 187 00ce 054B     		ldr	r3, .L15
+ 188 00d0 1B78     		ldrb	r3, [r3]
+ 189 00d2 181C     		mov	r0, r3
+ 190 00d4 FFF7FEFF 		bl	drawMenu
+  65:.\menus.c     ****     return 0;
+ 191              		.loc 1 65 0
+ 192 00d8 0023     		mov	r3, #0
+ 193 00da 5BB2     		sxtb	r3, r3
+  66:.\menus.c     **** }
+ 194              		.loc 1 66 0
+ 195 00dc 181C     		mov	r0, r3
+ 196 00de BD46     		mov	sp, r7
+ 197 00e0 03B0     		add	sp, sp, #12
+ 198              		@ sp needed
+ 199 00e2 90BD     		pop	{r4, r7, pc}
+ 200              	.L16:
+ 201              		.align	2
+ 202              	.L15:
+ 203 00e4 00000000 		.word	currentMenu
+ 204 00e8 00000000 		.word	target
+ 205 00ec 01000000 		.word	oldMenu
+ 206              		.cfi_endproc
+ 207              	.LFE33:
+ 208              		.size	updateMenu, .-updateMenu
+ 209              		.section	.rodata
+ 210              		.align	2
+ 211              	.LC4:
+ 212 0000 20202020 		.ascii	"    <MAIN>     \000"
+ 212      3C4D4149 
+ 212      4E3E2020 
+ 212      20202000 
+ 213              		.align	2
+ 214              	.LC7:
+ 215 0010 4D61783A 		.ascii	"Max: \000"
+ 215      2000
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 6
 
 
- 209 0006 021C     		mov	r2, r0
- 210 0008 FB1D     		add	r3, r7, #7
- 211 000a 1A70     		strb	r2, [r3]
-  61:.\menus.c     ****     if (menu == MAIN){
- 212              		.loc 1 61 0
- 213 000c FB1D     		add	r3, r7, #7
- 214 000e 1B78     		ldrb	r3, [r3]
- 215 0010 002B     		cmp	r3, #0
- 216 0012 34D1     		bne	.L16
- 217              	.LBB2:
-  62:.\menus.c     ****         int16 temp = ADC_GetResult16(0);
- 218              		.loc 1 62 0
- 219 0014 3C1C     		mov	r4, r7
- 220 0016 0E34     		add	r4, r4, #14
- 221 0018 0020     		mov	r0, #0
- 222 001a FFF7FEFF 		bl	ADC_GetResult16
- 223 001e 031C     		mov	r3, r0
- 224 0020 2380     		strh	r3, [r4]
-  63:.\menus.c     ****         
-  64:.\menus.c     ****         if(menu != oldMenu){
- 225              		.loc 1 64 0
- 226 0022 3D4B     		ldr	r3, .L24
- 227 0024 1B78     		ldrb	r3, [r3]
- 228 0026 FA1D     		add	r2, r7, #7
- 229 0028 1278     		ldrb	r2, [r2]
- 230 002a 9A42     		cmp	r2, r3
- 231 002c 06D0     		beq	.L17
-  65:.\menus.c     ****             clearLine(0);
- 232              		.loc 1 65 0
- 233 002e 0020     		mov	r0, #0
- 234 0030 FFF7FEFF 		bl	clearLine
-  66:.\menus.c     ****             LCD_PrintString("    <MAIN>     ");
- 235              		.loc 1 66 0
- 236 0034 394B     		ldr	r3, .L24+4
- 237 0036 181C     		mov	r0, r3
- 238 0038 FFF7FEFF 		bl	LCD_PrintString
- 239              	.L17:
-  67:.\menus.c     ****         }        
-  68:.\menus.c     **** 
-  69:.\menus.c     ****         if (temp > lightMax || menu != oldMenu){
- 240              		.loc 1 69 0
- 241 003c 3B1C     		mov	r3, r7
- 242 003e 0E33     		add	r3, r3, #14
- 243 0040 0021     		mov	r1, #0
- 244 0042 5A5E     		ldrsh	r2, [r3, r1]
- 245 0044 364B     		ldr	r3, .L24+8
- 246 0046 1B88     		ldrh	r3, [r3]
- 247 0048 9A42     		cmp	r2, r3
- 248 004a 05DC     		bgt	.L18
- 249              		.loc 1 69 0 is_stmt 0 discriminator 1
- 250 004c 324B     		ldr	r3, .L24
- 251 004e 1B78     		ldrb	r3, [r3]
- 252 0050 FA1D     		add	r2, r7, #7
- 253 0052 1278     		ldrb	r2, [r2]
- 254 0054 9A42     		cmp	r2, r3
- 255 0056 11D0     		beq	.L19
- 256              	.L18:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 7
+ 216 0016 0000     		.align	2
+ 217              	.LC9:
+ 218 0018 203C4341 		.ascii	" <CALIBRATION>  \000"
+ 218      4C494252 
+ 218      4154494F 
+ 218      4E3E2020 
+ 218      00
+ 219 0029 000000   		.align	2
+ 220              	.LC11:
+ 221 002c 74617267 		.ascii	"target: \000"
+ 221      65743A20 
+ 221      00
+ 222 0035 000000   		.align	2
+ 223              	.LC14:
+ 224 0038 2020203C 		.ascii	"   <RESULTS>    \000"
+ 224      52455355 
+ 224      4C54533E 
+ 224      20202020 
+ 224      00
+ 225 0049 000000   		.align	2
+ 226              	.LC16:
+ 227 004c 6C617374 		.ascii	"last timing: \000"
+ 227      2074696D 
+ 227      696E673A 
+ 227      2000
+ 228              		.section	.text.drawMenu,"ax",%progbits
+ 229              		.align	2
+ 230              		.global	drawMenu
+ 231              		.code	16
+ 232              		.thumb_func
+ 233              		.type	drawMenu, %function
+ 234              	drawMenu:
+ 235              	.LFB34:
+  67:.\menus.c     **** 
+  68:.\menus.c     **** void drawMenu(gui menu){
+ 236              		.loc 1 68 0
+ 237              		.cfi_startproc
+ 238 0000 90B5     		push	{r4, r7, lr}
+ 239              		.cfi_def_cfa_offset 12
+ 240              		.cfi_offset 4, -12
+ 241              		.cfi_offset 7, -8
+ 242              		.cfi_offset 14, -4
+ 243 0002 85B0     		sub	sp, sp, #20
+ 244              		.cfi_def_cfa_offset 32
+ 245 0004 00AF     		add	r7, sp, #0
+ 246              		.cfi_def_cfa_register 7
+ 247 0006 021C     		mov	r2, r0
+ 248 0008 FB1D     		add	r3, r7, #7
+ 249 000a 1A70     		strb	r2, [r3]
+  69:.\menus.c     ****     if (menu == MAIN){
+ 250              		.loc 1 69 0
+ 251 000c FB1D     		add	r3, r7, #7
+ 252 000e 1B78     		ldrb	r3, [r3]
+ 253 0010 002B     		cmp	r3, #0
+ 254 0012 34D1     		bne	.L18
+ 255              	.LBB2:
+  70:.\menus.c     ****         int16 temp = ADC_GetResult16(0);
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 7
 
 
-  70:.\menus.c     ****             lightMax = temp;
- 257              		.loc 1 70 0 is_stmt 1
- 258 0058 3B1C     		mov	r3, r7
- 259 005a 0E33     		add	r3, r3, #14
- 260 005c 1A88     		ldrh	r2, [r3]
- 261 005e 304B     		ldr	r3, .L24+8
- 262 0060 1A80     		strh	r2, [r3]
-  71:.\menus.c     ****             clearLine(1);
- 263              		.loc 1 71 0
- 264 0062 0120     		mov	r0, #1
- 265 0064 FFF7FEFF 		bl	clearLine
-  72:.\menus.c     ****             LCD_PrintString("Max: ");
- 266              		.loc 1 72 0
- 267 0068 2E4B     		ldr	r3, .L24+12
- 268 006a 181C     		mov	r0, r3
- 269 006c FFF7FEFF 		bl	LCD_PrintString
-  73:.\menus.c     ****             LCD_PrintNumber(lightMax);
+ 256              		.loc 1 70 0
+ 257 0014 3C1C     		mov	r4, r7
+ 258 0016 0E34     		add	r4, r4, #14
+ 259 0018 0020     		mov	r0, #0
+ 260 001a FFF7FEFF 		bl	ADC_GetResult16
+ 261 001e 031C     		mov	r3, r0
+ 262 0020 2380     		strh	r3, [r4]
+  71:.\menus.c     ****         
+  72:.\menus.c     ****         if(menu != oldMenu){
+ 263              		.loc 1 72 0
+ 264 0022 3C4B     		ldr	r3, .L26
+ 265 0024 1B78     		ldrb	r3, [r3]
+ 266 0026 FA1D     		add	r2, r7, #7
+ 267 0028 1278     		ldrb	r2, [r2]
+ 268 002a 9A42     		cmp	r2, r3
+ 269 002c 06D0     		beq	.L19
+  73:.\menus.c     ****             clearLine(0);
  270              		.loc 1 73 0
- 271 0070 2B4B     		ldr	r3, .L24+8
- 272 0072 1B88     		ldrh	r3, [r3]
- 273 0074 181C     		mov	r0, r3
- 274 0076 FFF7FEFF 		bl	LCD_PrintNumber
- 275              	.LBE2:
- 276 007a 42E0     		b	.L20
+ 271 002e 0020     		mov	r0, #0
+ 272 0030 FFF7FEFF 		bl	clearLine
+  74:.\menus.c     ****             LCD_PrintString("    <MAIN>     ");
+ 273              		.loc 1 74 0
+ 274 0034 384B     		ldr	r3, .L26+4
+ 275 0036 181C     		mov	r0, r3
+ 276 0038 FFF7FEFF 		bl	LCD_PrintString
  277              	.L19:
- 278 007c 41E0     		b	.L20
- 279              	.L16:
-  74:.\menus.c     ****         }
-  75:.\menus.c     ****     }
-  76:.\menus.c     ****     else if(menu == CALIBRATION){
- 280              		.loc 1 76 0
- 281 007e FB1D     		add	r3, r7, #7
- 282 0080 1B78     		ldrb	r3, [r3]
- 283 0082 012B     		cmp	r3, #1
- 284 0084 1DD1     		bne	.L21
-  77:.\menus.c     ****         if(menu != oldMenu){
- 285              		.loc 1 77 0
- 286 0086 244B     		ldr	r3, .L24
- 287 0088 1B78     		ldrb	r3, [r3]
- 288 008a FA1D     		add	r2, r7, #7
- 289 008c 1278     		ldrb	r2, [r2]
- 290 008e 9A42     		cmp	r2, r3
- 291 0090 0DD0     		beq	.L22
-  78:.\menus.c     ****             clearLine(0);
- 292              		.loc 1 78 0
- 293 0092 0020     		mov	r0, #0
- 294 0094 FFF7FEFF 		bl	clearLine
-  79:.\menus.c     ****             LCD_PrintString(" <CALIBRATION>  ");
- 295              		.loc 1 79 0
- 296 0098 234B     		ldr	r3, .L24+16
- 297 009a 181C     		mov	r0, r3
- 298 009c FFF7FEFF 		bl	LCD_PrintString
-  80:.\menus.c     ****             clearLine(1);
- 299              		.loc 1 80 0
- 300 00a0 0120     		mov	r0, #1
- 301 00a2 FFF7FEFF 		bl	clearLine
-  81:.\menus.c     ****             LCD_PrintString("target: ");
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 8
+  75:.\menus.c     ****         }        
+  76:.\menus.c     **** 
+  77:.\menus.c     ****         if (temp > lightMax || menu != oldMenu){
+ 278              		.loc 1 77 0
+ 279 003c 3B1C     		mov	r3, r7
+ 280 003e 0E33     		add	r3, r3, #14
+ 281 0040 0021     		mov	r1, #0
+ 282 0042 5A5E     		ldrsh	r2, [r3, r1]
+ 283 0044 354B     		ldr	r3, .L26+8
+ 284 0046 1B88     		ldrh	r3, [r3]
+ 285 0048 9A42     		cmp	r2, r3
+ 286 004a 05DC     		bgt	.L20
+ 287              		.loc 1 77 0 is_stmt 0 discriminator 1
+ 288 004c 314B     		ldr	r3, .L26
+ 289 004e 1B78     		ldrb	r3, [r3]
+ 290 0050 FA1D     		add	r2, r7, #7
+ 291 0052 1278     		ldrb	r2, [r2]
+ 292 0054 9A42     		cmp	r2, r3
+ 293 0056 11D0     		beq	.L21
+ 294              	.L20:
+  78:.\menus.c     ****             lightMax = temp;
+ 295              		.loc 1 78 0 is_stmt 1
+ 296 0058 3B1C     		mov	r3, r7
+ 297 005a 0E33     		add	r3, r3, #14
+ 298 005c 1A88     		ldrh	r2, [r3]
+ 299 005e 2F4B     		ldr	r3, .L26+8
+ 300 0060 1A80     		strh	r2, [r3]
+  79:.\menus.c     ****             clearLine(1);
+ 301              		.loc 1 79 0
+ 302 0062 0120     		mov	r0, #1
+ 303 0064 FFF7FEFF 		bl	clearLine
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 8
 
 
- 302              		.loc 1 81 0
- 303 00a6 214B     		ldr	r3, .L24+20
- 304 00a8 181C     		mov	r0, r3
- 305 00aa FFF7FEFF 		bl	LCD_PrintString
- 306              	.L22:
+  80:.\menus.c     ****             LCD_PrintString("Max: ");
+ 304              		.loc 1 80 0
+ 305 0068 2D4B     		ldr	r3, .L26+12
+ 306 006a 181C     		mov	r0, r3
+ 307 006c FFF7FEFF 		bl	LCD_PrintString
+  81:.\menus.c     ****             LCD_PrintNumber(lightMax);
+ 308              		.loc 1 81 0
+ 309 0070 2A4B     		ldr	r3, .L26+8
+ 310 0072 1B88     		ldrh	r3, [r3]
+ 311 0074 181C     		mov	r0, r3
+ 312 0076 FFF7FEFF 		bl	LCD_PrintNumber
+ 313              	.LBE2:
+ 314 007a 41E0     		b	.L22
+ 315              	.L21:
+ 316 007c 40E0     		b	.L22
+ 317              	.L18:
   82:.\menus.c     ****         }
-  83:.\menus.c     ****         LCD_Position(1,8);
- 307              		.loc 1 83 0
- 308 00ae 0120     		mov	r0, #1
- 309 00b0 0821     		mov	r1, #8
- 310 00b2 FFF7FEFF 		bl	LCD_Position
-  84:.\menus.c     ****         LCD_PrintNumber(target);
- 311              		.loc 1 84 0
- 312 00b6 1E4B     		ldr	r3, .L24+24
- 313 00b8 1B88     		ldrh	r3, [r3]
- 314 00ba 181C     		mov	r0, r3
- 315 00bc FFF7FEFF 		bl	LCD_PrintNumber
- 316 00c0 1FE0     		b	.L20
- 317              	.L21:
-  85:.\menus.c     ****     }
-  86:.\menus.c     ****     else if(menu == RESULTS){
- 318              		.loc 1 86 0
- 319 00c2 FB1D     		add	r3, r7, #7
- 320 00c4 1B78     		ldrb	r3, [r3]
- 321 00c6 022B     		cmp	r3, #2
- 322 00c8 1BD1     		bne	.L20
-  87:.\menus.c     ****         if(menu != oldMenu){
- 323              		.loc 1 87 0
- 324 00ca 134B     		ldr	r3, .L24
- 325 00cc 1B78     		ldrb	r3, [r3]
- 326 00ce FA1D     		add	r2, r7, #7
- 327 00d0 1278     		ldrb	r2, [r2]
- 328 00d2 9A42     		cmp	r2, r3
- 329 00d4 0DD0     		beq	.L23
-  88:.\menus.c     ****             clearLine(0);
- 330              		.loc 1 88 0
- 331 00d6 0020     		mov	r0, #0
- 332 00d8 FFF7FEFF 		bl	clearLine
-  89:.\menus.c     ****             LCD_PrintString("   <RESULTS>    ");
- 333              		.loc 1 89 0
- 334 00dc 154B     		ldr	r3, .L24+28
- 335 00de 181C     		mov	r0, r3
- 336 00e0 FFF7FEFF 		bl	LCD_PrintString
-  90:.\menus.c     ****             clearLine(1);
- 337              		.loc 1 90 0
- 338 00e4 0120     		mov	r0, #1
- 339 00e6 FFF7FEFF 		bl	clearLine
-  91:.\menus.c     ****             LCD_PrintString("last timing: ");
- 340              		.loc 1 91 0
- 341 00ea 134B     		ldr	r3, .L24+32
- 342 00ec 181C     		mov	r0, r3
- 343 00ee FFF7FEFF 		bl	LCD_PrintString
- 344              	.L23:
-  92:.\menus.c     ****         }
-  93:.\menus.c     ****         LCD_Position(1,13);
- 345              		.loc 1 93 0
- 346 00f2 0120     		mov	r0, #1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 9
+  83:.\menus.c     ****     }
+  84:.\menus.c     ****     else if(menu == CALIBRATION){
+ 318              		.loc 1 84 0
+ 319 007e FB1D     		add	r3, r7, #7
+ 320 0080 1B78     		ldrb	r3, [r3]
+ 321 0082 012B     		cmp	r3, #1
+ 322 0084 1DD1     		bne	.L23
+  85:.\menus.c     ****         if(menu != oldMenu){
+ 323              		.loc 1 85 0
+ 324 0086 234B     		ldr	r3, .L26
+ 325 0088 1B78     		ldrb	r3, [r3]
+ 326 008a FA1D     		add	r2, r7, #7
+ 327 008c 1278     		ldrb	r2, [r2]
+ 328 008e 9A42     		cmp	r2, r3
+ 329 0090 0DD0     		beq	.L24
+  86:.\menus.c     ****             clearLine(0);
+ 330              		.loc 1 86 0
+ 331 0092 0020     		mov	r0, #0
+ 332 0094 FFF7FEFF 		bl	clearLine
+  87:.\menus.c     ****             LCD_PrintString(" <CALIBRATION>  ");
+ 333              		.loc 1 87 0
+ 334 0098 224B     		ldr	r3, .L26+16
+ 335 009a 181C     		mov	r0, r3
+ 336 009c FFF7FEFF 		bl	LCD_PrintString
+  88:.\menus.c     ****             clearLine(1);
+ 337              		.loc 1 88 0
+ 338 00a0 0120     		mov	r0, #1
+ 339 00a2 FFF7FEFF 		bl	clearLine
+  89:.\menus.c     ****             LCD_PrintString("target: ");
+ 340              		.loc 1 89 0
+ 341 00a6 204B     		ldr	r3, .L26+20
+ 342 00a8 181C     		mov	r0, r3
+ 343 00aa FFF7FEFF 		bl	LCD_PrintString
+ 344              	.L24:
+  90:.\menus.c     ****         }
+  91:.\menus.c     ****         LCD_Position(1,8);
+ 345              		.loc 1 91 0
+ 346 00ae 0120     		mov	r0, #1
+ 347 00b0 0821     		mov	r1, #8
+ 348 00b2 FFF7FEFF 		bl	LCD_Position
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 9
 
 
- 347 00f4 0D21     		mov	r1, #13
- 348 00f6 FFF7FEFF 		bl	LCD_Position
-  94:.\menus.c     ****         LCD_PrintNumber(1337);
- 349              		.loc 1 94 0
- 350 00fa 104B     		ldr	r3, .L24+36
- 351 00fc 181C     		mov	r0, r3
- 352 00fe FFF7FEFF 		bl	LCD_PrintNumber
- 353              	.L20:
-  95:.\menus.c     ****     }
-  96:.\menus.c     ****     
-  97:.\menus.c     ****     oldMenu = menu;
- 354              		.loc 1 97 0
- 355 0102 054B     		ldr	r3, .L24
- 356 0104 FA1D     		add	r2, r7, #7
- 357 0106 1278     		ldrb	r2, [r2]
- 358 0108 1A70     		strb	r2, [r3]
-  98:.\menus.c     ****     CyDelay(15);
- 359              		.loc 1 98 0
- 360 010a 0F20     		mov	r0, #15
- 361 010c FFF7FEFF 		bl	CyDelay
-  99:.\menus.c     **** }
- 362              		.loc 1 99 0
- 363 0110 BD46     		mov	sp, r7
- 364 0112 05B0     		add	sp, sp, #20
- 365              		@ sp needed
- 366 0114 90BD     		pop	{r4, r7, pc}
- 367              	.L25:
- 368 0116 C046     		.align	2
- 369              	.L24:
- 370 0118 01000000 		.word	oldMenu
- 371 011c 00000000 		.word	.LC2
- 372 0120 00000000 		.word	lightMax
- 373 0124 10000000 		.word	.LC5
- 374 0128 18000000 		.word	.LC7
- 375 012c 2C000000 		.word	.LC9
- 376 0130 00000000 		.word	target
- 377 0134 38000000 		.word	.LC12
- 378 0138 4C000000 		.word	.LC14
- 379 013c 39050000 		.word	1337
- 380              		.cfi_endproc
- 381              	.LFE34:
- 382              		.size	drawMenu, .-drawMenu
- 383              		.section	.rodata
- 384 005a 0000     		.align	2
- 385              	.LC16:
- 386 005c 20202020 		.ascii	"                \000"
- 386      20202020 
- 386      20202020 
- 386      20202020 
- 386      00
- 387 006d 000000   		.section	.text.clearLine,"ax",%progbits
- 388              		.align	2
- 389              		.global	clearLine
- 390              		.code	16
- 391              		.thumb_func
- 392              		.type	clearLine, %function
- 393              	clearLine:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 10
+  92:.\menus.c     ****         LCD_PrintNumber(target);
+ 349              		.loc 1 92 0
+ 350 00b6 1D4B     		ldr	r3, .L26+24
+ 351 00b8 1B88     		ldrh	r3, [r3]
+ 352 00ba 181C     		mov	r0, r3
+ 353 00bc FFF7FEFF 		bl	LCD_PrintNumber
+ 354 00c0 1EE0     		b	.L22
+ 355              	.L23:
+  93:.\menus.c     ****     }
+  94:.\menus.c     ****     else if(menu == RESULTS){
+ 356              		.loc 1 94 0
+ 357 00c2 FB1D     		add	r3, r7, #7
+ 358 00c4 1B78     		ldrb	r3, [r3]
+ 359 00c6 022B     		cmp	r3, #2
+ 360 00c8 1AD1     		bne	.L22
+  95:.\menus.c     ****         if(menu != oldMenu){
+ 361              		.loc 1 95 0
+ 362 00ca 124B     		ldr	r3, .L26
+ 363 00cc 1B78     		ldrb	r3, [r3]
+ 364 00ce FA1D     		add	r2, r7, #7
+ 365 00d0 1278     		ldrb	r2, [r2]
+ 366 00d2 9A42     		cmp	r2, r3
+ 367 00d4 0DD0     		beq	.L25
+  96:.\menus.c     ****             clearLine(0);
+ 368              		.loc 1 96 0
+ 369 00d6 0020     		mov	r0, #0
+ 370 00d8 FFF7FEFF 		bl	clearLine
+  97:.\menus.c     ****             LCD_PrintString("   <RESULTS>    ");
+ 371              		.loc 1 97 0
+ 372 00dc 144B     		ldr	r3, .L26+28
+ 373 00de 181C     		mov	r0, r3
+ 374 00e0 FFF7FEFF 		bl	LCD_PrintString
+  98:.\menus.c     ****             clearLine(1);
+ 375              		.loc 1 98 0
+ 376 00e4 0120     		mov	r0, #1
+ 377 00e6 FFF7FEFF 		bl	clearLine
+  99:.\menus.c     ****             LCD_PrintString("last timing: ");
+ 378              		.loc 1 99 0
+ 379 00ea 124B     		ldr	r3, .L26+32
+ 380 00ec 181C     		mov	r0, r3
+ 381 00ee FFF7FEFF 		bl	LCD_PrintString
+ 382              	.L25:
+ 100:.\menus.c     ****         }
+ 101:.\menus.c     ****         LCD_Position(1,13);
+ 383              		.loc 1 101 0
+ 384 00f2 0120     		mov	r0, #1
+ 385 00f4 0D21     		mov	r1, #13
+ 386 00f6 FFF7FEFF 		bl	LCD_Position
+ 102:.\menus.c     ****         LCD_PrintNumber(123);
+ 387              		.loc 1 102 0
+ 388 00fa 7B20     		mov	r0, #123
+ 389 00fc FFF7FEFF 		bl	LCD_PrintNumber
+ 390              	.L22:
+ 103:.\menus.c     ****     }
+ 104:.\menus.c     ****     
+ 105:.\menus.c     ****     oldMenu = menu;
+ 391              		.loc 1 105 0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 10
 
 
- 394              	.LFB35:
- 100:.\menus.c     **** 
- 101:.\menus.c     **** void clearLine(uint8 row){
- 395              		.loc 1 101 0
- 396              		.cfi_startproc
- 397 0000 80B5     		push	{r7, lr}
- 398              		.cfi_def_cfa_offset 8
- 399              		.cfi_offset 7, -8
- 400              		.cfi_offset 14, -4
- 401 0002 82B0     		sub	sp, sp, #8
- 402              		.cfi_def_cfa_offset 16
- 403 0004 00AF     		add	r7, sp, #0
- 404              		.cfi_def_cfa_register 7
- 405 0006 021C     		mov	r2, r0
- 406 0008 FB1D     		add	r3, r7, #7
- 407 000a 1A70     		strb	r2, [r3]
- 102:.\menus.c     ****     LCD_Position(row,0);
- 408              		.loc 1 102 0
- 409 000c FB1D     		add	r3, r7, #7
- 410 000e 1B78     		ldrb	r3, [r3]
- 411 0010 181C     		mov	r0, r3
- 412 0012 0021     		mov	r1, #0
- 413 0014 FFF7FEFF 		bl	LCD_Position
- 103:.\menus.c     ****     LCD_PrintString("                ");
- 414              		.loc 1 103 0
- 415 0018 064B     		ldr	r3, .L27
- 416 001a 181C     		mov	r0, r3
- 417 001c FFF7FEFF 		bl	LCD_PrintString
- 104:.\menus.c     ****     LCD_Position(row,0);
- 418              		.loc 1 104 0
- 419 0020 FB1D     		add	r3, r7, #7
- 420 0022 1B78     		ldrb	r3, [r3]
- 421 0024 181C     		mov	r0, r3
- 422 0026 0021     		mov	r1, #0
- 423 0028 FFF7FEFF 		bl	LCD_Position
- 105:.\menus.c     **** }
- 424              		.loc 1 105 0
- 425 002c BD46     		mov	sp, r7
- 426 002e 02B0     		add	sp, sp, #8
- 427              		@ sp needed
- 428 0030 80BD     		pop	{r7, pc}
- 429              	.L28:
- 430 0032 C046     		.align	2
- 431              	.L27:
- 432 0034 5C000000 		.word	.LC16
- 433              		.cfi_endproc
- 434              	.LFE35:
- 435              		.size	clearLine, .-clearLine
- 436              		.text
- 437              	.Letext0:
- 438              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
- 439              		.file 3 ".\\menus.h"
- 440              		.file 4 ".\\keypad.h"
- 441              		.section	.debug_info,"",%progbits
- 442              	.Ldebug_info0:
- 443 0000 DF010000 		.4byte	0x1df
- 444 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 11
+ 392 0100 044B     		ldr	r3, .L26
+ 393 0102 FA1D     		add	r2, r7, #7
+ 394 0104 1278     		ldrb	r2, [r2]
+ 395 0106 1A70     		strb	r2, [r3]
+ 106:.\menus.c     ****     CyDelay(15);
+ 396              		.loc 1 106 0
+ 397 0108 0F20     		mov	r0, #15
+ 398 010a FFF7FEFF 		bl	CyDelay
+ 107:.\menus.c     **** }
+ 399              		.loc 1 107 0
+ 400 010e BD46     		mov	sp, r7
+ 401 0110 05B0     		add	sp, sp, #20
+ 402              		@ sp needed
+ 403 0112 90BD     		pop	{r4, r7, pc}
+ 404              	.L27:
+ 405              		.align	2
+ 406              	.L26:
+ 407 0114 01000000 		.word	oldMenu
+ 408 0118 00000000 		.word	.LC4
+ 409 011c 00000000 		.word	lightMax
+ 410 0120 10000000 		.word	.LC7
+ 411 0124 18000000 		.word	.LC9
+ 412 0128 2C000000 		.word	.LC11
+ 413 012c 00000000 		.word	target
+ 414 0130 38000000 		.word	.LC14
+ 415 0134 4C000000 		.word	.LC16
+ 416              		.cfi_endproc
+ 417              	.LFE34:
+ 418              		.size	drawMenu, .-drawMenu
+ 419              		.section	.rodata
+ 420 005a 0000     		.align	2
+ 421              	.LC18:
+ 422 005c 20202020 		.ascii	"                \000"
+ 422      20202020 
+ 422      20202020 
+ 422      20202020 
+ 422      00
+ 423 006d 000000   		.section	.text.clearLine,"ax",%progbits
+ 424              		.align	2
+ 425              		.global	clearLine
+ 426              		.code	16
+ 427              		.thumb_func
+ 428              		.type	clearLine, %function
+ 429              	clearLine:
+ 430              	.LFB35:
+ 108:.\menus.c     **** 
+ 109:.\menus.c     **** void clearLine(uint8 row){
+ 431              		.loc 1 109 0
+ 432              		.cfi_startproc
+ 433 0000 80B5     		push	{r7, lr}
+ 434              		.cfi_def_cfa_offset 8
+ 435              		.cfi_offset 7, -8
+ 436              		.cfi_offset 14, -4
+ 437 0002 82B0     		sub	sp, sp, #8
+ 438              		.cfi_def_cfa_offset 16
+ 439 0004 00AF     		add	r7, sp, #0
+ 440              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 11
 
 
- 445 0006 00000000 		.4byte	.Ldebug_abbrev0
- 446 000a 04       		.byte	0x4
- 447 000b 01       		.uleb128 0x1
- 448 000c 93000000 		.4byte	.LASF37
- 449 0010 01       		.byte	0x1
- 450 0011 53010000 		.4byte	.LASF38
- 451 0015 1B000000 		.4byte	.LASF39
- 452 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 453 001d 00000000 		.4byte	0
- 454 0021 00000000 		.4byte	.Ldebug_line0
- 455 0025 02       		.uleb128 0x2
- 456 0026 01       		.byte	0x1
- 457 0027 06       		.byte	0x6
- 458 0028 16020000 		.4byte	.LASF0
- 459 002c 02       		.uleb128 0x2
- 460 002d 01       		.byte	0x1
- 461 002e 08       		.byte	0x8
- 462 002f 22010000 		.4byte	.LASF1
- 463 0033 02       		.uleb128 0x2
- 464 0034 02       		.byte	0x2
- 465 0035 05       		.byte	0x5
- 466 0036 FB010000 		.4byte	.LASF2
- 467 003a 02       		.uleb128 0x2
- 468 003b 02       		.byte	0x2
- 469 003c 07       		.byte	0x7
- 470 003d 61000000 		.4byte	.LASF3
- 471 0041 02       		.uleb128 0x2
- 472 0042 04       		.byte	0x4
- 473 0043 05       		.byte	0x5
- 474 0044 0D020000 		.4byte	.LASF4
- 475 0048 02       		.uleb128 0x2
- 476 0049 04       		.byte	0x4
- 477 004a 07       		.byte	0x7
- 478 004b 36010000 		.4byte	.LASF5
- 479 004f 02       		.uleb128 0x2
- 480 0050 08       		.byte	0x8
- 481 0051 05       		.byte	0x5
- 482 0052 D2010000 		.4byte	.LASF6
- 483 0056 02       		.uleb128 0x2
- 484 0057 08       		.byte	0x8
- 485 0058 07       		.byte	0x7
- 486 0059 A3010000 		.4byte	.LASF7
- 487 005d 03       		.uleb128 0x3
- 488 005e 04       		.byte	0x4
- 489 005f 05       		.byte	0x5
- 490 0060 696E7400 		.ascii	"int\000"
- 491 0064 02       		.uleb128 0x2
- 492 0065 04       		.byte	0x4
- 493 0066 07       		.byte	0x7
- 494 0067 96010000 		.4byte	.LASF8
- 495 006b 04       		.uleb128 0x4
- 496 006c 4D010000 		.4byte	.LASF9
- 497 0070 02       		.byte	0x2
- 498 0071 A1       		.byte	0xa1
- 499 0072 2C000000 		.4byte	0x2c
- 500 0076 04       		.uleb128 0x4
- 501 0077 8A010000 		.4byte	.LASF10
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 12
+ 441 0006 021C     		mov	r2, r0
+ 442 0008 FB1D     		add	r3, r7, #7
+ 443 000a 1A70     		strb	r2, [r3]
+ 110:.\menus.c     ****     LCD_Position(row,0);
+ 444              		.loc 1 110 0
+ 445 000c FB1D     		add	r3, r7, #7
+ 446 000e 1B78     		ldrb	r3, [r3]
+ 447 0010 181C     		mov	r0, r3
+ 448 0012 0021     		mov	r1, #0
+ 449 0014 FFF7FEFF 		bl	LCD_Position
+ 111:.\menus.c     ****     LCD_PrintString("                ");
+ 450              		.loc 1 111 0
+ 451 0018 064B     		ldr	r3, .L29
+ 452 001a 181C     		mov	r0, r3
+ 453 001c FFF7FEFF 		bl	LCD_PrintString
+ 112:.\menus.c     ****     LCD_Position(row,0);
+ 454              		.loc 1 112 0
+ 455 0020 FB1D     		add	r3, r7, #7
+ 456 0022 1B78     		ldrb	r3, [r3]
+ 457 0024 181C     		mov	r0, r3
+ 458 0026 0021     		mov	r1, #0
+ 459 0028 FFF7FEFF 		bl	LCD_Position
+ 113:.\menus.c     **** }
+ 460              		.loc 1 113 0
+ 461 002c BD46     		mov	sp, r7
+ 462 002e 02B0     		add	sp, sp, #8
+ 463              		@ sp needed
+ 464 0030 80BD     		pop	{r7, pc}
+ 465              	.L30:
+ 466 0032 C046     		.align	2
+ 467              	.L29:
+ 468 0034 5C000000 		.word	.LC18
+ 469              		.cfi_endproc
+ 470              	.LFE35:
+ 471              		.size	clearLine, .-clearLine
+ 472              		.text
+ 473              	.Letext0:
+ 474              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
+ 475              		.file 3 ".\\menus.h"
+ 476              		.file 4 ".\\keypad.h"
+ 477              		.section	.debug_info,"",%progbits
+ 478              	.Ldebug_info0:
+ 479 0000 DF010000 		.4byte	0x1df
+ 480 0004 0400     		.2byte	0x4
+ 481 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 482 000a 04       		.byte	0x4
+ 483 000b 01       		.uleb128 0x1
+ 484 000c 93000000 		.4byte	.LASF37
+ 485 0010 01       		.byte	0x1
+ 486 0011 53010000 		.4byte	.LASF38
+ 487 0015 1B000000 		.4byte	.LASF39
+ 488 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 489 001d 00000000 		.4byte	0
+ 490 0021 00000000 		.4byte	.Ldebug_line0
+ 491 0025 02       		.uleb128 0x2
+ 492 0026 01       		.byte	0x1
+ 493 0027 06       		.byte	0x6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 12
 
 
- 502 007b 02       		.byte	0x2
- 503 007c A2       		.byte	0xa2
- 504 007d 3A000000 		.4byte	0x3a
- 505 0081 04       		.uleb128 0x4
- 506 0082 91010000 		.4byte	.LASF11
- 507 0086 02       		.byte	0x2
- 508 0087 A4       		.byte	0xa4
- 509 0088 25000000 		.4byte	0x25
- 510 008c 04       		.uleb128 0x4
- 511 008d 30010000 		.4byte	.LASF12
- 512 0091 02       		.byte	0x2
- 513 0092 A5       		.byte	0xa5
- 514 0093 33000000 		.4byte	0x33
- 515 0097 02       		.uleb128 0x2
- 516 0098 04       		.byte	0x4
- 517 0099 04       		.byte	0x4
- 518 009a 8D000000 		.4byte	.LASF13
- 519 009e 02       		.uleb128 0x2
- 520 009f 08       		.byte	0x8
- 521 00a0 04       		.byte	0x4
- 522 00a1 69010000 		.4byte	.LASF14
- 523 00a5 02       		.uleb128 0x2
- 524 00a6 01       		.byte	0x1
- 525 00a7 08       		.byte	0x8
- 526 00a8 E0010000 		.4byte	.LASF15
- 527 00ac 02       		.uleb128 0x2
- 528 00ad 04       		.byte	0x4
- 529 00ae 07       		.byte	0x7
- 530 00af C9010000 		.4byte	.LASF16
- 531 00b3 05       		.uleb128 0x5
- 532 00b4 01       		.byte	0x1
- 533 00b5 03       		.byte	0x3
- 534 00b6 17       		.byte	0x17
- 535 00b7 D4000000 		.4byte	0xd4
- 536 00bb 06       		.uleb128 0x6
- 537 00bc 70010000 		.4byte	.LASF17
- 538 00c0 00       		.sleb128 0
- 539 00c1 06       		.uleb128 0x6
- 540 00c2 16010000 		.4byte	.LASF18
- 541 00c6 01       		.sleb128 1
- 542 00c7 06       		.uleb128 0x6
- 543 00c8 05020000 		.4byte	.LASF19
- 544 00cc 02       		.sleb128 2
- 545 00cd 06       		.uleb128 0x6
- 546 00ce 74000000 		.4byte	.LASF20
- 547 00d2 03       		.sleb128 3
- 548 00d3 00       		.byte	0
- 549 00d4 07       		.uleb128 0x7
- 550 00d5 67756900 		.ascii	"gui\000"
- 551 00d9 03       		.byte	0x3
- 552 00da 17       		.byte	0x17
- 553 00db B3000000 		.4byte	0xb3
- 554 00df 05       		.uleb128 0x5
- 555 00e0 01       		.byte	0x1
- 556 00e1 04       		.byte	0x4
- 557 00e2 0F       		.byte	0xf
- 558 00e3 0B010000 		.4byte	0x10b
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 13
+ 494 0028 16020000 		.4byte	.LASF0
+ 495 002c 02       		.uleb128 0x2
+ 496 002d 01       		.byte	0x1
+ 497 002e 08       		.byte	0x8
+ 498 002f 22010000 		.4byte	.LASF1
+ 499 0033 02       		.uleb128 0x2
+ 500 0034 02       		.byte	0x2
+ 501 0035 05       		.byte	0x5
+ 502 0036 FB010000 		.4byte	.LASF2
+ 503 003a 02       		.uleb128 0x2
+ 504 003b 02       		.byte	0x2
+ 505 003c 07       		.byte	0x7
+ 506 003d 61000000 		.4byte	.LASF3
+ 507 0041 02       		.uleb128 0x2
+ 508 0042 04       		.byte	0x4
+ 509 0043 05       		.byte	0x5
+ 510 0044 0D020000 		.4byte	.LASF4
+ 511 0048 02       		.uleb128 0x2
+ 512 0049 04       		.byte	0x4
+ 513 004a 07       		.byte	0x7
+ 514 004b 36010000 		.4byte	.LASF5
+ 515 004f 02       		.uleb128 0x2
+ 516 0050 08       		.byte	0x8
+ 517 0051 05       		.byte	0x5
+ 518 0052 D2010000 		.4byte	.LASF6
+ 519 0056 02       		.uleb128 0x2
+ 520 0057 08       		.byte	0x8
+ 521 0058 07       		.byte	0x7
+ 522 0059 A3010000 		.4byte	.LASF7
+ 523 005d 03       		.uleb128 0x3
+ 524 005e 04       		.byte	0x4
+ 525 005f 05       		.byte	0x5
+ 526 0060 696E7400 		.ascii	"int\000"
+ 527 0064 02       		.uleb128 0x2
+ 528 0065 04       		.byte	0x4
+ 529 0066 07       		.byte	0x7
+ 530 0067 96010000 		.4byte	.LASF8
+ 531 006b 04       		.uleb128 0x4
+ 532 006c 4D010000 		.4byte	.LASF9
+ 533 0070 02       		.byte	0x2
+ 534 0071 A1       		.byte	0xa1
+ 535 0072 2C000000 		.4byte	0x2c
+ 536 0076 04       		.uleb128 0x4
+ 537 0077 8A010000 		.4byte	.LASF10
+ 538 007b 02       		.byte	0x2
+ 539 007c A2       		.byte	0xa2
+ 540 007d 3A000000 		.4byte	0x3a
+ 541 0081 04       		.uleb128 0x4
+ 542 0082 91010000 		.4byte	.LASF11
+ 543 0086 02       		.byte	0x2
+ 544 0087 A4       		.byte	0xa4
+ 545 0088 25000000 		.4byte	0x25
+ 546 008c 04       		.uleb128 0x4
+ 547 008d 30010000 		.4byte	.LASF12
+ 548 0091 02       		.byte	0x2
+ 549 0092 A5       		.byte	0xa5
+ 550 0093 33000000 		.4byte	0x33
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 13
 
 
- 559 00e7 06       		.uleb128 0x6
- 560 00e8 7C000000 		.4byte	.LASF21
- 561 00ec 00       		.sleb128 0
- 562 00ed 06       		.uleb128 0x6
- 563 00ee 0F010000 		.4byte	.LASF22
- 564 00f2 01       		.sleb128 1
- 565 00f3 06       		.uleb128 0x6
- 566 00f4 16000000 		.4byte	.LASF23
- 567 00f8 02       		.sleb128 2
- 568 00f9 06       		.uleb128 0x6
- 569 00fa F6010000 		.4byte	.LASF24
- 570 00fe 03       		.sleb128 3
- 571 00ff 08       		.uleb128 0x8
- 572 0100 555000   		.ascii	"UP\000"
- 573 0103 04       		.sleb128 4
- 574 0104 06       		.uleb128 0x6
- 575 0105 BA010000 		.4byte	.LASF25
- 576 0109 05       		.sleb128 5
- 577 010a 00       		.byte	0
- 578 010b 04       		.uleb128 0x4
- 579 010c 0B000000 		.4byte	.LASF26
- 580 0110 04       		.byte	0x4
- 581 0111 0F       		.byte	0xf
- 582 0112 DF000000 		.4byte	0xdf
- 583 0116 09       		.uleb128 0x9
- 584 0117 7F010000 		.4byte	.LASF27
- 585 011b 01       		.byte	0x1
- 586 011c 1A       		.byte	0x1a
- 587 011d 81000000 		.4byte	0x81
- 588 0121 00000000 		.4byte	.LFB33
- 589 0125 B0000000 		.4byte	.LFE33-.LFB33
- 590 0129 01       		.uleb128 0x1
- 591 012a 9C       		.byte	0x9c
- 592 012b 3E010000 		.4byte	0x13e
- 593 012f 0A       		.uleb128 0xa
- 594 0130 05000000 		.4byte	.LASF29
- 595 0134 01       		.byte	0x1
- 596 0135 1B       		.byte	0x1b
- 597 0136 0B010000 		.4byte	0x10b
- 598 013a 02       		.uleb128 0x2
- 599 013b 91       		.byte	0x91
- 600 013c 6F       		.sleb128 -17
- 601 013d 00       		.byte	0
- 602 013e 0B       		.uleb128 0xb
- 603 013f C0010000 		.4byte	.LASF28
- 604 0143 01       		.byte	0x1
- 605 0144 3C       		.byte	0x3c
- 606 0145 00000000 		.4byte	.LFB34
- 607 0149 40010000 		.4byte	.LFE34-.LFB34
- 608 014d 01       		.uleb128 0x1
- 609 014e 9C       		.byte	0x9c
- 610 014f 7A010000 		.4byte	0x17a
- 611 0153 0C       		.uleb128 0xc
- 612 0154 00000000 		.4byte	.LASF32
- 613 0158 01       		.byte	0x1
- 614 0159 3C       		.byte	0x3c
- 615 015a D4000000 		.4byte	0xd4
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 14
+ 551 0097 02       		.uleb128 0x2
+ 552 0098 04       		.byte	0x4
+ 553 0099 04       		.byte	0x4
+ 554 009a 8D000000 		.4byte	.LASF13
+ 555 009e 02       		.uleb128 0x2
+ 556 009f 08       		.byte	0x8
+ 557 00a0 04       		.byte	0x4
+ 558 00a1 69010000 		.4byte	.LASF14
+ 559 00a5 02       		.uleb128 0x2
+ 560 00a6 01       		.byte	0x1
+ 561 00a7 08       		.byte	0x8
+ 562 00a8 E0010000 		.4byte	.LASF15
+ 563 00ac 02       		.uleb128 0x2
+ 564 00ad 04       		.byte	0x4
+ 565 00ae 07       		.byte	0x7
+ 566 00af C9010000 		.4byte	.LASF16
+ 567 00b3 05       		.uleb128 0x5
+ 568 00b4 01       		.byte	0x1
+ 569 00b5 03       		.byte	0x3
+ 570 00b6 17       		.byte	0x17
+ 571 00b7 D4000000 		.4byte	0xd4
+ 572 00bb 06       		.uleb128 0x6
+ 573 00bc 70010000 		.4byte	.LASF17
+ 574 00c0 00       		.sleb128 0
+ 575 00c1 06       		.uleb128 0x6
+ 576 00c2 16010000 		.4byte	.LASF18
+ 577 00c6 01       		.sleb128 1
+ 578 00c7 06       		.uleb128 0x6
+ 579 00c8 05020000 		.4byte	.LASF19
+ 580 00cc 02       		.sleb128 2
+ 581 00cd 06       		.uleb128 0x6
+ 582 00ce 74000000 		.4byte	.LASF20
+ 583 00d2 03       		.sleb128 3
+ 584 00d3 00       		.byte	0
+ 585 00d4 07       		.uleb128 0x7
+ 586 00d5 67756900 		.ascii	"gui\000"
+ 587 00d9 03       		.byte	0x3
+ 588 00da 17       		.byte	0x17
+ 589 00db B3000000 		.4byte	0xb3
+ 590 00df 05       		.uleb128 0x5
+ 591 00e0 01       		.byte	0x1
+ 592 00e1 04       		.byte	0x4
+ 593 00e2 0F       		.byte	0xf
+ 594 00e3 0B010000 		.4byte	0x10b
+ 595 00e7 06       		.uleb128 0x6
+ 596 00e8 7C000000 		.4byte	.LASF21
+ 597 00ec 00       		.sleb128 0
+ 598 00ed 06       		.uleb128 0x6
+ 599 00ee 0F010000 		.4byte	.LASF22
+ 600 00f2 01       		.sleb128 1
+ 601 00f3 06       		.uleb128 0x6
+ 602 00f4 16000000 		.4byte	.LASF23
+ 603 00f8 02       		.sleb128 2
+ 604 00f9 06       		.uleb128 0x6
+ 605 00fa F6010000 		.4byte	.LASF24
+ 606 00fe 03       		.sleb128 3
+ 607 00ff 08       		.uleb128 0x8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 14
 
 
- 616 015e 02       		.uleb128 0x2
- 617 015f 91       		.byte	0x91
- 618 0160 67       		.sleb128 -25
- 619 0161 0D       		.uleb128 0xd
- 620 0162 14000000 		.4byte	.LBB2
- 621 0166 66000000 		.4byte	.LBE2-.LBB2
- 622 016a 0A       		.uleb128 0xa
- 623 016b 48010000 		.4byte	.LASF30
- 624 016f 01       		.byte	0x1
- 625 0170 3E       		.byte	0x3e
- 626 0171 8C000000 		.4byte	0x8c
- 627 0175 02       		.uleb128 0x2
- 628 0176 91       		.byte	0x91
- 629 0177 6E       		.sleb128 -18
- 630 0178 00       		.byte	0
- 631 0179 00       		.byte	0
- 632 017a 0B       		.uleb128 0xb
- 633 017b 75010000 		.4byte	.LASF31
- 634 017f 01       		.byte	0x1
- 635 0180 65       		.byte	0x65
- 636 0181 00000000 		.4byte	.LFB35
- 637 0185 38000000 		.4byte	.LFE35-.LFB35
- 638 0189 01       		.uleb128 0x1
- 639 018a 9C       		.byte	0x9c
- 640 018b 9E010000 		.4byte	0x19e
- 641 018f 0E       		.uleb128 0xe
- 642 0190 726F7700 		.ascii	"row\000"
- 643 0194 01       		.byte	0x1
- 644 0195 65       		.byte	0x65
- 645 0196 6B000000 		.4byte	0x6b
- 646 019a 02       		.uleb128 0x2
- 647 019b 91       		.byte	0x91
- 648 019c 77       		.sleb128 -9
- 649 019d 00       		.byte	0
- 650 019e 0A       		.uleb128 0xa
- 651 019f 5D010000 		.4byte	.LASF33
- 652 01a3 01       		.byte	0x1
- 653 01a4 14       		.byte	0x14
- 654 01a5 D4000000 		.4byte	0xd4
- 655 01a9 05       		.uleb128 0x5
- 656 01aa 03       		.byte	0x3
- 657 01ab 00000000 		.4byte	currentMenu
- 658 01af 0A       		.uleb128 0xa
- 659 01b0 E5010000 		.4byte	.LASF34
- 660 01b4 01       		.byte	0x1
- 661 01b5 15       		.byte	0x15
- 662 01b6 D4000000 		.4byte	0xd4
- 663 01ba 05       		.uleb128 0x5
- 664 01bb 03       		.byte	0x3
- 665 01bc 01000000 		.4byte	oldMenu
- 666 01c0 0F       		.uleb128 0xf
- 667 01c1 86000000 		.4byte	.LASF35
- 668 01c5 03       		.byte	0x3
- 669 01c6 13       		.byte	0x13
- 670 01c7 76000000 		.4byte	0x76
- 671 01cb 05       		.uleb128 0x5
- 672 01cc 03       		.byte	0x3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 15
+ 608 0100 555000   		.ascii	"UP\000"
+ 609 0103 04       		.sleb128 4
+ 610 0104 06       		.uleb128 0x6
+ 611 0105 BA010000 		.4byte	.LASF25
+ 612 0109 05       		.sleb128 5
+ 613 010a 00       		.byte	0
+ 614 010b 04       		.uleb128 0x4
+ 615 010c 0B000000 		.4byte	.LASF26
+ 616 0110 04       		.byte	0x4
+ 617 0111 0F       		.byte	0xf
+ 618 0112 DF000000 		.4byte	0xdf
+ 619 0116 09       		.uleb128 0x9
+ 620 0117 7F010000 		.4byte	.LASF27
+ 621 011b 01       		.byte	0x1
+ 622 011c 1A       		.byte	0x1a
+ 623 011d 81000000 		.4byte	0x81
+ 624 0121 00000000 		.4byte	.LFB33
+ 625 0125 F0000000 		.4byte	.LFE33-.LFB33
+ 626 0129 01       		.uleb128 0x1
+ 627 012a 9C       		.byte	0x9c
+ 628 012b 3E010000 		.4byte	0x13e
+ 629 012f 0A       		.uleb128 0xa
+ 630 0130 05000000 		.4byte	.LASF29
+ 631 0134 01       		.byte	0x1
+ 632 0135 1B       		.byte	0x1b
+ 633 0136 0B010000 		.4byte	0x10b
+ 634 013a 02       		.uleb128 0x2
+ 635 013b 91       		.byte	0x91
+ 636 013c 6F       		.sleb128 -17
+ 637 013d 00       		.byte	0
+ 638 013e 0B       		.uleb128 0xb
+ 639 013f C0010000 		.4byte	.LASF28
+ 640 0143 01       		.byte	0x1
+ 641 0144 44       		.byte	0x44
+ 642 0145 00000000 		.4byte	.LFB34
+ 643 0149 38010000 		.4byte	.LFE34-.LFB34
+ 644 014d 01       		.uleb128 0x1
+ 645 014e 9C       		.byte	0x9c
+ 646 014f 7A010000 		.4byte	0x17a
+ 647 0153 0C       		.uleb128 0xc
+ 648 0154 00000000 		.4byte	.LASF32
+ 649 0158 01       		.byte	0x1
+ 650 0159 44       		.byte	0x44
+ 651 015a D4000000 		.4byte	0xd4
+ 652 015e 02       		.uleb128 0x2
+ 653 015f 91       		.byte	0x91
+ 654 0160 67       		.sleb128 -25
+ 655 0161 0D       		.uleb128 0xd
+ 656 0162 14000000 		.4byte	.LBB2
+ 657 0166 66000000 		.4byte	.LBE2-.LBB2
+ 658 016a 0A       		.uleb128 0xa
+ 659 016b 48010000 		.4byte	.LASF30
+ 660 016f 01       		.byte	0x1
+ 661 0170 46       		.byte	0x46
+ 662 0171 8C000000 		.4byte	0x8c
+ 663 0175 02       		.uleb128 0x2
+ 664 0176 91       		.byte	0x91
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 15
 
 
- 673 01cd 00000000 		.4byte	target
- 674 01d1 0F       		.uleb128 0xf
- 675 01d2 ED010000 		.4byte	.LASF36
- 676 01d6 01       		.byte	0x1
- 677 01d7 13       		.byte	0x13
- 678 01d8 76000000 		.4byte	0x76
- 679 01dc 05       		.uleb128 0x5
- 680 01dd 03       		.byte	0x3
- 681 01de 00000000 		.4byte	lightMax
- 682 01e2 00       		.byte	0
- 683              		.section	.debug_abbrev,"",%progbits
- 684              	.Ldebug_abbrev0:
- 685 0000 01       		.uleb128 0x1
- 686 0001 11       		.uleb128 0x11
- 687 0002 01       		.byte	0x1
- 688 0003 25       		.uleb128 0x25
- 689 0004 0E       		.uleb128 0xe
- 690 0005 13       		.uleb128 0x13
- 691 0006 0B       		.uleb128 0xb
- 692 0007 03       		.uleb128 0x3
- 693 0008 0E       		.uleb128 0xe
- 694 0009 1B       		.uleb128 0x1b
- 695 000a 0E       		.uleb128 0xe
- 696 000b 55       		.uleb128 0x55
- 697 000c 17       		.uleb128 0x17
- 698 000d 11       		.uleb128 0x11
- 699 000e 01       		.uleb128 0x1
- 700 000f 10       		.uleb128 0x10
- 701 0010 17       		.uleb128 0x17
- 702 0011 00       		.byte	0
- 703 0012 00       		.byte	0
- 704 0013 02       		.uleb128 0x2
- 705 0014 24       		.uleb128 0x24
- 706 0015 00       		.byte	0
- 707 0016 0B       		.uleb128 0xb
- 708 0017 0B       		.uleb128 0xb
- 709 0018 3E       		.uleb128 0x3e
- 710 0019 0B       		.uleb128 0xb
- 711 001a 03       		.uleb128 0x3
- 712 001b 0E       		.uleb128 0xe
- 713 001c 00       		.byte	0
- 714 001d 00       		.byte	0
- 715 001e 03       		.uleb128 0x3
- 716 001f 24       		.uleb128 0x24
- 717 0020 00       		.byte	0
- 718 0021 0B       		.uleb128 0xb
- 719 0022 0B       		.uleb128 0xb
- 720 0023 3E       		.uleb128 0x3e
- 721 0024 0B       		.uleb128 0xb
- 722 0025 03       		.uleb128 0x3
- 723 0026 08       		.uleb128 0x8
- 724 0027 00       		.byte	0
- 725 0028 00       		.byte	0
- 726 0029 04       		.uleb128 0x4
- 727 002a 16       		.uleb128 0x16
- 728 002b 00       		.byte	0
- 729 002c 03       		.uleb128 0x3
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 16
+ 665 0177 6E       		.sleb128 -18
+ 666 0178 00       		.byte	0
+ 667 0179 00       		.byte	0
+ 668 017a 0B       		.uleb128 0xb
+ 669 017b 75010000 		.4byte	.LASF31
+ 670 017f 01       		.byte	0x1
+ 671 0180 6D       		.byte	0x6d
+ 672 0181 00000000 		.4byte	.LFB35
+ 673 0185 38000000 		.4byte	.LFE35-.LFB35
+ 674 0189 01       		.uleb128 0x1
+ 675 018a 9C       		.byte	0x9c
+ 676 018b 9E010000 		.4byte	0x19e
+ 677 018f 0E       		.uleb128 0xe
+ 678 0190 726F7700 		.ascii	"row\000"
+ 679 0194 01       		.byte	0x1
+ 680 0195 6D       		.byte	0x6d
+ 681 0196 6B000000 		.4byte	0x6b
+ 682 019a 02       		.uleb128 0x2
+ 683 019b 91       		.byte	0x91
+ 684 019c 77       		.sleb128 -9
+ 685 019d 00       		.byte	0
+ 686 019e 0A       		.uleb128 0xa
+ 687 019f 5D010000 		.4byte	.LASF33
+ 688 01a3 01       		.byte	0x1
+ 689 01a4 14       		.byte	0x14
+ 690 01a5 D4000000 		.4byte	0xd4
+ 691 01a9 05       		.uleb128 0x5
+ 692 01aa 03       		.byte	0x3
+ 693 01ab 00000000 		.4byte	currentMenu
+ 694 01af 0A       		.uleb128 0xa
+ 695 01b0 E5010000 		.4byte	.LASF34
+ 696 01b4 01       		.byte	0x1
+ 697 01b5 15       		.byte	0x15
+ 698 01b6 D4000000 		.4byte	0xd4
+ 699 01ba 05       		.uleb128 0x5
+ 700 01bb 03       		.byte	0x3
+ 701 01bc 01000000 		.4byte	oldMenu
+ 702 01c0 0F       		.uleb128 0xf
+ 703 01c1 86000000 		.4byte	.LASF35
+ 704 01c5 03       		.byte	0x3
+ 705 01c6 13       		.byte	0x13
+ 706 01c7 76000000 		.4byte	0x76
+ 707 01cb 05       		.uleb128 0x5
+ 708 01cc 03       		.byte	0x3
+ 709 01cd 00000000 		.4byte	target
+ 710 01d1 0F       		.uleb128 0xf
+ 711 01d2 ED010000 		.4byte	.LASF36
+ 712 01d6 01       		.byte	0x1
+ 713 01d7 13       		.byte	0x13
+ 714 01d8 76000000 		.4byte	0x76
+ 715 01dc 05       		.uleb128 0x5
+ 716 01dd 03       		.byte	0x3
+ 717 01de 00000000 		.4byte	lightMax
+ 718 01e2 00       		.byte	0
+ 719              		.section	.debug_abbrev,"",%progbits
+ 720              	.Ldebug_abbrev0:
+ 721 0000 01       		.uleb128 0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 16
 
 
- 730 002d 0E       		.uleb128 0xe
- 731 002e 3A       		.uleb128 0x3a
- 732 002f 0B       		.uleb128 0xb
- 733 0030 3B       		.uleb128 0x3b
- 734 0031 0B       		.uleb128 0xb
- 735 0032 49       		.uleb128 0x49
- 736 0033 13       		.uleb128 0x13
- 737 0034 00       		.byte	0
- 738 0035 00       		.byte	0
- 739 0036 05       		.uleb128 0x5
- 740 0037 04       		.uleb128 0x4
- 741 0038 01       		.byte	0x1
- 742 0039 0B       		.uleb128 0xb
- 743 003a 0B       		.uleb128 0xb
- 744 003b 3A       		.uleb128 0x3a
- 745 003c 0B       		.uleb128 0xb
- 746 003d 3B       		.uleb128 0x3b
- 747 003e 0B       		.uleb128 0xb
- 748 003f 01       		.uleb128 0x1
- 749 0040 13       		.uleb128 0x13
- 750 0041 00       		.byte	0
- 751 0042 00       		.byte	0
- 752 0043 06       		.uleb128 0x6
- 753 0044 28       		.uleb128 0x28
- 754 0045 00       		.byte	0
- 755 0046 03       		.uleb128 0x3
- 756 0047 0E       		.uleb128 0xe
- 757 0048 1C       		.uleb128 0x1c
- 758 0049 0D       		.uleb128 0xd
- 759 004a 00       		.byte	0
- 760 004b 00       		.byte	0
- 761 004c 07       		.uleb128 0x7
- 762 004d 16       		.uleb128 0x16
- 763 004e 00       		.byte	0
- 764 004f 03       		.uleb128 0x3
- 765 0050 08       		.uleb128 0x8
- 766 0051 3A       		.uleb128 0x3a
- 767 0052 0B       		.uleb128 0xb
- 768 0053 3B       		.uleb128 0x3b
- 769 0054 0B       		.uleb128 0xb
- 770 0055 49       		.uleb128 0x49
- 771 0056 13       		.uleb128 0x13
- 772 0057 00       		.byte	0
- 773 0058 00       		.byte	0
- 774 0059 08       		.uleb128 0x8
- 775 005a 28       		.uleb128 0x28
- 776 005b 00       		.byte	0
- 777 005c 03       		.uleb128 0x3
- 778 005d 08       		.uleb128 0x8
- 779 005e 1C       		.uleb128 0x1c
- 780 005f 0D       		.uleb128 0xd
- 781 0060 00       		.byte	0
- 782 0061 00       		.byte	0
- 783 0062 09       		.uleb128 0x9
- 784 0063 2E       		.uleb128 0x2e
- 785 0064 01       		.byte	0x1
- 786 0065 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 17
+ 722 0001 11       		.uleb128 0x11
+ 723 0002 01       		.byte	0x1
+ 724 0003 25       		.uleb128 0x25
+ 725 0004 0E       		.uleb128 0xe
+ 726 0005 13       		.uleb128 0x13
+ 727 0006 0B       		.uleb128 0xb
+ 728 0007 03       		.uleb128 0x3
+ 729 0008 0E       		.uleb128 0xe
+ 730 0009 1B       		.uleb128 0x1b
+ 731 000a 0E       		.uleb128 0xe
+ 732 000b 55       		.uleb128 0x55
+ 733 000c 17       		.uleb128 0x17
+ 734 000d 11       		.uleb128 0x11
+ 735 000e 01       		.uleb128 0x1
+ 736 000f 10       		.uleb128 0x10
+ 737 0010 17       		.uleb128 0x17
+ 738 0011 00       		.byte	0
+ 739 0012 00       		.byte	0
+ 740 0013 02       		.uleb128 0x2
+ 741 0014 24       		.uleb128 0x24
+ 742 0015 00       		.byte	0
+ 743 0016 0B       		.uleb128 0xb
+ 744 0017 0B       		.uleb128 0xb
+ 745 0018 3E       		.uleb128 0x3e
+ 746 0019 0B       		.uleb128 0xb
+ 747 001a 03       		.uleb128 0x3
+ 748 001b 0E       		.uleb128 0xe
+ 749 001c 00       		.byte	0
+ 750 001d 00       		.byte	0
+ 751 001e 03       		.uleb128 0x3
+ 752 001f 24       		.uleb128 0x24
+ 753 0020 00       		.byte	0
+ 754 0021 0B       		.uleb128 0xb
+ 755 0022 0B       		.uleb128 0xb
+ 756 0023 3E       		.uleb128 0x3e
+ 757 0024 0B       		.uleb128 0xb
+ 758 0025 03       		.uleb128 0x3
+ 759 0026 08       		.uleb128 0x8
+ 760 0027 00       		.byte	0
+ 761 0028 00       		.byte	0
+ 762 0029 04       		.uleb128 0x4
+ 763 002a 16       		.uleb128 0x16
+ 764 002b 00       		.byte	0
+ 765 002c 03       		.uleb128 0x3
+ 766 002d 0E       		.uleb128 0xe
+ 767 002e 3A       		.uleb128 0x3a
+ 768 002f 0B       		.uleb128 0xb
+ 769 0030 3B       		.uleb128 0x3b
+ 770 0031 0B       		.uleb128 0xb
+ 771 0032 49       		.uleb128 0x49
+ 772 0033 13       		.uleb128 0x13
+ 773 0034 00       		.byte	0
+ 774 0035 00       		.byte	0
+ 775 0036 05       		.uleb128 0x5
+ 776 0037 04       		.uleb128 0x4
+ 777 0038 01       		.byte	0x1
+ 778 0039 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 17
 
 
- 787 0066 19       		.uleb128 0x19
- 788 0067 03       		.uleb128 0x3
- 789 0068 0E       		.uleb128 0xe
- 790 0069 3A       		.uleb128 0x3a
- 791 006a 0B       		.uleb128 0xb
- 792 006b 3B       		.uleb128 0x3b
- 793 006c 0B       		.uleb128 0xb
- 794 006d 49       		.uleb128 0x49
- 795 006e 13       		.uleb128 0x13
- 796 006f 11       		.uleb128 0x11
- 797 0070 01       		.uleb128 0x1
- 798 0071 12       		.uleb128 0x12
- 799 0072 06       		.uleb128 0x6
- 800 0073 40       		.uleb128 0x40
- 801 0074 18       		.uleb128 0x18
- 802 0075 9642     		.uleb128 0x2116
- 803 0077 19       		.uleb128 0x19
- 804 0078 01       		.uleb128 0x1
- 805 0079 13       		.uleb128 0x13
- 806 007a 00       		.byte	0
- 807 007b 00       		.byte	0
- 808 007c 0A       		.uleb128 0xa
- 809 007d 34       		.uleb128 0x34
- 810 007e 00       		.byte	0
- 811 007f 03       		.uleb128 0x3
- 812 0080 0E       		.uleb128 0xe
- 813 0081 3A       		.uleb128 0x3a
- 814 0082 0B       		.uleb128 0xb
- 815 0083 3B       		.uleb128 0x3b
- 816 0084 0B       		.uleb128 0xb
- 817 0085 49       		.uleb128 0x49
- 818 0086 13       		.uleb128 0x13
- 819 0087 02       		.uleb128 0x2
- 820 0088 18       		.uleb128 0x18
- 821 0089 00       		.byte	0
- 822 008a 00       		.byte	0
- 823 008b 0B       		.uleb128 0xb
- 824 008c 2E       		.uleb128 0x2e
- 825 008d 01       		.byte	0x1
- 826 008e 3F       		.uleb128 0x3f
- 827 008f 19       		.uleb128 0x19
- 828 0090 03       		.uleb128 0x3
- 829 0091 0E       		.uleb128 0xe
- 830 0092 3A       		.uleb128 0x3a
- 831 0093 0B       		.uleb128 0xb
- 832 0094 3B       		.uleb128 0x3b
- 833 0095 0B       		.uleb128 0xb
- 834 0096 27       		.uleb128 0x27
- 835 0097 19       		.uleb128 0x19
- 836 0098 11       		.uleb128 0x11
- 837 0099 01       		.uleb128 0x1
- 838 009a 12       		.uleb128 0x12
- 839 009b 06       		.uleb128 0x6
- 840 009c 40       		.uleb128 0x40
- 841 009d 18       		.uleb128 0x18
- 842 009e 9642     		.uleb128 0x2116
- 843 00a0 19       		.uleb128 0x19
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 18
+ 779 003a 0B       		.uleb128 0xb
+ 780 003b 3A       		.uleb128 0x3a
+ 781 003c 0B       		.uleb128 0xb
+ 782 003d 3B       		.uleb128 0x3b
+ 783 003e 0B       		.uleb128 0xb
+ 784 003f 01       		.uleb128 0x1
+ 785 0040 13       		.uleb128 0x13
+ 786 0041 00       		.byte	0
+ 787 0042 00       		.byte	0
+ 788 0043 06       		.uleb128 0x6
+ 789 0044 28       		.uleb128 0x28
+ 790 0045 00       		.byte	0
+ 791 0046 03       		.uleb128 0x3
+ 792 0047 0E       		.uleb128 0xe
+ 793 0048 1C       		.uleb128 0x1c
+ 794 0049 0D       		.uleb128 0xd
+ 795 004a 00       		.byte	0
+ 796 004b 00       		.byte	0
+ 797 004c 07       		.uleb128 0x7
+ 798 004d 16       		.uleb128 0x16
+ 799 004e 00       		.byte	0
+ 800 004f 03       		.uleb128 0x3
+ 801 0050 08       		.uleb128 0x8
+ 802 0051 3A       		.uleb128 0x3a
+ 803 0052 0B       		.uleb128 0xb
+ 804 0053 3B       		.uleb128 0x3b
+ 805 0054 0B       		.uleb128 0xb
+ 806 0055 49       		.uleb128 0x49
+ 807 0056 13       		.uleb128 0x13
+ 808 0057 00       		.byte	0
+ 809 0058 00       		.byte	0
+ 810 0059 08       		.uleb128 0x8
+ 811 005a 28       		.uleb128 0x28
+ 812 005b 00       		.byte	0
+ 813 005c 03       		.uleb128 0x3
+ 814 005d 08       		.uleb128 0x8
+ 815 005e 1C       		.uleb128 0x1c
+ 816 005f 0D       		.uleb128 0xd
+ 817 0060 00       		.byte	0
+ 818 0061 00       		.byte	0
+ 819 0062 09       		.uleb128 0x9
+ 820 0063 2E       		.uleb128 0x2e
+ 821 0064 01       		.byte	0x1
+ 822 0065 3F       		.uleb128 0x3f
+ 823 0066 19       		.uleb128 0x19
+ 824 0067 03       		.uleb128 0x3
+ 825 0068 0E       		.uleb128 0xe
+ 826 0069 3A       		.uleb128 0x3a
+ 827 006a 0B       		.uleb128 0xb
+ 828 006b 3B       		.uleb128 0x3b
+ 829 006c 0B       		.uleb128 0xb
+ 830 006d 49       		.uleb128 0x49
+ 831 006e 13       		.uleb128 0x13
+ 832 006f 11       		.uleb128 0x11
+ 833 0070 01       		.uleb128 0x1
+ 834 0071 12       		.uleb128 0x12
+ 835 0072 06       		.uleb128 0x6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 18
 
 
- 844 00a1 01       		.uleb128 0x1
- 845 00a2 13       		.uleb128 0x13
- 846 00a3 00       		.byte	0
- 847 00a4 00       		.byte	0
- 848 00a5 0C       		.uleb128 0xc
- 849 00a6 05       		.uleb128 0x5
- 850 00a7 00       		.byte	0
- 851 00a8 03       		.uleb128 0x3
- 852 00a9 0E       		.uleb128 0xe
- 853 00aa 3A       		.uleb128 0x3a
- 854 00ab 0B       		.uleb128 0xb
- 855 00ac 3B       		.uleb128 0x3b
- 856 00ad 0B       		.uleb128 0xb
- 857 00ae 49       		.uleb128 0x49
- 858 00af 13       		.uleb128 0x13
- 859 00b0 02       		.uleb128 0x2
- 860 00b1 18       		.uleb128 0x18
- 861 00b2 00       		.byte	0
- 862 00b3 00       		.byte	0
- 863 00b4 0D       		.uleb128 0xd
- 864 00b5 0B       		.uleb128 0xb
- 865 00b6 01       		.byte	0x1
- 866 00b7 11       		.uleb128 0x11
- 867 00b8 01       		.uleb128 0x1
- 868 00b9 12       		.uleb128 0x12
- 869 00ba 06       		.uleb128 0x6
- 870 00bb 00       		.byte	0
- 871 00bc 00       		.byte	0
- 872 00bd 0E       		.uleb128 0xe
- 873 00be 05       		.uleb128 0x5
- 874 00bf 00       		.byte	0
- 875 00c0 03       		.uleb128 0x3
- 876 00c1 08       		.uleb128 0x8
- 877 00c2 3A       		.uleb128 0x3a
- 878 00c3 0B       		.uleb128 0xb
- 879 00c4 3B       		.uleb128 0x3b
- 880 00c5 0B       		.uleb128 0xb
- 881 00c6 49       		.uleb128 0x49
- 882 00c7 13       		.uleb128 0x13
- 883 00c8 02       		.uleb128 0x2
- 884 00c9 18       		.uleb128 0x18
- 885 00ca 00       		.byte	0
- 886 00cb 00       		.byte	0
- 887 00cc 0F       		.uleb128 0xf
- 888 00cd 34       		.uleb128 0x34
- 889 00ce 00       		.byte	0
- 890 00cf 03       		.uleb128 0x3
- 891 00d0 0E       		.uleb128 0xe
- 892 00d1 3A       		.uleb128 0x3a
- 893 00d2 0B       		.uleb128 0xb
- 894 00d3 3B       		.uleb128 0x3b
- 895 00d4 0B       		.uleb128 0xb
- 896 00d5 49       		.uleb128 0x49
- 897 00d6 13       		.uleb128 0x13
- 898 00d7 3F       		.uleb128 0x3f
- 899 00d8 19       		.uleb128 0x19
- 900 00d9 02       		.uleb128 0x2
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 19
+ 836 0073 40       		.uleb128 0x40
+ 837 0074 18       		.uleb128 0x18
+ 838 0075 9642     		.uleb128 0x2116
+ 839 0077 19       		.uleb128 0x19
+ 840 0078 01       		.uleb128 0x1
+ 841 0079 13       		.uleb128 0x13
+ 842 007a 00       		.byte	0
+ 843 007b 00       		.byte	0
+ 844 007c 0A       		.uleb128 0xa
+ 845 007d 34       		.uleb128 0x34
+ 846 007e 00       		.byte	0
+ 847 007f 03       		.uleb128 0x3
+ 848 0080 0E       		.uleb128 0xe
+ 849 0081 3A       		.uleb128 0x3a
+ 850 0082 0B       		.uleb128 0xb
+ 851 0083 3B       		.uleb128 0x3b
+ 852 0084 0B       		.uleb128 0xb
+ 853 0085 49       		.uleb128 0x49
+ 854 0086 13       		.uleb128 0x13
+ 855 0087 02       		.uleb128 0x2
+ 856 0088 18       		.uleb128 0x18
+ 857 0089 00       		.byte	0
+ 858 008a 00       		.byte	0
+ 859 008b 0B       		.uleb128 0xb
+ 860 008c 2E       		.uleb128 0x2e
+ 861 008d 01       		.byte	0x1
+ 862 008e 3F       		.uleb128 0x3f
+ 863 008f 19       		.uleb128 0x19
+ 864 0090 03       		.uleb128 0x3
+ 865 0091 0E       		.uleb128 0xe
+ 866 0092 3A       		.uleb128 0x3a
+ 867 0093 0B       		.uleb128 0xb
+ 868 0094 3B       		.uleb128 0x3b
+ 869 0095 0B       		.uleb128 0xb
+ 870 0096 27       		.uleb128 0x27
+ 871 0097 19       		.uleb128 0x19
+ 872 0098 11       		.uleb128 0x11
+ 873 0099 01       		.uleb128 0x1
+ 874 009a 12       		.uleb128 0x12
+ 875 009b 06       		.uleb128 0x6
+ 876 009c 40       		.uleb128 0x40
+ 877 009d 18       		.uleb128 0x18
+ 878 009e 9642     		.uleb128 0x2116
+ 879 00a0 19       		.uleb128 0x19
+ 880 00a1 01       		.uleb128 0x1
+ 881 00a2 13       		.uleb128 0x13
+ 882 00a3 00       		.byte	0
+ 883 00a4 00       		.byte	0
+ 884 00a5 0C       		.uleb128 0xc
+ 885 00a6 05       		.uleb128 0x5
+ 886 00a7 00       		.byte	0
+ 887 00a8 03       		.uleb128 0x3
+ 888 00a9 0E       		.uleb128 0xe
+ 889 00aa 3A       		.uleb128 0x3a
+ 890 00ab 0B       		.uleb128 0xb
+ 891 00ac 3B       		.uleb128 0x3b
+ 892 00ad 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 19
 
 
- 901 00da 18       		.uleb128 0x18
- 902 00db 00       		.byte	0
- 903 00dc 00       		.byte	0
- 904 00dd 00       		.byte	0
- 905              		.section	.debug_aranges,"",%progbits
- 906 0000 2C000000 		.4byte	0x2c
- 907 0004 0200     		.2byte	0x2
- 908 0006 00000000 		.4byte	.Ldebug_info0
- 909 000a 04       		.byte	0x4
- 910 000b 00       		.byte	0
- 911 000c 0000     		.2byte	0
- 912 000e 0000     		.2byte	0
- 913 0010 00000000 		.4byte	.LFB33
- 914 0014 B0000000 		.4byte	.LFE33-.LFB33
- 915 0018 00000000 		.4byte	.LFB34
- 916 001c 40010000 		.4byte	.LFE34-.LFB34
- 917 0020 00000000 		.4byte	.LFB35
- 918 0024 38000000 		.4byte	.LFE35-.LFB35
- 919 0028 00000000 		.4byte	0
- 920 002c 00000000 		.4byte	0
- 921              		.section	.debug_ranges,"",%progbits
- 922              	.Ldebug_ranges0:
- 923 0000 00000000 		.4byte	.LFB33
- 924 0004 B0000000 		.4byte	.LFE33
- 925 0008 00000000 		.4byte	.LFB34
- 926 000c 40010000 		.4byte	.LFE34
- 927 0010 00000000 		.4byte	.LFB35
- 928 0014 38000000 		.4byte	.LFE35
- 929 0018 00000000 		.4byte	0
- 930 001c 00000000 		.4byte	0
- 931              		.section	.debug_line,"",%progbits
- 932              	.Ldebug_line0:
- 933 0000 D2000000 		.section	.debug_str,"MS",%progbits,1
- 933      02006100 
- 933      00000201 
- 933      FB0E0D00 
- 933      01010101 
- 934              	.LASF32:
- 935 0000 6D656E75 		.ascii	"menu\000"
- 935      00
- 936              	.LASF29:
- 937 0005 70726573 		.ascii	"press\000"
- 937      7300
- 938              	.LASF26:
- 939 000b 42544E5F 		.ascii	"BTN_states\000"
- 939      73746174 
- 939      657300
- 940              	.LASF23:
- 941 0016 4C454654 		.ascii	"LEFT\000"
- 941      00
- 942              	.LASF39:
- 943 001b 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
- 943      73657273 
- 943      5C536E75 
- 943      666B696E 
- 943      5C446F63 
- 944 0048 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 20
+ 893 00ae 49       		.uleb128 0x49
+ 894 00af 13       		.uleb128 0x13
+ 895 00b0 02       		.uleb128 0x2
+ 896 00b1 18       		.uleb128 0x18
+ 897 00b2 00       		.byte	0
+ 898 00b3 00       		.byte	0
+ 899 00b4 0D       		.uleb128 0xd
+ 900 00b5 0B       		.uleb128 0xb
+ 901 00b6 01       		.byte	0x1
+ 902 00b7 11       		.uleb128 0x11
+ 903 00b8 01       		.uleb128 0x1
+ 904 00b9 12       		.uleb128 0x12
+ 905 00ba 06       		.uleb128 0x6
+ 906 00bb 00       		.byte	0
+ 907 00bc 00       		.byte	0
+ 908 00bd 0E       		.uleb128 0xe
+ 909 00be 05       		.uleb128 0x5
+ 910 00bf 00       		.byte	0
+ 911 00c0 03       		.uleb128 0x3
+ 912 00c1 08       		.uleb128 0x8
+ 913 00c2 3A       		.uleb128 0x3a
+ 914 00c3 0B       		.uleb128 0xb
+ 915 00c4 3B       		.uleb128 0x3b
+ 916 00c5 0B       		.uleb128 0xb
+ 917 00c6 49       		.uleb128 0x49
+ 918 00c7 13       		.uleb128 0x13
+ 919 00c8 02       		.uleb128 0x2
+ 920 00c9 18       		.uleb128 0x18
+ 921 00ca 00       		.byte	0
+ 922 00cb 00       		.byte	0
+ 923 00cc 0F       		.uleb128 0xf
+ 924 00cd 34       		.uleb128 0x34
+ 925 00ce 00       		.byte	0
+ 926 00cf 03       		.uleb128 0x3
+ 927 00d0 0E       		.uleb128 0xe
+ 928 00d1 3A       		.uleb128 0x3a
+ 929 00d2 0B       		.uleb128 0xb
+ 930 00d3 3B       		.uleb128 0x3b
+ 931 00d4 0B       		.uleb128 0xb
+ 932 00d5 49       		.uleb128 0x49
+ 933 00d6 13       		.uleb128 0x13
+ 934 00d7 3F       		.uleb128 0x3f
+ 935 00d8 19       		.uleb128 0x19
+ 936 00d9 02       		.uleb128 0x2
+ 937 00da 18       		.uleb128 0x18
+ 938 00db 00       		.byte	0
+ 939 00dc 00       		.byte	0
+ 940 00dd 00       		.byte	0
+ 941              		.section	.debug_aranges,"",%progbits
+ 942 0000 2C000000 		.4byte	0x2c
+ 943 0004 0200     		.2byte	0x2
+ 944 0006 00000000 		.4byte	.Ldebug_info0
+ 945 000a 04       		.byte	0x4
+ 946 000b 00       		.byte	0
+ 947 000c 0000     		.2byte	0
+ 948 000e 0000     		.2byte	0
+ 949 0010 00000000 		.4byte	.LFB33
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 20
 
 
- 944      696D6572 
- 944      5C435254 
- 944      5F74696D 
- 944      65722E63 
- 945              	.LASF3:
- 946 0061 73686F72 		.ascii	"short unsigned int\000"
- 946      7420756E 
- 946      7369676E 
- 946      65642069 
- 946      6E7400
- 947              	.LASF20:
- 948 0074 494E4954 		.ascii	"INITIAL\000"
- 948      49414C00 
- 949              	.LASF21:
- 950 007c 554E5052 		.ascii	"UNPRESSED\000"
- 950      45535345 
- 950      4400
- 951              	.LASF35:
- 952 0086 74617267 		.ascii	"target\000"
- 952      657400
- 953              	.LASF13:
- 954 008d 666C6F61 		.ascii	"float\000"
- 954      7400
- 955              	.LASF37:
- 956 0093 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 956      4320342E 
- 956      382E3420 
- 956      32303134 
- 956      30353236 
- 957 00c6 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 957      20726576 
- 957      6973696F 
- 957      6E203231 
- 957      31333538 
- 958 00f9 30202D66 		.ascii	"0 -ffunction-sections\000"
- 958      66756E63 
- 958      74696F6E 
- 958      2D736563 
- 958      74696F6E 
- 959              	.LASF22:
- 960 010f 53454C45 		.ascii	"SELECT\000"
- 960      435400
- 961              	.LASF18:
- 962 0116 43414C49 		.ascii	"CALIBRATION\000"
- 962      42524154 
- 962      494F4E00 
- 963              	.LASF1:
- 964 0122 756E7369 		.ascii	"unsigned char\000"
- 964      676E6564 
- 964      20636861 
- 964      7200
- 965              	.LASF12:
- 966 0130 696E7431 		.ascii	"int16\000"
- 966      3600
- 967              	.LASF5:
- 968 0136 6C6F6E67 		.ascii	"long unsigned int\000"
- 968      20756E73 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 21
+ 950 0014 F0000000 		.4byte	.LFE33-.LFB33
+ 951 0018 00000000 		.4byte	.LFB34
+ 952 001c 38010000 		.4byte	.LFE34-.LFB34
+ 953 0020 00000000 		.4byte	.LFB35
+ 954 0024 38000000 		.4byte	.LFE35-.LFB35
+ 955 0028 00000000 		.4byte	0
+ 956 002c 00000000 		.4byte	0
+ 957              		.section	.debug_ranges,"",%progbits
+ 958              	.Ldebug_ranges0:
+ 959 0000 00000000 		.4byte	.LFB33
+ 960 0004 F0000000 		.4byte	.LFE33
+ 961 0008 00000000 		.4byte	.LFB34
+ 962 000c 38010000 		.4byte	.LFE34
+ 963 0010 00000000 		.4byte	.LFB35
+ 964 0014 38000000 		.4byte	.LFE35
+ 965 0018 00000000 		.4byte	0
+ 966 001c 00000000 		.4byte	0
+ 967              		.section	.debug_line,"",%progbits
+ 968              	.Ldebug_line0:
+ 969 0000 D9000000 		.section	.debug_str,"MS",%progbits,1
+ 969      02006100 
+ 969      00000201 
+ 969      FB0E0D00 
+ 969      01010101 
+ 970              	.LASF32:
+ 971 0000 6D656E75 		.ascii	"menu\000"
+ 971      00
+ 972              	.LASF29:
+ 973 0005 70726573 		.ascii	"press\000"
+ 973      7300
+ 974              	.LASF26:
+ 975 000b 42544E5F 		.ascii	"BTN_states\000"
+ 975      73746174 
+ 975      657300
+ 976              	.LASF23:
+ 977 0016 4C454654 		.ascii	"LEFT\000"
+ 977      00
+ 978              	.LASF39:
+ 979 001b 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 979      73657273 
+ 979      5C536E75 
+ 979      666B696E 
+ 979      5C446F63 
+ 980 0048 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 980      696D6572 
+ 980      5C435254 
+ 980      5F74696D 
+ 980      65722E63 
+ 981              	.LASF3:
+ 982 0061 73686F72 		.ascii	"short unsigned int\000"
+ 982      7420756E 
+ 982      7369676E 
+ 982      65642069 
+ 982      6E7400
+ 983              	.LASF20:
+ 984 0074 494E4954 		.ascii	"INITIAL\000"
+ 984      49414C00 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 21
 
 
- 968      69676E65 
- 968      6420696E 
- 968      7400
- 969              	.LASF30:
- 970 0148 74656D70 		.ascii	"temp\000"
- 970      00
- 971              	.LASF9:
- 972 014d 75696E74 		.ascii	"uint8\000"
- 972      3800
- 973              	.LASF38:
- 974 0153 2E5C6D65 		.ascii	".\\menus.c\000"
- 974      6E75732E 
- 974      6300
- 975              	.LASF33:
- 976 015d 63757272 		.ascii	"currentMenu\000"
- 976      656E744D 
- 976      656E7500 
- 977              	.LASF14:
- 978 0169 646F7562 		.ascii	"double\000"
- 978      6C6500
- 979              	.LASF17:
- 980 0170 4D41494E 		.ascii	"MAIN\000"
- 980      00
- 981              	.LASF31:
- 982 0175 636C6561 		.ascii	"clearLine\000"
- 982      724C696E 
- 982      6500
- 983              	.LASF27:
- 984 017f 75706461 		.ascii	"updateMenu\000"
- 984      74654D65 
- 984      6E7500
- 985              	.LASF10:
- 986 018a 75696E74 		.ascii	"uint16\000"
- 986      313600
- 987              	.LASF11:
- 988 0191 696E7438 		.ascii	"int8\000"
- 988      00
- 989              	.LASF8:
- 990 0196 756E7369 		.ascii	"unsigned int\000"
- 990      676E6564 
- 990      20696E74 
- 990      00
- 991              	.LASF7:
- 992 01a3 6C6F6E67 		.ascii	"long long unsigned int\000"
- 992      206C6F6E 
- 992      6720756E 
- 992      7369676E 
- 992      65642069 
- 993              	.LASF25:
- 994 01ba 52494748 		.ascii	"RIGHT\000"
- 994      5400
- 995              	.LASF28:
- 996 01c0 64726177 		.ascii	"drawMenu\000"
- 996      4D656E75 
- 996      00
- 997              	.LASF16:
- 998 01c9 73697A65 		.ascii	"sizetype\000"
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc8TBbRM.s 			page 22
-
-
- 998      74797065 
- 998      00
- 999              	.LASF6:
- 1000 01d2 6C6F6E67 		.ascii	"long long int\000"
- 1000      206C6F6E 
- 1000      6720696E 
- 1000      7400
- 1001              	.LASF15:
- 1002 01e0 63686172 		.ascii	"char\000"
- 1002      00
- 1003              	.LASF34:
- 1004 01e5 6F6C644D 		.ascii	"oldMenu\000"
- 1004      656E7500 
- 1005              	.LASF36:
- 1006 01ed 6C696768 		.ascii	"lightMax\000"
- 1006      744D6178 
+ 985              	.LASF21:
+ 986 007c 554E5052 		.ascii	"UNPRESSED\000"
+ 986      45535345 
+ 986      4400
+ 987              	.LASF35:
+ 988 0086 74617267 		.ascii	"target\000"
+ 988      657400
+ 989              	.LASF13:
+ 990 008d 666C6F61 		.ascii	"float\000"
+ 990      7400
+ 991              	.LASF37:
+ 992 0093 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 992      4320342E 
+ 992      382E3420 
+ 992      32303134 
+ 992      30353236 
+ 993 00c6 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 993      20726576 
+ 993      6973696F 
+ 993      6E203231 
+ 993      31333538 
+ 994 00f9 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 994      66756E63 
+ 994      74696F6E 
+ 994      2D736563 
+ 994      74696F6E 
+ 995              	.LASF22:
+ 996 010f 53454C45 		.ascii	"SELECT\000"
+ 996      435400
+ 997              	.LASF18:
+ 998 0116 43414C49 		.ascii	"CALIBRATION\000"
+ 998      42524154 
+ 998      494F4E00 
+ 999              	.LASF1:
+ 1000 0122 756E7369 		.ascii	"unsigned char\000"
+ 1000      676E6564 
+ 1000      20636861 
+ 1000      7200
+ 1001              	.LASF12:
+ 1002 0130 696E7431 		.ascii	"int16\000"
+ 1002      3600
+ 1003              	.LASF5:
+ 1004 0136 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1004      20756E73 
+ 1004      69676E65 
+ 1004      6420696E 
+ 1004      7400
+ 1005              	.LASF30:
+ 1006 0148 74656D70 		.ascii	"temp\000"
  1006      00
- 1007              	.LASF24:
- 1008 01f6 444F574E 		.ascii	"DOWN\000"
- 1008      00
- 1009              	.LASF2:
- 1010 01fb 73686F72 		.ascii	"short int\000"
- 1010      7420696E 
- 1010      7400
- 1011              	.LASF19:
- 1012 0205 52455355 		.ascii	"RESULTS\000"
- 1012      4C545300 
- 1013              	.LASF4:
- 1014 020d 6C6F6E67 		.ascii	"long int\000"
- 1014      20696E74 
- 1014      00
- 1015              	.LASF0:
- 1016 0216 7369676E 		.ascii	"signed char\000"
- 1016      65642063 
- 1016      68617200 
- 1017              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 1007              	.LASF9:
+ 1008 014d 75696E74 		.ascii	"uint8\000"
+ 1008      3800
+ 1009              	.LASF38:
+ 1010 0153 2E5C6D65 		.ascii	".\\menus.c\000"
+ 1010      6E75732E 
+ 1010      6300
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 22
+
+
+ 1011              	.LASF33:
+ 1012 015d 63757272 		.ascii	"currentMenu\000"
+ 1012      656E744D 
+ 1012      656E7500 
+ 1013              	.LASF14:
+ 1014 0169 646F7562 		.ascii	"double\000"
+ 1014      6C6500
+ 1015              	.LASF17:
+ 1016 0170 4D41494E 		.ascii	"MAIN\000"
+ 1016      00
+ 1017              	.LASF31:
+ 1018 0175 636C6561 		.ascii	"clearLine\000"
+ 1018      724C696E 
+ 1018      6500
+ 1019              	.LASF27:
+ 1020 017f 75706461 		.ascii	"updateMenu\000"
+ 1020      74654D65 
+ 1020      6E7500
+ 1021              	.LASF10:
+ 1022 018a 75696E74 		.ascii	"uint16\000"
+ 1022      313600
+ 1023              	.LASF11:
+ 1024 0191 696E7438 		.ascii	"int8\000"
+ 1024      00
+ 1025              	.LASF8:
+ 1026 0196 756E7369 		.ascii	"unsigned int\000"
+ 1026      676E6564 
+ 1026      20696E74 
+ 1026      00
+ 1027              	.LASF7:
+ 1028 01a3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1028      206C6F6E 
+ 1028      6720756E 
+ 1028      7369676E 
+ 1028      65642069 
+ 1029              	.LASF25:
+ 1030 01ba 52494748 		.ascii	"RIGHT\000"
+ 1030      5400
+ 1031              	.LASF28:
+ 1032 01c0 64726177 		.ascii	"drawMenu\000"
+ 1032      4D656E75 
+ 1032      00
+ 1033              	.LASF16:
+ 1034 01c9 73697A65 		.ascii	"sizetype\000"
+ 1034      74797065 
+ 1034      00
+ 1035              	.LASF6:
+ 1036 01d2 6C6F6E67 		.ascii	"long long int\000"
+ 1036      206C6F6E 
+ 1036      6720696E 
+ 1036      7400
+ 1037              	.LASF15:
+ 1038 01e0 63686172 		.ascii	"char\000"
+ 1038      00
+ 1039              	.LASF34:
+ 1040 01e5 6F6C644D 		.ascii	"oldMenu\000"
+ 1040      656E7500 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 23
+
+
+ 1041              	.LASF36:
+ 1042 01ed 6C696768 		.ascii	"lightMax\000"
+ 1042      744D6178 
+ 1042      00
+ 1043              	.LASF24:
+ 1044 01f6 444F574E 		.ascii	"DOWN\000"
+ 1044      00
+ 1045              	.LASF2:
+ 1046 01fb 73686F72 		.ascii	"short int\000"
+ 1046      7420696E 
+ 1046      7400
+ 1047              	.LASF19:
+ 1048 0205 52455355 		.ascii	"RESULTS\000"
+ 1048      4C545300 
+ 1049              	.LASF4:
+ 1050 020d 6C6F6E67 		.ascii	"long int\000"
+ 1050      20696E74 
+ 1050      00
+ 1051              	.LASF0:
+ 1052 0216 7369676E 		.ascii	"signed char\000"
+ 1052      65642063 
+ 1052      68617200 
+ 1053              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
