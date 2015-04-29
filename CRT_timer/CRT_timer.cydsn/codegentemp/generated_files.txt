@@ -17,9 +17,6 @@
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Timer_1.c" value="ARM_C_FILE;Timer_1" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Timer_1.h" value="NONE;Timer_1" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Timer_1_PM.c" value="ARM_C_FILE;Timer_1" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\B_press.c" value="ARM_C_FILE;B_press" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\B_press.h" value="NONE;B_press" />
-  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\B_press_aliases.h" value="NONE;B_press" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\SW2.c" value="ARM_C_FILE;SW2" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\SW2.h" value="NONE;SW2" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\SW2_aliases.h" value="NONE;SW2" />
@@ -62,6 +59,8 @@
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\D7.c" value="ARM_C_FILE;D7" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\D7.h" value="NONE;D7" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\D7_aliases.h" value="NONE;D7" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\t1_int.c" value="ARM_C_FILE;t1_int" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\t1_int.h" value="NONE;t1_int" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Opamp.c" value="ARM_C_FILE;Opamp" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Opamp.h" value="NONE;Opamp" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Opamp_PM.c" value="ARM_C_FILE;Opamp" />
@@ -74,6 +73,11 @@
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Test_pin.c" value="ARM_C_FILE;Test_pin" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Test_pin.h" value="NONE;Test_pin" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\Test_pin_aliases.h" value="NONE;Test_pin" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GC_in.c" value="ARM_C_FILE;GC_in" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GC_in.h" value="NONE;GC_in" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GC_in_aliases.h" value="NONE;GC_in" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GC_int.c" value="ARM_C_FILE;GC_int" />
+  <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\GC_int.h" value="NONE;GC_int" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_IRQ.c" value="ARM_C_FILE;ADC_IRQ" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_IRQ.h" value="NONE;ADC_IRQ" />
   <file name="C:\Users\Snufkin\Documents\GitHub\KingFunk2\CRT_timer\CRT_timer.cydsn\codegentemp\ADC_intClock.c" value="ARM_C_FILE;ADC_intClock" />

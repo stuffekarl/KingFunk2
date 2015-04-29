@@ -14,34 +14,61 @@
 #define CONVERT_TO_ASCII (0x30u)
 #define TIMER_MAX 4294967296
 //#define debugging1 //Show time for checking result from ADC
-#define debugging2 //Show time for starting the timer
+//#define debugging2 //Show time for starting the timer
 
 volatile uint8 running; //flag - false = 0, true != 0
+volatile uint8 armed; //flag ^
 uint16 V_new;
 uint32 time;
 
 //Prototypes
 CY_ISR_PROTO(sw_int_ISR);
+CY_ISR_PROTO(GC_int_ISR);
+CY_ISR_PROTO(t1_ISR);
 void print_measurement(uint32 time);
 int8 updateBTN(void);
 
 CY_ISR(sw_int_ISR){
-    running = 1;
+    armed = 1;
     LCD_ClearDisplay();
     LCD_PrintString("SW2 pressed");
-    Timer_1_WriteCounter(0);
-    B_press_Write(1);
-    #ifdef debugging2
+    GC_int_Enable();
+}
+
+CY_ISR(GC_int_ISR){
+    Timer_1_WriteCounter(3624);
+    GC_int_Disable();
+    t1_int_Enable();
+}
+
+CY_ISR(t1_ISR){    
+    #ifdef debugging3
         Test_pin_Write(1);
     #endif
-    
+    if (GC_in_Read()){
+        LCD_ClearDisplay();
+        LCD_PrintString("Captured B press");
+        running = 1;
+        t1_int_Disable();
+        Timer_1_WriteCounter(0);
+    }
+    else{
+        GC_int_Enable();
+        CyDelay(4);
+    }  
+    #ifdef debugging3
+        Test_pin_Write(0);
+    #endif
 }
 
 int main(){
     target = 30;
     Timer_1_Start();
     sw_int_StartEx(sw_int_ISR);
-    B_press_Write(0);
+    GC_int_StartEx(GC_int_ISR);
+    t1_int_StartEx(t1_ISR);
+    GC_int_Disable();
+    t1_int_Disable();
     Opamp_Start();
     ADC_Start();
     ADC_StartConvert();
@@ -57,7 +84,7 @@ int main(){
     
     CyGlobalIntEnable;
     
-    while(1){
+    while(1){    
         if (running){
             #ifdef debugging1
                 Test_pin_Write(1);
@@ -68,17 +95,17 @@ int main(){
                     Test_pin_Write(0);
                 #endif
                 time = TIMER_MAX - time;
-                Timer_1_Stop();
                 running = 0;
-                B_press_Write(0);
+                armed = 0;
                 print_measurement(time);
             }
             #ifdef debugging1
                 Test_pin_Write(0);
             #endif
         }
-        else{
-            updateMenu();
+        
+        if(!armed){
+           updateMenu();
         }
     }
 }

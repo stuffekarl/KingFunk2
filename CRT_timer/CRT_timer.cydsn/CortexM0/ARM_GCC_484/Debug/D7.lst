@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
   30:.\Generated_Source\PSoC4/D7.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/D7.c **** *
   32:.\Generated_Source\PSoC4/D7.c **** * Summary:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/D7.c **** *  Assign a new value to the digital port's data output register.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
   47:.\Generated_Source\PSoC4/D7.c **** }
   66              		.loc 1 47 0
   67 003c BD46     		mov	sp, r7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 3
 
 
   68 003e 04B0     		add	sp, sp, #16
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
   95              		.cfi_def_cfa_register 7
   96 0006 021C     		mov	r2, r0
   97 0008 FB1D     		add	r3, r7, #7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 4
 
 
   98 000a 1A70     		strb	r2, [r3]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
   96:.\Generated_Source\PSoC4/D7.c **** *******************************************************************************/
   97:.\Generated_Source\PSoC4/D7.c **** uint8 D7_Read(void) 
   98:.\Generated_Source\PSoC4/D7.c **** {
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 5
 
 
  131              		.loc 1 98 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  118:.\Generated_Source\PSoC4/D7.c **** {
  166              		.loc 1 118 0
  167              		.cfi_startproc
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 6
 
 
  168 0000 80B5     		push	{r7, lr}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  140:.\Generated_Source\PSoC4/D7.c ****     *******************************************************************************/
  141:.\Generated_Source\PSoC4/D7.c ****     uint8 D7_ClearInterrupt(void) 
  142:.\Generated_Source\PSoC4/D7.c ****     {
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 7
 
 
  201              		.loc 1 142 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  251 000b 01       		.uleb128 0x1
  252 000c F4000000 		.4byte	.LASF24
  253 0010 01       		.byte	0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 8
 
 
  254 0011 06000000 		.4byte	.LASF25
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  308 007d 48000000 		.4byte	0x48
  309 0081 02       		.uleb128 0x2
  310 0082 04       		.byte	0x4
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 9
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 9
 
 
  311 0083 04       		.byte	0x4
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  365 00f3 01       		.byte	0x1
  366 00f4 49       		.byte	0x49
  367 00f5 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 10
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 10
 
 
  368 00f9 02       		.uleb128 0x2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  422 000b 55       		.uleb128 0x55
  423 000c 17       		.uleb128 0x17
  424 000d 11       		.uleb128 0x11
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 11
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 11
 
 
  425 000e 01       		.uleb128 0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  479 0044 35       		.uleb128 0x35
  480 0045 00       		.byte	0
  481 0046 49       		.uleb128 0x49
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 12
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 12
 
 
  482 0047 13       		.uleb128 0x13
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  536 007e 02       		.uleb128 0x2
  537 007f 18       		.uleb128 0x18
  538 0080 00       		.byte	0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 13
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 13
 
 
  539 0081 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  593 0004 0200     		.2byte	0x2
  594 0006 00000000 		.4byte	.Ldebug_info0
  595 000a 04       		.byte	0x4
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 14
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 14
 
 
  596 000b 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  637 0039 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
  637      73657273 
  637      5C536E75 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 15
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 15
 
 
  637      666B696E 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 1
  660      32303134 
  660      30353236 
  661 0127 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\cc7OeBzn.s 			page 16
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccLthC7D.s 			page 16
 
 
  661      20726576 

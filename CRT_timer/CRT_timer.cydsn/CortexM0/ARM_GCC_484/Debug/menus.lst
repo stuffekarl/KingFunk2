@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
   13:.\menus.c     **** /* [] END OF FILE */
   14:.\menus.c     **** 
   15:.\menus.c     **** #include <project.h>
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 2
 
 
   16:.\menus.c     **** #include "menus.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
   33:.\menus.c     ****             currentMenu = RESULTS;
   80              		.loc 1 33 0
   81 0030 2C4B     		ldr	r3, .L15
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 3
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 3
 
 
   82 0032 0222     		mov	r2, #2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
   45:.\menus.c     ****             oldMenu = INITIAL;
  125              		.loc 1 45 0
  126 0074 1D4B     		ldr	r3, .L15+8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 4
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 4
 
 
  127 0076 0322     		mov	r2, #3
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
   57:.\menus.c     ****             currentMenu = CALIBRATION;
  170              		.loc 1 57 0
  171 00b8 0A4B     		ldr	r3, .L15
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 5
 
 
  172 00ba 0122     		mov	r2, #1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  214              	.LC7:
  215 0010 4D61783A 		.ascii	"Max: \000"
  215      2000
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 6
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 6
 
 
  216 0016 0000     		.align	2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  254 0012 34D1     		bne	.L18
  255              	.LBB2:
   70:.\menus.c     ****         int16 temp = ADC_GetResult16(0);
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 7
 
 
  256              		.loc 1 70 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  301              		.loc 1 79 0
  302 0062 0120     		mov	r0, #1
  303 0064 FFF7FEFF 		bl	clearLine
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 8
 
 
   80:.\menus.c     ****             LCD_PrintString("Max: ");
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  346 00ae 0120     		mov	r0, #1
  347 00b0 0821     		mov	r1, #8
  348 00b2 FFF7FEFF 		bl	LCD_Position
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 9
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 9
 
 
   92:.\menus.c     ****         LCD_PrintNumber(target);
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  104:.\menus.c     ****     
  105:.\menus.c     ****     oldMenu = menu;
  391              		.loc 1 105 0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 10
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 10
 
 
  392 0100 044B     		ldr	r3, .L26
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  438              		.cfi_def_cfa_offset 16
  439 0004 00AF     		add	r7, sp, #0
  440              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 11
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 11
 
 
  441 0006 021C     		mov	r2, r0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  491 0025 02       		.uleb128 0x2
  492 0026 01       		.byte	0x1
  493 0027 06       		.byte	0x6
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 12
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 12
 
 
  494 0028 16020000 		.4byte	.LASF0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  548 0091 02       		.byte	0x2
  549 0092 A5       		.byte	0xa5
  550 0093 33000000 		.4byte	0x33
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 13
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 13
 
 
  551 0097 02       		.uleb128 0x2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  605 00fa F6010000 		.4byte	.LASF24
  606 00fe 03       		.sleb128 3
  607 00ff 08       		.uleb128 0x8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 14
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 14
 
 
  608 0100 555000   		.ascii	"UP\000"
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  662 0171 8C000000 		.4byte	0x8c
  663 0175 02       		.uleb128 0x2
  664 0176 91       		.byte	0x91
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 15
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 15
 
 
  665 0177 6E       		.sleb128 -18
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  719              		.section	.debug_abbrev,"",%progbits
  720              	.Ldebug_abbrev0:
  721 0000 01       		.uleb128 0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 16
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 16
 
 
  722 0001 11       		.uleb128 0x11
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  776 0037 04       		.uleb128 0x4
  777 0038 01       		.byte	0x1
  778 0039 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 17
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 17
 
 
  779 003a 0B       		.uleb128 0xb
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  833 0070 01       		.uleb128 0x1
  834 0071 12       		.uleb128 0x12
  835 0072 06       		.uleb128 0x6
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 18
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 18
 
 
  836 0073 40       		.uleb128 0x40
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  890 00ab 0B       		.uleb128 0xb
  891 00ac 3B       		.uleb128 0x3b
  892 00ad 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 19
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 19
 
 
  893 00ae 49       		.uleb128 0x49
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  947 000c 0000     		.2byte	0
  948 000e 0000     		.2byte	0
  949 0010 00000000 		.4byte	.LFB33
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 20
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 20
 
 
  950 0014 F0000000 		.4byte	.LFE33-.LFB33
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  983              	.LASF20:
  984 0074 494E4954 		.ascii	"INITIAL\000"
  984      49414C00 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 21
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 21
 
 
  985              	.LASF21:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  1010 0153 2E5C6D65 		.ascii	".\\menus.c\000"
  1010      6E75732E 
  1010      6300
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 22
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 22
 
 
  1011              	.LASF33:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 1
  1039              	.LASF34:
  1040 01e5 6F6C644D 		.ascii	"oldMenu\000"
  1040      656E7500 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccB9UaTe.s 			page 23
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccdHed5r.s 			page 23
 
 
  1041              	.LASF36:

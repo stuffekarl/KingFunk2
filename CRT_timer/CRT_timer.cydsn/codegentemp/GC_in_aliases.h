@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: B_press.h  
+* File Name: GC_in.h  
 * Version 2.10
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_B_press_ALIASES_H) /* Pins B_press_ALIASES_H */
-#define CY_PINS_B_press_ALIASES_H
+#if !defined(CY_PINS_GC_in_ALIASES_H) /* Pins GC_in_ALIASES_H */
+#define CY_PINS_GC_in_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -26,14 +26,14 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define B_press_0		(B_press__0__PC)
-#define B_press_0_PS		(B_press__0__PS)
-#define B_press_0_PC		(B_press__0__PC)
-#define B_press_0_DR		(B_press__0__DR)
-#define B_press_0_SHIFT	(B_press__0__SHIFT)
+#define GC_in_0		(GC_in__0__PC)
+#define GC_in_0_PS		(GC_in__0__PS)
+#define GC_in_0_PC		(GC_in__0__PC)
+#define GC_in_0_DR		(GC_in__0__DR)
+#define GC_in_0_SHIFT	(GC_in__0__SHIFT)
 
 
-#endif /* End Pins B_press_ALIASES_H */
+#endif /* End Pins GC_in_ALIASES_H */
 
 
 /* [] END OF FILE */

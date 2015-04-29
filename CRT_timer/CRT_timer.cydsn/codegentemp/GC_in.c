@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: B_press.c  
+* File Name: GC_in.c  
 * Version 2.10
 *
 * Description:
@@ -15,18 +15,18 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "B_press.h"
+#include "GC_in.h"
 
 #define SetP4PinDriveMode(shift, mode)  \
     do { \
-        B_press_PC =   (B_press_PC & \
-                                (uint32)(~(uint32)(B_press_DRIVE_MODE_IND_MASK << (B_press_DRIVE_MODE_BITS * (shift))))) | \
-                                (uint32)((uint32)(mode) << (B_press_DRIVE_MODE_BITS * (shift))); \
+        GC_in_PC =   (GC_in_PC & \
+                                (uint32)(~(uint32)(GC_in_DRIVE_MODE_IND_MASK << (GC_in_DRIVE_MODE_BITS * (shift))))) | \
+                                (uint32)((uint32)(mode) << (GC_in_DRIVE_MODE_BITS * (shift))); \
     } while (0)
 
 
 /*******************************************************************************
-* Function Name: B_press_Write
+* Function Name: GC_in_Write
 ********************************************************************************
 *
 * Summary:
@@ -39,16 +39,16 @@
 *  None 
 *  
 *******************************************************************************/
-void B_press_Write(uint8 value) 
+void GC_in_Write(uint8 value) 
 {
-    uint8 drVal = (uint8)(B_press_DR & (uint8)(~B_press_MASK));
-    drVal = (drVal | ((uint8)(value << B_press_SHIFT) & B_press_MASK));
-    B_press_DR = (uint32)drVal;
+    uint8 drVal = (uint8)(GC_in_DR & (uint8)(~GC_in_MASK));
+    drVal = (drVal | ((uint8)(value << GC_in_SHIFT) & GC_in_MASK));
+    GC_in_DR = (uint32)drVal;
 }
 
 
 /*******************************************************************************
-* Function Name: B_press_SetDriveMode
+* Function Name: GC_in_SetDriveMode
 ********************************************************************************
 *
 * Summary:
@@ -57,27 +57,27 @@ void B_press_Write(uint8 value)
 * Parameters:  
 *  mode:  Change the pins to one of the following drive modes.
 *
-*  B_press_DM_STRONG     Strong Drive 
-*  B_press_DM_OD_HI      Open Drain, Drives High 
-*  B_press_DM_OD_LO      Open Drain, Drives Low 
-*  B_press_DM_RES_UP     Resistive Pull Up 
-*  B_press_DM_RES_DWN    Resistive Pull Down 
-*  B_press_DM_RES_UPDWN  Resistive Pull Up/Down 
-*  B_press_DM_DIG_HIZ    High Impedance Digital 
-*  B_press_DM_ALG_HIZ    High Impedance Analog 
+*  GC_in_DM_STRONG     Strong Drive 
+*  GC_in_DM_OD_HI      Open Drain, Drives High 
+*  GC_in_DM_OD_LO      Open Drain, Drives Low 
+*  GC_in_DM_RES_UP     Resistive Pull Up 
+*  GC_in_DM_RES_DWN    Resistive Pull Down 
+*  GC_in_DM_RES_UPDWN  Resistive Pull Up/Down 
+*  GC_in_DM_DIG_HIZ    High Impedance Digital 
+*  GC_in_DM_ALG_HIZ    High Impedance Analog 
 *
 * Return: 
 *  None
 *
 *******************************************************************************/
-void B_press_SetDriveMode(uint8 mode) 
+void GC_in_SetDriveMode(uint8 mode) 
 {
-	SetP4PinDriveMode(B_press__0__SHIFT, mode);
+	SetP4PinDriveMode(GC_in__0__SHIFT, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: B_press_Read
+* Function Name: GC_in_Read
 ********************************************************************************
 *
 * Summary:
@@ -91,17 +91,17 @@ void B_press_SetDriveMode(uint8 mode)
 *  Returns the current value of the Digital Port as a right justified number
 *  
 * Note:
-*  Macro B_press_ReadPS calls this function. 
+*  Macro GC_in_ReadPS calls this function. 
 *  
 *******************************************************************************/
-uint8 B_press_Read(void) 
+uint8 GC_in_Read(void) 
 {
-    return (uint8)((B_press_PS & B_press_MASK) >> B_press_SHIFT);
+    return (uint8)((GC_in_PS & GC_in_MASK) >> GC_in_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: B_press_ReadDataReg
+* Function Name: GC_in_ReadDataReg
 ********************************************************************************
 *
 * Summary:
@@ -114,17 +114,17 @@ uint8 B_press_Read(void)
 *  Returns the current value assigned to the Digital Port's data output register
 *  
 *******************************************************************************/
-uint8 B_press_ReadDataReg(void) 
+uint8 GC_in_ReadDataReg(void) 
 {
-    return (uint8)((B_press_DR & B_press_MASK) >> B_press_SHIFT);
+    return (uint8)((GC_in_DR & GC_in_MASK) >> GC_in_SHIFT);
 }
 
 
 /* If Interrupts Are Enabled for this Pins component */ 
-#if defined(B_press_INTSTAT) 
+#if defined(GC_in_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: B_press_ClearInterrupt
+    * Function Name: GC_in_ClearInterrupt
     ********************************************************************************
     *
     * Summary:
@@ -138,11 +138,11 @@ uint8 B_press_ReadDataReg(void)
     *  Returns the value of the interrupt status register
     *  
     *******************************************************************************/
-    uint8 B_press_ClearInterrupt(void) 
+    uint8 GC_in_ClearInterrupt(void) 
     {
-		uint8 maskedStatus = (uint8)(B_press_INTSTAT & B_press_MASK);
-		B_press_INTSTAT = maskedStatus;
-        return maskedStatus >> B_press_SHIFT;
+		uint8 maskedStatus = (uint8)(GC_in_INTSTAT & GC_in_MASK);
+		GC_in_INTSTAT = maskedStatus;
+        return maskedStatus >> GC_in_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

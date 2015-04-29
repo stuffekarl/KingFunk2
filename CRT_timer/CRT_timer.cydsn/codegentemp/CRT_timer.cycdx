@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="Q_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="GC_controller" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="SFH213" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="D7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="D4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="D5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="D6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="GND_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="GND" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Test_pin" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="TIA_out" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="GND_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Opamp" BASE="0x0" SIZE="0x0" desc="OpAmp" visible="true">
     <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -51,59 +41,20 @@
       </field>
     </register>
   </block>
+  <block name="t1_int" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="D5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="D6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="D7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="R_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="E" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="SW2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="GC_in" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="GC_int" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="not_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Test_pin" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="TIA_out" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="GND_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="GND" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="sw_int" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="TIA_in" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="B_press" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="timer_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Timer_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="TimerUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="Timer_1_COUNTER" address="0x400F0000" bitWidth="32" desc="UDB.A0 - Current Down Counter Value" />
-    <register name="Timer_1_PERIOD" address="0x400F0020" bitWidth="32" desc="UDB.D0 - Assigned Period" />
-    <register name="Timer_1_STATUS_MASK" address="0x400F0083" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register">
-      <field name="TIMER_STS_TC" from="0" to="0" access="R" resetVal="" desc="Enables the Interrupt on TC" />
-      <field name="TIMER_STS_CAPT" from="1" to="1" access="R" resetVal="" desc="Enables the Interrupt on Capture" />
-      <field name="TIMER_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="FIFO Full Status " />
-      <field name="TIMER_STS_FIFO_NEMPTY" from="3" to="3" access="R" resetVal="" desc="FIFO Empty status " />
-    </register>
-    <register name="Timer_1_STATUS_AUX_CTRL" address="0x400F0093" bitWidth="8" desc="UDB Auxilliary Control Register">
-      <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
-        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
-        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
-      </field>
-      <field name="FIFO1_CLR" from="1" to="1" access="RW" resetVal="" desc="FIFO1 clear">
-        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
-        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
-      </field>
-      <field name="FIFO0_LVL" from="2" to="2" access="RW" resetVal="" desc="FIFO level">
-        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
-        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
-      </field>
-      <field name="FIFO1_LVL" from="3" to="3" access="RW" resetVal="" desc="FIFO level">
-        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
-        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
-      </field>
-      <field name="INT_EN" from="4" to="4" access="RW" resetVal="" desc="">
-        <value name="E_INT_EN0" value="0" desc="Interrupt disabled" />
-        <value name="E_INT_EN1" value="1" desc="Interrupt enabled" />
-      </field>
-      <field name="CNT_START" from="5" to="5" access="RW" resetVal="" desc="FIFO0 clear">
-        <value name="E_CNT_START0" value="0" desc="Disable counter" />
-        <value name="E_CNT_START1" value="1" desc="Enable counter" />
-      </field>
-    </register>
-  </block>
-  <block name="A0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="LCD" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="LCD_Cntl_Port" BASE="0x0" SIZE="0x0" desc="" visible="true">
-      <register name="LCD_Cntl_Port_CONTROL_REG" address="0x400F0070" bitWidth="8" desc="" />
-    </block>
-  </block>
-  <block name="RS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="timer_enable" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="ADC" BASE="0x0" SIZE="0x0" desc="Sequencing SAR ADC" visible="true">
     <block name="cy_analog_noconnect_31" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="cy_analog_noconnect_32" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -509,6 +460,56 @@
       <field name="WOUND_RESOLUTION" from="1" to="0" access="R" resetVal="" desc="Maximum SAR resolution allowed" />
     </register>
   </block>
+  <block name="SW2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="timer_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Timer_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="TimerUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="Timer_1_COUNTER" address="0x400F0000" bitWidth="32" desc="UDB.A0 - Current Down Counter Value" />
+    <register name="Timer_1_PERIOD" address="0x400F0020" bitWidth="32" desc="UDB.D0 - Assigned Period" />
+    <register name="Timer_1_STATUS_MASK" address="0x400F0083" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register">
+      <field name="TIMER_STS_TC" from="0" to="0" access="R" resetVal="" desc="Enables the Interrupt on TC" />
+      <field name="TIMER_STS_CAPT" from="1" to="1" access="R" resetVal="" desc="Enables the Interrupt on Capture" />
+      <field name="TIMER_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="FIFO Full Status " />
+      <field name="TIMER_STS_FIFO_NEMPTY" from="3" to="3" access="R" resetVal="" desc="FIFO Empty status " />
+    </register>
+    <register name="Timer_1_STATUS_AUX_CTRL" address="0x400F0093" bitWidth="8" desc="UDB Auxilliary Control Register">
+      <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
+        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
+        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
+      </field>
+      <field name="FIFO1_CLR" from="1" to="1" access="RW" resetVal="" desc="FIFO1 clear">
+        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
+        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
+      </field>
+      <field name="FIFO0_LVL" from="2" to="2" access="RW" resetVal="" desc="FIFO level">
+        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
+        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
+      </field>
+      <field name="FIFO1_LVL" from="3" to="3" access="RW" resetVal="" desc="FIFO level">
+        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
+        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
+      </field>
+      <field name="INT_EN" from="4" to="4" access="RW" resetVal="" desc="">
+        <value name="E_INT_EN0" value="0" desc="Interrupt disabled" />
+        <value name="E_INT_EN1" value="1" desc="Interrupt enabled" />
+      </field>
+      <field name="CNT_START" from="5" to="5" access="RW" resetVal="" desc="FIFO0 clear">
+        <value name="E_CNT_START0" value="0" desc="Disable counter" />
+        <value name="E_CNT_START1" value="1" desc="Enable counter" />
+      </field>
+    </register>
+  </block>
   <block name="cl_deb" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="RS" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="E" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="D4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="LCD" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="LCD_Cntl_Port" BASE="0x0" SIZE="0x0" desc="" visible="true">
+      <register name="LCD_Cntl_Port_CONTROL_REG" address="0x400F0070" bitWidth="8" desc="" />
+    </block>
+  </block>
   <block name="Debouncer_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="timer_enable" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="A0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
 </blockRegMap>

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -37,7 +37,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
    9:.\Generated_Source\PSoC4/sw_int.c **** *  Note:
   10:.\Generated_Source\PSoC4/sw_int.c **** *
   11:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
-  12:.\Generated_Source\PSoC4/sw_int.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/sw_int.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
   13:.\Generated_Source\PSoC4/sw_int.c **** * You may use this file only in accordance with the license, terms, conditions, 
   14:.\Generated_Source\PSoC4/sw_int.c **** * disclaimers, and limitations in the end user license agreement accompanying 
   15:.\Generated_Source\PSoC4/sw_int.c **** * the software package with which this file was provided.
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
   30:.\Generated_Source\PSoC4/sw_int.c **** /* `#END` */
   31:.\Generated_Source\PSoC4/sw_int.c **** 
   32:.\Generated_Source\PSoC4/sw_int.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 2
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/sw_int.c **** 
@@ -71,18 +71,21 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
   40:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
   41:.\Generated_Source\PSoC4/sw_int.c **** *
   42:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
-  43:.\Generated_Source\PSoC4/sw_int.c **** *  Set up the interrupt and enable it.
-  44:.\Generated_Source\PSoC4/sw_int.c **** *
-  45:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:  
-  46:.\Generated_Source\PSoC4/sw_int.c **** *   None
+  43:.\Generated_Source\PSoC4/sw_int.c **** *  Set up the interrupt and enable it. This function disables the interrupt, 
+  44:.\Generated_Source\PSoC4/sw_int.c **** *  sets the default interrupt vector, sets the priority from the value in the
+  45:.\Generated_Source\PSoC4/sw_int.c **** *  Design Wide Resources Interrupt Editor, then enables the interrupt to the 
+  46:.\Generated_Source\PSoC4/sw_int.c **** *  interrupt controller.
   47:.\Generated_Source\PSoC4/sw_int.c **** *
-  48:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+  48:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:  
   49:.\Generated_Source\PSoC4/sw_int.c **** *   None
   50:.\Generated_Source\PSoC4/sw_int.c **** *
-  51:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
-  52:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_Start(void)
-  53:.\Generated_Source\PSoC4/sw_int.c **** {
-  26              		.loc 1 53 0
+  51:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+  52:.\Generated_Source\PSoC4/sw_int.c **** *   None
+  53:.\Generated_Source\PSoC4/sw_int.c **** *
+  54:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+  55:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_Start(void)
+  56:.\Generated_Source\PSoC4/sw_int.c **** {
+  26              		.loc 1 56 0
   27              		.cfi_startproc
   28 0000 80B5     		push	{r7, lr}
   29              		.cfi_def_cfa_offset 8
@@ -90,37 +93,37 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
   31              		.cfi_offset 14, -4
   32 0002 00AF     		add	r7, sp, #0
   33              		.cfi_def_cfa_register 7
-  54:.\Generated_Source\PSoC4/sw_int.c ****     /* For all we know the interrupt is active. */
-  55:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_Disable();
-  34              		.loc 1 55 0
+  57:.\Generated_Source\PSoC4/sw_int.c ****     /* For all we know the interrupt is active. */
+  58:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_Disable();
+  34              		.loc 1 58 0
   35 0004 FFF7FEFF 		bl	sw_int_Disable
-  56:.\Generated_Source\PSoC4/sw_int.c **** 
-  57:.\Generated_Source\PSoC4/sw_int.c ****     /* Set the ISR to point to the sw_int Interrupt. */
-  58:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_SetVector(&sw_int_Interrupt);
-  36              		.loc 1 58 0
+  59:.\Generated_Source\PSoC4/sw_int.c **** 
+  60:.\Generated_Source\PSoC4/sw_int.c ****     /* Set the ISR to point to the sw_int Interrupt. */
+  61:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_SetVector(&sw_int_Interrupt);
+  36              		.loc 1 61 0
   37 0008 054B     		ldr	r3, .L2
   38 000a 181C     		mov	r0, r3
   39 000c FFF7FEFF 		bl	sw_int_SetVector
-  59:.\Generated_Source\PSoC4/sw_int.c **** 
-  60:.\Generated_Source\PSoC4/sw_int.c ****     /* Set the priority. */
-  61:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_SetPriority((uint8)sw_int_INTC_PRIOR_NUMBER);
-  40              		.loc 1 61 0
+  62:.\Generated_Source\PSoC4/sw_int.c **** 
+  63:.\Generated_Source\PSoC4/sw_int.c ****     /* Set the priority. */
+  64:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_SetPriority((uint8)sw_int_INTC_PRIOR_NUMBER);
+  40              		.loc 1 64 0
   41 0010 0320     		mov	r0, #3
   42 0012 FFF7FEFF 		bl	sw_int_SetPriority
-  62:.\Generated_Source\PSoC4/sw_int.c **** 
-  63:.\Generated_Source\PSoC4/sw_int.c ****     /* Enable it. */
-  64:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_Enable();
-  43              		.loc 1 64 0
+  65:.\Generated_Source\PSoC4/sw_int.c **** 
+  66:.\Generated_Source\PSoC4/sw_int.c ****     /* Enable it. */
+  67:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_Enable();
+  43              		.loc 1 67 0
   44 0016 FFF7FEFF 		bl	sw_int_Enable
-  65:.\Generated_Source\PSoC4/sw_int.c **** }
-  45              		.loc 1 65 0
+  68:.\Generated_Source\PSoC4/sw_int.c **** }
+  45              		.loc 1 68 0
   46 001a BD46     		mov	sp, r7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 3
+
+
   47              		@ sp needed
   48 001c 80BD     		pop	{r7, pc}
   49              	.L3:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 3
-
-
   50 001e C046     		.align	2
   51              	.L2:
   52 0020 00000000 		.word	sw_int_Interrupt
@@ -135,25 +138,38 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
   61              		.type	sw_int_StartEx, %function
   62              	sw_int_StartEx:
   63              	.LFB1:
-  66:.\Generated_Source\PSoC4/sw_int.c **** 
-  67:.\Generated_Source\PSoC4/sw_int.c **** 
-  68:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
-  69:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_StartEx
-  70:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
-  71:.\Generated_Source\PSoC4/sw_int.c **** *
-  72:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
-  73:.\Generated_Source\PSoC4/sw_int.c **** *  Set up the interrupt and enable it.
+  69:.\Generated_Source\PSoC4/sw_int.c **** 
+  70:.\Generated_Source\PSoC4/sw_int.c **** 
+  71:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+  72:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_StartEx
+  73:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
   74:.\Generated_Source\PSoC4/sw_int.c **** *
-  75:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:  
-  76:.\Generated_Source\PSoC4/sw_int.c **** *   address: Address of the ISR to set in the interrupt vector table.
-  77:.\Generated_Source\PSoC4/sw_int.c **** *
-  78:.\Generated_Source\PSoC4/sw_int.c **** * Return:
-  79:.\Generated_Source\PSoC4/sw_int.c **** *   None
-  80:.\Generated_Source\PSoC4/sw_int.c **** *
-  81:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
-  82:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_StartEx(cyisraddress address)
-  83:.\Generated_Source\PSoC4/sw_int.c **** {
-  64              		.loc 1 83 0
+  75:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+  76:.\Generated_Source\PSoC4/sw_int.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
+  77:.\Generated_Source\PSoC4/sw_int.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
+  78:.\Generated_Source\PSoC4/sw_int.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
+  79:.\Generated_Source\PSoC4/sw_int.c **** *  the interrupt to the interrupt controller.
+  80:.\Generated_Source\PSoC4/sw_int.c **** *  
+  81:.\Generated_Source\PSoC4/sw_int.c **** *  When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+  82:.\Generated_Source\PSoC4/sw_int.c **** *  used to provide consistent definition across compilers:
+  83:.\Generated_Source\PSoC4/sw_int.c **** *  
+  84:.\Generated_Source\PSoC4/sw_int.c **** *  Function definition example:
+  85:.\Generated_Source\PSoC4/sw_int.c **** *   CY_ISR(MyISR)
+  86:.\Generated_Source\PSoC4/sw_int.c **** *   {
+  87:.\Generated_Source\PSoC4/sw_int.c **** *   }
+  88:.\Generated_Source\PSoC4/sw_int.c **** *   Function prototype example:
+  89:.\Generated_Source\PSoC4/sw_int.c **** *   CY_ISR_PROTO(MyISR);
+  90:.\Generated_Source\PSoC4/sw_int.c **** *
+  91:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:  
+  92:.\Generated_Source\PSoC4/sw_int.c **** *   address: Address of the ISR to set in the interrupt vector table.
+  93:.\Generated_Source\PSoC4/sw_int.c **** *
+  94:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+  95:.\Generated_Source\PSoC4/sw_int.c **** *   None
+  96:.\Generated_Source\PSoC4/sw_int.c **** *
+  97:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+  98:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_StartEx(cyisraddress address)
+  99:.\Generated_Source\PSoC4/sw_int.c **** {
+  64              		.loc 1 99 0
   65              		.cfi_startproc
   66 0000 80B5     		push	{r7, lr}
   67              		.cfi_def_cfa_offset 8
@@ -162,35 +178,35 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
   70 0002 82B0     		sub	sp, sp, #8
   71              		.cfi_def_cfa_offset 16
   72 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 4
+
+
   73              		.cfi_def_cfa_register 7
   74 0006 7860     		str	r0, [r7, #4]
-  84:.\Generated_Source\PSoC4/sw_int.c ****     /* For all we know the interrupt is active. */
-  85:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_Disable();
-  75              		.loc 1 85 0
+ 100:.\Generated_Source\PSoC4/sw_int.c ****     /* For all we know the interrupt is active. */
+ 101:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_Disable();
+  75              		.loc 1 101 0
   76 0008 FFF7FEFF 		bl	sw_int_Disable
-  86:.\Generated_Source\PSoC4/sw_int.c **** 
-  87:.\Generated_Source\PSoC4/sw_int.c ****     /* Set the ISR to point to the sw_int Interrupt. */
-  88:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_SetVector(address);
-  77              		.loc 1 88 0
+ 102:.\Generated_Source\PSoC4/sw_int.c **** 
+ 103:.\Generated_Source\PSoC4/sw_int.c ****     /* Set the ISR to point to the sw_int Interrupt. */
+ 104:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_SetVector(address);
+  77              		.loc 1 104 0
   78 000c 7B68     		ldr	r3, [r7, #4]
   79 000e 181C     		mov	r0, r3
   80 0010 FFF7FEFF 		bl	sw_int_SetVector
-  89:.\Generated_Source\PSoC4/sw_int.c **** 
-  90:.\Generated_Source\PSoC4/sw_int.c ****     /* Set the priority. */
-  91:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_SetPriority((uint8)sw_int_INTC_PRIOR_NUMBER);
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 4
-
-
-  81              		.loc 1 91 0
+ 105:.\Generated_Source\PSoC4/sw_int.c **** 
+ 106:.\Generated_Source\PSoC4/sw_int.c ****     /* Set the priority. */
+ 107:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_SetPriority((uint8)sw_int_INTC_PRIOR_NUMBER);
+  81              		.loc 1 107 0
   82 0014 0320     		mov	r0, #3
   83 0016 FFF7FEFF 		bl	sw_int_SetPriority
-  92:.\Generated_Source\PSoC4/sw_int.c **** 
-  93:.\Generated_Source\PSoC4/sw_int.c ****     /* Enable it. */
-  94:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_Enable();
-  84              		.loc 1 94 0
+ 108:.\Generated_Source\PSoC4/sw_int.c **** 
+ 109:.\Generated_Source\PSoC4/sw_int.c ****     /* Enable it. */
+ 110:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_Enable();
+  84              		.loc 1 110 0
   85 001a FFF7FEFF 		bl	sw_int_Enable
-  95:.\Generated_Source\PSoC4/sw_int.c **** }
-  86              		.loc 1 95 0
+ 111:.\Generated_Source\PSoC4/sw_int.c **** }
+  86              		.loc 1 111 0
   87 001e BD46     		mov	sp, r7
   88 0020 02B0     		add	sp, sp, #8
   89              		@ sp needed
@@ -206,24 +222,28 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
   99              		.type	sw_int_Stop, %function
  100              	sw_int_Stop:
  101              	.LFB2:
-  96:.\Generated_Source\PSoC4/sw_int.c **** 
-  97:.\Generated_Source\PSoC4/sw_int.c **** 
-  98:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
-  99:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_Stop
- 100:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 101:.\Generated_Source\PSoC4/sw_int.c **** *
- 102:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
- 103:.\Generated_Source\PSoC4/sw_int.c **** *   Disables and removes the interrupt.
- 104:.\Generated_Source\PSoC4/sw_int.c **** *
- 105:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:  
- 106:.\Generated_Source\PSoC4/sw_int.c **** *
- 107:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 108:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 109:.\Generated_Source\PSoC4/sw_int.c **** *
- 110:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 111:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_Stop(void)
- 112:.\Generated_Source\PSoC4/sw_int.c **** {
- 102              		.loc 1 112 0
+ 112:.\Generated_Source\PSoC4/sw_int.c **** 
+ 113:.\Generated_Source\PSoC4/sw_int.c **** 
+ 114:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 115:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_Stop
+ 116:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 117:.\Generated_Source\PSoC4/sw_int.c **** *
+ 118:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ 119:.\Generated_Source\PSoC4/sw_int.c **** *   Disables and removes the interrupt.
+ 120:.\Generated_Source\PSoC4/sw_int.c **** *
+ 121:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:  
+ 122:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 123:.\Generated_Source\PSoC4/sw_int.c **** *
+ 124:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 125:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 126:.\Generated_Source\PSoC4/sw_int.c **** *
+ 127:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 5
+
+
+ 128:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_Stop(void)
+ 129:.\Generated_Source\PSoC4/sw_int.c **** {
+ 102              		.loc 1 129 0
  103              		.cfi_startproc
  104 0000 80B5     		push	{r7, lr}
  105              		.cfi_def_cfa_offset 8
@@ -231,22 +251,19 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  107              		.cfi_offset 14, -4
  108 0002 00AF     		add	r7, sp, #0
  109              		.cfi_def_cfa_register 7
- 113:.\Generated_Source\PSoC4/sw_int.c ****     /* Disable this interrupt. */
- 114:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_Disable();
- 110              		.loc 1 114 0
+ 130:.\Generated_Source\PSoC4/sw_int.c ****     /* Disable this interrupt. */
+ 131:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_Disable();
+ 110              		.loc 1 131 0
  111 0004 FFF7FEFF 		bl	sw_int_Disable
- 115:.\Generated_Source\PSoC4/sw_int.c **** 
- 116:.\Generated_Source\PSoC4/sw_int.c ****     /* Set the ISR to point to the passive one. */
- 117:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_SetVector(&IntDefaultHandler);
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 5
-
-
- 112              		.loc 1 117 0
+ 132:.\Generated_Source\PSoC4/sw_int.c **** 
+ 133:.\Generated_Source\PSoC4/sw_int.c ****     /* Set the ISR to point to the passive one. */
+ 134:.\Generated_Source\PSoC4/sw_int.c ****     sw_int_SetVector(&IntDefaultHandler);
+ 112              		.loc 1 134 0
  113 0008 024B     		ldr	r3, .L6
  114 000a 181C     		mov	r0, r3
  115 000c FFF7FEFF 		bl	sw_int_SetVector
- 118:.\Generated_Source\PSoC4/sw_int.c **** }
- 116              		.loc 1 118 0
+ 135:.\Generated_Source\PSoC4/sw_int.c **** }
+ 116              		.loc 1 135 0
  117 0010 BD46     		mov	sp, r7
  118              		@ sp needed
  119 0012 80BD     		pop	{r7, pc}
@@ -265,28 +282,34 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  132              		.type	sw_int_Interrupt, %function
  133              	sw_int_Interrupt:
  134              	.LFB3:
- 119:.\Generated_Source\PSoC4/sw_int.c **** 
- 120:.\Generated_Source\PSoC4/sw_int.c **** 
- 121:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
- 122:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_Interrupt
- 123:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 124:.\Generated_Source\PSoC4/sw_int.c **** *
- 125:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
- 126:.\Generated_Source\PSoC4/sw_int.c **** *   The default Interrupt Service Routine for sw_int.
- 127:.\Generated_Source\PSoC4/sw_int.c **** *
- 128:.\Generated_Source\PSoC4/sw_int.c **** *   Add custom code between the coments to keep the next version of this file
- 129:.\Generated_Source\PSoC4/sw_int.c **** *   from over writting your code.
- 130:.\Generated_Source\PSoC4/sw_int.c **** *
- 131:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:  
- 132:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 133:.\Generated_Source\PSoC4/sw_int.c **** *
- 134:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 135:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 136:.\Generated_Source\PSoC4/sw_int.c **** *
- 137:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 138:.\Generated_Source\PSoC4/sw_int.c **** CY_ISR(sw_int_Interrupt)
- 139:.\Generated_Source\PSoC4/sw_int.c **** {
- 135              		.loc 1 139 0
+ 136:.\Generated_Source\PSoC4/sw_int.c **** 
+ 137:.\Generated_Source\PSoC4/sw_int.c **** 
+ 138:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 139:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_Interrupt
+ 140:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 141:.\Generated_Source\PSoC4/sw_int.c **** *
+ 142:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ 143:.\Generated_Source\PSoC4/sw_int.c **** *   The default Interrupt Service Routine for sw_int.
+ 144:.\Generated_Source\PSoC4/sw_int.c **** *
+ 145:.\Generated_Source\PSoC4/sw_int.c **** *   Add custom code between the START and END comments to keep the next version
+ 146:.\Generated_Source\PSoC4/sw_int.c **** *   of this file from over-writing your code.
+ 147:.\Generated_Source\PSoC4/sw_int.c **** *
+ 148:.\Generated_Source\PSoC4/sw_int.c **** *   Note You may use either the default ISR by using this API, or you may define
+ 149:.\Generated_Source\PSoC4/sw_int.c **** *   your own separate ISR through ISR_StartEx().
+ 150:.\Generated_Source\PSoC4/sw_int.c **** *
+ 151:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:  
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 6
+
+
+ 152:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 153:.\Generated_Source\PSoC4/sw_int.c **** *
+ 154:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 155:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 156:.\Generated_Source\PSoC4/sw_int.c **** *
+ 157:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ 158:.\Generated_Source\PSoC4/sw_int.c **** CY_ISR(sw_int_Interrupt)
+ 159:.\Generated_Source\PSoC4/sw_int.c **** {
+ 135              		.loc 1 159 0
  136              		.cfi_startproc
  137 0000 80B5     		push	{r7, lr}
  138              		.cfi_def_cfa_offset 8
@@ -294,15 +317,12 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  140              		.cfi_offset 14, -4
  141 0002 00AF     		add	r7, sp, #0
  142              		.cfi_def_cfa_register 7
- 140:.\Generated_Source\PSoC4/sw_int.c ****     /*  Place your Interrupt code here. */
- 141:.\Generated_Source\PSoC4/sw_int.c ****     /* `#START sw_int_Interrupt` */
- 142:.\Generated_Source\PSoC4/sw_int.c **** 
- 143:.\Generated_Source\PSoC4/sw_int.c ****     /* `#END` */
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 6
-
-
- 144:.\Generated_Source\PSoC4/sw_int.c **** }
- 143              		.loc 1 144 0
+ 160:.\Generated_Source\PSoC4/sw_int.c ****     /*  Place your Interrupt code here. */
+ 161:.\Generated_Source\PSoC4/sw_int.c ****     /* `#START sw_int_Interrupt` */
+ 162:.\Generated_Source\PSoC4/sw_int.c **** 
+ 163:.\Generated_Source\PSoC4/sw_int.c ****     /* `#END` */
+ 164:.\Generated_Source\PSoC4/sw_int.c **** }
+ 143              		.loc 1 164 0
  144 0004 BD46     		mov	sp, r7
  145              		@ sp needed
  146 0006 80BD     		pop	{r7, pc}
@@ -317,27 +337,41 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  155              		.type	sw_int_SetVector, %function
  156              	sw_int_SetVector:
  157              	.LFB4:
- 145:.\Generated_Source\PSoC4/sw_int.c **** 
- 146:.\Generated_Source\PSoC4/sw_int.c **** 
- 147:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
- 148:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_SetVector
- 149:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 150:.\Generated_Source\PSoC4/sw_int.c **** *
- 151:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
- 152:.\Generated_Source\PSoC4/sw_int.c **** *   Change the ISR vector for the Interrupt. Note calling sw_int_Start
- 153:.\Generated_Source\PSoC4/sw_int.c **** *   will override any effect this method would have had. To set the vector 
- 154:.\Generated_Source\PSoC4/sw_int.c **** *   before the component has been started use sw_int_StartEx instead.
- 155:.\Generated_Source\PSoC4/sw_int.c **** *
- 156:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
- 157:.\Generated_Source\PSoC4/sw_int.c **** *   address: Address of the ISR to set in the interrupt vector table.
- 158:.\Generated_Source\PSoC4/sw_int.c **** *
- 159:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 160:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 161:.\Generated_Source\PSoC4/sw_int.c **** *
- 162:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 163:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_SetVector(cyisraddress address)
- 164:.\Generated_Source\PSoC4/sw_int.c **** {
- 158              		.loc 1 164 0
+ 165:.\Generated_Source\PSoC4/sw_int.c **** 
+ 166:.\Generated_Source\PSoC4/sw_int.c **** 
+ 167:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 168:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_SetVector
+ 169:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 170:.\Generated_Source\PSoC4/sw_int.c **** *
+ 171:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ 172:.\Generated_Source\PSoC4/sw_int.c **** *   Change the ISR vector for the Interrupt. Note calling sw_int_Start
+ 173:.\Generated_Source\PSoC4/sw_int.c **** *   will override any effect this method would have had. To set the vector 
+ 174:.\Generated_Source\PSoC4/sw_int.c **** *   before the component has been started use sw_int_StartEx instead.
+ 175:.\Generated_Source\PSoC4/sw_int.c **** * 
+ 176:.\Generated_Source\PSoC4/sw_int.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+ 177:.\Generated_Source\PSoC4/sw_int.c **** *   used to provide consistent definition across compilers:
+ 178:.\Generated_Source\PSoC4/sw_int.c **** *
+ 179:.\Generated_Source\PSoC4/sw_int.c **** *   Function definition example:
+ 180:.\Generated_Source\PSoC4/sw_int.c **** *   CY_ISR(MyISR)
+ 181:.\Generated_Source\PSoC4/sw_int.c **** *   {
+ 182:.\Generated_Source\PSoC4/sw_int.c **** *   }
+ 183:.\Generated_Source\PSoC4/sw_int.c **** *
+ 184:.\Generated_Source\PSoC4/sw_int.c **** *   Function prototype example:
+ 185:.\Generated_Source\PSoC4/sw_int.c **** *     CY_ISR_PROTO(MyISR);
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 7
+
+
+ 186:.\Generated_Source\PSoC4/sw_int.c **** *
+ 187:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
+ 188:.\Generated_Source\PSoC4/sw_int.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 189:.\Generated_Source\PSoC4/sw_int.c **** *
+ 190:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 191:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 192:.\Generated_Source\PSoC4/sw_int.c **** *
+ 193:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ 194:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_SetVector(cyisraddress address)
+ 195:.\Generated_Source\PSoC4/sw_int.c **** {
+ 158              		.loc 1 195 0
  159              		.cfi_startproc
  160 0000 80B5     		push	{r7, lr}
  161              		.cfi_def_cfa_offset 8
@@ -348,19 +382,16 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  166 0004 00AF     		add	r7, sp, #0
  167              		.cfi_def_cfa_register 7
  168 0006 7860     		str	r0, [r7, #4]
- 165:.\Generated_Source\PSoC4/sw_int.c ****     CyRamVectors[CYINT_IRQ_BASE + sw_int__INTC_NUMBER] = address;
- 169              		.loc 1 165 0
+ 196:.\Generated_Source\PSoC4/sw_int.c ****     CyRamVectors[CYINT_IRQ_BASE + sw_int__INTC_NUMBER] = address;
+ 169              		.loc 1 196 0
  170 0008 024B     		ldr	r3, .L10
  171 000a 7A68     		ldr	r2, [r7, #4]
- 172 000c 1A64     		str	r2, [r3, #64]
- 166:.\Generated_Source\PSoC4/sw_int.c **** }
- 173              		.loc 1 166 0
+ 172 000c 9A64     		str	r2, [r3, #72]
+ 197:.\Generated_Source\PSoC4/sw_int.c **** }
+ 173              		.loc 1 197 0
  174 000e BD46     		mov	sp, r7
  175 0010 02B0     		add	sp, sp, #8
  176              		@ sp needed
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 7
-
-
  177 0012 80BD     		pop	{r7, pc}
  178              	.L11:
  179              		.align	2
@@ -377,25 +408,28 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  190              		.type	sw_int_GetVector, %function
  191              	sw_int_GetVector:
  192              	.LFB5:
- 167:.\Generated_Source\PSoC4/sw_int.c **** 
- 168:.\Generated_Source\PSoC4/sw_int.c **** 
- 169:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
- 170:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_GetVector
- 171:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 172:.\Generated_Source\PSoC4/sw_int.c **** *
- 173:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
- 174:.\Generated_Source\PSoC4/sw_int.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
- 175:.\Generated_Source\PSoC4/sw_int.c **** *
- 176:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
- 177:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 178:.\Generated_Source\PSoC4/sw_int.c **** *
- 179:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 180:.\Generated_Source\PSoC4/sw_int.c **** *   Address of the ISR in the interrupt vector table.
- 181:.\Generated_Source\PSoC4/sw_int.c **** *
- 182:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 183:.\Generated_Source\PSoC4/sw_int.c **** cyisraddress sw_int_GetVector(void)
- 184:.\Generated_Source\PSoC4/sw_int.c **** {
- 193              		.loc 1 184 0
+ 198:.\Generated_Source\PSoC4/sw_int.c **** 
+ 199:.\Generated_Source\PSoC4/sw_int.c **** 
+ 200:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 201:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_GetVector
+ 202:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 203:.\Generated_Source\PSoC4/sw_int.c **** *
+ 204:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ 205:.\Generated_Source\PSoC4/sw_int.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 206:.\Generated_Source\PSoC4/sw_int.c **** *
+ 207:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 8
+
+
+ 208:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 209:.\Generated_Source\PSoC4/sw_int.c **** *
+ 210:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 211:.\Generated_Source\PSoC4/sw_int.c **** *   Address of the ISR in the interrupt vector table.
+ 212:.\Generated_Source\PSoC4/sw_int.c **** *
+ 213:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ 214:.\Generated_Source\PSoC4/sw_int.c **** cyisraddress sw_int_GetVector(void)
+ 215:.\Generated_Source\PSoC4/sw_int.c **** {
+ 193              		.loc 1 215 0
  194              		.cfi_startproc
  195 0000 80B5     		push	{r7, lr}
  196              		.cfi_def_cfa_offset 8
@@ -403,12 +437,12 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  198              		.cfi_offset 14, -4
  199 0002 00AF     		add	r7, sp, #0
  200              		.cfi_def_cfa_register 7
- 185:.\Generated_Source\PSoC4/sw_int.c ****     return CyRamVectors[CYINT_IRQ_BASE + sw_int__INTC_NUMBER];
- 201              		.loc 1 185 0
+ 216:.\Generated_Source\PSoC4/sw_int.c ****     return CyRamVectors[CYINT_IRQ_BASE + sw_int__INTC_NUMBER];
+ 201              		.loc 1 216 0
  202 0004 024B     		ldr	r3, .L14
- 203 0006 1B6C     		ldr	r3, [r3, #64]
- 186:.\Generated_Source\PSoC4/sw_int.c **** }
- 204              		.loc 1 186 0
+ 203 0006 9B6C     		ldr	r3, [r3, #72]
+ 217:.\Generated_Source\PSoC4/sw_int.c **** }
+ 204              		.loc 1 217 0
  205 0008 181C     		mov	r0, r3
  206 000a BD46     		mov	sp, r7
  207              		@ sp needed
@@ -418,9 +452,6 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  211              	.L14:
  212 0010 00000000 		.word	CyRamVectors
  213              		.cfi_endproc
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 8
-
-
  214              	.LFE5:
  215              		.size	sw_int_GetVector, .-sw_int_GetVector
  216              		.section	.text.sw_int_SetPriority,"ax",%progbits
@@ -431,29 +462,38 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  221              		.type	sw_int_SetPriority, %function
  222              	sw_int_SetPriority:
  223              	.LFB6:
- 187:.\Generated_Source\PSoC4/sw_int.c **** 
- 188:.\Generated_Source\PSoC4/sw_int.c **** 
- 189:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
- 190:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_SetPriority
- 191:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 192:.\Generated_Source\PSoC4/sw_int.c **** *
- 193:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
- 194:.\Generated_Source\PSoC4/sw_int.c **** *   Sets the Priority of the Interrupt. Note calling sw_int_Start
- 195:.\Generated_Source\PSoC4/sw_int.c **** *   or sw_int_StartEx will override any effect this method would 
- 196:.\Generated_Source\PSoC4/sw_int.c **** *   have had. This method should only be called after sw_int_Start or 
- 197:.\Generated_Source\PSoC4/sw_int.c **** *   sw_int_StartEx has been called. To set the initial
- 198:.\Generated_Source\PSoC4/sw_int.c **** *   priority for the component use the cydwr file in the tool.
- 199:.\Generated_Source\PSoC4/sw_int.c **** *
- 200:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
- 201:.\Generated_Source\PSoC4/sw_int.c **** *   priority: Priority of the interrupt. 0 - 3, 0 being the highest.
- 202:.\Generated_Source\PSoC4/sw_int.c **** *
- 203:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 204:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 205:.\Generated_Source\PSoC4/sw_int.c **** *
- 206:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 207:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_SetPriority(uint8 priority)
- 208:.\Generated_Source\PSoC4/sw_int.c **** {
- 224              		.loc 1 208 0
+ 218:.\Generated_Source\PSoC4/sw_int.c **** 
+ 219:.\Generated_Source\PSoC4/sw_int.c **** 
+ 220:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 221:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_SetPriority
+ 222:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 223:.\Generated_Source\PSoC4/sw_int.c **** *
+ 224:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ 225:.\Generated_Source\PSoC4/sw_int.c **** *   Sets the Priority of the Interrupt. 
+ 226:.\Generated_Source\PSoC4/sw_int.c **** *
+ 227:.\Generated_Source\PSoC4/sw_int.c **** *   Note calling sw_int_Start or sw_int_StartEx will 
+ 228:.\Generated_Source\PSoC4/sw_int.c **** *   override any effect this API would have had. This API should only be called
+ 229:.\Generated_Source\PSoC4/sw_int.c **** *   after sw_int_Start or sw_int_StartEx has been called. 
+ 230:.\Generated_Source\PSoC4/sw_int.c **** *   To set the initial priority for the component, use the Design-Wide Resources
+ 231:.\Generated_Source\PSoC4/sw_int.c **** *   Interrupt Editor.
+ 232:.\Generated_Source\PSoC4/sw_int.c **** *
+ 233:.\Generated_Source\PSoC4/sw_int.c **** *   Note This API has no effect on Non-maskable interrupt NMI).
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 9
+
+
+ 234:.\Generated_Source\PSoC4/sw_int.c **** *
+ 235:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
+ 236:.\Generated_Source\PSoC4/sw_int.c **** *   priority: Priority of the interrupt, 0 being the highest priority
+ 237:.\Generated_Source\PSoC4/sw_int.c **** *             PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 238:.\Generated_Source\PSoC4/sw_int.c **** *             PSoC 4: Priority is from 0 to 3.
+ 239:.\Generated_Source\PSoC4/sw_int.c **** *
+ 240:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 241:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 242:.\Generated_Source\PSoC4/sw_int.c **** *
+ 243:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ 244:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_SetPriority(uint8 priority)
+ 245:.\Generated_Source\PSoC4/sw_int.c **** {
+ 224              		.loc 1 245 0
  225              		.cfi_startproc
  226 0000 90B5     		push	{r4, r7, lr}
  227              		.cfi_def_cfa_offset 12
@@ -467,140 +507,139 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  235 0006 021C     		mov	r2, r0
  236 0008 FB1D     		add	r3, r7, #7
  237 000a 1A70     		strb	r2, [r3]
- 209:.\Generated_Source\PSoC4/sw_int.c **** 	uint8 interruptState;
- 210:.\Generated_Source\PSoC4/sw_int.c ****     uint32 priorityOffset = ((sw_int__INTC_NUMBER % 4u) * 8u) + 6u;
- 238              		.loc 1 210 0
- 239 000c 0623     		mov	r3, #6
+ 246:.\Generated_Source\PSoC4/sw_int.c **** 	uint8 interruptState;
+ 247:.\Generated_Source\PSoC4/sw_int.c ****     uint32 priorityOffset = ((sw_int__INTC_NUMBER % 4u) * 8u) + 6u;
+ 238              		.loc 1 247 0
+ 239 000c 1623     		mov	r3, #22
  240 000e FB60     		str	r3, [r7, #12]
- 211:.\Generated_Source\PSoC4/sw_int.c ****     
- 212:.\Generated_Source\PSoC4/sw_int.c **** 	interruptState = CyEnterCriticalSection();
- 241              		.loc 1 212 0
+ 248:.\Generated_Source\PSoC4/sw_int.c ****     
+ 249:.\Generated_Source\PSoC4/sw_int.c **** 	interruptState = CyEnterCriticalSection();
+ 241              		.loc 1 249 0
  242 0010 3C1C     		mov	r4, r7
  243 0012 0B34     		add	r4, r4, #11
  244 0014 FFF7FEFF 		bl	CyEnterCriticalSection
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 9
-
-
  245 0018 031C     		mov	r3, r0
  246 001a 2370     		strb	r3, [r4]
- 213:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_PRIOR = (*sw_int_INTC_PRIOR & (uint32)(~sw_int__INTC_PRIOR_MASK)) |
- 247              		.loc 1 213 0
- 248 001c 0B4B     		ldr	r3, .L17
- 249 001e 0B4A     		ldr	r2, .L17
- 250 0020 1268     		ldr	r2, [r2]
- 251 0022 C021     		mov	r1, #192
- 252 0024 101C     		mov	r0, r2
- 253 0026 8843     		bic	r0, r1
- 254 0028 011C     		mov	r1, r0
- 214:.\Generated_Source\PSoC4/sw_int.c ****                                     ((uint32)priority << priorityOffset);
- 255              		.loc 1 214 0
- 256 002a FA1D     		add	r2, r7, #7
- 257 002c 1078     		ldrb	r0, [r2]
- 258 002e FA68     		ldr	r2, [r7, #12]
- 259 0030 041C     		mov	r4, r0
- 260 0032 9440     		lsl	r4, r4, r2
- 261 0034 221C     		mov	r2, r4
- 213:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_PRIOR = (*sw_int_INTC_PRIOR & (uint32)(~sw_int__INTC_PRIOR_MASK)) |
- 262              		.loc 1 213 0
- 263 0036 0A43     		orr	r2, r1
- 264 0038 1A60     		str	r2, [r3]
- 215:.\Generated_Source\PSoC4/sw_int.c **** 	CyExitCriticalSection(interruptState);
- 265              		.loc 1 215 0
- 266 003a 3B1C     		mov	r3, r7
- 267 003c 0B33     		add	r3, r3, #11
- 268 003e 1B78     		ldrb	r3, [r3]
- 269 0040 181C     		mov	r0, r3
- 270 0042 FFF7FEFF 		bl	CyExitCriticalSection
- 216:.\Generated_Source\PSoC4/sw_int.c **** }
- 271              		.loc 1 216 0
- 272 0046 BD46     		mov	sp, r7
- 273 0048 05B0     		add	sp, sp, #20
- 274              		@ sp needed
- 275 004a 90BD     		pop	{r4, r7, pc}
- 276              	.L18:
- 277              		.align	2
- 278              	.L17:
- 279 004c 00E400E0 		.word	-536812544
- 280              		.cfi_endproc
- 281              	.LFE6:
- 282              		.size	sw_int_SetPriority, .-sw_int_SetPriority
- 283              		.section	.text.sw_int_GetPriority,"ax",%progbits
- 284              		.align	2
- 285              		.global	sw_int_GetPriority
- 286              		.code	16
- 287              		.thumb_func
- 288              		.type	sw_int_GetPriority, %function
- 289              	sw_int_GetPriority:
- 290              	.LFB7:
- 217:.\Generated_Source\PSoC4/sw_int.c **** 
- 218:.\Generated_Source\PSoC4/sw_int.c **** 
- 219:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
- 220:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_GetPriority
- 221:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 222:.\Generated_Source\PSoC4/sw_int.c **** *
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 10
+ 250:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_PRIOR = (*sw_int_INTC_PRIOR & (uint32)(~sw_int__INTC_PRIOR_MASK)) |
+ 247              		.loc 1 250 0
+ 248 001c 0A4B     		ldr	r3, .L17
+ 249 001e 0A4A     		ldr	r2, .L17
+ 250 0020 1168     		ldr	r1, [r2]
+ 251 0022 0A4A     		ldr	r2, .L17+4
+ 252 0024 1140     		and	r1, r2
+ 251:.\Generated_Source\PSoC4/sw_int.c ****                                     ((uint32)priority << priorityOffset);
+ 253              		.loc 1 251 0
+ 254 0026 FA1D     		add	r2, r7, #7
+ 255 0028 1078     		ldrb	r0, [r2]
+ 256 002a FA68     		ldr	r2, [r7, #12]
+ 257 002c 041C     		mov	r4, r0
+ 258 002e 9440     		lsl	r4, r4, r2
+ 259 0030 221C     		mov	r2, r4
+ 250:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_PRIOR = (*sw_int_INTC_PRIOR & (uint32)(~sw_int__INTC_PRIOR_MASK)) |
+ 260              		.loc 1 250 0
+ 261 0032 0A43     		orr	r2, r1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 10
 
 
- 223:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
- 224:.\Generated_Source\PSoC4/sw_int.c **** *   Gets the Priority of the Interrupt.
- 225:.\Generated_Source\PSoC4/sw_int.c **** *
- 226:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
- 227:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 228:.\Generated_Source\PSoC4/sw_int.c **** *
- 229:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 230:.\Generated_Source\PSoC4/sw_int.c **** *   Priority of the interrupt. 0 - 3, 0 being the highest.
- 231:.\Generated_Source\PSoC4/sw_int.c **** *
- 232:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 233:.\Generated_Source\PSoC4/sw_int.c **** uint8 sw_int_GetPriority(void)
- 234:.\Generated_Source\PSoC4/sw_int.c **** {
- 291              		.loc 1 234 0
- 292              		.cfi_startproc
- 293 0000 80B5     		push	{r7, lr}
- 294              		.cfi_def_cfa_offset 8
- 295              		.cfi_offset 7, -8
- 296              		.cfi_offset 14, -4
- 297 0002 82B0     		sub	sp, sp, #8
- 298              		.cfi_def_cfa_offset 16
- 299 0004 00AF     		add	r7, sp, #0
- 300              		.cfi_def_cfa_register 7
- 235:.\Generated_Source\PSoC4/sw_int.c ****     uint32 priority;
- 236:.\Generated_Source\PSoC4/sw_int.c **** 	uint32 priorityOffset = ((sw_int__INTC_NUMBER % 4u) * 8u) + 6u;
- 301              		.loc 1 236 0
- 302 0006 0623     		mov	r3, #6
- 303 0008 7B60     		str	r3, [r7, #4]
- 237:.\Generated_Source\PSoC4/sw_int.c **** 
- 238:.\Generated_Source\PSoC4/sw_int.c ****     priority = (*sw_int_INTC_PRIOR & sw_int__INTC_PRIOR_MASK) >> priorityOffset;
- 304              		.loc 1 238 0
- 305 000a 074B     		ldr	r3, .L21
- 306 000c 1A68     		ldr	r2, [r3]
- 307 000e C023     		mov	r3, #192
- 308 0010 1A40     		and	r2, r3
- 309 0012 7B68     		ldr	r3, [r7, #4]
- 310 0014 111C     		mov	r1, r2
- 311 0016 D940     		lsr	r1, r1, r3
- 312 0018 0B1C     		mov	r3, r1
- 313 001a 3B60     		str	r3, [r7]
- 239:.\Generated_Source\PSoC4/sw_int.c **** 
- 240:.\Generated_Source\PSoC4/sw_int.c ****     return (uint8)priority;
- 314              		.loc 1 240 0
- 315 001c 3B68     		ldr	r3, [r7]
- 316 001e DBB2     		uxtb	r3, r3
- 241:.\Generated_Source\PSoC4/sw_int.c **** }
- 317              		.loc 1 241 0
- 318 0020 181C     		mov	r0, r3
- 319 0022 BD46     		mov	sp, r7
- 320 0024 02B0     		add	sp, sp, #8
+ 262 0034 1A60     		str	r2, [r3]
+ 252:.\Generated_Source\PSoC4/sw_int.c **** 	CyExitCriticalSection(interruptState);
+ 263              		.loc 1 252 0
+ 264 0036 3B1C     		mov	r3, r7
+ 265 0038 0B33     		add	r3, r3, #11
+ 266 003a 1B78     		ldrb	r3, [r3]
+ 267 003c 181C     		mov	r0, r3
+ 268 003e FFF7FEFF 		bl	CyExitCriticalSection
+ 253:.\Generated_Source\PSoC4/sw_int.c **** }
+ 269              		.loc 1 253 0
+ 270 0042 BD46     		mov	sp, r7
+ 271 0044 05B0     		add	sp, sp, #20
+ 272              		@ sp needed
+ 273 0046 90BD     		pop	{r4, r7, pc}
+ 274              	.L18:
+ 275              		.align	2
+ 276              	.L17:
+ 277 0048 00E400E0 		.word	-536812544
+ 278 004c FFFF3FFF 		.word	-12582913
+ 279              		.cfi_endproc
+ 280              	.LFE6:
+ 281              		.size	sw_int_SetPriority, .-sw_int_SetPriority
+ 282              		.section	.text.sw_int_GetPriority,"ax",%progbits
+ 283              		.align	2
+ 284              		.global	sw_int_GetPriority
+ 285              		.code	16
+ 286              		.thumb_func
+ 287              		.type	sw_int_GetPriority, %function
+ 288              	sw_int_GetPriority:
+ 289              	.LFB7:
+ 254:.\Generated_Source\PSoC4/sw_int.c **** 
+ 255:.\Generated_Source\PSoC4/sw_int.c **** 
+ 256:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 257:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_GetPriority
+ 258:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 259:.\Generated_Source\PSoC4/sw_int.c **** *
+ 260:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ 261:.\Generated_Source\PSoC4/sw_int.c **** *   Gets the Priority of the Interrupt.
+ 262:.\Generated_Source\PSoC4/sw_int.c **** *
+ 263:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
+ 264:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 265:.\Generated_Source\PSoC4/sw_int.c **** *
+ 266:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 267:.\Generated_Source\PSoC4/sw_int.c **** *   Priority of the interrupt, 0 being the highest priority
+ 268:.\Generated_Source\PSoC4/sw_int.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 269:.\Generated_Source\PSoC4/sw_int.c **** *    PSoC 4: Priority is from 0 to 3.
+ 270:.\Generated_Source\PSoC4/sw_int.c **** *
+ 271:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ 272:.\Generated_Source\PSoC4/sw_int.c **** uint8 sw_int_GetPriority(void)
+ 273:.\Generated_Source\PSoC4/sw_int.c **** {
+ 290              		.loc 1 273 0
+ 291              		.cfi_startproc
+ 292 0000 80B5     		push	{r7, lr}
+ 293              		.cfi_def_cfa_offset 8
+ 294              		.cfi_offset 7, -8
+ 295              		.cfi_offset 14, -4
+ 296 0002 82B0     		sub	sp, sp, #8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 11
+
+
+ 297              		.cfi_def_cfa_offset 16
+ 298 0004 00AF     		add	r7, sp, #0
+ 299              		.cfi_def_cfa_register 7
+ 274:.\Generated_Source\PSoC4/sw_int.c ****     uint32 priority;
+ 275:.\Generated_Source\PSoC4/sw_int.c **** 	uint32 priorityOffset = ((sw_int__INTC_NUMBER % 4u) * 8u) + 6u;
+ 300              		.loc 1 275 0
+ 301 0006 1623     		mov	r3, #22
+ 302 0008 7B60     		str	r3, [r7, #4]
+ 276:.\Generated_Source\PSoC4/sw_int.c **** 
+ 277:.\Generated_Source\PSoC4/sw_int.c ****     priority = (*sw_int_INTC_PRIOR & sw_int__INTC_PRIOR_MASK) >> priorityOffset;
+ 303              		.loc 1 277 0
+ 304 000a 084B     		ldr	r3, .L21
+ 305 000c 1A68     		ldr	r2, [r3]
+ 306 000e C023     		mov	r3, #192
+ 307 0010 1B04     		lsl	r3, r3, #16
+ 308 0012 1A40     		and	r2, r3
+ 309 0014 7B68     		ldr	r3, [r7, #4]
+ 310 0016 111C     		mov	r1, r2
+ 311 0018 D940     		lsr	r1, r1, r3
+ 312 001a 0B1C     		mov	r3, r1
+ 313 001c 3B60     		str	r3, [r7]
+ 278:.\Generated_Source\PSoC4/sw_int.c **** 
+ 279:.\Generated_Source\PSoC4/sw_int.c ****     return (uint8)priority;
+ 314              		.loc 1 279 0
+ 315 001e 3B68     		ldr	r3, [r7]
+ 316 0020 DBB2     		uxtb	r3, r3
+ 280:.\Generated_Source\PSoC4/sw_int.c **** }
+ 317              		.loc 1 280 0
+ 318 0022 181C     		mov	r0, r3
+ 319 0024 BD46     		mov	sp, r7
+ 320 0026 02B0     		add	sp, sp, #8
  321              		@ sp needed
- 322 0026 80BD     		pop	{r7, pc}
+ 322 0028 80BD     		pop	{r7, pc}
  323              	.L22:
- 324              		.align	2
+ 324 002a C046     		.align	2
  325              	.L21:
- 326 0028 00E400E0 		.word	-536812544
+ 326 002c 00E400E0 		.word	-536812544
  327              		.cfi_endproc
  328              	.LFE7:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 11
-
-
  329              		.size	sw_int_GetPriority, .-sw_int_GetPriority
  330              		.section	.text.sw_int_Enable,"ax",%progbits
  331              		.align	2
@@ -610,25 +649,30 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  335              		.type	sw_int_Enable, %function
  336              	sw_int_Enable:
  337              	.LFB8:
- 242:.\Generated_Source\PSoC4/sw_int.c **** 
- 243:.\Generated_Source\PSoC4/sw_int.c **** 
- 244:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
- 245:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_Enable
- 246:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 247:.\Generated_Source\PSoC4/sw_int.c **** *
- 248:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
- 249:.\Generated_Source\PSoC4/sw_int.c **** *   Enables the interrupt.
- 250:.\Generated_Source\PSoC4/sw_int.c **** *
- 251:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
- 252:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 253:.\Generated_Source\PSoC4/sw_int.c **** *
- 254:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 255:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 256:.\Generated_Source\PSoC4/sw_int.c **** *
- 257:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 258:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_Enable(void)
- 259:.\Generated_Source\PSoC4/sw_int.c **** {
- 338              		.loc 1 259 0
+ 281:.\Generated_Source\PSoC4/sw_int.c **** 
+ 282:.\Generated_Source\PSoC4/sw_int.c **** 
+ 283:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 284:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_Enable
+ 285:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 286:.\Generated_Source\PSoC4/sw_int.c **** *
+ 287:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ 288:.\Generated_Source\PSoC4/sw_int.c **** *   Enables the interrupt to the interrupt controller. Do not call this function
+ 289:.\Generated_Source\PSoC4/sw_int.c **** *   unless ISR_Start() has been called or the functionality of the ISR_Start() 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 12
+
+
+ 290:.\Generated_Source\PSoC4/sw_int.c **** *   function, which sets the vector and the priority, has been called.
+ 291:.\Generated_Source\PSoC4/sw_int.c **** *
+ 292:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
+ 293:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 294:.\Generated_Source\PSoC4/sw_int.c **** *
+ 295:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 296:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 297:.\Generated_Source\PSoC4/sw_int.c **** *
+ 298:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ 299:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_Enable(void)
+ 300:.\Generated_Source\PSoC4/sw_int.c **** {
+ 338              		.loc 1 300 0
  339              		.cfi_startproc
  340 0000 80B5     		push	{r7, lr}
  341              		.cfi_def_cfa_offset 8
@@ -636,14 +680,14 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  343              		.cfi_offset 14, -4
  344 0002 00AF     		add	r7, sp, #0
  345              		.cfi_def_cfa_register 7
- 260:.\Generated_Source\PSoC4/sw_int.c ****     /* Enable the general interrupt. */
- 261:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_SET_EN = sw_int__INTC_MASK;
- 346              		.loc 1 261 0
+ 301:.\Generated_Source\PSoC4/sw_int.c ****     /* Enable the general interrupt. */
+ 302:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_SET_EN = sw_int__INTC_MASK;
+ 346              		.loc 1 302 0
  347 0004 024B     		ldr	r3, .L24
- 348 0006 0122     		mov	r2, #1
+ 348 0006 0422     		mov	r2, #4
  349 0008 1A60     		str	r2, [r3]
- 262:.\Generated_Source\PSoC4/sw_int.c **** }
- 350              		.loc 1 262 0
+ 303:.\Generated_Source\PSoC4/sw_int.c **** }
+ 350              		.loc 1 303 0
  351 000a BD46     		mov	sp, r7
  352              		@ sp needed
  353 000c 80BD     		pop	{r7, pc}
@@ -658,32 +702,32 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  362              		.align	2
  363              		.global	sw_int_GetState
  364              		.code	16
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 12
-
-
  365              		.thumb_func
  366              		.type	sw_int_GetState, %function
  367              	sw_int_GetState:
  368              	.LFB9:
- 263:.\Generated_Source\PSoC4/sw_int.c **** 
- 264:.\Generated_Source\PSoC4/sw_int.c **** 
- 265:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
- 266:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_GetState
- 267:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 268:.\Generated_Source\PSoC4/sw_int.c **** *
- 269:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
- 270:.\Generated_Source\PSoC4/sw_int.c **** *   Gets the state (enabled, disabled) of the Interrupt.
- 271:.\Generated_Source\PSoC4/sw_int.c **** *
- 272:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
- 273:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 274:.\Generated_Source\PSoC4/sw_int.c **** *
- 275:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 276:.\Generated_Source\PSoC4/sw_int.c **** *   1 if enabled, 0 if disabled.
- 277:.\Generated_Source\PSoC4/sw_int.c **** *
- 278:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 279:.\Generated_Source\PSoC4/sw_int.c **** uint8 sw_int_GetState(void)
- 280:.\Generated_Source\PSoC4/sw_int.c **** {
- 369              		.loc 1 280 0
+ 304:.\Generated_Source\PSoC4/sw_int.c **** 
+ 305:.\Generated_Source\PSoC4/sw_int.c **** 
+ 306:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 307:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_GetState
+ 308:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 309:.\Generated_Source\PSoC4/sw_int.c **** *
+ 310:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ 311:.\Generated_Source\PSoC4/sw_int.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 312:.\Generated_Source\PSoC4/sw_int.c **** *
+ 313:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
+ 314:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 315:.\Generated_Source\PSoC4/sw_int.c **** *
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 13
+
+
+ 316:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 317:.\Generated_Source\PSoC4/sw_int.c **** *   1 if enabled, 0 if disabled.
+ 318:.\Generated_Source\PSoC4/sw_int.c **** *
+ 319:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ 320:.\Generated_Source\PSoC4/sw_int.c **** uint8 sw_int_GetState(void)
+ 321:.\Generated_Source\PSoC4/sw_int.c **** {
+ 369              		.loc 1 321 0
  370              		.cfi_startproc
  371 0000 80B5     		push	{r7, lr}
  372              		.cfi_def_cfa_offset 8
@@ -691,1146 +735,1177 @@ ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 1
  374              		.cfi_offset 14, -4
  375 0002 00AF     		add	r7, sp, #0
  376              		.cfi_def_cfa_register 7
- 281:.\Generated_Source\PSoC4/sw_int.c ****     /* Get the state of the general interrupt. */
- 282:.\Generated_Source\PSoC4/sw_int.c ****     return ((*sw_int_INTC_SET_EN & (uint32)sw_int__INTC_MASK) != 0u) ? 1u:0u;
- 377              		.loc 1 282 0
- 378 0004 044B     		ldr	r3, .L28
- 379 0006 1B68     		ldr	r3, [r3]
- 380 0008 DAB2     		uxtb	r2, r3
- 381 000a 0123     		mov	r3, #1
- 382 000c 1340     		and	r3, r2
- 383 000e DBB2     		uxtb	r3, r3
- 283:.\Generated_Source\PSoC4/sw_int.c **** }
- 384              		.loc 1 283 0
- 385 0010 181C     		mov	r0, r3
- 386 0012 BD46     		mov	sp, r7
- 387              		@ sp needed
- 388 0014 80BD     		pop	{r7, pc}
- 389              	.L29:
- 390 0016 C046     		.align	2
- 391              	.L28:
- 392 0018 00E100E0 		.word	-536813312
- 393              		.cfi_endproc
- 394              	.LFE9:
- 395              		.size	sw_int_GetState, .-sw_int_GetState
- 396              		.section	.text.sw_int_Disable,"ax",%progbits
- 397              		.align	2
- 398              		.global	sw_int_Disable
- 399              		.code	16
- 400              		.thumb_func
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 13
-
-
- 401              		.type	sw_int_Disable, %function
- 402              	sw_int_Disable:
- 403              	.LFB10:
- 284:.\Generated_Source\PSoC4/sw_int.c **** 
- 285:.\Generated_Source\PSoC4/sw_int.c **** 
- 286:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
- 287:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_Disable
- 288:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 289:.\Generated_Source\PSoC4/sw_int.c **** *
- 290:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
- 291:.\Generated_Source\PSoC4/sw_int.c **** *   Disables the Interrupt.
- 292:.\Generated_Source\PSoC4/sw_int.c **** *
- 293:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
- 294:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 295:.\Generated_Source\PSoC4/sw_int.c **** *
- 296:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 297:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 298:.\Generated_Source\PSoC4/sw_int.c **** *
- 299:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 300:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_Disable(void)
- 301:.\Generated_Source\PSoC4/sw_int.c **** {
- 404              		.loc 1 301 0
- 405              		.cfi_startproc
- 406 0000 80B5     		push	{r7, lr}
- 407              		.cfi_def_cfa_offset 8
- 408              		.cfi_offset 7, -8
- 409              		.cfi_offset 14, -4
- 410 0002 00AF     		add	r7, sp, #0
- 411              		.cfi_def_cfa_register 7
- 302:.\Generated_Source\PSoC4/sw_int.c ****     /* Disable the general interrupt. */
- 303:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_CLR_EN = sw_int__INTC_MASK;
- 412              		.loc 1 303 0
- 413 0004 024B     		ldr	r3, .L31
- 414 0006 0122     		mov	r2, #1
- 415 0008 1A60     		str	r2, [r3]
- 304:.\Generated_Source\PSoC4/sw_int.c **** }
- 416              		.loc 1 304 0
- 417 000a BD46     		mov	sp, r7
- 418              		@ sp needed
- 419 000c 80BD     		pop	{r7, pc}
- 420              	.L32:
- 421 000e C046     		.align	2
- 422              	.L31:
- 423 0010 80E100E0 		.word	-536813184
- 424              		.cfi_endproc
- 425              	.LFE10:
- 426              		.size	sw_int_Disable, .-sw_int_Disable
- 427              		.section	.text.sw_int_SetPending,"ax",%progbits
- 428              		.align	2
- 429              		.global	sw_int_SetPending
- 430              		.code	16
- 431              		.thumb_func
- 432              		.type	sw_int_SetPending, %function
- 433              	sw_int_SetPending:
- 434              	.LFB11:
- 305:.\Generated_Source\PSoC4/sw_int.c **** 
- 306:.\Generated_Source\PSoC4/sw_int.c **** 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 14
-
-
- 307:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
- 308:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_SetPending
- 309:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 310:.\Generated_Source\PSoC4/sw_int.c **** *
- 311:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
- 312:.\Generated_Source\PSoC4/sw_int.c **** *   Causes the Interrupt to enter the pending state, a software method of
- 313:.\Generated_Source\PSoC4/sw_int.c **** *   generating the interrupt.
- 314:.\Generated_Source\PSoC4/sw_int.c **** *
- 315:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
- 316:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 317:.\Generated_Source\PSoC4/sw_int.c **** *
- 318:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 319:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 320:.\Generated_Source\PSoC4/sw_int.c **** *
- 321:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 322:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_SetPending(void)
- 323:.\Generated_Source\PSoC4/sw_int.c **** {
- 435              		.loc 1 323 0
- 436              		.cfi_startproc
- 437 0000 80B5     		push	{r7, lr}
- 438              		.cfi_def_cfa_offset 8
- 439              		.cfi_offset 7, -8
- 440              		.cfi_offset 14, -4
- 441 0002 00AF     		add	r7, sp, #0
- 442              		.cfi_def_cfa_register 7
- 324:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_SET_PD = sw_int__INTC_MASK;
- 443              		.loc 1 324 0
- 444 0004 024B     		ldr	r3, .L34
- 445 0006 0122     		mov	r2, #1
- 446 0008 1A60     		str	r2, [r3]
- 325:.\Generated_Source\PSoC4/sw_int.c **** }
- 447              		.loc 1 325 0
- 448 000a BD46     		mov	sp, r7
- 449              		@ sp needed
- 450 000c 80BD     		pop	{r7, pc}
- 451              	.L35:
- 452 000e C046     		.align	2
- 453              	.L34:
- 454 0010 00E200E0 		.word	-536813056
- 455              		.cfi_endproc
- 456              	.LFE11:
- 457              		.size	sw_int_SetPending, .-sw_int_SetPending
- 458              		.section	.text.sw_int_ClearPending,"ax",%progbits
- 459              		.align	2
- 460              		.global	sw_int_ClearPending
- 461              		.code	16
- 462              		.thumb_func
- 463              		.type	sw_int_ClearPending, %function
- 464              	sw_int_ClearPending:
- 465              	.LFB12:
+ 322:.\Generated_Source\PSoC4/sw_int.c ****     /* Get the state of the general interrupt. */
+ 323:.\Generated_Source\PSoC4/sw_int.c ****     return ((*sw_int_INTC_SET_EN & (uint32)sw_int__INTC_MASK) != 0u) ? 1u:0u;
+ 377              		.loc 1 323 0
+ 378 0004 054B     		ldr	r3, .L30
+ 379 0006 1A68     		ldr	r2, [r3]
+ 380 0008 0423     		mov	r3, #4
+ 381 000a 1340     		and	r3, r2
+ 382 000c 01D0     		beq	.L27
+ 383              		.loc 1 323 0 is_stmt 0 discriminator 1
+ 384 000e 0123     		mov	r3, #1
+ 385 0010 00E0     		b	.L28
+ 386              	.L27:
+ 387              		.loc 1 323 0 discriminator 2
+ 388 0012 0023     		mov	r3, #0
+ 389              	.L28:
+ 324:.\Generated_Source\PSoC4/sw_int.c **** }
+ 390              		.loc 1 324 0 is_stmt 1 discriminator 3
+ 391 0014 181C     		mov	r0, r3
+ 392 0016 BD46     		mov	sp, r7
+ 393              		@ sp needed
+ 394 0018 80BD     		pop	{r7, pc}
+ 395              	.L31:
+ 396 001a C046     		.align	2
+ 397              	.L30:
+ 398 001c 00E100E0 		.word	-536813312
+ 399              		.cfi_endproc
+ 400              	.LFE9:
+ 401              		.size	sw_int_GetState, .-sw_int_GetState
+ 402              		.section	.text.sw_int_Disable,"ax",%progbits
+ 403              		.align	2
+ 404              		.global	sw_int_Disable
+ 405              		.code	16
+ 406              		.thumb_func
+ 407              		.type	sw_int_Disable, %function
+ 408              	sw_int_Disable:
+ 409              	.LFB10:
+ 325:.\Generated_Source\PSoC4/sw_int.c **** 
  326:.\Generated_Source\PSoC4/sw_int.c **** 
- 327:.\Generated_Source\PSoC4/sw_int.c **** 
- 328:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
- 329:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_ClearPending
- 330:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
- 331:.\Generated_Source\PSoC4/sw_int.c **** *
- 332:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 15
+ 327:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 328:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_Disable
+ 329:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 330:.\Generated_Source\PSoC4/sw_int.c **** *
+ 331:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 14
 
 
- 333:.\Generated_Source\PSoC4/sw_int.c **** *   Clears a pending interrupt.
- 334:.\Generated_Source\PSoC4/sw_int.c **** *
- 335:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
- 336:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 337:.\Generated_Source\PSoC4/sw_int.c **** *
- 338:.\Generated_Source\PSoC4/sw_int.c **** * Return:
- 339:.\Generated_Source\PSoC4/sw_int.c **** *   None
- 340:.\Generated_Source\PSoC4/sw_int.c **** *
- 341:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
- 342:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_ClearPending(void)
- 343:.\Generated_Source\PSoC4/sw_int.c **** {
- 466              		.loc 1 343 0
- 467              		.cfi_startproc
- 468 0000 80B5     		push	{r7, lr}
- 469              		.cfi_def_cfa_offset 8
- 470              		.cfi_offset 7, -8
- 471              		.cfi_offset 14, -4
- 472 0002 00AF     		add	r7, sp, #0
- 473              		.cfi_def_cfa_register 7
- 344:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_CLR_PD = sw_int__INTC_MASK;
- 474              		.loc 1 344 0
- 475 0004 024B     		ldr	r3, .L37
- 476 0006 0122     		mov	r2, #1
- 477 0008 1A60     		str	r2, [r3]
+ 332:.\Generated_Source\PSoC4/sw_int.c **** *   Disables the Interrupt in the interrupt controller.
+ 333:.\Generated_Source\PSoC4/sw_int.c **** *
+ 334:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
+ 335:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 336:.\Generated_Source\PSoC4/sw_int.c **** *
+ 337:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 338:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 339:.\Generated_Source\PSoC4/sw_int.c **** *
+ 340:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ 341:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_Disable(void)
+ 342:.\Generated_Source\PSoC4/sw_int.c **** {
+ 410              		.loc 1 342 0
+ 411              		.cfi_startproc
+ 412 0000 80B5     		push	{r7, lr}
+ 413              		.cfi_def_cfa_offset 8
+ 414              		.cfi_offset 7, -8
+ 415              		.cfi_offset 14, -4
+ 416 0002 00AF     		add	r7, sp, #0
+ 417              		.cfi_def_cfa_register 7
+ 343:.\Generated_Source\PSoC4/sw_int.c ****     /* Disable the general interrupt. */
+ 344:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_CLR_EN = sw_int__INTC_MASK;
+ 418              		.loc 1 344 0
+ 419 0004 024B     		ldr	r3, .L33
+ 420 0006 0422     		mov	r2, #4
+ 421 0008 1A60     		str	r2, [r3]
  345:.\Generated_Source\PSoC4/sw_int.c **** }
- 478              		.loc 1 345 0
- 479 000a BD46     		mov	sp, r7
- 480              		@ sp needed
- 481 000c 80BD     		pop	{r7, pc}
- 482              	.L38:
- 483 000e C046     		.align	2
- 484              	.L37:
- 485 0010 80E200E0 		.word	-536812928
- 486              		.cfi_endproc
- 487              	.LFE12:
- 488              		.size	sw_int_ClearPending, .-sw_int_ClearPending
- 489              		.text
- 490              	.Letext0:
- 491              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
- 492              		.section	.debug_info,"",%progbits
- 493              	.Ldebug_info0:
- 494 0000 3D020000 		.4byte	0x23d
- 495 0004 0400     		.2byte	0x4
- 496 0006 00000000 		.4byte	.Ldebug_abbrev0
- 497 000a 04       		.byte	0x4
- 498 000b 01       		.uleb128 0x1
- 499 000c 7D000000 		.4byte	.LASF33
- 500 0010 01       		.byte	0x1
- 501 0011 BE010000 		.4byte	.LASF34
- 502 0015 F9000000 		.4byte	.LASF35
- 503 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 504 001d 00000000 		.4byte	0
- 505 0021 00000000 		.4byte	.Ldebug_line0
- 506 0025 02       		.uleb128 0x2
- 507 0026 01       		.byte	0x1
- 508 0027 06       		.byte	0x6
- 509 0028 9A020000 		.4byte	.LASF0
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 16
+ 422              		.loc 1 345 0
+ 423 000a BD46     		mov	sp, r7
+ 424              		@ sp needed
+ 425 000c 80BD     		pop	{r7, pc}
+ 426              	.L34:
+ 427 000e C046     		.align	2
+ 428              	.L33:
+ 429 0010 80E100E0 		.word	-536813184
+ 430              		.cfi_endproc
+ 431              	.LFE10:
+ 432              		.size	sw_int_Disable, .-sw_int_Disable
+ 433              		.section	.text.sw_int_SetPending,"ax",%progbits
+ 434              		.align	2
+ 435              		.global	sw_int_SetPending
+ 436              		.code	16
+ 437              		.thumb_func
+ 438              		.type	sw_int_SetPending, %function
+ 439              	sw_int_SetPending:
+ 440              	.LFB11:
+ 346:.\Generated_Source\PSoC4/sw_int.c **** 
+ 347:.\Generated_Source\PSoC4/sw_int.c **** 
+ 348:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 349:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_SetPending
+ 350:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 351:.\Generated_Source\PSoC4/sw_int.c **** *
+ 352:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ 353:.\Generated_Source\PSoC4/sw_int.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 354:.\Generated_Source\PSoC4/sw_int.c **** *   generating the interrupt.
+ 355:.\Generated_Source\PSoC4/sw_int.c **** *
+ 356:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
+ 357:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 15
 
 
- 510 002c 02       		.uleb128 0x2
- 511 002d 01       		.byte	0x1
- 512 002e 08       		.byte	0x8
- 513 002f 3F010000 		.4byte	.LASF1
- 514 0033 02       		.uleb128 0x2
- 515 0034 02       		.byte	0x2
- 516 0035 05       		.byte	0x5
- 517 0036 5E020000 		.4byte	.LASF2
- 518 003a 02       		.uleb128 0x2
- 519 003b 02       		.byte	0x2
- 520 003c 07       		.byte	0x7
- 521 003d 43000000 		.4byte	.LASF3
- 522 0041 02       		.uleb128 0x2
- 523 0042 04       		.byte	0x4
- 524 0043 05       		.byte	0x5
- 525 0044 8B020000 		.4byte	.LASF4
- 526 0048 02       		.uleb128 0x2
- 527 0049 04       		.byte	0x4
- 528 004a 07       		.byte	0x7
- 529 004b 5C010000 		.4byte	.LASF5
- 530 004f 02       		.uleb128 0x2
- 531 0050 08       		.byte	0x8
- 532 0051 05       		.byte	0x5
- 533 0052 4B020000 		.4byte	.LASF6
- 534 0056 02       		.uleb128 0x2
- 535 0057 08       		.byte	0x8
- 536 0058 07       		.byte	0x7
- 537 0059 0D020000 		.4byte	.LASF7
- 538 005d 03       		.uleb128 0x3
- 539 005e 04       		.byte	0x4
- 540 005f 05       		.byte	0x5
- 541 0060 696E7400 		.ascii	"int\000"
- 542 0064 02       		.uleb128 0x2
- 543 0065 04       		.byte	0x4
- 544 0066 07       		.byte	0x7
- 545 0067 E0010000 		.4byte	.LASF8
- 546 006b 04       		.uleb128 0x4
- 547 006c 6E010000 		.4byte	.LASF9
- 548 0070 02       		.byte	0x2
- 549 0071 A1       		.byte	0xa1
- 550 0072 2C000000 		.4byte	0x2c
- 551 0076 04       		.uleb128 0x4
- 552 0077 B7010000 		.4byte	.LASF10
- 553 007b 02       		.byte	0x2
- 554 007c A3       		.byte	0xa3
- 555 007d 48000000 		.4byte	0x48
- 556 0081 02       		.uleb128 0x2
- 557 0082 04       		.byte	0x4
- 558 0083 04       		.byte	0x4
- 559 0084 77000000 		.4byte	.LASF11
- 560 0088 02       		.uleb128 0x2
- 561 0089 08       		.byte	0x8
- 562 008a 04       		.byte	0x4
- 563 008b 9F010000 		.4byte	.LASF12
- 564 008f 02       		.uleb128 0x2
- 565 0090 01       		.byte	0x1
- 566 0091 08       		.byte	0x8
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 17
+ 358:.\Generated_Source\PSoC4/sw_int.c **** *
+ 359:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 360:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 361:.\Generated_Source\PSoC4/sw_int.c **** *
+ 362:.\Generated_Source\PSoC4/sw_int.c **** * Side Effects:
+ 363:.\Generated_Source\PSoC4/sw_int.c **** *   If interrupts are enabled and the interrupt is set up properly, the ISR is
+ 364:.\Generated_Source\PSoC4/sw_int.c **** *   entered (depending on the priority of this interrupt and other pending 
+ 365:.\Generated_Source\PSoC4/sw_int.c **** *   interrupts).
+ 366:.\Generated_Source\PSoC4/sw_int.c **** *
+ 367:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ 368:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_SetPending(void)
+ 369:.\Generated_Source\PSoC4/sw_int.c **** {
+ 441              		.loc 1 369 0
+ 442              		.cfi_startproc
+ 443 0000 80B5     		push	{r7, lr}
+ 444              		.cfi_def_cfa_offset 8
+ 445              		.cfi_offset 7, -8
+ 446              		.cfi_offset 14, -4
+ 447 0002 00AF     		add	r7, sp, #0
+ 448              		.cfi_def_cfa_register 7
+ 370:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_SET_PD = sw_int__INTC_MASK;
+ 449              		.loc 1 370 0
+ 450 0004 024B     		ldr	r3, .L36
+ 451 0006 0422     		mov	r2, #4
+ 452 0008 1A60     		str	r2, [r3]
+ 371:.\Generated_Source\PSoC4/sw_int.c **** }
+ 453              		.loc 1 371 0
+ 454 000a BD46     		mov	sp, r7
+ 455              		@ sp needed
+ 456 000c 80BD     		pop	{r7, pc}
+ 457              	.L37:
+ 458 000e C046     		.align	2
+ 459              	.L36:
+ 460 0010 00E200E0 		.word	-536813056
+ 461              		.cfi_endproc
+ 462              	.LFE11:
+ 463              		.size	sw_int_SetPending, .-sw_int_SetPending
+ 464              		.section	.text.sw_int_ClearPending,"ax",%progbits
+ 465              		.align	2
+ 466              		.global	sw_int_ClearPending
+ 467              		.code	16
+ 468              		.thumb_func
+ 469              		.type	sw_int_ClearPending, %function
+ 470              	sw_int_ClearPending:
+ 471              	.LFB12:
+ 372:.\Generated_Source\PSoC4/sw_int.c **** 
+ 373:.\Generated_Source\PSoC4/sw_int.c **** 
+ 374:.\Generated_Source\PSoC4/sw_int.c **** /*******************************************************************************
+ 375:.\Generated_Source\PSoC4/sw_int.c **** * Function Name: sw_int_ClearPending
+ 376:.\Generated_Source\PSoC4/sw_int.c **** ********************************************************************************
+ 377:.\Generated_Source\PSoC4/sw_int.c **** *
+ 378:.\Generated_Source\PSoC4/sw_int.c **** * Summary:
+ 379:.\Generated_Source\PSoC4/sw_int.c **** *   Clears a pending interrupt in the interrupt controller.
+ 380:.\Generated_Source\PSoC4/sw_int.c **** *
+ 381:.\Generated_Source\PSoC4/sw_int.c **** *   Note Some interrupt sources are clear-on-read and require the block 
+ 382:.\Generated_Source\PSoC4/sw_int.c **** *   interrupt/status register to be read/cleared with the appropriate block API 
+ 383:.\Generated_Source\PSoC4/sw_int.c **** *   (GPIO, UART, and so on). Otherwise the ISR will continue to remain in 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 16
 
 
- 567 0092 59020000 		.4byte	.LASF13
- 568 0096 05       		.uleb128 0x5
- 569 0097 94020000 		.4byte	.LASF14
- 570 009b 02       		.byte	0x2
- 571 009c 4D01     		.2byte	0x14d
- 572 009e A2000000 		.4byte	0xa2
- 573 00a2 06       		.uleb128 0x6
- 574 00a3 76000000 		.4byte	0x76
- 575 00a7 05       		.uleb128 0x5
- 576 00a8 35020000 		.4byte	.LASF15
- 577 00ac 02       		.byte	0x2
- 578 00ad 5D01     		.2byte	0x15d
- 579 00af B3000000 		.4byte	0xb3
- 580 00b3 07       		.uleb128 0x7
- 581 00b4 04       		.byte	0x4
- 582 00b5 B9000000 		.4byte	0xb9
- 583 00b9 08       		.uleb128 0x8
- 584 00ba 02       		.uleb128 0x2
- 585 00bb 04       		.byte	0x4
- 586 00bc 07       		.byte	0x7
- 587 00bd 42020000 		.4byte	.LASF16
- 588 00c1 09       		.uleb128 0x9
- 589 00c2 A6020000 		.4byte	.LASF17
- 590 00c6 01       		.byte	0x1
- 591 00c7 34       		.byte	0x34
- 592 00c8 00000000 		.4byte	.LFB0
- 593 00cc 24000000 		.4byte	.LFE0-.LFB0
- 594 00d0 01       		.uleb128 0x1
- 595 00d1 9C       		.byte	0x9c
- 596 00d2 0A       		.uleb128 0xa
- 597 00d3 34000000 		.4byte	.LASF20
- 598 00d7 01       		.byte	0x1
- 599 00d8 52       		.byte	0x52
- 600 00d9 00000000 		.4byte	.LFB1
- 601 00dd 24000000 		.4byte	.LFE1-.LFB1
- 602 00e1 01       		.uleb128 0x1
- 603 00e2 9C       		.byte	0x9c
- 604 00e3 F6000000 		.4byte	0xf6
- 605 00e7 0B       		.uleb128 0xb
- 606 00e8 20000000 		.4byte	.LASF22
- 607 00ec 01       		.byte	0x1
- 608 00ed 52       		.byte	0x52
- 609 00ee A7000000 		.4byte	0xa7
- 610 00f2 02       		.uleb128 0x2
- 611 00f3 91       		.byte	0x91
- 612 00f4 74       		.sleb128 -12
- 613 00f5 00       		.byte	0
- 614 00f6 09       		.uleb128 0x9
- 615 00f7 28000000 		.4byte	.LASF18
- 616 00fb 01       		.byte	0x1
- 617 00fc 6F       		.byte	0x6f
- 618 00fd 00000000 		.4byte	.LFB2
- 619 0101 18000000 		.4byte	.LFE2-.LFB2
- 620 0105 01       		.uleb128 0x1
- 621 0106 9C       		.byte	0x9c
- 622 0107 0C       		.uleb128 0xc
- 623 0108 24020000 		.4byte	.LASF19
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 18
+ 384:.\Generated_Source\PSoC4/sw_int.c **** *   pending state even though the interrupt itself is cleared using this API.
+ 385:.\Generated_Source\PSoC4/sw_int.c **** *
+ 386:.\Generated_Source\PSoC4/sw_int.c **** * Parameters:
+ 387:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 388:.\Generated_Source\PSoC4/sw_int.c **** *
+ 389:.\Generated_Source\PSoC4/sw_int.c **** * Return:
+ 390:.\Generated_Source\PSoC4/sw_int.c **** *   None
+ 391:.\Generated_Source\PSoC4/sw_int.c **** *
+ 392:.\Generated_Source\PSoC4/sw_int.c **** *******************************************************************************/
+ 393:.\Generated_Source\PSoC4/sw_int.c **** void sw_int_ClearPending(void)
+ 394:.\Generated_Source\PSoC4/sw_int.c **** {
+ 472              		.loc 1 394 0
+ 473              		.cfi_startproc
+ 474 0000 80B5     		push	{r7, lr}
+ 475              		.cfi_def_cfa_offset 8
+ 476              		.cfi_offset 7, -8
+ 477              		.cfi_offset 14, -4
+ 478 0002 00AF     		add	r7, sp, #0
+ 479              		.cfi_def_cfa_register 7
+ 395:.\Generated_Source\PSoC4/sw_int.c ****     *sw_int_INTC_CLR_PD = sw_int__INTC_MASK;
+ 480              		.loc 1 395 0
+ 481 0004 024B     		ldr	r3, .L39
+ 482 0006 0422     		mov	r2, #4
+ 483 0008 1A60     		str	r2, [r3]
+ 396:.\Generated_Source\PSoC4/sw_int.c **** }
+ 484              		.loc 1 396 0
+ 485 000a BD46     		mov	sp, r7
+ 486              		@ sp needed
+ 487 000c 80BD     		pop	{r7, pc}
+ 488              	.L40:
+ 489 000e C046     		.align	2
+ 490              	.L39:
+ 491 0010 80E200E0 		.word	-536812928
+ 492              		.cfi_endproc
+ 493              	.LFE12:
+ 494              		.size	sw_int_ClearPending, .-sw_int_ClearPending
+ 495              		.text
+ 496              	.Letext0:
+ 497              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
+ 498              		.section	.debug_info,"",%progbits
+ 499              	.Ldebug_info0:
+ 500 0000 40020000 		.4byte	0x240
+ 501 0004 0400     		.2byte	0x4
+ 502 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 503 000a 04       		.byte	0x4
+ 504 000b 01       		.uleb128 0x1
+ 505 000c 7D000000 		.4byte	.LASF33
+ 506 0010 01       		.byte	0x1
+ 507 0011 BE010000 		.4byte	.LASF34
+ 508 0015 F9000000 		.4byte	.LASF35
+ 509 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 510 001d 00000000 		.4byte	0
+ 511 0021 00000000 		.4byte	.Ldebug_line0
+ 512 0025 02       		.uleb128 0x2
+ 513 0026 01       		.byte	0x1
+ 514 0027 06       		.byte	0x6
+ 515 0028 9A020000 		.4byte	.LASF0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 17
 
 
- 624 010c 01       		.byte	0x1
- 625 010d 8A       		.byte	0x8a
- 626 010e 00000000 		.4byte	.LFB3
- 627 0112 08000000 		.4byte	.LFE3-.LFB3
- 628 0116 01       		.uleb128 0x1
- 629 0117 9C       		.byte	0x9c
- 630 0118 0D       		.uleb128 0xd
- 631 0119 66000000 		.4byte	.LASF21
- 632 011d 01       		.byte	0x1
- 633 011e A3       		.byte	0xa3
- 634 011f 00000000 		.4byte	.LFB4
- 635 0123 18000000 		.4byte	.LFE4-.LFB4
- 636 0127 01       		.uleb128 0x1
- 637 0128 9C       		.byte	0x9c
- 638 0129 3C010000 		.4byte	0x13c
- 639 012d 0B       		.uleb128 0xb
- 640 012e 20000000 		.4byte	.LASF22
- 641 0132 01       		.byte	0x1
- 642 0133 A3       		.byte	0xa3
- 643 0134 A7000000 		.4byte	0xa7
- 644 0138 02       		.uleb128 0x2
- 645 0139 91       		.byte	0x91
- 646 013a 74       		.sleb128 -12
- 647 013b 00       		.byte	0
- 648 013c 0E       		.uleb128 0xe
- 649 013d A6010000 		.4byte	.LASF28
- 650 0141 01       		.byte	0x1
- 651 0142 B7       		.byte	0xb7
- 652 0143 A7000000 		.4byte	0xa7
- 653 0147 00000000 		.4byte	.LFB5
- 654 014b 14000000 		.4byte	.LFE5-.LFB5
- 655 014f 01       		.uleb128 0x1
- 656 0150 9C       		.byte	0x9c
- 657 0151 0A       		.uleb128 0xa
- 658 0152 8C010000 		.4byte	.LASF23
- 659 0156 01       		.byte	0x1
- 660 0157 CF       		.byte	0xcf
- 661 0158 00000000 		.4byte	.LFB6
- 662 015c 50000000 		.4byte	.LFE6-.LFB6
- 663 0160 01       		.uleb128 0x1
- 664 0161 9C       		.byte	0x9c
- 665 0162 91010000 		.4byte	0x191
- 666 0166 0B       		.uleb128 0xb
- 667 0167 74010000 		.4byte	.LASF24
- 668 016b 01       		.byte	0x1
- 669 016c CF       		.byte	0xcf
- 670 016d 6B000000 		.4byte	0x6b
- 671 0171 02       		.uleb128 0x2
- 672 0172 91       		.byte	0x91
- 673 0173 67       		.sleb128 -25
- 674 0174 0F       		.uleb128 0xf
- 675 0175 4D010000 		.4byte	.LASF25
- 676 0179 01       		.byte	0x1
- 677 017a D1       		.byte	0xd1
- 678 017b 6B000000 		.4byte	0x6b
- 679 017f 02       		.uleb128 0x2
- 680 0180 91       		.byte	0x91
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 19
+ 516 002c 02       		.uleb128 0x2
+ 517 002d 01       		.byte	0x1
+ 518 002e 08       		.byte	0x8
+ 519 002f 3F010000 		.4byte	.LASF1
+ 520 0033 02       		.uleb128 0x2
+ 521 0034 02       		.byte	0x2
+ 522 0035 05       		.byte	0x5
+ 523 0036 5E020000 		.4byte	.LASF2
+ 524 003a 02       		.uleb128 0x2
+ 525 003b 02       		.byte	0x2
+ 526 003c 07       		.byte	0x7
+ 527 003d 43000000 		.4byte	.LASF3
+ 528 0041 02       		.uleb128 0x2
+ 529 0042 04       		.byte	0x4
+ 530 0043 05       		.byte	0x5
+ 531 0044 8B020000 		.4byte	.LASF4
+ 532 0048 02       		.uleb128 0x2
+ 533 0049 04       		.byte	0x4
+ 534 004a 07       		.byte	0x7
+ 535 004b 5C010000 		.4byte	.LASF5
+ 536 004f 02       		.uleb128 0x2
+ 537 0050 08       		.byte	0x8
+ 538 0051 05       		.byte	0x5
+ 539 0052 4B020000 		.4byte	.LASF6
+ 540 0056 02       		.uleb128 0x2
+ 541 0057 08       		.byte	0x8
+ 542 0058 07       		.byte	0x7
+ 543 0059 0D020000 		.4byte	.LASF7
+ 544 005d 03       		.uleb128 0x3
+ 545 005e 04       		.byte	0x4
+ 546 005f 05       		.byte	0x5
+ 547 0060 696E7400 		.ascii	"int\000"
+ 548 0064 02       		.uleb128 0x2
+ 549 0065 04       		.byte	0x4
+ 550 0066 07       		.byte	0x7
+ 551 0067 E0010000 		.4byte	.LASF8
+ 552 006b 04       		.uleb128 0x4
+ 553 006c 6E010000 		.4byte	.LASF9
+ 554 0070 02       		.byte	0x2
+ 555 0071 A1       		.byte	0xa1
+ 556 0072 2C000000 		.4byte	0x2c
+ 557 0076 04       		.uleb128 0x4
+ 558 0077 B7010000 		.4byte	.LASF10
+ 559 007b 02       		.byte	0x2
+ 560 007c A3       		.byte	0xa3
+ 561 007d 48000000 		.4byte	0x48
+ 562 0081 02       		.uleb128 0x2
+ 563 0082 04       		.byte	0x4
+ 564 0083 04       		.byte	0x4
+ 565 0084 77000000 		.4byte	.LASF11
+ 566 0088 02       		.uleb128 0x2
+ 567 0089 08       		.byte	0x8
+ 568 008a 04       		.byte	0x4
+ 569 008b 9F010000 		.4byte	.LASF12
+ 570 008f 02       		.uleb128 0x2
+ 571 0090 01       		.byte	0x1
+ 572 0091 08       		.byte	0x8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 18
 
 
- 681 0181 6B       		.sleb128 -21
- 682 0182 0F       		.uleb128 0xf
- 683 0183 7C020000 		.4byte	.LASF26
- 684 0187 01       		.byte	0x1
- 685 0188 D2       		.byte	0xd2
- 686 0189 76000000 		.4byte	0x76
- 687 018d 02       		.uleb128 0x2
- 688 018e 91       		.byte	0x91
- 689 018f 6C       		.sleb128 -20
- 690 0190 00       		.byte	0
- 691 0191 10       		.uleb128 0x10
- 692 0192 00000000 		.4byte	.LASF36
- 693 0196 01       		.byte	0x1
- 694 0197 E9       		.byte	0xe9
- 695 0198 6B000000 		.4byte	0x6b
- 696 019c 00000000 		.4byte	.LFB7
- 697 01a0 2C000000 		.4byte	.LFE7-.LFB7
- 698 01a4 01       		.uleb128 0x1
- 699 01a5 9C       		.byte	0x9c
- 700 01a6 C7010000 		.4byte	0x1c7
- 701 01aa 0F       		.uleb128 0xf
- 702 01ab 74010000 		.4byte	.LASF24
- 703 01af 01       		.byte	0x1
- 704 01b0 EB       		.byte	0xeb
- 705 01b1 76000000 		.4byte	0x76
- 706 01b5 02       		.uleb128 0x2
- 707 01b6 91       		.byte	0x91
- 708 01b7 70       		.sleb128 -16
- 709 01b8 0F       		.uleb128 0xf
- 710 01b9 7C020000 		.4byte	.LASF26
- 711 01bd 01       		.byte	0x1
- 712 01be EC       		.byte	0xec
- 713 01bf 76000000 		.4byte	0x76
- 714 01c3 02       		.uleb128 0x2
- 715 01c4 91       		.byte	0x91
- 716 01c5 74       		.sleb128 -12
- 717 01c6 00       		.byte	0
- 718 01c7 11       		.uleb128 0x11
- 719 01c8 ED010000 		.4byte	.LASF27
- 720 01cc 01       		.byte	0x1
- 721 01cd 0201     		.2byte	0x102
- 722 01cf 00000000 		.4byte	.LFB8
- 723 01d3 14000000 		.4byte	.LFE8-.LFB8
- 724 01d7 01       		.uleb128 0x1
- 725 01d8 9C       		.byte	0x9c
- 726 01d9 12       		.uleb128 0x12
- 727 01da 56000000 		.4byte	.LASF29
- 728 01de 01       		.byte	0x1
- 729 01df 1701     		.2byte	0x117
- 730 01e1 6B000000 		.4byte	0x6b
- 731 01e5 00000000 		.4byte	.LFB9
- 732 01e9 1C000000 		.4byte	.LFE9-.LFB9
- 733 01ed 01       		.uleb128 0x1
- 734 01ee 9C       		.byte	0x9c
- 735 01ef 11       		.uleb128 0x11
- 736 01f0 7D010000 		.4byte	.LASF30
- 737 01f4 01       		.byte	0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 20
+ 573 0092 59020000 		.4byte	.LASF13
+ 574 0096 05       		.uleb128 0x5
+ 575 0097 94020000 		.4byte	.LASF14
+ 576 009b 02       		.byte	0x2
+ 577 009c 4D01     		.2byte	0x14d
+ 578 009e A2000000 		.4byte	0xa2
+ 579 00a2 06       		.uleb128 0x6
+ 580 00a3 76000000 		.4byte	0x76
+ 581 00a7 05       		.uleb128 0x5
+ 582 00a8 35020000 		.4byte	.LASF15
+ 583 00ac 02       		.byte	0x2
+ 584 00ad 5D01     		.2byte	0x15d
+ 585 00af B3000000 		.4byte	0xb3
+ 586 00b3 07       		.uleb128 0x7
+ 587 00b4 04       		.byte	0x4
+ 588 00b5 B9000000 		.4byte	0xb9
+ 589 00b9 08       		.uleb128 0x8
+ 590 00ba 02       		.uleb128 0x2
+ 591 00bb 04       		.byte	0x4
+ 592 00bc 07       		.byte	0x7
+ 593 00bd 42020000 		.4byte	.LASF16
+ 594 00c1 09       		.uleb128 0x9
+ 595 00c2 A6020000 		.4byte	.LASF17
+ 596 00c6 01       		.byte	0x1
+ 597 00c7 37       		.byte	0x37
+ 598 00c8 00000000 		.4byte	.LFB0
+ 599 00cc 24000000 		.4byte	.LFE0-.LFB0
+ 600 00d0 01       		.uleb128 0x1
+ 601 00d1 9C       		.byte	0x9c
+ 602 00d2 0A       		.uleb128 0xa
+ 603 00d3 34000000 		.4byte	.LASF20
+ 604 00d7 01       		.byte	0x1
+ 605 00d8 62       		.byte	0x62
+ 606 00d9 00000000 		.4byte	.LFB1
+ 607 00dd 24000000 		.4byte	.LFE1-.LFB1
+ 608 00e1 01       		.uleb128 0x1
+ 609 00e2 9C       		.byte	0x9c
+ 610 00e3 F6000000 		.4byte	0xf6
+ 611 00e7 0B       		.uleb128 0xb
+ 612 00e8 20000000 		.4byte	.LASF22
+ 613 00ec 01       		.byte	0x1
+ 614 00ed 62       		.byte	0x62
+ 615 00ee A7000000 		.4byte	0xa7
+ 616 00f2 02       		.uleb128 0x2
+ 617 00f3 91       		.byte	0x91
+ 618 00f4 74       		.sleb128 -12
+ 619 00f5 00       		.byte	0
+ 620 00f6 09       		.uleb128 0x9
+ 621 00f7 28000000 		.4byte	.LASF18
+ 622 00fb 01       		.byte	0x1
+ 623 00fc 80       		.byte	0x80
+ 624 00fd 00000000 		.4byte	.LFB2
+ 625 0101 18000000 		.4byte	.LFE2-.LFB2
+ 626 0105 01       		.uleb128 0x1
+ 627 0106 9C       		.byte	0x9c
+ 628 0107 0C       		.uleb128 0xc
+ 629 0108 24020000 		.4byte	.LASF19
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 19
 
 
- 738 01f5 2C01     		.2byte	0x12c
- 739 01f7 00000000 		.4byte	.LFB10
- 740 01fb 14000000 		.4byte	.LFE10-.LFB10
- 741 01ff 01       		.uleb128 0x1
- 742 0200 9C       		.byte	0x9c
- 743 0201 11       		.uleb128 0x11
- 744 0202 FB010000 		.4byte	.LASF31
- 745 0206 01       		.byte	0x1
- 746 0207 4201     		.2byte	0x142
- 747 0209 00000000 		.4byte	.LFB11
- 748 020d 14000000 		.4byte	.LFE11-.LFB11
- 749 0211 01       		.uleb128 0x1
- 750 0212 9C       		.byte	0x9c
- 751 0213 11       		.uleb128 0x11
- 752 0214 68020000 		.4byte	.LASF32
- 753 0218 01       		.byte	0x1
- 754 0219 5601     		.2byte	0x156
- 755 021b 00000000 		.4byte	.LFB12
- 756 021f 14000000 		.4byte	.LFE12-.LFB12
- 757 0223 01       		.uleb128 0x1
- 758 0224 9C       		.byte	0x9c
- 759 0225 13       		.uleb128 0x13
- 760 0226 A7000000 		.4byte	0xa7
- 761 022a 35020000 		.4byte	0x235
- 762 022e 14       		.uleb128 0x14
- 763 022f BA000000 		.4byte	0xba
- 764 0233 2F       		.byte	0x2f
- 765 0234 00       		.byte	0
- 766 0235 15       		.uleb128 0x15
- 767 0236 13000000 		.4byte	.LASF37
- 768 023a 01       		.byte	0x1
- 769 023b 20       		.byte	0x20
- 770 023c 25020000 		.4byte	0x225
- 771 0240 00       		.byte	0
- 772              		.section	.debug_abbrev,"",%progbits
- 773              	.Ldebug_abbrev0:
- 774 0000 01       		.uleb128 0x1
- 775 0001 11       		.uleb128 0x11
- 776 0002 01       		.byte	0x1
- 777 0003 25       		.uleb128 0x25
- 778 0004 0E       		.uleb128 0xe
- 779 0005 13       		.uleb128 0x13
- 780 0006 0B       		.uleb128 0xb
- 781 0007 03       		.uleb128 0x3
- 782 0008 0E       		.uleb128 0xe
- 783 0009 1B       		.uleb128 0x1b
- 784 000a 0E       		.uleb128 0xe
- 785 000b 55       		.uleb128 0x55
- 786 000c 17       		.uleb128 0x17
- 787 000d 11       		.uleb128 0x11
- 788 000e 01       		.uleb128 0x1
- 789 000f 10       		.uleb128 0x10
- 790 0010 17       		.uleb128 0x17
- 791 0011 00       		.byte	0
- 792 0012 00       		.byte	0
- 793 0013 02       		.uleb128 0x2
- 794 0014 24       		.uleb128 0x24
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 21
+ 630 010c 01       		.byte	0x1
+ 631 010d 9E       		.byte	0x9e
+ 632 010e 00000000 		.4byte	.LFB3
+ 633 0112 08000000 		.4byte	.LFE3-.LFB3
+ 634 0116 01       		.uleb128 0x1
+ 635 0117 9C       		.byte	0x9c
+ 636 0118 0D       		.uleb128 0xd
+ 637 0119 66000000 		.4byte	.LASF21
+ 638 011d 01       		.byte	0x1
+ 639 011e C2       		.byte	0xc2
+ 640 011f 00000000 		.4byte	.LFB4
+ 641 0123 18000000 		.4byte	.LFE4-.LFB4
+ 642 0127 01       		.uleb128 0x1
+ 643 0128 9C       		.byte	0x9c
+ 644 0129 3C010000 		.4byte	0x13c
+ 645 012d 0B       		.uleb128 0xb
+ 646 012e 20000000 		.4byte	.LASF22
+ 647 0132 01       		.byte	0x1
+ 648 0133 C2       		.byte	0xc2
+ 649 0134 A7000000 		.4byte	0xa7
+ 650 0138 02       		.uleb128 0x2
+ 651 0139 91       		.byte	0x91
+ 652 013a 74       		.sleb128 -12
+ 653 013b 00       		.byte	0
+ 654 013c 0E       		.uleb128 0xe
+ 655 013d A6010000 		.4byte	.LASF28
+ 656 0141 01       		.byte	0x1
+ 657 0142 D6       		.byte	0xd6
+ 658 0143 A7000000 		.4byte	0xa7
+ 659 0147 00000000 		.4byte	.LFB5
+ 660 014b 14000000 		.4byte	.LFE5-.LFB5
+ 661 014f 01       		.uleb128 0x1
+ 662 0150 9C       		.byte	0x9c
+ 663 0151 0A       		.uleb128 0xa
+ 664 0152 8C010000 		.4byte	.LASF23
+ 665 0156 01       		.byte	0x1
+ 666 0157 F4       		.byte	0xf4
+ 667 0158 00000000 		.4byte	.LFB6
+ 668 015c 50000000 		.4byte	.LFE6-.LFB6
+ 669 0160 01       		.uleb128 0x1
+ 670 0161 9C       		.byte	0x9c
+ 671 0162 91010000 		.4byte	0x191
+ 672 0166 0B       		.uleb128 0xb
+ 673 0167 74010000 		.4byte	.LASF24
+ 674 016b 01       		.byte	0x1
+ 675 016c F4       		.byte	0xf4
+ 676 016d 6B000000 		.4byte	0x6b
+ 677 0171 02       		.uleb128 0x2
+ 678 0172 91       		.byte	0x91
+ 679 0173 67       		.sleb128 -25
+ 680 0174 0F       		.uleb128 0xf
+ 681 0175 4D010000 		.4byte	.LASF25
+ 682 0179 01       		.byte	0x1
+ 683 017a F6       		.byte	0xf6
+ 684 017b 6B000000 		.4byte	0x6b
+ 685 017f 02       		.uleb128 0x2
+ 686 0180 91       		.byte	0x91
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 20
 
 
- 795 0015 00       		.byte	0
- 796 0016 0B       		.uleb128 0xb
- 797 0017 0B       		.uleb128 0xb
- 798 0018 3E       		.uleb128 0x3e
- 799 0019 0B       		.uleb128 0xb
- 800 001a 03       		.uleb128 0x3
- 801 001b 0E       		.uleb128 0xe
- 802 001c 00       		.byte	0
- 803 001d 00       		.byte	0
- 804 001e 03       		.uleb128 0x3
- 805 001f 24       		.uleb128 0x24
- 806 0020 00       		.byte	0
- 807 0021 0B       		.uleb128 0xb
- 808 0022 0B       		.uleb128 0xb
- 809 0023 3E       		.uleb128 0x3e
- 810 0024 0B       		.uleb128 0xb
- 811 0025 03       		.uleb128 0x3
- 812 0026 08       		.uleb128 0x8
- 813 0027 00       		.byte	0
- 814 0028 00       		.byte	0
- 815 0029 04       		.uleb128 0x4
- 816 002a 16       		.uleb128 0x16
- 817 002b 00       		.byte	0
- 818 002c 03       		.uleb128 0x3
- 819 002d 0E       		.uleb128 0xe
- 820 002e 3A       		.uleb128 0x3a
- 821 002f 0B       		.uleb128 0xb
- 822 0030 3B       		.uleb128 0x3b
- 823 0031 0B       		.uleb128 0xb
- 824 0032 49       		.uleb128 0x49
- 825 0033 13       		.uleb128 0x13
- 826 0034 00       		.byte	0
- 827 0035 00       		.byte	0
- 828 0036 05       		.uleb128 0x5
- 829 0037 16       		.uleb128 0x16
- 830 0038 00       		.byte	0
- 831 0039 03       		.uleb128 0x3
- 832 003a 0E       		.uleb128 0xe
- 833 003b 3A       		.uleb128 0x3a
- 834 003c 0B       		.uleb128 0xb
- 835 003d 3B       		.uleb128 0x3b
- 836 003e 05       		.uleb128 0x5
- 837 003f 49       		.uleb128 0x49
- 838 0040 13       		.uleb128 0x13
- 839 0041 00       		.byte	0
- 840 0042 00       		.byte	0
- 841 0043 06       		.uleb128 0x6
- 842 0044 35       		.uleb128 0x35
- 843 0045 00       		.byte	0
- 844 0046 49       		.uleb128 0x49
- 845 0047 13       		.uleb128 0x13
- 846 0048 00       		.byte	0
- 847 0049 00       		.byte	0
- 848 004a 07       		.uleb128 0x7
- 849 004b 0F       		.uleb128 0xf
- 850 004c 00       		.byte	0
- 851 004d 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 22
+ 687 0181 6B       		.sleb128 -21
+ 688 0182 0F       		.uleb128 0xf
+ 689 0183 7C020000 		.4byte	.LASF26
+ 690 0187 01       		.byte	0x1
+ 691 0188 F7       		.byte	0xf7
+ 692 0189 76000000 		.4byte	0x76
+ 693 018d 02       		.uleb128 0x2
+ 694 018e 91       		.byte	0x91
+ 695 018f 6C       		.sleb128 -20
+ 696 0190 00       		.byte	0
+ 697 0191 10       		.uleb128 0x10
+ 698 0192 00000000 		.4byte	.LASF36
+ 699 0196 01       		.byte	0x1
+ 700 0197 1001     		.2byte	0x110
+ 701 0199 6B000000 		.4byte	0x6b
+ 702 019d 00000000 		.4byte	.LFB7
+ 703 01a1 30000000 		.4byte	.LFE7-.LFB7
+ 704 01a5 01       		.uleb128 0x1
+ 705 01a6 9C       		.byte	0x9c
+ 706 01a7 CA010000 		.4byte	0x1ca
+ 707 01ab 11       		.uleb128 0x11
+ 708 01ac 74010000 		.4byte	.LASF24
+ 709 01b0 01       		.byte	0x1
+ 710 01b1 1201     		.2byte	0x112
+ 711 01b3 76000000 		.4byte	0x76
+ 712 01b7 02       		.uleb128 0x2
+ 713 01b8 91       		.byte	0x91
+ 714 01b9 70       		.sleb128 -16
+ 715 01ba 11       		.uleb128 0x11
+ 716 01bb 7C020000 		.4byte	.LASF26
+ 717 01bf 01       		.byte	0x1
+ 718 01c0 1301     		.2byte	0x113
+ 719 01c2 76000000 		.4byte	0x76
+ 720 01c6 02       		.uleb128 0x2
+ 721 01c7 91       		.byte	0x91
+ 722 01c8 74       		.sleb128 -12
+ 723 01c9 00       		.byte	0
+ 724 01ca 12       		.uleb128 0x12
+ 725 01cb ED010000 		.4byte	.LASF27
+ 726 01cf 01       		.byte	0x1
+ 727 01d0 2B01     		.2byte	0x12b
+ 728 01d2 00000000 		.4byte	.LFB8
+ 729 01d6 14000000 		.4byte	.LFE8-.LFB8
+ 730 01da 01       		.uleb128 0x1
+ 731 01db 9C       		.byte	0x9c
+ 732 01dc 13       		.uleb128 0x13
+ 733 01dd 56000000 		.4byte	.LASF29
+ 734 01e1 01       		.byte	0x1
+ 735 01e2 4001     		.2byte	0x140
+ 736 01e4 6B000000 		.4byte	0x6b
+ 737 01e8 00000000 		.4byte	.LFB9
+ 738 01ec 20000000 		.4byte	.LFE9-.LFB9
+ 739 01f0 01       		.uleb128 0x1
+ 740 01f1 9C       		.byte	0x9c
+ 741 01f2 12       		.uleb128 0x12
+ 742 01f3 7D010000 		.4byte	.LASF30
+ 743 01f7 01       		.byte	0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 21
 
 
- 852 004e 0B       		.uleb128 0xb
- 853 004f 49       		.uleb128 0x49
- 854 0050 13       		.uleb128 0x13
- 855 0051 00       		.byte	0
- 856 0052 00       		.byte	0
- 857 0053 08       		.uleb128 0x8
- 858 0054 15       		.uleb128 0x15
- 859 0055 00       		.byte	0
- 860 0056 27       		.uleb128 0x27
- 861 0057 19       		.uleb128 0x19
- 862 0058 00       		.byte	0
- 863 0059 00       		.byte	0
- 864 005a 09       		.uleb128 0x9
- 865 005b 2E       		.uleb128 0x2e
- 866 005c 00       		.byte	0
- 867 005d 3F       		.uleb128 0x3f
- 868 005e 19       		.uleb128 0x19
- 869 005f 03       		.uleb128 0x3
- 870 0060 0E       		.uleb128 0xe
- 871 0061 3A       		.uleb128 0x3a
- 872 0062 0B       		.uleb128 0xb
- 873 0063 3B       		.uleb128 0x3b
- 874 0064 0B       		.uleb128 0xb
- 875 0065 27       		.uleb128 0x27
- 876 0066 19       		.uleb128 0x19
- 877 0067 11       		.uleb128 0x11
- 878 0068 01       		.uleb128 0x1
- 879 0069 12       		.uleb128 0x12
- 880 006a 06       		.uleb128 0x6
- 881 006b 40       		.uleb128 0x40
- 882 006c 18       		.uleb128 0x18
- 883 006d 9642     		.uleb128 0x2116
- 884 006f 19       		.uleb128 0x19
- 885 0070 00       		.byte	0
- 886 0071 00       		.byte	0
- 887 0072 0A       		.uleb128 0xa
- 888 0073 2E       		.uleb128 0x2e
- 889 0074 01       		.byte	0x1
- 890 0075 3F       		.uleb128 0x3f
- 891 0076 19       		.uleb128 0x19
- 892 0077 03       		.uleb128 0x3
- 893 0078 0E       		.uleb128 0xe
- 894 0079 3A       		.uleb128 0x3a
- 895 007a 0B       		.uleb128 0xb
- 896 007b 3B       		.uleb128 0x3b
- 897 007c 0B       		.uleb128 0xb
- 898 007d 27       		.uleb128 0x27
- 899 007e 19       		.uleb128 0x19
- 900 007f 11       		.uleb128 0x11
- 901 0080 01       		.uleb128 0x1
- 902 0081 12       		.uleb128 0x12
- 903 0082 06       		.uleb128 0x6
- 904 0083 40       		.uleb128 0x40
- 905 0084 18       		.uleb128 0x18
- 906 0085 9642     		.uleb128 0x2116
- 907 0087 19       		.uleb128 0x19
- 908 0088 01       		.uleb128 0x1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 23
+ 744 01f8 5501     		.2byte	0x155
+ 745 01fa 00000000 		.4byte	.LFB10
+ 746 01fe 14000000 		.4byte	.LFE10-.LFB10
+ 747 0202 01       		.uleb128 0x1
+ 748 0203 9C       		.byte	0x9c
+ 749 0204 12       		.uleb128 0x12
+ 750 0205 FB010000 		.4byte	.LASF31
+ 751 0209 01       		.byte	0x1
+ 752 020a 7001     		.2byte	0x170
+ 753 020c 00000000 		.4byte	.LFB11
+ 754 0210 14000000 		.4byte	.LFE11-.LFB11
+ 755 0214 01       		.uleb128 0x1
+ 756 0215 9C       		.byte	0x9c
+ 757 0216 12       		.uleb128 0x12
+ 758 0217 68020000 		.4byte	.LASF32
+ 759 021b 01       		.byte	0x1
+ 760 021c 8901     		.2byte	0x189
+ 761 021e 00000000 		.4byte	.LFB12
+ 762 0222 14000000 		.4byte	.LFE12-.LFB12
+ 763 0226 01       		.uleb128 0x1
+ 764 0227 9C       		.byte	0x9c
+ 765 0228 14       		.uleb128 0x14
+ 766 0229 A7000000 		.4byte	0xa7
+ 767 022d 38020000 		.4byte	0x238
+ 768 0231 15       		.uleb128 0x15
+ 769 0232 BA000000 		.4byte	0xba
+ 770 0236 2F       		.byte	0x2f
+ 771 0237 00       		.byte	0
+ 772 0238 16       		.uleb128 0x16
+ 773 0239 13000000 		.4byte	.LASF37
+ 774 023d 01       		.byte	0x1
+ 775 023e 20       		.byte	0x20
+ 776 023f 28020000 		.4byte	0x228
+ 777 0243 00       		.byte	0
+ 778              		.section	.debug_abbrev,"",%progbits
+ 779              	.Ldebug_abbrev0:
+ 780 0000 01       		.uleb128 0x1
+ 781 0001 11       		.uleb128 0x11
+ 782 0002 01       		.byte	0x1
+ 783 0003 25       		.uleb128 0x25
+ 784 0004 0E       		.uleb128 0xe
+ 785 0005 13       		.uleb128 0x13
+ 786 0006 0B       		.uleb128 0xb
+ 787 0007 03       		.uleb128 0x3
+ 788 0008 0E       		.uleb128 0xe
+ 789 0009 1B       		.uleb128 0x1b
+ 790 000a 0E       		.uleb128 0xe
+ 791 000b 55       		.uleb128 0x55
+ 792 000c 17       		.uleb128 0x17
+ 793 000d 11       		.uleb128 0x11
+ 794 000e 01       		.uleb128 0x1
+ 795 000f 10       		.uleb128 0x10
+ 796 0010 17       		.uleb128 0x17
+ 797 0011 00       		.byte	0
+ 798 0012 00       		.byte	0
+ 799 0013 02       		.uleb128 0x2
+ 800 0014 24       		.uleb128 0x24
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 22
 
 
- 909 0089 13       		.uleb128 0x13
- 910 008a 00       		.byte	0
- 911 008b 00       		.byte	0
- 912 008c 0B       		.uleb128 0xb
- 913 008d 05       		.uleb128 0x5
- 914 008e 00       		.byte	0
- 915 008f 03       		.uleb128 0x3
- 916 0090 0E       		.uleb128 0xe
- 917 0091 3A       		.uleb128 0x3a
- 918 0092 0B       		.uleb128 0xb
- 919 0093 3B       		.uleb128 0x3b
- 920 0094 0B       		.uleb128 0xb
- 921 0095 49       		.uleb128 0x49
- 922 0096 13       		.uleb128 0x13
- 923 0097 02       		.uleb128 0x2
- 924 0098 18       		.uleb128 0x18
- 925 0099 00       		.byte	0
- 926 009a 00       		.byte	0
- 927 009b 0C       		.uleb128 0xc
- 928 009c 2E       		.uleb128 0x2e
- 929 009d 00       		.byte	0
- 930 009e 3F       		.uleb128 0x3f
- 931 009f 19       		.uleb128 0x19
- 932 00a0 03       		.uleb128 0x3
- 933 00a1 0E       		.uleb128 0xe
- 934 00a2 3A       		.uleb128 0x3a
- 935 00a3 0B       		.uleb128 0xb
- 936 00a4 3B       		.uleb128 0x3b
- 937 00a5 0B       		.uleb128 0xb
- 938 00a6 27       		.uleb128 0x27
- 939 00a7 19       		.uleb128 0x19
- 940 00a8 11       		.uleb128 0x11
- 941 00a9 01       		.uleb128 0x1
- 942 00aa 12       		.uleb128 0x12
- 943 00ab 06       		.uleb128 0x6
- 944 00ac 40       		.uleb128 0x40
- 945 00ad 18       		.uleb128 0x18
- 946 00ae 9742     		.uleb128 0x2117
- 947 00b0 19       		.uleb128 0x19
- 948 00b1 00       		.byte	0
- 949 00b2 00       		.byte	0
- 950 00b3 0D       		.uleb128 0xd
- 951 00b4 2E       		.uleb128 0x2e
- 952 00b5 01       		.byte	0x1
- 953 00b6 3F       		.uleb128 0x3f
- 954 00b7 19       		.uleb128 0x19
- 955 00b8 03       		.uleb128 0x3
- 956 00b9 0E       		.uleb128 0xe
- 957 00ba 3A       		.uleb128 0x3a
- 958 00bb 0B       		.uleb128 0xb
- 959 00bc 3B       		.uleb128 0x3b
- 960 00bd 0B       		.uleb128 0xb
- 961 00be 27       		.uleb128 0x27
- 962 00bf 19       		.uleb128 0x19
- 963 00c0 11       		.uleb128 0x11
- 964 00c1 01       		.uleb128 0x1
- 965 00c2 12       		.uleb128 0x12
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 24
+ 801 0015 00       		.byte	0
+ 802 0016 0B       		.uleb128 0xb
+ 803 0017 0B       		.uleb128 0xb
+ 804 0018 3E       		.uleb128 0x3e
+ 805 0019 0B       		.uleb128 0xb
+ 806 001a 03       		.uleb128 0x3
+ 807 001b 0E       		.uleb128 0xe
+ 808 001c 00       		.byte	0
+ 809 001d 00       		.byte	0
+ 810 001e 03       		.uleb128 0x3
+ 811 001f 24       		.uleb128 0x24
+ 812 0020 00       		.byte	0
+ 813 0021 0B       		.uleb128 0xb
+ 814 0022 0B       		.uleb128 0xb
+ 815 0023 3E       		.uleb128 0x3e
+ 816 0024 0B       		.uleb128 0xb
+ 817 0025 03       		.uleb128 0x3
+ 818 0026 08       		.uleb128 0x8
+ 819 0027 00       		.byte	0
+ 820 0028 00       		.byte	0
+ 821 0029 04       		.uleb128 0x4
+ 822 002a 16       		.uleb128 0x16
+ 823 002b 00       		.byte	0
+ 824 002c 03       		.uleb128 0x3
+ 825 002d 0E       		.uleb128 0xe
+ 826 002e 3A       		.uleb128 0x3a
+ 827 002f 0B       		.uleb128 0xb
+ 828 0030 3B       		.uleb128 0x3b
+ 829 0031 0B       		.uleb128 0xb
+ 830 0032 49       		.uleb128 0x49
+ 831 0033 13       		.uleb128 0x13
+ 832 0034 00       		.byte	0
+ 833 0035 00       		.byte	0
+ 834 0036 05       		.uleb128 0x5
+ 835 0037 16       		.uleb128 0x16
+ 836 0038 00       		.byte	0
+ 837 0039 03       		.uleb128 0x3
+ 838 003a 0E       		.uleb128 0xe
+ 839 003b 3A       		.uleb128 0x3a
+ 840 003c 0B       		.uleb128 0xb
+ 841 003d 3B       		.uleb128 0x3b
+ 842 003e 05       		.uleb128 0x5
+ 843 003f 49       		.uleb128 0x49
+ 844 0040 13       		.uleb128 0x13
+ 845 0041 00       		.byte	0
+ 846 0042 00       		.byte	0
+ 847 0043 06       		.uleb128 0x6
+ 848 0044 35       		.uleb128 0x35
+ 849 0045 00       		.byte	0
+ 850 0046 49       		.uleb128 0x49
+ 851 0047 13       		.uleb128 0x13
+ 852 0048 00       		.byte	0
+ 853 0049 00       		.byte	0
+ 854 004a 07       		.uleb128 0x7
+ 855 004b 0F       		.uleb128 0xf
+ 856 004c 00       		.byte	0
+ 857 004d 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 23
 
 
- 966 00c3 06       		.uleb128 0x6
- 967 00c4 40       		.uleb128 0x40
- 968 00c5 18       		.uleb128 0x18
- 969 00c6 9742     		.uleb128 0x2117
- 970 00c8 19       		.uleb128 0x19
- 971 00c9 01       		.uleb128 0x1
- 972 00ca 13       		.uleb128 0x13
- 973 00cb 00       		.byte	0
- 974 00cc 00       		.byte	0
- 975 00cd 0E       		.uleb128 0xe
- 976 00ce 2E       		.uleb128 0x2e
- 977 00cf 00       		.byte	0
- 978 00d0 3F       		.uleb128 0x3f
- 979 00d1 19       		.uleb128 0x19
- 980 00d2 03       		.uleb128 0x3
- 981 00d3 0E       		.uleb128 0xe
- 982 00d4 3A       		.uleb128 0x3a
- 983 00d5 0B       		.uleb128 0xb
- 984 00d6 3B       		.uleb128 0x3b
- 985 00d7 0B       		.uleb128 0xb
- 986 00d8 27       		.uleb128 0x27
- 987 00d9 19       		.uleb128 0x19
- 988 00da 49       		.uleb128 0x49
- 989 00db 13       		.uleb128 0x13
- 990 00dc 11       		.uleb128 0x11
- 991 00dd 01       		.uleb128 0x1
- 992 00de 12       		.uleb128 0x12
- 993 00df 06       		.uleb128 0x6
- 994 00e0 40       		.uleb128 0x40
- 995 00e1 18       		.uleb128 0x18
- 996 00e2 9742     		.uleb128 0x2117
- 997 00e4 19       		.uleb128 0x19
- 998 00e5 00       		.byte	0
- 999 00e6 00       		.byte	0
- 1000 00e7 0F       		.uleb128 0xf
- 1001 00e8 34       		.uleb128 0x34
- 1002 00e9 00       		.byte	0
- 1003 00ea 03       		.uleb128 0x3
- 1004 00eb 0E       		.uleb128 0xe
- 1005 00ec 3A       		.uleb128 0x3a
- 1006 00ed 0B       		.uleb128 0xb
- 1007 00ee 3B       		.uleb128 0x3b
- 1008 00ef 0B       		.uleb128 0xb
- 1009 00f0 49       		.uleb128 0x49
- 1010 00f1 13       		.uleb128 0x13
- 1011 00f2 02       		.uleb128 0x2
- 1012 00f3 18       		.uleb128 0x18
- 1013 00f4 00       		.byte	0
- 1014 00f5 00       		.byte	0
- 1015 00f6 10       		.uleb128 0x10
- 1016 00f7 2E       		.uleb128 0x2e
- 1017 00f8 01       		.byte	0x1
- 1018 00f9 3F       		.uleb128 0x3f
- 1019 00fa 19       		.uleb128 0x19
- 1020 00fb 03       		.uleb128 0x3
- 1021 00fc 0E       		.uleb128 0xe
- 1022 00fd 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 25
+ 858 004e 0B       		.uleb128 0xb
+ 859 004f 49       		.uleb128 0x49
+ 860 0050 13       		.uleb128 0x13
+ 861 0051 00       		.byte	0
+ 862 0052 00       		.byte	0
+ 863 0053 08       		.uleb128 0x8
+ 864 0054 15       		.uleb128 0x15
+ 865 0055 00       		.byte	0
+ 866 0056 27       		.uleb128 0x27
+ 867 0057 19       		.uleb128 0x19
+ 868 0058 00       		.byte	0
+ 869 0059 00       		.byte	0
+ 870 005a 09       		.uleb128 0x9
+ 871 005b 2E       		.uleb128 0x2e
+ 872 005c 00       		.byte	0
+ 873 005d 3F       		.uleb128 0x3f
+ 874 005e 19       		.uleb128 0x19
+ 875 005f 03       		.uleb128 0x3
+ 876 0060 0E       		.uleb128 0xe
+ 877 0061 3A       		.uleb128 0x3a
+ 878 0062 0B       		.uleb128 0xb
+ 879 0063 3B       		.uleb128 0x3b
+ 880 0064 0B       		.uleb128 0xb
+ 881 0065 27       		.uleb128 0x27
+ 882 0066 19       		.uleb128 0x19
+ 883 0067 11       		.uleb128 0x11
+ 884 0068 01       		.uleb128 0x1
+ 885 0069 12       		.uleb128 0x12
+ 886 006a 06       		.uleb128 0x6
+ 887 006b 40       		.uleb128 0x40
+ 888 006c 18       		.uleb128 0x18
+ 889 006d 9642     		.uleb128 0x2116
+ 890 006f 19       		.uleb128 0x19
+ 891 0070 00       		.byte	0
+ 892 0071 00       		.byte	0
+ 893 0072 0A       		.uleb128 0xa
+ 894 0073 2E       		.uleb128 0x2e
+ 895 0074 01       		.byte	0x1
+ 896 0075 3F       		.uleb128 0x3f
+ 897 0076 19       		.uleb128 0x19
+ 898 0077 03       		.uleb128 0x3
+ 899 0078 0E       		.uleb128 0xe
+ 900 0079 3A       		.uleb128 0x3a
+ 901 007a 0B       		.uleb128 0xb
+ 902 007b 3B       		.uleb128 0x3b
+ 903 007c 0B       		.uleb128 0xb
+ 904 007d 27       		.uleb128 0x27
+ 905 007e 19       		.uleb128 0x19
+ 906 007f 11       		.uleb128 0x11
+ 907 0080 01       		.uleb128 0x1
+ 908 0081 12       		.uleb128 0x12
+ 909 0082 06       		.uleb128 0x6
+ 910 0083 40       		.uleb128 0x40
+ 911 0084 18       		.uleb128 0x18
+ 912 0085 9642     		.uleb128 0x2116
+ 913 0087 19       		.uleb128 0x19
+ 914 0088 01       		.uleb128 0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 24
 
 
- 1023 00fe 0B       		.uleb128 0xb
- 1024 00ff 3B       		.uleb128 0x3b
- 1025 0100 0B       		.uleb128 0xb
- 1026 0101 27       		.uleb128 0x27
- 1027 0102 19       		.uleb128 0x19
- 1028 0103 49       		.uleb128 0x49
- 1029 0104 13       		.uleb128 0x13
- 1030 0105 11       		.uleb128 0x11
- 1031 0106 01       		.uleb128 0x1
- 1032 0107 12       		.uleb128 0x12
- 1033 0108 06       		.uleb128 0x6
- 1034 0109 40       		.uleb128 0x40
- 1035 010a 18       		.uleb128 0x18
- 1036 010b 9742     		.uleb128 0x2117
- 1037 010d 19       		.uleb128 0x19
- 1038 010e 01       		.uleb128 0x1
- 1039 010f 13       		.uleb128 0x13
- 1040 0110 00       		.byte	0
- 1041 0111 00       		.byte	0
- 1042 0112 11       		.uleb128 0x11
- 1043 0113 2E       		.uleb128 0x2e
- 1044 0114 00       		.byte	0
- 1045 0115 3F       		.uleb128 0x3f
- 1046 0116 19       		.uleb128 0x19
- 1047 0117 03       		.uleb128 0x3
- 1048 0118 0E       		.uleb128 0xe
- 1049 0119 3A       		.uleb128 0x3a
- 1050 011a 0B       		.uleb128 0xb
- 1051 011b 3B       		.uleb128 0x3b
- 1052 011c 05       		.uleb128 0x5
- 1053 011d 27       		.uleb128 0x27
- 1054 011e 19       		.uleb128 0x19
- 1055 011f 11       		.uleb128 0x11
- 1056 0120 01       		.uleb128 0x1
- 1057 0121 12       		.uleb128 0x12
- 1058 0122 06       		.uleb128 0x6
- 1059 0123 40       		.uleb128 0x40
- 1060 0124 18       		.uleb128 0x18
- 1061 0125 9742     		.uleb128 0x2117
- 1062 0127 19       		.uleb128 0x19
- 1063 0128 00       		.byte	0
- 1064 0129 00       		.byte	0
- 1065 012a 12       		.uleb128 0x12
- 1066 012b 2E       		.uleb128 0x2e
- 1067 012c 00       		.byte	0
- 1068 012d 3F       		.uleb128 0x3f
- 1069 012e 19       		.uleb128 0x19
- 1070 012f 03       		.uleb128 0x3
- 1071 0130 0E       		.uleb128 0xe
- 1072 0131 3A       		.uleb128 0x3a
- 1073 0132 0B       		.uleb128 0xb
- 1074 0133 3B       		.uleb128 0x3b
- 1075 0134 05       		.uleb128 0x5
- 1076 0135 27       		.uleb128 0x27
- 1077 0136 19       		.uleb128 0x19
- 1078 0137 49       		.uleb128 0x49
- 1079 0138 13       		.uleb128 0x13
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 26
+ 915 0089 13       		.uleb128 0x13
+ 916 008a 00       		.byte	0
+ 917 008b 00       		.byte	0
+ 918 008c 0B       		.uleb128 0xb
+ 919 008d 05       		.uleb128 0x5
+ 920 008e 00       		.byte	0
+ 921 008f 03       		.uleb128 0x3
+ 922 0090 0E       		.uleb128 0xe
+ 923 0091 3A       		.uleb128 0x3a
+ 924 0092 0B       		.uleb128 0xb
+ 925 0093 3B       		.uleb128 0x3b
+ 926 0094 0B       		.uleb128 0xb
+ 927 0095 49       		.uleb128 0x49
+ 928 0096 13       		.uleb128 0x13
+ 929 0097 02       		.uleb128 0x2
+ 930 0098 18       		.uleb128 0x18
+ 931 0099 00       		.byte	0
+ 932 009a 00       		.byte	0
+ 933 009b 0C       		.uleb128 0xc
+ 934 009c 2E       		.uleb128 0x2e
+ 935 009d 00       		.byte	0
+ 936 009e 3F       		.uleb128 0x3f
+ 937 009f 19       		.uleb128 0x19
+ 938 00a0 03       		.uleb128 0x3
+ 939 00a1 0E       		.uleb128 0xe
+ 940 00a2 3A       		.uleb128 0x3a
+ 941 00a3 0B       		.uleb128 0xb
+ 942 00a4 3B       		.uleb128 0x3b
+ 943 00a5 0B       		.uleb128 0xb
+ 944 00a6 27       		.uleb128 0x27
+ 945 00a7 19       		.uleb128 0x19
+ 946 00a8 11       		.uleb128 0x11
+ 947 00a9 01       		.uleb128 0x1
+ 948 00aa 12       		.uleb128 0x12
+ 949 00ab 06       		.uleb128 0x6
+ 950 00ac 40       		.uleb128 0x40
+ 951 00ad 18       		.uleb128 0x18
+ 952 00ae 9742     		.uleb128 0x2117
+ 953 00b0 19       		.uleb128 0x19
+ 954 00b1 00       		.byte	0
+ 955 00b2 00       		.byte	0
+ 956 00b3 0D       		.uleb128 0xd
+ 957 00b4 2E       		.uleb128 0x2e
+ 958 00b5 01       		.byte	0x1
+ 959 00b6 3F       		.uleb128 0x3f
+ 960 00b7 19       		.uleb128 0x19
+ 961 00b8 03       		.uleb128 0x3
+ 962 00b9 0E       		.uleb128 0xe
+ 963 00ba 3A       		.uleb128 0x3a
+ 964 00bb 0B       		.uleb128 0xb
+ 965 00bc 3B       		.uleb128 0x3b
+ 966 00bd 0B       		.uleb128 0xb
+ 967 00be 27       		.uleb128 0x27
+ 968 00bf 19       		.uleb128 0x19
+ 969 00c0 11       		.uleb128 0x11
+ 970 00c1 01       		.uleb128 0x1
+ 971 00c2 12       		.uleb128 0x12
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 25
 
 
- 1080 0139 11       		.uleb128 0x11
- 1081 013a 01       		.uleb128 0x1
- 1082 013b 12       		.uleb128 0x12
- 1083 013c 06       		.uleb128 0x6
- 1084 013d 40       		.uleb128 0x40
- 1085 013e 18       		.uleb128 0x18
- 1086 013f 9742     		.uleb128 0x2117
- 1087 0141 19       		.uleb128 0x19
- 1088 0142 00       		.byte	0
- 1089 0143 00       		.byte	0
- 1090 0144 13       		.uleb128 0x13
- 1091 0145 01       		.uleb128 0x1
- 1092 0146 01       		.byte	0x1
- 1093 0147 49       		.uleb128 0x49
- 1094 0148 13       		.uleb128 0x13
- 1095 0149 01       		.uleb128 0x1
- 1096 014a 13       		.uleb128 0x13
- 1097 014b 00       		.byte	0
- 1098 014c 00       		.byte	0
- 1099 014d 14       		.uleb128 0x14
- 1100 014e 21       		.uleb128 0x21
- 1101 014f 00       		.byte	0
- 1102 0150 49       		.uleb128 0x49
- 1103 0151 13       		.uleb128 0x13
- 1104 0152 2F       		.uleb128 0x2f
- 1105 0153 0B       		.uleb128 0xb
- 1106 0154 00       		.byte	0
- 1107 0155 00       		.byte	0
- 1108 0156 15       		.uleb128 0x15
- 1109 0157 34       		.uleb128 0x34
- 1110 0158 00       		.byte	0
- 1111 0159 03       		.uleb128 0x3
- 1112 015a 0E       		.uleb128 0xe
- 1113 015b 3A       		.uleb128 0x3a
- 1114 015c 0B       		.uleb128 0xb
- 1115 015d 3B       		.uleb128 0x3b
- 1116 015e 0B       		.uleb128 0xb
- 1117 015f 49       		.uleb128 0x49
- 1118 0160 13       		.uleb128 0x13
- 1119 0161 3F       		.uleb128 0x3f
- 1120 0162 19       		.uleb128 0x19
- 1121 0163 3C       		.uleb128 0x3c
- 1122 0164 19       		.uleb128 0x19
- 1123 0165 00       		.byte	0
- 1124 0166 00       		.byte	0
- 1125 0167 00       		.byte	0
- 1126              		.section	.debug_aranges,"",%progbits
- 1127 0000 7C000000 		.4byte	0x7c
- 1128 0004 0200     		.2byte	0x2
- 1129 0006 00000000 		.4byte	.Ldebug_info0
- 1130 000a 04       		.byte	0x4
- 1131 000b 00       		.byte	0
- 1132 000c 0000     		.2byte	0
- 1133 000e 0000     		.2byte	0
- 1134 0010 00000000 		.4byte	.LFB0
- 1135 0014 24000000 		.4byte	.LFE0-.LFB0
- 1136 0018 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 27
+ 972 00c3 06       		.uleb128 0x6
+ 973 00c4 40       		.uleb128 0x40
+ 974 00c5 18       		.uleb128 0x18
+ 975 00c6 9742     		.uleb128 0x2117
+ 976 00c8 19       		.uleb128 0x19
+ 977 00c9 01       		.uleb128 0x1
+ 978 00ca 13       		.uleb128 0x13
+ 979 00cb 00       		.byte	0
+ 980 00cc 00       		.byte	0
+ 981 00cd 0E       		.uleb128 0xe
+ 982 00ce 2E       		.uleb128 0x2e
+ 983 00cf 00       		.byte	0
+ 984 00d0 3F       		.uleb128 0x3f
+ 985 00d1 19       		.uleb128 0x19
+ 986 00d2 03       		.uleb128 0x3
+ 987 00d3 0E       		.uleb128 0xe
+ 988 00d4 3A       		.uleb128 0x3a
+ 989 00d5 0B       		.uleb128 0xb
+ 990 00d6 3B       		.uleb128 0x3b
+ 991 00d7 0B       		.uleb128 0xb
+ 992 00d8 27       		.uleb128 0x27
+ 993 00d9 19       		.uleb128 0x19
+ 994 00da 49       		.uleb128 0x49
+ 995 00db 13       		.uleb128 0x13
+ 996 00dc 11       		.uleb128 0x11
+ 997 00dd 01       		.uleb128 0x1
+ 998 00de 12       		.uleb128 0x12
+ 999 00df 06       		.uleb128 0x6
+ 1000 00e0 40       		.uleb128 0x40
+ 1001 00e1 18       		.uleb128 0x18
+ 1002 00e2 9742     		.uleb128 0x2117
+ 1003 00e4 19       		.uleb128 0x19
+ 1004 00e5 00       		.byte	0
+ 1005 00e6 00       		.byte	0
+ 1006 00e7 0F       		.uleb128 0xf
+ 1007 00e8 34       		.uleb128 0x34
+ 1008 00e9 00       		.byte	0
+ 1009 00ea 03       		.uleb128 0x3
+ 1010 00eb 0E       		.uleb128 0xe
+ 1011 00ec 3A       		.uleb128 0x3a
+ 1012 00ed 0B       		.uleb128 0xb
+ 1013 00ee 3B       		.uleb128 0x3b
+ 1014 00ef 0B       		.uleb128 0xb
+ 1015 00f0 49       		.uleb128 0x49
+ 1016 00f1 13       		.uleb128 0x13
+ 1017 00f2 02       		.uleb128 0x2
+ 1018 00f3 18       		.uleb128 0x18
+ 1019 00f4 00       		.byte	0
+ 1020 00f5 00       		.byte	0
+ 1021 00f6 10       		.uleb128 0x10
+ 1022 00f7 2E       		.uleb128 0x2e
+ 1023 00f8 01       		.byte	0x1
+ 1024 00f9 3F       		.uleb128 0x3f
+ 1025 00fa 19       		.uleb128 0x19
+ 1026 00fb 03       		.uleb128 0x3
+ 1027 00fc 0E       		.uleb128 0xe
+ 1028 00fd 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 26
 
 
- 1137 001c 24000000 		.4byte	.LFE1-.LFB1
- 1138 0020 00000000 		.4byte	.LFB2
- 1139 0024 18000000 		.4byte	.LFE2-.LFB2
- 1140 0028 00000000 		.4byte	.LFB3
- 1141 002c 08000000 		.4byte	.LFE3-.LFB3
- 1142 0030 00000000 		.4byte	.LFB4
- 1143 0034 18000000 		.4byte	.LFE4-.LFB4
- 1144 0038 00000000 		.4byte	.LFB5
- 1145 003c 14000000 		.4byte	.LFE5-.LFB5
- 1146 0040 00000000 		.4byte	.LFB6
- 1147 0044 50000000 		.4byte	.LFE6-.LFB6
- 1148 0048 00000000 		.4byte	.LFB7
- 1149 004c 2C000000 		.4byte	.LFE7-.LFB7
- 1150 0050 00000000 		.4byte	.LFB8
- 1151 0054 14000000 		.4byte	.LFE8-.LFB8
- 1152 0058 00000000 		.4byte	.LFB9
- 1153 005c 1C000000 		.4byte	.LFE9-.LFB9
- 1154 0060 00000000 		.4byte	.LFB10
- 1155 0064 14000000 		.4byte	.LFE10-.LFB10
- 1156 0068 00000000 		.4byte	.LFB11
- 1157 006c 14000000 		.4byte	.LFE11-.LFB11
- 1158 0070 00000000 		.4byte	.LFB12
- 1159 0074 14000000 		.4byte	.LFE12-.LFB12
- 1160 0078 00000000 		.4byte	0
- 1161 007c 00000000 		.4byte	0
- 1162              		.section	.debug_ranges,"",%progbits
- 1163              	.Ldebug_ranges0:
- 1164 0000 00000000 		.4byte	.LFB0
- 1165 0004 24000000 		.4byte	.LFE0
- 1166 0008 00000000 		.4byte	.LFB1
- 1167 000c 24000000 		.4byte	.LFE1
- 1168 0010 00000000 		.4byte	.LFB2
- 1169 0014 18000000 		.4byte	.LFE2
- 1170 0018 00000000 		.4byte	.LFB3
- 1171 001c 08000000 		.4byte	.LFE3
- 1172 0020 00000000 		.4byte	.LFB4
- 1173 0024 18000000 		.4byte	.LFE4
- 1174 0028 00000000 		.4byte	.LFB5
- 1175 002c 14000000 		.4byte	.LFE5
- 1176 0030 00000000 		.4byte	.LFB6
- 1177 0034 50000000 		.4byte	.LFE6
- 1178 0038 00000000 		.4byte	.LFB7
- 1179 003c 2C000000 		.4byte	.LFE7
- 1180 0040 00000000 		.4byte	.LFB8
- 1181 0044 14000000 		.4byte	.LFE8
- 1182 0048 00000000 		.4byte	.LFB9
- 1183 004c 1C000000 		.4byte	.LFE9
- 1184 0050 00000000 		.4byte	.LFB10
- 1185 0054 14000000 		.4byte	.LFE10
- 1186 0058 00000000 		.4byte	.LFB11
- 1187 005c 14000000 		.4byte	.LFE11
- 1188 0060 00000000 		.4byte	.LFB12
- 1189 0064 14000000 		.4byte	.LFE12
- 1190 0068 00000000 		.4byte	0
- 1191 006c 00000000 		.4byte	0
- 1192              		.section	.debug_line,"",%progbits
- 1193              	.Ldebug_line0:
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 28
+ 1029 00fe 0B       		.uleb128 0xb
+ 1030 00ff 3B       		.uleb128 0x3b
+ 1031 0100 05       		.uleb128 0x5
+ 1032 0101 27       		.uleb128 0x27
+ 1033 0102 19       		.uleb128 0x19
+ 1034 0103 49       		.uleb128 0x49
+ 1035 0104 13       		.uleb128 0x13
+ 1036 0105 11       		.uleb128 0x11
+ 1037 0106 01       		.uleb128 0x1
+ 1038 0107 12       		.uleb128 0x12
+ 1039 0108 06       		.uleb128 0x6
+ 1040 0109 40       		.uleb128 0x40
+ 1041 010a 18       		.uleb128 0x18
+ 1042 010b 9742     		.uleb128 0x2117
+ 1043 010d 19       		.uleb128 0x19
+ 1044 010e 01       		.uleb128 0x1
+ 1045 010f 13       		.uleb128 0x13
+ 1046 0110 00       		.byte	0
+ 1047 0111 00       		.byte	0
+ 1048 0112 11       		.uleb128 0x11
+ 1049 0113 34       		.uleb128 0x34
+ 1050 0114 00       		.byte	0
+ 1051 0115 03       		.uleb128 0x3
+ 1052 0116 0E       		.uleb128 0xe
+ 1053 0117 3A       		.uleb128 0x3a
+ 1054 0118 0B       		.uleb128 0xb
+ 1055 0119 3B       		.uleb128 0x3b
+ 1056 011a 05       		.uleb128 0x5
+ 1057 011b 49       		.uleb128 0x49
+ 1058 011c 13       		.uleb128 0x13
+ 1059 011d 02       		.uleb128 0x2
+ 1060 011e 18       		.uleb128 0x18
+ 1061 011f 00       		.byte	0
+ 1062 0120 00       		.byte	0
+ 1063 0121 12       		.uleb128 0x12
+ 1064 0122 2E       		.uleb128 0x2e
+ 1065 0123 00       		.byte	0
+ 1066 0124 3F       		.uleb128 0x3f
+ 1067 0125 19       		.uleb128 0x19
+ 1068 0126 03       		.uleb128 0x3
+ 1069 0127 0E       		.uleb128 0xe
+ 1070 0128 3A       		.uleb128 0x3a
+ 1071 0129 0B       		.uleb128 0xb
+ 1072 012a 3B       		.uleb128 0x3b
+ 1073 012b 05       		.uleb128 0x5
+ 1074 012c 27       		.uleb128 0x27
+ 1075 012d 19       		.uleb128 0x19
+ 1076 012e 11       		.uleb128 0x11
+ 1077 012f 01       		.uleb128 0x1
+ 1078 0130 12       		.uleb128 0x12
+ 1079 0131 06       		.uleb128 0x6
+ 1080 0132 40       		.uleb128 0x40
+ 1081 0133 18       		.uleb128 0x18
+ 1082 0134 9742     		.uleb128 0x2117
+ 1083 0136 19       		.uleb128 0x19
+ 1084 0137 00       		.byte	0
+ 1085 0138 00       		.byte	0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 27
 
 
- 1194 0000 41010000 		.section	.debug_str,"MS",%progbits,1
- 1194      02004500 
- 1194      00000201 
- 1194      FB0E0D00 
- 1194      01010101 
- 1195              	.LASF36:
- 1196 0000 73775F69 		.ascii	"sw_int_GetPriority\000"
- 1196      6E745F47 
- 1196      65745072 
- 1196      696F7269 
- 1196      747900
- 1197              	.LASF37:
- 1198 0013 43795261 		.ascii	"CyRamVectors\000"
- 1198      6D566563 
- 1198      746F7273 
- 1198      00
- 1199              	.LASF22:
- 1200 0020 61646472 		.ascii	"address\000"
- 1200      65737300 
- 1201              	.LASF18:
- 1202 0028 73775F69 		.ascii	"sw_int_Stop\000"
- 1202      6E745F53 
- 1202      746F7000 
- 1203              	.LASF20:
- 1204 0034 73775F69 		.ascii	"sw_int_StartEx\000"
- 1204      6E745F53 
- 1204      74617274 
- 1204      457800
- 1205              	.LASF3:
- 1206 0043 73686F72 		.ascii	"short unsigned int\000"
- 1206      7420756E 
- 1206      7369676E 
- 1206      65642069 
- 1206      6E7400
- 1207              	.LASF29:
- 1208 0056 73775F69 		.ascii	"sw_int_GetState\000"
- 1208      6E745F47 
- 1208      65745374 
- 1208      61746500 
- 1209              	.LASF21:
- 1210 0066 73775F69 		.ascii	"sw_int_SetVector\000"
- 1210      6E745F53 
- 1210      65745665 
- 1210      63746F72 
- 1210      00
- 1211              	.LASF11:
- 1212 0077 666C6F61 		.ascii	"float\000"
- 1212      7400
- 1213              	.LASF33:
- 1214 007d 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 1214      4320342E 
- 1214      382E3420 
- 1214      32303134 
- 1214      30353236 
- 1215 00b0 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 1215      20726576 
- 1215      6973696F 
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 29
+ 1086 0139 13       		.uleb128 0x13
+ 1087 013a 2E       		.uleb128 0x2e
+ 1088 013b 00       		.byte	0
+ 1089 013c 3F       		.uleb128 0x3f
+ 1090 013d 19       		.uleb128 0x19
+ 1091 013e 03       		.uleb128 0x3
+ 1092 013f 0E       		.uleb128 0xe
+ 1093 0140 3A       		.uleb128 0x3a
+ 1094 0141 0B       		.uleb128 0xb
+ 1095 0142 3B       		.uleb128 0x3b
+ 1096 0143 05       		.uleb128 0x5
+ 1097 0144 27       		.uleb128 0x27
+ 1098 0145 19       		.uleb128 0x19
+ 1099 0146 49       		.uleb128 0x49
+ 1100 0147 13       		.uleb128 0x13
+ 1101 0148 11       		.uleb128 0x11
+ 1102 0149 01       		.uleb128 0x1
+ 1103 014a 12       		.uleb128 0x12
+ 1104 014b 06       		.uleb128 0x6
+ 1105 014c 40       		.uleb128 0x40
+ 1106 014d 18       		.uleb128 0x18
+ 1107 014e 9742     		.uleb128 0x2117
+ 1108 0150 19       		.uleb128 0x19
+ 1109 0151 00       		.byte	0
+ 1110 0152 00       		.byte	0
+ 1111 0153 14       		.uleb128 0x14
+ 1112 0154 01       		.uleb128 0x1
+ 1113 0155 01       		.byte	0x1
+ 1114 0156 49       		.uleb128 0x49
+ 1115 0157 13       		.uleb128 0x13
+ 1116 0158 01       		.uleb128 0x1
+ 1117 0159 13       		.uleb128 0x13
+ 1118 015a 00       		.byte	0
+ 1119 015b 00       		.byte	0
+ 1120 015c 15       		.uleb128 0x15
+ 1121 015d 21       		.uleb128 0x21
+ 1122 015e 00       		.byte	0
+ 1123 015f 49       		.uleb128 0x49
+ 1124 0160 13       		.uleb128 0x13
+ 1125 0161 2F       		.uleb128 0x2f
+ 1126 0162 0B       		.uleb128 0xb
+ 1127 0163 00       		.byte	0
+ 1128 0164 00       		.byte	0
+ 1129 0165 16       		.uleb128 0x16
+ 1130 0166 34       		.uleb128 0x34
+ 1131 0167 00       		.byte	0
+ 1132 0168 03       		.uleb128 0x3
+ 1133 0169 0E       		.uleb128 0xe
+ 1134 016a 3A       		.uleb128 0x3a
+ 1135 016b 0B       		.uleb128 0xb
+ 1136 016c 3B       		.uleb128 0x3b
+ 1137 016d 0B       		.uleb128 0xb
+ 1138 016e 49       		.uleb128 0x49
+ 1139 016f 13       		.uleb128 0x13
+ 1140 0170 3F       		.uleb128 0x3f
+ 1141 0171 19       		.uleb128 0x19
+ 1142 0172 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 28
 
 
- 1215      6E203231 
- 1215      31333538 
- 1216 00e3 30202D66 		.ascii	"0 -ffunction-sections\000"
- 1216      66756E63 
- 1216      74696F6E 
- 1216      2D736563 
- 1216      74696F6E 
- 1217              	.LASF35:
- 1218 00f9 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
- 1218      73657273 
- 1218      5C536E75 
- 1218      666B696E 
- 1218      5C446F63 
- 1219 0126 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
- 1219      696D6572 
- 1219      5C435254 
- 1219      5F74696D 
- 1219      65722E63 
- 1220              	.LASF1:
- 1221 013f 756E7369 		.ascii	"unsigned char\000"
- 1221      676E6564 
- 1221      20636861 
- 1221      7200
- 1222              	.LASF25:
- 1223 014d 696E7465 		.ascii	"interruptState\000"
- 1223      72727570 
- 1223      74537461 
- 1223      746500
- 1224              	.LASF5:
- 1225 015c 6C6F6E67 		.ascii	"long unsigned int\000"
- 1225      20756E73 
- 1225      69676E65 
- 1225      6420696E 
- 1225      7400
- 1226              	.LASF9:
- 1227 016e 75696E74 		.ascii	"uint8\000"
- 1227      3800
- 1228              	.LASF24:
- 1229 0174 7072696F 		.ascii	"priority\000"
- 1229      72697479 
- 1229      00
- 1230              	.LASF30:
- 1231 017d 73775F69 		.ascii	"sw_int_Disable\000"
- 1231      6E745F44 
- 1231      69736162 
- 1231      6C6500
- 1232              	.LASF23:
- 1233 018c 73775F69 		.ascii	"sw_int_SetPriority\000"
- 1233      6E745F53 
- 1233      65745072 
- 1233      696F7269 
- 1233      747900
- 1234              	.LASF12:
- 1235 019f 646F7562 		.ascii	"double\000"
- 1235      6C6500
- 1236              	.LASF28:
- 1237 01a6 73775F69 		.ascii	"sw_int_GetVector\000"
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 30
+ 1143 0173 19       		.uleb128 0x19
+ 1144 0174 00       		.byte	0
+ 1145 0175 00       		.byte	0
+ 1146 0176 00       		.byte	0
+ 1147              		.section	.debug_aranges,"",%progbits
+ 1148 0000 7C000000 		.4byte	0x7c
+ 1149 0004 0200     		.2byte	0x2
+ 1150 0006 00000000 		.4byte	.Ldebug_info0
+ 1151 000a 04       		.byte	0x4
+ 1152 000b 00       		.byte	0
+ 1153 000c 0000     		.2byte	0
+ 1154 000e 0000     		.2byte	0
+ 1155 0010 00000000 		.4byte	.LFB0
+ 1156 0014 24000000 		.4byte	.LFE0-.LFB0
+ 1157 0018 00000000 		.4byte	.LFB1
+ 1158 001c 24000000 		.4byte	.LFE1-.LFB1
+ 1159 0020 00000000 		.4byte	.LFB2
+ 1160 0024 18000000 		.4byte	.LFE2-.LFB2
+ 1161 0028 00000000 		.4byte	.LFB3
+ 1162 002c 08000000 		.4byte	.LFE3-.LFB3
+ 1163 0030 00000000 		.4byte	.LFB4
+ 1164 0034 18000000 		.4byte	.LFE4-.LFB4
+ 1165 0038 00000000 		.4byte	.LFB5
+ 1166 003c 14000000 		.4byte	.LFE5-.LFB5
+ 1167 0040 00000000 		.4byte	.LFB6
+ 1168 0044 50000000 		.4byte	.LFE6-.LFB6
+ 1169 0048 00000000 		.4byte	.LFB7
+ 1170 004c 30000000 		.4byte	.LFE7-.LFB7
+ 1171 0050 00000000 		.4byte	.LFB8
+ 1172 0054 14000000 		.4byte	.LFE8-.LFB8
+ 1173 0058 00000000 		.4byte	.LFB9
+ 1174 005c 20000000 		.4byte	.LFE9-.LFB9
+ 1175 0060 00000000 		.4byte	.LFB10
+ 1176 0064 14000000 		.4byte	.LFE10-.LFB10
+ 1177 0068 00000000 		.4byte	.LFB11
+ 1178 006c 14000000 		.4byte	.LFE11-.LFB11
+ 1179 0070 00000000 		.4byte	.LFB12
+ 1180 0074 14000000 		.4byte	.LFE12-.LFB12
+ 1181 0078 00000000 		.4byte	0
+ 1182 007c 00000000 		.4byte	0
+ 1183              		.section	.debug_ranges,"",%progbits
+ 1184              	.Ldebug_ranges0:
+ 1185 0000 00000000 		.4byte	.LFB0
+ 1186 0004 24000000 		.4byte	.LFE0
+ 1187 0008 00000000 		.4byte	.LFB1
+ 1188 000c 24000000 		.4byte	.LFE1
+ 1189 0010 00000000 		.4byte	.LFB2
+ 1190 0014 18000000 		.4byte	.LFE2
+ 1191 0018 00000000 		.4byte	.LFB3
+ 1192 001c 08000000 		.4byte	.LFE3
+ 1193 0020 00000000 		.4byte	.LFB4
+ 1194 0024 18000000 		.4byte	.LFE4
+ 1195 0028 00000000 		.4byte	.LFB5
+ 1196 002c 14000000 		.4byte	.LFE5
+ 1197 0030 00000000 		.4byte	.LFB6
+ 1198 0034 50000000 		.4byte	.LFE6
+ 1199 0038 00000000 		.4byte	.LFB7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 29
 
 
- 1237      6E745F47 
- 1237      65745665 
- 1237      63746F72 
- 1237      00
- 1238              	.LASF10:
- 1239 01b7 75696E74 		.ascii	"uint32\000"
- 1239      333200
- 1240              	.LASF34:
- 1241 01be 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\sw_int.c\000"
- 1241      6E657261 
- 1241      7465645F 
- 1241      536F7572 
- 1241      63655C50 
- 1242              	.LASF8:
- 1243 01e0 756E7369 		.ascii	"unsigned int\000"
- 1243      676E6564 
- 1243      20696E74 
- 1243      00
- 1244              	.LASF27:
- 1245 01ed 73775F69 		.ascii	"sw_int_Enable\000"
- 1245      6E745F45 
- 1245      6E61626C 
- 1245      6500
- 1246              	.LASF31:
- 1247 01fb 73775F69 		.ascii	"sw_int_SetPending\000"
- 1247      6E745F53 
- 1247      65745065 
- 1247      6E64696E 
- 1247      6700
- 1248              	.LASF7:
- 1249 020d 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1249      206C6F6E 
- 1249      6720756E 
- 1249      7369676E 
- 1249      65642069 
- 1250              	.LASF19:
- 1251 0224 73775F69 		.ascii	"sw_int_Interrupt\000"
- 1251      6E745F49 
- 1251      6E746572 
- 1251      72757074 
- 1251      00
- 1252              	.LASF15:
- 1253 0235 63796973 		.ascii	"cyisraddress\000"
- 1253      72616464 
- 1253      72657373 
- 1253      00
- 1254              	.LASF16:
- 1255 0242 73697A65 		.ascii	"sizetype\000"
- 1255      74797065 
- 1255      00
- 1256              	.LASF6:
- 1257 024b 6C6F6E67 		.ascii	"long long int\000"
- 1257      206C6F6E 
- 1257      6720696E 
- 1257      7400
- 1258              	.LASF13:
- 1259 0259 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccvaQ4zr.s 			page 31
+ 1200 003c 30000000 		.4byte	.LFE7
+ 1201 0040 00000000 		.4byte	.LFB8
+ 1202 0044 14000000 		.4byte	.LFE8
+ 1203 0048 00000000 		.4byte	.LFB9
+ 1204 004c 20000000 		.4byte	.LFE9
+ 1205 0050 00000000 		.4byte	.LFB10
+ 1206 0054 14000000 		.4byte	.LFE10
+ 1207 0058 00000000 		.4byte	.LFB11
+ 1208 005c 14000000 		.4byte	.LFE11
+ 1209 0060 00000000 		.4byte	.LFB12
+ 1210 0064 14000000 		.4byte	.LFE12
+ 1211 0068 00000000 		.4byte	0
+ 1212 006c 00000000 		.4byte	0
+ 1213              		.section	.debug_line,"",%progbits
+ 1214              	.Ldebug_line0:
+ 1215 0000 51010000 		.section	.debug_str,"MS",%progbits,1
+ 1215      02004500 
+ 1215      00000201 
+ 1215      FB0E0D00 
+ 1215      01010101 
+ 1216              	.LASF36:
+ 1217 0000 73775F69 		.ascii	"sw_int_GetPriority\000"
+ 1217      6E745F47 
+ 1217      65745072 
+ 1217      696F7269 
+ 1217      747900
+ 1218              	.LASF37:
+ 1219 0013 43795261 		.ascii	"CyRamVectors\000"
+ 1219      6D566563 
+ 1219      746F7273 
+ 1219      00
+ 1220              	.LASF22:
+ 1221 0020 61646472 		.ascii	"address\000"
+ 1221      65737300 
+ 1222              	.LASF18:
+ 1223 0028 73775F69 		.ascii	"sw_int_Stop\000"
+ 1223      6E745F53 
+ 1223      746F7000 
+ 1224              	.LASF20:
+ 1225 0034 73775F69 		.ascii	"sw_int_StartEx\000"
+ 1225      6E745F53 
+ 1225      74617274 
+ 1225      457800
+ 1226              	.LASF3:
+ 1227 0043 73686F72 		.ascii	"short unsigned int\000"
+ 1227      7420756E 
+ 1227      7369676E 
+ 1227      65642069 
+ 1227      6E7400
+ 1228              	.LASF29:
+ 1229 0056 73775F69 		.ascii	"sw_int_GetState\000"
+ 1229      6E745F47 
+ 1229      65745374 
+ 1229      61746500 
+ 1230              	.LASF21:
+ 1231 0066 73775F69 		.ascii	"sw_int_SetVector\000"
+ 1231      6E745F53 
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 30
 
 
- 1259      00
- 1260              	.LASF2:
- 1261 025e 73686F72 		.ascii	"short int\000"
- 1261      7420696E 
- 1261      7400
- 1262              	.LASF32:
- 1263 0268 73775F69 		.ascii	"sw_int_ClearPending\000"
- 1263      6E745F43 
- 1263      6C656172 
- 1263      50656E64 
- 1263      696E6700 
- 1264              	.LASF26:
- 1265 027c 7072696F 		.ascii	"priorityOffset\000"
- 1265      72697479 
- 1265      4F666673 
- 1265      657400
- 1266              	.LASF4:
- 1267 028b 6C6F6E67 		.ascii	"long int\000"
- 1267      20696E74 
- 1267      00
- 1268              	.LASF14:
- 1269 0294 72656733 		.ascii	"reg32\000"
- 1269      3200
- 1270              	.LASF0:
- 1271 029a 7369676E 		.ascii	"signed char\000"
- 1271      65642063 
- 1271      68617200 
- 1272              	.LASF17:
- 1273 02a6 73775F69 		.ascii	"sw_int_Start\000"
- 1273      6E745F53 
- 1273      74617274 
- 1273      00
- 1274              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 1231      65745665 
+ 1231      63746F72 
+ 1231      00
+ 1232              	.LASF11:
+ 1233 0077 666C6F61 		.ascii	"float\000"
+ 1233      7400
+ 1234              	.LASF33:
+ 1235 007d 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1235      4320342E 
+ 1235      382E3420 
+ 1235      32303134 
+ 1235      30353236 
+ 1236 00b0 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 1236      20726576 
+ 1236      6973696F 
+ 1236      6E203231 
+ 1236      31333538 
+ 1237 00e3 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 1237      66756E63 
+ 1237      74696F6E 
+ 1237      2D736563 
+ 1237      74696F6E 
+ 1238              	.LASF35:
+ 1239 00f9 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 1239      73657273 
+ 1239      5C536E75 
+ 1239      666B696E 
+ 1239      5C446F63 
+ 1240 0126 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 1240      696D6572 
+ 1240      5C435254 
+ 1240      5F74696D 
+ 1240      65722E63 
+ 1241              	.LASF1:
+ 1242 013f 756E7369 		.ascii	"unsigned char\000"
+ 1242      676E6564 
+ 1242      20636861 
+ 1242      7200
+ 1243              	.LASF25:
+ 1244 014d 696E7465 		.ascii	"interruptState\000"
+ 1244      72727570 
+ 1244      74537461 
+ 1244      746500
+ 1245              	.LASF5:
+ 1246 015c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1246      20756E73 
+ 1246      69676E65 
+ 1246      6420696E 
+ 1246      7400
+ 1247              	.LASF9:
+ 1248 016e 75696E74 		.ascii	"uint8\000"
+ 1248      3800
+ 1249              	.LASF24:
+ 1250 0174 7072696F 		.ascii	"priority\000"
+ 1250      72697479 
+ 1250      00
+ 1251              	.LASF30:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 31
+
+
+ 1252 017d 73775F69 		.ascii	"sw_int_Disable\000"
+ 1252      6E745F44 
+ 1252      69736162 
+ 1252      6C6500
+ 1253              	.LASF23:
+ 1254 018c 73775F69 		.ascii	"sw_int_SetPriority\000"
+ 1254      6E745F53 
+ 1254      65745072 
+ 1254      696F7269 
+ 1254      747900
+ 1255              	.LASF12:
+ 1256 019f 646F7562 		.ascii	"double\000"
+ 1256      6C6500
+ 1257              	.LASF28:
+ 1258 01a6 73775F69 		.ascii	"sw_int_GetVector\000"
+ 1258      6E745F47 
+ 1258      65745665 
+ 1258      63746F72 
+ 1258      00
+ 1259              	.LASF10:
+ 1260 01b7 75696E74 		.ascii	"uint32\000"
+ 1260      333200
+ 1261              	.LASF34:
+ 1262 01be 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\sw_int.c\000"
+ 1262      6E657261 
+ 1262      7465645F 
+ 1262      536F7572 
+ 1262      63655C50 
+ 1263              	.LASF8:
+ 1264 01e0 756E7369 		.ascii	"unsigned int\000"
+ 1264      676E6564 
+ 1264      20696E74 
+ 1264      00
+ 1265              	.LASF27:
+ 1266 01ed 73775F69 		.ascii	"sw_int_Enable\000"
+ 1266      6E745F45 
+ 1266      6E61626C 
+ 1266      6500
+ 1267              	.LASF31:
+ 1268 01fb 73775F69 		.ascii	"sw_int_SetPending\000"
+ 1268      6E745F53 
+ 1268      65745065 
+ 1268      6E64696E 
+ 1268      6700
+ 1269              	.LASF7:
+ 1270 020d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1270      206C6F6E 
+ 1270      6720756E 
+ 1270      7369676E 
+ 1270      65642069 
+ 1271              	.LASF19:
+ 1272 0224 73775F69 		.ascii	"sw_int_Interrupt\000"
+ 1272      6E745F49 
+ 1272      6E746572 
+ 1272      72757074 
+ 1272      00
+ 1273              	.LASF15:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccNpKIbb.s 			page 32
+
+
+ 1274 0235 63796973 		.ascii	"cyisraddress\000"
+ 1274      72616464 
+ 1274      72657373 
+ 1274      00
+ 1275              	.LASF16:
+ 1276 0242 73697A65 		.ascii	"sizetype\000"
+ 1276      74797065 
+ 1276      00
+ 1277              	.LASF6:
+ 1278 024b 6C6F6E67 		.ascii	"long long int\000"
+ 1278      206C6F6E 
+ 1278      6720696E 
+ 1278      7400
+ 1279              	.LASF13:
+ 1280 0259 63686172 		.ascii	"char\000"
+ 1280      00
+ 1281              	.LASF2:
+ 1282 025e 73686F72 		.ascii	"short int\000"
+ 1282      7420696E 
+ 1282      7400
+ 1283              	.LASF32:
+ 1284 0268 73775F69 		.ascii	"sw_int_ClearPending\000"
+ 1284      6E745F43 
+ 1284      6C656172 
+ 1284      50656E64 
+ 1284      696E6700 
+ 1285              	.LASF26:
+ 1286 027c 7072696F 		.ascii	"priorityOffset\000"
+ 1286      72697479 
+ 1286      4F666673 
+ 1286      657400
+ 1287              	.LASF4:
+ 1288 028b 6C6F6E67 		.ascii	"long int\000"
+ 1288      20696E74 
+ 1288      00
+ 1289              	.LASF14:
+ 1290 0294 72656733 		.ascii	"reg32\000"
+ 1290      3200
+ 1291              	.LASF0:
+ 1292 029a 7369676E 		.ascii	"signed char\000"
+ 1292      65642063 
+ 1292      68617200 
+ 1293              	.LASF17:
+ 1294 02a6 73775F69 		.ascii	"sw_int_Start\000"
+ 1294      6E745F53 
+ 1294      74617274 
+ 1294      00
+ 1295              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

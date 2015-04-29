@@ -1,18 +1,18 @@
 # CRT_timer
-# 2015-04-10 21:27:16Z
+# 2015-04-29 20:18:55Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
 # IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 3
 set_io "A0(0)" iocell 2 0
-set_io "B_press(0)" iocell 0 1
 set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
 set_io "D4(0)" iocell 0 0
 set_io "D5(0)" iocell 3 5
 set_io "D6(0)" iocell 1 0
 set_io "D7(0)" iocell 2 7
 set_io "E(0)" iocell 3 6
+set_io "GC_in(0)" iocell 0 1
 set_io "GND(0)" iocell 1 5
 set_io "RS(0)" iocell 2 6
 set_io "SW2(0)" iocell 0 7

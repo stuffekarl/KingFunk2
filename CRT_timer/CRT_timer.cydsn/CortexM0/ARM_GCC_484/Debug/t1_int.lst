@@ -1,0 +1,1909 @@
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"t1_int.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.t1_int_Start,"ax",%progbits
+  18              		.align	2
+  19              		.global	t1_int_Start
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	t1_int_Start, %function
+  23              	t1_int_Start:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\t1_int.c"
+   1:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/t1_int.c **** * File Name: t1_int.c  
+   3:.\Generated_Source\PSoC4/t1_int.c **** * Version 1.70
+   4:.\Generated_Source\PSoC4/t1_int.c **** *
+   5:.\Generated_Source\PSoC4/t1_int.c **** *  Description:
+   6:.\Generated_Source\PSoC4/t1_int.c **** *   API for controlling the state of an interrupt.
+   7:.\Generated_Source\PSoC4/t1_int.c **** *
+   8:.\Generated_Source\PSoC4/t1_int.c **** *
+   9:.\Generated_Source\PSoC4/t1_int.c **** *  Note:
+  10:.\Generated_Source\PSoC4/t1_int.c **** *
+  11:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC4/t1_int.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC4/t1_int.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:.\Generated_Source\PSoC4/t1_int.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:.\Generated_Source\PSoC4/t1_int.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC4/t1_int.c **** 
+  18:.\Generated_Source\PSoC4/t1_int.c **** 
+  19:.\Generated_Source\PSoC4/t1_int.c **** #include <cydevice_trm.h>
+  20:.\Generated_Source\PSoC4/t1_int.c **** #include <CyLib.h>
+  21:.\Generated_Source\PSoC4/t1_int.c **** #include <t1_int.h>
+  22:.\Generated_Source\PSoC4/t1_int.c **** 
+  23:.\Generated_Source\PSoC4/t1_int.c **** #if !defined(t1_int__REMOVED) /* Check for removal by optimization */
+  24:.\Generated_Source\PSoC4/t1_int.c **** 
+  25:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+  26:.\Generated_Source\PSoC4/t1_int.c **** *  Place your includes, defines and code here 
+  27:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************/
+  28:.\Generated_Source\PSoC4/t1_int.c **** /* `#START t1_int_intc` */
+  29:.\Generated_Source\PSoC4/t1_int.c **** 
+  30:.\Generated_Source\PSoC4/t1_int.c **** /* `#END` */
+  31:.\Generated_Source\PSoC4/t1_int.c **** 
+  32:.\Generated_Source\PSoC4/t1_int.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/t1_int.c **** 
+  34:.\Generated_Source\PSoC4/t1_int.c **** /* Declared in startup, used to set unused interrupts to. */
+  35:.\Generated_Source\PSoC4/t1_int.c **** CY_ISR_PROTO(IntDefaultHandler);
+  36:.\Generated_Source\PSoC4/t1_int.c **** 
+  37:.\Generated_Source\PSoC4/t1_int.c **** 
+  38:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+  39:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_Start
+  40:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+  41:.\Generated_Source\PSoC4/t1_int.c **** *
+  42:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+  43:.\Generated_Source\PSoC4/t1_int.c **** *  Set up the interrupt and enable it. This function disables the interrupt, 
+  44:.\Generated_Source\PSoC4/t1_int.c **** *  sets the default interrupt vector, sets the priority from the value in the
+  45:.\Generated_Source\PSoC4/t1_int.c **** *  Design Wide Resources Interrupt Editor, then enables the interrupt to the 
+  46:.\Generated_Source\PSoC4/t1_int.c **** *  interrupt controller.
+  47:.\Generated_Source\PSoC4/t1_int.c **** *
+  48:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:  
+  49:.\Generated_Source\PSoC4/t1_int.c **** *   None
+  50:.\Generated_Source\PSoC4/t1_int.c **** *
+  51:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+  52:.\Generated_Source\PSoC4/t1_int.c **** *   None
+  53:.\Generated_Source\PSoC4/t1_int.c **** *
+  54:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+  55:.\Generated_Source\PSoC4/t1_int.c **** void t1_int_Start(void)
+  56:.\Generated_Source\PSoC4/t1_int.c **** {
+  26              		.loc 1 56 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 00AF     		add	r7, sp, #0
+  33              		.cfi_def_cfa_register 7
+  57:.\Generated_Source\PSoC4/t1_int.c ****     /* For all we know the interrupt is active. */
+  58:.\Generated_Source\PSoC4/t1_int.c ****     t1_int_Disable();
+  34              		.loc 1 58 0
+  35 0004 FFF7FEFF 		bl	t1_int_Disable
+  59:.\Generated_Source\PSoC4/t1_int.c **** 
+  60:.\Generated_Source\PSoC4/t1_int.c ****     /* Set the ISR to point to the t1_int Interrupt. */
+  61:.\Generated_Source\PSoC4/t1_int.c ****     t1_int_SetVector(&t1_int_Interrupt);
+  36              		.loc 1 61 0
+  37 0008 054B     		ldr	r3, .L2
+  38 000a 181C     		mov	r0, r3
+  39 000c FFF7FEFF 		bl	t1_int_SetVector
+  62:.\Generated_Source\PSoC4/t1_int.c **** 
+  63:.\Generated_Source\PSoC4/t1_int.c ****     /* Set the priority. */
+  64:.\Generated_Source\PSoC4/t1_int.c ****     t1_int_SetPriority((uint8)t1_int_INTC_PRIOR_NUMBER);
+  40              		.loc 1 64 0
+  41 0010 0320     		mov	r0, #3
+  42 0012 FFF7FEFF 		bl	t1_int_SetPriority
+  65:.\Generated_Source\PSoC4/t1_int.c **** 
+  66:.\Generated_Source\PSoC4/t1_int.c ****     /* Enable it. */
+  67:.\Generated_Source\PSoC4/t1_int.c ****     t1_int_Enable();
+  43              		.loc 1 67 0
+  44 0016 FFF7FEFF 		bl	t1_int_Enable
+  68:.\Generated_Source\PSoC4/t1_int.c **** }
+  45              		.loc 1 68 0
+  46 001a BD46     		mov	sp, r7
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 3
+
+
+  47              		@ sp needed
+  48 001c 80BD     		pop	{r7, pc}
+  49              	.L3:
+  50 001e C046     		.align	2
+  51              	.L2:
+  52 0020 00000000 		.word	t1_int_Interrupt
+  53              		.cfi_endproc
+  54              	.LFE0:
+  55              		.size	t1_int_Start, .-t1_int_Start
+  56              		.section	.text.t1_int_StartEx,"ax",%progbits
+  57              		.align	2
+  58              		.global	t1_int_StartEx
+  59              		.code	16
+  60              		.thumb_func
+  61              		.type	t1_int_StartEx, %function
+  62              	t1_int_StartEx:
+  63              	.LFB1:
+  69:.\Generated_Source\PSoC4/t1_int.c **** 
+  70:.\Generated_Source\PSoC4/t1_int.c **** 
+  71:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+  72:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_StartEx
+  73:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+  74:.\Generated_Source\PSoC4/t1_int.c **** *
+  75:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+  76:.\Generated_Source\PSoC4/t1_int.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
+  77:.\Generated_Source\PSoC4/t1_int.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
+  78:.\Generated_Source\PSoC4/t1_int.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
+  79:.\Generated_Source\PSoC4/t1_int.c **** *  the interrupt to the interrupt controller.
+  80:.\Generated_Source\PSoC4/t1_int.c **** *  
+  81:.\Generated_Source\PSoC4/t1_int.c **** *  When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+  82:.\Generated_Source\PSoC4/t1_int.c **** *  used to provide consistent definition across compilers:
+  83:.\Generated_Source\PSoC4/t1_int.c **** *  
+  84:.\Generated_Source\PSoC4/t1_int.c **** *  Function definition example:
+  85:.\Generated_Source\PSoC4/t1_int.c **** *   CY_ISR(MyISR)
+  86:.\Generated_Source\PSoC4/t1_int.c **** *   {
+  87:.\Generated_Source\PSoC4/t1_int.c **** *   }
+  88:.\Generated_Source\PSoC4/t1_int.c **** *   Function prototype example:
+  89:.\Generated_Source\PSoC4/t1_int.c **** *   CY_ISR_PROTO(MyISR);
+  90:.\Generated_Source\PSoC4/t1_int.c **** *
+  91:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:  
+  92:.\Generated_Source\PSoC4/t1_int.c **** *   address: Address of the ISR to set in the interrupt vector table.
+  93:.\Generated_Source\PSoC4/t1_int.c **** *
+  94:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+  95:.\Generated_Source\PSoC4/t1_int.c **** *   None
+  96:.\Generated_Source\PSoC4/t1_int.c **** *
+  97:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+  98:.\Generated_Source\PSoC4/t1_int.c **** void t1_int_StartEx(cyisraddress address)
+  99:.\Generated_Source\PSoC4/t1_int.c **** {
+  64              		.loc 1 99 0
+  65              		.cfi_startproc
+  66 0000 80B5     		push	{r7, lr}
+  67              		.cfi_def_cfa_offset 8
+  68              		.cfi_offset 7, -8
+  69              		.cfi_offset 14, -4
+  70 0002 82B0     		sub	sp, sp, #8
+  71              		.cfi_def_cfa_offset 16
+  72 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 4
+
+
+  73              		.cfi_def_cfa_register 7
+  74 0006 7860     		str	r0, [r7, #4]
+ 100:.\Generated_Source\PSoC4/t1_int.c ****     /* For all we know the interrupt is active. */
+ 101:.\Generated_Source\PSoC4/t1_int.c ****     t1_int_Disable();
+  75              		.loc 1 101 0
+  76 0008 FFF7FEFF 		bl	t1_int_Disable
+ 102:.\Generated_Source\PSoC4/t1_int.c **** 
+ 103:.\Generated_Source\PSoC4/t1_int.c ****     /* Set the ISR to point to the t1_int Interrupt. */
+ 104:.\Generated_Source\PSoC4/t1_int.c ****     t1_int_SetVector(address);
+  77              		.loc 1 104 0
+  78 000c 7B68     		ldr	r3, [r7, #4]
+  79 000e 181C     		mov	r0, r3
+  80 0010 FFF7FEFF 		bl	t1_int_SetVector
+ 105:.\Generated_Source\PSoC4/t1_int.c **** 
+ 106:.\Generated_Source\PSoC4/t1_int.c ****     /* Set the priority. */
+ 107:.\Generated_Source\PSoC4/t1_int.c ****     t1_int_SetPriority((uint8)t1_int_INTC_PRIOR_NUMBER);
+  81              		.loc 1 107 0
+  82 0014 0320     		mov	r0, #3
+  83 0016 FFF7FEFF 		bl	t1_int_SetPriority
+ 108:.\Generated_Source\PSoC4/t1_int.c **** 
+ 109:.\Generated_Source\PSoC4/t1_int.c ****     /* Enable it. */
+ 110:.\Generated_Source\PSoC4/t1_int.c ****     t1_int_Enable();
+  84              		.loc 1 110 0
+  85 001a FFF7FEFF 		bl	t1_int_Enable
+ 111:.\Generated_Source\PSoC4/t1_int.c **** }
+  86              		.loc 1 111 0
+  87 001e BD46     		mov	sp, r7
+  88 0020 02B0     		add	sp, sp, #8
+  89              		@ sp needed
+  90 0022 80BD     		pop	{r7, pc}
+  91              		.cfi_endproc
+  92              	.LFE1:
+  93              		.size	t1_int_StartEx, .-t1_int_StartEx
+  94              		.section	.text.t1_int_Stop,"ax",%progbits
+  95              		.align	2
+  96              		.global	t1_int_Stop
+  97              		.code	16
+  98              		.thumb_func
+  99              		.type	t1_int_Stop, %function
+ 100              	t1_int_Stop:
+ 101              	.LFB2:
+ 112:.\Generated_Source\PSoC4/t1_int.c **** 
+ 113:.\Generated_Source\PSoC4/t1_int.c **** 
+ 114:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 115:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_Stop
+ 116:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 117:.\Generated_Source\PSoC4/t1_int.c **** *
+ 118:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 119:.\Generated_Source\PSoC4/t1_int.c **** *   Disables and removes the interrupt.
+ 120:.\Generated_Source\PSoC4/t1_int.c **** *
+ 121:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:  
+ 122:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 123:.\Generated_Source\PSoC4/t1_int.c **** *
+ 124:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ 125:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 126:.\Generated_Source\PSoC4/t1_int.c **** *
+ 127:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 5
+
+
+ 128:.\Generated_Source\PSoC4/t1_int.c **** void t1_int_Stop(void)
+ 129:.\Generated_Source\PSoC4/t1_int.c **** {
+ 102              		.loc 1 129 0
+ 103              		.cfi_startproc
+ 104 0000 80B5     		push	{r7, lr}
+ 105              		.cfi_def_cfa_offset 8
+ 106              		.cfi_offset 7, -8
+ 107              		.cfi_offset 14, -4
+ 108 0002 00AF     		add	r7, sp, #0
+ 109              		.cfi_def_cfa_register 7
+ 130:.\Generated_Source\PSoC4/t1_int.c ****     /* Disable this interrupt. */
+ 131:.\Generated_Source\PSoC4/t1_int.c ****     t1_int_Disable();
+ 110              		.loc 1 131 0
+ 111 0004 FFF7FEFF 		bl	t1_int_Disable
+ 132:.\Generated_Source\PSoC4/t1_int.c **** 
+ 133:.\Generated_Source\PSoC4/t1_int.c ****     /* Set the ISR to point to the passive one. */
+ 134:.\Generated_Source\PSoC4/t1_int.c ****     t1_int_SetVector(&IntDefaultHandler);
+ 112              		.loc 1 134 0
+ 113 0008 024B     		ldr	r3, .L6
+ 114 000a 181C     		mov	r0, r3
+ 115 000c FFF7FEFF 		bl	t1_int_SetVector
+ 135:.\Generated_Source\PSoC4/t1_int.c **** }
+ 116              		.loc 1 135 0
+ 117 0010 BD46     		mov	sp, r7
+ 118              		@ sp needed
+ 119 0012 80BD     		pop	{r7, pc}
+ 120              	.L7:
+ 121              		.align	2
+ 122              	.L6:
+ 123 0014 00000000 		.word	IntDefaultHandler
+ 124              		.cfi_endproc
+ 125              	.LFE2:
+ 126              		.size	t1_int_Stop, .-t1_int_Stop
+ 127              		.section	.text.t1_int_Interrupt,"ax",%progbits
+ 128              		.align	2
+ 129              		.global	t1_int_Interrupt
+ 130              		.code	16
+ 131              		.thumb_func
+ 132              		.type	t1_int_Interrupt, %function
+ 133              	t1_int_Interrupt:
+ 134              	.LFB3:
+ 136:.\Generated_Source\PSoC4/t1_int.c **** 
+ 137:.\Generated_Source\PSoC4/t1_int.c **** 
+ 138:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 139:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_Interrupt
+ 140:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 141:.\Generated_Source\PSoC4/t1_int.c **** *
+ 142:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 143:.\Generated_Source\PSoC4/t1_int.c **** *   The default Interrupt Service Routine for t1_int.
+ 144:.\Generated_Source\PSoC4/t1_int.c **** *
+ 145:.\Generated_Source\PSoC4/t1_int.c **** *   Add custom code between the START and END comments to keep the next version
+ 146:.\Generated_Source\PSoC4/t1_int.c **** *   of this file from over-writing your code.
+ 147:.\Generated_Source\PSoC4/t1_int.c **** *
+ 148:.\Generated_Source\PSoC4/t1_int.c **** *   Note You may use either the default ISR by using this API, or you may define
+ 149:.\Generated_Source\PSoC4/t1_int.c **** *   your own separate ISR through ISR_StartEx().
+ 150:.\Generated_Source\PSoC4/t1_int.c **** *
+ 151:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:  
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 6
+
+
+ 152:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 153:.\Generated_Source\PSoC4/t1_int.c **** *
+ 154:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ 155:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 156:.\Generated_Source\PSoC4/t1_int.c **** *
+ 157:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ 158:.\Generated_Source\PSoC4/t1_int.c **** CY_ISR(t1_int_Interrupt)
+ 159:.\Generated_Source\PSoC4/t1_int.c **** {
+ 135              		.loc 1 159 0
+ 136              		.cfi_startproc
+ 137 0000 80B5     		push	{r7, lr}
+ 138              		.cfi_def_cfa_offset 8
+ 139              		.cfi_offset 7, -8
+ 140              		.cfi_offset 14, -4
+ 141 0002 00AF     		add	r7, sp, #0
+ 142              		.cfi_def_cfa_register 7
+ 160:.\Generated_Source\PSoC4/t1_int.c ****     /*  Place your Interrupt code here. */
+ 161:.\Generated_Source\PSoC4/t1_int.c ****     /* `#START t1_int_Interrupt` */
+ 162:.\Generated_Source\PSoC4/t1_int.c **** 
+ 163:.\Generated_Source\PSoC4/t1_int.c ****     /* `#END` */
+ 164:.\Generated_Source\PSoC4/t1_int.c **** }
+ 143              		.loc 1 164 0
+ 144 0004 BD46     		mov	sp, r7
+ 145              		@ sp needed
+ 146 0006 80BD     		pop	{r7, pc}
+ 147              		.cfi_endproc
+ 148              	.LFE3:
+ 149              		.size	t1_int_Interrupt, .-t1_int_Interrupt
+ 150              		.section	.text.t1_int_SetVector,"ax",%progbits
+ 151              		.align	2
+ 152              		.global	t1_int_SetVector
+ 153              		.code	16
+ 154              		.thumb_func
+ 155              		.type	t1_int_SetVector, %function
+ 156              	t1_int_SetVector:
+ 157              	.LFB4:
+ 165:.\Generated_Source\PSoC4/t1_int.c **** 
+ 166:.\Generated_Source\PSoC4/t1_int.c **** 
+ 167:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 168:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_SetVector
+ 169:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 170:.\Generated_Source\PSoC4/t1_int.c **** *
+ 171:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 172:.\Generated_Source\PSoC4/t1_int.c **** *   Change the ISR vector for the Interrupt. Note calling t1_int_Start
+ 173:.\Generated_Source\PSoC4/t1_int.c **** *   will override any effect this method would have had. To set the vector 
+ 174:.\Generated_Source\PSoC4/t1_int.c **** *   before the component has been started use t1_int_StartEx instead.
+ 175:.\Generated_Source\PSoC4/t1_int.c **** * 
+ 176:.\Generated_Source\PSoC4/t1_int.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+ 177:.\Generated_Source\PSoC4/t1_int.c **** *   used to provide consistent definition across compilers:
+ 178:.\Generated_Source\PSoC4/t1_int.c **** *
+ 179:.\Generated_Source\PSoC4/t1_int.c **** *   Function definition example:
+ 180:.\Generated_Source\PSoC4/t1_int.c **** *   CY_ISR(MyISR)
+ 181:.\Generated_Source\PSoC4/t1_int.c **** *   {
+ 182:.\Generated_Source\PSoC4/t1_int.c **** *   }
+ 183:.\Generated_Source\PSoC4/t1_int.c **** *
+ 184:.\Generated_Source\PSoC4/t1_int.c **** *   Function prototype example:
+ 185:.\Generated_Source\PSoC4/t1_int.c **** *     CY_ISR_PROTO(MyISR);
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 7
+
+
+ 186:.\Generated_Source\PSoC4/t1_int.c **** *
+ 187:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:
+ 188:.\Generated_Source\PSoC4/t1_int.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 189:.\Generated_Source\PSoC4/t1_int.c **** *
+ 190:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ 191:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 192:.\Generated_Source\PSoC4/t1_int.c **** *
+ 193:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ 194:.\Generated_Source\PSoC4/t1_int.c **** void t1_int_SetVector(cyisraddress address)
+ 195:.\Generated_Source\PSoC4/t1_int.c **** {
+ 158              		.loc 1 195 0
+ 159              		.cfi_startproc
+ 160 0000 80B5     		push	{r7, lr}
+ 161              		.cfi_def_cfa_offset 8
+ 162              		.cfi_offset 7, -8
+ 163              		.cfi_offset 14, -4
+ 164 0002 82B0     		sub	sp, sp, #8
+ 165              		.cfi_def_cfa_offset 16
+ 166 0004 00AF     		add	r7, sp, #0
+ 167              		.cfi_def_cfa_register 7
+ 168 0006 7860     		str	r0, [r7, #4]
+ 196:.\Generated_Source\PSoC4/t1_int.c ****     CyRamVectors[CYINT_IRQ_BASE + t1_int__INTC_NUMBER] = address;
+ 169              		.loc 1 196 0
+ 170 0008 024B     		ldr	r3, .L10
+ 171 000a 7A68     		ldr	r2, [r7, #4]
+ 172 000c DA64     		str	r2, [r3, #76]
+ 197:.\Generated_Source\PSoC4/t1_int.c **** }
+ 173              		.loc 1 197 0
+ 174 000e BD46     		mov	sp, r7
+ 175 0010 02B0     		add	sp, sp, #8
+ 176              		@ sp needed
+ 177 0012 80BD     		pop	{r7, pc}
+ 178              	.L11:
+ 179              		.align	2
+ 180              	.L10:
+ 181 0014 00000000 		.word	CyRamVectors
+ 182              		.cfi_endproc
+ 183              	.LFE4:
+ 184              		.size	t1_int_SetVector, .-t1_int_SetVector
+ 185              		.section	.text.t1_int_GetVector,"ax",%progbits
+ 186              		.align	2
+ 187              		.global	t1_int_GetVector
+ 188              		.code	16
+ 189              		.thumb_func
+ 190              		.type	t1_int_GetVector, %function
+ 191              	t1_int_GetVector:
+ 192              	.LFB5:
+ 198:.\Generated_Source\PSoC4/t1_int.c **** 
+ 199:.\Generated_Source\PSoC4/t1_int.c **** 
+ 200:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 201:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_GetVector
+ 202:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 203:.\Generated_Source\PSoC4/t1_int.c **** *
+ 204:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 205:.\Generated_Source\PSoC4/t1_int.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 206:.\Generated_Source\PSoC4/t1_int.c **** *
+ 207:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 8
+
+
+ 208:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 209:.\Generated_Source\PSoC4/t1_int.c **** *
+ 210:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ 211:.\Generated_Source\PSoC4/t1_int.c **** *   Address of the ISR in the interrupt vector table.
+ 212:.\Generated_Source\PSoC4/t1_int.c **** *
+ 213:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ 214:.\Generated_Source\PSoC4/t1_int.c **** cyisraddress t1_int_GetVector(void)
+ 215:.\Generated_Source\PSoC4/t1_int.c **** {
+ 193              		.loc 1 215 0
+ 194              		.cfi_startproc
+ 195 0000 80B5     		push	{r7, lr}
+ 196              		.cfi_def_cfa_offset 8
+ 197              		.cfi_offset 7, -8
+ 198              		.cfi_offset 14, -4
+ 199 0002 00AF     		add	r7, sp, #0
+ 200              		.cfi_def_cfa_register 7
+ 216:.\Generated_Source\PSoC4/t1_int.c ****     return CyRamVectors[CYINT_IRQ_BASE + t1_int__INTC_NUMBER];
+ 201              		.loc 1 216 0
+ 202 0004 024B     		ldr	r3, .L14
+ 203 0006 DB6C     		ldr	r3, [r3, #76]
+ 217:.\Generated_Source\PSoC4/t1_int.c **** }
+ 204              		.loc 1 217 0
+ 205 0008 181C     		mov	r0, r3
+ 206 000a BD46     		mov	sp, r7
+ 207              		@ sp needed
+ 208 000c 80BD     		pop	{r7, pc}
+ 209              	.L15:
+ 210 000e C046     		.align	2
+ 211              	.L14:
+ 212 0010 00000000 		.word	CyRamVectors
+ 213              		.cfi_endproc
+ 214              	.LFE5:
+ 215              		.size	t1_int_GetVector, .-t1_int_GetVector
+ 216              		.section	.text.t1_int_SetPriority,"ax",%progbits
+ 217              		.align	2
+ 218              		.global	t1_int_SetPriority
+ 219              		.code	16
+ 220              		.thumb_func
+ 221              		.type	t1_int_SetPriority, %function
+ 222              	t1_int_SetPriority:
+ 223              	.LFB6:
+ 218:.\Generated_Source\PSoC4/t1_int.c **** 
+ 219:.\Generated_Source\PSoC4/t1_int.c **** 
+ 220:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 221:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_SetPriority
+ 222:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 223:.\Generated_Source\PSoC4/t1_int.c **** *
+ 224:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 225:.\Generated_Source\PSoC4/t1_int.c **** *   Sets the Priority of the Interrupt. 
+ 226:.\Generated_Source\PSoC4/t1_int.c **** *
+ 227:.\Generated_Source\PSoC4/t1_int.c **** *   Note calling t1_int_Start or t1_int_StartEx will 
+ 228:.\Generated_Source\PSoC4/t1_int.c **** *   override any effect this API would have had. This API should only be called
+ 229:.\Generated_Source\PSoC4/t1_int.c **** *   after t1_int_Start or t1_int_StartEx has been called. 
+ 230:.\Generated_Source\PSoC4/t1_int.c **** *   To set the initial priority for the component, use the Design-Wide Resources
+ 231:.\Generated_Source\PSoC4/t1_int.c **** *   Interrupt Editor.
+ 232:.\Generated_Source\PSoC4/t1_int.c **** *
+ 233:.\Generated_Source\PSoC4/t1_int.c **** *   Note This API has no effect on Non-maskable interrupt NMI).
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 9
+
+
+ 234:.\Generated_Source\PSoC4/t1_int.c **** *
+ 235:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:
+ 236:.\Generated_Source\PSoC4/t1_int.c **** *   priority: Priority of the interrupt, 0 being the highest priority
+ 237:.\Generated_Source\PSoC4/t1_int.c **** *             PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 238:.\Generated_Source\PSoC4/t1_int.c **** *             PSoC 4: Priority is from 0 to 3.
+ 239:.\Generated_Source\PSoC4/t1_int.c **** *
+ 240:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ 241:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 242:.\Generated_Source\PSoC4/t1_int.c **** *
+ 243:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ 244:.\Generated_Source\PSoC4/t1_int.c **** void t1_int_SetPriority(uint8 priority)
+ 245:.\Generated_Source\PSoC4/t1_int.c **** {
+ 224              		.loc 1 245 0
+ 225              		.cfi_startproc
+ 226 0000 90B5     		push	{r4, r7, lr}
+ 227              		.cfi_def_cfa_offset 12
+ 228              		.cfi_offset 4, -12
+ 229              		.cfi_offset 7, -8
+ 230              		.cfi_offset 14, -4
+ 231 0002 85B0     		sub	sp, sp, #20
+ 232              		.cfi_def_cfa_offset 32
+ 233 0004 00AF     		add	r7, sp, #0
+ 234              		.cfi_def_cfa_register 7
+ 235 0006 021C     		mov	r2, r0
+ 236 0008 FB1D     		add	r3, r7, #7
+ 237 000a 1A70     		strb	r2, [r3]
+ 246:.\Generated_Source\PSoC4/t1_int.c **** 	uint8 interruptState;
+ 247:.\Generated_Source\PSoC4/t1_int.c ****     uint32 priorityOffset = ((t1_int__INTC_NUMBER % 4u) * 8u) + 6u;
+ 238              		.loc 1 247 0
+ 239 000c 1E23     		mov	r3, #30
+ 240 000e FB60     		str	r3, [r7, #12]
+ 248:.\Generated_Source\PSoC4/t1_int.c ****     
+ 249:.\Generated_Source\PSoC4/t1_int.c **** 	interruptState = CyEnterCriticalSection();
+ 241              		.loc 1 249 0
+ 242 0010 3C1C     		mov	r4, r7
+ 243 0012 0B34     		add	r4, r4, #11
+ 244 0014 FFF7FEFF 		bl	CyEnterCriticalSection
+ 245 0018 031C     		mov	r3, r0
+ 246 001a 2370     		strb	r3, [r4]
+ 250:.\Generated_Source\PSoC4/t1_int.c ****     *t1_int_INTC_PRIOR = (*t1_int_INTC_PRIOR & (uint32)(~t1_int__INTC_PRIOR_MASK)) |
+ 247              		.loc 1 250 0
+ 248 001c 0A4B     		ldr	r3, .L17
+ 249 001e 0A4A     		ldr	r2, .L17
+ 250 0020 1268     		ldr	r2, [r2]
+ 251 0022 9200     		lsl	r2, r2, #2
+ 252 0024 9108     		lsr	r1, r2, #2
+ 251:.\Generated_Source\PSoC4/t1_int.c ****                                     ((uint32)priority << priorityOffset);
+ 253              		.loc 1 251 0
+ 254 0026 FA1D     		add	r2, r7, #7
+ 255 0028 1078     		ldrb	r0, [r2]
+ 256 002a FA68     		ldr	r2, [r7, #12]
+ 257 002c 041C     		mov	r4, r0
+ 258 002e 9440     		lsl	r4, r4, r2
+ 259 0030 221C     		mov	r2, r4
+ 250:.\Generated_Source\PSoC4/t1_int.c ****     *t1_int_INTC_PRIOR = (*t1_int_INTC_PRIOR & (uint32)(~t1_int__INTC_PRIOR_MASK)) |
+ 260              		.loc 1 250 0
+ 261 0032 0A43     		orr	r2, r1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 10
+
+
+ 262 0034 1A60     		str	r2, [r3]
+ 252:.\Generated_Source\PSoC4/t1_int.c **** 	CyExitCriticalSection(interruptState);
+ 263              		.loc 1 252 0
+ 264 0036 3B1C     		mov	r3, r7
+ 265 0038 0B33     		add	r3, r3, #11
+ 266 003a 1B78     		ldrb	r3, [r3]
+ 267 003c 181C     		mov	r0, r3
+ 268 003e FFF7FEFF 		bl	CyExitCriticalSection
+ 253:.\Generated_Source\PSoC4/t1_int.c **** }
+ 269              		.loc 1 253 0
+ 270 0042 BD46     		mov	sp, r7
+ 271 0044 05B0     		add	sp, sp, #20
+ 272              		@ sp needed
+ 273 0046 90BD     		pop	{r4, r7, pc}
+ 274              	.L18:
+ 275              		.align	2
+ 276              	.L17:
+ 277 0048 00E400E0 		.word	-536812544
+ 278              		.cfi_endproc
+ 279              	.LFE6:
+ 280              		.size	t1_int_SetPriority, .-t1_int_SetPriority
+ 281              		.section	.text.t1_int_GetPriority,"ax",%progbits
+ 282              		.align	2
+ 283              		.global	t1_int_GetPriority
+ 284              		.code	16
+ 285              		.thumb_func
+ 286              		.type	t1_int_GetPriority, %function
+ 287              	t1_int_GetPriority:
+ 288              	.LFB7:
+ 254:.\Generated_Source\PSoC4/t1_int.c **** 
+ 255:.\Generated_Source\PSoC4/t1_int.c **** 
+ 256:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 257:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_GetPriority
+ 258:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 259:.\Generated_Source\PSoC4/t1_int.c **** *
+ 260:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 261:.\Generated_Source\PSoC4/t1_int.c **** *   Gets the Priority of the Interrupt.
+ 262:.\Generated_Source\PSoC4/t1_int.c **** *
+ 263:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:
+ 264:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 265:.\Generated_Source\PSoC4/t1_int.c **** *
+ 266:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ 267:.\Generated_Source\PSoC4/t1_int.c **** *   Priority of the interrupt, 0 being the highest priority
+ 268:.\Generated_Source\PSoC4/t1_int.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 269:.\Generated_Source\PSoC4/t1_int.c **** *    PSoC 4: Priority is from 0 to 3.
+ 270:.\Generated_Source\PSoC4/t1_int.c **** *
+ 271:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ 272:.\Generated_Source\PSoC4/t1_int.c **** uint8 t1_int_GetPriority(void)
+ 273:.\Generated_Source\PSoC4/t1_int.c **** {
+ 289              		.loc 1 273 0
+ 290              		.cfi_startproc
+ 291 0000 80B5     		push	{r7, lr}
+ 292              		.cfi_def_cfa_offset 8
+ 293              		.cfi_offset 7, -8
+ 294              		.cfi_offset 14, -4
+ 295 0002 82B0     		sub	sp, sp, #8
+ 296              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 11
+
+
+ 297 0004 00AF     		add	r7, sp, #0
+ 298              		.cfi_def_cfa_register 7
+ 274:.\Generated_Source\PSoC4/t1_int.c ****     uint32 priority;
+ 275:.\Generated_Source\PSoC4/t1_int.c **** 	uint32 priorityOffset = ((t1_int__INTC_NUMBER % 4u) * 8u) + 6u;
+ 299              		.loc 1 275 0
+ 300 0006 1E23     		mov	r3, #30
+ 301 0008 7B60     		str	r3, [r7, #4]
+ 276:.\Generated_Source\PSoC4/t1_int.c **** 
+ 277:.\Generated_Source\PSoC4/t1_int.c ****     priority = (*t1_int_INTC_PRIOR & t1_int__INTC_PRIOR_MASK) >> priorityOffset;
+ 302              		.loc 1 277 0
+ 303 000a 074B     		ldr	r3, .L21
+ 304 000c 1B68     		ldr	r3, [r3]
+ 305 000e 9B0F     		lsr	r3, r3, #30
+ 306 0010 9A07     		lsl	r2, r3, #30
+ 307 0012 7B68     		ldr	r3, [r7, #4]
+ 308 0014 111C     		mov	r1, r2
+ 309 0016 D940     		lsr	r1, r1, r3
+ 310 0018 0B1C     		mov	r3, r1
+ 311 001a 3B60     		str	r3, [r7]
+ 278:.\Generated_Source\PSoC4/t1_int.c **** 
+ 279:.\Generated_Source\PSoC4/t1_int.c ****     return (uint8)priority;
+ 312              		.loc 1 279 0
+ 313 001c 3B68     		ldr	r3, [r7]
+ 314 001e DBB2     		uxtb	r3, r3
+ 280:.\Generated_Source\PSoC4/t1_int.c **** }
+ 315              		.loc 1 280 0
+ 316 0020 181C     		mov	r0, r3
+ 317 0022 BD46     		mov	sp, r7
+ 318 0024 02B0     		add	sp, sp, #8
+ 319              		@ sp needed
+ 320 0026 80BD     		pop	{r7, pc}
+ 321              	.L22:
+ 322              		.align	2
+ 323              	.L21:
+ 324 0028 00E400E0 		.word	-536812544
+ 325              		.cfi_endproc
+ 326              	.LFE7:
+ 327              		.size	t1_int_GetPriority, .-t1_int_GetPriority
+ 328              		.section	.text.t1_int_Enable,"ax",%progbits
+ 329              		.align	2
+ 330              		.global	t1_int_Enable
+ 331              		.code	16
+ 332              		.thumb_func
+ 333              		.type	t1_int_Enable, %function
+ 334              	t1_int_Enable:
+ 335              	.LFB8:
+ 281:.\Generated_Source\PSoC4/t1_int.c **** 
+ 282:.\Generated_Source\PSoC4/t1_int.c **** 
+ 283:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 284:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_Enable
+ 285:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 286:.\Generated_Source\PSoC4/t1_int.c **** *
+ 287:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 288:.\Generated_Source\PSoC4/t1_int.c **** *   Enables the interrupt to the interrupt controller. Do not call this function
+ 289:.\Generated_Source\PSoC4/t1_int.c **** *   unless ISR_Start() has been called or the functionality of the ISR_Start() 
+ 290:.\Generated_Source\PSoC4/t1_int.c **** *   function, which sets the vector and the priority, has been called.
+ 291:.\Generated_Source\PSoC4/t1_int.c **** *
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 12
+
+
+ 292:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:
+ 293:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 294:.\Generated_Source\PSoC4/t1_int.c **** *
+ 295:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ 296:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 297:.\Generated_Source\PSoC4/t1_int.c **** *
+ 298:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ 299:.\Generated_Source\PSoC4/t1_int.c **** void t1_int_Enable(void)
+ 300:.\Generated_Source\PSoC4/t1_int.c **** {
+ 336              		.loc 1 300 0
+ 337              		.cfi_startproc
+ 338 0000 80B5     		push	{r7, lr}
+ 339              		.cfi_def_cfa_offset 8
+ 340              		.cfi_offset 7, -8
+ 341              		.cfi_offset 14, -4
+ 342 0002 00AF     		add	r7, sp, #0
+ 343              		.cfi_def_cfa_register 7
+ 301:.\Generated_Source\PSoC4/t1_int.c ****     /* Enable the general interrupt. */
+ 302:.\Generated_Source\PSoC4/t1_int.c ****     *t1_int_INTC_SET_EN = t1_int__INTC_MASK;
+ 344              		.loc 1 302 0
+ 345 0004 024B     		ldr	r3, .L24
+ 346 0006 0822     		mov	r2, #8
+ 347 0008 1A60     		str	r2, [r3]
+ 303:.\Generated_Source\PSoC4/t1_int.c **** }
+ 348              		.loc 1 303 0
+ 349 000a BD46     		mov	sp, r7
+ 350              		@ sp needed
+ 351 000c 80BD     		pop	{r7, pc}
+ 352              	.L25:
+ 353 000e C046     		.align	2
+ 354              	.L24:
+ 355 0010 00E100E0 		.word	-536813312
+ 356              		.cfi_endproc
+ 357              	.LFE8:
+ 358              		.size	t1_int_Enable, .-t1_int_Enable
+ 359              		.section	.text.t1_int_GetState,"ax",%progbits
+ 360              		.align	2
+ 361              		.global	t1_int_GetState
+ 362              		.code	16
+ 363              		.thumb_func
+ 364              		.type	t1_int_GetState, %function
+ 365              	t1_int_GetState:
+ 366              	.LFB9:
+ 304:.\Generated_Source\PSoC4/t1_int.c **** 
+ 305:.\Generated_Source\PSoC4/t1_int.c **** 
+ 306:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 307:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_GetState
+ 308:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 309:.\Generated_Source\PSoC4/t1_int.c **** *
+ 310:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 311:.\Generated_Source\PSoC4/t1_int.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 312:.\Generated_Source\PSoC4/t1_int.c **** *
+ 313:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:
+ 314:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 315:.\Generated_Source\PSoC4/t1_int.c **** *
+ 316:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ 317:.\Generated_Source\PSoC4/t1_int.c **** *   1 if enabled, 0 if disabled.
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 13
+
+
+ 318:.\Generated_Source\PSoC4/t1_int.c **** *
+ 319:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ 320:.\Generated_Source\PSoC4/t1_int.c **** uint8 t1_int_GetState(void)
+ 321:.\Generated_Source\PSoC4/t1_int.c **** {
+ 367              		.loc 1 321 0
+ 368              		.cfi_startproc
+ 369 0000 80B5     		push	{r7, lr}
+ 370              		.cfi_def_cfa_offset 8
+ 371              		.cfi_offset 7, -8
+ 372              		.cfi_offset 14, -4
+ 373 0002 00AF     		add	r7, sp, #0
+ 374              		.cfi_def_cfa_register 7
+ 322:.\Generated_Source\PSoC4/t1_int.c ****     /* Get the state of the general interrupt. */
+ 323:.\Generated_Source\PSoC4/t1_int.c ****     return ((*t1_int_INTC_SET_EN & (uint32)t1_int__INTC_MASK) != 0u) ? 1u:0u;
+ 375              		.loc 1 323 0
+ 376 0004 054B     		ldr	r3, .L30
+ 377 0006 1A68     		ldr	r2, [r3]
+ 378 0008 0823     		mov	r3, #8
+ 379 000a 1340     		and	r3, r2
+ 380 000c 01D0     		beq	.L27
+ 381              		.loc 1 323 0 is_stmt 0 discriminator 1
+ 382 000e 0123     		mov	r3, #1
+ 383 0010 00E0     		b	.L28
+ 384              	.L27:
+ 385              		.loc 1 323 0 discriminator 2
+ 386 0012 0023     		mov	r3, #0
+ 387              	.L28:
+ 324:.\Generated_Source\PSoC4/t1_int.c **** }
+ 388              		.loc 1 324 0 is_stmt 1 discriminator 3
+ 389 0014 181C     		mov	r0, r3
+ 390 0016 BD46     		mov	sp, r7
+ 391              		@ sp needed
+ 392 0018 80BD     		pop	{r7, pc}
+ 393              	.L31:
+ 394 001a C046     		.align	2
+ 395              	.L30:
+ 396 001c 00E100E0 		.word	-536813312
+ 397              		.cfi_endproc
+ 398              	.LFE9:
+ 399              		.size	t1_int_GetState, .-t1_int_GetState
+ 400              		.section	.text.t1_int_Disable,"ax",%progbits
+ 401              		.align	2
+ 402              		.global	t1_int_Disable
+ 403              		.code	16
+ 404              		.thumb_func
+ 405              		.type	t1_int_Disable, %function
+ 406              	t1_int_Disable:
+ 407              	.LFB10:
+ 325:.\Generated_Source\PSoC4/t1_int.c **** 
+ 326:.\Generated_Source\PSoC4/t1_int.c **** 
+ 327:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 328:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_Disable
+ 329:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 330:.\Generated_Source\PSoC4/t1_int.c **** *
+ 331:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 332:.\Generated_Source\PSoC4/t1_int.c **** *   Disables the Interrupt in the interrupt controller.
+ 333:.\Generated_Source\PSoC4/t1_int.c **** *
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 14
+
+
+ 334:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:
+ 335:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 336:.\Generated_Source\PSoC4/t1_int.c **** *
+ 337:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ 338:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 339:.\Generated_Source\PSoC4/t1_int.c **** *
+ 340:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ 341:.\Generated_Source\PSoC4/t1_int.c **** void t1_int_Disable(void)
+ 342:.\Generated_Source\PSoC4/t1_int.c **** {
+ 408              		.loc 1 342 0
+ 409              		.cfi_startproc
+ 410 0000 80B5     		push	{r7, lr}
+ 411              		.cfi_def_cfa_offset 8
+ 412              		.cfi_offset 7, -8
+ 413              		.cfi_offset 14, -4
+ 414 0002 00AF     		add	r7, sp, #0
+ 415              		.cfi_def_cfa_register 7
+ 343:.\Generated_Source\PSoC4/t1_int.c ****     /* Disable the general interrupt. */
+ 344:.\Generated_Source\PSoC4/t1_int.c ****     *t1_int_INTC_CLR_EN = t1_int__INTC_MASK;
+ 416              		.loc 1 344 0
+ 417 0004 024B     		ldr	r3, .L33
+ 418 0006 0822     		mov	r2, #8
+ 419 0008 1A60     		str	r2, [r3]
+ 345:.\Generated_Source\PSoC4/t1_int.c **** }
+ 420              		.loc 1 345 0
+ 421 000a BD46     		mov	sp, r7
+ 422              		@ sp needed
+ 423 000c 80BD     		pop	{r7, pc}
+ 424              	.L34:
+ 425 000e C046     		.align	2
+ 426              	.L33:
+ 427 0010 80E100E0 		.word	-536813184
+ 428              		.cfi_endproc
+ 429              	.LFE10:
+ 430              		.size	t1_int_Disable, .-t1_int_Disable
+ 431              		.section	.text.t1_int_SetPending,"ax",%progbits
+ 432              		.align	2
+ 433              		.global	t1_int_SetPending
+ 434              		.code	16
+ 435              		.thumb_func
+ 436              		.type	t1_int_SetPending, %function
+ 437              	t1_int_SetPending:
+ 438              	.LFB11:
+ 346:.\Generated_Source\PSoC4/t1_int.c **** 
+ 347:.\Generated_Source\PSoC4/t1_int.c **** 
+ 348:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 349:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_SetPending
+ 350:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 351:.\Generated_Source\PSoC4/t1_int.c **** *
+ 352:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 353:.\Generated_Source\PSoC4/t1_int.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 354:.\Generated_Source\PSoC4/t1_int.c **** *   generating the interrupt.
+ 355:.\Generated_Source\PSoC4/t1_int.c **** *
+ 356:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:
+ 357:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 358:.\Generated_Source\PSoC4/t1_int.c **** *
+ 359:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 15
+
+
+ 360:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 361:.\Generated_Source\PSoC4/t1_int.c **** *
+ 362:.\Generated_Source\PSoC4/t1_int.c **** * Side Effects:
+ 363:.\Generated_Source\PSoC4/t1_int.c **** *   If interrupts are enabled and the interrupt is set up properly, the ISR is
+ 364:.\Generated_Source\PSoC4/t1_int.c **** *   entered (depending on the priority of this interrupt and other pending 
+ 365:.\Generated_Source\PSoC4/t1_int.c **** *   interrupts).
+ 366:.\Generated_Source\PSoC4/t1_int.c **** *
+ 367:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ 368:.\Generated_Source\PSoC4/t1_int.c **** void t1_int_SetPending(void)
+ 369:.\Generated_Source\PSoC4/t1_int.c **** {
+ 439              		.loc 1 369 0
+ 440              		.cfi_startproc
+ 441 0000 80B5     		push	{r7, lr}
+ 442              		.cfi_def_cfa_offset 8
+ 443              		.cfi_offset 7, -8
+ 444              		.cfi_offset 14, -4
+ 445 0002 00AF     		add	r7, sp, #0
+ 446              		.cfi_def_cfa_register 7
+ 370:.\Generated_Source\PSoC4/t1_int.c ****     *t1_int_INTC_SET_PD = t1_int__INTC_MASK;
+ 447              		.loc 1 370 0
+ 448 0004 024B     		ldr	r3, .L36
+ 449 0006 0822     		mov	r2, #8
+ 450 0008 1A60     		str	r2, [r3]
+ 371:.\Generated_Source\PSoC4/t1_int.c **** }
+ 451              		.loc 1 371 0
+ 452 000a BD46     		mov	sp, r7
+ 453              		@ sp needed
+ 454 000c 80BD     		pop	{r7, pc}
+ 455              	.L37:
+ 456 000e C046     		.align	2
+ 457              	.L36:
+ 458 0010 00E200E0 		.word	-536813056
+ 459              		.cfi_endproc
+ 460              	.LFE11:
+ 461              		.size	t1_int_SetPending, .-t1_int_SetPending
+ 462              		.section	.text.t1_int_ClearPending,"ax",%progbits
+ 463              		.align	2
+ 464              		.global	t1_int_ClearPending
+ 465              		.code	16
+ 466              		.thumb_func
+ 467              		.type	t1_int_ClearPending, %function
+ 468              	t1_int_ClearPending:
+ 469              	.LFB12:
+ 372:.\Generated_Source\PSoC4/t1_int.c **** 
+ 373:.\Generated_Source\PSoC4/t1_int.c **** 
+ 374:.\Generated_Source\PSoC4/t1_int.c **** /*******************************************************************************
+ 375:.\Generated_Source\PSoC4/t1_int.c **** * Function Name: t1_int_ClearPending
+ 376:.\Generated_Source\PSoC4/t1_int.c **** ********************************************************************************
+ 377:.\Generated_Source\PSoC4/t1_int.c **** *
+ 378:.\Generated_Source\PSoC4/t1_int.c **** * Summary:
+ 379:.\Generated_Source\PSoC4/t1_int.c **** *   Clears a pending interrupt in the interrupt controller.
+ 380:.\Generated_Source\PSoC4/t1_int.c **** *
+ 381:.\Generated_Source\PSoC4/t1_int.c **** *   Note Some interrupt sources are clear-on-read and require the block 
+ 382:.\Generated_Source\PSoC4/t1_int.c **** *   interrupt/status register to be read/cleared with the appropriate block API 
+ 383:.\Generated_Source\PSoC4/t1_int.c **** *   (GPIO, UART, and so on). Otherwise the ISR will continue to remain in 
+ 384:.\Generated_Source\PSoC4/t1_int.c **** *   pending state even though the interrupt itself is cleared using this API.
+ 385:.\Generated_Source\PSoC4/t1_int.c **** *
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 16
+
+
+ 386:.\Generated_Source\PSoC4/t1_int.c **** * Parameters:
+ 387:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 388:.\Generated_Source\PSoC4/t1_int.c **** *
+ 389:.\Generated_Source\PSoC4/t1_int.c **** * Return:
+ 390:.\Generated_Source\PSoC4/t1_int.c **** *   None
+ 391:.\Generated_Source\PSoC4/t1_int.c **** *
+ 392:.\Generated_Source\PSoC4/t1_int.c **** *******************************************************************************/
+ 393:.\Generated_Source\PSoC4/t1_int.c **** void t1_int_ClearPending(void)
+ 394:.\Generated_Source\PSoC4/t1_int.c **** {
+ 470              		.loc 1 394 0
+ 471              		.cfi_startproc
+ 472 0000 80B5     		push	{r7, lr}
+ 473              		.cfi_def_cfa_offset 8
+ 474              		.cfi_offset 7, -8
+ 475              		.cfi_offset 14, -4
+ 476 0002 00AF     		add	r7, sp, #0
+ 477              		.cfi_def_cfa_register 7
+ 395:.\Generated_Source\PSoC4/t1_int.c ****     *t1_int_INTC_CLR_PD = t1_int__INTC_MASK;
+ 478              		.loc 1 395 0
+ 479 0004 024B     		ldr	r3, .L39
+ 480 0006 0822     		mov	r2, #8
+ 481 0008 1A60     		str	r2, [r3]
+ 396:.\Generated_Source\PSoC4/t1_int.c **** }
+ 482              		.loc 1 396 0
+ 483 000a BD46     		mov	sp, r7
+ 484              		@ sp needed
+ 485 000c 80BD     		pop	{r7, pc}
+ 486              	.L40:
+ 487 000e C046     		.align	2
+ 488              	.L39:
+ 489 0010 80E200E0 		.word	-536812928
+ 490              		.cfi_endproc
+ 491              	.LFE12:
+ 492              		.size	t1_int_ClearPending, .-t1_int_ClearPending
+ 493              		.text
+ 494              	.Letext0:
+ 495              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
+ 496              		.section	.debug_info,"",%progbits
+ 497              	.Ldebug_info0:
+ 498 0000 40020000 		.4byte	0x240
+ 499 0004 0400     		.2byte	0x4
+ 500 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 501 000a 04       		.byte	0x4
+ 502 000b 01       		.uleb128 0x1
+ 503 000c 6D000000 		.4byte	.LASF33
+ 504 0010 01       		.byte	0x1
+ 505 0011 86010000 		.4byte	.LASF34
+ 506 0015 E9000000 		.4byte	.LASF35
+ 507 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 508 001d 00000000 		.4byte	0
+ 509 0021 00000000 		.4byte	.Ldebug_line0
+ 510 0025 02       		.uleb128 0x2
+ 511 0026 01       		.byte	0x1
+ 512 0027 06       		.byte	0x6
+ 513 0028 95020000 		.4byte	.LASF0
+ 514 002c 02       		.uleb128 0x2
+ 515 002d 01       		.byte	0x1
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 17
+
+
+ 516 002e 08       		.byte	0x8
+ 517 002f 2F010000 		.4byte	.LASF1
+ 518 0033 02       		.uleb128 0x2
+ 519 0034 02       		.byte	0x2
+ 520 0035 05       		.byte	0x5
+ 521 0036 66020000 		.4byte	.LASF2
+ 522 003a 02       		.uleb128 0x2
+ 523 003b 02       		.byte	0x2
+ 524 003c 07       		.byte	0x7
+ 525 003d 26000000 		.4byte	.LASF3
+ 526 0041 02       		.uleb128 0x2
+ 527 0042 04       		.byte	0x4
+ 528 0043 05       		.byte	0x5
+ 529 0044 7F020000 		.4byte	.LASF4
+ 530 0048 02       		.uleb128 0x2
+ 531 0049 04       		.byte	0x4
+ 532 004a 07       		.byte	0x7
+ 533 004b 5F010000 		.4byte	.LASF5
+ 534 004f 02       		.uleb128 0x2
+ 535 0050 08       		.byte	0x8
+ 536 0051 05       		.byte	0x5
+ 537 0052 3F020000 		.4byte	.LASF6
+ 538 0056 02       		.uleb128 0x2
+ 539 0057 08       		.byte	0x8
+ 540 0058 07       		.byte	0x7
+ 541 0059 12020000 		.4byte	.LASF7
+ 542 005d 03       		.uleb128 0x3
+ 543 005e 04       		.byte	0x4
+ 544 005f 05       		.byte	0x5
+ 545 0060 696E7400 		.ascii	"int\000"
+ 546 0064 02       		.uleb128 0x2
+ 547 0065 04       		.byte	0x4
+ 548 0066 07       		.byte	0x7
+ 549 0067 EC010000 		.4byte	.LASF8
+ 550 006b 04       		.uleb128 0x4
+ 551 006c 71010000 		.4byte	.LASF9
+ 552 0070 02       		.byte	0x2
+ 553 0071 A1       		.byte	0xa1
+ 554 0072 2C000000 		.4byte	0x2c
+ 555 0076 04       		.uleb128 0x4
+ 556 0077 D4010000 		.4byte	.LASF10
+ 557 007b 02       		.byte	0x2
+ 558 007c A3       		.byte	0xa3
+ 559 007d 48000000 		.4byte	0x48
+ 560 0081 02       		.uleb128 0x2
+ 561 0082 04       		.byte	0x4
+ 562 0083 04       		.byte	0x4
+ 563 0084 67000000 		.4byte	.LASF11
+ 564 0088 02       		.uleb128 0x2
+ 565 0089 08       		.byte	0x8
+ 566 008a 04       		.byte	0x4
+ 567 008b BD010000 		.4byte	.LASF12
+ 568 008f 02       		.uleb128 0x2
+ 569 0090 01       		.byte	0x1
+ 570 0091 08       		.byte	0x8
+ 571 0092 4D020000 		.4byte	.LASF13
+ 572 0096 05       		.uleb128 0x5
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 18
+
+
+ 573 0097 00000000 		.4byte	.LASF14
+ 574 009b 02       		.byte	0x2
+ 575 009c 4D01     		.2byte	0x14d
+ 576 009e A2000000 		.4byte	0xa2
+ 577 00a2 06       		.uleb128 0x6
+ 578 00a3 76000000 		.4byte	0x76
+ 579 00a7 05       		.uleb128 0x5
+ 580 00a8 29020000 		.4byte	.LASF15
+ 581 00ac 02       		.byte	0x2
+ 582 00ad 5D01     		.2byte	0x15d
+ 583 00af B3000000 		.4byte	0xb3
+ 584 00b3 07       		.uleb128 0x7
+ 585 00b4 04       		.byte	0x4
+ 586 00b5 B9000000 		.4byte	0xb9
+ 587 00b9 08       		.uleb128 0x8
+ 588 00ba 02       		.uleb128 0x2
+ 589 00bb 04       		.byte	0x4
+ 590 00bc 07       		.byte	0x7
+ 591 00bd 36020000 		.4byte	.LASF16
+ 592 00c1 09       		.uleb128 0x9
+ 593 00c2 88020000 		.4byte	.LASF17
+ 594 00c6 01       		.byte	0x1
+ 595 00c7 37       		.byte	0x37
+ 596 00c8 00000000 		.4byte	.LFB0
+ 597 00cc 24000000 		.4byte	.LFE0-.LFB0
+ 598 00d0 01       		.uleb128 0x1
+ 599 00d1 9C       		.byte	0x9c
+ 600 00d2 0A       		.uleb128 0xa
+ 601 00d3 58000000 		.4byte	.LASF20
+ 602 00d7 01       		.byte	0x1
+ 603 00d8 62       		.byte	0x62
+ 604 00d9 00000000 		.4byte	.LFB1
+ 605 00dd 24000000 		.4byte	.LFE1-.LFB1
+ 606 00e1 01       		.uleb128 0x1
+ 607 00e2 9C       		.byte	0x9c
+ 608 00e3 F6000000 		.4byte	0xf6
+ 609 00e7 0B       		.uleb128 0xb
+ 610 00e8 0A020000 		.4byte	.LASF22
+ 611 00ec 01       		.byte	0x1
+ 612 00ed 62       		.byte	0x62
+ 613 00ee A7000000 		.4byte	0xa7
+ 614 00f2 02       		.uleb128 0x2
+ 615 00f3 91       		.byte	0x91
+ 616 00f4 74       		.sleb128 -12
+ 617 00f5 00       		.byte	0
+ 618 00f6 09       		.uleb128 0x9
+ 619 00f7 B1010000 		.4byte	.LASF18
+ 620 00fb 01       		.byte	0x1
+ 621 00fc 80       		.byte	0x80
+ 622 00fd 00000000 		.4byte	.LFB2
+ 623 0101 18000000 		.4byte	.LFE2-.LFB2
+ 624 0105 01       		.uleb128 0x1
+ 625 0106 9C       		.byte	0x9c
+ 626 0107 0C       		.uleb128 0xc
+ 627 0108 F9010000 		.4byte	.LASF19
+ 628 010c 01       		.byte	0x1
+ 629 010d 9E       		.byte	0x9e
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 19
+
+
+ 630 010e 00000000 		.4byte	.LFB3
+ 631 0112 08000000 		.4byte	.LFE3-.LFB3
+ 632 0116 01       		.uleb128 0x1
+ 633 0117 9C       		.byte	0x9c
+ 634 0118 0D       		.uleb128 0xd
+ 635 0119 39000000 		.4byte	.LASF21
+ 636 011d 01       		.byte	0x1
+ 637 011e C2       		.byte	0xc2
+ 638 011f 00000000 		.4byte	.LFB4
+ 639 0123 18000000 		.4byte	.LFE4-.LFB4
+ 640 0127 01       		.uleb128 0x1
+ 641 0128 9C       		.byte	0x9c
+ 642 0129 3C010000 		.4byte	0x13c
+ 643 012d 0B       		.uleb128 0xb
+ 644 012e 0A020000 		.4byte	.LASF22
+ 645 0132 01       		.byte	0x1
+ 646 0133 C2       		.byte	0xc2
+ 647 0134 A7000000 		.4byte	0xa7
+ 648 0138 02       		.uleb128 0x2
+ 649 0139 91       		.byte	0x91
+ 650 013a 74       		.sleb128 -12
+ 651 013b 00       		.byte	0
+ 652 013c 0E       		.uleb128 0xe
+ 653 013d DB010000 		.4byte	.LASF28
+ 654 0141 01       		.byte	0x1
+ 655 0142 D6       		.byte	0xd6
+ 656 0143 A7000000 		.4byte	0xa7
+ 657 0147 00000000 		.4byte	.LFB5
+ 658 014b 14000000 		.4byte	.LFE5-.LFB5
+ 659 014f 01       		.uleb128 0x1
+ 660 0150 9C       		.byte	0x9c
+ 661 0151 0A       		.uleb128 0xa
+ 662 0152 3D010000 		.4byte	.LASF23
+ 663 0156 01       		.byte	0x1
+ 664 0157 F4       		.byte	0xf4
+ 665 0158 00000000 		.4byte	.LFB6
+ 666 015c 4C000000 		.4byte	.LFE6-.LFB6
+ 667 0160 01       		.uleb128 0x1
+ 668 0161 9C       		.byte	0x9c
+ 669 0162 91010000 		.4byte	0x191
+ 670 0166 0B       		.uleb128 0xb
+ 671 0167 A8010000 		.4byte	.LASF24
+ 672 016b 01       		.byte	0x1
+ 673 016c F4       		.byte	0xf4
+ 674 016d 6B000000 		.4byte	0x6b
+ 675 0171 02       		.uleb128 0x2
+ 676 0172 91       		.byte	0x91
+ 677 0173 67       		.sleb128 -25
+ 678 0174 0F       		.uleb128 0xf
+ 679 0175 50010000 		.4byte	.LASF25
+ 680 0179 01       		.byte	0x1
+ 681 017a F6       		.byte	0xf6
+ 682 017b 6B000000 		.4byte	0x6b
+ 683 017f 02       		.uleb128 0x2
+ 684 0180 91       		.byte	0x91
+ 685 0181 6B       		.sleb128 -21
+ 686 0182 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 20
+
+
+ 687 0183 70020000 		.4byte	.LASF26
+ 688 0187 01       		.byte	0x1
+ 689 0188 F7       		.byte	0xf7
+ 690 0189 76000000 		.4byte	0x76
+ 691 018d 02       		.uleb128 0x2
+ 692 018e 91       		.byte	0x91
+ 693 018f 6C       		.sleb128 -20
+ 694 0190 00       		.byte	0
+ 695 0191 10       		.uleb128 0x10
+ 696 0192 06000000 		.4byte	.LASF36
+ 697 0196 01       		.byte	0x1
+ 698 0197 1001     		.2byte	0x110
+ 699 0199 6B000000 		.4byte	0x6b
+ 700 019d 00000000 		.4byte	.LFB7
+ 701 01a1 2C000000 		.4byte	.LFE7-.LFB7
+ 702 01a5 01       		.uleb128 0x1
+ 703 01a6 9C       		.byte	0x9c
+ 704 01a7 CA010000 		.4byte	0x1ca
+ 705 01ab 11       		.uleb128 0x11
+ 706 01ac A8010000 		.4byte	.LASF24
+ 707 01b0 01       		.byte	0x1
+ 708 01b1 1201     		.2byte	0x112
+ 709 01b3 76000000 		.4byte	0x76
+ 710 01b7 02       		.uleb128 0x2
+ 711 01b8 91       		.byte	0x91
+ 712 01b9 70       		.sleb128 -16
+ 713 01ba 11       		.uleb128 0x11
+ 714 01bb 70020000 		.4byte	.LASF26
+ 715 01bf 01       		.byte	0x1
+ 716 01c0 1301     		.2byte	0x113
+ 717 01c2 76000000 		.4byte	0x76
+ 718 01c6 02       		.uleb128 0x2
+ 719 01c7 91       		.byte	0x91
+ 720 01c8 74       		.sleb128 -12
+ 721 01c9 00       		.byte	0
+ 722 01ca 12       		.uleb128 0x12
+ 723 01cb 4A000000 		.4byte	.LASF27
+ 724 01cf 01       		.byte	0x1
+ 725 01d0 2B01     		.2byte	0x12b
+ 726 01d2 00000000 		.4byte	.LFB8
+ 727 01d6 14000000 		.4byte	.LFE8-.LFB8
+ 728 01da 01       		.uleb128 0x1
+ 729 01db 9C       		.byte	0x9c
+ 730 01dc 13       		.uleb128 0x13
+ 731 01dd C4010000 		.4byte	.LASF29
+ 732 01e1 01       		.byte	0x1
+ 733 01e2 4001     		.2byte	0x140
+ 734 01e4 6B000000 		.4byte	0x6b
+ 735 01e8 00000000 		.4byte	.LFB9
+ 736 01ec 20000000 		.4byte	.LFE9-.LFB9
+ 737 01f0 01       		.uleb128 0x1
+ 738 01f1 9C       		.byte	0x9c
+ 739 01f2 12       		.uleb128 0x12
+ 740 01f3 77010000 		.4byte	.LASF30
+ 741 01f7 01       		.byte	0x1
+ 742 01f8 5501     		.2byte	0x155
+ 743 01fa 00000000 		.4byte	.LFB10
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 21
+
+
+ 744 01fe 14000000 		.4byte	.LFE10-.LFB10
+ 745 0202 01       		.uleb128 0x1
+ 746 0203 9C       		.byte	0x9c
+ 747 0204 12       		.uleb128 0x12
+ 748 0205 A1020000 		.4byte	.LASF31
+ 749 0209 01       		.byte	0x1
+ 750 020a 7001     		.2byte	0x170
+ 751 020c 00000000 		.4byte	.LFB11
+ 752 0210 14000000 		.4byte	.LFE11-.LFB11
+ 753 0214 01       		.uleb128 0x1
+ 754 0215 9C       		.byte	0x9c
+ 755 0216 12       		.uleb128 0x12
+ 756 0217 52020000 		.4byte	.LASF32
+ 757 021b 01       		.byte	0x1
+ 758 021c 8901     		.2byte	0x189
+ 759 021e 00000000 		.4byte	.LFB12
+ 760 0222 14000000 		.4byte	.LFE12-.LFB12
+ 761 0226 01       		.uleb128 0x1
+ 762 0227 9C       		.byte	0x9c
+ 763 0228 14       		.uleb128 0x14
+ 764 0229 A7000000 		.4byte	0xa7
+ 765 022d 38020000 		.4byte	0x238
+ 766 0231 15       		.uleb128 0x15
+ 767 0232 BA000000 		.4byte	0xba
+ 768 0236 2F       		.byte	0x2f
+ 769 0237 00       		.byte	0
+ 770 0238 16       		.uleb128 0x16
+ 771 0239 19000000 		.4byte	.LASF37
+ 772 023d 01       		.byte	0x1
+ 773 023e 20       		.byte	0x20
+ 774 023f 28020000 		.4byte	0x228
+ 775 0243 00       		.byte	0
+ 776              		.section	.debug_abbrev,"",%progbits
+ 777              	.Ldebug_abbrev0:
+ 778 0000 01       		.uleb128 0x1
+ 779 0001 11       		.uleb128 0x11
+ 780 0002 01       		.byte	0x1
+ 781 0003 25       		.uleb128 0x25
+ 782 0004 0E       		.uleb128 0xe
+ 783 0005 13       		.uleb128 0x13
+ 784 0006 0B       		.uleb128 0xb
+ 785 0007 03       		.uleb128 0x3
+ 786 0008 0E       		.uleb128 0xe
+ 787 0009 1B       		.uleb128 0x1b
+ 788 000a 0E       		.uleb128 0xe
+ 789 000b 55       		.uleb128 0x55
+ 790 000c 17       		.uleb128 0x17
+ 791 000d 11       		.uleb128 0x11
+ 792 000e 01       		.uleb128 0x1
+ 793 000f 10       		.uleb128 0x10
+ 794 0010 17       		.uleb128 0x17
+ 795 0011 00       		.byte	0
+ 796 0012 00       		.byte	0
+ 797 0013 02       		.uleb128 0x2
+ 798 0014 24       		.uleb128 0x24
+ 799 0015 00       		.byte	0
+ 800 0016 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 22
+
+
+ 801 0017 0B       		.uleb128 0xb
+ 802 0018 3E       		.uleb128 0x3e
+ 803 0019 0B       		.uleb128 0xb
+ 804 001a 03       		.uleb128 0x3
+ 805 001b 0E       		.uleb128 0xe
+ 806 001c 00       		.byte	0
+ 807 001d 00       		.byte	0
+ 808 001e 03       		.uleb128 0x3
+ 809 001f 24       		.uleb128 0x24
+ 810 0020 00       		.byte	0
+ 811 0021 0B       		.uleb128 0xb
+ 812 0022 0B       		.uleb128 0xb
+ 813 0023 3E       		.uleb128 0x3e
+ 814 0024 0B       		.uleb128 0xb
+ 815 0025 03       		.uleb128 0x3
+ 816 0026 08       		.uleb128 0x8
+ 817 0027 00       		.byte	0
+ 818 0028 00       		.byte	0
+ 819 0029 04       		.uleb128 0x4
+ 820 002a 16       		.uleb128 0x16
+ 821 002b 00       		.byte	0
+ 822 002c 03       		.uleb128 0x3
+ 823 002d 0E       		.uleb128 0xe
+ 824 002e 3A       		.uleb128 0x3a
+ 825 002f 0B       		.uleb128 0xb
+ 826 0030 3B       		.uleb128 0x3b
+ 827 0031 0B       		.uleb128 0xb
+ 828 0032 49       		.uleb128 0x49
+ 829 0033 13       		.uleb128 0x13
+ 830 0034 00       		.byte	0
+ 831 0035 00       		.byte	0
+ 832 0036 05       		.uleb128 0x5
+ 833 0037 16       		.uleb128 0x16
+ 834 0038 00       		.byte	0
+ 835 0039 03       		.uleb128 0x3
+ 836 003a 0E       		.uleb128 0xe
+ 837 003b 3A       		.uleb128 0x3a
+ 838 003c 0B       		.uleb128 0xb
+ 839 003d 3B       		.uleb128 0x3b
+ 840 003e 05       		.uleb128 0x5
+ 841 003f 49       		.uleb128 0x49
+ 842 0040 13       		.uleb128 0x13
+ 843 0041 00       		.byte	0
+ 844 0042 00       		.byte	0
+ 845 0043 06       		.uleb128 0x6
+ 846 0044 35       		.uleb128 0x35
+ 847 0045 00       		.byte	0
+ 848 0046 49       		.uleb128 0x49
+ 849 0047 13       		.uleb128 0x13
+ 850 0048 00       		.byte	0
+ 851 0049 00       		.byte	0
+ 852 004a 07       		.uleb128 0x7
+ 853 004b 0F       		.uleb128 0xf
+ 854 004c 00       		.byte	0
+ 855 004d 0B       		.uleb128 0xb
+ 856 004e 0B       		.uleb128 0xb
+ 857 004f 49       		.uleb128 0x49
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 23
+
+
+ 858 0050 13       		.uleb128 0x13
+ 859 0051 00       		.byte	0
+ 860 0052 00       		.byte	0
+ 861 0053 08       		.uleb128 0x8
+ 862 0054 15       		.uleb128 0x15
+ 863 0055 00       		.byte	0
+ 864 0056 27       		.uleb128 0x27
+ 865 0057 19       		.uleb128 0x19
+ 866 0058 00       		.byte	0
+ 867 0059 00       		.byte	0
+ 868 005a 09       		.uleb128 0x9
+ 869 005b 2E       		.uleb128 0x2e
+ 870 005c 00       		.byte	0
+ 871 005d 3F       		.uleb128 0x3f
+ 872 005e 19       		.uleb128 0x19
+ 873 005f 03       		.uleb128 0x3
+ 874 0060 0E       		.uleb128 0xe
+ 875 0061 3A       		.uleb128 0x3a
+ 876 0062 0B       		.uleb128 0xb
+ 877 0063 3B       		.uleb128 0x3b
+ 878 0064 0B       		.uleb128 0xb
+ 879 0065 27       		.uleb128 0x27
+ 880 0066 19       		.uleb128 0x19
+ 881 0067 11       		.uleb128 0x11
+ 882 0068 01       		.uleb128 0x1
+ 883 0069 12       		.uleb128 0x12
+ 884 006a 06       		.uleb128 0x6
+ 885 006b 40       		.uleb128 0x40
+ 886 006c 18       		.uleb128 0x18
+ 887 006d 9642     		.uleb128 0x2116
+ 888 006f 19       		.uleb128 0x19
+ 889 0070 00       		.byte	0
+ 890 0071 00       		.byte	0
+ 891 0072 0A       		.uleb128 0xa
+ 892 0073 2E       		.uleb128 0x2e
+ 893 0074 01       		.byte	0x1
+ 894 0075 3F       		.uleb128 0x3f
+ 895 0076 19       		.uleb128 0x19
+ 896 0077 03       		.uleb128 0x3
+ 897 0078 0E       		.uleb128 0xe
+ 898 0079 3A       		.uleb128 0x3a
+ 899 007a 0B       		.uleb128 0xb
+ 900 007b 3B       		.uleb128 0x3b
+ 901 007c 0B       		.uleb128 0xb
+ 902 007d 27       		.uleb128 0x27
+ 903 007e 19       		.uleb128 0x19
+ 904 007f 11       		.uleb128 0x11
+ 905 0080 01       		.uleb128 0x1
+ 906 0081 12       		.uleb128 0x12
+ 907 0082 06       		.uleb128 0x6
+ 908 0083 40       		.uleb128 0x40
+ 909 0084 18       		.uleb128 0x18
+ 910 0085 9642     		.uleb128 0x2116
+ 911 0087 19       		.uleb128 0x19
+ 912 0088 01       		.uleb128 0x1
+ 913 0089 13       		.uleb128 0x13
+ 914 008a 00       		.byte	0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 24
+
+
+ 915 008b 00       		.byte	0
+ 916 008c 0B       		.uleb128 0xb
+ 917 008d 05       		.uleb128 0x5
+ 918 008e 00       		.byte	0
+ 919 008f 03       		.uleb128 0x3
+ 920 0090 0E       		.uleb128 0xe
+ 921 0091 3A       		.uleb128 0x3a
+ 922 0092 0B       		.uleb128 0xb
+ 923 0093 3B       		.uleb128 0x3b
+ 924 0094 0B       		.uleb128 0xb
+ 925 0095 49       		.uleb128 0x49
+ 926 0096 13       		.uleb128 0x13
+ 927 0097 02       		.uleb128 0x2
+ 928 0098 18       		.uleb128 0x18
+ 929 0099 00       		.byte	0
+ 930 009a 00       		.byte	0
+ 931 009b 0C       		.uleb128 0xc
+ 932 009c 2E       		.uleb128 0x2e
+ 933 009d 00       		.byte	0
+ 934 009e 3F       		.uleb128 0x3f
+ 935 009f 19       		.uleb128 0x19
+ 936 00a0 03       		.uleb128 0x3
+ 937 00a1 0E       		.uleb128 0xe
+ 938 00a2 3A       		.uleb128 0x3a
+ 939 00a3 0B       		.uleb128 0xb
+ 940 00a4 3B       		.uleb128 0x3b
+ 941 00a5 0B       		.uleb128 0xb
+ 942 00a6 27       		.uleb128 0x27
+ 943 00a7 19       		.uleb128 0x19
+ 944 00a8 11       		.uleb128 0x11
+ 945 00a9 01       		.uleb128 0x1
+ 946 00aa 12       		.uleb128 0x12
+ 947 00ab 06       		.uleb128 0x6
+ 948 00ac 40       		.uleb128 0x40
+ 949 00ad 18       		.uleb128 0x18
+ 950 00ae 9742     		.uleb128 0x2117
+ 951 00b0 19       		.uleb128 0x19
+ 952 00b1 00       		.byte	0
+ 953 00b2 00       		.byte	0
+ 954 00b3 0D       		.uleb128 0xd
+ 955 00b4 2E       		.uleb128 0x2e
+ 956 00b5 01       		.byte	0x1
+ 957 00b6 3F       		.uleb128 0x3f
+ 958 00b7 19       		.uleb128 0x19
+ 959 00b8 03       		.uleb128 0x3
+ 960 00b9 0E       		.uleb128 0xe
+ 961 00ba 3A       		.uleb128 0x3a
+ 962 00bb 0B       		.uleb128 0xb
+ 963 00bc 3B       		.uleb128 0x3b
+ 964 00bd 0B       		.uleb128 0xb
+ 965 00be 27       		.uleb128 0x27
+ 966 00bf 19       		.uleb128 0x19
+ 967 00c0 11       		.uleb128 0x11
+ 968 00c1 01       		.uleb128 0x1
+ 969 00c2 12       		.uleb128 0x12
+ 970 00c3 06       		.uleb128 0x6
+ 971 00c4 40       		.uleb128 0x40
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 25
+
+
+ 972 00c5 18       		.uleb128 0x18
+ 973 00c6 9742     		.uleb128 0x2117
+ 974 00c8 19       		.uleb128 0x19
+ 975 00c9 01       		.uleb128 0x1
+ 976 00ca 13       		.uleb128 0x13
+ 977 00cb 00       		.byte	0
+ 978 00cc 00       		.byte	0
+ 979 00cd 0E       		.uleb128 0xe
+ 980 00ce 2E       		.uleb128 0x2e
+ 981 00cf 00       		.byte	0
+ 982 00d0 3F       		.uleb128 0x3f
+ 983 00d1 19       		.uleb128 0x19
+ 984 00d2 03       		.uleb128 0x3
+ 985 00d3 0E       		.uleb128 0xe
+ 986 00d4 3A       		.uleb128 0x3a
+ 987 00d5 0B       		.uleb128 0xb
+ 988 00d6 3B       		.uleb128 0x3b
+ 989 00d7 0B       		.uleb128 0xb
+ 990 00d8 27       		.uleb128 0x27
+ 991 00d9 19       		.uleb128 0x19
+ 992 00da 49       		.uleb128 0x49
+ 993 00db 13       		.uleb128 0x13
+ 994 00dc 11       		.uleb128 0x11
+ 995 00dd 01       		.uleb128 0x1
+ 996 00de 12       		.uleb128 0x12
+ 997 00df 06       		.uleb128 0x6
+ 998 00e0 40       		.uleb128 0x40
+ 999 00e1 18       		.uleb128 0x18
+ 1000 00e2 9742     		.uleb128 0x2117
+ 1001 00e4 19       		.uleb128 0x19
+ 1002 00e5 00       		.byte	0
+ 1003 00e6 00       		.byte	0
+ 1004 00e7 0F       		.uleb128 0xf
+ 1005 00e8 34       		.uleb128 0x34
+ 1006 00e9 00       		.byte	0
+ 1007 00ea 03       		.uleb128 0x3
+ 1008 00eb 0E       		.uleb128 0xe
+ 1009 00ec 3A       		.uleb128 0x3a
+ 1010 00ed 0B       		.uleb128 0xb
+ 1011 00ee 3B       		.uleb128 0x3b
+ 1012 00ef 0B       		.uleb128 0xb
+ 1013 00f0 49       		.uleb128 0x49
+ 1014 00f1 13       		.uleb128 0x13
+ 1015 00f2 02       		.uleb128 0x2
+ 1016 00f3 18       		.uleb128 0x18
+ 1017 00f4 00       		.byte	0
+ 1018 00f5 00       		.byte	0
+ 1019 00f6 10       		.uleb128 0x10
+ 1020 00f7 2E       		.uleb128 0x2e
+ 1021 00f8 01       		.byte	0x1
+ 1022 00f9 3F       		.uleb128 0x3f
+ 1023 00fa 19       		.uleb128 0x19
+ 1024 00fb 03       		.uleb128 0x3
+ 1025 00fc 0E       		.uleb128 0xe
+ 1026 00fd 3A       		.uleb128 0x3a
+ 1027 00fe 0B       		.uleb128 0xb
+ 1028 00ff 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 26
+
+
+ 1029 0100 05       		.uleb128 0x5
+ 1030 0101 27       		.uleb128 0x27
+ 1031 0102 19       		.uleb128 0x19
+ 1032 0103 49       		.uleb128 0x49
+ 1033 0104 13       		.uleb128 0x13
+ 1034 0105 11       		.uleb128 0x11
+ 1035 0106 01       		.uleb128 0x1
+ 1036 0107 12       		.uleb128 0x12
+ 1037 0108 06       		.uleb128 0x6
+ 1038 0109 40       		.uleb128 0x40
+ 1039 010a 18       		.uleb128 0x18
+ 1040 010b 9742     		.uleb128 0x2117
+ 1041 010d 19       		.uleb128 0x19
+ 1042 010e 01       		.uleb128 0x1
+ 1043 010f 13       		.uleb128 0x13
+ 1044 0110 00       		.byte	0
+ 1045 0111 00       		.byte	0
+ 1046 0112 11       		.uleb128 0x11
+ 1047 0113 34       		.uleb128 0x34
+ 1048 0114 00       		.byte	0
+ 1049 0115 03       		.uleb128 0x3
+ 1050 0116 0E       		.uleb128 0xe
+ 1051 0117 3A       		.uleb128 0x3a
+ 1052 0118 0B       		.uleb128 0xb
+ 1053 0119 3B       		.uleb128 0x3b
+ 1054 011a 05       		.uleb128 0x5
+ 1055 011b 49       		.uleb128 0x49
+ 1056 011c 13       		.uleb128 0x13
+ 1057 011d 02       		.uleb128 0x2
+ 1058 011e 18       		.uleb128 0x18
+ 1059 011f 00       		.byte	0
+ 1060 0120 00       		.byte	0
+ 1061 0121 12       		.uleb128 0x12
+ 1062 0122 2E       		.uleb128 0x2e
+ 1063 0123 00       		.byte	0
+ 1064 0124 3F       		.uleb128 0x3f
+ 1065 0125 19       		.uleb128 0x19
+ 1066 0126 03       		.uleb128 0x3
+ 1067 0127 0E       		.uleb128 0xe
+ 1068 0128 3A       		.uleb128 0x3a
+ 1069 0129 0B       		.uleb128 0xb
+ 1070 012a 3B       		.uleb128 0x3b
+ 1071 012b 05       		.uleb128 0x5
+ 1072 012c 27       		.uleb128 0x27
+ 1073 012d 19       		.uleb128 0x19
+ 1074 012e 11       		.uleb128 0x11
+ 1075 012f 01       		.uleb128 0x1
+ 1076 0130 12       		.uleb128 0x12
+ 1077 0131 06       		.uleb128 0x6
+ 1078 0132 40       		.uleb128 0x40
+ 1079 0133 18       		.uleb128 0x18
+ 1080 0134 9742     		.uleb128 0x2117
+ 1081 0136 19       		.uleb128 0x19
+ 1082 0137 00       		.byte	0
+ 1083 0138 00       		.byte	0
+ 1084 0139 13       		.uleb128 0x13
+ 1085 013a 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 27
+
+
+ 1086 013b 00       		.byte	0
+ 1087 013c 3F       		.uleb128 0x3f
+ 1088 013d 19       		.uleb128 0x19
+ 1089 013e 03       		.uleb128 0x3
+ 1090 013f 0E       		.uleb128 0xe
+ 1091 0140 3A       		.uleb128 0x3a
+ 1092 0141 0B       		.uleb128 0xb
+ 1093 0142 3B       		.uleb128 0x3b
+ 1094 0143 05       		.uleb128 0x5
+ 1095 0144 27       		.uleb128 0x27
+ 1096 0145 19       		.uleb128 0x19
+ 1097 0146 49       		.uleb128 0x49
+ 1098 0147 13       		.uleb128 0x13
+ 1099 0148 11       		.uleb128 0x11
+ 1100 0149 01       		.uleb128 0x1
+ 1101 014a 12       		.uleb128 0x12
+ 1102 014b 06       		.uleb128 0x6
+ 1103 014c 40       		.uleb128 0x40
+ 1104 014d 18       		.uleb128 0x18
+ 1105 014e 9742     		.uleb128 0x2117
+ 1106 0150 19       		.uleb128 0x19
+ 1107 0151 00       		.byte	0
+ 1108 0152 00       		.byte	0
+ 1109 0153 14       		.uleb128 0x14
+ 1110 0154 01       		.uleb128 0x1
+ 1111 0155 01       		.byte	0x1
+ 1112 0156 49       		.uleb128 0x49
+ 1113 0157 13       		.uleb128 0x13
+ 1114 0158 01       		.uleb128 0x1
+ 1115 0159 13       		.uleb128 0x13
+ 1116 015a 00       		.byte	0
+ 1117 015b 00       		.byte	0
+ 1118 015c 15       		.uleb128 0x15
+ 1119 015d 21       		.uleb128 0x21
+ 1120 015e 00       		.byte	0
+ 1121 015f 49       		.uleb128 0x49
+ 1122 0160 13       		.uleb128 0x13
+ 1123 0161 2F       		.uleb128 0x2f
+ 1124 0162 0B       		.uleb128 0xb
+ 1125 0163 00       		.byte	0
+ 1126 0164 00       		.byte	0
+ 1127 0165 16       		.uleb128 0x16
+ 1128 0166 34       		.uleb128 0x34
+ 1129 0167 00       		.byte	0
+ 1130 0168 03       		.uleb128 0x3
+ 1131 0169 0E       		.uleb128 0xe
+ 1132 016a 3A       		.uleb128 0x3a
+ 1133 016b 0B       		.uleb128 0xb
+ 1134 016c 3B       		.uleb128 0x3b
+ 1135 016d 0B       		.uleb128 0xb
+ 1136 016e 49       		.uleb128 0x49
+ 1137 016f 13       		.uleb128 0x13
+ 1138 0170 3F       		.uleb128 0x3f
+ 1139 0171 19       		.uleb128 0x19
+ 1140 0172 3C       		.uleb128 0x3c
+ 1141 0173 19       		.uleb128 0x19
+ 1142 0174 00       		.byte	0
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 28
+
+
+ 1143 0175 00       		.byte	0
+ 1144 0176 00       		.byte	0
+ 1145              		.section	.debug_aranges,"",%progbits
+ 1146 0000 7C000000 		.4byte	0x7c
+ 1147 0004 0200     		.2byte	0x2
+ 1148 0006 00000000 		.4byte	.Ldebug_info0
+ 1149 000a 04       		.byte	0x4
+ 1150 000b 00       		.byte	0
+ 1151 000c 0000     		.2byte	0
+ 1152 000e 0000     		.2byte	0
+ 1153 0010 00000000 		.4byte	.LFB0
+ 1154 0014 24000000 		.4byte	.LFE0-.LFB0
+ 1155 0018 00000000 		.4byte	.LFB1
+ 1156 001c 24000000 		.4byte	.LFE1-.LFB1
+ 1157 0020 00000000 		.4byte	.LFB2
+ 1158 0024 18000000 		.4byte	.LFE2-.LFB2
+ 1159 0028 00000000 		.4byte	.LFB3
+ 1160 002c 08000000 		.4byte	.LFE3-.LFB3
+ 1161 0030 00000000 		.4byte	.LFB4
+ 1162 0034 18000000 		.4byte	.LFE4-.LFB4
+ 1163 0038 00000000 		.4byte	.LFB5
+ 1164 003c 14000000 		.4byte	.LFE5-.LFB5
+ 1165 0040 00000000 		.4byte	.LFB6
+ 1166 0044 4C000000 		.4byte	.LFE6-.LFB6
+ 1167 0048 00000000 		.4byte	.LFB7
+ 1168 004c 2C000000 		.4byte	.LFE7-.LFB7
+ 1169 0050 00000000 		.4byte	.LFB8
+ 1170 0054 14000000 		.4byte	.LFE8-.LFB8
+ 1171 0058 00000000 		.4byte	.LFB9
+ 1172 005c 20000000 		.4byte	.LFE9-.LFB9
+ 1173 0060 00000000 		.4byte	.LFB10
+ 1174 0064 14000000 		.4byte	.LFE10-.LFB10
+ 1175 0068 00000000 		.4byte	.LFB11
+ 1176 006c 14000000 		.4byte	.LFE11-.LFB11
+ 1177 0070 00000000 		.4byte	.LFB12
+ 1178 0074 14000000 		.4byte	.LFE12-.LFB12
+ 1179 0078 00000000 		.4byte	0
+ 1180 007c 00000000 		.4byte	0
+ 1181              		.section	.debug_ranges,"",%progbits
+ 1182              	.Ldebug_ranges0:
+ 1183 0000 00000000 		.4byte	.LFB0
+ 1184 0004 24000000 		.4byte	.LFE0
+ 1185 0008 00000000 		.4byte	.LFB1
+ 1186 000c 24000000 		.4byte	.LFE1
+ 1187 0010 00000000 		.4byte	.LFB2
+ 1188 0014 18000000 		.4byte	.LFE2
+ 1189 0018 00000000 		.4byte	.LFB3
+ 1190 001c 08000000 		.4byte	.LFE3
+ 1191 0020 00000000 		.4byte	.LFB4
+ 1192 0024 18000000 		.4byte	.LFE4
+ 1193 0028 00000000 		.4byte	.LFB5
+ 1194 002c 14000000 		.4byte	.LFE5
+ 1195 0030 00000000 		.4byte	.LFB6
+ 1196 0034 4C000000 		.4byte	.LFE6
+ 1197 0038 00000000 		.4byte	.LFB7
+ 1198 003c 2C000000 		.4byte	.LFE7
+ 1199 0040 00000000 		.4byte	.LFB8
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 29
+
+
+ 1200 0044 14000000 		.4byte	.LFE8
+ 1201 0048 00000000 		.4byte	.LFB9
+ 1202 004c 20000000 		.4byte	.LFE9
+ 1203 0050 00000000 		.4byte	.LFB10
+ 1204 0054 14000000 		.4byte	.LFE10
+ 1205 0058 00000000 		.4byte	.LFB11
+ 1206 005c 14000000 		.4byte	.LFE11
+ 1207 0060 00000000 		.4byte	.LFB12
+ 1208 0064 14000000 		.4byte	.LFE12
+ 1209 0068 00000000 		.4byte	0
+ 1210 006c 00000000 		.4byte	0
+ 1211              		.section	.debug_line,"",%progbits
+ 1212              	.Ldebug_line0:
+ 1213 0000 51010000 		.section	.debug_str,"MS",%progbits,1
+ 1213      02004500 
+ 1213      00000201 
+ 1213      FB0E0D00 
+ 1213      01010101 
+ 1214              	.LASF14:
+ 1215 0000 72656733 		.ascii	"reg32\000"
+ 1215      3200
+ 1216              	.LASF36:
+ 1217 0006 74315F69 		.ascii	"t1_int_GetPriority\000"
+ 1217      6E745F47 
+ 1217      65745072 
+ 1217      696F7269 
+ 1217      747900
+ 1218              	.LASF37:
+ 1219 0019 43795261 		.ascii	"CyRamVectors\000"
+ 1219      6D566563 
+ 1219      746F7273 
+ 1219      00
+ 1220              	.LASF3:
+ 1221 0026 73686F72 		.ascii	"short unsigned int\000"
+ 1221      7420756E 
+ 1221      7369676E 
+ 1221      65642069 
+ 1221      6E7400
+ 1222              	.LASF21:
+ 1223 0039 74315F69 		.ascii	"t1_int_SetVector\000"
+ 1223      6E745F53 
+ 1223      65745665 
+ 1223      63746F72 
+ 1223      00
+ 1224              	.LASF27:
+ 1225 004a 74315F69 		.ascii	"t1_int_Enable\000"
+ 1225      6E745F45 
+ 1225      6E61626C 
+ 1225      6500
+ 1226              	.LASF20:
+ 1227 0058 74315F69 		.ascii	"t1_int_StartEx\000"
+ 1227      6E745F53 
+ 1227      74617274 
+ 1227      457800
+ 1228              	.LASF11:
+ 1229 0067 666C6F61 		.ascii	"float\000"
+ 1229      7400
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 30
+
+
+ 1230              	.LASF33:
+ 1231 006d 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1231      4320342E 
+ 1231      382E3420 
+ 1231      32303134 
+ 1231      30353236 
+ 1232 00a0 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 1232      20726576 
+ 1232      6973696F 
+ 1232      6E203231 
+ 1232      31333538 
+ 1233 00d3 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 1233      66756E63 
+ 1233      74696F6E 
+ 1233      2D736563 
+ 1233      74696F6E 
+ 1234              	.LASF35:
+ 1235 00e9 433A5C55 		.ascii	"C:\\Users\\Snufkin\\Documents\\GitHub\\KingFunk2\\C"
+ 1235      73657273 
+ 1235      5C536E75 
+ 1235      666B696E 
+ 1235      5C446F63 
+ 1236 0116 52545F74 		.ascii	"RT_timer\\CRT_timer.cydsn\000"
+ 1236      696D6572 
+ 1236      5C435254 
+ 1236      5F74696D 
+ 1236      65722E63 
+ 1237              	.LASF1:
+ 1238 012f 756E7369 		.ascii	"unsigned char\000"
+ 1238      676E6564 
+ 1238      20636861 
+ 1238      7200
+ 1239              	.LASF23:
+ 1240 013d 74315F69 		.ascii	"t1_int_SetPriority\000"
+ 1240      6E745F53 
+ 1240      65745072 
+ 1240      696F7269 
+ 1240      747900
+ 1241              	.LASF25:
+ 1242 0150 696E7465 		.ascii	"interruptState\000"
+ 1242      72727570 
+ 1242      74537461 
+ 1242      746500
+ 1243              	.LASF5:
+ 1244 015f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1244      20756E73 
+ 1244      69676E65 
+ 1244      6420696E 
+ 1244      7400
+ 1245              	.LASF9:
+ 1246 0171 75696E74 		.ascii	"uint8\000"
+ 1246      3800
+ 1247              	.LASF30:
+ 1248 0177 74315F69 		.ascii	"t1_int_Disable\000"
+ 1248      6E745F44 
+ 1248      69736162 
+ 1248      6C6500
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 31
+
+
+ 1249              	.LASF34:
+ 1250 0186 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\t1_int.c\000"
+ 1250      6E657261 
+ 1250      7465645F 
+ 1250      536F7572 
+ 1250      63655C50 
+ 1251              	.LASF24:
+ 1252 01a8 7072696F 		.ascii	"priority\000"
+ 1252      72697479 
+ 1252      00
+ 1253              	.LASF18:
+ 1254 01b1 74315F69 		.ascii	"t1_int_Stop\000"
+ 1254      6E745F53 
+ 1254      746F7000 
+ 1255              	.LASF12:
+ 1256 01bd 646F7562 		.ascii	"double\000"
+ 1256      6C6500
+ 1257              	.LASF29:
+ 1258 01c4 74315F69 		.ascii	"t1_int_GetState\000"
+ 1258      6E745F47 
+ 1258      65745374 
+ 1258      61746500 
+ 1259              	.LASF10:
+ 1260 01d4 75696E74 		.ascii	"uint32\000"
+ 1260      333200
+ 1261              	.LASF28:
+ 1262 01db 74315F69 		.ascii	"t1_int_GetVector\000"
+ 1262      6E745F47 
+ 1262      65745665 
+ 1262      63746F72 
+ 1262      00
+ 1263              	.LASF8:
+ 1264 01ec 756E7369 		.ascii	"unsigned int\000"
+ 1264      676E6564 
+ 1264      20696E74 
+ 1264      00
+ 1265              	.LASF19:
+ 1266 01f9 74315F69 		.ascii	"t1_int_Interrupt\000"
+ 1266      6E745F49 
+ 1266      6E746572 
+ 1266      72757074 
+ 1266      00
+ 1267              	.LASF22:
+ 1268 020a 61646472 		.ascii	"address\000"
+ 1268      65737300 
+ 1269              	.LASF7:
+ 1270 0212 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1270      206C6F6E 
+ 1270      6720756E 
+ 1270      7369676E 
+ 1270      65642069 
+ 1271              	.LASF15:
+ 1272 0229 63796973 		.ascii	"cyisraddress\000"
+ 1272      72616464 
+ 1272      72657373 
+ 1272      00
+ 1273              	.LASF16:
+ARM GAS  C:\Users\Snufkin\AppData\Local\Temp\ccENfz0T.s 			page 32
+
+
+ 1274 0236 73697A65 		.ascii	"sizetype\000"
+ 1274      74797065 
+ 1274      00
+ 1275              	.LASF6:
+ 1276 023f 6C6F6E67 		.ascii	"long long int\000"
+ 1276      206C6F6E 
+ 1276      6720696E 
+ 1276      7400
+ 1277              	.LASF13:
+ 1278 024d 63686172 		.ascii	"char\000"
+ 1278      00
+ 1279              	.LASF32:
+ 1280 0252 74315F69 		.ascii	"t1_int_ClearPending\000"
+ 1280      6E745F43 
+ 1280      6C656172 
+ 1280      50656E64 
+ 1280      696E6700 
+ 1281              	.LASF2:
+ 1282 0266 73686F72 		.ascii	"short int\000"
+ 1282      7420696E 
+ 1282      7400
+ 1283              	.LASF26:
+ 1284 0270 7072696F 		.ascii	"priorityOffset\000"
+ 1284      72697479 
+ 1284      4F666673 
+ 1284      657400
+ 1285              	.LASF4:
+ 1286 027f 6C6F6E67 		.ascii	"long int\000"
+ 1286      20696E74 
+ 1286      00
+ 1287              	.LASF17:
+ 1288 0288 74315F69 		.ascii	"t1_int_Start\000"
+ 1288      6E745F53 
+ 1288      74617274 
+ 1288      00
+ 1289              	.LASF0:
+ 1290 0295 7369676E 		.ascii	"signed char\000"
+ 1290      65642063 
+ 1290      68617200 
+ 1291              	.LASF31:
+ 1292 02a1 74315F69 		.ascii	"t1_int_SetPending\000"
+ 1292      6E745F53 
+ 1292      65745065 
+ 1292      6E64696E 
+ 1292      6700
+ 1293              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
