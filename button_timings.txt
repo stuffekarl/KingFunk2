@@ -1,0 +1,3 @@
+Time from first falling edge to buttons:
+B: 151 us 
+A: 155 us
