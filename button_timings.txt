@@ -1,3 +1,4 @@
 Time from first falling edge to buttons:
-B: 151 us 
-A: 155 us
+B: 151 us / 7248 CPU cycles
+A: 155 us / 7440 CPU cycles
+
